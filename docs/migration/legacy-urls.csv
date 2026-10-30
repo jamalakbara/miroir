@@ -1,0 +1,195 @@
+old_url,type,new_url_or_action,notes
+https://miroir.id/,home,keep,
+https://miroir.id/about/,page,keep,
+https://miroir.id/contact/,page,keep,
+https://miroir.id/product/9163/,product-junk,301 /shop-2/,numeric/trashed slug - redirect to /shop or matching product
+https://miroir.id/product/7943/,product-junk,301 /shop-2/,numeric/trashed slug - redirect to /shop or matching product
+https://miroir.id/product/__trashed/,product-junk,301 /shop-2/,numeric/trashed slug - redirect to /shop or matching product
+https://miroir.id/product/8279/,product-junk,301 /shop-2/,numeric/trashed slug - redirect to /shop or matching product
+https://miroir.id/shop-2/,shop,keep,
+https://miroir.id/product/vale-dress/,product,,
+https://miroir.id/product-tag/vintage/,tag,keep,
+https://miroir.id/product/mara-dress/,product,,
+https://miroir.id/product/mory-dress/,product,,
+https://miroir.id/product-category/sale/,category,keep,
+https://miroir.id/product/revie-top/,product,,
+https://miroir.id/product/lumie-top/,product,,
+https://miroir.id/product/liora-top/,product,,
+https://miroir.id/product/eisha-top/,product,,
+https://miroir.id/product-tag/casual/,tag,keep,
+https://miroir.id/product/vere-dress/,product,,
+https://miroir.id/product-tag/mini/,tag,keep,
+https://miroir.id/product/yasha-top/,product,,
+https://miroir.id/product/seren-top/,product,,
+https://miroir.id/product-category/baju/,category,keep,
+https://miroir.id/product/lumi-pants/,product,,
+https://miroir.id/delivery-and-returns/,page,keep,
+https://miroir.id/product/aylen-top/,product,,
+https://miroir.id/product/vela-top/,product,,
+https://miroir.id/product/oleve-dress/,product,,
+https://miroir.id/product-category/shop/,category,keep,
+https://miroir.id/terms-and-conditions/,page,keep,
+https://miroir.id/shop-2/page/12/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product/dale-cream-dress/,product,,
+https://miroir.id/product/zee-white-top/,product,,
+https://miroir.id/product/cara-dress-variant/,product,,
+https://miroir.id/product/vibe-stripe-white/,product,,
+https://miroir.id/product/davon-cream-pants/,product,,
+https://miroir.id/product/heir-white-dress/,product,,
+https://miroir.id/product/mirae-white-dress/,product,,
+https://miroir.id/shop-2/page/3/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product/orella-white-top/,product,,
+https://miroir.id/product/livra-stripes-top/,product,,
+https://miroir.id/product/nora-blue-electric/,product,,
+https://miroir.id/product/roe-white-dress/,product,,
+https://miroir.id/product/flow-stripe-navy/,product,,
+https://miroir.id/product/kana-brown-top/,product,,
+https://miroir.id/product/dale-white-dress/,product,,
+https://miroir.id/product/cany-stripes-top/,product,,
+https://miroir.id/product/barli-long-dress/,product,,
+https://miroir.id/product/poise-cream-top/,product,,
+https://miroir.id/product/valena-brown-dress/,product,,
+https://miroir.id/product/greta-white-dress/,product,,
+https://miroir.id/product/tara-white-top/,product,,
+https://miroir.id/product/cama-white-top/,product,,
+https://miroir.id/product/valena-tulle-dress/,product,,
+https://miroir.id/product/arlene-outer-dress/,product,,
+https://miroir.id/product/tara-stripe-blue/,product,,
+https://miroir.id/product/orella-cream-top/,product,,
+https://miroir.id/product/como-cream-dress/,product,,
+https://miroir.id/product/seren-polka-top/,product,,
+https://miroir.id/product/brie-red-top/,product,,
+https://miroir.id/product/muse-brown-skirt/,product,,
+https://miroir.id/product/mea-stripes-top/,product,,
+https://miroir.id/product/sopia-stripe-dress/,product,,
+https://miroir.id/product/aura-cream-top/,product,,
+https://miroir.id/shop-2/page/9/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product/sopia-green-dress/,product,,
+https://miroir.id/product/yuka-white-dress/,product,,
+https://miroir.id/product/vale-outer-dress/,product,,
+https://miroir.id/product/kana-stripes-top/,product,,
+https://miroir.id/product/shane-organza-outer/,product,,
+https://miroir.id/product/eliya-organza-dress/,product,,
+https://miroir.id/product/dawn-cream-top/,product,,
+https://miroir.id/product/nora-white-ls/,product,,
+https://miroir.id/product/day-plaid-dress/,product,,
+https://miroir.id/product/sunlee-grey-top/,product,,
+https://miroir.id/product/brie-green-top/,product,,
+https://miroir.id/product/martha-brown-dress/,product,,
+https://miroir.id/product/poise-plaid-variant/,product,,
+https://miroir.id/product/elara-white-skirt/,product,,
+https://miroir.id/product/nora-flower-orange/,product,,
+https://miroir.id/product/sunlee-blue-top/,product,,
+https://miroir.id/product/onnie-plaid-dress/,product,,
+https://miroir.id/product/zaline-organza-set/,product,,
+https://miroir.id/product/emme-stripe-green/,product,,
+https://miroir.id/product/soleil-brown-top/,product,,
+https://miroir.id/product/jeane-grey-top/,product,,
+https://miroir.id/product/cama-brown-top/,product,,
+https://miroir.id/product/yuka-lime-dress/,product,,
+https://miroir.id/product/yuka-black-dress/,product,,
+https://miroir.id/product/brigiton-organza-dress/,product,,
+https://miroir.id/product/kim-plaid-green/,product,,
+https://miroir.id/product/sopia-dress-variant/,product,,
+https://miroir.id/product/tempo-polka-top/,product,,
+https://miroir.id/product/nara-cream-top/,product,,
+https://miroir.id/shop-2/page/10/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product/demie-black-dres/,product,,
+https://miroir.id/product/raye-white-dress/,product,,
+https://miroir.id/shop-2/page/5/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product-category/new-collection/,category,keep,
+https://miroir.id/product/morty-stripe-brown/,product,,
+https://miroir.id/product/elara-black-skirt/,product,,
+https://miroir.id/product/kelana-pink-dress/,product,,
+https://miroir.id/shop-2/page/6/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product/tempo-stripe-white/,product,,
+https://miroir.id/product/vale-cream-dress/,product,,
+https://miroir.id/shop-2/page/2/,pagination,keep,redirect to page 1 of same listing
+https://miroir.id/product/daisy-black-top/,product,,
+https://miroir.id/product/isley-stripe-navy/,product,,
+https://miroir.id/product/tara-green-top/,product,,
+https://miroir.id/product/orella-pink-top/,product,,
+https://miroir.id/product/kiko-white-dress/,product,,
+https://miroir.id/product/daisy-pink-top/,product,,
+https://miroir.id/product/jude-brown-dress/,product,,
+https://miroir.id/product/rana-white-dress/,product,,
+https://miroir.id/product/mery-flower-black/,product,,
+https://miroir.id/product/rosa-green-dress/,product,,
+https://miroir.id/product/sabine-ballon-pants/,product,,
+https://miroir.id/product/kim-tulle-dress/,product,,
+https://miroir.id/product/kimi-mint-dress/,product,,
+https://miroir.id/product/devon-black-pants/,product,,
+https://miroir.id/product/alana-blue-dress/,product,,
+https://miroir.id/product/lumina-stripe-navy/,product,,
+https://miroir.id/product/yuka-flower-dress/,product,,
+https://miroir.id/product/nara-white-textura/,product,,
+https://miroir.id/shop-2/page/17/,pagination,301 /shop-2/,redirect to page 1 of same listing
+https://miroir.id/product/como-stripe-blue/,product,,
+https://miroir.id/product/muse-white-skirt/,product,,
+https://miroir.id/product/lumina-cream-top/,product,,
+https://miroir.id/product/tilda-plaid-green/,product,,
+https://miroir.id/product/nara-stripe-green/,product,,
+https://miroir.id/product/tara-cream-top/,product,,
+https://miroir.id/product/ziya-white-dress/,product,,
+https://miroir.id/product/bara-stripe-blue/,product,,
+https://miroir.id/product/nora-flower-blue/,product,,
+https://miroir.id/product/emme-stripe-brown/,product,,
+https://miroir.id/product/soleil-white-top/,product,,
+https://miroir.id/product/poise-flower-top-2/,product,,
+https://miroir.id/product-category/baju/page/2/,pagination,keep,redirect to page 1 of same listing
+https://miroir.id/product-category/baju/page/12/,pagination,301 /product-category/baju/,redirect to page 1 of same listing
+https://miroir.id/product-category/uncategorized/page/7/,pagination,301 /product-category/uncategorized/,redirect to page 1 of same listing
+https://miroir.id/product/como-stripe-blue-copy/,product,,
+https://miroir.id/product/lui-stripe-green-top/,product,,
+https://miroir.id/product/poise-baby-blue-top/,product,,
+https://miroir.id/product-category/baju/page/4/,pagination,301 /product-category/baju/,redirect to page 1 of same listing
+https://miroir.id/product/feme-organza-black-dress/,product,,
+https://miroir.id/product-category/baju/page/7/,pagination,301 /product-category/baju/,redirect to page 1 of same listing
+https://miroir.id/product/eliya-flower-outer-dress/,product,,
+https://miroir.id/product/isley-stripe-yellow-top/,product,,
+https://miroir.id/product/voila-blue-electric-dress/,product,,
+https://miroir.id/product/kala-stripe-yellow-top/,product,,
+https://miroir.id/product/kala-stripe-green-top/,product,,
+https://miroir.id/product/glide-black-stripe-top/,product,,
+https://miroir.id/product/raye-white-texture-dress/,product,,
+https://miroir.id/product-category/shop/page/2/,pagination,keep,redirect to page 1 of same listing
+https://miroir.id/product/sunlee-stripe-blue-top/,product,,
+https://miroir.id/product-category/uncategorized/page/2/,pagination,301 /product-category/uncategorized/,redirect to page 1 of same listing
+https://miroir.id/product/como-black-polka-pants/,product,,
+https://miroir.id/product-category/uncategorized/page/10/,pagination,301 /product-category/uncategorized/,redirect to page 1 of same listing
+https://miroir.id/product-category/baju/page/8/,pagination,301 /product-category/baju/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/best-seller/,category,keep,
+https://miroir.id/product/lui-stripe-yellow-top/,product,,
+https://miroir.id/product-tag/casual-to-formal/,tag,keep,
+https://miroir.id/product/kiko-white-embroidery-dress/,product,,
+https://miroir.id/product/yuka-white-embroidery-dress/,product,,
+https://miroir.id/product/muse-stripe-blue-copy/,product,,
+https://miroir.id/product-category/new-collection/page/4/,pagination,301 /product-category/new-collection/,redirect to page 1 of same listing
+https://miroir.id/product-category/baju/women/page/12/,pagination,301 /product-category/baju/women/,redirect to page 1 of same listing
+https://miroir.id/product/mara-white-long-sleeve-dress/,product,,
+https://miroir.id/product/seren-long-sleeve-stripe-blue/,product,,
+https://miroir.id/product-category/shop/shop-by-miroir/,category,keep,
+https://miroir.id/product-category/baju/women/page/6/,pagination,301 /product-category/baju/women/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/,category,,
+https://miroir.id/product/orella-long-sleeve-stripe-blue/,product,,
+https://miroir.id/product-category/shop/shop-by-collection/textura/,category,,
+https://miroir.id/product-category/shop/shop-by-collection/riviera/,category,,
+https://miroir.id/product/tempo-2-way-stripe-wrap-top/,product,,
+https://miroir.id/product-category/shop/best-seller/page/3/,pagination,301 /product-category/shop/best-seller/,redirect to page 1 of same listing
+https://miroir.id/product-category/at-the-studio/page/3/,pagination,301 /product-category/at-the-studio/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/ligne/,category,,
+https://miroir.id/product-category/shop/shop-by-collection/page/4/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/page/8/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/holiday-edit/,category,,
+https://miroir.id/product-category/shop/shop-by-miroir/page/3/,pagination,301 /product-category/shop/shop-by-miroir/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-miroir/page/11/,pagination,301 /product-category/shop/shop-by-miroir/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/page/2/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-miroir/page/4/,pagination,301 /product-category/shop/shop-by-miroir/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/page/5/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/page/3/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/page/9/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-miroir/page/2/,pagination,301 /product-category/shop/shop-by-miroir/,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/miroir-x-naluri/,category,,
+https://miroir.id/product-category/shop/shop-by-collection/at-the-studio/,category,,
+https://miroir.id/product-category/shop/shop-by-collection/neuve/page/2/,pagination,,redirect to page 1 of same listing
+https://miroir.id/product-category/shop/shop-by-collection/at-the-studio/page/2/,pagination,,redirect to page 1 of same listing

@@ -1,0 +1,27 @@
+# Secrets
+.env
+
+# WordPress runtime
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+wp-content/debug.log
+
+# Third-party plugins/themes installed via WP-CLI (track only our own code)
+wp-content/plugins/*
+wp-content/themes/*
+!wp-content/plugins/miroir-*/
+!wp-content/themes/miroir-*/
+
+# Office lock/temp files
+~$*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.aimem/.cache/
+
+# Client quotation (private)
+docs/Quotation Webdev Miroir.pdf

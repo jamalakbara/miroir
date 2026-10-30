@@ -1,0 +1,8 @@
+aimem: 1
+project: miroir
+name: miroir
+mode: solo
+sync: none
+roles: [dev, pm, qa, db, devops, analyst]
+adapters:
+  targets: [agents]
