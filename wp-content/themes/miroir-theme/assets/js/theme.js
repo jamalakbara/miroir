@@ -105,10 +105,48 @@
 	} );
 
 	/*
-	 * Header panels (screens 31-34) replace the page content between header and
-	 * footer. Links fall back to ?panel=… reloads without JS.
+	 * Search and currency use native modal dialogs; menu and filters replace
+	 * page content. Links fall back to ?panel=… reloads without JS.
 	 */
 	var main = document.getElementById( 'main' );
+	var activeModal = null;
+	var modalOpener = null;
+
+	document.querySelectorAll( 'dialog[data-panel]' ).forEach( function ( dialog ) {
+		// Keep dialogs outside page panels so the menu cannot hide them.
+		document.body.appendChild( dialog );
+		dialog.addEventListener( 'close', function () {
+			if ( activeModal !== dialog ) {
+				return;
+			}
+			activeModal = null;
+			document.documentElement.classList.remove( 'has-modal' );
+			var visiblePanel = main && main.querySelector( '[data-panel]:not([hidden])' );
+			setExpanded( visiblePanel ? visiblePanel.dataset.panel : '' );
+			var url = new URL( window.location.href );
+			if ( url.searchParams.get( 'panel' ) === dialog.dataset.panel ) {
+				url.searchParams.delete( 'panel' );
+				window.history.replaceState( null, '', url );
+			}
+			if ( modalOpener ) {
+				modalOpener.focus( { preventScroll: true } );
+			}
+		} );
+		var backdropPress = false;
+		function outside( event ) {
+			var rect = dialog.getBoundingClientRect();
+			return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+		}
+		dialog.addEventListener( 'pointerdown', function ( event ) { backdropPress = outside( event ); } );
+		dialog.addEventListener( 'click', function ( event ) {
+			if ( event.target === dialog && backdropPress && outside( event ) ) {
+				dialog.close();
+			}
+		} );
+	} );
+	document.querySelectorAll( '[data-panel-open="search"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
+		toggle.setAttribute( 'aria-haspopup', 'dialog' );
+	} );
 
 	function setExpanded( name ) {
 		document.querySelectorAll( '[data-panel-open]' ).forEach( function ( toggle ) {
@@ -117,9 +155,22 @@
 	}
 
 	function openPanel( name ) {
-		var panel = main && main.querySelector( '[data-panel="' + name + '"]' );
+		var panel = document.querySelector( '[data-panel="' + name + '"]' );
 		if ( ! panel ) {
 			return false;
+		}
+		if ( panel.tagName === 'DIALOG' ) {
+			modalOpener = document.activeElement;
+			activeModal = panel;
+			panel.removeAttribute( 'open' );
+			panel.showModal();
+			document.documentElement.classList.add( 'has-modal' );
+			setExpanded( name );
+			var field = panel.querySelector( 'input:not([type="hidden"]):not([type="radio"]), input:checked' );
+			if ( field ) {
+				field.focus( { preventScroll: true } );
+			}
+			return true;
 		}
 		main.querySelectorAll( '[data-panel]' ).forEach( function ( other ) {
 			other.hidden = other !== panel;
@@ -136,6 +187,10 @@
 	}
 
 	function closePanels() {
+		if ( activeModal ) {
+			activeModal.close();
+			return;
+		}
 		if ( new URLSearchParams( window.location.search ).has( 'panel' ) ) {
 			var url = new URL( window.location.href );
 			url.searchParams.delete( 'panel' );
@@ -162,10 +217,32 @@
 	} );
 
 	document.addEventListener( 'keydown', function ( event ) {
+		if ( activeModal && event.key === 'Tab' ) {
+			var stops = Array.prototype.filter.call(
+				activeModal.querySelectorAll( 'a[href], button, input, select, textarea, [tabindex]' ),
+				function ( element ) {
+					return ! element.disabled && element.tabIndex >= 0 && element.getClientRects().length &&
+						( element.type !== 'radio' || element.checked );
+				}
+			);
+			var first = stops[0];
+			var last = stops[stops.length - 1];
+			if ( first && ( ! activeModal.contains( document.activeElement ) ||
+				( event.shiftKey && document.activeElement === first ) ||
+				( ! event.shiftKey && document.activeElement === last ) ) ) {
+				event.preventDefault();
+				( event.shiftKey ? last : first ).focus();
+			}
+		}
 		if ( 'Escape' === event.key && main && main.classList.contains( 'has-panel' ) ) {
 			closePanels();
 		}
 	} );
+
+	var initialModal = document.querySelector( 'dialog[data-panel][open]' );
+	if ( initialModal ) {
+		openPanel( initialModal.dataset.panel );
+	}
 
 	/*
 	 * Add to bag before picking a size: instead of WooCommerce's alert, the PDP

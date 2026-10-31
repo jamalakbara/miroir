@@ -1,9 +1,7 @@
 <?php
 /**
- * Header panels, drawn in the lofi as full content areas between header and
- * footer: menu (31), search (32), filter & sort (33), currency (34).
- * Hidden until opened: theme.js swaps them in place of the page content;
- * without JS the header links reload with ?panel=… and the server opens one.
+ * Menu and filters replace page content; search and currency open as modals.
+ * Header links fall back to server-opened panels without JavaScript.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -52,9 +50,9 @@ $close = function ( $label ) {
 	</nav>
 </div>
 
-<div class="flow panel" id="search-panel" data-panel="search"<?php echo 'search' === $open ? '' : ' hidden'; ?>>
+<dialog class="flow panel panel--modal" id="search-panel" data-panel="search" aria-labelledby="search-panel-title"<?php echo 'search' === $open ? ' open' : ''; ?>>
 	<div class="flow__col">
-		<h2 class="flow__title"><?php esc_html_e( 'Search', 'miroir' ); ?></h2>
+		<h2 class="flow__title" id="search-panel-title"><?php esc_html_e( 'Search', 'miroir' ); ?></h2>
 		<?php $close( __( 'Close search', 'miroir' ) ); ?>
 		<form class="flow__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php miroir_field( array( 'name' => 's', 'id' => 'panel-search', 'type' => 'search', 'label' => __( 'Search products', 'miroir' ), 'placeholder' => __( 'Linen shirt', 'miroir' ), 'class' => 'field--quiet' ) ); ?>
@@ -76,7 +74,7 @@ $close = function ( $label ) {
 		}
 		?>
 	</div>
-</div>
+</dialog>
 
 <?php if ( function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() ) ) : ?>
 	<?php get_template_part( 'template-parts/panel-filters', null, array( 'open' => 'filters' === $open ) ); ?>

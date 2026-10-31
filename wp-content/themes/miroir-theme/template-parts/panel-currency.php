@@ -23,9 +23,9 @@ $all     = get_woocommerce_currencies();
 $current = get_woocommerce_currency();
 $here    = remove_query_arg( array( 'panel', 'miroir_currency' ) );
 ?>
-<div class="flow panel" id="currency-panel" data-panel="currency"<?php echo empty( $args['open'] ) ? ' hidden' : ''; ?>>
+<dialog class="flow panel panel--modal" id="currency-panel" data-panel="currency" aria-labelledby="currency-panel-title"<?php echo empty( $args['open'] ) ? '' : ' open'; ?>>
 	<form class="flow__col" method="get" action="<?php echo esc_url( $here ); ?>">
-		<h2 class="flow__title"><?php esc_html_e( 'Currency', 'miroir' ); ?></h2>
+		<h2 class="flow__title" id="currency-panel-title"><?php esc_html_e( 'Currency', 'miroir' ); ?></h2>
 		<p class="flow__intro"><?php esc_html_e( 'Choose your display currency. Our team confirms the final payable amount in WhatsApp.', 'miroir' ); ?></p>
 		<?php foreach ( $codes as $code ) : ?>
 			<label class="radio panel-radio">
@@ -36,4 +36,4 @@ $here    = remove_query_arg( array( 'panel', 'miroir_currency' ) );
 		<button class="btn btn--primary btn--block" type="submit"><?php esc_html_e( 'Apply currency', 'miroir' ); ?></button>
 		<button class="btn btn--block" type="button" data-panel-close><?php esc_html_e( 'Cancel', 'miroir' ); ?></button>
 	</form>
-</div>
+</dialog>

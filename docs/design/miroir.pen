@@ -4,8 +4,8 @@
     {
       "type": "frame",
       "id": "Z5Qv0z",
-      "x": 0,
-      "y": -800,
+      "x": 3200,
+      "y": -4110,
       "name": "Image Placeholder",
       "reusable": true,
       "width": 240,
@@ -30,8 +30,8 @@
     {
       "type": "frame",
       "id": "rUMLe",
-      "x": 300,
-      "y": -800,
+      "x": 3520,
+      "y": -3650,
       "name": "Button/Outline",
       "reusable": true,
       "stroke": "$ink-3",
@@ -59,8 +59,8 @@
     {
       "type": "frame",
       "id": "xqA38",
-      "x": 300,
-      "y": -720,
+      "x": 3840,
+      "y": -4110,
       "name": "Field",
       "reusable": true,
       "width": 360,
@@ -120,8 +120,8 @@
     {
       "type": "frame",
       "id": "xK7Fl",
-      "x": 720,
-      "y": -800,
+      "x": 3520,
+      "y": -4110,
       "name": "Product Card",
       "reusable": true,
       "width": 240,
@@ -196,8 +196,8 @@
     {
       "type": "frame",
       "id": "dk4Eq",
-      "x": 1100,
-      "y": -800,
+      "x": 3200,
+      "y": -5700,
       "name": "Header",
       "reusable": true,
       "width": 1440,
@@ -394,8 +394,8 @@
     {
       "type": "frame",
       "id": "oqbEv",
-      "x": 1100,
-      "y": -560,
+      "x": 3200,
+      "y": -5450,
       "name": "Footer",
       "reusable": true,
       "width": 1440,
@@ -551,8 +551,8 @@
     {
       "type": "frame",
       "id": "CFsCH",
-      "x": 2640,
-      "y": -800,
+      "x": 3840,
+      "y": -3650,
       "name": "Button/WhatsApp",
       "reusable": true,
       "fill": "$ink",
@@ -592,8 +592,8 @@
     {
       "type": "frame",
       "id": "xhCII",
-      "x": 2640,
-      "y": -720,
+      "x": 4280,
+      "y": -3350,
       "name": "WhatsApp Float",
       "reusable": true,
       "width": 56,
@@ -628,7 +628,7 @@
     {
       "type": "frame",
       "id": "L2Izto",
-      "x": -2347,
+      "x": 1600,
       "y": -5700,
       "name": "Font Pairs",
       "clip": true,
@@ -1925,8 +1925,8 @@
     {
       "type": "frame",
       "id": "IwhUS",
-      "x": 2640,
-      "y": -600,
+      "x": 3200,
+      "y": -3650,
       "name": "Button/Primary",
       "reusable": true,
       "fill": "$ink",
@@ -1955,8 +1955,8 @@
     {
       "type": "frame",
       "id": "J4dks",
-      "x": 2900,
-      "y": -600,
+      "x": 4280,
+      "y": -3650,
       "name": "Button/Link",
       "reusable": true,
       "alignItems": "center",
@@ -1977,8 +1977,8 @@
     {
       "type": "frame",
       "id": "qSMF4",
-      "x": 3080,
-      "y": -600,
+      "x": 3200,
+      "y": -3500,
       "name": "Checkbox/Off",
       "reusable": true,
       "gap": "$space-2",
@@ -2011,8 +2011,8 @@
     {
       "type": "frame",
       "id": "f25hM",
-      "x": 3250,
-      "y": -600,
+      "x": 3520,
+      "y": -3500,
       "name": "Checkbox/On",
       "reusable": true,
       "gap": "$space-2",
@@ -2057,8 +2057,8 @@
     {
       "type": "frame",
       "id": "z3t7k5",
-      "x": 3420,
-      "y": -600,
+      "x": 3840,
+      "y": -3500,
       "name": "Radio/Off",
       "reusable": true,
       "gap": "$space-2",
@@ -2092,8 +2092,8 @@
     {
       "type": "frame",
       "id": "lbC11",
-      "x": 3630,
-      "y": -600,
+      "x": 4280,
+      "y": -3500,
       "name": "Radio/On",
       "reusable": true,
       "gap": "$space-2",
@@ -2137,8 +2137,8 @@
     {
       "type": "frame",
       "id": "y40JRr",
-      "x": 3840,
-      "y": -600,
+      "x": 3200,
+      "y": -3350,
       "name": "Qty Stepper",
       "reusable": true,
       "stroke": "$line",
@@ -2216,8 +2216,8 @@
     {
       "type": "frame",
       "id": "c9PEE0",
-      "x": 4002,
-      "y": -600,
+      "x": 3520,
+      "y": -3350,
       "name": "Badge",
       "reusable": true,
       "stroke": "$ink",
@@ -2243,8 +2243,8 @@
     {
       "type": "frame",
       "id": "w4UZ2C",
-      "x": 4142,
-      "y": -600,
+      "x": 3840,
+      "y": -3350,
       "name": "Section Link",
       "reusable": true,
       "gap": 14,
@@ -2284,8 +2284,8 @@
     {
       "type": "frame",
       "id": "lpasV",
-      "x": 4372,
-      "y": -600,
+      "x": 3200,
+      "y": -3200,
       "name": "Totals Row",
       "reusable": true,
       "width": 320,
@@ -2328,8 +2328,8 @@
     {
       "type": "frame",
       "id": "V20Jy",
-      "x": 4752,
-      "y": -600,
+      "x": 4280,
+      "y": -4110,
       "name": "Notice",
       "reusable": true,
       "width": 360,
@@ -5797,8 +5797,8 @@
     {
       "type": "frame",
       "id": "GfvRj",
-      "x": 554,
-      "y": -253,
+      "x": 0,
+      "y": 0,
       "name": "Lofi Design",
       "fill": "#E5E5E5",
       "layout": "vertical",
@@ -5969,41 +5969,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "P6fDOO",
-                                      "name": "Editorial Row",
+                                      "id": "TDRpX",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "frame",
-                                          "id": "trcHO",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 780,
-                                          "layout": "vertical",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "r9hhN",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "name": "Small Image",
-                                              "width": 300,
-                                              "height": 400
-                                            }
-                                          ]
+                                      "height": 740,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 206.6234939759036,
+                                          "y": 202.83132530120483,
+                                          "width": 250.75301204819277,
+                                          "height": 334.33734939759034
                                         },
-                                        {
-                                          "id": "gLnIE",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "name": "Large Image",
-                                          "width": 664,
-                                          "height": 780
+                                        "MK1ZL": {
+                                          "x": 773,
+                                          "y": 0,
+                                          "width": 555,
+                                          "height": 740
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -6159,41 +6144,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "RxqkT",
-                                      "name": "Editorial Row",
+                                      "id": "a38sT",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "frame",
-                                          "id": "fTbWt",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 780,
-                                          "layout": "vertical",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "OAe4y",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "name": "Small Image",
-                                              "width": 300,
-                                              "height": 400
-                                            }
-                                          ]
+                                      "height": 740,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 206.6234939759036,
+                                          "y": 202.83132530120483,
+                                          "width": 250.75301204819277,
+                                          "height": 334.33734939759034
                                         },
-                                        {
-                                          "id": "VAVIT",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "name": "Large Image",
-                                          "width": 664,
-                                          "height": 780
+                                        "MK1ZL": {
+                                          "x": 773,
+                                          "y": 0,
+                                          "width": 555,
+                                          "height": 740
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -6223,39 +6193,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "oVtUV",
-                                      "name": "Editorial Row",
+                                      "id": "jJcrY",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Left",
                                       "width": "fill_container",
-                                      "children": [
-                                        {
-                                          "id": "buvqa",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "name": "Large Image",
-                                          "width": 664,
-                                          "height": 640
+                                      "height": 740,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 870.6234939759036,
+                                          "y": 202.83132530120483,
+                                          "width": 250.75301204819277,
+                                          "height": 334.33734939759034
                                         },
-                                        {
-                                          "type": "frame",
-                                          "id": "W857Q",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 640,
-                                          "layout": "vertical",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "c7BfN",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "name": "Small Image",
-                                              "width": 320,
-                                              "height": 430
-                                            }
-                                          ]
+                                        "MK1ZL": {
+                                          "x": 0,
+                                          "y": 0,
+                                          "width": 555,
+                                          "height": 740
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -16265,8 +16222,10 @@
                               "type": "frame",
                               "id": "TRBqD",
                               "name": "32 Search panel · Desktop",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
                               "clip": true,
                               "width": 1440,
+                              "height": 900,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -16279,25 +16238,205 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "CYsbn",
-                                  "name": "Content area",
+                                  "id": "a8c8N",
+                                  "name": "Hero Editorial behind modal",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 18,
                                   "padding": [
-                                    80,
-                                    56,
                                     96,
-                                    56
+                                    "$gutter",
+                                    0,
+                                    "$gutter"
                                   ],
+                                  "children": [
+                                    {
+                                      "id": "YUkGu",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
+                                      "width": "fill_container",
+                                      "height": 740,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 206.6234939759036,
+                                          "y": 202.83132530120483,
+                                          "width": 250.75301204819277,
+                                          "height": 334.33734939759034
+                                        },
+                                        "MK1ZL": {
+                                          "x": 773,
+                                          "y": 0,
+                                          "width": 555,
+                                          "height": 740
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "e7ZD3",
+                                      "name": "Caption",
+                                      "fill": "$ink",
+                                      "content": "new arrivals: browse the collection",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-sm",
+                                      "fontWeight": "300",
+                                      "letterSpacing": 0.2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "hKWOA",
+                                  "name": "New Arrivals Strip behind modal",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "padding": [
+                                    120,
+                                    "$gutter",
+                                    0,
+                                    "$gutter"
+                                  ],
+                                  "children": [
+                                    {
+                                      "id": "t7UQl",
+                                      "type": "ref",
+                                      "ref": "w4UZ2C",
+                                      "name": "Section Link",
+                                      "descendants": {
+                                        "wGcsw": {
+                                          "content": "new arrivals"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "nSHR6",
+                                      "name": "Cards",
+                                      "width": "fill_container",
+                                      "gap": 20,
+                                      "children": [
+                                        {
+                                          "id": "cBmzj",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name One",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name One"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "vw4P5",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Two",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Two"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "VdDCs",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Three",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Three"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "l7kR1c",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Four",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Four"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 299,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "Sa1X3",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Five",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.7999999999999
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Five"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "CYsbn",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Modal backdrop",
+                                  "width": 1440,
+                                  "height": 900,
+                                  "fill": "#11111166",
+                                  "layout": "vertical",
+                                  "padding": 16,
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "Q3O6A",
-                                      "name": "Content column",
-                                      "width": 820,
+                                      "name": "Modal dialog",
+                                      "width": 560,
+                                      "fill": "$bg",
+                                      "stroke": "$line",
+                                      "strokeWidth": 1,
                                       "layout": "vertical",
                                       "gap": 24,
+                                      "padding": 32,
                                       "children": [
                                         {
                                           "type": "text",
@@ -16306,7 +16445,7 @@
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Search panel",
+                                          "content": "Search",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-sans",
                                           "fontSize": "$text-xl",
@@ -16484,13 +16623,6 @@
                                       ]
                                     }
                                   ]
-                                },
-                                {
-                                  "id": "j7yhki",
-                                  "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container"
                                 }
                               ]
                             }
@@ -16763,8 +16895,10 @@
                               "type": "frame",
                               "id": "OctXG",
                               "name": "34 Currency selector · Desktop",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
                               "clip": true,
                               "width": 1440,
+                              "height": 900,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -16777,25 +16911,205 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "FvnlW",
-                                  "name": "Content area",
+                                  "id": "gWZpv",
+                                  "name": "Hero Editorial behind modal",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 18,
                                   "padding": [
-                                    80,
-                                    56,
                                     96,
-                                    56
+                                    "$gutter",
+                                    0,
+                                    "$gutter"
                                   ],
+                                  "children": [
+                                    {
+                                      "id": "Tz7fu",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
+                                      "width": "fill_container",
+                                      "height": 740,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 206.6234939759036,
+                                          "y": 202.83132530120483,
+                                          "width": 250.75301204819277,
+                                          "height": 334.33734939759034
+                                        },
+                                        "MK1ZL": {
+                                          "x": 773,
+                                          "y": 0,
+                                          "width": 555,
+                                          "height": 740
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "HbJle",
+                                      "name": "Caption",
+                                      "fill": "$ink",
+                                      "content": "new arrivals: browse the collection",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-sm",
+                                      "fontWeight": "300",
+                                      "letterSpacing": 0.2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "SWwpZ",
+                                  "name": "New Arrivals Strip behind modal",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "padding": [
+                                    120,
+                                    "$gutter",
+                                    0,
+                                    "$gutter"
+                                  ],
+                                  "children": [
+                                    {
+                                      "id": "CGnrv",
+                                      "type": "ref",
+                                      "ref": "w4UZ2C",
+                                      "name": "Section Link",
+                                      "descendants": {
+                                        "wGcsw": {
+                                          "content": "new arrivals"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "NQEZh",
+                                      "name": "Cards",
+                                      "width": "fill_container",
+                                      "gap": 20,
+                                      "children": [
+                                        {
+                                          "id": "Z2N842",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name One",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name One"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "xdM6n",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Two",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Two"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "EErJm",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Three",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Three"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "VUH3r",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Four",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.8
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Four"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 299,000"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "t2SFqC",
+                                          "type": "ref",
+                                          "ref": "xK7Fl",
+                                          "name": "Card Product Name Five",
+                                          "width": "fill_container",
+                                          "descendants": {
+                                            "B7juUH": {
+                                              "height": 332.7999999999999
+                                            },
+                                            "W09Ku": {
+                                              "content": "Product Name Five"
+                                            },
+                                            "moPz0": {
+                                              "content": "IDR 279,000"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "FvnlW",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Modal backdrop",
+                                  "width": 1440,
+                                  "height": 900,
+                                  "fill": "#11111166",
+                                  "layout": "vertical",
+                                  "padding": 16,
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "i5Thm",
-                                      "name": "Content column",
-                                      "width": 820,
+                                      "name": "Modal dialog",
+                                      "width": 560,
+                                      "fill": "$bg",
+                                      "stroke": "$line",
+                                      "strokeWidth": 1,
                                       "layout": "vertical",
                                       "gap": 24,
+                                      "padding": 32,
                                       "children": [
                                         {
                                           "type": "text",
@@ -16804,7 +17118,7 @@
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Currency selector",
+                                          "content": "Currency",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-sans",
                                           "fontSize": "$text-xl",
@@ -16898,13 +17212,6 @@
                                       ]
                                     }
                                   ]
-                                },
-                                {
-                                  "id": "MczUG",
-                                  "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container"
                                 }
                               ]
                             }
@@ -19187,41 +19494,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "WWvFk",
-                                      "name": "Editorial Row",
+                                      "id": "csOjK",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "frame",
-                                          "id": "Zwwm3",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 420,
-                                          "layout": "vertical",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "W4aYXn",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "width": "fill_container",
-                                              "height": 420,
-                                              "name": "Small Image"
-                                            }
-                                          ]
+                                      "height": 469.3333333333333,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 96.48192771084337,
+                                          "y": 128.64257028112448,
+                                          "width": 159.03614457831327,
+                                          "height": 212.04819277108436
                                         },
-                                        {
-                                          "id": "y5KTPH",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "width": "fill_container",
-                                          "height": 420,
-                                          "name": "Large Image"
+                                        "MK1ZL": {
+                                          "x": 352,
+                                          "y": 0,
+                                          "width": 352,
+                                          "height": 469.3333333333333
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -19405,41 +19697,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "CG2rB",
-                                      "name": "Editorial Row",
+                                      "id": "H0gATv",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "frame",
-                                          "id": "Q7wn2F",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 420,
-                                          "layout": "vertical",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "e5nak",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "width": "fill_container",
-                                              "height": 420,
-                                              "name": "Small Image"
-                                            }
-                                          ]
+                                      "height": 469.3333333333333,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 96.48192771084337,
+                                          "y": 128.64257028112448,
+                                          "width": 159.03614457831327,
+                                          "height": 212.04819277108436
                                         },
-                                        {
-                                          "id": "V1bG4Q",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "width": "fill_container",
-                                          "height": 420,
-                                          "name": "Large Image"
+                                        "MK1ZL": {
+                                          "x": 352,
+                                          "y": 0,
+                                          "width": 352,
+                                          "height": 469.3333333333333
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -19471,39 +19748,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "k6BXS",
-                                      "name": "Editorial Row",
+                                      "id": "WI6O8",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Left",
                                       "width": "fill_container",
-                                      "children": [
-                                        {
-                                          "id": "y6UQOk",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "width": "fill_container",
-                                          "height": 420,
-                                          "name": "Large Image"
+                                      "height": 469.3333333333333,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 448.48192771084337,
+                                          "y": 128.64257028112448,
+                                          "width": 159.03614457831327,
+                                          "height": 212.04819277108436
                                         },
-                                        {
-                                          "type": "frame",
-                                          "id": "RU5vO",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 420,
-                                          "layout": "vertical",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "DSziB",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "width": "fill_container",
-                                              "height": 420,
-                                              "name": "Small Image"
-                                            }
-                                          ]
+                                        "MK1ZL": {
+                                          "x": 0,
+                                          "y": 0,
+                                          "width": 352,
+                                          "height": 469.3333333333333
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -30959,8 +31223,10 @@
                               "type": "frame",
                               "id": "wA7rF",
                               "name": "32 Search panel · Tablet",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
                               "clip": true,
                               "width": 768,
+                              "height": 1024,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -31010,25 +31276,233 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "k64MoD",
-                                  "name": "Content area",
+                                  "id": "ncZH9",
+                                  "name": "Hero Editorial behind modal",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 18,
                                   "padding": [
                                     40,
                                     32,
-                                    56,
+                                    32,
                                     32
                                   ],
+                                  "children": [
+                                    {
+                                      "id": "ofjq0",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
+                                      "width": "fill_container",
+                                      "height": 469.3333333333333,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 96.48192771084337,
+                                          "y": 128.64257028112448,
+                                          "width": 159.03614457831327,
+                                          "height": 212.04819277108436
+                                        },
+                                        "MK1ZL": {
+                                          "x": 352,
+                                          "y": 0,
+                                          "width": 352,
+                                          "height": 469.3333333333333
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "s1WpPz",
+                                      "name": "Caption",
+                                      "fill": "$ink",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "new arrivals: browse the collection",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-sm",
+                                      "fontWeight": "300",
+                                      "letterSpacing": 0.2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "vv2R8",
+                                  "name": "New Arrivals Strip behind modal",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "padding": [
+                                    40,
+                                    32,
+                                    32,
+                                    32
+                                  ],
+                                  "children": [
+                                    {
+                                      "id": "pW7PI",
+                                      "type": "ref",
+                                      "ref": "w4UZ2C",
+                                      "name": "Section Link",
+                                      "descendants": {
+                                        "wGcsw": {
+                                          "content": "new arrivals"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "wcVfJ",
+                                      "name": "Cards",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 28,
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "tEIW1",
+                                          "name": "Responsive product row 1",
+                                          "width": "fill_container",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "t8bfKX",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name One",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name One"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "MGmPC",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Two",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Two"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "mKryM",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Three",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.1111111111111
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Three"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "X2sZLt",
+                                          "name": "Responsive product row 2",
+                                          "width": "fill_container",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "hzLRw",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Four",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Four"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 299,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "T5LdXh",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Five",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Five"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "xmocM",
+                                              "name": "Grid spacing",
+                                              "width": "fill_container",
+                                              "height": 1
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "k64MoD",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Modal backdrop",
+                                  "width": 768,
+                                  "height": 1024,
+                                  "fill": "#11111166",
+                                  "layout": "vertical",
+                                  "padding": 16,
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "XADyc",
-                                      "name": "Content column",
-                                      "width": "fill_container",
+                                      "name": "Modal dialog",
+                                      "width": 560,
+                                      "fill": "$bg",
+                                      "stroke": "$line",
+                                      "strokeWidth": 1,
                                       "layout": "vertical",
                                       "gap": 24,
+                                      "padding": 32,
                                       "children": [
                                         {
                                           "type": "text",
@@ -31037,7 +31511,7 @@
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Search panel",
+                                          "content": "Search",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-sans",
                                           "fontSize": "$text-xl",
@@ -31214,19 +31688,6 @@
                                         }
                                       ]
                                     }
-                                  ]
-                                },
-                                {
-                                  "id": "cKUVv",
-                                  "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container",
-                                  "padding": [
-                                    56,
-                                    32,
-                                    32,
-                                    32
                                   ]
                                 }
                               ]
@@ -31543,8 +32004,10 @@
                               "type": "frame",
                               "id": "W55HzH",
                               "name": "34 Currency selector · Tablet",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
                               "clip": true,
                               "width": 768,
+                              "height": 1024,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -31594,25 +32057,233 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "Q6pd21",
-                                  "name": "Content area",
+                                  "id": "CLeC5",
+                                  "name": "Hero Editorial behind modal",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 18,
                                   "padding": [
                                     40,
                                     32,
-                                    56,
+                                    32,
                                     32
                                   ],
+                                  "children": [
+                                    {
+                                      "id": "wcJb9",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
+                                      "width": "fill_container",
+                                      "height": 469.3333333333333,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 96.48192771084337,
+                                          "y": 128.64257028112448,
+                                          "width": 159.03614457831327,
+                                          "height": 212.04819277108436
+                                        },
+                                        "MK1ZL": {
+                                          "x": 352,
+                                          "y": 0,
+                                          "width": 352,
+                                          "height": 469.3333333333333
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "Rrokc",
+                                      "name": "Caption",
+                                      "fill": "$ink",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "new arrivals: browse the collection",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-sm",
+                                      "fontWeight": "300",
+                                      "letterSpacing": 0.2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "u6BbP",
+                                  "name": "New Arrivals Strip behind modal",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "padding": [
+                                    40,
+                                    32,
+                                    32,
+                                    32
+                                  ],
+                                  "children": [
+                                    {
+                                      "id": "Vaymr",
+                                      "type": "ref",
+                                      "ref": "w4UZ2C",
+                                      "name": "Section Link",
+                                      "descendants": {
+                                        "wGcsw": {
+                                          "content": "new arrivals"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "yAN1f",
+                                      "name": "Cards",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 28,
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "QBUdu",
+                                          "name": "Responsive product row 1",
+                                          "width": "fill_container",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "OybWy",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name One",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name One"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "fP3W9",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Two",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Two"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "L6Gur",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Three",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.1111111111111
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Three"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "tUKgQ",
+                                          "name": "Responsive product row 2",
+                                          "width": "fill_container",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "CZqSf",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Four",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Four"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 299,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "G9LKc",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Five",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 295.11111111111114
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Five"
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "LazOn",
+                                              "name": "Grid spacing",
+                                              "width": "fill_container",
+                                              "height": 1
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Q6pd21",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Modal backdrop",
+                                  "width": 768,
+                                  "height": 1024,
+                                  "fill": "#11111166",
+                                  "layout": "vertical",
+                                  "padding": 16,
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "OfVv1",
-                                      "name": "Content column",
-                                      "width": "fill_container",
+                                      "name": "Modal dialog",
+                                      "width": 560,
+                                      "fill": "$bg",
+                                      "stroke": "$line",
+                                      "strokeWidth": 1,
                                       "layout": "vertical",
                                       "gap": 24,
+                                      "padding": 32,
                                       "children": [
                                         {
                                           "type": "text",
@@ -31621,7 +32292,7 @@
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Currency selector",
+                                          "content": "Currency",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-sans",
                                           "fontSize": "$text-xl",
@@ -31714,19 +32385,6 @@
                                         }
                                       ]
                                     }
-                                  ]
-                                },
-                                {
-                                  "id": "dzOVm",
-                                  "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container",
-                                  "padding": [
-                                    56,
-                                    32,
-                                    32,
-                                    32
                                   ]
                                 }
                               ]
@@ -34435,42 +35093,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "XzwBO",
-                                      "name": "Editorial Row",
+                                      "id": "GwwUV",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "layout": "vertical",
-                                      "gap": 20,
-                                      "children": [
-                                        {
-                                          "type": "frame",
-                                          "id": "W7Ujcr",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 260,
-                                          "layout": "vertical",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "b9O6Sv",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "height": 250,
-                                              "width": "fill_container",
-                                              "name": "Small Image"
-                                            }
-                                          ]
+                                      "height": 732,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 74.875,
+                                          "y": 0,
+                                          "width": 200.25,
+                                          "height": 267
                                         },
-                                        {
-                                          "id": "bpLik",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "height": 350,
-                                          "width": "fill_container",
-                                          "name": "Large Image"
+                                        "MK1ZL": {
+                                          "x": 8.125,
+                                          "y": 287,
+                                          "width": 333.75,
+                                          "height": 445
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -34683,42 +35325,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "DDke5",
-                                      "name": "Editorial Row",
+                                      "id": "coH78",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "layout": "vertical",
-                                      "gap": 20,
-                                      "children": [
-                                        {
-                                          "type": "frame",
-                                          "id": "r4Vx7i",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 260,
-                                          "layout": "vertical",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "b2ddnS",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "height": 250,
-                                              "width": "fill_container",
-                                              "name": "Small Image"
-                                            }
-                                          ]
+                                      "height": 732,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 74.875,
+                                          "y": 0,
+                                          "width": 200.25,
+                                          "height": 267
                                         },
-                                        {
-                                          "id": "tZtlJ",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "height": 350,
-                                          "width": "fill_container",
-                                          "name": "Large Image"
+                                        "MK1ZL": {
+                                          "x": 8.125,
+                                          "y": 287,
+                                          "width": 333.75,
+                                          "height": 445
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -34750,41 +35376,26 @@
                                   ],
                                   "children": [
                                     {
-                                      "type": "frame",
-                                      "id": "DB7sK",
-                                      "name": "Editorial Row",
+                                      "id": "d8vvi",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Left",
                                       "width": "fill_container",
-                                      "layout": "vertical",
-                                      "gap": 20,
-                                      "children": [
-                                        {
-                                          "id": "JUmEX",
-                                          "type": "ref",
-                                          "ref": "Z5Qv0z",
-                                          "height": 350,
-                                          "width": "fill_container",
-                                          "name": "Large Image"
+                                      "height": 732,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 74.875,
+                                          "y": 465,
+                                          "width": 200.25,
+                                          "height": 267
                                         },
-                                        {
-                                          "type": "frame",
-                                          "id": "edmLu",
-                                          "name": "Small Image Col",
-                                          "width": "fill_container",
-                                          "height": 260,
-                                          "layout": "vertical",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "id": "JiAKy",
-                                              "type": "ref",
-                                              "ref": "Z5Qv0z",
-                                              "height": 250,
-                                              "width": "fill_container",
-                                              "name": "Small Image"
-                                            }
-                                          ]
+                                        "MK1ZL": {
+                                          "x": 8.125,
+                                          "y": 0,
+                                          "width": 333.75,
+                                          "height": 445
                                         }
-                                      ]
+                                      }
                                     },
                                     {
                                       "type": "text",
@@ -46083,8 +46694,10 @@
                               "type": "frame",
                               "id": "ke6yV",
                               "name": "32 Search panel · Mobile",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
                               "clip": true,
                               "width": 390,
+                              "height": 844,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -46131,25 +46744,262 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "W5R13H",
-                                  "name": "Content area",
+                                  "id": "L54jLn",
+                                  "name": "Hero Editorial behind modal",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 18,
                                   "padding": [
-                                    40,
+                                    32,
                                     20,
-                                    56,
+                                    24,
                                     20
                                   ],
+                                  "children": [
+                                    {
+                                      "id": "qc2Hb",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
+                                      "width": "fill_container",
+                                      "height": 732,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 74.875,
+                                          "y": 0,
+                                          "width": 200.25,
+                                          "height": 267
+                                        },
+                                        "MK1ZL": {
+                                          "x": 8.125,
+                                          "y": 287,
+                                          "width": 333.75,
+                                          "height": 445
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "AtES4",
+                                      "name": "Caption",
+                                      "fill": "$ink",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "new arrivals: browse the collection",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-sm",
+                                      "fontWeight": "300",
+                                      "letterSpacing": 0.2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "urRAN",
+                                  "name": "New Arrivals Strip behind modal",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "padding": [
+                                    32,
+                                    20,
+                                    24,
+                                    20
+                                  ],
+                                  "children": [
+                                    {
+                                      "id": "XvVGu",
+                                      "type": "ref",
+                                      "ref": "w4UZ2C",
+                                      "name": "Section Link",
+                                      "descendants": {
+                                        "wGcsw": {
+                                          "content": "new arrivals"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "bFL7h",
+                                      "name": "Cards",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 28,
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "KN38B",
+                                          "name": "Mobile product row 1",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "children": [
+                                            {
+                                              "id": "FyuZM",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name One",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name One"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "ugr5J",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Two",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Two"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "Snfp6",
+                                          "name": "Mobile product row 2",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "children": [
+                                            {
+                                              "id": "WTMWB",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Three",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Three"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "k9KvZR",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Four",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Four"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 299,000"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "PyNTN",
+                                          "name": "Mobile product row 3",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "children": [
+                                            {
+                                              "id": "o5bS8",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Five",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Five"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "ISUZU",
+                                              "name": "Grid spacing",
+                                              "width": "fill_container",
+                                              "height": 1
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "W5R13H",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Modal backdrop",
+                                  "width": 390,
+                                  "height": 844,
+                                  "fill": "#11111166",
+                                  "layout": "vertical",
+                                  "padding": 16,
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "sMBdF",
-                                      "name": "Content column",
-                                      "width": "fill_container",
+                                      "name": "Modal dialog",
+                                      "width": 358,
+                                      "fill": "$bg",
+                                      "stroke": "$line",
+                                      "strokeWidth": 1,
                                       "layout": "vertical",
                                       "gap": 24,
+                                      "padding": 24,
                                       "children": [
                                         {
                                           "type": "text",
@@ -46158,7 +47008,7 @@
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Search panel",
+                                          "content": "Search",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-sans",
                                           "fontSize": "$text-xl",
@@ -46335,19 +47185,6 @@
                                         }
                                       ]
                                     }
-                                  ]
-                                },
-                                {
-                                  "id": "WtKZX",
-                                  "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container",
-                                  "padding": [
-                                    48,
-                                    20,
-                                    32,
-                                    20
                                   ]
                                 }
                               ]
@@ -46661,8 +47498,10 @@
                               "type": "frame",
                               "id": "rM0bO",
                               "name": "34 Currency selector · Mobile",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
                               "clip": true,
                               "width": 390,
+                              "height": 844,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -46709,25 +47548,262 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "lKhA5",
-                                  "name": "Content area",
+                                  "id": "ZSxU1",
+                                  "name": "Hero Editorial behind modal",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 18,
                                   "padding": [
-                                    40,
+                                    32,
                                     20,
-                                    56,
+                                    24,
                                     20
                                   ],
+                                  "children": [
+                                    {
+                                      "id": "jq6K8",
+                                      "type": "ref",
+                                      "ref": "Im0MZ",
+                                      "name": "Editorial Pair / Large Right",
+                                      "width": "fill_container",
+                                      "height": 732,
+                                      "descendants": {
+                                        "gg90L": {
+                                          "x": 74.875,
+                                          "y": 0,
+                                          "width": 200.25,
+                                          "height": 267
+                                        },
+                                        "MK1ZL": {
+                                          "x": 8.125,
+                                          "y": 287,
+                                          "width": 333.75,
+                                          "height": 445
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "K9uI8Y",
+                                      "name": "Caption",
+                                      "fill": "$ink",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "new arrivals: browse the collection",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-sm",
+                                      "fontWeight": "300",
+                                      "letterSpacing": 0.2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "wj9PR",
+                                  "name": "New Arrivals Strip behind modal",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "padding": [
+                                    32,
+                                    20,
+                                    24,
+                                    20
+                                  ],
+                                  "children": [
+                                    {
+                                      "id": "tdTTs",
+                                      "type": "ref",
+                                      "ref": "w4UZ2C",
+                                      "name": "Section Link",
+                                      "descendants": {
+                                        "wGcsw": {
+                                          "content": "new arrivals"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "SVBAf",
+                                      "name": "Cards",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 28,
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "WQMrJ",
+                                          "name": "Mobile product row 1",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "children": [
+                                            {
+                                              "id": "nJ2Xg",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name One",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name One"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "xsu8H",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Two",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Two"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "tEvFi",
+                                          "name": "Mobile product row 2",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "children": [
+                                            {
+                                              "id": "BzG0J",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Three",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Three"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "hsSRJ",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Four",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Four"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 299,000"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "iI1sR",
+                                          "name": "Mobile product row 3",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "children": [
+                                            {
+                                              "id": "rLi1k",
+                                              "type": "ref",
+                                              "ref": "xK7Fl",
+                                              "name": "Card Product Name Five",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "B7juUH": {
+                                                  "height": 225.33333333333334
+                                                },
+                                                "W09Ku": {
+                                                  "content": "Product Name Five"
+                                                },
+                                                "loLuY": {
+                                                  "layout": "vertical",
+                                                  "gap": 3
+                                                },
+                                                "moPz0": {
+                                                  "content": "IDR 279,000"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "jYLNd",
+                                              "name": "Grid spacing",
+                                              "width": "fill_container",
+                                              "height": 1
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "lKhA5",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Modal backdrop",
+                                  "width": 390,
+                                  "height": 844,
+                                  "fill": "#11111166",
+                                  "layout": "vertical",
+                                  "padding": 16,
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "pEGLa",
-                                      "name": "Content column",
-                                      "width": "fill_container",
+                                      "name": "Modal dialog",
+                                      "width": 358,
+                                      "fill": "$bg",
+                                      "stroke": "$line",
+                                      "strokeWidth": 1,
                                       "layout": "vertical",
                                       "gap": 24,
+                                      "padding": 24,
                                       "children": [
                                         {
                                           "type": "text",
@@ -46736,7 +47812,7 @@
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Currency selector",
+                                          "content": "Currency",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-sans",
                                           "fontSize": "$text-xl",
@@ -46829,19 +47905,6 @@
                                         }
                                       ]
                                     }
-                                  ]
-                                },
-                                {
-                                  "id": "h1vcvO",
-                                  "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container",
-                                  "padding": [
-                                    48,
-                                    20,
-                                    32,
-                                    20
                                   ]
                                 }
                               ]
@@ -49393,8 +50456,8 @@
     {
       "type": "frame",
       "id": "esVCU",
-      "x": 6501.90333672443,
-      "y": -3619.5891882578553,
+      "x": 1600,
+      "y": -3160,
       "name": "miroir logo.svg",
       "clip": true,
       "width": 600,
@@ -49406,6 +50469,7 @@
           "id": "ToATT",
           "x": 302.00518798828125,
           "y": 201.29000854492188,
+          "name": "Logo mark",
           "geometry": "M59.73181 0.01199c5.444-0.25 8.05099 3.446 10.47699 7.618 6.60901-0.12801 13.89002 2.11501 12.413 10.717-0.63 3.65601-4.28299 5.91499-7.22202 7.783 2.91501 1.985 6.59201 3.33 9.841 4.809 5.55283 2.57678 10.64194 6.05289 15.06205 10.288 28.34399 27.435 29.13501 91.97699 1.664 121.02798-8.32102 8.79801-22.62299 15.46302-34.83402 15.62101l-0.018-8.66599c10.48001-1.79599 17.98801-3.35699 26.20599-10.99499 14.03-13.23401 17.965-32.25602 18.91101-50.646 1.72-33.39001-10.91-71.812-50.138-73.099-30.59799-0.647-47.88599 23.508-51.40201 51.75-2.73001 21.918-0.87601 48.22901 12.89401 66.50501 8.21201 10.901 18.129 14.70999 31.23301 16.29501q-0.02301 4.44 0.09399 8.87399l-0.237-0.00299c-21.68601-0.457-40.74301-16.746-47.99701-36.91101-12.522-34.802-9.23499-86.55099 25.409-107.681 4.37701-2.66901 9.36899-4.205 13.819-6.761l0.45999-0.26801c-3.65301-2.22999-7.77499-5.175-7.57599-9.882 0.31299-7.509 6.40701-8.944 12.469-8.64799 2.452-3.916 3.797-6.593 8.47201-7.728m147.659 27.05c3.71197-0.355 10.71399-0.177 14.56701-0.17999l27.11701-0.01401c0.64801 16.314 0.60901 32.388 0.67999 48.702l0.08502 63.67801c-0.03497 11.52499-0.44897 24.47799-0.18499 35.88-3.24598-0.384-7.69001-0.30499-10.969-0.07599 0.37799-11.72198 0.09101-24.83801 0.09101-36.656l-0.00599-67.586c0-10.824-0.31298-23.79199 0.14698-34.452-0.76136-0.15648-1.52863-0.28224-2.30005-0.37704-3.85199-0.45799-10.73401-0.13001-14.82398-0.13401-13.345-0.019-26.91198-0.31599-37.87201 8.667-13.134 10.76401-13.78399 30.13699-3.26098 42.83801 9.49798 10.784 22.35599 13.526 35.88 15.30701-8.95599 13.483-20.28799 28.48901-29.80401 41.76599l-12.21399 17.1c-2.00101 2.82199-7.21799 10.70002-9.943 12.72101-2.13 1.582-9.74398 0.69699-13.15701 1.03101l-0.53299 0.05301c11.77701-15.53299 22.883-32.37601 34.53501-48.05802 4.35598-5.86599 9.389-13.78799 13.91-19.225-9.26999-2.94699-16.969-5.42301-24.63599-11.84201-7.81305-6.43829-12.66806-15.78003-13.44705-25.874-0.81512-10.259 2.50775-20.41779 9.228-28.212 9.14099-10.492 23.53698-14.076 36.91101-15.05701",
           "fill": "#242122",
           "width": 249.83984375,
@@ -49416,10 +50480,44 @@
           "id": "C1Rsy",
           "x": 30.194990158081055,
           "y": 228.0419921875,
+          "name": "Logo lettering",
           "geometry": "M181.65901 0.24001c5.72501-0.334 13.68401-0.129 19.54401-0.08501 16.613 0.12399 31.26098-1.08701 46.84201 6.045 8.76057 3.91747 15.58543 11.18285 18.94798 20.171 3.64975 10.04401 3.17444 21.12445-1.32199 30.819-6.95999 14.689-19.865 19.05099-33.85503 24.052 1.07599 2.297 4.051 6.229 5.62799 8.426l9.327 12.98999c10.73201 14.98001 21.511 30.35199 32.42403 45.18201-2.56101 0.28698-9.267 1.23001-11.409 0.583-3.25201-0.987-9.22-10.46798-11.23801-13.277l-13.22502-18.43399-17.832-24.85001c-3.67799-5.121-7.765-10.60199-11.19999-15.849l7.69-1.27499c19.601-3.71799 37.091-14.99301 35.21402-37.24201-0.59415-7.52713-4.19469-14.49783-9.989-19.33899-10.832-9.13699-26.02499-9.18201-39.40201-9.113-5.09 0.026-10.699-0.15199-15.703 0.263l-0.00701 88.49701-0.02 32.522c-0.002 5.53699-0.201 12.595 0.12199 17.95599-3.25599-0.29901-7.095-0.164-10.39199-0.10199 0.10499-13.03201-0.525-27.642-0.676-40.875l-0.101-64.427q-0.05-14.67999 0.136-29.35899c0.071-3.832 0.03901-9.63499 0.49601-13.27901m-46.043-0.24c2.62199 0.106 4.52299 0.144 7.134 0.01899-0.097 4.839 0.17999 10.668 0.26601 15.59101q0.24099 14.065 0.3 28.134c0.26132 34.80786 0.19165 69.61743-0.209 104.42398-3.295 0.431-7.095 0.21399-10.45 0.11999l-0.05499-86.1c0-5.40799 0.46201-41.423-0.492-43.74401l-0.52001 0.088c-3.811 4.644-8.438 11.73901-11.88 16.78601l-16.07201 23.31601-18.244 26.39899c-3.097 4.48001-7.458 10.38599-10.13 14.97699-2.332-2.71899-5.425-7.08402-7.662-10.043l-43.78-58.36801-14.79-19.72c-2.828-3.771-6.039-8.244-9.032-11.80901 14.87 0.591 11.156-2.774 20.362 9.437l11.14301 14.77405 26.834 35.561c5.548 7.349 11.127 14.97501 16.88099 22.12399 3.516-3.99301 10.058-14.07999 13.294-18.76001l27.139-39.414c4.522-6.61301 8.99899-13.45599 13.686-19.94099 1.81101-2.505 3.262-3.489 6.278-3.851m24.435 0.24001c2.621-0.194 5.021-0.11501 7.631 0.1 0.397 11.041 0.367 22.511 0.47099 33.58q0.34 30.36002 0.269 60.72 0.069 18.522-0.194 37.04001c-0.037 2.37299 0.19 15.345-0.74899 16.53202l-0.85201 0.00299c-2.925-0.103-5.56399-0.068-8.479-0.01502-0.465-13.72799-0.472-28.28601-0.579-42.02899q-0.332-32.656-0.235-65.31201-0.015-14.092 0.21001-28.18201c0.03399-2.18601 0.018-9.661 0.40899-11.48199 0.84801-0.83299 0.77001-0.601 2.09801-0.955m241.35501 0.15499c3.10501 0.10001 6.66501 0.033 9.79901 0.038-0.25201 2.703 0.13501 10.22301 0.185 13.38099q0.17499 13.022 0.211 26.04502l0.03201 64.586c-0.02899 14.18301 0.09101 29.17999-0.501 43.29199l-0.12601 0.16699c-0.77899 0.46301-7.76099 0.24301-9.58899 0.384 0.487-39.281-0.23401-78.69699 0.06201-117.99301 0.07599-9.886 0.13699-20.02499-0.073-29.89999m-401.06903 22.15802c1.755 0.33701 9.79 10.23401 10.11 11.70499 1.223 5.616 0.705 20.26999 0.703 25.99899l-0.008 41.19699c0.002 4.71399 0.456 44.91501-0.254 46.85199-2.799-0.33402-7.585-0.18201-10.416-0.065 0.5-25.76599 0.044-53.19699 0.05-79.107l0.003-29.75799c0-5.047 0.217-12.036-0.188-16.823",
           "fill": "#242122",
           "width": 411.63401985168457,
           "height": 148.645263671875
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Im0MZ",
+      "x": 3200,
+      "y": -4940,
+      "name": "Editorial Pair / Reversible",
+      "reusable": true,
+      "width": 1328,
+      "height": 740,
+      "layout": "none",
+      "children": [
+        {
+          "id": "gg90L",
+          "type": "ref",
+          "ref": "Z5Qv0z",
+          "name": "Small Image",
+          "x": 206.6234939759036,
+          "y": 202.83132530120483,
+          "width": 250.75301204819277,
+          "height": 334.33734939759034
+        },
+        {
+          "id": "MK1ZL",
+          "type": "ref",
+          "ref": "Z5Qv0z",
+          "name": "Large Image",
+          "x": 773,
+          "y": 0,
+          "width": 555,
+          "height": 740
         }
       ]
     }

@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 12 (proposed 10, accepted 1, superseded 1)
+- decision: 13 (proposed 11, accepted 1, superseded 1)
 - task: 1 (open 1)
 - memory: 21 (active 21)
-- handoff: 32 (final 32)
+- handoff: 34 (final 34)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-798fkmf0 2026-10-31 (human:akbar) — Done: Prepared and committed the search/currency modal implementation, responsive Pen designs and associated project memory. Validation from implementation passed at desktop, tablet and mobile widths…
+- hnd-j2am4zy6 2026-10-31 (human:akbar) — Done: Changed Search and Currency controls to native modal overlays with dim backdrop, input/radio autofocus, Tab/Shift+Tab focus containment, Escape/outside click/Close dismissal, restored opener fo…
 - hnd-g395m79d 2026-10-31 (human:akbar) — Done: Prepared all workspace changes for the requested commit: storefront theme, WhatsApp ordering, responsive Pen designs, plugin volume migration, visual comparison tools and project memory. PHP sy…
 - hnd-hkhh35kx 2026-10-31 (human:akbar) — Done: Tidied miroir.pen canvas via MCP: aligned all 24 top-level frames into reference boards and orderly component rows above Lofi Design at 0,0. Preserved all 132 screen presentations and component…
 - hnd-nfbxngn3 2026-10-31 (human:akbar) — Done: Fixed homepage sale banner ratio mismatch against Pen.dev by replacing fixed CSS heights with breakpoint-specific aspect-ratio values in home.css: desktop1328/520, tablet704/420, mobile1. Exist…
-- hnd-rymmh5k8 2026-10-31 (human:akbar) — Done: Refined reusable homepage editorial pair sizing to fit each section plus caption inside viewport height while preserving original section gutters and padding. home.css uses viewport-based image…
-- hnd-0qth6a5h 2026-10-31 (human:akbar) — Done: Corrected introduced homepage editorial spacing regression by removing the editorial-only 1440px max-width and auto inline margins. Editorial sections now span full viewport with original share…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects

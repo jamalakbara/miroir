@@ -66,5 +66,5 @@ $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
 	</nav>
 </header>
 
-<main id="main" class="site-main<?php echo miroir_open_panel() ? ' has-panel' : ''; ?>">
+<main id="main" class="site-main<?php echo in_array( miroir_open_panel(), array( 'nav', 'filters' ), true ) ? ' has-panel' : ''; ?>">
 <?php get_template_part( 'template-parts/panels' ); ?>

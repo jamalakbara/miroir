@@ -104,6 +104,26 @@ wc-order-attribution-inputs { display: none; }
 
 /* Header panels (screens 31-34): shown in place of the page content. */
 .panel[hidden] { display: none; }
+.panel--modal:not([open]) { display: none; }
+.panel--modal {
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	width: min(560px, calc(100% - 32px));
+	max-width: none;
+	max-height: calc(100dvh - 32px);
+	padding: 32px;
+	border: 1px solid var(--line);
+	background: var(--bg);
+	color: var(--ink);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+.panel--modal::backdrop { background: rgb(17 17 17 / 40%); }
+html.has-modal { overflow: hidden; }
+@media (max-width: 599px) {
+	.panel--modal { padding: 24px; }
+}
 .site-main.has-panel > :not(.panel) { display: none; }
 .panel-row {
 	display: flex;
