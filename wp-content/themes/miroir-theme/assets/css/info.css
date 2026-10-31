@@ -1,0 +1,48 @@
+/* Info pages (screen 11 FAQ; policy pages 22-26 follow). */
+.info { padding: 96px var(--gutter) 120px; --col-w: 820px; --col-gap: 40px; }
+.info__content { display: flex; flex-direction: column; }
+
+/* FAQ: core Details blocks drawn as the lofi accordion. */
+.info__content > .wp-block-details { display: flex; flex-direction: column; padding: 20px 0; }
+/* Closed details still lay out their (hidden) content slot, so the gap only applies when open. */
+.info__content > .wp-block-details[open] { gap: 14px; }
+.info__content > .wp-block-details { box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line); }
+.info__content > .wp-block-details:first-child { box-shadow: inset 0 0.5px 0 var(--line), 0 -0.5px 0 var(--line), inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line); }
+.wp-block-details > summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	font-family: var(--font-mono);
+	font-size: var(--text-base);
+	line-height: var(--lh-mono-13);
+	font-weight: 400;
+	letter-spacing: 0;
+	list-style: none;
+	cursor: pointer;
+}
+.wp-block-details > summary::-webkit-details-marker { display: none; }
+.wp-block-details > summary::after {
+	content: "";
+	flex: none;
+	width: 14px;
+	height: 14px;
+	background: currentColor;
+	-webkit-mask: var(--icon-plus) center / 14px 14px no-repeat;
+	mask: var(--icon-plus) center / 14px 14px no-repeat;
+}
+.wp-block-details[open] > summary::after { -webkit-mask-image: var(--icon-minus); mask-image: var(--icon-minus); }
+.wp-block-details > :not(summary) {
+	color: var(--ink-2);
+	font-size: var(--text-base);
+	line-height: 21px;
+	font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+	.info { padding: 40px var(--gutter) 32px; }
+}
+
+@media (max-width: 599px) {
+	.info { padding: 32px var(--gutter) 24px; }
+}

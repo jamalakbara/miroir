@@ -11,12 +11,13 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * WooCommerce shows "$" for both USD and SGD; spell them out so a price on its
- * own is never ambiguous.
+ * own is never ambiguous. Rupiah prints as "IDR", as drawn in the lofi.
  */
 add_filter(
 	'woocommerce_currency_symbol',
 	function ( $symbol, $currency ) {
 		$symbols = array(
+			'IDR' => 'IDR',
 			'USD' => 'US$',
 			'SGD' => 'S$',
 		);
@@ -95,6 +96,48 @@ add_action(
 				},
 			)
 		);
+	}
+);
+
+/**
+ * Currencies shoppers can pick, base first (the theme's currency panel lists these).
+ */
+add_filter(
+	'miroir_currency_codes',
+	function ( $codes ) {
+		global $woocommerce_wpml;
+		if ( empty( $woocommerce_wpml->multi_currency ) ) {
+			return $codes;
+		}
+		$enabled = (array) $woocommerce_wpml->multi_currency->get_currency_codes();
+		$base    = get_option( 'woocommerce_currency' );
+		return array_values( array_unique( array_merge( array( $base ), $enabled ) ) );
+	}
+);
+
+/**
+ * ?miroir_currency=USD (the theme's currency panel form) switches the client
+ * currency the same way WCML's own switcher does, then drops the parameter.
+ */
+add_action(
+	'wp_loaded',
+	function () {
+		global $woocommerce_wpml;
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display preference for this visitor's session only.
+		$code = isset( $_GET['miroir_currency'] ) ? strtoupper( sanitize_key( wp_unslash( $_GET['miroir_currency'] ) ) ) : '';
+		if ( ! $code || empty( $woocommerce_wpml->multi_currency ) || is_admin() ) {
+			return;
+		}
+		if ( in_array( $code, (array) apply_filters( 'miroir_currency_codes', array() ), true ) ) {
+			// Same steps as WCML's AJAX switcher: the choice lives in the WooCommerce session, which a guest only gets once its cookie is set.
+			$woocommerce_wpml->multi_currency->set_client_currency( $code );
+			if ( WC()->session && ! is_user_logged_in() && ! WC()->session->has_session() ) {
+				WC()->session->set_customer_session_cookie( true );
+			}
+			wcml_user_store_set( 'client_currency_switched', true );
+		}
+		wp_safe_redirect( remove_query_arg( array( 'miroir_currency', 'panel' ) ) );
+		exit;
 	}
 );
 

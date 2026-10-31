@@ -1,0 +1,143 @@
+[
+ {
+  "name": "01-D",
+  "design": "lKt14",
+  "url": "http://localhost:8080/",
+  "width": 1440
+ },
+ {
+  "name": "01-M",
+  "design": "bNUIw",
+  "url": "http://localhost:8080/",
+  "width": 390
+ },
+ {
+  "name": "01-T",
+  "design": "TxRIu",
+  "url": "http://localhost:8080/",
+  "width": 768
+ },
+ {
+  "name": "02-D",
+  "design": "ldfl8",
+  "url": "http://localhost:8080/shop-2/",
+  "width": 1440
+ },
+ {
+  "name": "02-M",
+  "design": "DzHe1",
+  "url": "http://localhost:8080/shop-2/",
+  "width": 390
+ },
+ {
+  "name": "02-T",
+  "design": "B0KnK",
+  "url": "http://localhost:8080/shop-2/",
+  "width": 768
+ },
+ {
+  "name": "03-D",
+  "design": "j1SIQ",
+  "url": "http://localhost:8080/product/vale-dress/",
+  "width": 1440
+ },
+ {
+  "name": "03-M",
+  "design": "b6hDb",
+  "url": "http://localhost:8080/product/vale-dress/",
+  "width": 390
+ },
+ {
+  "name": "03-T",
+  "design": "cGZoe",
+  "url": "http://localhost:8080/product/vale-dress/",
+  "width": 768
+ },
+ {
+  "name": "04-D",
+  "design": "AMq4v",
+  "url": "http://localhost:8080/cart/",
+  "width": 1440,
+  "pre": [
+   "http://localhost:8080/?add-to-cart=228",
+   "http://localhost:8080/?add-to-cart=218&variation_id=221&attribute_size=M",
+   "http://localhost:8080/cart/"
+  ]
+ },
+ {
+  "name": "04-M",
+  "design": "v0YRG4",
+  "url": "http://localhost:8080/cart/",
+  "width": 390,
+  "pre": [
+   "http://localhost:8080/?add-to-cart=228",
+   "http://localhost:8080/?add-to-cart=218&variation_id=221&attribute_size=M",
+   "http://localhost:8080/cart/"
+  ]
+ },
+ {
+  "name": "04-T",
+  "design": "cmvSO",
+  "url": "http://localhost:8080/cart/",
+  "width": 768,
+  "pre": [
+   "http://localhost:8080/?add-to-cart=228",
+   "http://localhost:8080/?add-to-cart=218&variation_id=221&attribute_size=M",
+   "http://localhost:8080/cart/"
+  ]
+ },
+ {
+  "name": "05-D",
+  "design": "OTRPv",
+  "url": "http://localhost:8080/cart/",
+  "width": 1440
+ },
+ {
+  "name": "05-M",
+  "design": "N7dWsc",
+  "url": "http://localhost:8080/cart/",
+  "width": 390
+ },
+ {
+  "name": "05-T",
+  "design": "z0HEP",
+  "url": "http://localhost:8080/cart/",
+  "width": 768
+ },
+ {
+  "name": "10-D",
+  "design": "owqe2",
+  "url": "http://localhost:8080/?s=dress",
+  "width": 1440
+ },
+ {
+  "name": "10-M",
+  "design": "hXYaO",
+  "url": "http://localhost:8080/?s=dress",
+  "width": 390
+ },
+ {
+  "name": "10-T",
+  "design": "BYv3n",
+  "url": "http://localhost:8080/?s=dress",
+  "width": 768
+ },
+ {
+  "name": "11-D",
+  "design": "DtqDQ",
+  "url": "http://localhost:8080/faq/",
+  "width": 1440
+ },
+ {
+  "name": "11-M",
+  "design": "PWNuf",
+  "url": "http://localhost:8080/faq/",
+  "width": 390
+ },
+ {
+  "name": "11-T",
+  "design": "dliaC",
+  "url": "http://localhost:8080/faq/",
+  "width": 768
+ }
+]

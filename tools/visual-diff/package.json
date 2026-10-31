@@ -1,0 +1,10 @@
+{
+  "name": "miroir-visual-diff",
+  "private": true,
+  "description": "Pixel diff of the local site against PNG exports of docs/design/miroir.pen",
+  "dependencies": {
+    "pixelmatch": "^5.3.0",
+    "playwright-core": "^1.56.0",
+    "pngjs": "^7.0.0"
+  }
+}

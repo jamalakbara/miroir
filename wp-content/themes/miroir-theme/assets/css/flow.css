@@ -1,0 +1,189 @@
+/*
+ * Content-column screens (12-21 and later): title over an 820px column with
+ * 24px rhythm. These screens set no letter-spacing on their copy.
+ */
+.flow { display: flex; flex-direction: column; align-items: center; padding: 80px var(--gutter) 96px; }
+.flow__col { display: flex; flex-direction: column; gap: 24px; width: 820px; max-width: 100%; }
+.flow__form { display: contents; }
+
+.flow__title { font-size: var(--text-xl); line-height: 42px; font-weight: 300; letter-spacing: 0; }
+.flow__heading { font-size: var(--text-lg); line-height: 29px; font-weight: 300; letter-spacing: 0; }
+.flow__intro,
+.flow__copy { font-size: var(--text-base); line-height: 20px; font-weight: 300; letter-spacing: 0; }
+.flow__help { font-size: var(--text-sm); line-height: 18px; font-weight: 300; letter-spacing: 0; }
+.flow__help a, .flow__intro a { text-decoration: underline; text-underline-offset: 3px; }
+.flow__note { color: var(--ink-2); font-size: var(--text-xs); line-height: 17px; font-weight: 300; letter-spacing: 0; }
+.flow__label {
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.flow__section { display: flex; flex-direction: column; gap: 12px; padding: 24px 0; }
+
+.flow .field__input { color: var(--ink-2); }
+.flow .field__input::placeholder { color: var(--ink-2); }
+.flow select.field__input { padding-right: 0; }
+
+/* Account tabs (screens 17-21). */
+.acct-nav { display: flex; flex-wrap: wrap; gap: 24px; padding-bottom: 24px; }
+.acct-nav a { color: var(--ink-2); font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 400; letter-spacing: 0; }
+.acct-nav a[aria-current] { color: var(--ink); }
+
+/* Order details lines (screen 21). */
+.flow__lines { display: flex; flex-direction: column; }
+.flow .totals-row { padding-bottom: 12px; }
+
+@media (max-width: 1023px) {
+	.flow { padding: 40px var(--gutter) 56px; }
+}
+
+@media (max-width: 599px) {
+	.acct-nav { flex-direction: column; gap: 12px; }
+}
+
+/* WooCommerce injects <wc-order-attribution-inputs> (hidden fields) into forms; it must not take a flex gap. */
+wc-order-attribution-inputs { display: none; }
+
+/*
+ * Loose variant (screens 22-29): same column, 1.6 line heights rounded per line
+ * (title 45, copy 21, labels 19). Page content comes from blocks: paragraphs are
+ * intro copy, Group blocks with the "section" class are ruled sections, Button
+ * blocks are full-width buttons (first solid, "outline" style for the rest).
+ */
+.flow--loose .flow__title { line-height: 45px; }
+.flow--loose .flow__intro, .flow--loose .flow__copy { line-height: 21px; }
+.flow--loose .flow__label { line-height: 19px; }
+
+.flow__content { display: contents; }
+.flow__content > p { font-size: var(--text-base); line-height: 21px; font-weight: 300; letter-spacing: 0; }
+.flow__content > p.note-draft { font-family: var(--font-mono); font-size: var(--text-xs); line-height: 18px; font-weight: 400; }
+.flow__content > p.note-scope { font-size: var(--text-xs); line-height: 18px; }
+.flow__content > .section {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 24px 0;
+	box-shadow: inset 0 0.5px 0 var(--line), 0 -0.5px 0 var(--line);
+}
+/* Classic themes wrap Group block children in an inner container; let them join the section's flex column. */
+.flow__content > .section > .wp-block-group__inner-container { display: contents; }
+.flow__content > .section h2,
+.flow__content > .section h3 {
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: 19px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.flow__content > .section p { font-size: var(--text-base); line-height: 21px; font-weight: 300; letter-spacing: 0; }
+.flow__content > .wp-block-buttons { display: flex; flex-direction: column; gap: 24px; }
+.flow__content .wp-block-button { display: flex; }
+.flow__content .wp-block-button__link {
+	display: flex;
+	border: 0;
+	border-radius: 0;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 44px;
+	outline: 1px solid var(--ink);
+	outline-offset: -0.5px;
+	background: var(--ink);
+	color: var(--on-ink);
+	font-size: var(--text-base);
+	line-height: var(--lh-sans-13);
+	font-weight: 400;
+	letter-spacing: var(--track-ui);
+	text-align: center;
+}
+.flow__content .wp-block-button__link:hover { text-decoration: none; }
+.flow__content .is-style-outline .wp-block-button__link { outline-color: var(--ink-3); background: transparent; color: var(--ink-2); }
+
+/* Header panels (screens 31-34): shown in place of the page content. */
+.panel[hidden] { display: none; }
+.site-main.has-panel > :not(.panel) { display: none; }
+.panel-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 16px 0;
+	font-size: var(--text-md);
+	line-height: 24px;
+	font-weight: 300;
+	letter-spacing: 0;
+}
+.panel-row:hover { text-decoration: none; }
+.panel-row .icon { flex: none; }
+.panel__shortcut { align-self: flex-start; }
+.panel-check { align-self: stretch; }
+.panel-radio { align-self: stretch; }
+.field--quiet .field__input,
+.field--quiet .field__input::placeholder { color: var(--ink-3); }
+
+/* Product states (screens 38, 39, 44). */
+.product-state__image { width: 100%; height: 320px; }
+.product-state__image--small { height: 240px; }
+@media (max-width: 1023px) {
+	.product-state__image:not(.product-state__image--small) { height: 280px; }
+}
+.product-state__name { font-family: var(--font-mono); font-size: var(--text-md); line-height: 24px; font-weight: 400; letter-spacing: 0; }
+.field--disabled .field__input { cursor: default; }
+.disabled-bar {
+	display: flex;
+	width: 100%;
+	padding: 16px;
+	border: 0;
+	background: var(--ph);
+	color: var(--ink);
+	font-size: var(--text-base);
+	line-height: 20px;
+	font-weight: 300;
+	letter-spacing: 0;
+	text-align: left;
+	cursor: not-allowed;
+}
+/* Once a size is picked WooCommerce drops .disabled: the bar becomes the primary button. */
+.state-buy .single_add_to_cart_button:not(.disabled) {
+	justify-content: center;
+	padding: 15px 44px;
+	outline: 1px solid var(--ink);
+	outline-offset: -0.5px;
+	background: var(--ink);
+	color: var(--on-ink);
+	line-height: var(--lh-sans-13);
+	font-weight: 400;
+	letter-spacing: var(--track-ui);
+	cursor: pointer;
+}
+
+/* WhatsApp fallback (screen 43). The copied line keeps its space so nothing jumps. */
+.flow[hidden], .wrap[hidden] { display: none; }
+.wa-message { white-space: pre-line; }
+.wa-copied { visibility: hidden; }
+.wa-copied.is-visible { visibility: visible; }
+
+/* Guide template (screen 37): 20px copy lines, small print, measurement table. */
+.flow--guide .flow__content > p { line-height: 20px; }
+.flow__content > p.note-help { font-size: var(--text-sm); line-height: 18px; }
+.flow__content .wp-block-table,
+.flow__content .wp-block-table table { display: flex; flex-direction: column; gap: 24px; }
+/* The lofi draws each table row as its own ruled line, 24px apart like everything else in the column. */
+.flow__content .wp-block-table thead,
+.flow__content .wp-block-table tbody { display: contents; }
+.flow__content .wp-block-table tr { display: flex; padding: 16px 0; box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line); }
+.flow__content .wp-block-table th,
+.flow__content .wp-block-table td {
+	flex: 1 1 0;
+	padding: 0;
+	border: 0;
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-align: left;
+}

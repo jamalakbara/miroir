@@ -1,0 +1,8 @@
+[
+ {"name":"04-D","design":"AMq4v","url":"http://localhost:8080/cart/","width":1440,"pre":["http://localhost:8080/?add-to-cart=228","http://localhost:8080/?add-to-cart=218&variation_id=221&attribute_size=M","http://localhost:8080/cart/"]},
+ {"name":"04-T","design":"cmvSO","url":"http://localhost:8080/cart/","width":768,"pre":["http://localhost:8080/?add-to-cart=228","http://localhost:8080/?add-to-cart=218&variation_id=221&attribute_size=M","http://localhost:8080/cart/"]},
+ {"name":"04-M","design":"v0YRG4","url":"http://localhost:8080/cart/","width":390,"pre":["http://localhost:8080/?add-to-cart=228","http://localhost:8080/?add-to-cart=218&variation_id=221&attribute_size=M","http://localhost:8080/cart/"]},
+ {"name":"05-D","design":"OTRPv","url":"http://localhost:8080/cart/","width":1440},
+ {"name":"05-T","design":"z0HEP","url":"http://localhost:8080/cart/","width":768},
+ {"name":"05-M","design":"N7dWsc","url":"http://localhost:8080/cart/","width":390}
+]

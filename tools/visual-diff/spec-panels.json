@@ -1,0 +1,74 @@
+[
+ {
+  "name": "31-D",
+  "design": "eAYSY",
+  "url": "http://localhost:8080/?panel=nav",
+  "width": 1440
+ },
+ {
+  "name": "31-M",
+  "design": "k9Zvu",
+  "url": "http://localhost:8080/?panel=nav",
+  "width": 390
+ },
+ {
+  "name": "31-T",
+  "design": "VqwMF",
+  "url": "http://localhost:8080/?panel=nav",
+  "width": 768
+ },
+ {
+  "name": "32-D",
+  "design": "TRBqD",
+  "url": "http://localhost:8080/?panel=search",
+  "width": 1440
+ },
+ {
+  "name": "32-M",
+  "design": "ke6yV",
+  "url": "http://localhost:8080/?panel=search",
+  "width": 390
+ },
+ {
+  "name": "32-T",
+  "design": "wA7rF",
+  "url": "http://localhost:8080/?panel=search",
+  "width": 768
+ },
+ {
+  "name": "33-D",
+  "design": "fQJd1",
+  "url": "http://localhost:8080/product-category/baju/women/tops/?panel=filters",
+  "width": 1440
+ },
+ {
+  "name": "33-M",
+  "design": "O3fI7",
+  "url": "http://localhost:8080/product-category/baju/women/tops/?panel=filters",
+  "width": 390
+ },
+ {
+  "name": "33-T",
+  "design": "OADmy",
+  "url": "http://localhost:8080/product-category/baju/women/tops/?panel=filters",
+  "width": 768
+ },
+ {
+  "name": "34-D",
+  "design": "OctXG",
+  "url": "http://localhost:8080/?panel=currency",
+  "width": 1440
+ },
+ {
+  "name": "34-M",
+  "design": "rM0bO",
+  "url": "http://localhost:8080/?panel=currency",
+  "width": 390
+ },
+ {
+  "name": "34-T",
+  "design": "W55HzH",
+  "url": "http://localhost:8080/?panel=currency",
+  "width": 768
+ }
+]
