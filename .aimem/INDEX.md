@@ -10,7 +10,7 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 8 (proposed 7, accepted 1)
+- decision: 9 (proposed 7, accepted 1, superseded 1)
 - task: 1 (open 1)
 - memory: 15 (active 15)
 - handoff: 10 (final 10)
