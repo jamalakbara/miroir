@@ -58,6 +58,19 @@ function miroir_bag_count() {
 	return function_exists( 'WC' ) && WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
 }
 
+/** Header bag markup shared by the initial page and WooCommerce fragments. */
+function miroir_header_bag() {
+	$label = function_exists( 'miroir_text' ) ? miroir_text( 'nav_bag', miroir_bag_count() ) : sprintf( __( 'bag (%d)', 'miroir' ), miroir_bag_count() );
+	$url   = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/' );
+	return sprintf(
+		'<a class="site-nav__bag" href="%1$s" aria-label="%2$s"><span class="site-nav__bag-label">%3$s</span><span class="site-nav__bag-compact" aria-hidden="true"><svg viewBox="0 0 24 28" fill="none" stroke="currentColor" stroke-width="1"><path d="M3.5 7.5h17v19h-17zM8.5 7.5v-3a3.5 3.5 0 0 1 7 0v3"/></svg><span class="site-nav__bag-count">%4$d</span></span></a>',
+		esc_url( $url ),
+		esc_attr( $label ),
+		esc_html( $label ),
+		miroir_bag_count()
+	);
+}
+
 /**
  * Header/footer menu, falling back to the lofi's fixed links until menus are assigned.
  *

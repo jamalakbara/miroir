@@ -307,12 +307,16 @@ add_filter(
 add_filter(
 	'woocommerce_add_to_cart_fragments',
 	function ( $fragments ) {
-		$fragments['a.site-nav__bag'] = sprintf(
-			'<a class="site-nav__bag" href="%s">%s</a>',
-			esc_url( wc_get_cart_url() ),
-			/* translators: %d: number of items in the bag. */
-			esc_html( sprintf( __( 'bag (%d)', 'miroir' ), miroir_bag_count() ) )
-		);
+		$fragments['a.site-nav__bag'] = miroir_header_bag();
 		return $fragments;
+	}
+);
+
+// Version the cached bag fragment when its markup or label changes.
+add_filter(
+	'woocommerce_cart_fragment_name',
+	function ( $name ) {
+		$label = function_exists( 'miroir_text' ) ? miroir_text( 'nav_bag', 0 ) : __( 'bag (%d)', 'miroir' );
+		return $name . '_' . substr( md5( 'compact-header-v1_' . $label ), 0, 8 );
 	}
 );

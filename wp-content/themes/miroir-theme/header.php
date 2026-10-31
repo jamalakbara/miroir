@@ -8,7 +8,6 @@ defined( 'ABSPATH' ) || exit;
 $announcement = get_theme_mod( 'miroir_announcement', __( 'free shipping across indonesia', 'miroir' ) );
 $shop_url     = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 $account_url  = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' );
-$bag_url      = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/' );
 $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
@@ -51,18 +50,14 @@ $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
 			<a class="site-nav__search" href="<?php echo esc_url( add_query_arg( 'panel', 'search' ) ); ?>" data-panel-open="search" aria-controls="search-panel" aria-expanded="false"><?php esc_html_e( 'search', 'miroir' ); ?></a>
 		</div>
 
-		<a class="site-nav__toggle" href="<?php echo esc_url( add_query_arg( 'panel', 'nav' ) ); ?>" data-panel-open="nav" aria-controls="nav-panel" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">
-			<?php echo miroir_icon( 'menu', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
-		</a>
-
 		<div class="site-nav__utility">
 			<?php get_template_part( 'template-parts/currency-toggle' ); ?>
 			<a class="site-nav__account" href="<?php echo esc_url( $account_url ); ?>"><?php esc_html_e( 'my account', 'miroir' ); ?></a>
-			<a class="site-nav__bag" href="<?php echo esc_url( $bag_url ); ?>"><?php
-				/* translators: %d: number of items in the bag. */
-				printf( esc_html__( 'bag (%d)', 'miroir' ), (int) miroir_bag_count() );
-			?></a>
+			<?php echo miroir_header_bag(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped helper markup. ?>
 		</div>
+		<a class="site-nav__toggle" href="<?php echo esc_url( add_query_arg( 'panel', 'nav' ) ); ?>" data-panel-open="nav" aria-controls="nav-panel" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">
+			<span class="site-nav__menu-mark" aria-hidden="true"></span>
+		</a>
 	</nav>
 </header>
 
