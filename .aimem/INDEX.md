@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 8 (proposed 7, accepted 1)
 - task: 1 (open 1)
 - memory: 13 (active 13)
-- handoff: 9 (final 9)
+- handoff: 10 (final 10)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-w382z76g 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Phase 1 foundation of miroir-theme (classic, activated): tokens.css = pen variables, self-hosted Inter Tight/DM Mono, components.css (all 19 pen components), header (3 breakpoints, logo SVG), f…
 - hnd-c2vn5c43 2026-10-31 (human:akbar) — Done: Grouped all 132 layouts inside existing Lofi Design GfvRj. Each breakpoint has 44 numbered screens arranged into six flow groups: storefront, registration/password, account, information/support…
 - hnd-he0cq1j5 2026-10-31 (human:akbar) — Done: Added 99 top-level layouts (33 page/state types x desktop/tablet/mobile) to docs/design/miroir.pen below original Lofi Design. Screens 12-30 cover auth recovery, account management, order detai…
 - hnd-y6tcg0w2 2026-10-31 (human:akbar) — Done: Audited live miroir.pen: 11 screen types across desktop/tablet/mobile; inspected account and WhatsApp order content. Identified missing account flows, policy/support pages, interaction and erro…
 - hnd-rzrqn9gb 2026-10-31 (human:akbar) — Done: Created 11 tablet (768px) and 11 mobile (390px) adaptations in docs/design/miroir.pen. Grouped all 33 screens under Lofi Design (GfvRj), with Desktop, Tablet, Mobile sections. Kept shared compo…
-- hnd-g1hkkhfj 2026-10-30 (human:akbar) — Done: Header currency switcher: block miroir/currency-switcher in miroir-currency, auto-inserted into header after menu (before WC account/cart icons) via Block Hooks; click-to-open dropdown styled c…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
