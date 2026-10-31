@@ -12,7 +12,7 @@ Project: `miroir` · mode: solo · sync: none
 ## Counts
 - decision: 10 (proposed 8, accepted 1, superseded 1)
 - task: 1 (open 1)
-- memory: 16 (active 16)
+- memory: 17 (active 17)
 - handoff: 11 (final 11)
 
 ## Pinned
