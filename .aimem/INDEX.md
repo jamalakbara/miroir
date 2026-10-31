@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 10 (proposed 8, accepted 1, superseded 1)
 - task: 1 (open 1)
 - memory: 17 (active 17)
-- handoff: 11 (final 11)
+- handoff: 12 (final 12)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-chhdn5q3 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Phase 3 screens 12-21 at 1440/768/390: create account (first/last name saved, 12-char rule), forgot password, reset sent, set new password, password updated, dashboard, account details, address…
 - hnd-smnbvzpb 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Phase 2 storefront 01-11 at 1440/768/390 in miroir-theme: home, PLP (menu-driven sidebar + pa_color filter, Load more), PDP (variation form, WhatsApp button), bag (AJAX qty), empty bag, WhatsAp…
 - hnd-w382z76g 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Phase 1 foundation of miroir-theme (classic, activated): tokens.css = pen variables, self-hosted Inter Tight/DM Mono, components.css (all 19 pen components), header (3 breakpoints, logo SVG), f…
 - hnd-c2vn5c43 2026-10-31 (human:akbar) — Done: Grouped all 132 layouts inside existing Lofi Design GfvRj. Each breakpoint has 44 numbered screens arranged into six flow groups: storefront, registration/password, account, information/support…
 - hnd-he0cq1j5 2026-10-31 (human:akbar) — Done: Added 99 top-level layouts (33 page/state types x desktop/tablet/mobile) to docs/design/miroir.pen below original Lofi Design. Screens 12-30 cover auth recovery, account management, order detai…
-- hnd-y6tcg0w2 2026-10-31 (human:akbar) — Done: Audited live miroir.pen: 11 screen types across desktop/tablet/mobile; inspected account and WhatsApp order content. Identified missing account flows, policy/support pages, interaction and erro…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
