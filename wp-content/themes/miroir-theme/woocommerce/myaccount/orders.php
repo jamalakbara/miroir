@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders );
 			<span class="orders-table__cell orders-table__cell--no"><?php esc_html_e( 'order', 'miroir' ); ?></span>
 			<span class="orders-table__cell orders-table__cell--date"><?php esc_html_e( 'date', 'miroir' ); ?></span>
 			<span class="orders-table__cell orders-table__cell--status"><?php esc_html_e( 'status', 'miroir' ); ?></span>
-			<span class="orders-table__cell orders-table__cell--total"><?php esc_html_e( 'total', 'miroir' ); ?></span>
+			<span class="orders-table__cell orders-table__cell--total"><?php echo esc_html( miroir_text( 'col_total' ) ); ?></span>
 			<span class="orders-table__cell orders-table__cell--actions"><?php esc_html_e( 'actions', 'miroir' ); ?></span>
 		</div>
 		<?php
@@ -66,7 +66,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders );
 		</nav>
 	<?php endif; ?>
 <?php else : ?>
-	<p class="account__empty"><?php esc_html_e( 'No order has been made yet.', 'miroir' ); ?></p>
+	<p class="account__empty"><?php echo esc_html( miroir_text( 'orders_none' ) ); ?></p>
 <?php endif; ?>
 <?php
 do_action( 'woocommerce_after_account_orders', $has_orders );

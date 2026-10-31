@@ -25,15 +25,15 @@ $here    = remove_query_arg( array( 'panel', 'miroir_currency' ) );
 ?>
 <dialog class="flow panel panel--modal" id="currency-panel" data-panel="currency" aria-labelledby="currency-panel-title"<?php echo empty( $args['open'] ) ? '' : ' open'; ?>>
 	<form class="flow__col" method="get" action="<?php echo esc_url( $here ); ?>">
-		<h2 class="flow__title" id="currency-panel-title"><?php esc_html_e( 'Currency', 'miroir' ); ?></h2>
-		<p class="flow__intro"><?php esc_html_e( 'Choose your display currency. Our team confirms the final payable amount in WhatsApp.', 'miroir' ); ?></p>
+		<h2 class="flow__title" id="currency-panel-title"><?php echo esc_html( miroir_text( 'currency_title' ) ); ?></h2>
+		<p class="flow__intro"><?php echo esc_html( miroir_text( 'currency_intro' ) ); ?></p>
 		<?php foreach ( $codes as $code ) : ?>
 			<label class="radio panel-radio">
 				<input type="radio" name="miroir_currency" value="<?php echo esc_attr( $code ); ?>"<?php checked( $current, $code ); ?>>
 				<?php echo esc_html( $code . ' · ' . ( $names[ $code ] ?? ( $all[ $code ] ?? $code ) ) ); ?>
 			</label>
 		<?php endforeach; ?>
-		<button class="btn btn--primary btn--block" type="submit"><?php esc_html_e( 'Apply currency', 'miroir' ); ?></button>
-		<button class="btn btn--block" type="button" data-panel-close><?php esc_html_e( 'Cancel', 'miroir' ); ?></button>
+		<button class="btn btn--primary btn--block" type="submit"><?php echo esc_html( miroir_text( 'currency_apply' ) ); ?></button>
+		<button class="btn btn--block" type="button" data-panel-close><?php echo esc_html( miroir_text( 'cancel' ) ); ?></button>
 	</form>
 </dialog>

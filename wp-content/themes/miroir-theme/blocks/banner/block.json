@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/banner",
+	"title": "Banner",
+	"category": "miroir",
+	"icon": "cover-image",
+	"description": "Full-width image with a caption. Choose a separate image for tablet and mobile, where the banner is taller.",
+	"keywords": [ "image", "sale", "home", "hero" ],
+	"textdomain": "miroir",
+	"attributes": {
+		"image": { "type": "number", "default": 0 },
+		"imageTablet": { "type": "number", "default": 0 },
+		"imageMobile": { "type": "number", "default": 0 },
+		"caption": { "type": "string", "default": "" },
+		"url": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "className": false, "customClassName": false },
+	"editorScript": "miroir-blocks-editor",
+	"render": "file:./render.php"
+}

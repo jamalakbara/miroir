@@ -49,6 +49,7 @@ class Miroir_Theme_Command {
 		}
 
 		$this->pages( ! empty( $assoc['force-pages'] ) );
+		$this->home( ! empty( $assoc['force-pages'] ) );
 		$this->menus();
 		WP_CLI::success( 'Theme setup done.' );
 	}
@@ -229,6 +230,53 @@ class Miroir_Theme_Command {
 	/** Paragraph block with a class. */
 	private static function note( $text, $class ) {
 		return '<!-- wp:paragraph {"className":"' . $class . '"} -->' . "\n" . '<p class="' . $class . '">' . esc_html( $text ) . "</p>\n<!-- /wp:paragraph -->\n\n";
+	}
+
+	/**
+	 * Front page as Miroir blocks, one per section of miroir_home_sections(), so
+	 * the client edits the home page in the page editor. A front page that
+	 * already has Miroir blocks is left alone unless $force; other content
+	 * (the demo seeder's cover and shortcodes, never shown by this theme) is replaced.
+	 *
+	 * @param bool $force Overwrite existing Miroir blocks.
+	 */
+	private function home( $force = false ) {
+		$front = (int) get_option( 'page_on_front' );
+		if ( 'page' !== get_option( 'show_on_front' ) || ! $front ) {
+			$front = wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Home', 'post_name' => 'home' ) );
+			update_option( 'page_on_front', $front );
+			update_option( 'show_on_front', 'page' );
+			WP_CLI::log( "page   #$front is the front page" );
+		}
+		if ( miroir_front_page_id() && ! $force ) {
+			return;
+		}
+
+		$blocks = array();
+		foreach ( miroir_home_sections() as $section ) {
+			switch ( $section['type'] ) {
+				case 'editorial':
+					$attrs = array( 'layout' => $section['layout'], 'caption' => $section['caption'], 'url' => wp_make_link_relative( $section['url'] ) );
+					break;
+				case 'banner':
+					$attrs = array( 'caption' => $section['caption'], 'url' => wp_make_link_relative( $section['url'] ) );
+					break;
+				case 'strip':
+					$attrs = array(
+						'label'    => $section['label'],
+						'category' => $section['category'],
+						'limit'    => (int) $section['limit'],
+						'columns'  => (int) ( $section['columns'] ?? 5 ),
+					);
+					break;
+				default:
+					continue 2;
+			}
+			$name     = 'strip' === $section['type'] ? 'product-strip' : $section['type'];
+			$blocks[] = serialize_block( array( 'blockName' => "miroir/{$name}", 'attrs' => $attrs, 'innerBlocks' => array(), 'innerContent' => array() ) );
+		}
+		wp_update_post( array( 'ID' => $front, 'post_content' => implode( "\n\n", $blocks ) ) );
+		WP_CLI::log( "page   #$front home sections as blocks" );
 	}
 
 	/**

@@ -38,7 +38,33 @@
 	--space-8: 64px;
 	--space-9: 96px;
 
-	--gutter: 56px;
+	/*
+	 * Layout tokens, one per breakpoint (-d desktop, -t tablet, -m mobile) so the
+	 * Customizer can override one width without the others; the media queries
+	 * below pick the active value.
+	 */
+	--gutter-d: 56px;
+	--gutter-t: 32px;
+	--gutter-m: 20px;
+	--gutter: var(--gutter-d);
+	--home-space-d: 96px;
+	--home-strip-space-d: 120px;
+	--home-space-t: 40px;
+	--home-space-m: 32px;
+	--shop-cols-d: 4;
+	--shop-cols-t: 3;
+	--shop-cols-m: 2;
+	--shop-col-gap-d: 32px;
+	--shop-row-gap-d: 64px;
+	--search-cols-d: 4;
+	--search-cols-t: 3;
+	--search-cols-m: 2;
+	--similar-cols-d: 7;
+	--image-ratio: 3 / 4;
+	--logo-w: 110px;
+	--backdrop: color-mix(in srgb, var(--ink) 40%, transparent);
+	--shadow: rgba(0, 0, 0, 0.15);
+
 	--stroke-hair: 1px;
 
 	--track-ui: 0.3px;
@@ -79,9 +105,9 @@
 }
 
 @media (max-width: 1023px) {
-	:root { --gutter: 32px; }
+	:root { --gutter: var(--gutter-t); }
 }
 
 @media (max-width: 599px) {
-	:root { --gutter: 20px; }
+	:root { --gutter: var(--gutter-m); }
 }

@@ -7,8 +7,15 @@
 		return;
 	}
 
+	/* Product line template from WooCommerce > Settings > WhatsApp ordering, as in Miroir_WA_Order::line(). */
+	function line( vars ) {
+		return data.line.replace( /\{(\w+)\}/g, function ( match, key ) {
+			return Object.prototype.hasOwnProperty.call( vars, key ) ? vars[ key ] : match;
+		} );
+	}
+
 	function link( size, price ) {
-		var text = data.greeting + '\n\n1. ' + data.name + ' — ' + ( size || data.oneSize ) + ' × 1 — ' + price + '\n\n' + data.url;
+		var text = data.greeting + '\n\n' + line( { n: 1, name: data.name, variant: size || data.oneSize, qty: 1, price: price } ) + '\n\n' + data.url;
 		return 'https://wa.me/' + data.number + '?text=' + encodeURIComponent( text );
 	}
 

@@ -3,7 +3,7 @@
  * page is still showing a few seconds after the attempt (WhatsApp blocked or
  * not installed), switch to the fallback (screen 43) with a copyable message.
  */
-( function () {
+( function ( timing ) {
 	'use strict';
 
 	var link = document.querySelector( '[data-wa-open]' );
@@ -52,6 +52,6 @@
 	}
 	window.setTimeout( function () {
 		window.location.href = link.href;
-		window.setTimeout( showFallback, 4000 );
-	}, 800 );
-} )();
+		window.setTimeout( showFallback, timing.fallbackDelay || 4000 );
+	}, timing.openDelay === undefined ? 800 : timing.openDelay );
+} )( window.miroirWaSent || {} );

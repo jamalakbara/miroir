@@ -6,9 +6,15 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Miroir wordmark: the two artwork paths of pen frame "Miroir SVG logo" (110 x 37.512).
+ * Logo: the uploaded custom logo (Customize > Site Identity) or the Miroir
+ * wordmark, the two artwork paths of pen frame "Miroir SVG logo" (110 x 37.512).
  */
 function miroir_logo() {
+	$logo_id = (int) get_theme_mod( 'custom_logo' );
+	if ( $logo_id && wp_attachment_is_image( $logo_id ) ) {
+		echo '<span class="logo-custom">' . wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ), 'loading' => false ) ) . '</span>';
+		return;
+	}
 	?>
 	<svg class="logo-mark" width="110" height="37.512" viewBox="0 0 110 37.512" role="img" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 		<svg x="57.316" y="0" width="52.684" height="37.512" viewBox="0 0 249.83985 177.89401" preserveAspectRatio="none" overflow="visible"><path fill="currentColor" d="M59.73181 0.01199c5.444-0.25 8.05099 3.446 10.47699 7.618 6.60901-0.12801 13.89002 2.11501 12.413 10.717-0.63 3.65601-4.28299 5.91499-7.22202 7.783 2.91501 1.985 6.59201 3.33 9.841 4.809 5.55283 2.57678 10.64194 6.05289 15.06205 10.288 28.34399 27.435 29.13501 91.97699 1.664 121.02798-8.32102 8.79801-22.62299 15.46302-34.83402 15.62101l-0.018-8.66599c10.48001-1.79599 17.98801-3.35699 26.20599-10.99499 14.03-13.23401 17.965-32.25602 18.91101-50.646 1.72-33.39001-10.91-71.812-50.138-73.099-30.59799-0.647-47.88599 23.508-51.40201 51.75-2.73001 21.918-0.87601 48.22901 12.89401 66.50501 8.21201 10.901 18.129 14.70999 31.23301 16.29501q-0.02301 4.44 0.09399 8.87399l-0.237-0.00299c-21.68601-0.457-40.74301-16.746-47.99701-36.91101-12.522-34.802-9.23499-86.55099 25.409-107.681 4.37701-2.66901 9.36899-4.205 13.819-6.761l0.45999-0.26801c-3.65301-2.22999-7.77499-5.175-7.57599-9.882 0.31299-7.509 6.40701-8.944 12.469-8.64799 2.452-3.916 3.797-6.593 8.47201-7.728m147.659 27.05c3.71197-0.355 10.71399-0.177 14.56701-0.17999l27.11701-0.01401c0.64801 16.314 0.60901 32.388 0.67999 48.702l0.08502 63.67801c-0.03497 11.52499-0.44897 24.47799-0.18499 35.88-3.24598-0.384-7.69001-0.30499-10.969-0.07599 0.37799-11.72198 0.09101-24.83801 0.09101-36.656l-0.00599-67.586c0-10.824-0.31298-23.79199 0.14698-34.452-0.76136-0.15648-1.52863-0.28224-2.30005-0.37704-3.85199-0.45799-10.73401-0.13001-14.82398-0.13401-13.345-0.019-26.91198-0.31599-37.87201 8.667-13.134 10.76401-13.78399 30.13699-3.26098 42.83801 9.49798 10.784 22.35599 13.526 35.88 15.30701-8.95599 13.483-20.28799 28.48901-29.80401 41.76599l-12.21399 17.1c-2.00101 2.82199-7.21799 10.70002-9.943 12.72101-2.13 1.582-9.74398 0.69699-13.15701 1.03101l-0.53299 0.05301c11.77701-15.53299 22.883-32.37601 34.53501-48.05802 4.35598-5.86599 9.389-13.78799 13.91-19.225-9.26999-2.94699-16.969-5.42301-24.63599-11.84201-7.81305-6.43829-12.66806-15.78003-13.44705-25.874-0.81512-10.259 2.50775-20.41779 9.228-28.212 9.14099-10.492 23.53698-14.076 36.91101-15.05701"/></svg>
@@ -36,6 +42,32 @@ function miroir_ph( $class = '', $label = '', $icon = 28 ) {
 }
 
 /**
+ * A media-library image in the placeholder's box, or the grey placeholder when
+ * there is none. The box keeps the .ph sizing classes, so photos take exactly
+ * the geometry the lofi gives the placeholder (cover-cropped).
+ *
+ * @param int    $id       Attachment id (0 = placeholder).
+ * @param string $size     Image size.
+ * @param string $class    Size/position class from the page CSS.
+ * @param string $label    Accessible label, used as alt when the image has none.
+ * @param int    $icon     Placeholder icon size.
+ * @param int    $hover_id Optional second image shown on hover.
+ */
+function miroir_image( $id, $size = 'woocommerce_single', $class = '', $label = '', $icon = 28, $hover_id = 0 ) {
+	if ( ! $id || ! wp_attachment_is_image( $id ) ) {
+		miroir_ph( $class, $label, $icon );
+		return;
+	}
+	$alt = trim( (string) get_post_meta( $id, '_wp_attachment_image_alt', true ) );
+	echo '<div class="ph ph--filled ' . esc_attr( $class ) . '">';
+	echo wp_get_attachment_image( $id, $size, false, array( 'alt' => $alt ? $alt : $label ) );
+	if ( $hover_id && wp_attachment_is_image( $hover_id ) ) {
+		echo wp_get_attachment_image( $hover_id, $size, false, array( 'alt' => '', 'class' => 'ph__hover', 'aria-hidden' => 'true' ) );
+	}
+	echo '</div>';
+}
+
+/**
  * Pen component "Section Link": label followed by a 62px long arrow.
  *
  * @param string $label Link text.
@@ -49,6 +81,51 @@ function miroir_section_link( $label, $url, $class = '' ) {
 		esc_url( $url ),
 		esc_html( $label )
 	);
+}
+
+/**
+ * Copyright line from Customize > Footer: {year} and {site} (title, lower case) filled in.
+ */
+function miroir_copyright() {
+	return strtr(
+		(string) miroir_mod( 'copyright' ),
+		array(
+			'{year}' => gmdate( 'Y' ),
+			'{site}' => strtolower( get_bloginfo( 'name' ) ),
+		)
+	);
+}
+
+/**
+ * Search panel shortcuts from Customize > Search, one "label | link" per line.
+ * Links: "?s=word" (product search), "category:slug", a /path or a full URL.
+ *
+ * @return array label => url
+ */
+function miroir_popular_searches() {
+	$searches = array();
+	foreach ( preg_split( '/\R/', (string) miroir_mod( 'popular_searches' ) ) as $line ) {
+		$parts = array_map( 'trim', explode( '|', $line, 2 ) );
+		if ( 2 !== count( $parts ) || '' === $parts[0] || '' === $parts[1] ) {
+			continue;
+		}
+		list( $label, $link ) = $parts;
+		if ( 0 === strpos( $link, 'category:' ) ) {
+			$url = miroir_cat_url( trim( substr( $link, 9 ) ) );
+		} elseif ( '?' === $link[0] ) {
+			wp_parse_str( substr( $link, 1 ), $query );
+			if ( isset( $query['s'] ) && ! isset( $query['post_type'] ) ) {
+				$query['post_type'] = 'product';
+			}
+			$url = add_query_arg( $query, home_url( '/' ) );
+		} elseif ( '/' === $link[0] ) {
+			$url = home_url( $link );
+		} else {
+			$url = $link;
+		}
+		$searches[ $label ] = $url;
+	}
+	return apply_filters( 'miroir_popular_searches', $searches );
 }
 
 /**
@@ -99,11 +176,16 @@ function miroir_menu( $location, $fallback, $class ) {
 }
 
 /**
- * URL of a page by slug, or home when it does not exist yet.
+ * URL of a page: the one chosen under Customize > Linked pages, else the page
+ * with this slug, else /slug/.
  *
  * @param string $slug Page slug.
  */
 function miroir_page_url( $slug ) {
+	$chosen = (int) miroir_mod( 'page_' . str_replace( '-', '_', $slug ) );
+	if ( $chosen && 'publish' === get_post_status( $chosen ) ) {
+		return get_permalink( $chosen );
+	}
 	$page = get_page_by_path( $slug );
 	return $page ? get_permalink( $page ) : home_url( "/{$slug}/" );
 }

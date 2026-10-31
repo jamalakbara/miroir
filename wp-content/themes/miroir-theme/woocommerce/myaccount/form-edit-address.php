@@ -41,7 +41,7 @@ foreach ( $address as $key => $field ) {
 
 do_action( 'woocommerce_before_edit_account_address_form' );
 ?>
-<p class="flow__label"><?php echo esc_html( 'billing' === $load_address ? __( 'Billing address', 'miroir' ) : __( 'Shipping address', 'miroir' ) ); ?></p>
+<p class="flow__label"><?php echo esc_html( 'billing' === $load_address ? miroir_text( 'billing_address' ) : miroir_text( 'shipping_address' ) ); ?></p>
 <form class="flow__form woocommerce-address-fields" method="post">
 	<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
 	<?php
@@ -79,6 +79,6 @@ do_action( 'woocommerce_before_edit_account_address_form' );
 	<input type="hidden" name="action" value="edit_address">
 	<button type="submit" class="btn btn--primary btn--block" name="save_address" value="<?php esc_attr_e( 'Save address', 'miroir' ); ?>"><?php esc_html_e( 'Save address', 'miroir' ); ?></button>
 </form>
-<a class="btn btn--block" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-address' ) ); ?>"><?php esc_html_e( 'Cancel', 'miroir' ); ?></a>
+<a class="btn btn--block" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-address' ) ); ?>"><?php echo esc_html( miroir_text( 'cancel' ) ); ?></a>
 <?php
 do_action( 'woocommerce_after_edit_account_address_form' );

@@ -47,7 +47,7 @@
 .pdp__gallery { flex: 0 1 540px; min-width: 0; }
 .pdp__more { width: 100%; }
 .pdp__lead { position: relative; }
-.pdp__view { width: 100%; height: auto; aspect-ratio: 3 / 4; }
+.pdp__view { width: 100%; height: auto; aspect-ratio: var(--image-ratio); }
 .pdp__zoom {
 	position: absolute;
 	top: 24px;
@@ -64,7 +64,7 @@
 
 .similar { display: flex; flex-direction: column; gap: 14px; padding: 140px var(--gutter) 0; }
 .similar__title { font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 300; }
-.similar__grid { --cols: 7; --col-gap: 16px; }
+.similar__grid { --cols: var(--similar-cols-d); --col-gap: 16px; }
 
 /* Match Velvet's inset while the PDP container releases details at the gallery end. */
 @media (min-width: 600px) {

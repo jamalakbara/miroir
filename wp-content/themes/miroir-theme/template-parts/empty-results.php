@@ -15,16 +15,16 @@ if ( 'search' === ( $args['context'] ?? '' ) ) :
 	?>
 	<div class="flow">
 		<div class="flow__col">
-			<h1 class="flow__title"><?php esc_html_e( 'No results', 'miroir' ); ?></h1>
+			<h1 class="flow__title"><?php echo esc_html( miroir_text( 'no_results' ) ); ?></h1>
 			<form class="flow__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php miroir_field( array( 'name' => 's', 'id' => 'empty-search', 'type' => 'search', 'label' => __( 'Search products', 'miroir' ), 'value' => $query, 'class' => 'field--quiet' ) ); ?>
+				<?php miroir_field( array( 'name' => 's', 'id' => 'empty-search', 'type' => 'search', 'label' => miroir_text( 'search_label' ), 'value' => $query, 'class' => 'field--quiet' ) ); ?>
 				<input type="hidden" name="post_type" value="product">
 				<?php /* translators: %s: search query. */ ?>
-				<p class="flow__heading"><?php echo esc_html( sprintf( __( 'No results for “%s”.', 'miroir' ), $query ) ); ?></p>
-				<p class="flow__intro"><?php esc_html_e( 'Try a shorter search or check your spelling.', 'miroir' ); ?></p>
-				<button class="btn btn--primary btn--block" type="submit"><?php esc_html_e( 'Search again', 'miroir' ); ?></button>
+				<p class="flow__heading"><?php echo esc_html( miroir_text( 'no_results_for', $query ) ); ?></p>
+				<p class="flow__intro"><?php echo esc_html( miroir_text( 'no_results_text' ) ); ?></p>
+				<button class="btn btn--primary btn--block" type="submit"><?php echo esc_html( miroir_text( 'search_again' ) ); ?></button>
 			</form>
-			<a class="btn btn--block" href="<?php echo esc_url( $shop ); ?>"><?php esc_html_e( 'Explore all products', 'miroir' ); ?></a>
+			<a class="btn btn--block" href="<?php echo esc_url( $shop ); ?>"><?php echo esc_html( miroir_text( 'explore_all' ) ); ?></a>
 		</div>
 	</div>
 	<?php
@@ -54,19 +54,19 @@ foreach ( wc_get_attribute_taxonomies() as $attribute ) {
 ?>
 <div class="flow">
 	<div class="flow__col">
-		<h1 class="flow__title"><?php esc_html_e( 'No matches', 'miroir' ); ?></h1>
+		<h1 class="flow__title"><?php echo esc_html( miroir_text( 'no_matches' ) ); ?></h1>
 		<?php if ( $path ) : ?>
 			<p class="flow__label"><?php echo esc_html( implode( ' / ', $path ) ); ?></p>
 		<?php endif; ?>
 		<?php if ( $active ) : ?>
-			<p class="flow__intro"><?php echo esc_html( implode( ' · ', $active ) ); ?> · <a href="<?php echo esc_url( $base_url ); ?>"><?php esc_html_e( 'Clear all', 'miroir' ); ?></a></p>
-			<p class="flow__heading"><?php esc_html_e( 'No products match your filters.', 'miroir' ); ?></p>
-			<p class="flow__intro"><?php esc_html_e( 'Remove a filter or browse the full collection.', 'miroir' ); ?></p>
-			<a class="btn btn--primary btn--block" href="<?php echo esc_url( $base_url ); ?>"><?php esc_html_e( 'Clear filters', 'miroir' ); ?></a>
+			<p class="flow__intro"><?php echo esc_html( implode( ' · ', $active ) ); ?> · <a href="<?php echo esc_url( $base_url ); ?>"><?php echo esc_html( miroir_text( 'clear_all' ) ); ?></a></p>
+			<p class="flow__heading"><?php echo esc_html( miroir_text( 'no_matches_heading' ) ); ?></p>
+			<p class="flow__intro"><?php echo esc_html( miroir_text( 'no_matches_text' ) ); ?></p>
+			<a class="btn btn--primary btn--block" href="<?php echo esc_url( $base_url ); ?>"><?php echo esc_html( miroir_text( 'clear_filters' ) ); ?></a>
 		<?php else : ?>
-			<p class="flow__heading"><?php esc_html_e( 'Nothing in this collection yet.', 'miroir' ); ?></p>
-			<p class="flow__intro"><?php esc_html_e( 'Browse the full collection in the meantime.', 'miroir' ); ?></p>
+			<p class="flow__heading"><?php echo esc_html( miroir_text( 'empty_collection' ) ); ?></p>
+			<p class="flow__intro"><?php echo esc_html( miroir_text( 'empty_collection_text' ) ); ?></p>
 		<?php endif; ?>
-		<a class="btn btn--block" href="<?php echo esc_url( $shop ); ?>"><?php esc_html_e( 'Back to collection', 'miroir' ); ?></a>
+		<a class="btn btn--block" href="<?php echo esc_url( $shop ); ?>"><?php echo esc_html( miroir_text( 'back_to_collection' ) ); ?></a>
 	</div>
 </div>

@@ -10,7 +10,9 @@ $account_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalin
 </main>
 
 <footer class="site-footer">
-	<p class="site-footer__location"><?php echo esc_html( get_theme_mod( 'miroir_location', __( 'Location : Indonesia', 'miroir' ) ) ); ?></p>
+	<?php if ( miroir_mod( 'location_show' ) ) : ?>
+		<p class="site-footer__location"><?php echo esc_html( miroir_mod( 'miroir_location' ) ); ?></p>
+	<?php endif; ?>
 	<?php
 	miroir_menu(
 		'footer-account',
@@ -34,12 +36,12 @@ $account_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalin
 		'footer-contact',
 		array(
 			__( 'Contact customer care', 'miroir' ) => miroir_page_url( 'contact' ),
-			__( 'Instagram', 'miroir' )             => 'https://www.instagram.com/miroir.id/',
+			__( 'Instagram', 'miroir' )             => miroir_mod( 'instagram_url' ),
 		),
 		'site-footer__links'
 	);
 	?>
-	<p class="site-footer__copyright">&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( strtolower( get_bloginfo( 'name' ) ) ); ?></p>
+	<p class="site-footer__copyright"><?php echo esc_html( miroir_copyright() ); ?></p>
 </footer>
 
 <?php

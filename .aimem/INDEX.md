@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 15 (proposed 13, accepted 1, superseded 1)
+- decision: 16 (proposed 14, accepted 1, superseded 1)
 - task: 1 (open 1)
 - memory: 25 (active 25)
-- handoff: 37 (final 37)
+- handoff: 40 (final 40)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-6et7wapc 2026-10-31 (human:akbar) — Done: Prepared isolated navbar commit: staged responsive CSS/header markup, shared bag helper with fallback for HEAD without Customizer, WooCommerce fragment/cache updates, saved Pen design and navba…
+- hnd-c8cf3vbf 2026-10-31 (human:akbar) — Done: Refined navbar below 1024px: logo left, compact bag counter plus 44px menu target right, currency remains in menu, announcement below navigation. Added shared bag rendering and refreshed WooCom…
+- hnd-vdc5qtkr 2026-10-31 (human:akbar) — Done: Changed shop/category desktop grid from 3 to 4 columns in tokens.css and Customizer registry; set local shop_cols_d theme mod to 4. Updated Pen.dev miroir.pen screen 02 desktop to three rows of…
 - hnd-d8ng90b1 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: All product images now render the design's grey placeholder: new Customizer setting product_photos (Customize > Products > Show product photos, default off) makes miroir_product_image_id() retu…
 - hnd-9nev1v5g 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Tested wp-admin UI in browser: Pages > Home block editor (6 miroir blocks valid; image picker, hand-picked product picker, preview re-render) and Customizer (53 Miroir controls render; colour/g…
-- hnd-xjj5r7v6 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Made miroir-theme admin-customizable: Customizer panel 'Miroir theme' (colours, logo, fonts incl. woff2 upload, type scale, per-breakpoint spacing/columns, header/footer, search shortcuts, link…
-- hnd-798fkmf0 2026-10-31 (human:akbar) — Done: Prepared and committed the search/currency modal implementation, responsive Pen designs and associated project memory. Validation from implementation passed at desktop, tablet and mobile widths…
-- hnd-j2am4zy6 2026-10-31 (human:akbar) — Done: Changed Search and Currency controls to native modal overlays with dim backdrop, input/radio autofocus, Tab/Shift+Tab focus containment, Escape/outside click/Close dismissal, restored opener fo…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects

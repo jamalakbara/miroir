@@ -5,7 +5,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$announcement = get_theme_mod( 'miroir_announcement', __( 'free shipping across indonesia', 'miroir' ) );
+$announcement = miroir_mod( 'announcement_show' ) ? miroir_mod( 'miroir_announcement' ) : '';
 $shop_url     = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 $account_url  = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' );
 $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
@@ -21,6 +21,7 @@ $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'miroir' ); ?></a>
 
 <header class="site-header">
+	<?php if ( '' !== trim( (string) $announcement ) ) : ?>
 	<div class="announce">
 		<div class="announce__track">
 			<?php for ( $group = 0; $group < 2; $group++ ) : ?>
@@ -32,6 +33,7 @@ $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
 			<?php endfor; ?>
 		</div>
 	</div>
+	<?php endif; ?>
 
 	<nav class="site-nav" aria-label="<?php esc_attr_e( 'Main', 'miroir' ); ?>">
 		<a class="site-nav__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php miroir_logo(); ?></a>
@@ -47,12 +49,12 @@ $sale_term    = get_term_by( 'slug', 'sale', 'product_cat' );
 				'site-nav__menu'
 			);
 			?>
-			<a class="site-nav__search" href="<?php echo esc_url( add_query_arg( 'panel', 'search' ) ); ?>" data-panel-open="search" aria-controls="search-panel" aria-expanded="false"><?php esc_html_e( 'search', 'miroir' ); ?></a>
+			<a class="site-nav__search" href="<?php echo esc_url( add_query_arg( 'panel', 'search' ) ); ?>" data-panel-open="search" aria-controls="search-panel" aria-expanded="false"><?php echo esc_html( miroir_text( 'nav_search' ) ); ?></a>
 		</div>
 
 		<div class="site-nav__utility">
 			<?php get_template_part( 'template-parts/currency-toggle' ); ?>
-			<a class="site-nav__account" href="<?php echo esc_url( $account_url ); ?>"><?php esc_html_e( 'my account', 'miroir' ); ?></a>
+			<a class="site-nav__account" href="<?php echo esc_url( $account_url ); ?>"><?php echo esc_html( miroir_text( 'nav_account' ) ); ?></a>
 			<?php echo miroir_header_bag(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped helper markup. ?>
 		</div>
 		<a class="site-nav__toggle" href="<?php echo esc_url( add_query_arg( 'panel', 'nav' ) ); ?>" data-panel-open="nav" aria-controls="nav-panel" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">

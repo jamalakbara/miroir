@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: Miroir WhatsApp Order
- * Description: Catalogue-mode ordering (quotation QUO-2026-003): product pages and the bag hand the order to the shop's WhatsApp with a prefilled message. The checkout page becomes a short review form; submitting it saves an on-hold WooCommerce order (so it shows under My account > Orders) and opens WhatsApp. No payment gateway. Set the number with `wp option update miroir_wa_number 62812...`.
- * Version:     0.1.0
+ * Description: Catalogue-mode ordering (quotation QUO-2026-003): product pages and the bag hand the order to the shop's WhatsApp with a prefilled message. The checkout page becomes a short review form; submitting it saves an on-hold WooCommerce order (so it shows under My account > Orders) and opens WhatsApp. No payment gateway. Number, message wording and order handling: WooCommerce > Settings > WhatsApp ordering.
+ * Version:     0.2.0
  * Author:      Miroir
  * Requires Plugins: woocommerce
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'MIROIR_WA_VERSION', '0.1.0' );
+define( 'MIROIR_WA_VERSION', '0.2.0' );
 
 /**
  * Message building and order creation. Markup lives in the theme's
@@ -19,6 +19,56 @@ class Miroir_WA_Order {
 
 	const NONCE    = 'miroir_wa_checkout';
 	const META_MSG = '_miroir_wa_message';
+
+	/** Settings tab id under WooCommerce > Settings. */
+	const TAB = 'miroir_wa';
+
+	/**
+	 * Message templates and order settings: option => default. Templates use
+	 * {placeholders}; an emptied field falls back to its default.
+	 */
+	public static function defaults() {
+		return array(
+			'miroir_wa_greeting'       => __( "Hi {shop}, I'd like to order:", 'miroir' ),
+			'miroir_wa_line'           => '{n}. {name} — {variant} × {qty} — {price}',
+			'miroir_wa_subtotal'       => __( 'Subtotal: {subtotal} (excl. shipping)', 'miroir' ),
+			'miroir_wa_name'           => __( 'Name: {name}', 'miroir' ),
+			'miroir_wa_deliver'        => __( 'Deliver to: {city}, {country}', 'miroir' ),
+			'miroir_wa_notes'          => __( 'Notes: {notes}', 'miroir' ),
+			'miroir_wa_ref'            => __( 'Order ref: #{ref}', 'miroir' ),
+			'miroir_wa_one_size'       => __( 'One size', 'miroir' ),
+			'miroir_wa_payment_title'  => __( 'Bank transfer after confirmation', 'miroir' ),
+			'miroir_wa_order_status'   => 'on-hold',
+			'miroir_wa_require_city'   => 'yes',
+			'miroir_wa_open_delay'     => 800,
+			'miroir_wa_fallback_delay' => 4000,
+		);
+	}
+
+	/**
+	 * A setting, or its default when unset or emptied.
+	 *
+	 * @param string $key Option name from defaults().
+	 */
+	public static function opt( $key ) {
+		$defaults = self::defaults();
+		$value    = get_option( $key, '' );
+		return '' === trim( (string) $value ) ? $defaults[ $key ] : $value;
+	}
+
+	/**
+	 * Fill a message template's {placeholders}.
+	 *
+	 * @param string $key  Template option name.
+	 * @param array  $vars placeholder => value.
+	 */
+	public static function fill( $key, $vars ) {
+		$pairs = array();
+		foreach ( $vars as $name => $value ) {
+			$pairs[ '{' . $name . '}' ] = (string) $value;
+		}
+		return strtr( (string) self::opt( $key ), $pairs );
+	}
 
 	/** Shop's WhatsApp number, digits only (country code first, e.g. 62812...). */
 	public static function number() {
@@ -42,15 +92,23 @@ class Miroir_WA_Order {
 
 	/** Greeting line that opens every message. */
 	public static function greeting() {
-		/* translators: %s: shop name. */
-		return sprintf( __( "Hi %s, I'd like to order:", 'miroir' ), strtolower( get_bloginfo( 'name' ) ) );
+		return self::fill( 'miroir_wa_greeting', array( 'shop' => strtolower( get_bloginfo( 'name' ) ) ) );
 	}
 
 	/**
 	 * One message line: "1. Name — Size M × 1 — IDR 279,000".
 	 */
 	public static function line( $index, $name, $variant, $qty, $total ) {
-		return sprintf( '%d. %s — %s × %d — %s', $index, $name, $variant ? $variant : __( 'One size', 'miroir' ), $qty, $total );
+		return self::fill(
+			'miroir_wa_line',
+			array(
+				'n'       => (int) $index,
+				'name'    => $name,
+				'variant' => $variant ? $variant : self::opt( 'miroir_wa_one_size' ),
+				'qty'     => (int) $qty,
+				'price'   => $total,
+			)
+		);
 	}
 
 	/**
@@ -65,12 +123,13 @@ class Miroir_WA_Order {
 			$parent  = $product->is_type( 'variation' ) ? wc_get_product( $product->get_parent_id() ) : $product;
 			$total   = WC()->cart->get_product_subtotal( $product, $item['quantity'] );
 			$lines[] = array(
-				'name'       => $parent->get_name(),
-				'variant'    => function_exists( 'miroir_cart_item_variant' ) ? miroir_cart_item_variant( $item ) : '',
-				'qty'        => (int) $item['quantity'],
-				'total'      => html_entity_decode( wp_strip_all_tags( $total ), ENT_QUOTES, 'UTF-8' ),
-				'total_html' => $total,
-				'product'    => $parent,
+				'name'         => $parent->get_name(),
+				'variant'      => function_exists( 'miroir_cart_item_variant' ) ? miroir_cart_item_variant( $item ) : '',
+				'qty'          => (int) $item['quantity'],
+				'total'        => html_entity_decode( wp_strip_all_tags( $total ), ENT_QUOTES, 'UTF-8' ),
+				'total_html'   => $total,
+				'product'      => $parent,
+				'item_product' => $product,
 			);
 		}
 		return $lines;
@@ -92,18 +151,13 @@ class Miroir_WA_Order {
 			$out[] = self::line( $i + 1, $line['name'], $line['variant'], $line['qty'], $line['total'] );
 		}
 		$out[] = '';
-		/* translators: %s: subtotal. */
-		$out[] = sprintf( __( 'Subtotal: %s (excl. shipping)', 'miroir' ), $subtotal );
+		$out[] = self::fill( 'miroir_wa_subtotal', array( 'subtotal' => $subtotal ) );
 		$out[] = '';
-		/* translators: %s: customer name. */
-		$out[] = sprintf( __( 'Name: %s', 'miroir' ), $details['name'] );
-		/* translators: 1: city, 2: country. */
-		$out[] = sprintf( __( 'Deliver to: %1$s, %2$s', 'miroir' ), $details['city'], $details['country'] );
-		/* translators: %s: order notes. */
-		$out[] = sprintf( __( 'Notes: %s', 'miroir' ), '' !== $details['notes'] ? $details['notes'] : '—' );
+		$out[] = self::fill( 'miroir_wa_name', array( 'name' => $details['name'] ) );
+		$out[] = self::fill( 'miroir_wa_deliver', array( 'city' => $details['city'], 'country' => $details['country'] ) );
+		$out[] = self::fill( 'miroir_wa_notes', array( 'notes' => '' !== $details['notes'] ? $details['notes'] : '—' ) );
 		if ( $ref ) {
-			/* translators: %s: order number. */
-			$out[] = sprintf( __( 'Order ref: #%s', 'miroir' ), $ref );
+			$out[] = self::fill( 'miroir_wa_ref', array( 'ref' => $ref ) );
 		}
 		return implode( "\n", $out );
 	}
@@ -164,10 +218,10 @@ class Miroir_WA_Order {
 
 		$values    = self::field_values();
 		$countries = WC()->countries->get_allowed_countries();
-		$required  = array(
-			'name' => __( 'Full name', 'miroir' ),
-			'city' => __( 'Town / City', 'miroir' ),
-		);
+		$required  = array( 'name' => __( 'Full name', 'miroir' ) );
+		if ( 'yes' === self::opt( 'miroir_wa_require_city' ) ) {
+			$required['city'] = __( 'Town / City', 'miroir' );
+		}
 		foreach ( $required as $key => $label ) {
 			if ( '' === $values[ $key ] ) {
 				/* translators: %s: field label. */
@@ -201,7 +255,7 @@ class Miroir_WA_Order {
 		$order->set_shipping_city( $values['city'] );
 		$order->set_shipping_country( $values['country'] );
 		$order->set_customer_note( $values['notes'] );
-		$order->set_payment_method_title( __( 'Bank transfer after confirmation', 'miroir' ) );
+		$order->set_payment_method_title( self::opt( 'miroir_wa_payment_title' ) );
 		$order->set_currency( get_woocommerce_currency() );
 		$order->calculate_totals( false );
 
@@ -213,8 +267,8 @@ class Miroir_WA_Order {
 		);
 		$order->update_meta_data( self::META_MSG, self::message( $lines, $subtotal, $details, $order->get_order_number() ) );
 		$order->save();
-		// On hold = waiting for the team to confirm stock and shipping in WhatsApp; notifies the shop.
-		$order->update_status( 'on-hold', __( 'Order sent via WhatsApp; awaiting confirmation in chat.', 'miroir' ) );
+		// Default on hold = waiting for the team to confirm stock and shipping in WhatsApp; notifies the shop.
+		$order->update_status( self::opt( 'miroir_wa_order_status' ), __( 'Order sent via WhatsApp; awaiting confirmation in chat.', 'miroir' ) );
 
 		WC()->cart->empty_cart();
 		wp_safe_redirect( $order->get_checkout_order_received_url() );
@@ -238,6 +292,84 @@ class Miroir_WA_Order {
 	public static function product_message( $product ) {
 		$variant = $product->is_type( 'variable' ) ? '' : (string) $product->get_attribute( 'size' );
 		return self::greeting() . "\n\n" . self::line( 1, $product->get_name(), $variant, 1, self::price( wc_get_price_to_display( $product ) ) ) . "\n\n" . $product->get_permalink();
+	}
+
+	/** Fields of the WooCommerce > Settings > WhatsApp ordering tab. */
+	public static function settings() {
+		$d        = self::defaults();
+		$template = function ( $id, $title, $placeholders ) use ( $d ) {
+			return array(
+				'id'          => $id,
+				'title'       => $title,
+				'type'        => 'text',
+				'css'         => 'min-width: 420px;',
+				'placeholder' => $d[ $id ],
+				/* translators: %s: list of placeholders. */
+				'desc'        => sprintf( __( 'Placeholders: %s. Leave empty for the default.', 'miroir' ), $placeholders ),
+			);
+		};
+		$statuses = array_intersect_key( wc_get_order_statuses(), array_flip( array( 'wc-on-hold', 'wc-pending', 'wc-processing' ) ) );
+		return array(
+			array( 'id' => 'miroir_wa_general', 'type' => 'title', 'title' => __( 'WhatsApp ordering', 'miroir' ), 'desc' => __( 'Customers order by sending a prefilled WhatsApp message to this number; each order is also saved in WooCommerce.', 'miroir' ) ),
+			array(
+				'id'          => 'miroir_wa_number',
+				'title'       => __( 'WhatsApp number', 'miroir' ),
+				'type'        => 'text',
+				'placeholder' => '62812…',
+				'desc'        => __( 'Country code first, digits only (spaces and + are ignored).', 'miroir' ),
+			),
+			array(
+				'id'      => 'miroir_wa_order_status',
+				'title'   => __( 'Status of new orders', 'miroir' ),
+				'type'    => 'select',
+				'default' => $d['miroir_wa_order_status'],
+				// Keys without the "wc-" prefix, as update_status() expects.
+				'options' => array_combine( array_map( fn( $s ) => substr( $s, 3 ), array_keys( $statuses ) ), $statuses ),
+			),
+			array(
+				'id'          => 'miroir_wa_payment_title',
+				'title'       => __( 'Payment method shown on orders', 'miroir' ),
+				'type'        => 'text',
+				'placeholder' => $d['miroir_wa_payment_title'],
+				'css'         => 'min-width: 420px;',
+			),
+			array(
+				'id'      => 'miroir_wa_require_city',
+				'title'   => __( 'Require town / city', 'miroir' ),
+				'type'    => 'checkbox',
+				'default' => $d['miroir_wa_require_city'],
+				'desc'    => __( 'Customers must fill in their town or city on the review page.', 'miroir' ),
+			),
+			array( 'id' => 'miroir_wa_general', 'type' => 'sectionend' ),
+
+			array( 'id' => 'miroir_wa_message', 'type' => 'title', 'title' => __( 'Message wording', 'miroir' ), 'desc' => __( 'The order message customers send. Lines appear in this order, with blank lines between the greeting, the products, the subtotal and the details.', 'miroir' ) ),
+			$template( 'miroir_wa_greeting', __( 'Greeting', 'miroir' ), '{shop}' ),
+			$template( 'miroir_wa_line', __( 'Product line', 'miroir' ), '{n} {name} {variant} {qty} {price}' ),
+			$template( 'miroir_wa_one_size', __( 'Size for products without sizes', 'miroir' ), '—' ),
+			$template( 'miroir_wa_subtotal', __( 'Subtotal line', 'miroir' ), '{subtotal}' ),
+			$template( 'miroir_wa_name', __( 'Name line', 'miroir' ), '{name}' ),
+			$template( 'miroir_wa_deliver', __( 'Delivery line', 'miroir' ), '{city} {country}' ),
+			$template( 'miroir_wa_notes', __( 'Notes line', 'miroir' ), '{notes}' ),
+			$template( 'miroir_wa_ref', __( 'Order reference line', 'miroir' ), '{ref}' ),
+			array( 'id' => 'miroir_wa_message', 'type' => 'sectionend' ),
+
+			array( 'id' => 'miroir_wa_timing', 'type' => 'title', 'title' => __( 'Order sent page', 'miroir' ) ),
+			array(
+				'id'                => 'miroir_wa_open_delay',
+				'title'             => __( 'Open WhatsApp after (ms)', 'miroir' ),
+				'type'              => 'number',
+				'default'           => $d['miroir_wa_open_delay'],
+				'custom_attributes' => array( 'min' => 0, 'step' => 100 ),
+			),
+			array(
+				'id'                => 'miroir_wa_fallback_delay',
+				'title'             => __( 'Show "WhatsApp didn’t open" help after (ms)', 'miroir' ),
+				'type'              => 'number',
+				'default'           => $d['miroir_wa_fallback_delay'],
+				'custom_attributes' => array( 'min' => 1000, 'step' => 500 ),
+			),
+			array( 'id' => 'miroir_wa_timing', 'type' => 'sectionend' ),
+		);
 	}
 }
 
@@ -321,9 +453,10 @@ add_action(
 				array(
 					'number'   => Miroir_WA_Order::number(),
 					'greeting' => Miroir_WA_Order::greeting(),
+					'line'     => Miroir_WA_Order::opt( 'miroir_wa_line' ),
 					'name'     => $product ? $product->get_name() : '',
 					'url'      => $product ? $product->get_permalink() : '',
-					'oneSize'  => __( 'One size', 'miroir' ),
+					'oneSize'  => Miroir_WA_Order::opt( 'miroir_wa_one_size' ),
 					// WooCommerce leaves price_html empty when all variations cost the same; format display_price instead.
 					'currency' => array(
 						'symbol'    => html_entity_decode( get_woocommerce_currency_symbol(), ENT_QUOTES, 'UTF-8' ),
@@ -349,12 +482,11 @@ add_action(
 						Miroir_WA_Order::cart_lines(),
 						array_keys( Miroir_WA_Order::cart_lines() )
 					),
-					/* translators: %s: subtotal. */
-					'subtotal'    => sprintf( __( 'Subtotal: %s (excl. shipping)', 'miroir' ), html_entity_decode( wp_strip_all_tags( WC()->cart->get_cart_subtotal() ), ENT_QUOTES, 'UTF-8' ) ),
+					'subtotal'    => Miroir_WA_Order::fill( 'miroir_wa_subtotal', array( 'subtotal' => html_entity_decode( wp_strip_all_tags( WC()->cart->get_cart_subtotal() ), ENT_QUOTES, 'UTF-8' ) ) ),
 					'labels'      => array(
-						'name'    => __( 'Name: %s', 'miroir' ),
-						'deliver' => __( 'Deliver to: %1$s, %2$s', 'miroir' ),
-						'notes'   => __( 'Notes: %s', 'miroir' ),
+						'name'    => Miroir_WA_Order::opt( 'miroir_wa_name' ),
+						'deliver' => Miroir_WA_Order::opt( 'miroir_wa_deliver' ),
+						'notes'   => Miroir_WA_Order::opt( 'miroir_wa_notes' ),
 					),
 					'placeholder' => array(
 						'name' => __( 'Full Name', 'miroir' ),
@@ -365,6 +497,52 @@ add_action(
 		}
 		if ( is_wc_endpoint_url( 'order-received' ) ) {
 			wp_enqueue_script( 'miroir-wa-sent', $base . 'sent.js', array(), MIROIR_WA_VERSION, true );
+			wp_localize_script(
+				'miroir-wa-sent',
+				'miroirWaSent',
+				array(
+					'openDelay'     => absint( Miroir_WA_Order::opt( 'miroir_wa_open_delay' ) ),
+					'fallbackDelay' => absint( Miroir_WA_Order::opt( 'miroir_wa_fallback_delay' ) ),
+				)
+			);
 		}
+	}
+);
+
+// WooCommerce > Settings > WhatsApp ordering.
+add_filter(
+	'woocommerce_settings_tabs_array',
+	function ( $tabs ) {
+		$tabs[ Miroir_WA_Order::TAB ] = __( 'WhatsApp ordering', 'miroir' );
+		return $tabs;
+	},
+	50
+);
+add_action(
+	'woocommerce_settings_tabs_' . Miroir_WA_Order::TAB,
+	function () {
+		woocommerce_admin_fields( Miroir_WA_Order::settings() );
+	}
+);
+add_action(
+	'woocommerce_update_options_' . Miroir_WA_Order::TAB,
+	function () {
+		woocommerce_update_options( Miroir_WA_Order::settings() );
+	}
+);
+
+// Without a number every WhatsApp button opens an empty chat.
+add_action(
+	'admin_notices',
+	function () {
+		if ( Miroir_WA_Order::number() || ! current_user_can( 'manage_woocommerce' ) ) {
+			return;
+		}
+		printf(
+			'<div class="notice notice-warning"><p>%s <a href="%s">%s</a></p></div>',
+			esc_html__( 'WhatsApp ordering has no shop number yet, so order buttons cannot reach you.', 'miroir' ),
+			esc_url( admin_url( 'admin.php?page=wc-settings&tab=' . Miroir_WA_Order::TAB ) ),
+			esc_html__( 'Set the WhatsApp number', 'miroir' )
+		);
 	}
 );

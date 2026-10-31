@@ -16,13 +16,13 @@ defined( 'ABSPATH' ) || exit;
 function miroir_notice_title( $type, $message ) {
 	$text  = wp_strip_all_tags( $message );
 	$known = array(
-		'/password.*(incorrect|not registered)|unknown (email|username)|error: the username/i' => __( 'Incorrect login', 'miroir' ),
-		'/account details changed|address changed/i'                                       => __( 'Changes saved', 'miroir' ),
-		'/(key|link) (is )?(invalid|expired)|invalid key/i'                                => __( 'Reset link expired', 'miroir' ),
-		'/added to your cart|added to your bag/i'                                           => __( 'Added to your bag', 'miroir' ),
-		'/removed/i'                                                                        => __( 'Removed from your bag', 'miroir' ),
-		'/not enough|in stock|out of stock/i'                                               => __( 'Your bag needs an update', 'miroir' ),
-		'/choose product options|select some product options/i'                             => __( 'Choose a size to continue', 'miroir' ),
+		'/password.*(incorrect|not registered)|unknown (email|username)|error: the username/i' => miroir_text( 'notice_login' ),
+		'/account details changed|address changed/i'                                       => miroir_text( 'notice_saved' ),
+		'/(key|link) (is )?(invalid|expired)|invalid key/i'                                => miroir_text( 'notice_reset' ),
+		'/added to your cart|added to your bag/i'                                           => miroir_text( 'added_notice' ),
+		'/removed/i'                                                                        => miroir_text( 'notice_removed' ),
+		'/not enough|in stock|out of stock/i'                                               => miroir_text( 'stock_notice' ),
+		'/choose product options|select some product options/i'                             => miroir_text( 'choose_notice' ),
 	);
 	foreach ( $known as $pattern => $title ) {
 		if ( preg_match( $pattern, $text ) ) {
@@ -30,9 +30,9 @@ function miroir_notice_title( $type, $message ) {
 		}
 	}
 	$titles = array(
-		'error'   => __( 'Please check', 'miroir' ),
-		'success' => __( 'Done', 'miroir' ),
-		'notice'  => __( 'Note', 'miroir' ),
+		'error'   => miroir_text( 'notice_error' ),
+		'success' => miroir_text( 'notice_success' ),
+		'notice'  => miroir_text( 'notice_info' ),
 	);
 	return $titles[ $type ] ?? $titles['notice'];
 }

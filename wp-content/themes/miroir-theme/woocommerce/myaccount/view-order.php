@@ -21,14 +21,14 @@ $region   = implode( ', ', array_filter( array( $order->get_shipping_city(), $or
 $wa_url   = function_exists( 'miroir_wa_order_url' ) && $order->get_meta( '_miroir_wa_message' ) ? miroir_wa_order_url( $order ) : apply_filters( 'miroir_whatsapp_url', '' );
 ?>
 <?php /* translators: %s: order number. */ ?>
-<h2 class="flow__heading"><?php echo esc_html( sprintf( __( 'Order #%s', 'miroir' ), $order->get_order_number() ) ); ?></h2>
+<h2 class="flow__heading"><?php echo esc_html( miroir_text( 'order_number', $order->get_order_number() ) ); ?></h2>
 <p class="flow__intro"><?php echo esc_html( wc_format_datetime( $order->get_date_created(), 'j F Y' ) . ' · ' . wc_get_order_status_name( $order->get_status() ) ); ?></p>
 <?php if ( $waiting ) : ?>
-	<p class="flow__intro"><?php esc_html_e( 'Our team will confirm payment and shipping in WhatsApp.', 'miroir' ); ?></p>
+	<p class="flow__intro"><?php echo esc_html( miroir_text( 'order_confirm_note' ) ); ?></p>
 <?php endif; ?>
 
 <section class="flow__section hair-t">
-	<h3 class="flow__label"><?php esc_html_e( 'Items', 'miroir' ); ?></h3>
+	<h3 class="flow__label"><?php echo esc_html( miroir_text( 'order_items' ) ); ?></h3>
 	<div class="flow__copy">
 		<?php foreach ( $lines as $line ) : ?>
 			<p><?php echo esc_html( $line['name'] . ( $line['variant'] ? ' · ' . $line['variant'] : '' ) . ' × ' . $line['qty'] ); ?></p>
@@ -37,12 +37,12 @@ $wa_url   = function_exists( 'miroir_wa_order_url' ) && $order->get_meta( '_miro
 	</div>
 </section>
 
-<div class="totals-row"><span><?php esc_html_e( 'Subtotal', 'miroir' ); ?></span><span><?php echo wp_kses_post( wc_price( $order->get_subtotal(), $currency ) ); ?></span></div>
-<div class="totals-row"><span><?php esc_html_e( 'Shipping', 'miroir' ); ?></span><span><?php echo $waiting ? esc_html__( 'Awaiting confirmation', 'miroir' ) : wp_kses_post( wc_price( $order->get_shipping_total(), $currency ) ); ?></span></div>
-<div class="totals-row"><span><?php esc_html_e( 'Payment', 'miroir' ); ?></span><span><?php echo esc_html( $order->is_paid() ? __( 'Bank transfer · paid', 'miroir' ) : __( 'Bank transfer · pending', 'miroir' ) ); ?></span></div>
+<div class="totals-row"><span><?php echo esc_html( miroir_text( 'subtotal' ) ); ?></span><span><?php echo wp_kses_post( wc_price( $order->get_subtotal(), $currency ) ); ?></span></div>
+<div class="totals-row"><span><?php echo esc_html( miroir_text( 'shipping' ) ); ?></span><span><?php echo $waiting ? esc_html( miroir_text( 'order_awaiting' ) ) : wp_kses_post( wc_price( $order->get_shipping_total(), $currency ) ); ?></span></div>
+<div class="totals-row"><span><?php echo esc_html( miroir_text( 'payment' ) ); ?></span><span><?php echo esc_html( $order->is_paid() ? miroir_text( 'order_paid' ) : miroir_text( 'order_pending' ) ); ?></span></div>
 
 <section class="flow__section hair-t">
-	<h3 class="flow__label"><?php esc_html_e( 'Delivery details', 'miroir' ); ?></h3>
+	<h3 class="flow__label"><?php echo esc_html( miroir_text( 'order_delivery' ) ); ?></h3>
 	<div class="flow__copy">
 		<p><?php echo esc_html( trim( $order->get_shipping_first_name() . ' ' . $order->get_shipping_last_name() ) ); ?></p>
 		<?php if ( $street ) : ?>
@@ -53,6 +53,6 @@ $wa_url   = function_exists( 'miroir_wa_order_url' ) && $order->get_meta( '_miro
 </section>
 
 <?php if ( $wa_url ) : ?>
-	<a class="btn btn--primary btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Contact us on WhatsApp', 'miroir' ); ?></a>
+	<a class="btn btn--primary btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'contact_whatsapp' ) ); ?></a>
 <?php endif; ?>
-<a class="btn btn--block" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>"><?php esc_html_e( 'Back to orders', 'miroir' ); ?></a>
+<a class="btn btn--block" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>"><?php echo esc_html( miroir_text( 'back_to_orders' ) ); ?></a>

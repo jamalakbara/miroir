@@ -12,10 +12,14 @@ define( 'MIROIR_THEME_VERSION', '0.1.0' );
 define( 'MIROIR_THEME_DIR', get_template_directory() );
 define( 'MIROIR_THEME_URI', get_template_directory_uri() );
 
+require MIROIR_THEME_DIR . '/inc/customizer/registry.php';
+require MIROIR_THEME_DIR . '/inc/customizer/text.php';
+require MIROIR_THEME_DIR . '/inc/customizer/customizer.php';
 require MIROIR_THEME_DIR . '/inc/setup.php';
 require MIROIR_THEME_DIR . '/inc/icons.php';
 require MIROIR_THEME_DIR . '/inc/template-tags.php';
 require MIROIR_THEME_DIR . '/inc/maintenance.php';
+require MIROIR_THEME_DIR . '/inc/blocks.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require MIROIR_THEME_DIR . '/inc/woocommerce.php';

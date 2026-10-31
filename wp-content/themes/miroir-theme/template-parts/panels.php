@@ -27,8 +27,8 @@ $close = function ( $label ) {
 ?>
 <div class="flow panel" id="nav-panel" data-panel="nav"<?php echo 'nav' === $open ? '' : ' hidden'; ?>>
 	<nav class="flow__col" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">
-		<h2 class="flow__title"><?php esc_html_e( 'Menu', 'miroir' ); ?></h2>
-		<?php $close( __( 'Close menu', 'miroir' ) ); ?>
+		<h2 class="flow__title"><?php echo esc_html( miroir_text( 'menu_title' ) ); ?></h2>
+		<?php $close( miroir_text( 'menu_close' ) ); ?>
 		<?php
 		$locations = get_nav_menu_locations();
 		$items     = ! empty( $locations['panel-nav'] ) ? wp_get_nav_menu_items( $locations['panel-nav'] ) : array();
@@ -45,34 +45,28 @@ $close = function ( $label ) {
 			$row( __( 'Customer care', 'miroir' ), miroir_page_url( 'contact' ) );
 		}
 		?>
-		<?php /* translators: %s: current currency code. */ ?>
-		<a class="flow__label panel__shortcut" href="<?php echo esc_url( add_query_arg( 'panel', 'currency' ) ); ?>" data-panel-open="currency"><?php echo esc_html( sprintf( __( 'Currency · %s', 'miroir' ), function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : 'IDR' ) ); ?></a>
+		<a class="flow__label panel__shortcut" href="<?php echo esc_url( add_query_arg( 'panel', 'currency' ) ); ?>" data-panel-open="currency"><?php echo esc_html( miroir_text( 'menu_currency', function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : 'IDR' ) ); ?></a>
 	</nav>
 </div>
 
 <dialog class="flow panel panel--modal" id="search-panel" data-panel="search" aria-labelledby="search-panel-title"<?php echo 'search' === $open ? ' open' : ''; ?>>
 	<div class="flow__col">
-		<h2 class="flow__title" id="search-panel-title"><?php esc_html_e( 'Search', 'miroir' ); ?></h2>
-		<?php $close( __( 'Close search', 'miroir' ) ); ?>
+		<h2 class="flow__title" id="search-panel-title"><?php echo esc_html( miroir_text( 'search_title' ) ); ?></h2>
+		<?php $close( miroir_text( 'search_close' ) ); ?>
 		<form class="flow__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php miroir_field( array( 'name' => 's', 'id' => 'panel-search', 'type' => 'search', 'label' => __( 'Search products', 'miroir' ), 'placeholder' => __( 'Linen shirt', 'miroir' ), 'class' => 'field--quiet' ) ); ?>
+			<?php miroir_field( array( 'name' => 's', 'id' => 'panel-search', 'type' => 'search', 'label' => miroir_text( 'search_label' ), 'placeholder' => miroir_text( 'search_placeholder' ), 'class' => 'field--quiet' ) ); ?>
 			<input type="hidden" name="post_type" value="product">
-			<button class="btn btn--primary btn--block" type="submit"><?php esc_html_e( 'Search', 'miroir' ); ?></button>
+			<button class="btn btn--primary btn--block" type="submit"><?php echo esc_html( miroir_text( 'search_submit' ) ); ?></button>
 		</form>
-		<p class="flow__label"><?php esc_html_e( 'POPULAR SEARCHES', 'miroir' ); ?></p>
-		<?php
-		$popular = apply_filters(
-			'miroir_popular_searches',
-			array(
-				__( 'Shirts', 'miroir' )       => add_query_arg( array( 's' => 'shirt', 'post_type' => 'product' ), home_url( '/' ) ),
-				__( 'Dresses', 'miroir' )      => miroir_cat_url( 'dress' ),
-				__( 'New arrivals', 'miroir' ) => miroir_cat_url( 'new-collection' ),
-			)
-		);
-		foreach ( $popular as $label => $url ) {
-			$row( $label, $url );
-		}
-		?>
+		<?php $popular = miroir_popular_searches(); ?>
+		<?php if ( $popular ) : ?>
+			<p class="flow__label"><?php echo esc_html( miroir_text( 'search_popular' ) ); ?></p>
+			<?php
+			foreach ( $popular as $label => $url ) {
+				$row( $label, $url );
+			}
+			?>
+		<?php endif; ?>
 	</div>
 </dialog>
 

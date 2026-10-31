@@ -12,7 +12,16 @@ add_action(
 
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
-		add_theme_support( 'woocommerce' );
+		// Photos are cover-cropped by CSS into the lofi's boxes, so WooCommerce keeps them uncropped.
+		add_theme_support(
+			'woocommerce',
+			array(
+				'thumbnail_image_width'         => 600,
+				'single_image_width'            => 1200,
+				'gallery_thumbnail_image_width' => 200,
+			)
+		);
+		add_theme_support( 'custom-logo', array( 'flex-width' => true, 'flex-height' => true ) );
 
 		register_nav_menus(
 			array(
@@ -64,7 +73,11 @@ add_action(
 add_action(
 	'wp_head',
 	function () {
-		foreach ( array( 'inter-tight-var-latin', 'dm-mono-400-latin' ) as $font ) {
+		$fonts = array(
+			'inter-tight-var-latin' => 'inter-tight' === miroir_mod( 'font_sans' ),
+			'dm-mono-400-latin'     => 'dm-mono' === miroir_mod( 'font_mono' ),
+		);
+		foreach ( array_keys( array_filter( $fonts ) ) as $font ) {
 			printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( MIROIR_THEME_URI . "/assets/fonts/{$font}.woff2" ) );
 		}
 	},

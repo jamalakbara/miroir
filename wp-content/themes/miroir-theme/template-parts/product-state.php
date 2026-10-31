@@ -21,12 +21,12 @@ if ( $product->is_type( 'variable' ) ) {
 	$default = $product->get_default_attributes();
 	$size    = $default ? (string) reset( $default ) : (string) ( $first ? reset( $first ) : '' );
 }
-$size = $size ? $size : __( 'One size', 'miroir' );
+$size = $size ? $size : miroir_text( 'one_size' );
 
 $titles = array(
-	'sold-out'    => __( 'Sold out', 'miroir' ),
-	'choose-size' => __( 'Choose a size', 'miroir' ),
-	'added'       => __( 'Added to bag', 'miroir' ),
+	'sold-out'    => miroir_text( 'state_sold_out' ),
+	'choose-size' => miroir_text( 'state_choose' ),
+	'added'       => miroir_text( 'state_added' ),
 );
 ?>
 <div class="flow product-state">
@@ -42,24 +42,24 @@ $titles = array(
 				$line[] = miroir_cart_item_variant( $item );
 			}
 			/* translators: %d: quantity. */
-			$line[] = sprintf( __( 'Quantity %d', 'miroir' ), $item ? (int) $item['quantity'] : 1 );
+			$line[] = miroir_text( 'state_quantity', $item ? (int) $item['quantity'] : 1 );
 			?>
 			<div class="notice notice--flat" role="status">
-				<p class="notice__title"><?php esc_html_e( 'Added to your bag', 'miroir' ); ?></p>
+				<p class="notice__title"><?php echo esc_html( miroir_text( 'added_notice' ) ); ?></p>
 				<p class="notice__text"><?php echo esc_html( implode( ' · ', $line ) ); ?></p>
 			</div>
-			<?php miroir_ph( 'product-state__image product-state__image--small', $product->get_name() ); ?>
+			<?php miroir_image( miroir_product_image_id( $item ? $item['data'] : $product ), 'woocommerce_single', 'product-state__image product-state__image--small', $product->get_name() ); ?>
 			<p class="flow__intro">
 				<?php
 				/* translators: 1: number of items, 2: bag subtotal. */
-				echo wp_kses_post( sprintf( __( 'Bag (%1$d) · Subtotal %2$s', 'miroir' ), miroir_bag_count(), WC()->cart->get_cart_subtotal() ) );
+				echo wp_kses_post( miroir_text( 'state_bag_line', miroir_bag_count(), WC()->cart->get_cart_subtotal() ) );
 				?>
 			</p>
-			<p class="flow__intro"><?php esc_html_e( 'Shipping and the final total are confirmed in WhatsApp.', 'miroir' ); ?></p>
-			<a class="btn btn--primary btn--block" href="<?php echo esc_url( wc_get_cart_url() ); ?>"><?php esc_html_e( 'View bag', 'miroir' ); ?></a>
-			<a class="btn btn--block" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_html_e( 'Continue shopping', 'miroir' ); ?></a>
+			<p class="flow__intro"><?php echo esc_html( miroir_text( 'state_added_note' ) ); ?></p>
+			<a class="btn btn--primary btn--block" href="<?php echo esc_url( wc_get_cart_url() ); ?>"><?php echo esc_html( miroir_text( 'view_bag' ) ); ?></a>
+			<a class="btn btn--block" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php echo esc_html( miroir_text( 'continue_shopping' ) ); ?></a>
 		<?php else : ?>
-			<?php miroir_ph( 'product-state__image', $product->get_name() ); ?>
+			<?php miroir_image( miroir_product_image_id( $product ), 'woocommerce_single', 'product-state__image', $product->get_name() ); ?>
 			<h2 class="product-state__name"><?php echo esc_html( $product->get_name() ); ?></h2>
 			<p class="flow__intro"><?php echo wp_kses_post( $price ); ?></p>
 
@@ -70,20 +70,20 @@ $titles = array(
 						'name'    => 'size',
 						'id'      => 'state-size',
 						'type'    => 'select',
-						'label'   => __( 'Size *', 'miroir' ),
+						'label'   => miroir_text( 'size_label' ),
 						/* translators: %s: size. */
-						'options' => array( '' => sprintf( __( '%s · unavailable', 'miroir' ), $size ) ),
+						'options' => array( '' => miroir_text( 'size_unavailable', $size ) ),
 						'class'   => 'field--quiet field--disabled',
 					)
 				);
 				?>
 				<div class="notice notice--flat" role="status">
-					<p class="notice__title"><?php esc_html_e( 'This size is sold out', 'miroir' ); ?></p>
-					<p class="notice__text"><?php esc_html_e( 'Try another size or ask our team about availability.', 'miroir' ); ?></p>
+					<p class="notice__title"><?php echo esc_html( miroir_text( 'sold_out_notice' ) ); ?></p>
+					<p class="notice__text"><?php echo esc_html( miroir_text( 'sold_out_text' ) ); ?></p>
 				</div>
-				<p class="disabled-bar" aria-disabled="true"><?php esc_html_e( 'Out of stock', 'miroir' ); ?></p>
+				<p class="disabled-bar" aria-disabled="true"><?php echo esc_html( miroir_text( 'out_of_stock' ) ); ?></p>
 				<?php if ( $wa_url ) : ?>
-					<a class="btn btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Ask about availability', 'miroir' ); ?></a>
+					<a class="btn btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'ask_availability' ) ); ?></a>
 				<?php endif; ?>
 			<?php else : ?>
 				<?php wp_enqueue_script( 'wc-add-to-cart-variation' ); ?>
@@ -101,28 +101,28 @@ $titles = array(
 									'product'          => $product,
 									'selected'         => '',
 									'class'            => 'field__input field__input--select',
-									'show_option_none' => __( 'Select a size', 'miroir' ),
+									'show_option_none' => miroir_text( 'select_size' ),
 								)
 							);
 							?>
 						</div>
 					<?php endforeach; ?>
 					<div class="notice notice--flat" role="status">
-						<p class="notice__title"><?php esc_html_e( 'Choose a size to continue', 'miroir' ); ?></p>
-						<p class="notice__text"><?php esc_html_e( 'Please select a size before adding this product to your bag.', 'miroir' ); ?></p>
+						<p class="notice__title"><?php echo esc_html( miroir_text( 'choose_notice' ) ); ?></p>
+						<p class="notice__text"><?php echo esc_html( miroir_text( 'choose_text' ) ); ?></p>
 					</div>
 					<div class="single_variation_wrap">
 						<div class="woocommerce-variation single_variation screen-reader-text" aria-live="polite"></div>
 						<div class="woocommerce-variation-add-to-cart variations_button">
 							<input type="hidden" name="quantity" value="1">
-							<button type="submit" class="single_add_to_cart_button disabled-bar disabled"><?php esc_html_e( 'Add to bag', 'miroir' ); ?></button>
+							<button type="submit" class="single_add_to_cart_button disabled-bar disabled"><?php echo esc_html( miroir_text( 'add_to_bag' ) ); ?></button>
 							<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>">
 							<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>">
 							<input type="hidden" name="variation_id" class="variation_id" value="0">
 						</div>
 					</div>
 				</form>
-				<a class="btn btn--block" href="<?php echo esc_url( miroir_page_url( 'size-guide' ) ); ?>"><?php esc_html_e( 'View size guide', 'miroir' ); ?></a>
+				<a class="btn btn--block" href="<?php echo esc_url( miroir_page_url( 'size-guide' ) ); ?>"><?php echo esc_html( miroir_text( 'size_guide_link' ) ); ?></a>
 			<?php endif; ?>
 		<?php endif; ?>
 	</div>

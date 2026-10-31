@@ -56,7 +56,7 @@ if ( $product->is_type( 'variable' ) ) :
 			<label class="screen-reader-text" for="size-static"><?php esc_html_e( 'Size', 'miroir' ); ?></label>
 			<div class="field__control">
 				<select class="field__input field__input--select" id="size-static" disabled>
-					<option><?php echo esc_html( $product->get_attribute( 'size' ) ? $product->get_attribute( 'size' ) : __( 'One size', 'miroir' ) ); ?></option>
+					<option><?php echo esc_html( $product->get_attribute( 'size' ) ? $product->get_attribute( 'size' ) : miroir_text( 'one_size' ) ); ?></option>
 				</select>
 				<?php echo $chevron; // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
 			</div>
@@ -69,7 +69,7 @@ if ( $product->is_type( 'variable' ) ) :
 <?php if ( $wa_url ) : ?>
 	<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener" data-wa-product="<?php echo absint( $product->get_id() ); ?>">
 		<?php echo miroir_icon( 'message-circle', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
-		<?php esc_html_e( 'Order via WhatsApp', 'miroir' ); ?>
+		<?php echo esc_html( miroir_text( 'order_whatsapp' ) ); ?>
 	</a>
-	<p class="buy-hint"><?php esc_html_e( 'Opens WhatsApp with this product, size and price filled in.', 'miroir' ); ?></p>
+	<p class="buy-hint"><?php echo esc_html( miroir_text( 'buy_hint' ) ); ?></p>
 <?php endif; ?>

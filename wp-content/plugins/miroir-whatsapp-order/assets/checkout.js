@@ -19,10 +19,10 @@
 		return field.value.trim();
 	}
 
-	function format( template, args ) {
-		var i = 0;
-		return template.replace( /%(\d)\$s|%s/g, function ( match, n ) {
-			return args[ n ? n - 1 : i++ ];
+	/* Same {placeholder} templates as Miroir_WA_Order::fill() (WooCommerce > Settings > WhatsApp ordering). */
+	function fill( template, vars ) {
+		return template.replace( /\{(\w+)\}/g, function ( match, key ) {
+			return Object.prototype.hasOwnProperty.call( vars, key ) ? vars[ key ] : match;
 		} );
 	}
 
@@ -31,9 +31,9 @@
 			'',
 			data.subtotal,
 			'',
-			format( data.labels.name, [ value( 'wa_name' ) || data.placeholder.name ] ),
-			format( data.labels.deliver, [ value( 'wa_city' ) || data.placeholder.city, value( 'wa_country' ) ] ),
-			format( data.labels.notes, [ value( 'wa_notes' ) || '—' ] ),
+			fill( data.labels.name, { name: value( 'wa_name' ) || data.placeholder.name } ),
+			fill( data.labels.deliver, { city: value( 'wa_city' ) || data.placeholder.city, country: value( 'wa_country' ) } ),
+			fill( data.labels.notes, { notes: value( 'wa_notes' ) || '—' } ),
 		] );
 		preview.textContent = lines.join( '\n' );
 	}

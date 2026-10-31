@@ -19,16 +19,16 @@ if ( $stock_problem ) {
 ?>
 <div class="wrap cart-wrap">
 	<div class="wrap__col cart">
-		<h1 class="page-title"><?php esc_html_e( 'Bag', 'miroir' ); ?></h1>
+		<h1 class="page-title"><?php echo esc_html( miroir_text( 'bag_title' ) ); ?></h1>
 		<?php woocommerce_output_all_notices(); ?>
 
 		<form class="woocommerce-cart-form cart-table" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post" data-cart-form>
 			<div class="woocommerce-cart-form__contents cart-table__body">
 			<div class="cart-table__head hair-b" aria-hidden="true">
-				<span class="cart-table__cell cart-table__cell--product"><?php esc_html_e( 'product', 'miroir' ); ?></span>
-				<span class="cart-table__cell"><?php esc_html_e( 'price', 'miroir' ); ?></span>
-				<span class="cart-table__cell"><?php esc_html_e( 'quantity', 'miroir' ); ?></span>
-				<span class="cart-table__cell cart-table__cell--end"><?php esc_html_e( 'subtotal', 'miroir' ); ?></span>
+				<span class="cart-table__cell cart-table__cell--product"><?php echo esc_html( miroir_text( 'col_product' ) ); ?></span>
+				<span class="cart-table__cell"><?php echo esc_html( miroir_text( 'col_price' ) ); ?></span>
+				<span class="cart-table__cell"><?php echo esc_html( miroir_text( 'col_quantity' ) ); ?></span>
+				<span class="cart-table__cell cart-table__cell--end"><?php echo esc_html( miroir_text( 'col_subtotal' ) ); ?></span>
 			</div>
 
 			<?php
@@ -43,14 +43,14 @@ if ( $stock_problem ) {
 				?>
 				<div class="cart-item cart_item hair-b">
 					<div class="cart-table__cell cart-table__cell--product cart-item__product">
-						<?php miroir_ph( 'cart-item__thumb', $name, 18 ); ?>
+						<?php miroir_image( miroir_product_image_id( $_product ), 'woocommerce_thumbnail', 'cart-item__thumb', $name, 18 ); ?>
 						<div class="cart-item__meta">
 							<p class="cart-item__name"><?php echo $link ? '<a href="' . esc_url( $link ) . '">' . esc_html( $name ) . '</a>' : esc_html( $name ); ?></p>
 							<?php $variant = miroir_cart_item_variant( $cart_item ); ?>
 							<?php if ( $variant ) : ?>
 								<p class="cart-item__variant"><?php echo esc_html( $variant ); ?></p>
 							<?php endif; ?>
-							<a class="cart-item__remove" href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: product name. */ __( 'Remove %s from bag', 'miroir' ), $name ) ); ?>"><?php esc_html_e( 'Remove', 'miroir' ); ?></a>
+							<a class="cart-item__remove" href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: product name. */ __( 'Remove %s from bag', 'miroir' ), $name ) ); ?>"><?php echo esc_html( miroir_text( 'remove' ) ); ?></a>
 						</div>
 					</div>
 					<div class="cart-table__cell cart-item__price"><?php echo WC()->cart->get_product_price( $_product ); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
@@ -78,17 +78,17 @@ if ( $stock_problem ) {
 
 		<div class="cart-footer">
 			<div class="notice cart-footer__note">
-				<p class="notice__title"><?php esc_html_e( 'ordering via whatsapp', 'miroir' ); ?></p>
-				<p class="notice__text"><?php esc_html_e( 'No online payment here. Your bag is sent to our team as a WhatsApp message; we confirm stock, shipping cost and any promo in the chat.', 'miroir' ); ?></p>
+				<p class="notice__title"><?php echo esc_html( miroir_text( 'bag_note_title' ) ); ?></p>
+				<p class="notice__text"><?php echo esc_html( miroir_text( 'bag_note' ) ); ?></p>
 			</div>
 
 			<div class="cart-totals cart_totals">
-				<p class="cart-totals__title"><?php esc_html_e( 'bag totals', 'miroir' ); ?></p>
-				<div class="totals-row"><span><?php esc_html_e( 'Subtotal', 'miroir' ); ?></span><span><?php wc_cart_totals_subtotal_html(); ?></span></div>
-				<div class="totals-row"><span><?php esc_html_e( 'Shipping', 'miroir' ); ?></span><span class="totals-row__muted"><?php esc_html_e( 'Confirmed in WhatsApp', 'miroir' ); ?></span></div>
-				<div class="totals-row totals-row--total"><span><?php esc_html_e( 'Estimated total', 'miroir' ); ?></span><span><?php wc_cart_totals_subtotal_html(); ?></span></div>
-				<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( wc_get_checkout_url() ); ?>"><?php echo miroir_icon( 'message-circle', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php esc_html_e( 'Checkout via WhatsApp', 'miroir' ); ?></a>
-				<a class="btn-link" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_html_e( 'Continue shopping', 'miroir' ); ?></a>
+				<p class="cart-totals__title"><?php echo esc_html( miroir_text( 'bag_totals' ) ); ?></p>
+				<div class="totals-row"><span><?php echo esc_html( miroir_text( 'subtotal' ) ); ?></span><span><?php wc_cart_totals_subtotal_html(); ?></span></div>
+				<div class="totals-row"><span><?php echo esc_html( miroir_text( 'shipping' ) ); ?></span><span class="totals-row__muted"><?php echo esc_html( miroir_text( 'shipping_note' ) ); ?></span></div>
+				<div class="totals-row totals-row--total"><span><?php echo esc_html( miroir_text( 'estimated_total' ) ); ?></span><span><?php wc_cart_totals_subtotal_html(); ?></span></div>
+				<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( wc_get_checkout_url() ); ?>"><?php echo miroir_icon( 'message-circle', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'checkout_button' ) ); ?></a>
+				<a class="btn-link" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php echo esc_html( miroir_text( 'continue_shopping' ) ); ?></a>
 			</div>
 		</div>
 	</div>

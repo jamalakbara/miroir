@@ -7,10 +7,10 @@
 defined( 'ABSPATH' ) || exit;
 
 $groups = array(
-	miroir_filter_group( 'plp-categories', __( 'shop women', 'miroir' ), array( 'accessories', 'bottoms', 'dress', 'outerwear', 'tops' ) ),
+	miroir_filter_group( 'plp-categories', miroir_text( 'shop_title' ), array( 'accessories', 'bottoms', 'dress', 'outerwear', 'tops' ) ),
 	miroir_filter_group(
 		'plp-featured',
-		__( 'featured', 'miroir' ),
+		miroir_text( 'filter_featured' ),
 		array(
 			'best-seller'     => __( 'best sellers', 'miroir' ),
 			'new-collection'  => __( 'new arrivals', 'miroir' ),
@@ -37,7 +37,7 @@ $colours = miroir_colour_filters();
 
 	<?php if ( $colours ) : ?>
 		<div class="filter-group">
-			<p class="filter-group__title"><?php esc_html_e( 'colour', 'miroir' ); ?></p>
+			<p class="filter-group__title"><?php echo esc_html( miroir_text( 'filter_colour' ) ); ?></p>
 			<ul class="filter-group__items">
 				<?php foreach ( $colours as $colour ) : ?>
 					<li>

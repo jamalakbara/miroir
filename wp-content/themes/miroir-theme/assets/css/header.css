@@ -46,6 +46,8 @@
 
 .site-nav__logo { display: block; flex: none; height: 37.512px; color: var(--logo); }
 .site-nav__logo .logo-mark { width: 110px; height: 37.512px; }
+.site-nav__logo:has(.logo-custom) { height: auto; }
+.logo-custom img { display: block; width: var(--logo-w); height: auto; }
 
 .site-nav__primary,
 .site-nav__menu,

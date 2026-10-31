@@ -25,7 +25,7 @@ $has_more  = $next_url && get_query_var( 'paged', 1 ) < $GLOBALS['wp_query']->ma
 <?php if ( $is_search ) : ?>
 	<div class="search-body">
 		<form class="search-bar" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<label class="screen-reader-text" for="search-query"><?php esc_html_e( 'Search products', 'miroir' ); ?></label>
+			<label class="screen-reader-text" for="search-query"><?php echo esc_html( miroir_text( 'search_label' ) ); ?></label>
 			<input class="search-bar__input" id="search-query" type="search" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" autocomplete="off">
 			<input type="hidden" name="post_type" value="product">
 			<a class="search-bar__clear" href="<?php echo esc_url( add_query_arg( array( 's' => '', 'post_type' => 'product' ), home_url( '/' ) ) ); ?>" aria-label="<?php esc_attr_e( 'Clear search', 'miroir' ); ?>"><?php echo miroir_icon( 'x', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></a>
@@ -46,7 +46,7 @@ $has_more  = $next_url && get_query_var( 'paged', 1 ) < $GLOBALS['wp_query']->ma
 				?>
 			</div>
 			<?php if ( $has_more ) : ?>
-				<a class="btn listing-more" href="<?php echo esc_url( $next_url ); ?>" data-load-more><?php esc_html_e( 'Load more', 'miroir' ); ?></a>
+				<a class="btn listing-more" href="<?php echo esc_url( $next_url ); ?>" data-load-more><?php echo esc_html( miroir_text( 'load_more' ) ); ?></a>
 			<?php endif; ?>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/empty-results', null, array( 'context' => 'search' ) ); ?>
@@ -58,7 +58,7 @@ $has_more  = $next_url && get_query_var( 'paged', 1 ) < $GLOBALS['wp_query']->ma
 
 		<div class="plp__bar">
 			<p class="plp__bar-title"><?php echo esc_html( miroir_listing_title() ); ?></p>
-			<a class="plp__bar-filter" href="<?php echo esc_url( add_query_arg( 'panel', 'filters' ) ); ?>" data-panel-open="filters" aria-controls="filter-panel" aria-expanded="false"><?php esc_html_e( 'Filter / sort +', 'miroir' ); ?></a>
+			<a class="plp__bar-filter" href="<?php echo esc_url( add_query_arg( 'panel', 'filters' ) ); ?>" data-panel-open="filters" aria-controls="filter-panel" aria-expanded="false"><?php echo esc_html( miroir_text( 'filter_sort_link' ) ); ?></a>
 		</div>
 
 		<div class="plp__main">
@@ -73,7 +73,7 @@ $has_more  = $next_url && get_query_var( 'paged', 1 ) < $GLOBALS['wp_query']->ma
 					?>
 				</div>
 				<?php if ( $has_more ) : ?>
-					<a class="btn listing-more" href="<?php echo esc_url( $next_url ); ?>" data-load-more><?php esc_html_e( 'Load more', 'miroir' ); ?></a>
+					<a class="btn listing-more" href="<?php echo esc_url( $next_url ); ?>" data-load-more><?php echo esc_html( miroir_text( 'load_more' ) ); ?></a>
 				<?php endif; ?>
 			<?php else : ?>
 				<?php get_template_part( 'template-parts/empty-results', null, array( 'context' => 'collection' ) ); ?>

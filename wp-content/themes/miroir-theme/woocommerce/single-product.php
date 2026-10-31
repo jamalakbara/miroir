@@ -19,8 +19,11 @@ while ( have_posts() ) :
 		get_template_part( 'template-parts/product-state', null, array( 'product' => $product, 'state' => $state ) );
 		continue;
 	}
-	$views   = max( 4, 1 + count( $product->get_gallery_image_ids() ) );
-	$related = wc_get_related_products( $product->get_id(), 7 );
+	// Lead image + gallery; a product without photos keeps the lofi's four placeholder views.
+	$lead    = miroir_product_image_id( $product );
+	$gallery = miroir_mod( 'product_photos' ) ? array_map( 'intval', $product->get_gallery_image_ids() ) : array();
+	$views   = $lead ? $gallery : array_pad( $gallery, 3, 0 );
+	$related = (int) miroir_mod( 'related_count' ) ? wc_get_related_products( $product->get_id(), (int) miroir_mod( 'related_count' ) ) : array();
 	?>
 	<div class="pdp" id="product-<?php the_ID(); ?>">
 		<div class="pdp__info">
@@ -41,14 +44,14 @@ while ( have_posts() ) :
 				$next = get_adjacent_post( true, '', false, 'product_cat' );
 				?>
 				<?php if ( $prev ) : ?>
-					<a href="<?php echo esc_url( get_permalink( $prev ) ); ?>" rel="prev"><?php esc_html_e( 'Previous product', 'miroir' ); ?></a>
+					<a href="<?php echo esc_url( get_permalink( $prev ) ); ?>" rel="prev"><?php echo esc_html( miroir_text( 'prev_product' ) ); ?></a>
 				<?php else : ?>
-					<span aria-disabled="true"><?php esc_html_e( 'Previous product', 'miroir' ); ?></span>
+					<span aria-disabled="true"><?php echo esc_html( miroir_text( 'prev_product' ) ); ?></span>
 				<?php endif; ?>
 				<?php if ( $next ) : ?>
-					<a href="<?php echo esc_url( get_permalink( $next ) ); ?>" rel="next"><?php esc_html_e( 'Next product', 'miroir' ); ?></a>
+					<a href="<?php echo esc_url( get_permalink( $next ) ); ?>" rel="next"><?php echo esc_html( miroir_text( 'next_product' ) ); ?></a>
 				<?php else : ?>
-					<span aria-disabled="true"><?php esc_html_e( 'Next product', 'miroir' ); ?></span>
+					<span aria-disabled="true"><?php echo esc_html( miroir_text( 'next_product' ) ); ?></span>
 				<?php endif; ?>
 			</nav>
 		</div>
@@ -57,20 +60,20 @@ while ( have_posts() ) :
 
 		<div class="pdp__gallery">
 			<div class="pdp__lead">
-				<?php miroir_ph( 'pdp__view', $product->get_name() ); ?>
+				<?php miroir_image( $lead, 'woocommerce_single', 'pdp__view', $product->get_name() ); ?>
 				<button class="pdp__zoom" type="button" data-zoom aria-label="<?php esc_attr_e( 'Enlarge images', 'miroir' ); ?>"><?php echo miroir_icon( 'maximize-2', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></button>
 			</div>
 			<div class="pdp__more">
-				<?php for ( $i = 1; $i < $views; $i++ ) : ?>
-					<?php miroir_ph( 'pdp__view' ); ?>
-				<?php endfor; ?>
+				<?php foreach ( $views as $view ) : ?>
+					<?php miroir_image( $view, 'woocommerce_single', 'pdp__view', $view ? $product->get_name() : '' ); ?>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>
 
 	<?php if ( $related ) : ?>
 		<section class="similar">
-			<h2 class="similar__title"><?php esc_html_e( 'Find similar product', 'miroir' ); ?></h2>
+			<h2 class="similar__title"><?php echo esc_html( miroir_text( 'similar_title' ) ); ?></h2>
 			<div class="grid similar__grid"><?php miroir_cards( array_filter( array_map( 'wc_get_product', $related ) ) ); ?></div>
 		</section>
 	<?php endif; ?>

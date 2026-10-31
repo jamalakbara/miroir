@@ -25,7 +25,7 @@ add_action(
  */
 function miroir_card_price( $product ) {
 	if ( ! $product->is_in_stock() ) {
-		return '<span class="card__now">' . esc_html__( 'Out of stock', 'miroir' ) . '</span>';
+		return '<span class="card__now">' . esc_html( miroir_text( 'out_of_stock' ) ) . '</span>';
 	}
 
 	$now = $product->is_type( 'variable' ) ? $product->get_variation_price( 'min', true ) : wc_get_price_to_display( $product );
@@ -35,6 +35,68 @@ function miroir_card_price( $product ) {
 		$out .= '<del class="card__was"><span class="screen-reader-text">' . esc_html__( 'Original price:', 'miroir' ) . ' </span>' . wc_price( $was ) . '</del>';
 	}
 	return $out . '<span class="card__now">' . wc_price( $now ) . '</span>';
+}
+
+/**
+ * Image of a product, variation or cart item product: its own image, else the parent product's.
+ * 0 while Customize > Products > "Show product photos" is off (grey placeholders).
+ *
+ * @param WC_Product|null $product Product.
+ * @return int Attachment id, 0 when none.
+ */
+function miroir_product_image_id( $product ) {
+	if ( ! $product instanceof WC_Product || ! miroir_mod( 'product_photos' ) ) {
+		return 0;
+	}
+	$id = (int) $product->get_image_id();
+	if ( ! $id && $product->get_parent_id() ) {
+		$parent = wc_get_product( $product->get_parent_id() );
+		$id     = $parent ? (int) $parent->get_image_id() : 0;
+	}
+	return $id;
+}
+
+/**
+ * Products of a home strip, newest first.
+ *
+ * @param array $args {
+ *     @type string $source   'category', 'sale', 'featured', 'newest' or 'ids'.
+ *     @type string $category Category slug (source 'category').
+ *     @type int[]  $ids      Product ids in display order (source 'ids').
+ *     @type int    $limit    Maximum, -1 for all.
+ * }
+ * @return WC_Product[]
+ */
+function miroir_strip_products( $args ) {
+	$query = array(
+		'status'  => 'publish',
+		'limit'   => (int) ( $args['limit'] ?? -1 ),
+		'orderby' => 'date',
+		'order'   => 'DESC',
+	);
+	switch ( $args['source'] ?? 'category' ) {
+		case 'sale':
+			$query['include'] = wc_get_product_ids_on_sale() ? wc_get_product_ids_on_sale() : array( 0 );
+			break;
+		case 'featured':
+			$query['featured'] = true;
+			break;
+		case 'ids':
+			$query['include'] = array_filter( array_map( 'absint', (array) ( $args['ids'] ?? array() ) ) );
+			if ( ! $query['include'] ) {
+				return array();
+			}
+			$query['orderby'] = 'include';
+			break;
+		case 'newest':
+			break;
+		default:
+			if ( empty( $args['category'] ) ) {
+				return array();
+			}
+			$query['category'] = array( $args['category'] );
+	}
+	return wc_get_products( $query );
 }
 
 /**
@@ -48,11 +110,20 @@ function miroir_cards( $products ) {
 	}
 }
 
-// Listing grids are 3 x 4 on desktop; "Load more" fetches the next 12.
+add_filter(
+	'woocommerce_get_image_size_thumbnail',
+	function ( $size ) {
+		$size['height'] = 0;
+		$size['crop']   = 0;
+		return $size;
+	}
+);
+
+// Listing grids are 3 x 4 on desktop; "Load more" fetches the next page (Customize > Layout).
 add_filter(
 	'loop_shop_per_page',
 	function () {
-		return 12;
+		return max( 1, (int) miroir_mod( 'products_per_page' ) );
 	}
 );
 
@@ -150,7 +221,7 @@ function miroir_listing_title() {
 	if ( is_tax() ) {
 		return strtolower( single_term_title( '', false ) );
 	}
-	return __( 'shop women', 'miroir' );
+	return miroir_text( 'shop_title' );
 }
 
 // Header search and the search panel look in products only, so results use the listing layout.
@@ -299,7 +370,7 @@ remove_action( 'woocommerce_register_form', 'wc_registration_privacy_policy_text
 add_filter(
 	'woocommerce_product_single_add_to_cart_text',
 	function () {
-		return __( 'Add to bag', 'miroir' );
+		return miroir_text( 'add_to_bag' );
 	}
 );
 
@@ -312,7 +383,7 @@ add_filter(
 	}
 );
 
-// Version the cached bag fragment when its markup or label changes.
+// Fragments cached in sessionStorage would keep an old "bag (n)" label after it is edited in the Customizer.
 add_filter(
 	'woocommerce_cart_fragment_name',
 	function ( $name ) {

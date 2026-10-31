@@ -13,16 +13,16 @@ global $wp_query;
 
 $base   = preg_replace( '#/page/\d+/?#', '/', strtok( (string) wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ), '?' ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- path only, escaped on output.
 $orders = array(
-	'date'       => __( 'Newest first', 'miroir' ),
-	'popularity' => __( 'Most popular', 'miroir' ),
-	'price'      => __( 'Price: low to high', 'miroir' ),
-	'price-desc' => __( 'Price: high to low', 'miroir' ),
+	'date'       => miroir_text( 'sort_date' ),
+	'popularity' => miroir_text( 'sort_popularity' ),
+	'price'      => miroir_text( 'sort_price' ),
+	'price-desc' => miroir_text( 'sort_price_desc' ),
 );
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only listing filters.
 $current = sanitize_key( wp_unslash( $_GET['orderby'] ?? 'date' ) );
 
 $groups = array();
-foreach ( array( 'pa_color' => __( 'COLOUR', 'miroir' ), 'pa_size' => __( 'SIZE', 'miroir' ) ) as $taxonomy => $label ) {
+foreach ( array( 'pa_color' => miroir_text( 'filter_colour_panel' ), 'pa_size' => miroir_text( 'filter_size_panel' ) ) as $taxonomy => $label ) {
 	if ( ! taxonomy_exists( $taxonomy ) ) {
 		continue;
 	}
@@ -43,9 +43,9 @@ foreach ( array( 'pa_color' => __( 'COLOUR', 'miroir' ), 'pa_size' => __( 'SIZE'
 ?>
 <div class="flow panel" id="filter-panel" data-panel="filters"<?php echo empty( $args['open'] ) ? ' hidden' : ''; ?>>
 	<form class="flow__col" method="get" action="<?php echo esc_url( home_url( $base ) ); ?>">
-		<h2 class="flow__title"><?php esc_html_e( 'Filter & sort', 'miroir' ); ?></h2>
-		<button class="btn btn--block" type="button" data-panel-close><?php esc_html_e( 'Close filters', 'miroir' ); ?></button>
-		<?php miroir_field( array( 'name' => 'orderby', 'id' => 'panel-orderby', 'type' => 'select', 'label' => __( 'Sort by', 'miroir' ), 'options' => $orders, 'value' => $current, 'class' => 'field--quiet' ) ); ?>
+		<h2 class="flow__title"><?php echo esc_html( miroir_text( 'filters_title' ) ); ?></h2>
+		<button class="btn btn--block" type="button" data-panel-close><?php echo esc_html( miroir_text( 'filters_close' ) ); ?></button>
+		<?php miroir_field( array( 'name' => 'orderby', 'id' => 'panel-orderby', 'type' => 'select', 'label' => miroir_text( 'sort_label' ), 'options' => $orders, 'value' => $current, 'class' => 'field--quiet' ) ); ?>
 		<?php foreach ( $groups as $group ) : ?>
 			<p class="flow__label"><?php echo esc_html( $group['label'] ); ?></p>
 			<?php foreach ( $group['terms'] as $term ) : ?>
@@ -62,6 +62,6 @@ foreach ( array( 'pa_color' => __( 'COLOUR', 'miroir' ), 'pa_size' => __( 'SIZE'
 			echo esc_html( sprintf( _n( 'Show %d product', 'Show %d products', (int) $wp_query->found_posts, 'miroir' ), (int) $wp_query->found_posts ) );
 			?>
 		</button>
-		<a class="btn btn--block" href="<?php echo esc_url( home_url( $base ) ); ?>"><?php esc_html_e( 'Clear all', 'miroir' ); ?></a>
+		<a class="btn btn--block" href="<?php echo esc_url( home_url( $base ) ); ?>"><?php echo esc_html( miroir_text( 'clear_all' ) ); ?></a>
 	</form>
 </div>

@@ -16,10 +16,10 @@ if ( isset( $_GET['password-reset'] ) ) :
 	?>
 	<div class="flow">
 		<div class="flow__col">
-			<h1 class="flow__title"><?php esc_html_e( 'Password updated', 'miroir' ); ?></h1>
-			<p class="flow__intro"><?php esc_html_e( 'Your password has been changed.', 'miroir' ); ?></p>
-			<p class="flow__help"><?php esc_html_e( 'You can now sign in with your new password.', 'miroir' ); ?></p>
-			<a class="btn btn--primary btn--block" href="<?php echo esc_url( $account_url ); ?>"><?php esc_html_e( 'Log in', 'miroir' ); ?></a>
+			<h1 class="flow__title"><?php echo esc_html( miroir_text( 'pw_updated' ) ); ?></h1>
+			<p class="flow__intro"><?php echo esc_html( miroir_text( 'pw_updated_text' ) ); ?></p>
+			<p class="flow__help"><?php echo esc_html( miroir_text( 'pw_updated_help' ) ); ?></p>
+			<a class="btn btn--primary btn--block" href="<?php echo esc_url( $account_url ); ?>"><?php echo esc_html( miroir_text( 'log_in' ) ); ?></a>
 		</div>
 	</div>
 	<?php
@@ -34,8 +34,8 @@ if ( 'register' === ( $_GET['action'] ?? '' ) || isset( $_POST['register'] ) ) :
 	?>
 	<div class="flow">
 		<div class="flow__col">
-			<h1 class="flow__title"><?php esc_html_e( 'Create account', 'miroir' ); ?></h1>
-			<p class="flow__intro"><?php esc_html_e( 'Create an account to keep your details in one place.', 'miroir' ); ?></p>
+			<h1 class="flow__title"><?php echo esc_html( miroir_text( 'register_title' ) ); ?></h1>
+			<p class="flow__intro"><?php echo esc_html( miroir_text( 'register_intro' ) ); ?></p>
 			<?php woocommerce_output_all_notices(); ?>
 			<form class="flow__form woocommerce-form woocommerce-form-register register" method="post" action="<?php echo esc_url( add_query_arg( 'action', 'register', $account_url ) ); ?>" <?php do_action( 'woocommerce_register_form_tag' ); ?>>
 				<?php do_action( 'woocommerce_register_form_start' ); ?>
@@ -55,20 +55,19 @@ if ( 'register' === ( $_GET['action'] ?? '' ) || isset( $_POST['register'] ) ) :
 					<?php
 					$privacy = get_privacy_policy_url();
 					echo wp_kses(
-						sprintf(
-							/* translators: %s: privacy policy link. */
-							__( 'Use at least 12 characters. Your personal data is used to manage your account. Read our %s.', 'miroir' ),
-							$privacy ? '<a href="' . esc_url( $privacy ) . '">' . esc_html__( 'Privacy policy', 'miroir' ) . '</a>' : esc_html__( 'Privacy policy', 'miroir' )
+						miroir_text(
+							'register_help',
+							$privacy ? '<a href="' . esc_url( $privacy ) . '">' . esc_html( miroir_text( 'privacy_link' ) ) . '</a>' : esc_html( miroir_text( 'privacy_link' ) )
 						),
 						array( 'a' => array( 'href' => array() ) )
 					);
 					?>
 				</p>
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<button type="submit" class="btn btn--primary btn--block" name="register" value="<?php esc_attr_e( 'Create account', 'miroir' ); ?>"><?php esc_html_e( 'Create account', 'miroir' ); ?></button>
+				<button type="submit" class="btn btn--primary btn--block" name="register" value="<?php echo esc_attr( miroir_text( 'register_title' ) ); ?>"><?php echo esc_html( miroir_text( 'register_title' ) ); ?></button>
 				<?php do_action( 'woocommerce_register_form_end' ); ?>
 			</form>
-			<a class="btn btn--block" href="<?php echo esc_url( $account_url ); ?>"><?php esc_html_e( 'Already registered? Log in', 'miroir' ); ?></a>
+			<a class="btn btn--block" href="<?php echo esc_url( $account_url ); ?>"><?php echo esc_html( miroir_text( 'register_login' ) ); ?></a>
 		</div>
 	</div>
 	<?php
@@ -79,7 +78,7 @@ endif;
 ?>
 <div class="wrap login-wrap">
 	<div class="wrap__col">
-		<h1 class="page-title"><?php esc_html_e( 'Welcome', 'miroir' ); ?></h1>
+		<h1 class="page-title"><?php echo esc_html( miroir_text( 'login_title' ) ); ?></h1>
 		<?php woocommerce_output_all_notices(); ?>
 
 		<form class="woocommerce-form woocommerce-form-login login account-form" method="post" novalidate>
@@ -98,21 +97,21 @@ endif;
 						<button class="field__toggle" type="button" data-password-toggle aria-controls="password" aria-pressed="false" aria-label="<?php esc_attr_e( 'Show password', 'miroir' ); ?>"><?php echo miroir_icon( 'eye-off', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></button>
 					</div>
 				</div>
-				<a class="account-form__lost" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'miroir' ); ?></a>
+				<a class="account-form__lost" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php echo esc_html( miroir_text( 'login_lost' ) ); ?></a>
 			</div>
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
 
 			<label class="check check--strong">
 				<input name="rememberme" type="checkbox" id="rememberme" value="forever">
-				<?php esc_html_e( 'Remember me', 'miroir' ); ?>
+				<?php echo esc_html( miroir_text( 'login_remember' ) ); ?>
 			</label>
 
 			<div class="account-form__actions">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<button type="submit" class="btn" name="login" value="<?php esc_attr_e( 'Log in', 'miroir' ); ?>"><?php esc_html_e( 'Log in', 'miroir' ); ?></button>
+				<button type="submit" class="btn" name="login" value="<?php echo esc_attr( miroir_text( 'log_in' ) ); ?>"><?php echo esc_html( miroir_text( 'log_in' ) ); ?></button>
 				<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-					<a class="btn" href="<?php echo esc_url( add_query_arg( 'action', 'register', $account_url ) ); ?>"><?php esc_html_e( 'Register', 'miroir' ); ?></a>
+					<a class="btn" href="<?php echo esc_url( add_query_arg( 'action', 'register', $account_url ) ); ?>"><?php echo esc_html( miroir_text( 'login_register' ) ); ?></a>
 				<?php endif; ?>
 			</div>
 

@@ -10,8 +10,8 @@ $customer_id = get_current_user_id();
 $addresses   = apply_filters(
 	'woocommerce_my_account_get_addresses',
 	array(
-		'billing'  => __( 'Billing address', 'miroir' ),
-		'shipping' => __( 'Shipping address', 'miroir' ),
+		'billing'  => miroir_text( 'billing_address' ),
+		'shipping' => miroir_text( 'shipping_address' ),
 	),
 	$customer_id
 );
@@ -20,7 +20,7 @@ $addresses   = apply_filters(
 	<?php $address = wc_get_account_formatted_address( $name ); ?>
 	<section class="flow__section hair-t">
 		<h2 class="flow__label"><?php echo esc_html( $title ); ?></h2>
-		<p class="flow__copy"><?php echo $address ? wp_kses_post( $address ) : esc_html__( 'You have not saved an address yet.', 'miroir' ); ?></p>
+		<p class="flow__copy"><?php echo $address ? wp_kses_post( $address ) : esc_html( miroir_text( 'acc_no_address' ) ); ?></p>
 		<a class="btn btn--block" href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>">
 			<?php
 			/* translators: %s: address type, e.g. "billing address". */

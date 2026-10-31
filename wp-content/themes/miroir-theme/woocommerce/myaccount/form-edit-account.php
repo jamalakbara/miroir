@@ -20,8 +20,8 @@ do_action( 'woocommerce_before_edit_account_form' );
 	<?php do_action( 'woocommerce_edit_account_form_fields' ); ?>
 
 	<div class="flow__section hair-t" role="group" aria-labelledby="change-password-title">
-		<h2 class="flow__label" id="change-password-title"><?php esc_html_e( 'Change password', 'miroir' ); ?></h2>
-		<p class="flow__copy"><?php esc_html_e( 'Leave these fields blank to keep your current password.', 'miroir' ); ?></p>
+		<h2 class="flow__label" id="change-password-title"><?php echo esc_html( miroir_text( 'acc_change_password' ) ); ?></h2>
+		<p class="flow__copy"><?php echo esc_html( miroir_text( 'acc_change_password_text' ) ); ?></p>
 		<?php
 		miroir_field( array( 'name' => 'password_current', 'type' => 'password', 'label' => __( 'Current password', 'miroir' ), 'autocomplete' => 'current-password' ) );
 		miroir_field( array( 'name' => 'password_1', 'type' => 'password', 'label' => __( 'New password', 'miroir' ), 'autocomplete' => 'new-password' ) );
