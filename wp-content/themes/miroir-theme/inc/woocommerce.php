@@ -404,3 +404,18 @@ add_filter(
 		return $name . '_' . substr( md5( 'compact-header-v1_' . $label ), 0, 8 );
 	}
 );
+
+// Bag, checkout and account change with every add to bag or sign-in: never prefetch them,
+// a prefetched copy could show the bag as it was before the last add.
+add_filter(
+	'wp_speculation_rules_href_exclude_paths',
+	function ( $paths ) {
+		foreach ( array( 'cart', 'checkout', 'myaccount' ) as $page ) {
+			$path = wp_parse_url( wc_get_page_permalink( $page ), PHP_URL_PATH );
+			if ( $path ) {
+				$paths[] = trailingslashit( $path ) . '*';
+			}
+		}
+		return $paths;
+	}
+);

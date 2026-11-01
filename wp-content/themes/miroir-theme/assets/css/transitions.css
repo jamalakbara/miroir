@@ -1,0 +1,26 @@
+/*
+ * Page-to-page motion (cross-document view transitions): the header and admin bar stay
+ * put, the old page fades out, then the new one fades in rising 24px on the curve of the
+ * search/currency modals (flow.css). Browsers without support navigate as before.
+ */
+@view-transition { navigation: auto; }
+
+.site-header { view-transition-name: site-header; }
+#wpadminbar { view-transition-name: wp-admin-bar; }
+
+::view-transition-group(site-header),
+::view-transition-group(wp-admin-bar),
+::view-transition-new(site-header),
+::view-transition-new(wp-admin-bar) { animation: none; }
+::view-transition-old(site-header),
+::view-transition-old(wp-admin-bar) { display: none; }
+
+/* Sequenced, not crossfaded: two similar layouts crossfading read as no motion at all. */
+::view-transition-old(root) { animation: page-out 200ms ease-in both; }
+::view-transition-new(root) { animation: page-in 450ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both; }
+@keyframes page-out { to { opacity: 0; transform: translateY(-6px); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(24px); } }
+
+@media (prefers-reduced-motion: reduce) {
+	@view-transition { navigation: none; }
+}

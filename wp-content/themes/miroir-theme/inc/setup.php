@@ -43,7 +43,7 @@ add_action(
  * the lofi is still moving.
  */
 function miroir_styles() {
-	return array( 'fonts', 'tokens', 'base', 'components', 'header', 'footer', 'home', 'shop', 'product', 'cart', 'checkout', 'account', 'flow', 'info', 'maintenance' );
+	return array( 'fonts', 'tokens', 'base', 'components', 'header', 'footer', 'home', 'shop', 'product', 'cart', 'checkout', 'account', 'flow', 'info', 'maintenance', 'transitions' );
 }
 
 add_action(
@@ -133,6 +133,18 @@ add_action(
 		}
 	},
 	1
+);
+
+// Core speculative loading (logged-out visitors) prefetches on hover instead of on press,
+// so the page transition (transitions.css) starts with the next page already loaded.
+add_filter(
+	'wp_speculation_rules_configuration',
+	function ( $config ) {
+		if ( is_array( $config ) && 'auto' === $config['eagerness'] ) {
+			$config['eagerness'] = 'moderate';
+		}
+		return $config;
+	}
 );
 
 // No emoji polyfill: it injects inline CSS and an extra script on every page.
