@@ -12,6 +12,10 @@
 			"type": "string",
 			"default": ""
 		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
 		"show": {
 			"type": "boolean",
 			"default": true
@@ -37,6 +41,12 @@
 				"type": "text",
 				"label": "Text",
 				"help": "Empty: free shipping across indonesia"
+			},
+			{
+				"attr": "url",
+				"type": "text",
+				"label": "Link URL",
+				"help": "Optional. Enter a full URL or a site path such as /shop-2/. Leave empty to keep the bar unlinked."
 			}
 		]
 	}

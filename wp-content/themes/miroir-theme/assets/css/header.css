@@ -13,6 +13,7 @@
 	flex: none;
 	animation: announce-scroll 30s linear infinite;
 }
+a.announce:focus-visible { outline-offset: -2px; }
 .announce__group {
 	display: flex;
 	align-items: center;
