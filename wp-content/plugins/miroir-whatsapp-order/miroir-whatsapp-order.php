@@ -457,6 +457,9 @@ add_action(
 					'name'     => $product ? $product->get_name() : '',
 					'url'      => $product ? $product->get_permalink() : '',
 					'oneSize'  => Miroir_WA_Order::opt( 'miroir_wa_one_size' ),
+					// Starting size and unit price, as product_message() puts them in the initial link.
+					'variant'  => $product && ! $product->is_type( 'variable' ) ? (string) $product->get_attribute( 'size' ) : '',
+					'price'    => $product ? (float) wc_get_price_to_display( $product ) : 0,
 					// WooCommerce leaves price_html empty when all variations cost the same; format display_price instead.
 					'currency' => array(
 						'symbol'    => html_entity_decode( get_woocommerce_currency_symbol(), ENT_QUOTES, 'UTF-8' ),

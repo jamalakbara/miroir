@@ -5236,7 +5236,7 @@
                           "fill": "$ink-3",
                           "textGrowth": "fixed-width",
                           "width": 200,
-                          "content": "Bag quantities.",
+                          "content": "Bag quantities. PDP uses Quantity Field.",
                           "fontFamily": "$font-sans",
                           "fontSize": "$text-xs",
                           "fontWeight": "300",
@@ -7427,6 +7427,14 @@
                                                   "enabled": true
                                                 }
                                               }
+                                            },
+                                            {
+                                              "id": "cndtb",
+                                              "type": "ref",
+                                              "ref": "nCGKo",
+                                              "name": "Quantity",
+                                              "width": "fill_container",
+                                              "stroke": "$ink"
                                             },
                                             {
                                               "id": "uASGK",
@@ -18391,6 +18399,14 @@
                                               }
                                             },
                                             {
+                                              "id": "Kq7X3",
+                                              "type": "ref",
+                                              "ref": "nCGKo",
+                                              "name": "Quantity",
+                                              "width": "fill_container",
+                                              "stroke": "$ink"
+                                            },
+                                            {
                                               "id": "Up7ek",
                                               "type": "ref",
                                               "ref": "rUMLe",
@@ -21294,6 +21310,14 @@
                                                   "enabled": true
                                                 }
                                               }
+                                            },
+                                            {
+                                              "id": "WjO7l",
+                                              "type": "ref",
+                                              "ref": "nCGKo",
+                                              "name": "Quantity",
+                                              "width": "fill_container",
+                                              "stroke": "$ink"
                                             },
                                             {
                                               "id": "Om2lk",
@@ -34414,6 +34438,14 @@
                                               }
                                             },
                                             {
+                                              "id": "X5IF7",
+                                              "type": "ref",
+                                              "ref": "nCGKo",
+                                              "name": "Quantity",
+                                              "width": "fill_container",
+                                              "stroke": "$ink"
+                                            },
+                                            {
                                               "id": "J59pzO",
                                               "type": "ref",
                                               "ref": "rUMLe",
@@ -37510,6 +37542,14 @@
                                                   "enabled": true
                                                 }
                                               }
+                                            },
+                                            {
+                                              "id": "o2v9U7",
+                                              "type": "ref",
+                                              "ref": "nCGKo",
+                                              "name": "Quantity",
+                                              "width": "fill_container",
+                                              "stroke": "$ink"
                                             },
                                             {
                                               "id": "OFyRq",
@@ -50787,6 +50827,14 @@
                                               }
                                             },
                                             {
+                                              "id": "x34rIp",
+                                              "type": "ref",
+                                              "ref": "nCGKo",
+                                              "name": "Quantity",
+                                              "width": "fill_container",
+                                              "stroke": "$ink"
+                                            },
+                                            {
                                               "id": "Z4vWv",
                                               "type": "ref",
                                               "ref": "rUMLe",
@@ -52932,6 +52980,14 @@
                       }
                     },
                     {
+                      "id": "SA2DA",
+                      "type": "ref",
+                      "ref": "nCGKo",
+                      "name": "Quantity",
+                      "width": "fill_container",
+                      "stroke": "$ink"
+                    },
+                    {
                       "id": "vZqMt",
                       "type": "ref",
                       "ref": "rUMLe",
@@ -53375,6 +53431,14 @@
                           "enabled": true
                         }
                       }
+                    },
+                    {
+                      "id": "O31Jg",
+                      "type": "ref",
+                      "ref": "nCGKo",
+                      "name": "Quantity",
+                      "width": "fill_container",
+                      "stroke": "$ink"
                     },
                     {
                       "id": "HB15k",
@@ -53870,6 +53934,14 @@
                       }
                     },
                     {
+                      "id": "YJdVr",
+                      "type": "ref",
+                      "ref": "nCGKo",
+                      "name": "Quantity",
+                      "width": "fill_container",
+                      "stroke": "$ink"
+                    },
+                    {
                       "id": "aQ2x5",
                       "type": "ref",
                       "ref": "rUMLe",
@@ -54042,6 +54114,105 @@
               "fontFamily": "$font-sans",
               "fontSize": 12,
               "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nCGKo",
+      "x": 4396,
+      "y": -3350,
+      "name": "Quantity Field",
+      "context": "Underlined row matching Field/select: label left, minus / value / plus right. Minus and plus are 28x36 hit areas; ink-3 when at a limit.",
+      "reusable": true,
+      "width": 360,
+      "height": 36,
+      "stroke": "$line",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "KM8D5",
+          "name": "Label",
+          "fill": "$ink-2",
+          "content": "Quantity",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-base",
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "uO1H4",
+          "name": "Controls",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "S35V4",
+              "name": "Minus",
+              "width": 28,
+              "height": 36,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Otm8U",
+                  "name": "Minus Icon",
+                  "width": 14,
+                  "height": 14,
+                  "icon": "minus",
+                  "library": "lucide",
+                  "fill": "$ink-3"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "V0n17",
+              "name": "Value",
+              "width": 24,
+              "height": 36,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "y2T47",
+                  "name": "Value Text",
+                  "fill": "$ink",
+                  "content": "1",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bgJru",
+              "name": "Plus",
+              "width": 28,
+              "height": 36,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "i0fKyR",
+                  "name": "Plus Icon",
+                  "width": 14,
+                  "height": 14,
+                  "icon": "plus",
+                  "library": "lucide",
+                  "fill": "$ink"
+                }
+              ]
             }
           ]
         }

@@ -79,6 +79,7 @@ function miroir_texts() {
 		'buy_hint' => array( 'product', __( 'Opens WhatsApp with this product, size and price filled in.', 'miroir' ), __( 'Hint under the WhatsApp button', 'miroir' ) ),
 		'add_to_bag' => array( 'product', __( 'Add to bag', 'miroir' ), __( 'Add to bag button', 'miroir' ) ),
 		'one_size' => array( 'product', __( 'One size', 'miroir' ), __( 'Size shown for products without sizes', 'miroir' ) ),
+		'quantity_label' => array( 'product', __( 'Quantity', 'miroir' ), __( 'Label of the quantity selector', 'miroir' ) ),
 		'out_of_stock' => array( 'product', __( 'Out of stock', 'miroir' ), __( 'Out of stock label', 'miroir' ) ),
 
 		// states.

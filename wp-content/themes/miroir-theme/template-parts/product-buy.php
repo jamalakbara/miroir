@@ -1,7 +1,7 @@
 <?php
 /**
- * PDP buy box (screen 03 "Buy Box"): size select, Add to bag, Order via
- * WhatsApp and its hint. Variable products keep WooCommerce's variation form
+ * PDP buy box (screen 03 "Buy Box"): size select, quantity stepper, Add to
+ * bag, Order via WhatsApp and its hint. Variable products keep WooCommerce's variation form
  * contract (classes, data-product_variations, hidden ids) so wc-add-to-cart-variation works.
  *
  * @var array $args { product: WC_Product }
@@ -13,6 +13,31 @@ $product  = $args['product'];
 $wa_url   = apply_filters( 'miroir_wa_product_url', '', $product );
 $chevron  = miroir_icon( 'chevron-down', 14, 'field__icon' );
 $disabled = ! $product->is_purchasable() || ! $product->is_in_stock();
+
+/*
+ * Quantity Field (nCGKo): underlined row like the size select, label left and
+ * −/value/+ right, posting WooCommerce's standard "quantity" field. Variable
+ * products get each variation's limits from theme.js on found_variation.
+ */
+$quantity = function () use ( $product, $disabled ) {
+	$min = max( 1, $product->get_min_purchase_quantity() );
+	$max = $product->get_max_purchase_quantity();
+	if ( $product->is_sold_individually() ) {
+		echo '<input type="hidden" name="quantity" value="1">';
+		return;
+	}
+	$id = 'quantity-' . $product->get_id();
+	?>
+	<div class="qty-field buy-form__qty" data-qty data-qty-min="<?php echo esc_attr( $min ); ?>" data-qty-max="<?php echo esc_attr( $max > 0 ? $max : '' ); ?>">
+		<label class="qty-field__label" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( miroir_text( 'quantity_label' ) ); ?></label>
+		<div class="qty-field__controls">
+			<button class="qty-field__btn" type="button" data-qty-step="-1" aria-label="<?php esc_attr_e( 'Decrease quantity', 'miroir' ); ?>" disabled><?php echo miroir_icon( 'minus', 14 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></button>
+			<input class="qty-field__input" id="<?php echo esc_attr( $id ); ?>" type="number" inputmode="numeric" name="quantity" value="<?php echo esc_attr( $min ); ?>" min="<?php echo esc_attr( $min ); ?>" step="1"<?php echo $max > 0 ? ' max="' . esc_attr( $max ) . '"' : ''; ?><?php disabled( $disabled ); ?>>
+			<button class="qty-field__btn" type="button" data-qty-step="1" aria-label="<?php esc_attr_e( 'Increase quantity', 'miroir' ); ?>"<?php disabled( $disabled || ( $max > 0 && $max <= $min ) ); ?>><?php echo miroir_icon( 'plus', 14 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></button>
+		</div>
+	</div>
+	<?php
+};
 
 if ( $product->is_type( 'variable' ) ) :
 	wp_enqueue_script( 'wc-add-to-cart-variation' );
@@ -42,7 +67,7 @@ if ( $product->is_type( 'variable' ) ) :
 		<div class="single_variation_wrap">
 			<div class="woocommerce-variation single_variation screen-reader-text" aria-live="polite"></div>
 			<div class="woocommerce-variation-add-to-cart variations_button">
-				<input type="hidden" name="quantity" value="1">
+				<?php $quantity(); ?>
 				<button type="submit" class="single_add_to_cart_button btn btn--block"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 				<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>">
 				<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>">
@@ -61,7 +86,7 @@ if ( $product->is_type( 'variable' ) ) :
 				<?php echo $chevron; // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
 			</div>
 		</div>
-		<input type="hidden" name="quantity" value="1">
+		<?php $quantity(); ?>
 		<button type="submit" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" class="single_add_to_cart_button btn btn--block"<?php disabled( $disabled ); ?>><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 	</form>
 <?php endif; ?>

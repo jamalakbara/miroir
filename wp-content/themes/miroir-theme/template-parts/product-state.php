@@ -114,7 +114,8 @@ $titles = array(
 					<div class="single_variation_wrap">
 						<div class="woocommerce-variation single_variation screen-reader-text" aria-live="polite"></div>
 						<div class="woocommerce-variation-add-to-cart variations_button">
-							<input type="hidden" name="quantity" value="1">
+							<?php // Keeps the quantity chosen on the PDP stepper before the size was missing. ?>
+							<input type="hidden" name="quantity" value="<?php echo esc_attr( max( 1, absint( $_GET['quantity'] ?? 1 ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display only; WooCommerce validates on add. ?>">
 							<button type="submit" class="single_add_to_cart_button disabled-bar disabled"><?php echo esc_html( miroir_text( 'add_to_bag' ) ); ?></button>
 							<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>">
 							<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>">

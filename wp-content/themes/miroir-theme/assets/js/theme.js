@@ -549,7 +549,7 @@
 			data.set( button.name, button.value );
 		}
 		var target = new URL( form.action || window.location.href );
-		[ 'added', 'choose-size', 'add-to-cart' ].forEach( function ( key ) { target.searchParams.delete( key ); } );
+		[ 'added', 'choose-size', 'quantity', 'add-to-cart' ].forEach( function ( key ) { target.searchParams.delete( key ); } );
 		var feedback = form.querySelector( '[data-add-feedback]' );
 		if ( ! feedback ) {
 			feedback = document.createElement( 'div' );
@@ -618,6 +618,10 @@
 			}
 			var url = new URL( window.location.href );
 			url.searchParams.set( 'choose-size', '1' );
+			var quantity = form.querySelector( 'input[name="quantity"]' );
+			if ( quantity && parseInt( quantity.value, 10 ) > 1 ) {
+				url.searchParams.set( 'quantity', quantity.value );
+			}
 			window.location.href = url.toString();
 		},
 		true
@@ -673,20 +677,66 @@
 			return;
 		}
 		var input = step.closest( '[data-qty]' ).querySelector( 'input' );
-		var min = input.min === '' ? 0 : parseInt( input.min, 10 );
-		var max = input.max === '' ? Infinity : parseInt( input.max, 10 );
-		var value = Math.min( max, Math.max( min, ( parseInt( input.value, 10 ) || 0 ) + parseInt( step.dataset.qtyStep, 10 ) ) );
+		var bounds = qtyBounds( input );
+		var value = Math.min( bounds.max, Math.max( bounds.min, ( parseInt( input.value, 10 ) || 0 ) + parseInt( step.dataset.qtyStep, 10 ) ) );
 		if ( String( value ) !== input.value ) {
 			input.value = value;
-			submitCart( input );
+			input.dispatchEvent( new Event( 'change', { bubbles: true } ) );
 		}
 	} );
 
 	document.addEventListener( 'change', function ( event ) {
 		if ( event.target.matches( '[data-qty] input' ) ) {
+			syncQty( event.target );
 			submitCart( event.target );
 		}
 	} );
+
+	function qtyBounds( input ) {
+		return {
+			min: input.min === '' ? 0 : parseInt( input.min, 10 ),
+			max: input.max === '' ? Infinity : parseInt( input.max, 10 ),
+		};
+	}
+
+	/* PDP stepper: typed values stay within the limits; −/+ are disabled at them, like the bag drawer renders them. */
+	function syncQty( input ) {
+		var stepper = input.closest( '.buy-form__qty' );
+		if ( ! stepper ) {
+			return;
+		}
+		var bounds = qtyBounds( input );
+		var value = Math.min( bounds.max, Math.max( bounds.min, parseInt( input.value, 10 ) || bounds.min ) );
+		if ( String( value ) !== input.value ) {
+			// Re-announce so listeners that already ran (WhatsApp link) see the clamped value.
+			input.value = value;
+			input.dispatchEvent( new Event( 'change', { bubbles: true } ) );
+			return;
+		}
+		stepper.querySelector( '[data-qty-step="-1"]' ).disabled = input.disabled || value <= bounds.min;
+		stepper.querySelector( '[data-qty-step="1"]' ).disabled = input.disabled || value >= bounds.max;
+	}
+
+	/*
+	 * Variable PDP: WooCommerce only syncs limits into its own ".quantity input.qty"
+	 * markup, so apply each variation's min/max (and sold-individually) here.
+	 */
+	if ( window.jQuery ) {
+		window.jQuery( '.variations_form' ).on( 'found_variation reset_data', function ( event, variation ) {
+			var stepper = this.querySelector( '.buy-form__qty' );
+			if ( ! stepper ) {
+				return;
+			}
+			var input = stepper.querySelector( 'input' );
+			var single = variation && variation.is_sold_individually === 'yes';
+			input.min = variation && ! single ? variation.min_qty : stepper.dataset.qtyMin;
+			input.max = variation ? ( single ? '' : variation.max_qty ) : stepper.dataset.qtyMax;
+			stepper.hidden = single;
+			var bounds = qtyBounds( input );
+			input.value = single ? 1 : Math.min( bounds.max, Math.max( bounds.min, parseInt( input.value, 10 ) || bounds.min ) );
+			input.dispatchEvent( new Event( 'change', { bubbles: true } ) );
+		} );
+	}
 
 	/*
 	 * "Load more" on listings: fetch the next page, append its cards, move the

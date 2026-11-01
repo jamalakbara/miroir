@@ -26,7 +26,54 @@
 .pdp__desc ul, .pdp__desc ol { display: flex; flex-direction: column; gap: 4px; }
 .pdp__price.card__price { font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 300; }
 
-.pdp__buy, .buy-form { display: flex; flex-direction: column; gap: 20px; }
+.pdp__buy, .buy-form, .buy-form .variations_button { display: flex; flex-direction: column; gap: 20px; }
+/* Quantity Field (nCGKo): same 36px underline and type as the size select. */
+.qty-field {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 36px;
+	box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line);
+}
+.qty-field[hidden] { display: none; }
+.qty-field:focus-within { box-shadow: inset 0 -0.5px 0 var(--ink), 0 0.5px 0 var(--ink); }
+.qty-field__label, .qty-field__input {
+	color: var(--ink-2);
+	font-size: var(--text-base);
+	line-height: var(--lh-sans-13);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.qty-field__controls { display: flex; align-items: center; height: 100%; }
+.qty-field__btn {
+	display: flex;
+	align-items: center;
+	width: 28px;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--ink);
+	cursor: pointer;
+}
+.qty-field__btn:first-child { justify-content: flex-start; }
+.qty-field__btn:last-child { justify-content: flex-end; }
+.qty-field__btn:disabled { color: var(--ink-3); cursor: default; }
+.qty-field__input {
+	width: 24px;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--ink);
+	text-align: center;
+	appearance: textfield;
+	-moz-appearance: textfield;
+}
+.qty-field__input::-webkit-outer-spin-button,
+.qty-field__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.qty-field__input:focus { outline: none; }
+.qty-field__input:disabled { color: var(--ink-3); }
 .field__input--select { color: var(--ink-2); padding-right: 24px; }
 .field__input--select:disabled { opacity: 1; cursor: default; }
 .single_add_to_cart_button.disabled, .single_add_to_cart_button:disabled { cursor: not-allowed; }

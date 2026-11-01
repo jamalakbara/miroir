@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 $key  = sanitize_key( wp_unslash( $_GET['added'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display only.
 $item = $key ? WC()->cart->get_cart_item( $key ) : null;
-$back = remove_query_arg( array( 'added', 'choose-size', 'add-to-cart' ) );
+$back = remove_query_arg( array( 'added', 'choose-size', 'quantity', 'add-to-cart' ) );
 ?>
 <dialog class="panel panel--modal panel--bag" id="added-panel" data-panel="added" aria-labelledby="added-panel-title" data-title="<?php echo esc_attr( miroir_text( 'bag_title' ) ); ?>" data-updated="<?php echo esc_attr( miroir_text( 'bag_updated' ) ); ?>" data-error="<?php echo esc_attr( miroir_text( 'added_error' ) ); ?>" data-bag-url="<?php echo esc_url( wc_get_cart_url() ); ?>" data-bag-label="<?php echo esc_attr( miroir_text( 'view_bag' ) ); ?>"<?php echo $item ? ' open data-added-item' : ''; ?>>
 		<div class="panel__header">
