@@ -738,45 +738,87 @@
 		} );
 	}
 
-	/*
-	 * "Load more" on listings: fetch the next page, append its cards, move the
-	 * button to the following page (or drop it). Without JS the button is a
-	 * plain link to the next page.
-	 */
-	document.addEventListener( 'click', function ( event ) {
-		var button = event.target.closest( '[data-load-more]' );
-		if ( ! button || button.getAttribute( 'aria-busy' ) === 'true' ) {
-			return;
-		}
-		var list = document.querySelector( '[data-load-more-list]' );
-		if ( ! list ) {
-			return;
-		}
-		event.preventDefault();
-		button.setAttribute( 'aria-busy', 'true' );
+	/* Auto-load near the end of listings; the link remains a manual/no-JS fallback. */
+	var listingButton = document.querySelector( '[data-load-more]' );
+	var listing = document.querySelector( '[data-load-more-list]' );
+	if ( listingButton && listing ) {
+		var listingObserver;
+		var label = listingButton.textContent;
+		var status = document.createElement( 'span' );
+		status.className = 'screen-reader-text';
+		status.setAttribute( 'role', 'status' );
+		listingButton.after( status );
 
-		fetch( button.href, { credentials: 'same-origin' } )
-			.then( function ( response ) {
-				return response.text();
-			} )
-			.then( function ( html ) {
-				var doc = new DOMParser().parseFromString( html, 'text/html' );
-				var nextList = doc.querySelector( '[data-load-more-list]' );
-				var nextButton = doc.querySelector( '[data-load-more]' );
-				if ( nextList ) {
+		function loadProducts( automatic ) {
+			if ( listingButton.getAttribute( 'aria-busy' ) === 'true' ) {
+				return;
+			}
+			if ( listingObserver ) {
+				listingObserver.unobserve( listingButton );
+			}
+			listingButton.setAttribute( 'aria-busy', 'true' );
+			listingButton.textContent = 'Loading...';
+			status.textContent = 'Loading more products.';
+
+			fetch( listingButton.href, { credentials: 'same-origin' } )
+				.then( function ( response ) {
+					if ( ! response.ok || response.redirected ) {
+						throw new Error( 'Unable to load products' );
+					}
+					return response.text();
+				} )
+				.then( function ( html ) {
+					var doc = new DOMParser().parseFromString( html, 'text/html' );
+					var nextList = doc.querySelector( '[data-load-more-list]' );
+					var nextButton = doc.querySelector( '[data-load-more]' );
+					if ( ! nextList || ! nextList.children.length ) {
+						throw new Error( 'Missing products' );
+					}
+					var count = nextList.children.length;
 					Array.prototype.forEach.call( nextList.children, function ( card ) {
-						list.appendChild( document.importNode( card, true ) );
+						listing.appendChild( document.importNode( card, true ) );
 					} );
+					status.textContent = count + ' more products loaded.';
+					if ( nextButton ) {
+						listingButton.href = nextButton.href;
+						listingButton.textContent = label;
+						listingButton.removeAttribute( 'aria-busy' );
+						if ( listingObserver ) {
+							listingObserver.observe( listingButton );
+						}
+					} else {
+						listingButton.remove();
+						if ( listingObserver ) {
+							listingObserver.disconnect();
+						}
+						status.textContent += ' All products loaded.';
+					}
+				} )
+				.catch( function () {
+					listingButton.textContent = label;
+					listingButton.removeAttribute( 'aria-busy' );
+					status.textContent = 'Could not load more products. Use the Load more link to retry.';
+					// Pause automatic retries. An explicit click can fall back to navigation.
+					if ( ! automatic ) {
+						window.location.href = listingButton.href;
+					}
+				} );
+		}
+
+		listingButton.addEventListener( 'click', function ( event ) {
+			if ( event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) {
+				return;
+			}
+			event.preventDefault();
+			loadProducts( false );
+		} );
+		if ( 'IntersectionObserver' in window ) {
+			listingObserver = new IntersectionObserver( function ( entries ) {
+				if ( entries.some( function ( entry ) { return entry.isIntersecting; } ) ) {
+					loadProducts( true );
 				}
-				if ( nextButton ) {
-					button.href = nextButton.href;
-					button.removeAttribute( 'aria-busy' );
-				} else {
-					button.remove();
-				}
-			} )
-			.catch( function () {
-				window.location.href = button.href;
-			} );
-	} );
+			}, { rootMargin: '0px 0px 400px 0px' } );
+			listingObserver.observe( listingButton );
+		}
+	}
 } )();
