@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 31 (proposed 26, accepted 1, superseded 4)
 - task: 1 (open 1)
 - memory: 35 (active 35)
-- handoff: 78 (final 78)
+- handoff: 79 (final 79)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-8q1nbwtx 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Restyled PDP quantity selector from boxed stepper to underlined Quantity Field row matching size select (product-buy.php markup, product.css .qty-field, editable quantity_label text). Pen.dev:…
 - hnd-f9xe98tw 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Added PDP quantity stepper (product-buy.php, product.css, theme.js): clamps to stock/variation limits, disables -/+ at limits, hides for sold-individually variations; Add to bag posts chosen qt…
 - hnd-809sxpk2 2026-11-01 (human:akbar) — Done: Reviewed and staged scoped bag drawer commit including responsive confirmation, navbar entry, editable quantities, toolbar clearance, native validation, regression scripts and Pen.dev designs.…
 - hnd-kqd0ggpz 2026-11-01 (human:akbar) — Done: Committed optional announcement bar link as a scoped commit containing block.json, render.php and header.css only. Existing PHP/render/Elementor/browser checks passed; diff whitespace check pas…
 - hnd-anw8afhp 2026-11-01 (human:akbar) — Done: Kept bag drawer/backdrop below visible WordPress toolbar with measured 32/46px or scrolled-away offsets. Navbar bag now opens the shared full-bag drawer with Bag heading; add success uses Added…
-- hnd-mae8nfzb 2026-11-01 (human:akbar) — Done: Added optional Link URL field to announcement block metadata, shared by Elementor Announcement bar widget and WordPress block editor. Full bar renders as a native anchor only for a safe nonempt…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
