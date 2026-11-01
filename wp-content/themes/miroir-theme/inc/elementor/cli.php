@@ -88,6 +88,13 @@ class Miroir_Elementor_Command {
 				WP_CLI::log( "page {$widget}: #{$page}" );
 			}
 		}
+		// Every other page becomes a Text page widget holding the text it shows today.
+		foreach ( self::text_pages() as $page ) {
+			if ( $force || ! miroir_elementor_built( $page ) ) {
+				$this->save_page( $page, self::stack( array( self::widget( 'miroir-text-page', array( 'text' => self::page_html( $page ) ) ) ) ) );
+				WP_CLI::log( "page text: #{$page} " . get_the_title( $page ) );
+			}
+		}
 
 		\Elementor\Plugin::$instance->files_manager->clear_cache();
 		WP_CLI::success( 'The site is managed in Elementor.' );
@@ -108,9 +115,8 @@ class Miroir_Elementor_Command {
 		}
 		$this->save_kit( $kit, $settings );
 
-		$pages = array( (int) get_option( 'page_on_front' ) => get_post_meta( (int) get_option( 'page_on_front' ), '_miroir_blocks_before_elementor', true ) );
-		foreach ( array_keys( self::STORE_PAGES ) as $option ) {
-			$page           = (int) get_option( $option );
+		$pages = array();
+		foreach ( get_posts( array( 'post_type' => 'page', 'post_status' => 'any', 'numberposts' => -1, 'meta_key' => '_miroir_blocks_before_elementor', 'fields' => 'ids' ) ) as $page ) { // phpcs:ignore WordPress.DB.SlowDBQuery
 			$pages[ $page ] = get_post_meta( $page, '_miroir_blocks_before_elementor', true );
 		}
 		foreach ( array_filter( $pages ) as $page => $content ) {
@@ -284,6 +290,48 @@ class Miroir_Elementor_Command {
 			WP_CLI::warning( 'The front page has no Miroir blocks: run `wp miroir theme setup` first for the default home sections.' );
 		}
 		return $widgets;
+	}
+
+	/**
+	 * Pages other than home, bag, checkout, account and the shop (a product listing, not text).
+	 *
+	 * @return int[]
+	 */
+	private static function text_pages() {
+		$skip = array( (int) get_option( 'page_on_front' ), function_exists( 'wc_get_page_id' ) ? (int) wc_get_page_id( 'shop' ) : 0 );
+		foreach ( array_keys( self::STORE_PAGES ) as $option ) {
+			$skip[] = (int) get_option( $option );
+		}
+		$pages = get_posts( array( 'post_type' => 'page', 'post_status' => array( 'publish', 'draft', 'pending', 'private' ), 'numberposts' => -1, 'fields' => 'ids' ) );
+		return array_values( array_diff( array_map( 'intval', $pages ), $skip ) );
+	}
+
+	/**
+	 * What a page's text column shows today: its blocks through the_content
+	 * filters (as miroir/page-content prints them), from the copy kept before
+	 * Elementor took over when there is one.
+	 *
+	 * @param int $page Page id.
+	 * @return string
+	 */
+	private static function page_html( $page ) {
+		$content = (string) get_post_meta( $page, '_miroir_blocks_before_elementor', true );
+		if ( '' === $content ) {
+			$content = (string) get_post_field( 'post_content', $page );
+		}
+		$frontend = \Elementor\Plugin::$instance->frontend;
+		$priority = has_filter( 'the_content', array( $frontend, 'apply_builder_in_content' ) );
+		if ( false !== $priority ) {
+			remove_filter( 'the_content', array( $frontend, 'apply_builder_in_content' ), $priority );
+		}
+		$GLOBALS['post'] = get_post( $page ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+		setup_postdata( $GLOBALS['post'] );
+		$html = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
+		wp_reset_postdata();
+		if ( false !== $priority ) {
+			add_filter( 'the_content', array( $frontend, 'apply_builder_in_content' ), $priority );
+		}
+		return $html;
 	}
 
 	/**

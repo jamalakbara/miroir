@@ -64,9 +64,12 @@ docker compose run --rm --user 0:0 --entrypoint sh wpcli -c 'wp --allow-root plu
 The site is edited in Elementor (free). The `miroir-*` widgets print the theme's
 own sections, so the storefront stays 1:1 with the design in `docs/design/miroir.pen`.
 
-- Home, bag, checkout and account: Pages > edit with Elementor.
-- Header, footer, product page, shop/collections, search, text pages, 404 and
-  maintenance: Templates > Saved Templates ("Miroir: …"). Which template draws
+- Every page: Pages > Edit with Elementor. Home, bag, checkout and account use
+  their Miroir widgets; text pages (FAQ, size guide, policies, contact …) use the
+  "Text page" widget (page title + text in the page's column). The shop page is
+  the product listing: its layout is the "Shop and collections" template.
+- Header, footer, product page, shop/collections, search, 404, maintenance and
+  pages not built with Elementor: Templates > Saved Templates ("Miroir: …"). Which template draws
   each screen: Site Settings > Miroir > Templates.
 - Colours and fonts: Site Settings > Global Colors / Global Fonts ("miroir_*").
   Layout, products, linked pages, maintenance and every label: Site Settings > Miroir.

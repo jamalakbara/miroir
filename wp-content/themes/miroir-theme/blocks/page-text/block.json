@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/page-text",
+	"title": "Page text (Elementor)",
+	"category": "miroir",
+	"icon": "text",
+	"description": "Text column of a page built with Elementor (the Text page widget). Not for the Site Editor.",
+	"textdomain": "miroir",
+	"attributes": {
+		"html": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"inserter": false
+	},
+	"usesContext": [
+		"miroir/pageVariant"
+	],
+	"render": "file:./render.php"
+}

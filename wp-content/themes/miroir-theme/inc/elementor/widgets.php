@@ -386,13 +386,13 @@ class Miroir_Widget_Product extends Miroir_Widget {
 	}
 }
 
-/** Text pages (info, guides, FAQ): title and the page's own content. */
+/** Text pages (info, guides, FAQ) written in the WordPress editor: title and that text. */
 class Miroir_Widget_Page extends Miroir_Widget {
 	public function get_name() {
 		return 'miroir-page';
 	}
 	public function get_title() {
-		return __( 'Page', 'miroir' );
+		return __( 'Page layout (text from WordPress editor)', 'miroir' );
 	}
 	public function get_icon() {
 		return 'eicon-post-content';
@@ -428,9 +428,64 @@ class Miroir_Widget_Page extends Miroir_Widget {
 		$this->end_controls_section();
 	}
 	protected function markup( $settings ) {
+		return render_block( $this->page_block( $settings ) );
+	}
+	/**
+	 * The page layout block for the settings.
+	 *
+	 * @param array $settings Widget settings.
+	 * @return array
+	 */
+	protected function page_block( $settings ) {
 		$block = $this->parsed_block( $this->tree(), $settings );
 		$block['attrs']['variant'] = 'auto' === $settings['variant'] ? miroir_page_variant() : (string) $settings['variant'];
-		return render_block( $block );
+		return $block;
+	}
+}
+
+/** Text pages written in Elementor: title and text in the page's column (info, guide or plain). */
+class Miroir_Widget_Text_Page extends Miroir_Widget_Page {
+	public function get_name() {
+		return 'miroir-text-page';
+	}
+	public function get_title() {
+		return __( 'Text page', 'miroir' );
+	}
+	public function get_icon() {
+		return 'eicon-text';
+	}
+	protected function tree() {
+		return array(
+			'block'    => 'miroir/page',
+			'controls' => false,
+			'children' => array(
+				array( 'block' => 'miroir/page-title', 'part' => 'title', 'label' => __( 'Title (the page title)', 'miroir' ) ),
+				array( 'block' => 'miroir/page-text', 'controls' => false ),
+			),
+		);
+	}
+	protected function register_controls() {
+		parent::register_controls();
+		$this->update_control( 'variant', array( 'description' => '' ) );
+		$this->start_injection( array( 'of' => 'title_show' ) );
+		$this->add_control(
+			'text',
+			array(
+				'label'     => __( 'Text', 'miroir' ),
+				'type'      => \Elementor\Controls_Manager::WYSIWYG,
+				'separator' => 'before',
+			)
+		);
+		$this->end_injection();
+	}
+	protected function page_block( $settings ) {
+		$block = parent::page_block( $settings );
+		foreach ( $block['innerBlocks'] as $i => $inner ) {
+			if ( 'miroir/page-text' === $inner['blockName'] ) {
+				$block['innerBlocks'][ $i ]['attrs']['html'] = (string) $settings['text'];
+			}
+		}
+		return $block;
 	}
 }
 
@@ -582,6 +637,7 @@ function miroir_elementor_widget_classes() {
 		'Miroir_Widget_Search_Results',
 		'Miroir_Widget_Product',
 		'Miroir_Widget_Page',
+		'Miroir_Widget_Text_Page',
 		'Miroir_Widget_Bag',
 		'Miroir_Widget_Checkout',
 		'Miroir_Widget_Account',
