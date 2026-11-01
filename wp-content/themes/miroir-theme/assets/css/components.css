@@ -23,6 +23,27 @@
 .ph--filled .ph__hover { opacity: 0; transition: opacity 0.25s ease; }
 a:hover .ph--filled .ph__hover, a:focus-visible .ph--filled .ph__hover { opacity: 1; }
 
+/* Image skeletons only run while a real photo is pending. Geometry stays fixed. */
+.ph__fallback { display: none; }
+.ph--filled.is-image-loading::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.55) 50%, transparent 80%);
+	transform: translateX(-100%);
+	animation: image-skeleton 1.4s ease-in-out infinite;
+	pointer-events: none;
+}
+.ph--filled.is-image-loading img,
+.ph--filled.has-image-error img:not(.ph__hover),
+.ph--filled img.has-image-error { visibility: hidden; }
+.ph--filled.has-image-error .ph__fallback { display: block; }
+@keyframes image-skeleton { to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) {
+	.ph--filled.is-image-loading::after { animation: none; transform: none; background: none; }
+	.ph--filled .ph__hover { transition: none; }
+}
+
 /* Buttons: Primary (IwhUS), Outline (rUMLe), WhatsApp (CFsCH). 15/44 padding, 46px tall. */
 .btn {
 	display: inline-flex;

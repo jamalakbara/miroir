@@ -2,6 +2,55 @@
 ( function () {
 	'use strict';
 
+	/* Real photos get a skeleton; static design placeholders stay unchanged. */
+	var watchedImages = new WeakSet();
+	function watchImages( root ) {
+		var images = root.querySelectorAll( '.ph--filled img' );
+		images.forEach( function ( image ) {
+			if ( watchedImages.has( image ) ) {
+				return;
+			}
+			watchedImages.add( image );
+			var media = image.closest( '.ph--filled' );
+			var primary = ! image.classList.contains( 'ph__hover' );
+			function settle() {
+				var failed = image.naturalWidth === 0;
+				image.classList.toggle( 'has-image-error', failed );
+				if ( primary ) {
+					media.classList.remove( 'is-image-loading' );
+					media.classList.toggle( 'has-image-error', failed );
+					media.removeAttribute( 'aria-busy' );
+					if ( failed ) {
+						media.setAttribute( 'role', 'img' );
+						media.setAttribute( 'aria-label', image.alt );
+					} else {
+						media.removeAttribute( 'role' );
+						media.removeAttribute( 'aria-label' );
+					}
+				}
+			}
+			image.addEventListener( 'load', settle );
+			image.addEventListener( 'error', settle );
+			if ( image.complete ) {
+				settle();
+			} else if ( primary ) {
+				media.classList.add( 'is-image-loading' );
+				media.setAttribute( 'aria-busy', 'true' );
+			}
+		} );
+	}
+	watchImages( document );
+	// Load-more cards and WooCommerce cart updates can insert photos after startup.
+	new MutationObserver( function ( records ) {
+		records.forEach( function ( record ) {
+			record.addedNodes.forEach( function ( node ) {
+				if ( node.nodeType === 1 ) {
+					watchImages( node.parentElement || node );
+				}
+			} );
+		} );
+	} ).observe( document.body, { childList: true, subtree: true } );
+
 	/* Product strips keep their card widths and scroll only when they overflow. */
 	document.querySelectorAll( '[data-product-carousel]' ).forEach( function ( carousel ) {
 		var track = carousel.querySelector( '[data-carousel-track]' );

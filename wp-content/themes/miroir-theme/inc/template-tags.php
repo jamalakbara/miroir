@@ -60,6 +60,7 @@ function miroir_image( $id, $size = 'woocommerce_single', $class = '', $label = 
 	}
 	$alt = trim( (string) get_post_meta( $id, '_wp_attachment_image_alt', true ) );
 	echo '<div class="ph ph--filled ' . esc_attr( $class ) . '">';
+	echo miroir_icon( 'image', $icon, 'ph__icon ph__fallback' ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG.
 	echo wp_get_attachment_image( $id, $size, false, array( 'alt' => $alt ? $alt : $label ) );
 	if ( $hover_id && wp_attachment_is_image( $hover_id ) ) {
 		echo wp_get_attachment_image( $hover_id, $size, false, array( 'alt' => '', 'class' => 'ph__hover', 'aria-hidden' => 'true' ) );
