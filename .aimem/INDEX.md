@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 18 (proposed 16, accepted 1, superseded 1)
+- decision: 19 (proposed 17, accepted 1, superseded 1)
 - task: 1 (open 1)
 - memory: 33 (active 33)
-- handoff: 44 (final 44)
+- handoff: 46 (final 46)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-5mezf4ve 2026-11-01 (human:akbar) — Done: Inspected popular search source: manually configured popular_searches theme setting, default Shirts/Dresses/New arrivals; helper resolves category links or product search fallback. No popularit…
+- hnd-494cb51s 2026-11-01 (human:akbar) — Done: Replaced Search modal full-width Close search button with accessible X beside heading, 44px target and hover state. Updated desktop/tablet/mobile search dialogs in miroir.pen via pen.dev MCP. V…
 - hnd-xyvwjfk8 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: All pages now managed in Elementor: new Text page widget + internal block miroir/page-text; wp miroir elementor setup converted 14 text pages (FAQ, size guide, policies, contact, payment confir…
 - hnd-638166s0 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Tested Elementor editor in browser: home widgets (caption, layout, image picker, hand-picked products) re-render live; header template navigation controls; product template parts and texts; Sit…
 - hnd-nrx4y56n 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Branch elementor (from origin/main): Elementor 4.3.5 installed+active; theme layer inc/elementor/ (15 Miroir section widgets rendering miroir/* block trees, location swap for header/footer/main…
-- hnd-qf0repx9 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Converted miroir-theme to a block theme on branch block-theme (dec-4a5wfd9e): theme.json (palette + 2 font families), templates/ (15) and parts/header|footer built from 28 new server-rendered m…
-- hnd-6et7wapc 2026-10-31 (human:akbar) — Done: Prepared isolated navbar commit: staged responsive CSS/header markup, shared bag helper with fallback for HEAD without Customizer, WooCommerce fragment/cache updates, saved Pen design and navba…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
