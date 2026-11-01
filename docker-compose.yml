@@ -38,6 +38,12 @@ services:
     volumes:
       - wp_core:/var/www/html
       - ./wp-content:/var/www/html/wp-content
+      # Keep vendor PHP files on Linux; our code stays editable on Windows.
+      - wp_plugins:/var/www/html/wp-content/plugins
+      - ./wp-content/plugins/miroir-currency:/var/www/html/wp-content/plugins/miroir-currency
+      - ./wp-content/plugins/miroir-demo:/var/www/html/wp-content/plugins/miroir-demo
+      - ./wp-content/plugins/miroir-redirects:/var/www/html/wp-content/plugins/miroir-redirects
+      - ./wp-content/plugins/miroir-whatsapp-order:/var/www/html/wp-content/plugins/miroir-whatsapp-order
 
   # One-off WP-CLI runner: docker compose run --rm wpcli <command>
   wpcli:
@@ -56,7 +62,13 @@ services:
     volumes:
       - wp_core:/var/www/html
       - ./wp-content:/var/www/html/wp-content
+      - wp_plugins:/var/www/html/wp-content/plugins
+      - ./wp-content/plugins/miroir-currency:/var/www/html/wp-content/plugins/miroir-currency
+      - ./wp-content/plugins/miroir-demo:/var/www/html/wp-content/plugins/miroir-demo
+      - ./wp-content/plugins/miroir-redirects:/var/www/html/wp-content/plugins/miroir-redirects
+      - ./wp-content/plugins/miroir-whatsapp-order:/var/www/html/wp-content/plugins/miroir-whatsapp-order
 
 volumes:
   db_data:
   wp_core:
+  wp_plugins:

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/product-strip",
+	"title": "Product row",
+	"category": "miroir",
+	"icon": "products",
+	"description": "A scrolling row of product cards from a collection, the sale, featured or hand-picked products.",
+	"keywords": [ "products", "collection", "carousel", "home" ],
+	"textdomain": "miroir",
+	"attributes": {
+		"label": { "type": "string", "default": "" },
+		"source": { "type": "string", "enum": [ "category", "sale", "featured", "newest", "ids" ], "default": "category" },
+		"category": { "type": "string", "default": "" },
+		"ids": { "type": "array", "items": { "type": "number" }, "default": [] },
+		"limit": { "type": "number", "default": -1 },
+		"columns": { "type": "number", "enum": [ 5, 6 ], "default": 5 },
+		"url": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "className": false, "customClassName": false },
+	"editorScript": "miroir-blocks-editor",
+	"render": "file:./render.php"
+}

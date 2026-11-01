@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/footer-text",
+	"title": "Footer line",
+	"category": "miroir",
+	"icon": "location",
+	"description": "Short line at the top of the footer (location).",
+	"textdomain": "miroir",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": ""
+		},
+		"show": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": [
+			{
+				"attr": "show",
+				"type": "toggle",
+				"label": "Show line"
+			},
+			{
+				"attr": "text",
+				"type": "text",
+				"label": "Text",
+				"help": "Empty: Location : Indonesia"
+			}
+		]
+	}
+}

@@ -1,0 +1,69 @@
+/* Login (screen 08) and My account (screen 09; 17-21 follow). */
+.login-wrap { padding: 96px var(--gutter) 160px; --col-w: 820px; --col-gap: 36px; }
+.account-form { display: flex; flex-direction: column; gap: 30px; padding-top: 40px; }
+.account-form__password { display: flex; flex-direction: column; gap: 12px; }
+.account-form__lost {
+	align-self: flex-start;
+	color: var(--ink-3);
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.account-form .check { align-self: flex-start; }
+.account-form__actions { display: flex; gap: 8px; }
+
+.account-wrap { padding: 96px var(--gutter) 120px; --col-w: 1100px; --col-gap: 48px; }
+.account { display: flex; align-items: flex-start; gap: 80px; }
+.account-menu { flex: none; width: 200px; }
+.account-menu ul { display: flex; flex-direction: column; gap: 12px; }
+.account-menu a {
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.account-menu a[aria-current] { text-decoration: underline; text-underline-offset: 3px; }
+.account-menu__item--customer-logout a { color: var(--ink-3); }
+.account__content { display: flex; flex: 1 1 0; flex-direction: column; gap: 24px; min-width: 0; }
+.account__greeting,
+.account__empty { color: var(--ink-2); font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 300; }
+
+.orders-table { display: flex; flex-direction: column; }
+.orders-table__row { display: flex; align-items: center; padding: 16px 0; font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 300; }
+.orders-table__head {
+	color: var(--ink-2);
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.orders-table__cell { flex: none; }
+.orders-table__cell--no { width: 140px; }
+.orders-table__cell--date { flex: 1 1 0; }
+.orders-table__cell--status { width: 160px; }
+.orders-table__cell--total { width: 180px; }
+.orders-table__cell--actions { display: flex; justify-content: flex-end; width: 120px; }
+.orders-pager { display: flex; justify-content: space-between; }
+
+@media (max-width: 1023px) {
+	.login-wrap, .account-wrap { padding: 40px var(--gutter) 32px; }
+	.account { flex-direction: column; gap: 32px; }
+	.account__content { flex: none; width: 100%; }
+	.orders-table__cell--no { width: 90px; }
+	.orders-table__cell--status, .orders-table__cell--total { width: 120px; }
+	.orders-table__cell--actions { width: 90px; }
+}
+
+@media (max-width: 599px) {
+	.login-wrap, .account-wrap { padding: 32px var(--gutter) 24px; }
+	.account-form__actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+
+	.orders-table__head { display: none; }
+	.orders-table__row { flex-direction: column; align-items: stretch; gap: 20px; }
+	.orders-table__cell { width: 100%; }
+	.orders-table__cell--date { flex: none; }
+}

@@ -1,0 +1,8 @@
+[
+ {"name":"02-D","design":"ldfl8","url":"http://localhost:8080/shop-2/","width":1440},
+ {"name":"02-T","design":"B0KnK","url":"http://localhost:8080/shop-2/","width":768},
+ {"name":"02-M","design":"DzHe1","url":"http://localhost:8080/shop-2/","width":390},
+ {"name":"10-D","design":"owqe2","url":"http://localhost:8080/?s=dress","width":1440},
+ {"name":"10-T","design":"BYv3n","url":"http://localhost:8080/?s=dress","width":768},
+ {"name":"10-M","design":"hXYaO","url":"http://localhost:8080/?s=dress","width":390}
+]

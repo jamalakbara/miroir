@@ -1,0 +1,39 @@
+// Functional check for screens 31-44: panels open/close, filter form, currency switch, size/added states, notices.
+const { chromium } = require('playwright-core');
+const base = 'http://localhost:8080';
+(async () => {
+  const b = await chromium.launch({ channel: 'msedge' }); const p = await b.newPage({ viewport: { width: 768, height: 900 } });
+  const errors = []; p.on('pageerror', e => errors.push(e.message)); p.on('dialog', d => { errors.push('dialog: ' + d.message()); d.dismiss(); });
+  await p.goto(base + '/shop-2/', { waitUntil: 'networkidle' });
+  await p.click('.site-nav__toggle');
+  console.log('menu opens in place:', await p.isVisible('#nav-panel'), '| listing hidden:', !(await p.isVisible('.plp')), '| url unchanged:', !p.url().includes('panel='));
+  await p.keyboard.press('Escape');
+  console.log('escape closes:', !(await p.isVisible('#nav-panel')) && await p.isVisible('.plp'));
+  // Below 1024px the currency link sits in the menu panel; the header toggle is a desktop control.
+  await p.setViewportSize({ width: 1440, height: 900 });
+  await p.click('.site-nav__currency');
+  console.log('currency panel radios:', await p.locator('#currency-panel input[type=radio]').count());
+  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), (async () => { await p.check('#currency-panel input[value=USD]'); await p.click('#currency-panel button[type=submit]'); })()]);
+  console.log('after USD: header', (await p.textContent('.site-nav__currency')).trim(), '| first price', (await p.textContent('.card__now')).trim(), '| url', p.url().replace(base, ''));
+  await p.goto(base + '/?miroir_currency=IDR', { waitUntil: 'networkidle' });
+  await p.setViewportSize({ width: 390, height: 900 });
+  await p.goto(base + '/shop-2/', { waitUntil: 'networkidle' });
+  await p.click('.plp__bar-filter');
+  await p.check('#filter-panel input[value=black]'); await p.check('#filter-panel input[value=white]');
+  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), p.click('#filter-panel button[type=submit]')]);
+  console.log('filter url:', decodeURIComponent(p.url().replace(base, '')), '| cards:', await p.locator('.plp__grid .card').count());
+  await p.setViewportSize({ width: 1440, height: 900 });
+  await p.goto(base + '/product/vale-dress/', { waitUntil: 'networkidle' });
+  await p.selectOption('.variations_form select', '');
+  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), p.click('.single_add_to_cart_button')]);
+  console.log('no size -> ', p.url().replace(base, ''), '|', await p.textContent('.product-state .flow__title'));
+  await p.selectOption('.state-buy select', 'S'); await p.waitForTimeout(400);
+  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), p.click('.state-buy .single_add_to_cart_button')]);
+  console.log('size S added ->', p.url().replace(base, '').replace(/added=\w+/, 'added=…'), '|', await p.textContent('.product-state .flow__title'), '|', (await p.textContent('.product-state .notice__text')).trim());
+  await p.goto(base + '/my-account/', { waitUntil: 'networkidle' });
+  await p.fill('#username', 'nobody@example.test'); await p.fill('#password', 'wrong-password-x');
+  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), p.click('button[name=login]')]);
+  console.log('login error notice:', (await p.textContent('.notice__title')).trim(), '/', (await p.textContent('.notice__text')).replace(/\s+/g, ' ').trim().slice(0, 60));
+  console.log('errors/dialogs:', errors.length ? errors : 'none');
+  await b.close();
+})().catch(e => { console.error(e); process.exit(1); });

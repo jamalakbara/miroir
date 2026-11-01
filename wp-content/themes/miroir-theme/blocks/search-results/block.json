@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/search-results",
+	"title": "Search results",
+	"category": "miroir",
+	"icon": "screenoptions",
+	"description": "Result count, product cards and load more.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/listing"
+	],
+	"miroir": {
+		"controls": []
+	}
+}

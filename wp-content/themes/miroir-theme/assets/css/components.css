@@ -1,0 +1,351 @@
+/*
+ * Pen reusable components. Pen strokes are 1px lines centred on the frame edge
+ * that never change the frame's size: boxes use outline + outline-offset -0.5px
+ * (as the pen's own HTML export does), single edges use .hair-* box-shadows.
+ */
+
+/* Hairlines (single pen stroke edges). */
+.hair-b { box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line); }
+.hair-t { box-shadow: inset 0 0.5px 0 var(--line), 0 -0.5px 0 var(--line); }
+.hair-tb { box-shadow: inset 0 0.5px 0 var(--line), 0 -0.5px 0 var(--line), inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line); }
+
+/* Image Placeholder (Z5Qv0z): #EDEDED box, 28px image icon centred. */
+.ph {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--ph);
+	color: var(--ph-ink);
+}
+.ph__icon { flex: none; }
+.ph--filled { position: relative; overflow: hidden; }
+.ph--filled img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph--filled .ph__hover { opacity: 0; transition: opacity 0.25s ease; }
+a:hover .ph--filled .ph__hover, a:focus-visible .ph--filled .ph__hover { opacity: 1; }
+
+/* Buttons: Primary (IwhUS), Outline (rUMLe), WhatsApp (CFsCH). 15/44 padding, 46px tall. */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 15px 44px;
+	border: 0;
+	outline: 1px solid var(--ink-3);
+	outline-offset: -0.5px;
+	background: transparent;
+	color: var(--ink-2);
+	font-family: var(--font-sans);
+	font-size: var(--text-base);
+	font-weight: 400;
+	letter-spacing: var(--track-ui);
+	line-height: var(--lh-sans-13);
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.btn:hover, .btn:focus-visible { text-decoration: none; }
+.btn:focus-visible { outline-width: 2px; outline-color: var(--ink); }
+.btn--primary, .btn--whatsapp {
+	outline-color: var(--ink);
+	background: var(--ink);
+	color: var(--on-ink);
+}
+.btn--whatsapp { padding-inline: 32px; }
+.btn--whatsapp .icon { width: 16px; height: 16px; }
+.btn--block { display: flex; width: 100%; }
+.btn[disabled], .btn.is-disabled { cursor: not-allowed; }
+
+/* Button/Link (J4dks). */
+.btn-link {
+	display: inline-flex;
+	align-items: center;
+	color: var(--ink-2);
+	font-size: var(--text-sm);
+	line-height: var(--lh-sans-12);
+	font-weight: 300;
+	letter-spacing: var(--track-ui);
+}
+
+/* Checkbox (qSMF4 / f25hM): 12px box, DM Mono 12 label, gap 8. */
+.check {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 400;
+	letter-spacing: 0;
+	cursor: pointer;
+}
+.check input {
+	appearance: none;
+	display: grid;
+	place-items: center;
+	width: 12px;
+	height: 12px;
+	flex: none;
+	margin: 0;
+	border: 0;
+	outline: 1px solid var(--ink);
+	outline-offset: -0.5px;
+	background: var(--bg);
+	cursor: pointer;
+}
+.check input:checked {
+	background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 10px 10px no-repeat;
+}
+
+/* Radio (z3t7k5 / lbC11): 12px ring, 6px dot, Inter Tight 13 label. */
+.radio {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: var(--text-base);
+	line-height: var(--lh-sans-13);
+	font-weight: 300;
+	cursor: pointer;
+}
+.radio input {
+	appearance: none;
+	display: grid;
+	place-items: center;
+	width: 12px;
+	height: 12px;
+	flex: none;
+	margin: 0;
+	border: 0;
+	outline: 1px solid var(--ink);
+	outline-offset: -0.5px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.radio input::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--ink);
+	transform: scale(0);
+}
+.radio input:checked::before { transform: scale(1); }
+
+/* Qty Stepper (y40JRr): 102 x 34, three 34px cells, 1px line. */
+.qty {
+	display: inline-flex;
+	align-items: center;
+	outline: 1px solid var(--line);
+	outline-offset: -0.5px;
+}
+.qty__btn, .qty__input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font-size: var(--text-base);
+	line-height: var(--lh-sans-13);
+	font-weight: 300;
+	letter-spacing: var(--track-ui);
+	text-align: center;
+}
+.qty__input { appearance: textfield; -moz-appearance: textfield; }
+.qty__input::-webkit-outer-spin-button,
+.qty__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Badge (c9PEE0): DM Mono 11, 3/8 padding, 1px ink. */
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 3px 8px;
+	outline: 1px solid var(--ink);
+	outline-offset: -0.5px;
+	font-family: var(--font-mono);
+	font-size: var(--text-xs);
+	line-height: var(--lh-mono-11);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+/* Section Link (w4UZ2C): label + 62px arrow, gap 14. */
+.section-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	font-size: var(--text-sm);
+	line-height: var(--lh-sans-12);
+	font-weight: 300;
+	letter-spacing: var(--track-ui);
+}
+.section-link__arrow { flex: none; }
+
+/* Totals Row (lpasV): key/value, 12px bottom padding, line under. */
+.totals-row {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 12px;
+	box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line);
+	font-size: var(--text-base);
+	line-height: var(--lh-sans-13);
+	font-weight: 300;
+}
+
+/* Notice (V20Jy): surface box, 24 padding, mono title, 1.55 body. */
+.notice {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 24px;
+	background: var(--surface);
+}
+.notice__title {
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.notice__text {
+	color: var(--ink-2);
+	font-size: var(--text-base);
+	font-weight: 300;
+	line-height: 20px; /* 13 x 1.55, rounded per line like the pen */
+}
+
+/* Field (xqA38): DM Mono 500 label, 36px underline input, gap 10. */
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.field__label {
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 500;
+	letter-spacing: 0;
+}
+.field__control {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.field__input {
+	width: 100%;
+	height: 36px;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line);
+	background: transparent;
+	color: var(--ink);
+	font-size: var(--text-base);
+	line-height: var(--lh-sans-13);
+	font-weight: 400;
+	letter-spacing: 0;
+	appearance: none;
+}
+.field__input::placeholder { color: var(--ink-3); opacity: 1; }
+.field__input:focus { outline: none; box-shadow: inset 0 -0.5px 0 var(--ink), 0 0.5px 0 var(--ink); }
+textarea.field__input { height: auto; min-height: 36px; padding-block: 9px; resize: vertical; }
+select.field__input { padding-right: 24px; cursor: pointer; }
+.field__icon {
+	position: absolute;
+	right: 0;
+	width: 14px;
+	height: 14px;
+	color: var(--ink-3);
+	pointer-events: none;
+}
+
+/* WhatsApp Float (xhCII): 56px desktop, 48px tablet/mobile. */
+.wa-float {
+	position: fixed;
+	right: 32px;
+	bottom: 32px;
+	z-index: 50;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 28px;
+	background: var(--ink);
+	color: var(--on-ink);
+	box-shadow: 0 4px 16px var(--shadow);
+}
+.wa-float:hover { text-decoration: none; }
+
+@media (max-width: 1023px) {
+	.wa-float { right: 24px; bottom: 24px; width: 48px; height: 48px; }
+}
+
+@media (max-width: 599px) {
+	.wa-float { right: 20px; bottom: 20px; }
+}
+
+/* Product Card (xK7Fl): image, then mono name + price row (gap 12 / 4). Images share the component's 3:4 aspect ratio. */
+.card { display: flex; flex-direction: column; min-width: 0; }
+.card__link { display: flex; flex-direction: column; gap: 12px; }
+.card__link:hover, .card__link:focus-visible { text-decoration: none; }
+.card__link:hover .card__name { text-decoration: underline; text-underline-offset: 3px; }
+.card__media { width: 100%; aspect-ratio: var(--image-ratio); }
+.card__meta { display: flex; flex-direction: column; gap: 4px; }
+.card__name {
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	line-height: var(--lh-mono-12);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.card__price { display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); line-height: var(--lh-sans-12); font-weight: 400; }
+.card__was { color: var(--ink-3); text-decoration: none; letter-spacing: 0; }
+.card__now { letter-spacing: var(--track-ui); }
+
+@media (max-width: 599px) {
+	/* Mobile cards stack "was" over the price, centred on each other. */
+	.card__price { flex-direction: column; align-items: center; align-self: flex-start; gap: 3px; }
+}
+
+/* Listing grids: cards in equal columns (pen rows of flex:1 cards plus spacers). */
+.grid { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); column-gap: var(--col-gap, 20px); row-gap: var(--row-gap, 28px); }
+
+/* Page shell: centred column inside a padded wrap (tablet/mobile: full width). */
+.wrap { display: flex; flex-direction: column; align-items: center; padding: 80px var(--gutter) 40px; }
+.wrap__col { display: flex; flex-direction: column; gap: var(--col-gap, 36px); width: var(--col-w, 900px); max-width: 100%; }
+.page-title { font-size: var(--text-xl); line-height: var(--lh-sans-28); font-weight: 300; }
+
+@media (max-width: 1023px) {
+	.wrap { padding: 40px var(--gutter) 32px; }
+	.wrap__col { width: 100%; gap: var(--col-gap-t, 32px); }
+}
+
+@media (max-width: 599px) {
+	.wrap { padding: 32px var(--gutter) 24px; }
+}
+
+/* WooCommerce prints an empty notices wrapper on every page; it must not take a flex gap. */
+.woocommerce-notices-wrapper:empty { display: none; }
+
+/* Small outline button ("View" in the orders table): 8/20 padding, 12px label. */
+.btn--sm { padding: 8px 20px; font-size: var(--text-sm); line-height: var(--lh-sans-12); }
+
+/* Checkbox with a medium-weight label (login "Remember me"). */
+.check--strong { font-weight: 500; }
+
+/* Field with a trailing button (password visibility). */
+.field__input--icon { padding-right: 28px; }
+.field__toggle { position: absolute; right: 0; display: flex; color: var(--ink-3); }
+
+/* Flat notice (screens 38-44 and WooCommerce messages, screen 41): 20px padding, ink body. */
+.notice--flat { padding: 20px; }
+.notice--flat .notice__title { line-height: 18px; }
+.notice--flat .notice__text { color: var(--ink); line-height: 20px; letter-spacing: 0; }
+.notice--flat .notice__text a { text-decoration: underline; text-underline-offset: 3px; }
+.notice--flat .notice__text .button { margin-left: 8px; }
+.notice--flat + .notice--flat { margin-top: 8px; }
+.field-error { color: var(--error); font-size: var(--text-sm); line-height: 18px; font-weight: 300; letter-spacing: 0; }

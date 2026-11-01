@@ -41,7 +41,26 @@ class Miroir_Demo_Command {
 		'holiday-edit'       => array( 'Holiday Edit', 'shop-by-collection' ),
 		'miroir-x-naluri'    => array( 'Miroir x Naluri', 'shop-by-collection' ),
 		'at-the-studio'      => array( 'At the Studio', 'shop-by-collection' ),
+		// Garment categories for the shop sidebar ("shop women" group in the lofi PLP).
+		'accessories'        => array( 'Accessories', 'women' ),
+		'bottoms'            => array( 'Bottoms', 'women' ),
+		'dress'              => array( 'Dress', 'women' ),
+		'outerwear'          => array( 'Outerwear', 'women' ),
+		'tops'               => array( 'Tops', 'women' ),
 	);
+
+	/** Garment => category under Women. */
+	const GARMENT_CATEGORIES = array(
+		'top'   => 'tops',
+		'pants' => 'bottoms',
+		'skirt' => 'bottoms',
+		'dress' => 'dress',
+		'outer' => 'outerwear',
+		'set'   => 'tops',
+	);
+
+	/** Colour families of the global "Colour" attribute (pa_color), in the lofi filter order. */
+	const COLOR_FAMILIES = array( 'black', 'white', 'neutrals', 'multicolor', 'blue', 'brown', 'gray', 'green', 'red', 'purple' );
 
 	const TAGS = array(
 		'vintage'          => 'Vintage',
@@ -89,25 +108,25 @@ class Miroir_Demo_Command {
 	/** Garments sold in S/M/L as variations; the rest are simple "All Size" products. */
 	const SIZED_GARMENTS = array( 'dress', 'pants', 'skirt', 'set' );
 
-	/** Slug word => [color name, RGB]. First match wins, so specific words go first. */
+	/** Slug word => [color name, RGB, colour family]. First match wins, so specific words go first. */
 	const COLORS = array(
-		'electric' => array( 'Electric Blue', array( 47, 75, 216 ) ),
-		'navy'     => array( 'Navy', array( 31, 42, 68 ) ),
-		'blue'     => array( 'Blue', array( 92, 128, 182 ) ),
-		'black'    => array( 'Black', array( 38, 36, 36 ) ),
-		'brown'    => array( 'Brown', array( 132, 90, 62 ) ),
-		'cream'    => array( 'Cream', array( 226, 211, 184 ) ),
-		'white'    => array( 'White', array( 246, 243, 236 ) ),
-		'green'    => array( 'Green', array( 94, 125, 90 ) ),
-		'plaid'    => array( 'Plaid', array( 140, 112, 88 ) ),
-		'organza'  => array( 'Ivory', array( 236, 226, 214 ) ),
+		'electric' => array( 'Electric Blue', array( 47, 75, 216 ), 'blue' ),
+		'navy'     => array( 'Navy', array( 31, 42, 68 ), 'blue' ),
+		'blue'     => array( 'Blue', array( 92, 128, 182 ), 'blue' ),
+		'black'    => array( 'Black', array( 38, 36, 36 ), 'black' ),
+		'brown'    => array( 'Brown', array( 132, 90, 62 ), 'brown' ),
+		'cream'    => array( 'Cream', array( 226, 211, 184 ), 'neutrals' ),
+		'white'    => array( 'White', array( 246, 243, 236 ), 'white' ),
+		'green'    => array( 'Green', array( 94, 125, 90 ), 'green' ),
+		'plaid'    => array( 'Plaid', array( 140, 112, 88 ), 'multicolor' ),
+		'organza'  => array( 'Ivory', array( 236, 226, 214 ), 'neutrals' ),
 	);
 
 	const DEFAULT_COLORS = array(
-		array( 'Sand', array( 214, 190, 160 ) ),
-		array( 'Sage', array( 158, 172, 140 ) ),
-		array( 'Dusty Rose', array( 205, 156, 150 ) ),
-		array( 'Taupe', array( 160, 140, 124 ) ),
+		array( 'Sand', array( 214, 190, 160 ), 'neutrals' ),
+		array( 'Sage', array( 158, 172, 140 ), 'green' ),
+		array( 'Dusty Rose', array( 205, 156, 150 ), 'red' ),
+		array( 'Taupe', array( 160, 140, 124 ), 'brown' ),
 	);
 
 	/**
@@ -185,8 +204,9 @@ class Miroir_Demo_Command {
 			'woocommerce_default_country'              => 'ID:JK',
 			'woocommerce_currency'                     => 'IDR',
 			'woocommerce_currency_pos'                 => 'left_space',
-			'woocommerce_price_thousand_sep'           => '.',
-			'woocommerce_price_decimal_sep'            => ',',
+			// Prices read "IDR 279,000" in the lofi (symbol from miroir-currency).
+			'woocommerce_price_thousand_sep'           => ',',
+			'woocommerce_price_decimal_sep'            => '.',
 			'woocommerce_price_num_decimals'           => 0,
 			'woocommerce_calc_taxes'                   => 'no',
 			// Product photos are portrait; match the catalog crop to 4:5.
@@ -264,7 +284,38 @@ class Miroir_Demo_Command {
 		}
 		// WooCommerce's default "Uncategorized" category has no legacy counterpart.
 		update_option( 'default_product_cat', get_term_by( 'slug', 'baju', 'product_cat' )->term_id );
-		WP_CLI::log( sprintf( 'terms  %d categories, %d tags', count( self::CATEGORIES ), count( self::TAGS ) ) );
+		$this->ensure_color_attribute();
+		WP_CLI::log( sprintf( 'terms  %d categories, %d tags, %d colour families', count( self::CATEGORIES ), count( self::TAGS ), count( self::COLOR_FAMILIES ) ) );
+	}
+
+	/**
+	 * Global "Colour" attribute (pa_color) holding the colour families, so the
+	 * shop sidebar can filter by colour. Returns the attribute id.
+	 */
+	private function ensure_color_attribute() {
+		$id = wc_attribute_taxonomy_id_by_name( 'color' );
+		if ( ! $id ) {
+			$id = wc_create_attribute(
+				array(
+					'name'     => 'Colour',
+					'slug'     => 'color',
+					'type'     => 'select',
+					'order_by' => 'menu_order',
+				)
+			);
+			if ( is_wp_error( $id ) ) {
+				WP_CLI::error( 'Could not create the Colour attribute: ' . $id->get_error_message() );
+			}
+		}
+		// A new attribute's taxonomy is only registered on the next request.
+		if ( ! taxonomy_exists( 'pa_color' ) ) {
+			register_taxonomy( 'pa_color', array( 'product' ), array( 'hierarchical' => false ) );
+		}
+		foreach ( self::COLOR_FAMILIES as $order => $family ) {
+			$term_id = $this->ensure_term( 'pa_color', $family, $family );
+			update_term_meta( $term_id, 'order', $order );
+		}
+		return $id;
 	}
 
 	private function ensure_term( $taxonomy, $slug, $name, $parent_slug = '' ) {
@@ -365,23 +416,8 @@ HTML;
 		}
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $home_id );
-
-		// The theme's page template prints the page title; the front page should open on the hero.
-		$theme = get_stylesheet();
-		if ( ! get_block_template( $theme . '//front-page' ) || 'theme' === get_block_template( $theme . '//front-page' )->source ) {
-			$template_id = wp_insert_post(
-				array(
-					'post_type'    => 'wp_template',
-					'post_status'  => 'publish',
-					'post_name'    => 'front-page',
-					'post_title'   => 'Front Page',
-					'post_content' => '<!-- wp:template-part {"slug":"header"} /-->' . "\n"
-						. '<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} --><main class="wp-block-group"><!-- wp:post-content {"layout":{"type":"constrained"}} /--></main><!-- /wp:group -->' . "\n"
-						. '<!-- wp:template-part {"slug":"footer"} /-->',
-				)
-			);
-			wp_set_object_terms( $template_id, $theme, 'wp_theme' );
-		}
+		// No wp_template here: miroir-theme ships templates/front-page.html, and a stored
+		// template would override it in the Site Editor.
 		WP_CLI::log( 'page   home set as front page' );
 	}
 
@@ -433,9 +469,9 @@ HTML;
 		$product->set_short_description( sprintf( '%s %s in a relaxed fit. Placeholder copy for the demo store.', $color[0], $garment ) );
 		$product->set_description( $this->description( $name, $garment, $color[0] ) );
 
-		// Everything lives under "Baju" and "Shop" as on the legacy site, plus its own categories.
+		// Everything lives under "Baju" and "Shop" as on the legacy site, plus its garment and own categories.
 		$cat_ids = array();
-		foreach ( array_merge( array( 'baju', 'shop' ), $cats ) as $cat ) {
+		foreach ( array_merge( array( 'baju', 'shop', self::GARMENT_CATEGORIES[ $garment ] ), $cats ) as $cat ) {
 			$cat_ids[] = get_term_by( 'slug', $cat, 'product_cat' )->term_id;
 		}
 		$product->set_category_ids( $cat_ids );
@@ -449,8 +485,9 @@ HTML;
 		);
 
 		$color_attr = new WC_Product_Attribute();
-		$color_attr->set_name( 'Color' );
-		$color_attr->set_options( array( $color[0] ) );
+		$color_attr->set_id( wc_attribute_taxonomy_id_by_name( 'color' ) );
+		$color_attr->set_name( 'pa_color' );
+		$color_attr->set_options( array( get_term_by( 'slug', $color[2], 'pa_color' )->term_id ) );
 		$color_attr->set_visible( true );
 		$color_attr->set_variation( false );
 

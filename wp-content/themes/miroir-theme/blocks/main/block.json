@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/main",
+	"title": "Page body",
+	"category": "miroir",
+	"icon": "layout",
+	"description": "Main area of the page; the menu, search, filter and currency panels open here.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": false
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": [],
+		"container": {
+			"tag": "main",
+			"className": "site-main"
+		}
+	}
+}

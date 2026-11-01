@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/page-content",
+	"title": "Page content",
+	"category": "miroir",
+	"icon": "media-text",
+	"description": "Blocks of the page itself (edit them in Pages).",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"usesContext": [
+		"miroir/pageVariant"
+	],
+	"miroir": {
+		"controls": []
+	}
+}

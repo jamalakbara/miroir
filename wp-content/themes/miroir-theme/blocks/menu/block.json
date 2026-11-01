@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/menu",
+	"title": "Menu",
+	"category": "miroir",
+	"icon": "list-view",
+	"description": "Links from a menu location (Appearance > Menus).",
+	"textdomain": "miroir",
+	"attributes": {
+		"location": {
+			"type": "string",
+			"enum": [
+				"primary",
+				"footer-account",
+				"footer-policy",
+				"footer-contact"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": [
+			{
+				"attr": "location",
+				"type": "select",
+				"label": "Menu location",
+				"options": [
+					[
+						"primary",
+						"Header: primary links"
+					],
+					[
+						"footer-account",
+						"Footer: account links"
+					],
+					[
+						"footer-policy",
+						"Footer: policy links"
+					],
+					[
+						"footer-contact",
+						"Footer: contact links"
+					]
+				],
+				"help": "Edit the links in Appearance > Menus."
+			}
+		]
+	}
+}

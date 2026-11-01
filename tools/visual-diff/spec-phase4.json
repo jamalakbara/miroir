@@ -1,0 +1,167 @@
+[
+ {
+  "name": "22-D",
+  "design": "LwfO7",
+  "url": "http://localhost:8080/shipping-information/",
+  "width": 1440
+ },
+ {
+  "name": "22-M",
+  "design": "kTnB0",
+  "url": "http://localhost:8080/shipping-information/",
+  "width": 390
+ },
+ {
+  "name": "22-T",
+  "design": "LBftA",
+  "url": "http://localhost:8080/shipping-information/",
+  "width": 768
+ },
+ {
+  "name": "23-D",
+  "design": "uBmjp",
+  "url": "http://localhost:8080/returns-exchanges/",
+  "width": 1440
+ },
+ {
+  "name": "23-M",
+  "design": "bKesU",
+  "url": "http://localhost:8080/returns-exchanges/",
+  "width": 390
+ },
+ {
+  "name": "23-T",
+  "design": "VDgmH",
+  "url": "http://localhost:8080/returns-exchanges/",
+  "width": 768
+ },
+ {
+  "name": "24-D",
+  "design": "wVG9j",
+  "url": "http://localhost:8080/terms-of-use/",
+  "width": 1440
+ },
+ {
+  "name": "24-M",
+  "design": "jpLFq",
+  "url": "http://localhost:8080/terms-of-use/",
+  "width": 390
+ },
+ {
+  "name": "24-T",
+  "design": "CdqXU",
+  "url": "http://localhost:8080/terms-of-use/",
+  "width": 768
+ },
+ {
+  "name": "25-D",
+  "design": "vQlhQ",
+  "url": "http://localhost:8080/privacy-policy/",
+  "width": 1440
+ },
+ {
+  "name": "25-M",
+  "design": "Z701D",
+  "url": "http://localhost:8080/privacy-policy/",
+  "width": 390
+ },
+ {
+  "name": "25-T",
+  "design": "AEVuT",
+  "url": "http://localhost:8080/privacy-policy/",
+  "width": 768
+ },
+ {
+  "name": "26-D",
+  "design": "QRJLd",
+  "url": "http://localhost:8080/contact/",
+  "width": 1440
+ },
+ {
+  "name": "26-M",
+  "design": "HJHoN",
+  "url": "http://localhost:8080/contact/",
+  "width": 390
+ },
+ {
+  "name": "26-T",
+  "design": "vWBUH",
+  "url": "http://localhost:8080/contact/",
+  "width": 768
+ },
+ {
+  "name": "27-D",
+  "design": "r2bRn",
+  "url": "http://localhost:8080/does-not-exist/",
+  "width": 1440
+ },
+ {
+  "name": "27-M",
+  "design": "G03n9d",
+  "url": "http://localhost:8080/does-not-exist/",
+  "width": 390
+ },
+ {
+  "name": "27-T",
+  "design": "j4Yuub",
+  "url": "http://localhost:8080/does-not-exist/",
+  "width": 768
+ },
+ {
+  "name": "28-D",
+  "design": "qhkR5",
+  "url": "http://localhost:8080/payment-confirmation/",
+  "width": 1440
+ },
+ {
+  "name": "28-M",
+  "design": "QCZ7v",
+  "url": "http://localhost:8080/payment-confirmation/",
+  "width": 390
+ },
+ {
+  "name": "28-T",
+  "design": "cSey3",
+  "url": "http://localhost:8080/payment-confirmation/",
+  "width": 768
+ },
+ {
+  "name": "29-D",
+  "design": "RdaIN",
+  "url": "http://localhost:8080/track-your-order/",
+  "width": 1440
+ },
+ {
+  "name": "29-M",
+  "design": "hcKoA",
+  "url": "http://localhost:8080/track-your-order/",
+  "width": 390
+ },
+ {
+  "name": "29-T",
+  "design": "D7A2dR",
+  "url": "http://localhost:8080/track-your-order/",
+  "width": 768
+ },
+ {
+  "name": "30-D",
+  "design": "rGpB0",
+  "url": "http://localhost:8080/?miroir-maintenance-preview",
+  "width": 1440,
+  "height": 1000
+ },
+ {
+  "name": "30-M",
+  "design": "yUzDq",
+  "url": "http://localhost:8080/?miroir-maintenance-preview",
+  "width": 390,
+  "height": 844
+ },
+ {
+  "name": "30-T",
+  "design": "x6HfL",
+  "url": "http://localhost:8080/?miroir-maintenance-preview",
+  "width": 768,
+  "height": 1024
+ }
+]

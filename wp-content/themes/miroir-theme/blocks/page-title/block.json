@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/page-title",
+	"title": "Page title",
+	"category": "miroir",
+	"icon": "heading",
+	"description": "Title of the page.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/page"
+	],
+	"usesContext": [
+		"miroir/pageVariant"
+	],
+	"miroir": {
+		"controls": []
+	}
+}

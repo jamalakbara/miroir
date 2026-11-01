@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/page",
+	"title": "Page layout",
+	"category": "miroir",
+	"icon": "text-page",
+	"description": "Content column of info pages with the page title and text.",
+	"textdomain": "miroir",
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"enum": [
+				"loose",
+				"guide",
+				"info"
+			],
+			"default": "loose"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"providesContext": {
+		"miroir/pageVariant": "variant"
+	},
+	"miroir": {
+		"controls": [
+			{
+				"attr": "variant",
+				"type": "select",
+				"label": "Column",
+				"options": [
+					[
+						"loose",
+						"Info page"
+					],
+					[
+						"guide",
+						"Guide (tighter)"
+					],
+					[
+						"info",
+						"FAQ"
+					]
+				]
+			}
+		],
+		"container": {
+			"tag": "div",
+			"className": "flow flow--{variant}",
+			"template": [
+				[
+					"miroir/page-title"
+				],
+				[
+					"miroir/page-content"
+				]
+			]
+		}
+	}
+}

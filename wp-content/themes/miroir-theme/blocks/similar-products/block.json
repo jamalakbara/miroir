@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/similar-products",
+	"title": "Similar products",
+	"category": "miroir",
+	"icon": "grid-view",
+	"description": "Row of related products.",
+	"textdomain": "miroir",
+	"attributes": {
+		"count": {
+			"type": "number",
+			"default": -1
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/product"
+	],
+	"miroir": {
+		"controls": [
+			{
+				"attr": "count",
+				"type": "number",
+				"label": "Products shown",
+				"help": "-1: Customize > Products."
+			}
+		]
+	}
+}

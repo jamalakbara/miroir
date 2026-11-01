@@ -1,0 +1,8 @@
+[
+ {"name":"hdr-1440","design":"q3WywO","url":"http://localhost:8080/","width":1440,"selector":".site-header"},
+ {"name":"hdr-768","design":"c92e6C","url":"http://localhost:8080/","width":768,"selector":".site-header"},
+ {"name":"hdr-390","design":"vRc3L","url":"http://localhost:8080/","width":390,"selector":".site-header"},
+ {"name":"ftr-1440","design":"bDPNw","url":"http://localhost:8080/","width":1440,"selector":".site-footer"},
+ {"name":"ftr-768","design":"DYVSd","url":"http://localhost:8080/","width":768,"selector":".site-footer"},
+ {"name":"ftr-390","design":"f3MHdV","url":"http://localhost:8080/","width":390,"selector":".site-footer"}
+]

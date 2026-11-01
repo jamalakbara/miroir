@@ -1,0 +1,62 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/listing",
+	"title": "Product listing",
+	"category": "miroir",
+	"icon": "grid-view",
+	"description": "Shop, collection or search results. An empty result shows its own screen.",
+	"textdomain": "miroir",
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"enum": [
+				"plp",
+				"search"
+			],
+			"default": "plp"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": false
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": [
+			{
+				"attr": "layout",
+				"type": "select",
+				"label": "Layout",
+				"options": [
+					[
+						"plp",
+						"Shop / collection"
+					],
+					[
+						"search",
+						"Search results"
+					]
+				]
+			}
+		],
+		"container": {
+			"tag": "div",
+			"className": "plp",
+			"template": [
+				[
+					"miroir/shop-filters"
+				],
+				[
+					"miroir/listing-bar"
+				],
+				[
+					"miroir/product-grid"
+				]
+			]
+		}
+	}
+}

@@ -4,15 +4,16 @@ id: dec-grer46n5
 type: decision
 title: Ordering via WhatsApp instead of WooCommerce checkout
 summary: "Per quotation QUO-2026-003: no payment gateway or shipping calc; PDP and bag hand the order to WhatsApp (wa.me prefilled message)"
-status: proposed
+status: superseded
 trust: agent
 roles: [all]
 tags: [whatsapp, checkout, woocommerce, design]
 paths: [docs/design/miroir.pen, docs/Quotation Webdev Miroir.pdf]
 author: agent:claude-code:claude-opus-5-5
 created: 2026-10-30T21:29:20Z
-updated: 2026-10-30T21:29:20Z
+updated: 2026-10-31T14:05:15Z
 links: [dec-bf8ede4p]
+superseded_by: dec-8vfz3jd3
 ---
 
 Source: docs/Quotation Webdev Miroir.pdf (QUO-2026-003, 30 Oct 2026). It says WooCommerce in catalogue mode, ordering from product pages to the client's WhatsApp number, no checkout, no payment gateway, no automatic shipping. A payment gateway and shipping calculation are explicitly excluded (separate quote). Standard WhatsApp Business app, no API.
