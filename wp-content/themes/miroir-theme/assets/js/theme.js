@@ -111,6 +111,28 @@
 	var main = document.getElementById( 'main' );
 	var activeModal = null;
 	var modalOpener = null;
+	var modalScroll = null;
+
+	// Keep the native scrollbar in place while the background stays still.
+	function preventBackgroundScroll( event ) {
+		if ( ! activeModal ) {
+			return;
+		}
+		var point = event.touches ? event.touches[0] : event;
+		var rect = activeModal.getBoundingClientRect();
+		var inside = point && point.clientX >= rect.left && point.clientX <= rect.right && point.clientY >= rect.top && point.clientY <= rect.bottom;
+		if ( ! inside || ! activeModal.contains( event.target ) ) {
+			event.preventDefault();
+		}
+	}
+	document.addEventListener( 'wheel', preventBackgroundScroll, { passive: false } );
+	document.addEventListener( 'touchmove', preventBackgroundScroll, { passive: false } );
+	window.addEventListener( 'scroll', function () {
+		// Also hold the position for keyboard scrolling and scrollbar dragging.
+		if ( activeModal && modalScroll && ( window.scrollX !== modalScroll.x || window.scrollY !== modalScroll.y ) ) {
+			window.scrollTo( { left: modalScroll.x, top: modalScroll.y, behavior: 'instant' } );
+		}
+	} );
 
 	document.querySelectorAll( 'dialog[data-panel]' ).forEach( function ( dialog ) {
 		// Keep dialogs outside page panels so the menu cannot hide them.
@@ -120,7 +142,7 @@
 				return;
 			}
 			activeModal = null;
-			document.documentElement.classList.remove( 'has-modal' );
+			modalScroll = null;
 			var visiblePanel = main && main.querySelector( '[data-panel]:not([hidden])' );
 			setExpanded( visiblePanel ? visiblePanel.dataset.panel : '' );
 			var url = new URL( window.location.href );
@@ -161,10 +183,10 @@
 		}
 		if ( panel.tagName === 'DIALOG' ) {
 			modalOpener = document.activeElement;
+			modalScroll = { x: window.scrollX, y: window.scrollY };
 			activeModal = panel;
 			panel.removeAttribute( 'open' );
 			panel.showModal();
-			document.documentElement.classList.add( 'has-modal' );
 			setExpanded( name );
 			var field = panel.querySelector( 'input:not([type="hidden"]):not([type="radio"]), input:checked' );
 			if ( field ) {

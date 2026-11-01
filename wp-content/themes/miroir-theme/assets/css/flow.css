@@ -124,7 +124,6 @@ wc-order-attribution-inputs { display: none; }
 .panel__header .flow__title { min-width: 0; }
 .panel__close { display: flex; align-items: center; justify-content: center; flex: none; width: 44px; height: 44px; color: var(--ink); }
 .panel__close:hover { background: var(--line); }
-html.has-modal { overflow: hidden; }
 @media (max-width: 599px) {
 	.panel--modal { padding: 24px; }
 }
