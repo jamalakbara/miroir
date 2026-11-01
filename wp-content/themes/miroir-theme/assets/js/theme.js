@@ -114,6 +114,12 @@
 	var modalScroll = null;
 	var drawerPlaceholder = null;
 	var drawerCloseTimer = null;
+	var modalCloseTimer = null;
+
+	function resetModalClosing( dialog ) {
+		window.clearTimeout( modalCloseTimer );
+		dialog.classList.remove( 'is-closing' );
+	}
 
 	function restoreDrawerNavbar( dialog ) {
 		if ( dialog.classList.contains( 'panel--drawer' ) && drawerPlaceholder ) {
@@ -162,9 +168,14 @@
 		document.body.appendChild( dialog );
 		dialog.addEventListener( 'close', function () {
 			restoreDrawerNavbar( dialog );
+			// A replaced dialog's queued close event must not cancel the new one.
+			if ( ! dialog.open ) {
+				dialog.classList.remove( 'is-closing' );
+			}
 			if ( activeModal !== dialog ) {
 				return;
 			}
+			resetModalClosing( dialog );
 			activeModal = null;
 			modalScroll = null;
 			var visiblePanel = main && main.querySelector( '[data-panel]:not([hidden])' );
@@ -179,10 +190,8 @@
 			}
 		} );
 		dialog.addEventListener( 'cancel', function ( event ) {
-			if ( dialog.classList.contains( 'panel--drawer' ) ) {
-				event.preventDefault();
-				closePanels();
-			}
+			event.preventDefault();
+			closePanels();
 		} );
 		var backdropPress = false;
 		function outside( event ) {
@@ -192,7 +201,7 @@
 		dialog.addEventListener( 'pointerdown', function ( event ) { backdropPress = outside( event ); } );
 		dialog.addEventListener( 'click', function ( event ) {
 			if ( event.target === dialog && backdropPress && outside( event ) ) {
-				dialog.close();
+				closePanels();
 			}
 		} );
 	} );
@@ -234,6 +243,7 @@
 					modalUrl.searchParams.delete( 'panel' );
 					window.history.replaceState( null, '', modalUrl );
 				}
+				resetModalClosing( activeModal );
 				restoreDrawerNavbar( activeModal );
 				activeModal.close();
 			} else {
@@ -294,6 +304,16 @@
 				drawer.classList.add( 'is-closing' );
 				setExpanded( '' );
 				drawerCloseTimer = window.setTimeout( function () { drawer.close(); }, 220 );
+				return;
+			}
+			if ( ! activeModal.classList.contains( 'panel--drawer' ) ) {
+				if ( activeModal.classList.contains( 'is-closing' ) ) {
+					return;
+				}
+				var modal = activeModal;
+				modal.classList.add( 'is-closing' );
+				var duration = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ? 100 : 180;
+				modalCloseTimer = window.setTimeout( function () { modal.close(); }, duration );
 				return;
 			}
 			activeModal.close();

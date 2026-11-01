@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 22 (proposed 19, accepted 1, superseded 2)
+- decision: 23 (proposed 20, accepted 1, superseded 2)
 - task: 1 (open 1)
 - memory: 33 (active 33)
-- handoff: 58 (final 58)
+- handoff: 61 (final 61)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-nagma4ck 2026-11-01 (human:akbar) — Done: Reviewed and prepared requested commit for search/currency dialog motion and associated project memory. JS syntax and diff checks passed; implementation-session responsive browser checks passed…
+- hnd-d4qeegfk 2026-11-01 (human:akbar) — Done: Implemented search/currency fade and slide opening and closing animations plus synchronized backdrop and 100ms reduced-motion fades. Unified Escape/backdrop/button dismissal with exit completio…
+- hnd-gg9kvwqk 2026-11-01 (human:akbar) — Done: Reviewed current search/currency dialog markup, theme tokens, and drawer motion; suggested restrained fade plus small upward movement with shared timing. · Next: Implement the suggested modal t…
 - hnd-wjba88gg 2026-11-01 (human:akbar) — Done: Finalized and reviewed navigation drawer refinements for the requested commit: persistent navbar with original hamburger morph, slide-down drawer, shared desktop links, search beside bag, no dr…
 - hnd-ht2hnfxj 2026-11-01 (human:akbar) — Done: Simplified drawer to desktop primary links plus account: removed arrows, search row and duplicate bag row. Added thin search icon immediately before bag on compact navbar in shared nav-item bag…
-- hnd-hrj7ttd6 2026-11-01 (human:akbar) — Done: Restored original 30x20 thin-line hamburger and CSS morph to X in same navbar button. Removed Menu heading and separate close button. Actual live navbar moves into native dialog with placeholde…
-- hnd-q24tj9sc 2026-11-01 (human:akbar) — Done: Refined hamburger/drawer X alignment: replaced custom 30x20 hamburger with shared 24px SVG icon, both controls 44px targets. Drawer top padding now matches navbar controls: mobile 12px, tablet…
-- hnd-ye54q1nt 2026-11-01 (human:akbar) — Done: Fixed navigation drawer covering the WordPress admin toolbar. Measure visible wpadminbar bottom on open and resize, offset drawer and backdrop, and subtract offset from viewport height. Mobile…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects

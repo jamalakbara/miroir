@@ -120,6 +120,27 @@ wc-order-attribution-inputs { display: none; }
 	overscroll-behavior: contain;
 }
 .panel--modal::backdrop { background: var(--backdrop); }
+/* Search and currency share a quiet entrance; keep the drawer's own reveal. */
+.panel--modal:not(.panel--drawer)[open] { animation: modal-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.panel--modal:not(.panel--drawer)[open]::backdrop { animation: modal-backdrop-in 240ms ease both; }
+.panel--modal:not(.panel--drawer).is-closing { animation: modal-out 180ms ease-in both; }
+.panel--modal:not(.panel--drawer).is-closing::backdrop { animation: modal-backdrop-out 180ms ease-in both; }
+@keyframes modal-in {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+@keyframes modal-out {
+	from { opacity: 1; transform: translateY(0); }
+	to { opacity: 0; transform: translateY(8px); }
+}
+@keyframes modal-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+	.panel--modal:not(.panel--drawer)[open] { animation: modal-backdrop-in 100ms ease both; }
+	.panel--modal:not(.panel--drawer)[open]::backdrop { animation-duration: 100ms; }
+	.panel--modal:not(.panel--drawer).is-closing,
+	.panel--modal:not(.panel--drawer).is-closing::backdrop { animation: modal-backdrop-out 100ms ease both; }
+}
 .panel__header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .panel__header .flow__title { min-width: 0; }
 .panel__close { display: flex; align-items: center; justify-content: center; flex: none; width: 44px; height: 44px; color: var(--ink); }
