@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/site-nav",
+	"title": "Main navigation",
+	"category": "miroir",
+	"icon": "menu",
+	"description": "Logo, menu and shop links. Holds the navigation items.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": [],
+		"container": {
+			"tag": "nav",
+			"className": "site-nav",
+			"template": [
+				[
+					"miroir/logo"
+				],
+				[
+					"miroir/nav-group",
+					{
+						"slot": "primary"
+					}
+				],
+				[
+					"miroir/nav-group",
+					{
+						"slot": "utility"
+					}
+				],
+				[
+					"miroir/nav-item",
+					{
+						"kind": "menu-toggle"
+					}
+				]
+			]
+		}
+	}
+}

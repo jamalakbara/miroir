@@ -416,23 +416,8 @@ HTML;
 		}
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $home_id );
-
-		// The theme's page template prints the page title; the front page should open on the hero.
-		$theme = get_stylesheet();
-		if ( ! get_block_template( $theme . '//front-page' ) || 'theme' === get_block_template( $theme . '//front-page' )->source ) {
-			$template_id = wp_insert_post(
-				array(
-					'post_type'    => 'wp_template',
-					'post_status'  => 'publish',
-					'post_name'    => 'front-page',
-					'post_title'   => 'Front Page',
-					'post_content' => '<!-- wp:template-part {"slug":"header"} /-->' . "\n"
-						. '<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} --><main class="wp-block-group"><!-- wp:post-content {"layout":{"type":"constrained"}} /--></main><!-- /wp:group -->' . "\n"
-						. '<!-- wp:template-part {"slug":"footer"} /-->',
-				)
-			);
-			wp_set_object_terms( $template_id, $theme, 'wp_theme' );
-		}
+		// No wp_template here: miroir-theme ships templates/front-page.html, and a stored
+		// template would override it in the Site Editor.
 		WP_CLI::log( 'page   home set as front page' );
 	}
 

@@ -79,7 +79,7 @@ add_action(
 
 /*
  * Added to bag (39): after a product-page add, go back to the product with
- * ?added=<cart item key>; single-product.php then shows the added state.
+ * ?added=<cart item key>; the product block then shows the added state.
  */
 add_action(
 	'woocommerce_add_to_cart',

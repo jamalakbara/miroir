@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/whatsapp-float",
+	"title": "WhatsApp button",
+	"category": "miroir",
+	"icon": "whatsapp",
+	"description": "Floating chat button (number in WooCommerce > Settings > WhatsApp ordering).",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": false
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": []
+	}
+}

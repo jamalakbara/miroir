@@ -1,23 +1,25 @@
 /*
  * Design tokens: 1:1 copy of the pen variables in docs/design/miroir.pen.
+ * Colours and font families read the theme.json presets (Site Editor > Styles); the
+ * values after the comma are the same defaults for the editor and the classic fallback.
  * Breakpoints follow the three lofi frames: desktop 1440, tablet 768 (<=1023px), mobile 390 (<=599px).
  */
 :root {
-	--bg: #ffffff;
-	--ink: #111111;
-	--ink-2: #555555;
-	--ink-3: #9a9a9a;
-	--line: #d6d6d6;
-	--ph: #ededed;
-	--ph-ink: #b8b8b8;
-	--surface: #f6f6f6;
-	--on-ink: #ffffff;
-	--error: #b3261e;
-	--success: #2e6b3f;
-	--logo: #242122;
+	--bg: var(--wp--preset--color--bg, #ffffff);
+	--ink: var(--wp--preset--color--ink, #111111);
+	--ink-2: var(--wp--preset--color--ink-2, #555555);
+	--ink-3: var(--wp--preset--color--ink-3, #9a9a9a);
+	--line: var(--wp--preset--color--line, #d6d6d6);
+	--ph: var(--wp--preset--color--ph, #ededed);
+	--ph-ink: var(--wp--preset--color--ph-ink, #b8b8b8);
+	--surface: var(--wp--preset--color--surface, #f6f6f6);
+	--on-ink: var(--wp--preset--color--on-ink, #ffffff);
+	--error: var(--wp--preset--color--error, #b3261e);
+	--success: var(--wp--preset--color--success, #2e6b3f);
+	--logo: var(--wp--preset--color--logo, #242122);
 
-	--font-mono: "DM Mono", ui-monospace, monospace;
-	--font-sans: "Inter Tight", system-ui, sans-serif;
+	--font-mono: var(--wp--preset--font-family--mono, "DM Mono", ui-monospace, monospace);
+	--font-sans: var(--wp--preset--font-family--sans, "Inter Tight", system-ui, sans-serif);
 
 	--text-xs: 11px;
 	--text-sm: 12px;

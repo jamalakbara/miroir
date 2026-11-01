@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"useRootPaddingAwareAlignments": false,
+		"color": {
+			"custom": true,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [],
+			"gradients": [],
+			"palette": [
+				{ "slug": "bg", "name": "Background", "color": "#ffffff" },
+				{ "slug": "ink", "name": "Text", "color": "#111111" },
+				{ "slug": "ink-2", "name": "Secondary text", "color": "#555555" },
+				{ "slug": "ink-3", "name": "Muted text", "color": "#9a9a9a" },
+				{ "slug": "line", "name": "Lines & borders", "color": "#d6d6d6" },
+				{ "slug": "surface", "name": "Surface", "color": "#f6f6f6" },
+				{ "slug": "on-ink", "name": "Text on dark buttons", "color": "#ffffff" },
+				{ "slug": "ph", "name": "Image placeholder", "color": "#ededed" },
+				{ "slug": "ph-ink", "name": "Image placeholder icon", "color": "#b8b8b8" },
+				{ "slug": "error", "name": "Error", "color": "#b3261e" },
+				{ "slug": "success", "name": "Success", "color": "#2e6b3f" },
+				{ "slug": "logo", "name": "Logo", "color": "#242122" }
+			]
+		},
+		"shadow": {
+			"defaultPresets": false
+		},
+		"spacing": {
+			"blockGap": null,
+			"defaultSpacingSizes": false,
+			"spacingSizes": []
+		},
+		"typography": {
+			"customFontSize": false,
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"fluid": false,
+			"fontFamilies": [
+				{ "slug": "sans", "name": "Inter Tight", "fontFamily": "\"Inter Tight\", system-ui, sans-serif" },
+				{ "slug": "mono", "name": "DM Mono", "fontFamily": "\"DM Mono\", ui-monospace, monospace" }
+			],
+			"fontSizes": []
+		}
+	},
+	"customTemplates": [
+		{ "name": "page-faq", "title": "FAQ", "postTypes": [ "page" ] },
+		{ "name": "page-guide", "title": "Guide", "postTypes": [ "page" ] }
+	],
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" }
+	]
+}

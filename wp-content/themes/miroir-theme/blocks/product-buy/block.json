@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/product-buy",
+	"title": "Buy box",
+	"category": "miroir",
+	"icon": "cart",
+	"description": "Size picker, add to bag and order via WhatsApp.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/product"
+	],
+	"miroir": {
+		"controls": []
+	}
+}

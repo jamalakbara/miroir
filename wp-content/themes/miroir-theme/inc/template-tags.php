@@ -84,11 +84,16 @@ function miroir_section_link( $label, $url, $class = '' ) {
 }
 
 /**
- * Copyright line from Customize > Footer: {year} and {site} (title, lower case) filled in.
+ * Copyright line with {year} and {site} (title, lower case) filled in.
+ *
+ * @param string $format Text of the footer's Copyright block; empty for the default.
  */
-function miroir_copyright() {
+function miroir_copyright( $format = '' ) {
+	if ( '' === trim( $format ) ) {
+		$format = get_theme_mod( 'copyright', '© {year} {site}' );
+	}
 	return strtr(
-		(string) miroir_mod( 'copyright' ),
+		(string) $format,
 		array(
 			'{year}' => gmdate( 'Y' ),
 			'{site}' => strtolower( get_bloginfo( 'name' ) ),

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/product-main",
+	"title": "Product layout",
+	"category": "miroir",
+	"icon": "columns",
+	"description": "Details column next to the image gallery.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/product"
+	],
+	"miroir": {
+		"controls": [],
+		"container": {
+			"tag": "div",
+			"className": "pdp",
+			"template": [
+				[
+					"miroir/product-details"
+				],
+				[
+					"miroir/product-gallery"
+				]
+			]
+		}
+	}
+}

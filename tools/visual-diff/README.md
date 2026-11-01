@@ -32,6 +32,11 @@ Session-bound screens have their own scripts:
 - `flow-states.js`: functional check of panels, filter form, currency switch, choose-size / added-to-bag states, login notice.
 - `sweep.sh`: every layout in one go (set RESET_QUERY first); results in `out/sweep.txt`.
 - `flow-whatsapp.js`: functional check of PDP link, bag qty update, review validation and order creation.
+- `parity.js`: site vs site, for refactors that must not change the output (e.g. the classic -> block theme
+  switch). `node parity.js capture out/parity/<name>` shoots 39 screens x 1440/768/390 (logged out, then the
+  test customer); `node parity.js compare out/parity/<before> out/parity/<after>` lists screens with any
+  differing pixel and writes `diff-*.png` into the second folder. `ONLY=pdp,cart` limits screens. Capture the
+  "before" twice first to confirm the site is deterministic.
 - `condense.py out/ref/<NN>-<D|T|M>.html` turns a Pencil html-css export into a short layout outline (`c.sh` shortens it further).
 
 Known data-driven differences: product names that wrap, number of products per category/search, sale prices,

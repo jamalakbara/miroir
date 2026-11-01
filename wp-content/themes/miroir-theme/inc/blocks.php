@@ -1,31 +1,36 @@
 <?php
 /**
- * Miroir blocks (blocks/*): home sections the client can add, reorder and edit
- * in the page editor. Each block renders the same template part as the PHP
- * fallback in front-page.php, so the markup matches the lofi exactly.
+ * Miroir blocks (blocks/*). The block templates (templates/, parts/) are built
+ * from them, so every section the Site Editor shows prints the same markup as
+ * the lofi. Home sections (editorial, banner, product strip) have their own
+ * editor UI in assets/js/blocks-editor.js; the site sections share the generic
+ * one in assets/js/blocks-site.js, driven by the "miroir" key of block.json.
  */
 
 defined( 'ABSPATH' ) || exit;
 
-/** Block folders under blocks/. */
-const MIROIR_BLOCKS = array( 'editorial', 'banner', 'product-strip' );
+/** Home section blocks with a hand-written editor UI. */
+const MIROIR_HOME_BLOCKS = array( 'editorial', 'banner', 'product-strip' );
 
 add_action(
 	'init',
 	function () {
-		$js = '/assets/js/blocks-editor.js';
-		wp_register_script(
-			'miroir-blocks-editor',
-			MIROIR_THEME_URI . $js,
-			array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-data', 'wp-core-data', 'wp-i18n' ),
-			filemtime( MIROIR_THEME_DIR . $js ),
-			true
-		);
-		wp_set_script_translations( 'miroir-blocks-editor', 'miroir', MIROIR_THEME_DIR . '/languages' );
-
-		foreach ( MIROIR_BLOCKS as $block ) {
-			register_block_type( MIROIR_THEME_DIR . "/blocks/{$block}" );
+		$deps = array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-data', 'wp-core-data', 'wp-i18n' );
+		foreach ( array( 'miroir-blocks-editor' => '/assets/js/blocks-editor.js', 'miroir-blocks-site' => '/assets/js/blocks-site.js' ) as $handle => $js ) {
+			wp_register_script( $handle, MIROIR_THEME_URI . $js, $deps, filemtime( MIROIR_THEME_DIR . $js ), true );
+			wp_set_script_translations( $handle, 'miroir', MIROIR_THEME_DIR . '/languages' );
 		}
+
+		$site = array();
+		foreach ( glob( MIROIR_THEME_DIR . '/blocks/*/block.json' ) as $file ) {
+			$type = register_block_type( dirname( $file ) );
+			if ( ! $type || in_array( basename( dirname( $file ) ), MIROIR_HOME_BLOCKS, true ) ) {
+				continue;
+			}
+			$meta   = wp_json_file_decode( $file, array( 'associative' => true ) );
+			$site[] = array( 'name' => $type->name ) + ( $meta['miroir'] ?? array() );
+		}
+		wp_add_inline_script( 'miroir-blocks-site', 'window.miroirSiteBlocks = ' . wp_json_encode( $site ) . ';', 'before' );
 	}
 );
 
@@ -50,11 +55,15 @@ add_filter(
 	}
 );
 
-// The editor previews blocks with the storefront CSS.
+// The editor and Site Editor preview blocks with the storefront CSS.
 add_action(
 	'after_setup_theme',
 	function () {
 		add_theme_support( 'editor-styles' );
-		add_editor_style( array( 'assets/css/fonts.css', 'assets/css/tokens.css', 'assets/css/base.css', 'assets/css/components.css', 'assets/css/home.css', 'assets/css/editor.css' ) );
+		$styles = array();
+		foreach ( array_merge( miroir_styles(), array( 'editor' ) ) as $name ) {
+			$styles[] = "assets/css/{$name}.css";
+		}
+		add_editor_style( $styles );
 	}
 );

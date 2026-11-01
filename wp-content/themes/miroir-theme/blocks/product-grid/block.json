@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/product-grid",
+	"title": "Product grid",
+	"category": "miroir",
+	"icon": "screenoptions",
+	"description": "Product cards with the load more button.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/listing"
+	],
+	"miroir": {
+		"controls": []
+	}
+}

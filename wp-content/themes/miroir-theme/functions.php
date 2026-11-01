@@ -20,6 +20,8 @@ require MIROIR_THEME_DIR . '/inc/icons.php';
 require MIROIR_THEME_DIR . '/inc/template-tags.php';
 require MIROIR_THEME_DIR . '/inc/maintenance.php';
 require MIROIR_THEME_DIR . '/inc/blocks.php';
+require MIROIR_THEME_DIR . '/inc/block-helpers.php';
+require MIROIR_THEME_DIR . '/inc/templates.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require MIROIR_THEME_DIR . '/inc/woocommerce.php';

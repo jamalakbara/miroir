@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/product-gallery",
+	"title": "Product images",
+	"category": "miroir",
+	"icon": "format-gallery",
+	"description": "Lead image with zoom and the other views.",
+	"textdomain": "miroir",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/product"
+	],
+	"miroir": {
+		"controls": []
+	}
+}

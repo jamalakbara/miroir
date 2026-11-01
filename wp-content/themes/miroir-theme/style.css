@@ -1,7 +1,7 @@
 /*
 Theme Name:        Miroir
 Theme URI:         https://miroir.id
-Description:       Classic WooCommerce theme for miroir.id, built 1:1 from the lofi design in docs/design/miroir.pen. Styles live in assets/css; this file only carries the theme header.
+Description:       Block theme for miroir.id (WooCommerce), built 1:1 from the lofi design in docs/design/miroir.pen. Templates and parts are made of Miroir blocks, editable in Appearance > Editor. Styles live in assets/css; this file only carries the theme header.
 Version:           0.1.0
 Requires at least: 6.5
 Requires PHP:      8.1

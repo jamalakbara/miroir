@@ -18,7 +18,10 @@ const base = 'http://localhost:8080';
   console.log('header after add:', (await p.textContent('.site-nav__bag')).trim());
 
   await p.goto(base + '/cart/', { waitUntil: 'networkidle' });
-  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), p.click('[data-qty-step="1"]')]);
+  // WooCommerce's cart.js updates the bag over AJAX (no page load): wait for the new quantity.
+  const qty = await p.inputValue('.qty__input');
+  await p.click('[data-qty-step="1"]');
+  await p.waitForFunction((q) => document.querySelector('.qty__input').value !== q && !document.querySelector('.blockUI'), qty, { timeout: 30000 });
   console.log('qty after +:', await p.inputValue('.qty__input'));
 
   await p.goto(base + '/checkout/', { waitUntil: 'networkidle' });

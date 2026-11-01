@@ -13,10 +13,8 @@ defined( 'ABSPATH' ) || exit;
  */
 function miroir_customizer_sections() {
 	return array(
-		'miroir_header'      => array( __( 'Header', 'miroir' ), __( 'Header links come from Appearance > Menus (location "Header: primary links").', 'miroir' ) ),
-		'miroir_footer'      => array( __( 'Footer', 'miroir' ), __( 'Footer link columns come from Appearance > Menus (the three "Footer" locations).', 'miroir' ) ),
-		'miroir_colors'      => array( __( 'Colours', 'miroir' ), '' ),
-		'miroir_typography'  => array( __( 'Typography', 'miroir' ), __( 'Custom fonts: upload a .woff2 file (a variable font covers every weight), then type the font name.', 'miroir' ) ),
+		'miroir_footer'      => array( __( 'Links', 'miroir' ), __( 'Logo, announcement, menus and footer lines are blocks: Appearance > Editor > Patterns > Header / Footer. Their links come from Appearance > Menus.', 'miroir' ) ),
+		'miroir_typography'  => array( __( 'Text size', 'miroir' ), __( 'Colours and fonts: Appearance > Editor > Styles (Text = body font, Captions = label font).', 'miroir' ) ),
 		'miroir_layout'      => array( __( 'Layout & spacing', 'miroir' ), '' ),
 		'miroir_product'     => array( __( 'Products', 'miroir' ), __( 'Product photos come from each product\'s image and gallery in Products.', 'miroir' ) ),
 		'miroir_search'      => array( __( 'Search', 'miroir' ), '' ),
@@ -66,7 +64,7 @@ add_action(
 			'miroir',
 			array(
 				'title'       => __( 'Miroir theme', 'miroir' ),
-				'description' => __( 'Defaults match the miroir design. Clear a field to go back to its default.', 'miroir' ),
+				'description' => __( 'Settings the Site Editor has no place for. Templates, header, footer, colours and fonts: Appearance > Editor. Defaults match the miroir design; clear a field to go back to its default.', 'miroir' ),
 				'priority'    => 30,
 			)
 		);
@@ -166,27 +164,4 @@ add_action(
 		wp_enqueue_script( 'miroir-customizer-preview', MIROIR_THEME_URI . $js, array( 'customize-preview' ), filemtime( MIROIR_THEME_DIR . $js ), true );
 		wp_add_inline_script( 'miroir-customizer-preview', 'window.miroirPreview = ' . wp_json_encode( $live ) . ';', 'before' );
 	}
-);
-
-// Custom font uploads: administrators may upload .woff2 files to the media library.
-add_filter(
-	'upload_mimes',
-	function ( $mimes ) {
-		if ( current_user_can( 'manage_options' ) ) {
-			$mimes['woff2'] = 'font/woff2';
-		}
-		return $mimes;
-	}
-);
-add_filter(
-	'wp_check_filetype_and_ext',
-	function ( $data, $file, $filename ) {
-		if ( current_user_can( 'manage_options' ) && 'woff2' === strtolower( pathinfo( $filename, PATHINFO_EXTENSION ) ) ) {
-			$data['ext']  = 'woff2';
-			$data['type'] = 'font/woff2';
-		}
-		return $data;
-	},
-	10,
-	3
 );

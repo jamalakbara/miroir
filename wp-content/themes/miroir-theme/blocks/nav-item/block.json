@@ -1,0 +1,75 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/nav-item",
+	"title": "Navigation link",
+	"category": "miroir",
+	"icon": "admin-links",
+	"description": "Search, account, bag, currency or the mobile menu button.",
+	"textdomain": "miroir",
+	"attributes": {
+		"kind": {
+			"type": "string",
+			"enum": [
+				"search",
+				"account",
+				"bag",
+				"currency",
+				"menu-toggle"
+			],
+			"default": "search"
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/site-nav"
+	],
+	"miroir": {
+		"controls": [
+			{
+				"attr": "kind",
+				"type": "select",
+				"label": "Link",
+				"options": [
+					[
+						"search",
+						"Search"
+					],
+					[
+						"account",
+						"Account"
+					],
+					[
+						"bag",
+						"Bag"
+					],
+					[
+						"currency",
+						"Currency"
+					],
+					[
+						"menu-toggle",
+						"Menu button (tablet & mobile)"
+					]
+				]
+			},
+			{
+				"attr": "label",
+				"type": "text",
+				"label": "Label",
+				"help": "Search and account only. Empty: Customize > Text & labels."
+			}
+		]
+	}
+}

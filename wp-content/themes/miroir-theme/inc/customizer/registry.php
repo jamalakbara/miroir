@@ -25,9 +25,6 @@ function miroir_settings() {
 		return $settings;
 	}
 
-	$color = function ( $label, $default, $var ) {
-		return array( 'section' => 'miroir_colors', 'label' => $label, 'type' => 'color', 'default' => $default, 'var' => $var, 'live' => true );
-	};
 	$px    = function ( $section, $label, $default, $var, $max = 200 ) {
 		return array( 'section' => $section, 'label' => $label, 'type' => 'number', 'default' => $default, 'unit' => 'px', 'var' => $var, 'live' => true, 'min' => 0, 'max' => $max );
 	};
@@ -36,60 +33,10 @@ function miroir_settings() {
 	};
 
 	$settings = array(
-		// Site identity.
-		'logo_width'             => array( 'section' => 'title_tagline', 'label' => __( 'Logo width (px)', 'miroir' ), 'type' => 'number', 'default' => 110, 'unit' => 'px', 'var' => '--logo-w', 'live' => true, 'min' => 20, 'max' => 400, 'description' => __( 'Applies to an uploaded logo. Without one the Miroir wordmark is shown.', 'miroir' ) ),
-
-		// Header & footer.
-		'miroir_announcement'    => array( 'section' => 'miroir_header', 'label' => __( 'Announcement text', 'miroir' ), 'type' => 'text', 'default' => __( 'free shipping across indonesia', 'miroir' ), 'live' => true, 'selector' => '.announce__text' ),
-		'announcement_show'      => array( 'section' => 'miroir_header', 'label' => __( 'Show announcement bar', 'miroir' ), 'type' => 'checkbox', 'default' => true ),
-		'miroir_location'        => array( 'section' => 'miroir_footer', 'label' => __( 'Location line', 'miroir' ), 'type' => 'text', 'default' => __( 'Location : Indonesia', 'miroir' ), 'live' => true, 'selector' => '.site-footer__location' ),
-		'location_show'          => array( 'section' => 'miroir_footer', 'label' => __( 'Show location line', 'miroir' ), 'type' => 'checkbox', 'default' => true ),
-		'copyright'              => array( 'section' => 'miroir_footer', 'label' => __( 'Copyright', 'miroir' ), 'type' => 'text', 'default' => '© {year} {site}', 'description' => __( '{year} is the current year, {site} the site title in lower case.', 'miroir' ) ),
+		// Links (header and footer texts are blocks in Appearance > Editor).
 		'instagram_url'          => array( 'section' => 'miroir_footer', 'label' => __( 'Instagram URL', 'miroir' ), 'type' => 'url', 'default' => 'https://www.instagram.com/miroir.id/', 'description' => __( 'Used on the maintenance page and in the default footer links.', 'miroir' ) ),
 
-		// Colours.
-		'color_bg'               => $color( __( 'Background', 'miroir' ), '#ffffff', '--bg' ),
-		'color_ink'              => $color( __( 'Text', 'miroir' ), '#111111', '--ink' ),
-		'color_ink_2'            => $color( __( 'Secondary text', 'miroir' ), '#555555', '--ink-2' ),
-		'color_ink_3'            => $color( __( 'Muted text', 'miroir' ), '#9a9a9a', '--ink-3' ),
-		'color_line'             => $color( __( 'Lines & borders', 'miroir' ), '#d6d6d6', '--line' ),
-		'color_surface'          => $color( __( 'Surface', 'miroir' ), '#f6f6f6', '--surface' ),
-		'color_on_ink'           => $color( __( 'Text on dark buttons', 'miroir' ), '#ffffff', '--on-ink' ),
-		'color_ph'               => $color( __( 'Image placeholder', 'miroir' ), '#ededed', '--ph' ),
-		'color_ph_ink'           => $color( __( 'Image placeholder icon', 'miroir' ), '#b8b8b8', '--ph-ink' ),
-		'color_error'            => $color( __( 'Error', 'miroir' ), '#b3261e', '--error' ),
-		'color_success'          => $color( __( 'Success', 'miroir' ), '#2e6b3f', '--success' ),
-		'color_logo'             => $color( __( 'Logo', 'miroir' ), '#242122', '--logo' ),
-
 		// Typography.
-		'font_sans'              => array(
-			'section' => 'miroir_typography',
-			'label'   => __( 'Text font', 'miroir' ),
-			'type'    => 'select',
-			'default' => 'inter-tight',
-			'choices' => array(
-				'inter-tight' => 'Inter Tight',
-				'system'      => __( 'System sans-serif', 'miroir' ),
-				'serif'       => __( 'System serif', 'miroir' ),
-				'custom'      => __( 'Custom (upload below)', 'miroir' ),
-			),
-		),
-		'font_sans_file'         => array( 'section' => 'miroir_typography', 'label' => __( 'Custom text font file (.woff2)', 'miroir' ), 'type' => 'upload', 'default' => '' ),
-		'font_sans_name'         => array( 'section' => 'miroir_typography', 'label' => __( 'Custom text font name', 'miroir' ), 'type' => 'text', 'default' => '' ),
-		'font_mono'              => array(
-			'section' => 'miroir_typography',
-			'label'   => __( 'Label font (names, labels, buttons)', 'miroir' ),
-			'type'    => 'select',
-			'default' => 'dm-mono',
-			'choices' => array(
-				'dm-mono' => 'DM Mono',
-				'system'  => __( 'System monospace', 'miroir' ),
-				'sans'    => __( 'Same as text font', 'miroir' ),
-				'custom'  => __( 'Custom (upload below)', 'miroir' ),
-			),
-		),
-		'font_mono_file'         => array( 'section' => 'miroir_typography', 'label' => __( 'Custom label font file (.woff2)', 'miroir' ), 'type' => 'upload', 'default' => '' ),
-		'font_mono_name'         => array( 'section' => 'miroir_typography', 'label' => __( 'Custom label font name', 'miroir' ), 'type' => 'text', 'default' => '' ),
 		'type_scale'             => array( 'section' => 'miroir_typography', 'label' => __( 'Text size (%)', 'miroir' ), 'type' => 'number', 'default' => 100, 'min' => 80, 'max' => 140, 'description' => __( 'Scales every font size and line height.', 'miroir' ) ),
 
 		// Layout & spacing.
@@ -191,28 +138,6 @@ const MIROIR_LINE_HEIGHTS = array(
 	'mono' => array( 11 => 14, 12 => 16, 13 => 17, 14 => 18, 16 => 21, 22 => 29, 24 => 31, 26 => 34, 28 => 36, 36 => 47 ),
 );
 
-/**
- * Font stacks for the font settings.
- *
- * @param string $role 'sans' or 'mono'.
- * @return string|null CSS font-family value, or null for the bundled default.
- */
-function miroir_font_stack( $role ) {
-	$choice = miroir_mod( "font_{$role}" );
-	$custom = trim( (string) miroir_mod( "font_{$role}_name" ) );
-	if ( 'custom' === $choice && $custom && miroir_mod( "font_{$role}_file" ) ) {
-		return '"' . str_replace( '"', '', $custom ) . '", ' . ( 'mono' === $role ? 'ui-monospace, monospace' : 'system-ui, sans-serif' );
-	}
-	switch ( $choice ) {
-		case 'system':
-			return 'mono' === $role ? 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' : 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
-		case 'serif':
-			return 'Georgia, "Times New Roman", serif';
-		case 'sans':
-			return 'var(--font-sans)';
-	}
-	return null;
-}
 
 /**
  * CSS overriding tokens.css with the values changed in the Customizer. Empty
@@ -233,19 +158,6 @@ function miroir_custom_css() {
 		$vars[ $s['var'] ] = $value . ( $s['unit'] ?? '' );
 	}
 
-	$faces = '';
-	foreach ( array( 'sans', 'mono' ) as $role ) {
-		$stack = miroir_font_stack( $role );
-		if ( ! $stack ) {
-			continue;
-		}
-		$vars[ "--font-{$role}" ] = $stack;
-		$file                     = miroir_mod( "font_{$role}_file" );
-		if ( 'custom' === miroir_mod( "font_{$role}" ) && $file ) {
-			$faces .= sprintf( '@font-face{font-family:"%s";font-style:normal;font-weight:100 900;font-display:swap;src:url(%s) format("woff2")}', esc_attr( str_replace( '"', '', trim( miroir_mod( "font_{$role}_name" ) ) ) ), esc_url( $file ) );
-		}
-	}
-
 	$scale = (int) miroir_mod( 'type_scale' );
 	if ( $scale && 100 !== $scale ) {
 		$k = $scale / 100;
@@ -259,12 +171,12 @@ function miroir_custom_css() {
 		}
 	}
 
-	if ( ! $vars && ! $faces ) {
+	if ( ! $vars ) {
 		return '';
 	}
 	$css = '';
 	foreach ( $vars as $name => $value ) {
 		$css .= $name . ':' . wp_strip_all_tags( (string) $value ) . ';';
 	}
-	return $faces . ( $css ? ':root{' . $css . '}' : '' );
+	return ':root{' . $css . '}';
 }

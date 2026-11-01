@@ -17,6 +17,19 @@ add_action(
 	20
 );
 
+// In a block theme WooCommerce also adds its block-theme sheet (enqueue_block_assets) and
+// re-adds wc-blocks-style late; drop both right before styles print, in the head and footer.
+foreach ( array( 'wp_print_styles', 'wp_print_footer_scripts' ) as $miroir_hook ) {
+	add_action(
+		$miroir_hook,
+		function () {
+			wp_dequeue_style( 'woocommerce-blocktheme' );
+			wp_dequeue_style( 'wc-blocks-style' );
+		},
+		1
+	);
+}
+
 /**
  * Price row of a product card: "Was" (ink-3) before the current price, or
  * "Out of stock" in the price slot, as drawn in the lofi cards.

@@ -93,7 +93,7 @@ class Miroir_Theme_Command {
 			return $sections;
 		};
 		$pages   = array(
-			'faq'                  => array( 'FAQ', $faq, 'page-templates/faq.php' ),
+			'faq'                  => array( 'FAQ', $faq, 'page-faq' ),
 			'shipping-information' => array(
 				'Shipping information',
 				self::blocks(
@@ -139,7 +139,7 @@ class Miroir_Theme_Command {
 					'WhatsApp-first version · no onsite receipt upload or carrier integration.'
 				),
 			),
-			'size-guide'           => array( 'Size guide', self::size_guide(), 'page-templates/guide.php' ),
+			'size-guide'           => array( 'Size guide', self::size_guide(), 'page-guide' ),
 			'track-your-order'     => array(
 				'Track your order',
 				self::blocks( 'Tracking information is shared in your WhatsApp conversation once your order has shipped. Have your order reference ready.', array(), 'Ask about my delivery', '#whatsapp', '', 'WhatsApp-first version · no onsite receipt upload or carrier integration.' ),
@@ -289,6 +289,44 @@ class Miroir_Theme_Command {
 	 *
 	 * @when after_wp_load
 	 */
+	/**
+	 * Undo Site Editor changes: delete stored templates, template parts and
+	 * global styles of this theme, so the theme files (templates/, parts/,
+	 * theme.json) apply again. Page content and menus are not touched.
+	 *
+	 * ## OPTIONS
+	 *
+	 * [--yes]
+	 * : Skip the confirmation.
+	 *
+	 * @subcommand reset-templates
+	 * @when after_wp_load
+	 */
+	public function reset_templates( $args, $assoc ) {
+		$posts = get_posts(
+			array(
+				'post_type'      => array( 'wp_template', 'wp_template_part', 'wp_global_styles' ),
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'tax_query'      => array( array( 'taxonomy' => 'wp_theme', 'field' => 'name', 'terms' => get_stylesheet() ) ), // phpcs:ignore WordPress.DB.SlowDBQuery
+			)
+		);
+		if ( ! $posts ) {
+			WP_CLI::success( 'No Site Editor changes stored: every template comes from the theme files.' );
+			return;
+		}
+		foreach ( $posts as $post ) {
+			WP_CLI::log( sprintf( '%-17s #%d %s', $post->post_type, $post->ID, $post->post_name ) );
+		}
+		if ( empty( $assoc['yes'] ) ) {
+			WP_CLI::confirm( sprintf( 'Delete these %d Site Editor changes?', count( $posts ) ) );
+		}
+		foreach ( $posts as $post ) {
+			wp_delete_post( $post->ID, true );
+		}
+		WP_CLI::success( 'Templates, parts and styles are back to the theme files.' );
+	}
+
 	public function maintenance( $args ) {
 		$state = 'on' === ( $args[0] ?? '' ) ? 'on' : 'off';
 		update_option( 'miroir_maintenance', $state );

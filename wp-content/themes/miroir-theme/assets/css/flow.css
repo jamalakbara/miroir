@@ -191,6 +191,8 @@ html.has-modal { overflow: hidden; }
 .flow__content > p.note-help { font-size: var(--text-sm); line-height: 18px; }
 .flow__content .wp-block-table,
 .flow__content .wp-block-table table { display: flex; flex-direction: column; gap: 24px; }
+/* As core's table CSS: wide tables scroll; also clips the last row's outer half-pixel rule. */
+.flow__content .wp-block-table { overflow-x: auto; }
 /* The lofi draws each table row as its own ruled line, 24px apart like everything else in the column. */
 .flow__content .wp-block-table thead,
 .flow__content .wp-block-table tbody { display: contents; }

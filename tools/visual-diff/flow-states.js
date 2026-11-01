@@ -9,6 +9,8 @@ const base = 'http://localhost:8080';
   console.log('menu opens in place:', await p.isVisible('#nav-panel'), '| listing hidden:', !(await p.isVisible('.plp')), '| url unchanged:', !p.url().includes('panel='));
   await p.keyboard.press('Escape');
   console.log('escape closes:', !(await p.isVisible('#nav-panel')) && await p.isVisible('.plp'));
+  // Below 1024px the currency link sits in the menu panel; the header toggle is a desktop control.
+  await p.setViewportSize({ width: 1440, height: 900 });
   await p.click('.site-nav__currency');
   console.log('currency panel radios:', await p.locator('#currency-panel input[type=radio]').count());
   await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle' }), (async () => { await p.check('#currency-panel input[value=USD]'); await p.click('#currency-panel button[type=submit]'); })()]);

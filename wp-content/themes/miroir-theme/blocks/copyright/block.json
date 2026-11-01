@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/copyright",
+	"title": "Copyright",
+	"category": "miroir",
+	"icon": "info",
+	"description": "Copyright line. {year} is the current year, {site} the site title.",
+	"textdomain": "miroir",
+	"attributes": {
+		"format": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"miroir": {
+		"controls": [
+			{
+				"attr": "format",
+				"type": "text",
+				"label": "Text",
+				"help": "Empty: © {year} {site}"
+			}
+		]
+	}
+}

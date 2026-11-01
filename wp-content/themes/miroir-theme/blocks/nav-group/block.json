@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/nav-group",
+	"title": "Navigation group",
+	"category": "miroir",
+	"icon": "columns",
+	"description": "Left (menu) or right (shop links) side of the navigation.",
+	"textdomain": "miroir",
+	"attributes": {
+		"slot": {
+			"type": "string",
+			"enum": [
+				"primary",
+				"utility"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "miroir-blocks-site",
+	"render": "file:./render.php",
+	"ancestor": [
+		"miroir/site-nav"
+	],
+	"miroir": {
+		"controls": [
+			{
+				"attr": "slot",
+				"type": "select",
+				"label": "Side",
+				"options": [
+					[
+						"primary",
+						"Menu side"
+					],
+					[
+						"utility",
+						"Shop links side"
+					]
+				]
+			}
+		],
+		"container": {
+			"tag": "div",
+			"className": "site-nav__{slot}"
+		}
+	}
+}
