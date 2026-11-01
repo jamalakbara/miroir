@@ -78,7 +78,7 @@
 	}
 	.home-editorial__small-col { flex: none; }
 	.home-editorial__small { width: min(60%, calc(var(--editorial-image-cap) * 0.6)); }
-	.home-editorial__large { width: min(100%, var(--editorial-image-cap)); align-self: center; }
+	.home-editorial__large { display: none; }
 
 	.home-banner__image { aspect-ratio: 1; }
 

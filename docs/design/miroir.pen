@@ -392,7 +392,7 @@
               "id": "wPSUi",
               "x": 0,
               "y": 0,
-              "name": "Compact bag and menu",
+              "name": "Compact search, bag and menu",
               "enabled": false,
               "height": 44,
               "gap": 8,
@@ -400,46 +400,84 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "OnisS",
-                  "name": "Bag touch target",
-                  "width": 44,
+                  "id": "i6POA0",
+                  "name": "Search and bag actions",
                   "height": 44,
-                  "layout": "none",
+                  "alignItems": "center",
                   "children": [
                     {
-                      "type": "path",
-                      "id": "MHdhV",
-                      "x": 10,
-                      "y": 8,
-                      "name": "Shopping bag outline",
-                      "geometry": "M3.5 7.5h17v19h-17z m5 0v-3a3.5 3.5 0 0 1 7 0v3",
-                      "viewBox": [
-                        0,
-                        0,
-                        24,
-                        28
-                      ],
-                      "width": 24,
-                      "height": 28,
-                      "stroke": "$ink",
-                      "strokeWidth": 1
+                      "type": "frame",
+                      "id": "VfHBW",
+                      "name": "Search touch target",
+                      "context": "Open search modal. Visible in tablet and mobile navbar beside the bag.",
+                      "width": 44,
+                      "height": 44,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "ryHCN",
+                          "x": 10,
+                          "y": 10,
+                          "name": "Thin search icon",
+                          "geometry": "M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 1 1 13 0m-1.5 5l5 5",
+                          "viewBox": [
+                            0,
+                            0,
+                            24,
+                            24
+                          ],
+                          "width": 24,
+                          "height": 24,
+                          "stroke": "$ink",
+                          "strokeWidth": 1
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "z55I6",
-                      "x": 10,
-                      "y": 20,
-                      "name": "Bag item count",
-                      "fill": "$ink",
-                      "textGrowth": "fixed-width-height",
-                      "width": 24,
-                      "height": 10,
-                      "content": "0",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "$font-mono",
-                      "fontSize": 10,
-                      "fontWeight": "normal"
+                      "type": "frame",
+                      "id": "OnisS",
+                      "name": "Bag touch target",
+                      "width": 44,
+                      "height": 44,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "MHdhV",
+                          "x": 10,
+                          "y": 8,
+                          "name": "Shopping bag outline",
+                          "geometry": "M3.5 7.5h17v19h-17z m5 0v-3a3.5 3.5 0 0 1 7 0v3",
+                          "viewBox": [
+                            0,
+                            0,
+                            24,
+                            28
+                          ],
+                          "width": 24,
+                          "height": 28,
+                          "stroke": "$ink",
+                          "strokeWidth": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "z55I6",
+                          "x": 10,
+                          "y": 20,
+                          "name": "Bag item count",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width-height",
+                          "width": 24,
+                          "height": 10,
+                          "content": "0",
+                          "lineHeight": 1,
+                          "textAlign": "center",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -15956,7 +15994,7 @@
                               "type": "frame",
                               "id": "eAYSY",
                               "name": "31 Navigation open · Desktop",
-                              "context": "Navbar remains visible with the same live logo, bag and menu toggle. Original 30×20 thin-line hamburger morphs into an X within its unchanged 44×44 touch target. No Menu heading or separate close control. Drawer reveals downward below the navbar over 280ms, closes upward over 220ms; navbar stays still. Content fills remaining viewport and scrolls internally; background stays locked. Escape or same navbar X closes and restores focus; search/currency replace the drawer with their dialogs. Reduced motion skips animation. Admin toolbar stays visible above navbar. Desktop state demonstrates a URL-opened drawer; the normal desktop navbar keeps its direct links.",
+                              "context": "Persistent navbar with original thin-line hamburger morphing to X. Tablet/mobile actions read search icon, bag, menu toggle. Drawer slides down below navbar and scrolls internally; no heading, bag row, search row or arrow icons. Drawer links use desktop primary links plus my account. Currency control at bottom left shows only current code (IDR here), underlined, in a 44px target. On short viewports currency follows links in the scroll area; on tall viewports it sits 24px above bottom edge. Search/currency still open their dialogs. Background scroll locked; reduced-motion skips animation; WordPress toolbar remains above navbar.",
                               "clip": true,
                               "width": 1440,
                               "height": 900,
@@ -15979,7 +16017,7 @@
                                     "wPSUi": {
                                       "enabled": true
                                     },
-                                    "OnisS": {
+                                    "i6POA0": {
                                       "enabled": false
                                     },
                                     "eN9oK": {
@@ -15993,264 +16031,170 @@
                                   "type": "frame",
                                   "id": "A6DoTZ",
                                   "name": "Content area",
-                                  "width": "fill_container",
-                                  "height": "fill_container",
-                                  "layout": "vertical",
-                                  "padding": [
-                                    24,
-                                    56
-                                  ],
-                                  "alignItems": "center",
+                                  "width": 1440,
+                                  "height": 768,
+                                  "fill": "$bg",
+                                  "layout": "none",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "J38NI",
+                                      "x": 56,
+                                      "y": 24,
                                       "name": "Content column",
-                                      "width": "fill_container",
+                                      "width": 1328,
+                                      "height": 216,
                                       "layout": "vertical",
-                                      "gap": 24,
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "tFMX3",
-                                          "name": "sale",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
+                                          "id": "h5oyR",
+                                          "layoutPosition": "absolute",
+                                          "x": 0,
+                                          "y": 0,
+                                          "name": "Drawer navigation links",
+                                          "width": 1328,
+                                          "height": 216,
+                                          "layout": "vertical",
+                                          "gap": 24,
                                           "children": [
                                             {
-                                              "type": "text",
-                                              "id": "Kf9hq",
+                                              "type": "frame",
+                                              "id": "tFMX3",
                                               "name": "sale",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "sale",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300",
-                                              "letterSpacing": 0.4
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "Kf9hq",
+                                                  "name": "sale",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "sale",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300",
+                                                  "letterSpacing": 0.4
+                                                }
+                                              ]
                                             },
                                             {
-                                              "type": "icon",
-                                              "id": "K16nu",
-                                              "x": 1310,
-                                              "y": 16,
-                                              "name": "Open Sale",
-                                              "enabled": false,
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "p3UKbH",
-                                          "name": "shop women",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "aKpxb",
+                                              "type": "frame",
+                                              "id": "p3UKbH",
                                               "name": "shop women",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "shop women",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300",
-                                              "letterSpacing": 0.4
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "aKpxb",
+                                                  "name": "shop women",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "shop women",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300",
+                                                  "letterSpacing": 0.4
+                                                }
+                                              ]
                                             },
                                             {
-                                              "type": "icon",
-                                              "id": "m2Olfl",
-                                              "x": 1310,
-                                              "y": 16,
-                                              "name": "Open Shop women",
-                                              "enabled": false,
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "IRXiJ",
-                                          "name": "search",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "LEAjS",
-                                              "name": "search",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "search",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "mKAGb",
-                                              "name": "Open New arrivals",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "e0nMAU",
-                                          "name": "Currency · IDR",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "T3qaO",
-                                              "name": "Currency · IDR",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Currency · IDR",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "yWmfA",
-                                              "name": "Open Collections",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "AJdKb",
-                                          "name": "my account",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "oAjZx",
+                                              "type": "frame",
+                                              "id": "AJdKb",
                                               "name": "my account",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "my account",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "HXCzk",
-                                              "name": "Open My account",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "oAjZx",
+                                                  "name": "my account",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "my account",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300"
+                                                }
+                                              ]
                                             }
                                           ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "e0nMAU",
+                                      "layoutPosition": "absolute",
+                                      "x": 56,
+                                      "y": 700,
+                                      "name": "Bottom currency control",
+                                      "width": 1328,
+                                      "height": 44,
+                                      "stroke": "$line",
+                                      "layout": "none",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "T3qaO",
+                                          "x": 0,
+                                          "y": 10,
+                                          "name": "Current currency — IDR",
+                                          "fill": "$ink",
+                                          "textGrowth": "fixed-width",
+                                          "width": 25,
+                                          "content": "IDR",
+                                          "lineHeight": 1.5,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-md",
+                                          "fontWeight": "300"
                                         },
                                         {
-                                          "type": "frame",
-                                          "id": "VJVRz",
-                                          "name": "bag (0)",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
+                                          "type": "path",
+                                          "id": "CvHYl",
+                                          "x": 0,
+                                          "y": 33,
+                                          "name": "Currency text underline",
+                                          "geometry": "M0 0.5h25",
+                                          "viewBox": [
+                                            0,
+                                            0,
+                                            25,
+                                            1
                                           ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "bv71t",
-                                              "name": "bag (0)",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "bag (0)",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "gOuAp",
-                                              "name": "Open Customer care",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
+                                          "width": 25,
+                                          "height": 1,
+                                          "stroke": "$ink",
+                                          "strokeWidth": 1
                                         }
                                       ]
                                     }
@@ -16292,7 +16236,7 @@
                               "type": "frame",
                               "id": "TRBqD",
                               "name": "32 Search panel · Desktop",
-                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page. Motion: open with opacity 0 to 1 and vertical offset 12px to 0 over 240ms, cubic-bezier(0.22,1,0.36,1); backdrop fades in concurrently. Close via Escape, backdrop or Close/Cancel with opacity 1 to 0 and offset 0 to 8px over 180ms ease-in. All content moves together. Reduced motion uses a 100ms fade only for both directions. Keep focus trapped and background scroll held until exit finishes.",
                               "clip": true,
                               "width": 1440,
                               "height": 900,
@@ -17000,7 +16944,7 @@
                               "type": "frame",
                               "id": "OctXG",
                               "name": "34 Currency selector · Desktop",
-                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page. Motion: open with opacity 0 to 1 and vertical offset 12px to 0 over 240ms, cubic-bezier(0.22,1,0.36,1); backdrop fades in concurrently. Close via Escape, backdrop or Close/Cancel with opacity 1 to 0 and offset 0 to 8px over 180ms ease-in. All content moves together. Reduced motion uses a 100ms fade only for both directions. Keep focus trapped and background scroll held until exit finishes.",
                               "clip": true,
                               "width": 1440,
                               "height": 900,
@@ -31319,7 +31263,7 @@
                               "type": "frame",
                               "id": "VqwMF",
                               "name": "31 Navigation open · Tablet",
-                              "context": "Navbar remains visible with the same live logo, bag and menu toggle. Original 30×20 thin-line hamburger morphs into an X within its unchanged 44×44 touch target. No Menu heading or separate close control. Drawer reveals downward below the navbar over 280ms, closes upward over 220ms; navbar stays still. Content fills remaining viewport and scrolls internally; background stays locked. Escape or same navbar X closes and restores focus; search/currency replace the drawer with their dialogs. Reduced motion skips animation. Admin toolbar stays visible above navbar. Desktop state demonstrates a URL-opened drawer; the normal desktop navbar keeps its direct links.",
+                              "context": "Persistent navbar with original thin-line hamburger morphing to X. Tablet/mobile actions read search icon, bag, menu toggle. Drawer slides down below navbar and scrolls internally; no heading, bag row, search row or arrow icons. Drawer links use desktop primary links plus my account. Currency control at bottom left shows only current code (IDR here), underlined, in a 44px target. On short viewports currency follows links in the scroll area; on tall viewports it sits 24px above bottom edge. Search/currency still open their dialogs. Background scroll locked; reduced-motion skips animation; WordPress toolbar remains above navbar.",
                               "clip": true,
                               "width": 768,
                               "height": 1024,
@@ -31394,264 +31338,170 @@
                                   "type": "frame",
                                   "id": "lpcm4",
                                   "name": "Content area",
-                                  "width": "fill_container",
-                                  "height": "fill_container",
-                                  "layout": "vertical",
-                                  "padding": [
-                                    24,
-                                    32
-                                  ],
-                                  "alignItems": "center",
+                                  "width": 768,
+                                  "height": 948,
+                                  "fill": "$bg",
+                                  "layout": "none",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "evOlx",
+                                      "x": 32,
+                                      "y": 24,
                                       "name": "Content column",
-                                      "width": "fill_container",
+                                      "width": 704,
+                                      "height": 216,
                                       "layout": "vertical",
-                                      "gap": 24,
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "TD8b8",
-                                          "name": "sale",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
+                                          "id": "e2FmT2",
+                                          "layoutPosition": "absolute",
+                                          "x": 0,
+                                          "y": 0,
+                                          "name": "Drawer navigation links",
+                                          "width": 704,
+                                          "height": 216,
+                                          "layout": "vertical",
+                                          "gap": 24,
                                           "children": [
                                             {
-                                              "type": "text",
-                                              "id": "W75Av",
+                                              "type": "frame",
+                                              "id": "TD8b8",
                                               "name": "sale",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "sale",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300",
-                                              "letterSpacing": 0.4
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "W75Av",
+                                                  "name": "sale",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "sale",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300",
+                                                  "letterSpacing": 0.4
+                                                }
+                                              ]
                                             },
                                             {
-                                              "type": "icon",
-                                              "id": "KhCbF",
-                                              "x": 686,
-                                              "y": 16,
-                                              "name": "Open Sale",
-                                              "enabled": false,
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "a8WbF",
-                                          "name": "shop women",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "SwCQV",
+                                              "type": "frame",
+                                              "id": "a8WbF",
                                               "name": "shop women",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "shop women",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300",
-                                              "letterSpacing": 0.4
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "SwCQV",
+                                                  "name": "shop women",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "shop women",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300",
+                                                  "letterSpacing": 0.4
+                                                }
+                                              ]
                                             },
                                             {
-                                              "type": "icon",
-                                              "id": "T4LMq",
-                                              "x": 686,
-                                              "y": 16,
-                                              "name": "Open Shop women",
-                                              "enabled": false,
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "CSM9K",
-                                          "name": "search",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "xLI6B",
-                                              "name": "search",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "search",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "xAgpi",
-                                              "name": "Open New arrivals",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "o4pAU0",
-                                          "name": "Currency · IDR",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "e5tbVV",
-                                              "name": "Currency · IDR",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Currency · IDR",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "hKro2",
-                                              "name": "Open Collections",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "v9JViK",
-                                          "name": "my account",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "xnP3J",
+                                              "type": "frame",
+                                              "id": "v9JViK",
                                               "name": "my account",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "my account",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "d8auw",
-                                              "name": "Open My account",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "xnP3J",
+                                                  "name": "my account",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "my account",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300"
+                                                }
+                                              ]
                                             }
                                           ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "o4pAU0",
+                                      "layoutPosition": "absolute",
+                                      "x": 32,
+                                      "y": 880,
+                                      "name": "Bottom currency control",
+                                      "width": 704,
+                                      "height": 44,
+                                      "stroke": "$line",
+                                      "layout": "none",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "e5tbVV",
+                                          "x": 0,
+                                          "y": 10,
+                                          "name": "Current currency — IDR",
+                                          "fill": "$ink",
+                                          "textGrowth": "fixed-width",
+                                          "width": 25,
+                                          "content": "IDR",
+                                          "lineHeight": 1.5,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-md",
+                                          "fontWeight": "300"
                                         },
                                         {
-                                          "type": "frame",
-                                          "id": "AoZlZ",
-                                          "name": "bag (0)",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
+                                          "type": "path",
+                                          "id": "tEQ6j",
+                                          "x": 0,
+                                          "y": 33,
+                                          "name": "Currency text underline",
+                                          "geometry": "M0 0.5h25",
+                                          "viewBox": [
+                                            0,
+                                            0,
+                                            25,
+                                            1
                                           ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "NYaOn",
-                                              "name": "bag (0)",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "bag (0)",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "uuEjw",
-                                              "name": "Open Customer care",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
+                                          "width": 25,
+                                          "height": 1,
+                                          "stroke": "$ink",
+                                          "strokeWidth": 1
                                         }
                                       ]
                                     }
@@ -31699,7 +31549,7 @@
                               "type": "frame",
                               "id": "wA7rF",
                               "name": "32 Search panel · Tablet",
-                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page. Motion: open with opacity 0 to 1 and vertical offset 12px to 0 over 240ms, cubic-bezier(0.22,1,0.36,1); backdrop fades in concurrently. Close via Escape, backdrop or Close/Cancel with opacity 1 to 0 and offset 0 to 8px over 180ms ease-in. All content moves together. Reduced motion uses a 100ms fade only for both directions. Keep focus trapped and background scroll held until exit finishes.",
                               "clip": true,
                               "width": 768,
                               "height": 1024,
@@ -32541,7 +32391,7 @@
                               "type": "frame",
                               "id": "W55HzH",
                               "name": "34 Currency selector · Tablet",
-                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page. Motion: open with opacity 0 to 1 and vertical offset 12px to 0 over 240ms, cubic-bezier(0.22,1,0.36,1); backdrop fades in concurrently. Close via Escape, backdrop or Close/Cancel with opacity 1 to 0 and offset 0 to 8px over 180ms ease-in. All content moves together. Reduced motion uses a 100ms fade only for both directions. Keep focus trapped and background scroll held until exit finishes.",
                               "clip": true,
                               "width": 768,
                               "height": 1024,
@@ -35794,7 +35644,7 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "height": 732,
+                                      "height": 267,
                                       "descendants": {
                                         "gg90L": {
                                           "x": 74.875,
@@ -35806,7 +35656,8 @@
                                           "x": 8.125,
                                           "y": 287,
                                           "width": 333.75,
-                                          "height": 445
+                                          "height": 445,
+                                          "enabled": false
                                         }
                                       }
                                     },
@@ -36026,7 +35877,7 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "height": 732,
+                                      "height": 267,
                                       "descendants": {
                                         "gg90L": {
                                           "x": 74.875,
@@ -36038,7 +35889,8 @@
                                           "x": 8.125,
                                           "y": 287,
                                           "width": 333.75,
-                                          "height": 445
+                                          "height": 445,
+                                          "enabled": false
                                         }
                                       }
                                     },
@@ -36077,11 +35929,11 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Left",
                                       "width": "fill_container",
-                                      "height": 732,
+                                      "height": 267,
                                       "descendants": {
                                         "gg90L": {
                                           "x": 74.875,
-                                          "y": 465,
+                                          "y": 0,
                                           "width": 200.25,
                                           "height": 267
                                         },
@@ -36089,7 +35941,8 @@
                                           "x": 8.125,
                                           "y": 0,
                                           "width": 333.75,
-                                          "height": 445
+                                          "height": 445,
+                                          "enabled": false
                                         }
                                       }
                                     },
@@ -47455,7 +47308,7 @@
                               "type": "frame",
                               "id": "k9Zvu",
                               "name": "31 Navigation open · Mobile",
-                              "context": "Navbar remains visible with the same live logo, bag and menu toggle. Original 30×20 thin-line hamburger morphs into an X within its unchanged 44×44 touch target. No Menu heading or separate close control. Drawer reveals downward below the navbar over 280ms, closes upward over 220ms; navbar stays still. Content fills remaining viewport and scrolls internally; background stays locked. Escape or same navbar X closes and restores focus; search/currency replace the drawer with their dialogs. Reduced motion skips animation. Admin toolbar stays visible above navbar. Desktop state demonstrates a URL-opened drawer; the normal desktop navbar keeps its direct links.",
+                              "context": "Persistent navbar with original thin-line hamburger morphing to X. Tablet/mobile actions read search icon, bag, menu toggle. Drawer slides down below navbar and scrolls internally; no heading, bag row, search row or arrow icons. Drawer links use desktop primary links plus my account. Currency control at bottom left shows only current code (IDR here), underlined, in a 44px target. On short viewports currency follows links in the scroll area; on tall viewports it sits 24px above bottom edge. Search/currency still open their dialogs. Background scroll locked; reduced-motion skips animation; WordPress toolbar remains above navbar.",
                               "clip": true,
                               "width": 390,
                               "height": 844,
@@ -47530,264 +47383,170 @@
                                   "type": "frame",
                                   "id": "x0zBYZ",
                                   "name": "Content area",
-                                  "width": "fill_container",
-                                  "height": "fill_container",
-                                  "layout": "vertical",
-                                  "padding": [
-                                    24,
-                                    20
-                                  ],
-                                  "alignItems": "center",
+                                  "width": 390,
+                                  "height": 776,
+                                  "fill": "$bg",
+                                  "layout": "none",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "E2DHwi",
+                                      "x": 20,
+                                      "y": 24,
                                       "name": "Content column",
-                                      "width": "fill_container",
+                                      "width": 350,
+                                      "height": 216,
                                       "layout": "vertical",
-                                      "gap": 24,
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "JOs5v",
-                                          "name": "sale",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
+                                          "id": "Xmn90",
+                                          "layoutPosition": "absolute",
+                                          "x": 0,
+                                          "y": 0,
+                                          "name": "Drawer navigation links",
+                                          "width": 350,
+                                          "height": 216,
+                                          "layout": "vertical",
+                                          "gap": 24,
                                           "children": [
                                             {
-                                              "type": "text",
-                                              "id": "eqoeY",
+                                              "type": "frame",
+                                              "id": "JOs5v",
                                               "name": "sale",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "sale",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300",
-                                              "letterSpacing": 0.4
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "eqoeY",
+                                                  "name": "sale",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "sale",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300",
+                                                  "letterSpacing": 0.4
+                                                }
+                                              ]
                                             },
                                             {
-                                              "type": "icon",
-                                              "id": "UZ0Qc",
-                                              "x": 332,
-                                              "y": 16,
-                                              "name": "Open Sale",
-                                              "enabled": false,
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "EiJUA",
-                                          "name": "shop women",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "Z6Q4qH",
+                                              "type": "frame",
+                                              "id": "EiJUA",
                                               "name": "shop women",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "shop women",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300",
-                                              "letterSpacing": 0.4
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "Z6Q4qH",
+                                                  "name": "shop women",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "shop women",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300",
+                                                  "letterSpacing": 0.4
+                                                }
+                                              ]
                                             },
                                             {
-                                              "type": "icon",
-                                              "id": "rWq9v",
-                                              "x": 332,
-                                              "y": 16,
-                                              "name": "Open Shop women",
-                                              "enabled": false,
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "P9lhmX",
-                                          "name": "search",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "izNg1",
-                                              "name": "search",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "search",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "Y5q7ea",
-                                              "name": "Open New arrivals",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "CswVH",
-                                          "name": "Currency · IDR",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "a8cUe4",
-                                              "name": "Currency · IDR",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Currency · IDR",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "jwHAF",
-                                              "name": "Open Collections",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "OksCU",
-                                          "name": "my account",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "kCtJf",
+                                              "type": "frame",
+                                              "id": "OksCU",
                                               "name": "my account",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "my account",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "P80DNt",
-                                              "name": "Open My account",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
+                                              "stroke": "$line",
+                                              "strokeWidth": {
+                                                "bottom": 1
+                                              },
+                                              "padding": [
+                                                16,
+                                                0
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "kCtJf",
+                                                  "name": "my account",
+                                                  "fill": "$ink",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "my account",
+                                                  "lineHeight": 1.5,
+                                                  "fontFamily": "$font-sans",
+                                                  "fontSize": "$text-md",
+                                                  "fontWeight": "300"
+                                                }
+                                              ]
                                             }
                                           ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "CswVH",
+                                      "layoutPosition": "absolute",
+                                      "x": 20,
+                                      "y": 708,
+                                      "name": "Bottom currency control",
+                                      "width": 350,
+                                      "height": 44,
+                                      "stroke": "$line",
+                                      "layout": "none",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "a8cUe4",
+                                          "x": 0,
+                                          "y": 10,
+                                          "name": "Current currency — IDR",
+                                          "fill": "$ink",
+                                          "textGrowth": "fixed-width",
+                                          "width": 25,
+                                          "content": "IDR",
+                                          "lineHeight": 1.5,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-md",
+                                          "fontWeight": "300"
                                         },
                                         {
-                                          "type": "frame",
-                                          "id": "r63wo",
-                                          "name": "bag (0)",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
+                                          "type": "path",
+                                          "id": "LLlVN",
+                                          "x": 0,
+                                          "y": 33,
+                                          "name": "Currency text underline",
+                                          "geometry": "M0 0.5h25",
+                                          "viewBox": [
+                                            0,
+                                            0,
+                                            25,
+                                            1
                                           ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "L9fl8E",
-                                              "name": "bag (0)",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "bag (0)",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "Z94bZG",
-                                              "name": "Open Customer care",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
+                                          "width": 25,
+                                          "height": 1,
+                                          "stroke": "$ink",
+                                          "strokeWidth": 1
                                         }
                                       ]
                                     }
@@ -47835,7 +47594,7 @@
                               "type": "frame",
                               "id": "ke6yV",
                               "name": "32 Search panel · Mobile",
-                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page. Motion: open with opacity 0 to 1 and vertical offset 12px to 0 over 240ms, cubic-bezier(0.22,1,0.36,1); backdrop fades in concurrently. Close via Escape, backdrop or Close/Cancel with opacity 1 to 0 and offset 0 to 8px over 180ms ease-in. All content moves together. Reduced motion uses a 100ms fade only for both directions. Keep focus trapped and background scroll held until exit finishes.",
                               "clip": true,
                               "width": 390,
                               "height": 844,
@@ -47919,7 +47678,7 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "height": 732,
+                                      "height": 267,
                                       "descendants": {
                                         "gg90L": {
                                           "x": 74.875,
@@ -47931,7 +47690,8 @@
                                           "x": 8.125,
                                           "y": 287,
                                           "width": 333.75,
-                                          "height": 445
+                                          "height": 445,
+                                          "enabled": false
                                         }
                                       }
                                     },
@@ -48706,7 +48466,7 @@
                               "type": "frame",
                               "id": "rM0bO",
                               "name": "34 Currency selector · Mobile",
-                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page.",
+                              "context": "Search and currency open as native modal dialogs over the current page. URL and scroll position stay unchanged on opening. Backdrop opacity 40%; desktop/tablet dialog width 560px and padding 32px; mobile viewport minus 32px and padding 24px. Dialog scrolls internally on short viewports. Escape, outside click, Close/Cancel dismiss; focus returns to opener. Search submission navigates to results; Apply currency refreshes prices on the current page. Motion: open with opacity 0 to 1 and vertical offset 12px to 0 over 240ms, cubic-bezier(0.22,1,0.36,1); backdrop fades in concurrently. Close via Escape, backdrop or Close/Cancel with opacity 1 to 0 and offset 0 to 8px over 180ms ease-in. All content moves together. Reduced motion uses a 100ms fade only for both directions. Keep focus trapped and background scroll held until exit finishes.",
                               "clip": true,
                               "width": 390,
                               "height": 844,
@@ -48790,7 +48550,7 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Right",
                                       "width": "fill_container",
-                                      "height": 732,
+                                      "height": 267,
                                       "descendants": {
                                         "gg90L": {
                                           "x": 74.875,
@@ -48802,7 +48562,8 @@
                                           "x": 8.125,
                                           "y": 287,
                                           "width": 333.75,
-                                          "height": 445
+                                          "height": 445,
+                                          "enabled": false
                                         }
                                       }
                                     },
