@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 24 (proposed 21, accepted 1, superseded 2)
 - task: 1 (open 1)
 - memory: 33 (active 33)
-- handoff: 64 (final 64)
+- handoff: 65 (final 65)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-tdxqdkvv 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Added cross-document page transitions (transitions.css, enqueued last via miroir_styles): header/admin bar pinned, content fades out 160ms and in 240ms with 8px rise; reduced motion off. Specul…
 - hnd-1c7r3wy0 2026-11-01 (human:akbar) — Done: Prepared mobile editorial small-image-only CSS and synchronized Pen.dev mobile layouts for commit. Diff whitespace checks passed; Pen.dev render verification completed in preceding turn. · Next…
 - hnd-ebg3amw9 2026-11-01 (human:akbar) — Done: Updated miroir.pen via Pen.dev MCP: all five mobile editorial instances (three homepage pairs plus search/currency backgrounds) hide the large image, move small image to y=0, and shrink pair he…
 - hnd-ja258kb5 2026-11-01 (human:akbar) — Done: Updated shared editorial pair CSS to hide the large image at mobile widths (599px and below), preserving the small image and caption for both orientations. git diff --check passed. · Next: None.
 - hnd-nagma4ck 2026-11-01 (human:akbar) — Done: Reviewed and prepared requested commit for search/currency dialog motion and associated project memory. JS syntax and diff checks passed; implementation-session responsive browser checks passed…
-- hnd-d4qeegfk 2026-11-01 (human:akbar) — Done: Implemented search/currency fade and slide opening and closing animations plus synchronized backdrop and 100ms reduced-motion fades. Unified Escape/backdrop/button dismissal with exit completio…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
