@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 19 (proposed 17, accepted 1, superseded 1)
 - task: 1 (open 1)
 - memory: 33 (active 33)
-- handoff: 47 (final 47)
+- handoff: 48 (final 48)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-a3gst12q 2026-11-01 (agent:codex) — Done: Reviewed and prepared commit for search modal X control, automatic popular-search aggregation, responsive Pen states, README and regression tests. Prior validation: PHP lint, transactional WP-C…
 - hnd-wem17va7 2026-11-01 (agent:codex) — Done: Replaced manual popular search configuration with automatic 30-day daily aggregate ranking: top 3 successful product queries, threshold 3; no fallback. Added cookie daily dedup/cap, query valid…
 - hnd-5mezf4ve 2026-11-01 (human:akbar) — Done: Inspected popular search source: manually configured popular_searches theme setting, default Shirts/Dresses/New arrivals; helper resolves category links or product search fallback. No popularit…
 - hnd-494cb51s 2026-11-01 (human:akbar) — Done: Replaced Search modal full-width Close search button with accessible X beside heading, 44px target and hover state. Updated desktop/tablet/mobile search dialogs in miroir.pen via pen.dev MCP. V…
 - hnd-xyvwjfk8 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: All pages now managed in Elementor: new Text page widget + internal block miroir/page-text; wp miroir elementor setup converted 14 text pages (FAQ, size guide, policies, contact, payment confir…
-- hnd-638166s0 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Tested Elementor editor in browser: home widgets (caption, layout, image picker, hand-picked products) re-render live; header template navigation controls; product template parts and texts; Sit…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
