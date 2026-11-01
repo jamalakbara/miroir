@@ -51,8 +51,10 @@ $close = function ( $label ) {
 
 <dialog class="flow panel panel--modal" id="search-panel" data-panel="search" aria-labelledby="search-panel-title"<?php echo 'search' === $open ? ' open' : ''; ?>>
 	<div class="flow__col">
-		<h2 class="flow__title" id="search-panel-title"><?php echo esc_html( miroir_text( 'search_title' ) ); ?></h2>
-		<?php $close( miroir_text( 'search_close' ) ); ?>
+		<div class="panel__header">
+			<h2 class="flow__title" id="search-panel-title"><?php echo esc_html( miroir_text( 'search_title' ) ); ?></h2>
+			<button class="panel__close" type="button" data-panel-close aria-label="<?php echo esc_attr( miroir_text( 'search_close' ) ); ?>"><?php echo miroir_icon( 'x', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></button>
+		</div>
 		<form class="flow__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php miroir_field( array( 'name' => 's', 'id' => 'panel-search', 'type' => 'search', 'label' => miroir_text( 'search_label' ), 'placeholder' => miroir_text( 'search_placeholder' ), 'class' => 'field--quiet' ) ); ?>
 			<input type="hidden" name="post_type" value="product">

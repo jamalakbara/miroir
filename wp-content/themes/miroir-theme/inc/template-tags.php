@@ -102,35 +102,16 @@ function miroir_copyright( $format = '' ) {
 }
 
 /**
- * Search panel shortcuts from Customize > Search, one "label | link" per line.
- * Links: "?s=word" (product search), "category:slug", a /path or a full URL.
+ * The three most searched product terms in the last 30 days.
  *
  * @return array label => url
  */
 function miroir_popular_searches() {
 	$searches = array();
-	foreach ( preg_split( '/\R/', (string) miroir_mod( 'popular_searches' ) ) as $line ) {
-		$parts = array_map( 'trim', explode( '|', $line, 2 ) );
-		if ( 2 !== count( $parts ) || '' === $parts[0] || '' === $parts[1] ) {
-			continue;
-		}
-		list( $label, $link ) = $parts;
-		if ( 0 === strpos( $link, 'category:' ) ) {
-			$url = miroir_cat_url( trim( substr( $link, 9 ) ) );
-		} elseif ( '?' === $link[0] ) {
-			wp_parse_str( substr( $link, 1 ), $query );
-			if ( isset( $query['s'] ) && ! isset( $query['post_type'] ) ) {
-				$query['post_type'] = 'product';
-			}
-			$url = add_query_arg( $query, home_url( '/' ) );
-		} elseif ( '/' === $link[0] ) {
-			$url = home_url( $link );
-		} else {
-			$url = $link;
-		}
-		$searches[ $label ] = $url;
+	foreach ( miroir_top_search_terms() as $term ) {
+		$searches[ $term ] = add_query_arg( array( 's' => $term, 'post_type' => 'product' ), home_url( '/' ) );
 	}
-	return apply_filters( 'miroir_popular_searches', $searches );
+	return $searches;
 }
 
 /**

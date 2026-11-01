@@ -81,3 +81,27 @@ docker compose run --rm wpcli miroir elementor reset             # back to the t
 
 With Elementor inactive, or a screen without a template, the theme's block
 templates draw the site as before.
+
+## Automatic popular searches
+
+The search modal ranks the top three successful product searches over the last
+30 UTC days. Terms need at least three counts; the section stays hidden until
+some qualify. There is no manually configured list or fallback. Existing saved
+manual settings are ignored and their editor control has been removed.
+
+Counts are normalized for case and whitespace. Empty results, pagination,
+editor previews, staff searches and known bots are excluded. A daily cookie
+deduplicates each term per browser and limits contributions to 20 terms per day;
+clearing cookies can bypass this, so these are popularity hints, not audited
+unique-visitor statistics. Contact details, URLs, numbers and markup are rejected.
+The database stores only terms and daily aggregate counts, without visitor IDs
+or IP addresses. WP-Cron removes expired counts daily, and ranking caches for
+five minutes (invalidated when a search is counted). Full-page caching of search
+results must be disabled for server-side counting to run.
+
+The theme creates its aggregate table automatically. Regression tests run in a
+database transaction and roll back their test data:
+
+```powershell
+docker compose run --rm -T -v "${PWD}/tools:/tmp/miroir-tests:ro" wpcli eval-file /tmp/miroir-tests/test-search-popularity.php
+```

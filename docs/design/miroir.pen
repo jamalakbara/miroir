@@ -16508,6 +16508,7 @@
                                       "type": "frame",
                                       "id": "Q3O6A",
                                       "name": "Modal dialog",
+                                      "context": "Automatic popular searches: top three successful product search terms over the last 30 UTC days, minimum three counts. Each browser contributes once per term per day. No manual defaults. Before qualifying history exists, hide the heading and rows as shown. When populated, enable these rows and replace example labels with ranked search terms; every row links to a product search.",
                                       "width": 560,
                                       "fill": "$bg",
                                       "stroke": "$line",
@@ -16517,29 +16518,51 @@
                                       "padding": 32,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "Goh7Q",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "type": "frame",
+                                          "id": "Mj1DI",
+                                          "name": "Search modal header",
                                           "width": "fill_container",
-                                          "content": "Search",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
-                                        },
-                                        {
-                                          "id": "aQO9J",
-                                          "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Close search",
-                                          "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Close search"
+                                          "height": 44,
+                                          "gap": 16,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "Goh7Q",
+                                              "name": "Page title",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Search",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-xl",
+                                              "fontWeight": "300"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "vMinv",
+                                              "name": "Close search — 44px target",
+                                              "context": "Button: Close search. Dismiss modal and return focus to opener.",
+                                              "width": 44,
+                                              "height": 44,
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "icon",
+                                                  "id": "shCmE",
+                                                  "name": "Close search X",
+                                                  "width": 24,
+                                                  "height": 24,
+                                                  "icon": "x",
+                                                  "library": "lucide",
+                                                  "fill": "$ink"
+                                                }
+                                              ]
                                             }
-                                          }
+                                          ]
                                         },
                                         {
                                           "id": "U7v0I",
@@ -16571,10 +16594,13 @@
                                         {
                                           "type": "text",
                                           "id": "jRsby",
+                                          "x": 32,
+                                          "y": 256,
                                           "name": "Popular searches",
+                                          "enabled": false,
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
-                                          "width": "fill_container",
+                                          "width": "fill_container(496)",
                                           "content": "POPULAR SEARCHES",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-mono",
@@ -16584,8 +16610,11 @@
                                         {
                                           "type": "frame",
                                           "id": "mW6vI",
+                                          "x": 32,
+                                          "y": 298,
                                           "name": "Shirts",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(496)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -16623,8 +16652,11 @@
                                         {
                                           "type": "frame",
                                           "id": "b657uw",
+                                          "x": 32,
+                                          "y": 378,
                                           "name": "Dresses",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(496)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -16662,8 +16694,11 @@
                                         {
                                           "type": "frame",
                                           "id": "P8pDz",
+                                          "x": 32,
+                                          "y": 458,
                                           "name": "New arrivals",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(496)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -31978,6 +32013,7 @@
                                       "type": "frame",
                                       "id": "XADyc",
                                       "name": "Modal dialog",
+                                      "context": "Automatic popular searches: top three successful product search terms over the last 30 UTC days, minimum three counts. Each browser contributes once per term per day. No manual defaults. Before qualifying history exists, hide the heading and rows as shown. When populated, enable these rows and replace example labels with ranked search terms; every row links to a product search.",
                                       "width": 560,
                                       "fill": "$bg",
                                       "stroke": "$line",
@@ -31987,29 +32023,51 @@
                                       "padding": 32,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "Th0p2",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "type": "frame",
+                                          "id": "O5elY",
+                                          "name": "Search modal header",
                                           "width": "fill_container",
-                                          "content": "Search",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
-                                        },
-                                        {
-                                          "id": "r1y8D",
-                                          "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Close search",
-                                          "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Close search"
+                                          "height": 44,
+                                          "gap": 16,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "Th0p2",
+                                              "name": "Page title",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Search",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-xl",
+                                              "fontWeight": "300"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "Fd6Yk",
+                                              "name": "Close search — 44px target",
+                                              "context": "Button: Close search. Dismiss modal and return focus to opener.",
+                                              "width": 44,
+                                              "height": 44,
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "icon",
+                                                  "id": "qqJPJ",
+                                                  "name": "Close search X",
+                                                  "width": 24,
+                                                  "height": 24,
+                                                  "icon": "x",
+                                                  "library": "lucide",
+                                                  "fill": "$ink"
+                                                }
+                                              ]
                                             }
-                                          }
+                                          ]
                                         },
                                         {
                                           "id": "AXVzP",
@@ -32041,10 +32099,13 @@
                                         {
                                           "type": "text",
                                           "id": "wBi5c",
+                                          "x": 32,
+                                          "y": 256,
                                           "name": "Popular searches",
+                                          "enabled": false,
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
-                                          "width": "fill_container",
+                                          "width": "fill_container(496)",
                                           "content": "POPULAR SEARCHES",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-mono",
@@ -32054,8 +32115,11 @@
                                         {
                                           "type": "frame",
                                           "id": "HnA14",
+                                          "x": 32,
+                                          "y": 298,
                                           "name": "Shirts",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(496)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -32093,8 +32157,11 @@
                                         {
                                           "type": "frame",
                                           "id": "R5YVDK",
+                                          "x": 32,
+                                          "y": 378,
                                           "name": "Dresses",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(496)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -32132,8 +32199,11 @@
                                         {
                                           "type": "frame",
                                           "id": "hYFEw",
+                                          "x": 32,
+                                          "y": 458,
                                           "name": "New arrivals",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(496)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -48128,6 +48198,7 @@
                                       "type": "frame",
                                       "id": "sMBdF",
                                       "name": "Modal dialog",
+                                      "context": "Automatic popular searches: top three successful product search terms over the last 30 UTC days, minimum three counts. Each browser contributes once per term per day. No manual defaults. Before qualifying history exists, hide the heading and rows as shown. When populated, enable these rows and replace example labels with ranked search terms; every row links to a product search.",
                                       "width": 358,
                                       "fill": "$bg",
                                       "stroke": "$line",
@@ -48137,29 +48208,51 @@
                                       "padding": 24,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "ViGMV",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "type": "frame",
+                                          "id": "Dp1O0",
+                                          "name": "Search modal header",
                                           "width": "fill_container",
-                                          "content": "Search",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
-                                        },
-                                        {
-                                          "id": "k7thMM",
-                                          "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Close search",
-                                          "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Close search"
+                                          "height": 44,
+                                          "gap": 16,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "ViGMV",
+                                              "name": "Page title",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Search",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-xl",
+                                              "fontWeight": "300"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "P4ZmlR",
+                                              "name": "Close search — 44px target",
+                                              "context": "Button: Close search. Dismiss modal and return focus to opener.",
+                                              "width": 44,
+                                              "height": 44,
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "icon",
+                                                  "id": "ySSG9",
+                                                  "name": "Close search X",
+                                                  "width": 24,
+                                                  "height": 24,
+                                                  "icon": "x",
+                                                  "library": "lucide",
+                                                  "fill": "$ink"
+                                                }
+                                              ]
                                             }
-                                          }
+                                          ]
                                         },
                                         {
                                           "id": "S04BLB",
@@ -48191,10 +48284,13 @@
                                         {
                                           "type": "text",
                                           "id": "CKZIy",
+                                          "x": 24,
+                                          "y": 248,
                                           "name": "Popular searches",
+                                          "enabled": false,
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
-                                          "width": "fill_container",
+                                          "width": "fill_container(310)",
                                           "content": "POPULAR SEARCHES",
                                           "lineHeight": 1.5,
                                           "fontFamily": "$font-mono",
@@ -48204,8 +48300,11 @@
                                         {
                                           "type": "frame",
                                           "id": "b8zkbK",
+                                          "x": 24,
+                                          "y": 290,
                                           "name": "Shirts",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(310)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -48243,8 +48342,11 @@
                                         {
                                           "type": "frame",
                                           "id": "x0364",
+                                          "x": 24,
+                                          "y": 370,
                                           "name": "Dresses",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(310)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1
@@ -48282,8 +48384,11 @@
                                         {
                                           "type": "frame",
                                           "id": "AAy2I",
+                                          "x": 24,
+                                          "y": 450,
                                           "name": "New arrivals",
-                                          "width": "fill_container",
+                                          "enabled": false,
+                                          "width": "fill_container(310)",
                                           "stroke": "$line",
                                           "strokeWidth": {
                                             "bottom": 1

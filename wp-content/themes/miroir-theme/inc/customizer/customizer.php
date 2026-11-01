@@ -17,7 +17,6 @@ function miroir_customizer_sections() {
 		'miroir_typography'  => array( __( 'Text size', 'miroir' ), __( 'Colours and fonts: Appearance > Editor > Styles (Text = body font, Captions = label font).', 'miroir' ) ),
 		'miroir_layout'      => array( __( 'Layout & spacing', 'miroir' ), '' ),
 		'miroir_product'     => array( __( 'Products', 'miroir' ), __( 'Product photos come from each product\'s image and gallery in Products.', 'miroir' ) ),
-		'miroir_search'      => array( __( 'Search', 'miroir' ), '' ),
 		'miroir_pages'       => array( __( 'Linked pages', 'miroir' ), __( 'Pages the store links to from buttons. Leave unset to use the page with the usual address (/contact/, /size-guide/ …).', 'miroir' ) ),
 		'miroir_maintenance' => array( __( 'Maintenance', 'miroir' ), __( 'The maintenance page texts are under Text & labels > Maintenance page.', 'miroir' ) ),
 	);

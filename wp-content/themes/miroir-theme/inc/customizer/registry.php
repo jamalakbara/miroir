@@ -78,15 +78,6 @@ function miroir_settings() {
 		'similar_cols_d'         => $cols( __( 'Similar products columns · desktop', 'miroir' ), 7, '--similar-cols-d' ),
 		'pdp_size_guide'         => array( 'section' => 'miroir_product', 'label' => __( 'Show size guide link on product pages', 'miroir' ), 'type' => 'checkbox', 'default' => false ),
 
-		// Search.
-		'popular_searches'       => array(
-			'section'     => 'miroir_search',
-			'label'       => __( 'Popular searches', 'miroir' ),
-			'type'        => 'textarea',
-			'default'     => __( 'Shirts', 'miroir' ) . " | ?s=shirt\n" . __( 'Dresses', 'miroir' ) . " | category:dress\n" . __( 'New arrivals', 'miroir' ) . ' | category:new-collection',
-			'description' => __( 'One per line: label | link. A link can be a URL, "?s=word" for a search, or "category:slug" for a collection.', 'miroir' ),
-		),
-
 		// Pages the theme links to.
 		'page_contact'              => array( 'section' => 'miroir_pages', 'label' => __( 'Customer care page', 'miroir' ), 'type' => 'page', 'default' => 0 ),
 		'page_size_guide'           => array( 'section' => 'miroir_pages', 'label' => __( 'Size guide page', 'miroir' ), 'type' => 'page', 'default' => 0 ),
