@@ -45,7 +45,7 @@ function miroir_front_page_id() {
 	if ( 'page' !== get_option( 'show_on_front' ) || ! $front ) {
 		return 0;
 	}
-	return false !== strpos( (string) get_post_field( 'post_content', $front ), '<!-- wp:miroir/' ) ? $front : 0;
+	return false !== strpos( (string) get_post_field( 'post_content', $front ), '<!-- wp:miroir/' ) || miroir_elementor_built( $front ) ? $front : 0;
 }
 
 add_filter(

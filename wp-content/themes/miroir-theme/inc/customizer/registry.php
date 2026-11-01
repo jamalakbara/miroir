@@ -123,10 +123,9 @@ function miroir_mod( $id ) {
 		return null;
 	}
 	$default = $settings[ $id ]['default'];
-	if ( 'option' === ( $settings[ $id ]['storage'] ?? '' ) ) {
-		return get_option( $id, $default );
-	}
-	return get_theme_mod( $id, $default );
+	$value   = 'option' === ( $settings[ $id ]['storage'] ?? '' ) ? get_option( $id, $default ) : get_theme_mod( $id, $default );
+	// Elementor Site Settings > Miroir replaces the Customizer value (inc/elementor/kit-tab.php).
+	return apply_filters( 'miroir_mod', $value, $id, $default );
 }
 
 /** Font sizes of tokens.css, scaled by the "Text size" setting. */

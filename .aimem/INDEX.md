@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 17 (proposed 15, accepted 1, superseded 1)
+- decision: 18 (proposed 16, accepted 1, superseded 1)
 - task: 1 (open 1)
-- memory: 28 (active 28)
-- handoff: 41 (final 41)
+- memory: 33 (active 33)
+- handoff: 44 (final 44)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-xyvwjfk8 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: All pages now managed in Elementor: new Text page widget + internal block miroir/page-text; wp miroir elementor setup converted 14 text pages (FAQ, size guide, policies, contact, payment confir…
+- hnd-638166s0 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Tested Elementor editor in browser: home widgets (caption, layout, image picker, hand-picked products) re-render live; header template navigation controls; product template parts and texts; Sit…
+- hnd-nrx4y56n 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Branch elementor (from origin/main): Elementor 4.3.5 installed+active; theme layer inc/elementor/ (15 Miroir section widgets rendering miroir/* block trees, location swap for header/footer/main…
 - hnd-qf0repx9 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: Converted miroir-theme to a block theme on branch block-theme (dec-4a5wfd9e): theme.json (palette + 2 font families), templates/ (15) and parts/header|footer built from 28 new server-rendered m…
 - hnd-6et7wapc 2026-10-31 (human:akbar) — Done: Prepared isolated navbar commit: staged responsive CSS/header markup, shared bag helper with fallback for HEAD without Customizer, WooCommerce fragment/cache updates, saved Pen design and navba…
-- hnd-c8cf3vbf 2026-10-31 (human:akbar) — Done: Refined navbar below 1024px: logo left, compact bag counter plus 44px menu target right, currency remains in menu, announcement below navigation. Added shared bag rendering and refreshed WooCom…
-- hnd-vdc5qtkr 2026-10-31 (human:akbar) — Done: Changed shop/category desktop grid from 3 to 4 columns in tokens.css and Customizer registry; set local shop_cols_d theme mod to 4. Updated Pen.dev miroir.pen screen 02 desktop to three rows of…
-- hnd-d8ng90b1 2026-10-31 (agent:claude-code:claude-opus-5-5) — Done: All product images now render the design's grey placeholder: new Customizer setting product_photos (Customize > Products > Show product photos, default off) makes miroir_product_image_id() retu…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects

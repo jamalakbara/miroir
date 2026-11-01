@@ -28,6 +28,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require MIROIR_THEME_DIR . '/inc/states.php';
 }
 
+// The site is edited in Elementor while it is active; otherwise the block templates draw everything.
+if ( did_action( 'elementor/loaded' ) ) {
+	require MIROIR_THEME_DIR . '/inc/elementor/loader.php';
+}
+
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require MIROIR_THEME_DIR . '/inc/cli.php';
 }

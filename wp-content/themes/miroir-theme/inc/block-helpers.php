@@ -13,7 +13,32 @@ defined( 'ABSPATH' ) || exit;
  * rather than for the storefront.
  */
 function miroir_block_preview() {
-	return defined( 'REST_REQUEST' ) && REST_REQUEST;
+	return ( defined( 'REST_REQUEST' ) && REST_REQUEST ) || miroir_elementor_preview();
+}
+
+/**
+ * Whether Elementor is rendering for its editor: the preview frame, or a
+ * widget re-rendered while its settings change.
+ */
+function miroir_elementor_preview() {
+	if ( ! did_action( 'elementor/loaded' ) ) {
+		return false;
+	}
+	$elementor = \Elementor\Plugin::$instance;
+	return ( $elementor->editor && $elementor->editor->is_edit_mode() ) || ( $elementor->preview && $elementor->preview->is_preview_mode() );
+}
+
+/**
+ * Whether a post is built with Elementor (its content is Elementor's).
+ *
+ * @param int $post_id Post id.
+ */
+function miroir_elementor_built( $post_id ) {
+	if ( ! $post_id || ! did_action( 'elementor/loaded' ) ) {
+		return false;
+	}
+	$document = \Elementor\Plugin::$instance->documents->get( $post_id );
+	return $document && $document->is_built_with_elementor();
 }
 
 /**

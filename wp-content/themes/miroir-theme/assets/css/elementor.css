@@ -1,0 +1,22 @@
+/*
+ * Elementor around the Miroir sections (inc/elementor/). On the storefront the
+ * template's wrapper and its section stack (containers with the class
+ * miroir-stack) take no box, so the sections lay out exactly as in the block
+ * templates. Miroir widgets print no wrapper of their own there. In the editor
+ * the wrappers stay boxes so they can be selected.
+ */
+.miroir-elementor,
+.miroir-elementor > .miroir-stack {
+	display: contents;
+}
+
+.elementor-editor-active .miroir-stack {
+	--padding-top: 0px;
+	--padding-right: 0px;
+	--padding-bottom: 0px;
+	--padding-left: 0px;
+	--gap: 0px;
+	--row-gap: 0px;
+	--column-gap: 0px;
+	--width: 100%;
+}
