@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 31 (proposed 26, accepted 1, superseded 4)
 - task: 1 (open 1)
 - memory: 35 (active 35)
-- handoff: 81 (final 81)
+- handoff: 82 (final 82)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
