@@ -145,6 +145,55 @@ wc-order-attribution-inputs { display: none; }
 .panel__header .flow__title { min-width: 0; }
 .panel__close { display: flex; align-items: center; justify-content: center; flex: none; width: 44px; height: 44px; color: var(--ink); }
 .panel__close:hover { background: var(--line); }
+/* Added-item confirmation: right drawer, compact bottom sheet on phones. */
+.panel--bag {
+	z-index: 10000;
+	inset: var(--panel-toolbar-offset, 0px) 0 0 auto;
+	margin: 0;
+	width: min(440px, 100%);
+	height: calc(100dvh - var(--panel-toolbar-offset, 0px));
+	max-height: calc(100dvh - var(--panel-toolbar-offset, 0px));
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.panel--bag .panel__header { flex: none; }
+.admin-bar .panel--bag { --panel-toolbar-offset: 32px; }
+.panel--bag::backdrop { top: var(--panel-toolbar-offset, 0px); }
+.mini-bag__form { flex: 0 0 auto; }
+.mini-bag__items { display: flex; flex-direction: column; gap: 24px; }
+.mini-bag__feedback:empty { display: none; }
+.mini-bag__feedback a { text-decoration: underline; }
+.mini-bag__form[aria-busy="true"] { opacity: 0.6; }
+.panel--bag .flow__heading { line-height: 29px; }
+.panel--bag .flow__heading:focus { outline: none; }
+.panel--bag .panel__close { text-decoration: none; }
+.mini-bag__item { display: flex; align-items: flex-start; gap: 20px; }
+.mini-bag__image { width: 96px; aspect-ratio: 3 / 4; flex: none; }
+.mini-bag__details { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
+.mini-bag__details .qty { align-self: flex-start; margin-top: 4px; }
+.mini-bag__subtotal { padding-top: 24px; border-top: 1px solid var(--line); }
+.mini-bag__actions { display: flex; flex-direction: column; gap: 12px; }
+.panel--bag.panel--modal[open] { animation: bag-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.panel--bag.panel--modal.is-closing { animation: bag-out 180ms ease-in both; }
+@keyframes bag-in { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes bag-out { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(32px); } }
+form.cart[aria-busy="true"] .single_add_to_cart_button { opacity: 0.6; cursor: wait; }
+[data-add-feedback]:not(:empty) { padding-top: 16px; font-size: var(--text-base); }
+[data-add-feedback] a { text-decoration: underline; }
+@media (max-width: 599px) {
+	.panel--bag.panel--modal { inset: auto 0 0; width: 100%; height: auto; max-height: calc(100dvh - var(--panel-toolbar-offset, 0px) - 16px); padding: 24px 20px max(24px, env(safe-area-inset-bottom)); }
+	.panel--bag.panel--modal[open] { animation-name: bag-sheet-in; }
+	.panel--bag.panel--modal.is-closing { animation-name: bag-sheet-out; }
+}
+@media (max-width: 782px) { .admin-bar .panel--bag { --panel-toolbar-offset: 46px; } }
+@keyframes bag-sheet-in { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bag-sheet-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(32px); } }
+@media (prefers-reduced-motion: reduce) {
+	.panel--bag.panel--modal[open] { animation: modal-backdrop-in 100ms ease both; }
+	.panel--bag.panel--modal.is-closing { animation: modal-backdrop-out 100ms ease both; }
+}
 @media (max-width: 599px) {
 	.panel--modal { padding: 24px; }
 }

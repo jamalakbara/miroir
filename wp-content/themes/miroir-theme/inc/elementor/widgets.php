@@ -381,7 +381,7 @@ class Miroir_Widget_Product extends Miroir_Widget {
 		return array(
 			__( 'Texts', 'miroir' )          => array( 'prev_product', 'next_product', 'similar_title', 'buy_hint', 'out_of_stock' ),
 			__( 'Sold out and sizes', 'miroir' ) => array( 'state_sold_out', 'sold_out_notice', 'sold_out_text', 'ask_availability', 'state_choose', 'choose_notice', 'choose_text', 'select_size', 'size_label', 'size_unavailable' ),
-			__( 'Added to bag', 'miroir' )   => array( 'state_added', 'state_added_note', 'view_bag' ),
+			__( 'Added to bag', 'miroir' )   => array( 'state_added', 'added_notice', 'added_close', 'added_error', 'state_added_note', 'view_bag' ),
 		);
 	}
 }

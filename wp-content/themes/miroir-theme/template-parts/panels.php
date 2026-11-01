@@ -9,6 +9,10 @@ defined( 'ABSPATH' ) || exit;
 $open     = miroir_open_panel();
 $arrow    = miroir_icon( 'arrow-up-right', 18 );
 
+if ( function_exists( 'WC' ) && WC()->cart ) {
+	get_template_part( 'template-parts/panel-added' );
+}
+
 /**
  * One panel row link (hairline, 16px label, arrow).
  */

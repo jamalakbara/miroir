@@ -79,7 +79,7 @@ add_action(
 
 /*
  * Added to bag (39): after a product-page add, go back to the product with
- * ?added=<cart item key>; the product block then shows the added state.
+ * ?added=<cart item key>; the mini-bag dialog confirms it over the PDP.
  */
 add_action(
 	'woocommerce_add_to_cart',
@@ -104,15 +104,13 @@ add_filter(
 
 /**
  * Product page state for the current request: '' (normal PDP, screen 03),
- * 'added' (39), 'choose-size' (44) or 'sold-out' (38).
+ * 'choose-size' (44) or 'sold-out' (38). Confirmation (39) is a dialog.
  *
  * @param WC_Product $product Product.
  */
 function miroir_product_state( $product ) {
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended -- display state only.
-	if ( ! empty( $_GET['added'] ) && WC()->cart && WC()->cart->get_cart_item( sanitize_key( $_GET['added'] ) ) ) {
-		return 'added';
-	}
+	// Added items are confirmed over the unchanged PDP by the mini-bag dialog.
 	if ( ! $product->is_in_stock() ) {
 		return 'sold-out';
 	}
@@ -150,3 +148,33 @@ function miroir_cart_stock_problem() {
 	}
 	return null;
 }
+
+// The native cart handler defers stock errors until checkout. Reject an invalid
+// drawer edit immediately, retaining the customer's previous saved quantity.
+add_filter(
+	'woocommerce_update_cart_validation',
+	function ( $valid, $key, $item, $quantity ) {
+		if ( ! $valid || empty( $_POST['miroir_mini_bag'] ) || $quantity <= 0 ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce verifies the cart nonce before this hook.
+			return $valid;
+		}
+		$product = $item['data'];
+		$maximum = $product->get_max_purchase_quantity();
+		$requested = $quantity;
+		if ( $product->managing_stock() && ! $product->backorders_allowed() ) {
+			$requested = 0;
+			$posted = isset( $_POST['cart'] ) && is_array( $_POST['cart'] ) ? wp_unslash( $_POST['cart'] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+			foreach ( WC()->cart->get_cart() as $other_key => $other ) {
+				if ( $other['data']->get_stock_managed_by_id() === $product->get_stock_managed_by_id() ) {
+					$requested += isset( $posted[ $other_key ]['qty'] ) ? max( 0, wc_stock_amount( $posted[ $other_key ]['qty'] ) ) : $other['quantity'];
+				}
+			}
+		}
+		if ( ! $product->is_in_stock() || ( $maximum >= 0 && $quantity > $maximum ) || ! $product->has_enough_stock( $requested ) ) {
+			wc_add_notice( miroir_text( 'bag_stock_error', esc_html( $product->get_name() ) ), 'error' );
+			return false;
+		}
+		return $valid;
+	},
+	10,
+	4
+);

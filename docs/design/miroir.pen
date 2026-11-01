@@ -7,6 +7,7 @@
       "x": 3200,
       "y": -4110,
       "name": "Image Placeholder",
+      "context": "Photo loading behavior — desktop, tablet and mobile: real photos show the existing grey media area with no icon while pending. A translucent white highlight sweeps left to right over 1.4s, repeating until the primary image loads. Reduced motion keeps a static grey area. Loaded and cached photos display immediately with unchanged dimensions. Failed primary photos show the existing grey image-icon fallback and retain the image label; failed hover images stay hidden. Static design placeholders never animate. Applies to product cards, galleries, editorial images, banners and cart thumbnails through the shared media helper, including dynamically inserted cards. Product photos remain disabled by default.",
       "reusable": true,
       "width": 240,
       "height": 320,
@@ -123,6 +124,7 @@
       "x": 3520,
       "y": -4110,
       "name": "Product Card",
+      "context": "Photo loading behavior — desktop, tablet and mobile: real photos show the existing grey media area with no icon while pending. A translucent white highlight sweeps left to right over 1.4s, repeating until the primary image loads. Reduced motion keeps a static grey area. Loaded and cached photos display immediately with unchanged dimensions. Failed primary photos show the existing grey image-icon fallback and retain the image label; failed hover images stay hidden. Static design placeholders never animate. Applies to product cards, galleries, editorial images, banners and cart thumbnails through the shared media helper, including dynamically inserted cards. Product photos remain disabled by default.",
       "reusable": true,
       "width": 240,
       "layout": "vertical",
@@ -7205,6 +7207,7 @@
                                           "type": "ref",
                                           "ref": "rUMLe",
                                           "name": "Load More",
+                                          "context": "Listing pagination: automatically fetch and append the next product page when this control is within 400px below the viewport, on desktop, tablet and mobile. Show Loading… while fetching; allow only one request at a time. Preserve filters, sort, search and URL. Announce appended products to screen readers. Remove control after the final page. Keep Load more as a manual and no-JavaScript fallback. On automatic request failure, keep existing products and pause automatic retries; manual activation retries.",
                                           "descendants": {
                                             "m19oNs": {
                                               "content": "Load more"
@@ -18207,11 +18210,20 @@
                               "type": "frame",
                               "id": "Gw2ph",
                               "name": "39 Added to bag · Desktop",
+                              "context": "Viewport preview of product page after add-to-bag. Background stays at current scroll position and is inert while the confirmation is open.",
                               "clip": true,
                               "width": 1440,
+                              "height": 900,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "NAzYf",
+                                  "name": "Space reserved for WordPress toolbar",
+                                  "width": "fill_container",
+                                  "height": 32
+                                },
                                 {
                                   "id": "W5BJyH",
                                   "type": "ref",
@@ -18226,145 +18238,359 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "a5qmq0",
-                                  "name": "Content area",
+                                  "id": "fOsB4",
+                                  "name": "Product page behind confirmation",
+                                  "context": "Centered product group: 270px details, 124px gap, 540px gallery; maximum outer width 1046px with 56px side padding. Gallery images use 3:4 proportions.",
                                   "width": "fill_container",
-                                  "layout": "vertical",
                                   "padding": [
                                     80,
-                                    56,
-                                    96,
-                                    56
+                                    "$gutter",
+                                    0,
+                                    "$gutter"
                                   ],
-                                  "alignItems": "center",
+                                  "justifyContent": "center",
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "XGgMI",
-                                      "name": "Content column",
-                                      "width": 820,
+                                      "id": "riKsM",
+                                      "name": "Product Info",
+                                      "context": "Left-aligned product text. Sticky at 195px from viewport top; releases at the bottom of the last gallery image.",
+                                      "width": 270,
                                       "layout": "vertical",
-                                      "gap": 24,
+                                      "gap": 28,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "nBNHq",
-                                          "name": "Page title",
+                                          "id": "RySIl",
+                                          "name": "Product Title",
                                           "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Added to bag",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
+                                          "content": "Product Name Colour",
+                                          "fontFamily": "$font-mono",
+                                          "fontSize": 14,
+                                          "fontWeight": "normal"
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "I4ycD",
-                                          "name": "Added to your bag",
+                                          "id": "MswMP",
+                                          "name": "Description",
                                           "width": "fill_container",
-                                          "fill": "$surface",
                                           "layout": "vertical",
-                                          "gap": 8,
-                                          "padding": 20,
+                                          "gap": 4,
                                           "children": [
                                             {
                                               "type": "text",
-                                              "id": "tEPFY",
-                                              "name": "Notice title",
+                                              "id": "Jwaio",
+                                              "name": "Line",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Added to your bag",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-mono",
-                                              "fontSize": "$text-sm",
-                                              "fontWeight": "normal"
+                                              "content": "Material: Fabric composition",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
                                             },
                                             {
                                               "type": "text",
-                                              "id": "f9m0JO",
-                                              "name": "Notice body",
+                                              "id": "q2X34G",
+                                              "name": "Paragraph",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Product Name One · Size M · Quantity 1",
-                                              "lineHeight": 1.5,
+                                              "content": "Short product description, two to five lines about silhouette, texture, closures, pockets and finishing details.",
+                                              "lineHeight": 1.45,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-base",
-                                              "fontWeight": "300"
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "pwoB0",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Bust: 000 cm | Length: 00 cm",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "vDqD7",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Weight: 0.0 kg",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "vxTl4",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Model is 000 cm",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
                                             }
                                           ]
                                         },
                                         {
-                                          "id": "ICqtB",
+                                          "type": "text",
+                                          "id": "cAPr8",
+                                          "name": "Price",
+                                          "fill": "$ink",
+                                          "content": "IDR 279,000",
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-base",
+                                          "fontWeight": "300",
+                                          "letterSpacing": 0.3
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "ogrrW",
+                                          "name": "Buy Box",
+                                          "width": "fill_container",
+                                          "layout": "vertical",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "k0MDa",
+                                              "type": "ref",
+                                              "ref": "xqA38",
+                                              "name": "Size Select",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "S0pgM": {
+                                                  "enabled": false
+                                                },
+                                                "oBZ96": {
+                                                  "stroke": "$ink"
+                                                },
+                                                "Ih3sK": {
+                                                  "content": "Choose an option",
+                                                  "fill": "$ink-2"
+                                                },
+                                                "CzXpO": {
+                                                  "enabled": true
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "Up7ek",
+                                              "type": "ref",
+                                              "ref": "rUMLe",
+                                              "name": "Add to Bag",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "m19oNs": {
+                                                  "content": "Add to bag"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "qO2QW",
+                                              "type": "ref",
+                                              "ref": "CFsCH",
+                                              "name": "Order via WhatsApp",
+                                              "width": "fill_container"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "wnl6U",
+                                              "name": "WA Hint",
+                                              "fill": "$ink-3",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Opens WhatsApp with this product, size and price filled in.",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-xs",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "U37ri",
+                                          "name": "Product Pager",
+                                          "layout": "vertical",
+                                          "gap": 8,
+                                          "padding": [
+                                            24,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "hVuiq",
+                                              "name": "Previous product",
+                                              "fill": "$ink-3",
+                                              "content": "Previous product",
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "Nz4mk",
+                                              "name": "Next product",
+                                              "fill": "$ink-3",
+                                              "content": "Next product",
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "fccxG",
+                                      "name": "Spacer",
+                                      "width": 124,
+                                      "height": 1
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "msREE",
+                                      "name": "Gallery",
+                                      "width": 540,
+                                      "layout": "vertical",
+                                      "gap": 44,
+                                      "children": [
+                                        {
+                                          "id": "fvGoA",
                                           "type": "ref",
                                           "ref": "Z5Qv0z",
-                                          "name": "Added product image",
-                                          "width": 180,
-                                          "height": 240
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "xRAel",
-                                          "name": "Bag subtotal",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "name": "Gallery Image 1",
                                           "width": "fill_container",
-                                          "content": "Bag (1) · Subtotal IDR 279,000",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-base",
-                                          "fontWeight": "300"
+                                          "height": 720
                                         },
                                         {
-                                          "type": "text",
-                                          "id": "k77r25",
-                                          "name": "Shipping note",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Shipping and the final total are confirmed in WhatsApp.",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-base",
-                                          "fontWeight": "300"
-                                        },
-                                        {
-                                          "id": "tCMQ3",
+                                          "id": "TszQ4",
                                           "type": "ref",
-                                          "ref": "IwhUS",
-                                          "name": "View bag",
+                                          "ref": "Z5Qv0z",
+                                          "name": "Gallery Image 2",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "zYhxA": {
-                                              "content": "View bag"
-                                            }
-                                          }
+                                          "height": 720
                                         },
                                         {
-                                          "id": "h4ccKZ",
+                                          "id": "jM3Nd",
                                           "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Continue shopping",
+                                          "ref": "Z5Qv0z",
+                                          "name": "Gallery Image 3",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Continue shopping"
+                                          "height": 720
+                                        },
+                                        {
+                                          "id": "lAzLH",
+                                          "type": "ref",
+                                          "ref": "Z5Qv0z",
+                                          "name": "Gallery Image 4",
+                                          "width": "fill_container",
+                                          "height": 720
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "E9Atl",
+                                          "layoutPosition": "absolute",
+                                          "x": 464,
+                                          "y": 24,
+                                          "name": "Zoom Button",
+                                          "width": 52,
+                                          "height": 52,
+                                          "fill": "$bg",
+                                          "cornerRadius": 26,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "QIkDK",
+                                              "name": "Zoom Icon",
+                                              "width": 16,
+                                              "height": 16,
+                                              "icon": "maximize-2",
+                                              "library": "lucide",
+                                              "fill": "$ink"
                                             }
-                                          }
+                                          ]
                                         }
                                       ]
                                     }
                                   ]
                                 },
                                 {
-                                  "id": "QjiPy",
+                                  "type": "rectangle",
+                                  "id": "PzohQ",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 32,
+                                  "name": "Dimmed backdrop",
+                                  "fill": "#00000033",
+                                  "width": 1440,
+                                  "height": 868
+                                },
+                                {
+                                  "id": "tdeKE",
                                   "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container"
+                                  "ref": "TwV4R",
+                                  "name": "Added-to-bag drawer",
+                                  "layoutPosition": "absolute",
+                                  "x": 1000,
+                                  "y": 32,
+                                  "width": 440,
+                                  "height": 868
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "XHlva",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "WordPress toolbar — visible above overlay",
+                                  "width": 1440,
+                                  "height": 32,
+                                  "fill": "#1D2327",
+                                  "gap": 20,
+                                  "padding": [
+                                    0,
+                                    12
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "DEiJw",
+                                      "name": "WordPress toolbar label",
+                                      "fill": "#F0F0F1",
+                                      "content": "WordPress   Miroir   Edit Site   Customize   Edit product",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -20788,6 +21014,7 @@
                                           "type": "ref",
                                           "ref": "rUMLe",
                                           "name": "Load More",
+                                          "context": "Listing pagination: automatically fetch and append the next product page when this control is within 400px below the viewport, on desktop, tablet and mobile. Show Loading… while fetching; allow only one request at a time. Preserve filters, sort, search and URL. Announce appended products to screen readers. Remove control after the final page. Keep Load more as a manual and no-JavaScript fallback. On automatic request failure, keep existing products and pause automatic retries; manual activation retries.",
                                           "descendants": {
                                             "m19oNs": {
                                               "content": "Load more"
@@ -33956,11 +34183,20 @@
                               "type": "frame",
                               "id": "aa43R",
                               "name": "39 Added to bag · Tablet",
+                              "context": "Viewport preview of product page after add-to-bag. Background stays at current scroll position and is inert while the confirmation is open.",
                               "clip": true,
                               "width": 768,
+                              "height": 900,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "E4n6t",
+                                  "name": "Space reserved for WordPress toolbar",
+                                  "width": "fill_container",
+                                  "height": 46
+                                },
                                 {
                                   "id": "dlneJ",
                                   "type": "ref",
@@ -34023,150 +34259,363 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "p4tHb",
-                                  "name": "Content area",
+                                  "id": "FRwI8",
+                                  "name": "Product page behind confirmation",
+                                  "context": "Two columns with 32px side gutters and a 32px gap. Details 250px; gallery fills remaining space. Gallery images use 3:4 proportions.",
                                   "width": "fill_container",
-                                  "layout": "vertical",
+                                  "gap": 32,
                                   "padding": [
                                     40,
                                     32,
-                                    56,
+                                    32,
                                     32
                                   ],
-                                  "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "h64yN",
-                                      "name": "Content column",
-                                      "width": "fill_container",
+                                      "id": "pjnqQ",
+                                      "name": "Product Info",
+                                      "context": "Left-aligned product text. Sticky at 100px from viewport top; releases at the bottom of the last gallery image.",
+                                      "width": 250,
                                       "layout": "vertical",
-                                      "gap": 24,
+                                      "gap": 28,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "j7BDO",
-                                          "name": "Page title",
+                                          "id": "rQ0Vw",
+                                          "name": "Product Title",
                                           "fill": "$ink",
                                           "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Added to bag",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
+                                          "content": "Product Name Colour",
+                                          "fontFamily": "$font-mono",
+                                          "fontSize": 14,
+                                          "fontWeight": "normal"
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "t0TV4h",
-                                          "name": "Added to your bag",
+                                          "id": "H7Qbwu",
+                                          "name": "Description",
                                           "width": "fill_container",
-                                          "fill": "$surface",
                                           "layout": "vertical",
-                                          "gap": 8,
-                                          "padding": 20,
+                                          "gap": 4,
                                           "children": [
                                             {
                                               "type": "text",
-                                              "id": "S8kyw",
-                                              "name": "Notice title",
+                                              "id": "X0zoRu",
+                                              "name": "Line",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Added to your bag",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-mono",
-                                              "fontSize": "$text-sm",
-                                              "fontWeight": "normal"
+                                              "content": "Material: Fabric composition",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
                                             },
                                             {
                                               "type": "text",
-                                              "id": "HkXN6",
-                                              "name": "Notice body",
+                                              "id": "PLNNX",
+                                              "name": "Paragraph",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Product Name One · Size M · Quantity 1",
-                                              "lineHeight": 1.5,
+                                              "content": "Short product description, two to five lines about silhouette, texture, closures, pockets and finishing details.",
+                                              "lineHeight": 1.45,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-base",
-                                              "fontWeight": "300"
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "Iymv6",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Bust: 000 cm | Length: 00 cm",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "fig2Y",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Weight: 0.0 kg",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "Bevmh",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Model is 000 cm",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
                                             }
                                           ]
                                         },
                                         {
-                                          "id": "T6ZAP",
+                                          "type": "text",
+                                          "id": "dmvAL",
+                                          "name": "Price",
+                                          "fill": "$ink",
+                                          "content": "IDR 279,000",
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-base",
+                                          "fontWeight": "300",
+                                          "letterSpacing": 0.3
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "SLn0B",
+                                          "name": "Buy Box",
+                                          "width": "fill_container",
+                                          "layout": "vertical",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "Y4YZx",
+                                              "type": "ref",
+                                              "ref": "xqA38",
+                                              "name": "Size Select",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "S0pgM": {
+                                                  "enabled": false
+                                                },
+                                                "oBZ96": {
+                                                  "stroke": "$ink"
+                                                },
+                                                "Ih3sK": {
+                                                  "content": "Choose an option",
+                                                  "fill": "$ink-2"
+                                                },
+                                                "CzXpO": {
+                                                  "enabled": true
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "J59pzO",
+                                              "type": "ref",
+                                              "ref": "rUMLe",
+                                              "name": "Add to Bag",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "m19oNs": {
+                                                  "content": "Add to bag"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "PwGuu",
+                                              "type": "ref",
+                                              "ref": "CFsCH",
+                                              "name": "Order via WhatsApp",
+                                              "width": "fill_container"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "cLOJi",
+                                              "name": "WA Hint",
+                                              "fill": "$ink-3",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Opens WhatsApp with this product, size and price filled in.",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-xs",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "uoRnk",
+                                          "name": "Product Pager",
+                                          "layout": "vertical",
+                                          "gap": 8,
+                                          "padding": [
+                                            24,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "vs5p9",
+                                              "name": "Previous product",
+                                              "fill": "$ink-3",
+                                              "content": "Previous product",
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "W7PlKL",
+                                              "name": "Next product",
+                                              "fill": "$ink-3",
+                                              "content": "Next product",
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "J7JKOi",
+                                      "x": 326,
+                                      "y": 80,
+                                      "name": "Spacer",
+                                      "enabled": false,
+                                      "width": 124,
+                                      "height": 1
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "KkoQc",
+                                      "name": "Gallery",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 32,
+                                      "children": [
+                                        {
+                                          "id": "hfFwc",
                                           "type": "ref",
                                           "ref": "Z5Qv0z",
-                                          "name": "Added product image",
-                                          "width": 180,
-                                          "height": 240
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "fHqtt",
-                                          "name": "Bag subtotal",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "content": "Bag (1) · Subtotal IDR 279,000",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-base",
-                                          "fontWeight": "300"
+                                          "height": 562.6666666666666,
+                                          "name": "Gallery Image 1"
                                         },
                                         {
-                                          "type": "text",
-                                          "id": "KXWXR",
-                                          "name": "Shipping note",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Shipping and the final total are confirmed in WhatsApp.",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-base",
-                                          "fontWeight": "300"
-                                        },
-                                        {
-                                          "id": "U56LtJ",
+                                          "id": "kRVlh",
                                           "type": "ref",
-                                          "ref": "IwhUS",
-                                          "name": "View bag",
+                                          "ref": "Z5Qv0z",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "zYhxA": {
-                                              "content": "View bag"
-                                            }
-                                          }
+                                          "height": 562.6666666666666,
+                                          "name": "Gallery Image 2"
                                         },
                                         {
-                                          "id": "nj71g",
+                                          "id": "LxqPC",
                                           "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Continue shopping",
+                                          "ref": "Z5Qv0z",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Continue shopping"
+                                          "height": 562.6666666666666,
+                                          "name": "Gallery Image 3"
+                                        },
+                                        {
+                                          "id": "W4z5vf",
+                                          "type": "ref",
+                                          "ref": "Z5Qv0z",
+                                          "width": "fill_container",
+                                          "height": 562.6666666666666,
+                                          "name": "Gallery Image 4"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "xozNe",
+                                          "layoutPosition": "absolute",
+                                          "x": 346,
+                                          "y": 24,
+                                          "name": "Zoom Button",
+                                          "width": 52,
+                                          "height": 52,
+                                          "fill": "$bg",
+                                          "cornerRadius": 26,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "cXX6e",
+                                              "name": "Zoom Icon",
+                                              "width": 16,
+                                              "height": 16,
+                                              "icon": "maximize-2",
+                                              "library": "lucide",
+                                              "fill": "$ink"
                                             }
-                                          }
+                                          ]
                                         }
                                       ]
                                     }
                                   ]
                                 },
                                 {
-                                  "id": "ThAsx",
+                                  "type": "rectangle",
+                                  "id": "p699G",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 46,
+                                  "name": "Dimmed backdrop",
+                                  "fill": "#00000033",
+                                  "width": 768,
+                                  "height": 854
+                                },
+                                {
+                                  "id": "ovYIm",
                                   "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container",
+                                  "ref": "TwV4R",
+                                  "name": "Added-to-bag drawer",
+                                  "layoutPosition": "absolute",
+                                  "x": 328,
+                                  "y": 46,
+                                  "width": 440,
+                                  "height": 854
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "zxpCS",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "WordPress toolbar — visible above overlay",
+                                  "width": 768,
+                                  "height": 46,
+                                  "fill": "#1D2327",
+                                  "gap": 20,
                                   "padding": [
-                                    56,
-                                    32,
-                                    32,
-                                    32
+                                    0,
+                                    12
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "ChOmj",
+                                      "name": "WordPress toolbar label",
+                                      "fill": "#F0F0F1",
+                                      "content": "WordPress   Miroir   Edit Site   Customize   Edit product",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
                                   ]
                                 }
                               ]
@@ -36736,6 +37185,7 @@
                                           "type": "ref",
                                           "ref": "rUMLe",
                                           "name": "Load More",
+                                          "context": "Listing pagination: automatically fetch and append the next product page when this control is within 400px below the viewport, on desktop, tablet and mobile. Show Loading… while fetching; allow only one request at a time. Preserve filters, sort, search and URL. Announce appended products to screen readers. Remove control after the final page. Keep Load more as a manual and no-JavaScript fallback. On automatic request failure, keep existing products and pause automatic retries; manual activation retries.",
                                           "descendants": {
                                             "m19oNs": {
                                               "content": "Load more"
@@ -50061,11 +50511,20 @@
                               "type": "frame",
                               "id": "CZ7uw",
                               "name": "39 Added to bag · Mobile",
+                              "context": "Viewport preview of product page after add-to-bag. Background stays at current scroll position and is inert while the confirmation is open.",
                               "clip": true,
                               "width": 390,
+                              "height": 844,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "QEPLC",
+                                  "name": "Space reserved for WordPress toolbar",
+                                  "width": "fill_container",
+                                  "height": 46
+                                },
                                 {
                                   "id": "l5S4hk",
                                   "type": "ref",
@@ -50128,150 +50587,374 @@
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "ClAnV",
-                                  "name": "Content area",
+                                  "id": "RCv06",
+                                  "name": "Product page behind confirmation",
+                                  "context": "Single-column mobile layout with 20px side gutters: lead image, left-aligned full-width product details, then remaining gallery images. Images use 3:4 proportions; product details scroll normally.",
                                   "width": "fill_container",
                                   "layout": "vertical",
+                                  "gap": 20,
                                   "padding": [
-                                    40,
+                                    32,
                                     20,
-                                    56,
+                                    24,
                                     20
                                   ],
-                                  "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "lhdu0",
-                                      "name": "Content column",
+                                      "id": "AN249",
+                                      "name": "Gallery",
                                       "width": "fill_container",
                                       "layout": "vertical",
-                                      "gap": 24,
+                                      "gap": 32,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "KX8A9",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "id": "fn61M",
+                                          "type": "ref",
+                                          "ref": "Z5Qv0z",
+                                          "height": 466.6666666666667,
                                           "width": "fill_container",
-                                          "content": "Added to bag",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
+                                          "name": "Gallery Image 1"
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "N1Uqm",
-                                          "name": "Added to your bag",
+                                          "id": "EKk2B",
+                                          "layoutPosition": "absolute",
+                                          "x": 278,
+                                          "y": 20,
+                                          "name": "Zoom Button",
+                                          "width": 52,
+                                          "height": 52,
+                                          "fill": "$bg",
+                                          "cornerRadius": 26,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "N45mg",
+                                              "name": "Zoom Icon",
+                                              "width": 16,
+                                              "height": 16,
+                                              "icon": "maximize-2",
+                                              "library": "lucide",
+                                              "fill": "$ink"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "GyIL2",
+                                      "name": "Product Info",
+                                      "context": "Static mobile product details, full available width with left-aligned text.",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 28,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "I8rCy9",
+                                          "name": "Product Title",
+                                          "fill": "$ink",
+                                          "textGrowth": "fixed-width",
                                           "width": "fill_container",
-                                          "fill": "$surface",
+                                          "content": "Product Name Colour",
+                                          "fontFamily": "$font-mono",
+                                          "fontSize": 14,
+                                          "fontWeight": "normal"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "FKfGH",
+                                          "name": "Description",
+                                          "width": "fill_container",
                                           "layout": "vertical",
-                                          "gap": 8,
-                                          "padding": 20,
+                                          "gap": 4,
                                           "children": [
                                             {
                                               "type": "text",
-                                              "id": "Z7cBaT",
-                                              "name": "Notice title",
+                                              "id": "wpvHp",
+                                              "name": "Line",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Added to your bag",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-mono",
-                                              "fontSize": "$text-sm",
-                                              "fontWeight": "normal"
+                                              "content": "Material: Fabric composition",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
                                             },
                                             {
                                               "type": "text",
-                                              "id": "zlkAe",
-                                              "name": "Notice body",
+                                              "id": "ZudVZ",
+                                              "name": "Paragraph",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Product Name One · Size M · Quantity 1",
-                                              "lineHeight": 1.5,
+                                              "content": "Short product description, two to five lines about silhouette, texture, closures, pockets and finishing details.",
+                                              "lineHeight": 1.45,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-base",
-                                              "fontWeight": "300"
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "xGoLQ",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Bust: 000 cm | Length: 00 cm",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "wqjKj",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Weight: 0.0 kg",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "y7jnJc",
+                                              "name": "Line",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Model is 000 cm",
+                                              "lineHeight": 1.45,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
                                             }
                                           ]
                                         },
                                         {
-                                          "id": "LBHbj",
+                                          "type": "text",
+                                          "id": "D1UlK",
+                                          "name": "Price",
+                                          "fill": "$ink",
+                                          "content": "IDR 279,000",
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-base",
+                                          "fontWeight": "300",
+                                          "letterSpacing": 0.3
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "sJqXG",
+                                          "name": "Buy Box",
+                                          "width": "fill_container",
+                                          "layout": "vertical",
+                                          "gap": 20,
+                                          "children": [
+                                            {
+                                              "id": "UX5He",
+                                              "type": "ref",
+                                              "ref": "xqA38",
+                                              "name": "Size Select",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "S0pgM": {
+                                                  "enabled": false
+                                                },
+                                                "oBZ96": {
+                                                  "stroke": "$ink"
+                                                },
+                                                "Ih3sK": {
+                                                  "content": "Choose an option",
+                                                  "fill": "$ink-2"
+                                                },
+                                                "CzXpO": {
+                                                  "enabled": true
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "Z4vWv",
+                                              "type": "ref",
+                                              "ref": "rUMLe",
+                                              "name": "Add to Bag",
+                                              "width": "fill_container",
+                                              "descendants": {
+                                                "m19oNs": {
+                                                  "content": "Add to bag"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "I8m0d",
+                                              "type": "ref",
+                                              "ref": "CFsCH",
+                                              "name": "Order via WhatsApp",
+                                              "width": "fill_container"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "zteLp",
+                                              "name": "WA Hint",
+                                              "fill": "$ink-3",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Opens WhatsApp with this product, size and price filled in.",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-xs",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "z49mZY",
+                                          "name": "Product Pager",
+                                          "layout": "vertical",
+                                          "gap": 8,
+                                          "padding": [
+                                            24,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "iHmd1",
+                                              "name": "Previous product",
+                                              "fill": "$ink-3",
+                                              "content": "Previous product",
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "HYo8d",
+                                              "name": "Next product",
+                                              "fill": "$ink-3",
+                                              "content": "Next product",
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-base",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.3
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "Sp796",
+                                      "x": 326,
+                                      "y": 80,
+                                      "name": "Spacer",
+                                      "enabled": false,
+                                      "width": 124,
+                                      "height": 1
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "ENSu5",
+                                      "name": "Additional product views",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 16,
+                                      "children": [
+                                        {
+                                          "id": "n0JYu",
                                           "type": "ref",
                                           "ref": "Z5Qv0z",
-                                          "name": "Added product image",
-                                          "width": 180,
-                                          "height": 240
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "IXOCv",
-                                          "name": "Bag subtotal",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "height": 466.6666666666667,
                                           "width": "fill_container",
-                                          "content": "Bag (1) · Subtotal IDR 279,000",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-base",
-                                          "fontWeight": "300"
+                                          "name": "Gallery Image 2"
                                         },
                                         {
-                                          "type": "text",
-                                          "id": "DiVvg",
-                                          "name": "Shipping note",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Shipping and the final total are confirmed in WhatsApp.",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-base",
-                                          "fontWeight": "300"
-                                        },
-                                        {
-                                          "id": "Llp1f",
+                                          "id": "dW1On",
                                           "type": "ref",
-                                          "ref": "IwhUS",
-                                          "name": "View bag",
+                                          "ref": "Z5Qv0z",
+                                          "height": 466.6666666666667,
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "zYhxA": {
-                                              "content": "View bag"
-                                            }
-                                          }
+                                          "name": "Gallery Image 3"
                                         },
                                         {
-                                          "id": "Rvx9E",
+                                          "id": "qEkQa",
                                           "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Continue shopping",
+                                          "ref": "Z5Qv0z",
+                                          "height": 466.6666666666667,
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Continue shopping"
-                                            }
-                                          }
+                                          "name": "Gallery Image 4"
                                         }
                                       ]
                                     }
                                   ]
                                 },
                                 {
-                                  "id": "zCjLQ",
+                                  "type": "rectangle",
+                                  "id": "Q9N0X",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 46,
+                                  "name": "Dimmed backdrop",
+                                  "fill": "#00000033",
+                                  "width": 390,
+                                  "height": 798
+                                },
+                                {
+                                  "id": "QMh7r",
                                   "type": "ref",
-                                  "ref": "oqbEv",
-                                  "name": "Footer",
-                                  "width": "fill_container",
+                                  "ref": "D6pkju",
+                                  "name": "Added-to-bag bottom sheet",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 408,
+                                  "width": 390,
+                                  "height": "fit_content"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "JZk5k",
+                                  "layoutPosition": "absolute",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "WordPress toolbar — visible above overlay",
+                                  "width": 390,
+                                  "height": 46,
+                                  "fill": "#1D2327",
+                                  "gap": 20,
                                   "padding": [
-                                    48,
-                                    20,
-                                    32,
-                                    20
+                                    0,
+                                    12
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "U0LaV",
+                                      "name": "WordPress toolbar label",
+                                      "fill": "#F0F0F1",
+                                      "content": "WordPress · Miroir",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
                                   ]
                                 }
                               ]
@@ -51663,6 +52346,1704 @@
           "y": 0,
           "width": 555,
           "height": 740
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "TwV4R",
+      "x": 0,
+      "y": -6680,
+      "name": "Mini Bag / Drawer",
+      "context": "Shared full-bag drawer: Add to bag opens with Added to your bag heading; navbar bag opens with Bag heading. Render all cart items. Quantity minus/plus and editable number update WooCommerce stock validation, subtotal and navbar count. Zero removes the item; empty bag shows Your bag is empty. Disable controls while saving; announce errors and updates. Right drawer on desktop/tablet; bottom sheet below 600px. Offset drawer and backdrop below visible WordPress toolbar (32px desktop, 46px compact, measured when scrolled). Focus contained and restored to triggering button/link; Escape, backdrop and Continue shopping close. Reduced motion fades only.",
+      "reusable": true,
+      "width": 440,
+      "height": 900,
+      "fill": "$bg",
+      "stroke": "$line",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 32,
+      "children": [
+        {
+          "type": "frame",
+          "id": "hcKU8",
+          "name": "Confirmation heading",
+          "width": "fill_container",
+          "gap": 16,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ARoEM",
+              "name": "Title",
+              "fill": "$ink",
+              "content": "Added to your bag",
+              "fontFamily": "$font-sans",
+              "fontSize": 19,
+              "fontWeight": "300"
+            },
+            {
+              "type": "frame",
+              "id": "I7HNV",
+              "name": "Close confirmation",
+              "width": 44,
+              "height": 44,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "eCyPF",
+                  "name": "Close icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "x",
+                  "library": "lucide",
+                  "fill": "$ink"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ANp5j",
+          "name": "Added item",
+          "width": "fill_container",
+          "gap": 20,
+          "children": [
+            {
+              "id": "Z4n8G",
+              "type": "ref",
+              "ref": "Z5Qv0z",
+              "name": "Product thumbnail",
+              "width": 96,
+              "height": 128,
+              "descendants": {
+                "tYzk8": {
+                  "width": 20,
+                  "height": 20
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "AUvRP",
+              "name": "Item details",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DPJ7h",
+                  "name": "Arlene Outer Dress",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Arlene Outer Dress",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 12
+                },
+                {
+                  "type": "text",
+                  "id": "nfVAH",
+                  "name": "All Size",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "All Size",
+                  "fontFamily": "$font-sans",
+                  "fontSize": 13,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "LLqIP",
+                  "name": "IDR 459,000",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "IDR 459,000",
+                  "fontFamily": "$font-sans",
+                  "fontSize": 13,
+                  "fontWeight": "300"
+                },
+                {
+                  "id": "NEEdk",
+                  "type": "ref",
+                  "ref": "y40JRr",
+                  "name": "Editable quantity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vkqC0",
+          "name": "Bag subtotal",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "padding": [
+            24,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "EzJkX",
+              "name": "Subtotal label",
+              "fill": "$ink",
+              "content": "Bag (1) · Subtotal IDR 459,000",
+              "fontFamily": "$font-sans",
+              "fontSize": 13,
+              "fontWeight": "300"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "KzAUu",
+          "name": "Bag actions",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "id": "G8EpV",
+              "type": "ref",
+              "ref": "IwhUS",
+              "name": "View bag",
+              "width": "fill_container",
+              "descendants": {
+                "zYhxA": {
+                  "content": "View bag"
+                }
+              }
+            },
+            {
+              "id": "UdmyU",
+              "type": "ref",
+              "ref": "rUMLe",
+              "name": "Continue shopping",
+              "width": "fill_container",
+              "descendants": {
+                "m19oNs": {
+                  "content": "Continue shopping"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "D6pkju",
+      "x": 0,
+      "y": -7170,
+      "name": "Mini Bag / Mobile Sheet",
+      "context": "Shared full-bag drawer: Add to bag opens with Added to your bag heading; navbar bag opens with Bag heading. Render all cart items. Quantity minus/plus and editable number update WooCommerce stock validation, subtotal and navbar count. Zero removes the item; empty bag shows Your bag is empty. Disable controls while saving; announce errors and updates. Right drawer on desktop/tablet; bottom sheet below 600px. Offset drawer and backdrop below visible WordPress toolbar (32px desktop, 46px compact, measured when scrolled). Focus contained and restored to triggering button/link; Escape, backdrop and Continue shopping close. Reduced motion fades only.",
+      "reusable": true,
+      "width": 390,
+      "fill": "$bg",
+      "stroke": "$line",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+        24,
+        20
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "XD9wb",
+          "name": "Confirmation heading",
+          "width": "fill_container",
+          "gap": 16,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Ofeig",
+              "name": "Title",
+              "fill": "$ink",
+              "content": "Added to your bag",
+              "fontFamily": "$font-sans",
+              "fontSize": 19,
+              "fontWeight": "300"
+            },
+            {
+              "type": "frame",
+              "id": "z4Fhf",
+              "name": "Close confirmation",
+              "width": 44,
+              "height": 44,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "OvMDE",
+                  "name": "Close icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "x",
+                  "library": "lucide",
+                  "fill": "$ink"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yYMyY",
+          "name": "Added item",
+          "width": "fill_container",
+          "gap": 20,
+          "children": [
+            {
+              "id": "j8IxN",
+              "type": "ref",
+              "ref": "Z5Qv0z",
+              "name": "Product thumbnail",
+              "width": 96,
+              "height": 128,
+              "descendants": {
+                "tYzk8": {
+                  "width": 20,
+                  "height": 20
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "bXQN6",
+              "name": "Item details",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xaMWz",
+                  "name": "Arlene Outer Dress",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Arlene Outer Dress",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 12
+                },
+                {
+                  "type": "text",
+                  "id": "Y1bXQS",
+                  "name": "All Size",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "All Size",
+                  "fontFamily": "$font-sans",
+                  "fontSize": 13,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "ENABN",
+                  "name": "IDR 459,000",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "IDR 459,000",
+                  "fontFamily": "$font-sans",
+                  "fontSize": 13,
+                  "fontWeight": "300"
+                },
+                {
+                  "id": "vvS4m",
+                  "type": "ref",
+                  "ref": "y40JRr",
+                  "name": "Editable quantity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v4kylv",
+          "name": "Bag subtotal",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "padding": [
+            24,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "f0QOS6",
+              "name": "Subtotal label",
+              "fill": "$ink",
+              "content": "Bag (1) · Subtotal IDR 459,000",
+              "fontFamily": "$font-sans",
+              "fontSize": 13,
+              "fontWeight": "300"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "n85Zo",
+          "name": "Bag actions",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "id": "PFoB3",
+              "type": "ref",
+              "ref": "IwhUS",
+              "name": "View bag",
+              "width": "fill_container",
+              "descendants": {
+                "zYhxA": {
+                  "content": "View bag"
+                }
+              }
+            },
+            {
+              "id": "m5RaA",
+              "type": "ref",
+              "ref": "rUMLe",
+              "name": "Continue shopping",
+              "width": "fill_container",
+              "descendants": {
+                "m19oNs": {
+                  "content": "Continue shopping"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "t3jdm",
+      "x": 0,
+      "y": 52774.7448703576,
+      "name": "Bag drawer from navbar · Desktop",
+      "context": "Navbar bag click opens the same full-bag drawer without navigation. Quantity controls save in place and refresh subtotal and header count. View bag retains the full bag page destination.",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "hJDu4",
+          "name": "Space reserved for WordPress toolbar",
+          "width": "fill_container",
+          "height": 32
+        },
+        {
+          "id": "tmY58",
+          "type": "ref",
+          "ref": "dk4Eq",
+          "name": "Header",
+          "width": "fill_container",
+          "descendants": {
+            "I9s4BW": {
+              "content": "bag (1)"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "bcBYp",
+          "name": "Product page behind confirmation",
+          "context": "Centered product group: 270px details, 124px gap, 540px gallery; maximum outer width 1046px with 56px side padding. Gallery images use 3:4 proportions.",
+          "width": "fill_container",
+          "padding": [
+            80,
+            "$gutter",
+            0,
+            "$gutter"
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "c2myDT",
+              "name": "Product Info",
+              "context": "Left-aligned product text. Sticky at 195px from viewport top; releases at the bottom of the last gallery image.",
+              "width": 270,
+              "layout": "vertical",
+              "gap": 28,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mMRVu",
+                  "name": "Product Title",
+                  "fill": "$ink",
+                  "content": "Product Name Colour",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "YpQUi",
+                  "name": "Description",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "g2BNg",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Material: Fabric composition",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "NGwNE",
+                      "name": "Paragraph",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Short product description, two to five lines about silhouette, texture, closures, pockets and finishing details.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "Rv6aD",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Bust: 000 cm | Length: 00 cm",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "uwXKi",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Weight: 0.0 kg",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "cH61n",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Model is 000 cm",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "AuADQ",
+                  "name": "Price",
+                  "fill": "$ink",
+                  "content": "IDR 279,000",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
+                  "fontWeight": "300",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "frame",
+                  "id": "AQQ5H",
+                  "name": "Buy Box",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "id": "lxQiF",
+                      "type": "ref",
+                      "ref": "xqA38",
+                      "name": "Size Select",
+                      "width": "fill_container",
+                      "descendants": {
+                        "S0pgM": {
+                          "enabled": false
+                        },
+                        "oBZ96": {
+                          "stroke": "$ink"
+                        },
+                        "Ih3sK": {
+                          "content": "Choose an option",
+                          "fill": "$ink-2"
+                        },
+                        "CzXpO": {
+                          "enabled": true
+                        }
+                      }
+                    },
+                    {
+                      "id": "vZqMt",
+                      "type": "ref",
+                      "ref": "rUMLe",
+                      "name": "Add to Bag",
+                      "width": "fill_container",
+                      "descendants": {
+                        "m19oNs": {
+                          "content": "Add to bag"
+                        }
+                      }
+                    },
+                    {
+                      "id": "dCpid",
+                      "type": "ref",
+                      "ref": "CFsCH",
+                      "name": "Order via WhatsApp",
+                      "width": "fill_container"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jRU5l",
+                      "name": "WA Hint",
+                      "fill": "$ink-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Opens WhatsApp with this product, size and price filled in.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-xs",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CVkYI",
+                  "name": "Product Pager",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    24,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "q1WjWT",
+                      "name": "Previous product",
+                      "fill": "$ink-3",
+                      "content": "Previous product",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "SxuTo",
+                      "name": "Next product",
+                      "fill": "$ink-3",
+                      "content": "Next product",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SfTDO",
+              "name": "Spacer",
+              "width": 124,
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "SfdIp",
+              "name": "Gallery",
+              "width": 540,
+              "layout": "vertical",
+              "gap": 44,
+              "children": [
+                {
+                  "id": "d4nOea",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "name": "Gallery Image 1",
+                  "width": "fill_container",
+                  "height": 720
+                },
+                {
+                  "id": "OytMu",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "name": "Gallery Image 2",
+                  "width": "fill_container",
+                  "height": 720
+                },
+                {
+                  "id": "W4eWs",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "name": "Gallery Image 3",
+                  "width": "fill_container",
+                  "height": 720
+                },
+                {
+                  "id": "ieEfY",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "name": "Gallery Image 4",
+                  "width": "fill_container",
+                  "height": 720
+                },
+                {
+                  "type": "frame",
+                  "id": "cq7NW",
+                  "layoutPosition": "absolute",
+                  "x": 464,
+                  "y": 24,
+                  "name": "Zoom Button",
+                  "width": 52,
+                  "height": 52,
+                  "fill": "$bg",
+                  "cornerRadius": 26,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "LKIjE",
+                      "name": "Zoom Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "maximize-2",
+                      "library": "lucide",
+                      "fill": "$ink"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "F5BCf",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 32,
+          "name": "Dimmed backdrop",
+          "fill": "#00000033",
+          "width": 1440,
+          "height": 868
+        },
+        {
+          "id": "IXj4o",
+          "type": "ref",
+          "ref": "TwV4R",
+          "name": "Added-to-bag drawer",
+          "layoutPosition": "absolute",
+          "x": 1000,
+          "y": 32,
+          "width": 440,
+          "height": 868,
+          "descendants": {
+            "ARoEM": {
+              "content": "Bag"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "cpvZa",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "WordPress toolbar — visible above overlay",
+          "width": 1440,
+          "height": 32,
+          "fill": "#1D2327",
+          "gap": 20,
+          "padding": [
+            0,
+            12
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "b4vDfz",
+              "name": "WordPress toolbar label",
+              "fill": "#F0F0F1",
+              "content": "WordPress   Miroir   Edit Site   Customize   Edit product",
+              "fontFamily": "$font-sans",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "sBJQy",
+      "x": 0,
+      "y": 53774.7448703576,
+      "name": "Bag drawer from navbar · Tablet",
+      "context": "Navbar bag click opens the same full-bag drawer without navigation. Quantity controls save in place and refresh subtotal and header count. View bag retains the full bag page destination.",
+      "clip": true,
+      "width": 768,
+      "height": 900,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "E5HK0",
+          "name": "Space reserved for WordPress toolbar",
+          "width": "fill_container",
+          "height": 46
+        },
+        {
+          "id": "di3XQ",
+          "type": "ref",
+          "ref": "dk4Eq",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 116,
+          "descendants": {
+            "H7tLW3": {
+              "justifyContent": "center",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 76,
+              "width": 768
+            },
+            "Y1Oz73": {
+              "enabled": false
+            },
+            "Y7j5Kx": {
+              "enabled": false
+            },
+            "zO8tg": {
+              "padding": [
+                16,
+                32
+              ],
+              "gap": 8,
+              "height": 76
+            },
+            "M78tR": {
+              "fontSize": 24
+            },
+            "dNDAK": {
+              "type": "icon",
+              "id": "dwf6A",
+              "x": 381,
+              "y": 30.756196501347738,
+              "name": "Menu",
+              "enabled": false,
+              "width": 24,
+              "height": 24,
+              "icon": "menu",
+              "library": "lucide",
+              "fill": "$ink"
+            },
+            "jT1yX": {
+              "gap": 16,
+              "enabled": false
+            },
+            "Z5bsK": {
+              "enabled": false
+            },
+            "I9s4BW": {
+              "content": "bag (1)"
+            },
+            "wPSUi": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "w3cEq",
+          "name": "Product page behind confirmation",
+          "context": "Two columns with 32px side gutters and a 32px gap. Details 250px; gallery fills remaining space. Gallery images use 3:4 proportions.",
+          "width": "fill_container",
+          "gap": 32,
+          "padding": [
+            40,
+            32,
+            32,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "jpudk",
+              "name": "Product Info",
+              "context": "Left-aligned product text. Sticky at 100px from viewport top; releases at the bottom of the last gallery image.",
+              "width": 250,
+              "layout": "vertical",
+              "gap": 28,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PlYNw",
+                  "name": "Product Title",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Product Name Colour",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "M50QK",
+                  "name": "Description",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cNecp",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Material: Fabric composition",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "S3dyAh",
+                      "name": "Paragraph",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Short product description, two to five lines about silhouette, texture, closures, pockets and finishing details.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "urQlQ",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Bust: 000 cm | Length: 00 cm",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "I9goy",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Weight: 0.0 kg",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "tXHuW",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Model is 000 cm",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Q2HKM",
+                  "name": "Price",
+                  "fill": "$ink",
+                  "content": "IDR 279,000",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
+                  "fontWeight": "300",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "frame",
+                  "id": "SQcms",
+                  "name": "Buy Box",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "id": "TTRHI",
+                      "type": "ref",
+                      "ref": "xqA38",
+                      "name": "Size Select",
+                      "width": "fill_container",
+                      "descendants": {
+                        "S0pgM": {
+                          "enabled": false
+                        },
+                        "oBZ96": {
+                          "stroke": "$ink"
+                        },
+                        "Ih3sK": {
+                          "content": "Choose an option",
+                          "fill": "$ink-2"
+                        },
+                        "CzXpO": {
+                          "enabled": true
+                        }
+                      }
+                    },
+                    {
+                      "id": "HB15k",
+                      "type": "ref",
+                      "ref": "rUMLe",
+                      "name": "Add to Bag",
+                      "width": "fill_container",
+                      "descendants": {
+                        "m19oNs": {
+                          "content": "Add to bag"
+                        }
+                      }
+                    },
+                    {
+                      "id": "BfuyO",
+                      "type": "ref",
+                      "ref": "CFsCH",
+                      "name": "Order via WhatsApp",
+                      "width": "fill_container"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Gke5t",
+                      "name": "WA Hint",
+                      "fill": "$ink-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Opens WhatsApp with this product, size and price filled in.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-xs",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cWhJJ",
+                  "name": "Product Pager",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    24,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "L5eanb",
+                      "name": "Previous product",
+                      "fill": "$ink-3",
+                      "content": "Previous product",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "Y4jhR",
+                      "name": "Next product",
+                      "fill": "$ink-3",
+                      "content": "Next product",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fXUjY",
+              "x": 326,
+              "y": 80,
+              "name": "Spacer",
+              "enabled": false,
+              "width": 124,
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "DHLJn",
+              "name": "Gallery",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "DbV0H",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "width": "fill_container",
+                  "height": 562.6666666666666,
+                  "name": "Gallery Image 1"
+                },
+                {
+                  "id": "eNqJg",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "width": "fill_container",
+                  "height": 562.6666666666666,
+                  "name": "Gallery Image 2"
+                },
+                {
+                  "id": "VSDwd",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "width": "fill_container",
+                  "height": 562.6666666666666,
+                  "name": "Gallery Image 3"
+                },
+                {
+                  "id": "l2GJ91",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "width": "fill_container",
+                  "height": 562.6666666666666,
+                  "name": "Gallery Image 4"
+                },
+                {
+                  "type": "frame",
+                  "id": "RAjQ7",
+                  "layoutPosition": "absolute",
+                  "x": 346,
+                  "y": 24,
+                  "name": "Zoom Button",
+                  "width": 52,
+                  "height": 52,
+                  "fill": "$bg",
+                  "cornerRadius": 26,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "VwoCb",
+                      "name": "Zoom Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "maximize-2",
+                      "library": "lucide",
+                      "fill": "$ink"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "TyA0G",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 46,
+          "name": "Dimmed backdrop",
+          "fill": "#00000033",
+          "width": 768,
+          "height": 854
+        },
+        {
+          "id": "fKcV0",
+          "type": "ref",
+          "ref": "TwV4R",
+          "name": "Added-to-bag drawer",
+          "layoutPosition": "absolute",
+          "x": 328,
+          "y": 46,
+          "width": 440,
+          "height": 854,
+          "descendants": {
+            "ARoEM": {
+              "content": "Bag"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "oub3b",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "WordPress toolbar — visible above overlay",
+          "width": 768,
+          "height": 46,
+          "fill": "#1D2327",
+          "gap": 20,
+          "padding": [
+            0,
+            12
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "koYWV",
+              "name": "WordPress toolbar label",
+              "fill": "#F0F0F1",
+              "content": "WordPress   Miroir   Edit Site   Customize   Edit product",
+              "fontFamily": "$font-sans",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Q5tFT",
+      "x": 0,
+      "y": 54774.7448703576,
+      "name": "Bag drawer from navbar · Mobile",
+      "context": "Navbar bag click opens the same full-bag drawer without navigation. Quantity controls save in place and refresh subtotal and header count. View bag retains the full bag page destination.",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "dbJ7K",
+          "name": "Space reserved for WordPress toolbar",
+          "width": "fill_container",
+          "height": 46
+        },
+        {
+          "id": "u3iOpd",
+          "type": "ref",
+          "ref": "dk4Eq",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 108,
+          "descendants": {
+            "H7tLW3": {
+              "justifyContent": "center",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 68,
+              "width": 390
+            },
+            "Y1Oz73": {
+              "enabled": false
+            },
+            "Y7j5Kx": {
+              "enabled": false
+            },
+            "zO8tg": {
+              "padding": [
+                12,
+                20
+              ],
+              "gap": 8,
+              "height": 68
+            },
+            "M78tR": {
+              "fontSize": 24
+            },
+            "dNDAK": {
+              "type": "icon",
+              "id": "oLoCX",
+              "x": 194,
+              "y": 26.756196501347738,
+              "name": "Menu",
+              "enabled": false,
+              "width": 24,
+              "height": 24,
+              "icon": "menu",
+              "library": "lucide",
+              "fill": "$ink"
+            },
+            "jT1yX": {
+              "gap": 12,
+              "enabled": false
+            },
+            "Z5bsK": {
+              "enabled": false
+            },
+            "I9s4BW": {
+              "content": "bag (1)"
+            },
+            "wPSUi": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "LSIMx",
+          "name": "Product page behind confirmation",
+          "context": "Single-column mobile layout with 20px side gutters: lead image, left-aligned full-width product details, then remaining gallery images. Images use 3:4 proportions; product details scroll normally.",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "KwdKZ",
+              "name": "Gallery",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "id": "tUTNe",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "height": 466.6666666666667,
+                  "width": "fill_container",
+                  "name": "Gallery Image 1"
+                },
+                {
+                  "type": "frame",
+                  "id": "JtXWh",
+                  "layoutPosition": "absolute",
+                  "x": 278,
+                  "y": 20,
+                  "name": "Zoom Button",
+                  "width": 52,
+                  "height": 52,
+                  "fill": "$bg",
+                  "cornerRadius": 26,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "bSI5u",
+                      "name": "Zoom Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "maximize-2",
+                      "library": "lucide",
+                      "fill": "$ink"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sIlIA",
+              "name": "Product Info",
+              "context": "Static mobile product details, full available width with left-aligned text.",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 28,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p4jIx1",
+                  "name": "Product Title",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Product Name Colour",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "B7x3n",
+                  "name": "Description",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OsbpH",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Material: Fabric composition",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "N8Ufd",
+                      "name": "Paragraph",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Short product description, two to five lines about silhouette, texture, closures, pockets and finishing details.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "xLUjd",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Bust: 000 cm | Length: 00 cm",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "Lg1e6",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Weight: 0.0 kg",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "Pxz5m",
+                      "name": "Line",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Model is 000 cm",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "G2uScI",
+                  "name": "Price",
+                  "fill": "$ink",
+                  "content": "IDR 279,000",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
+                  "fontWeight": "300",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "frame",
+                  "id": "Zea3y",
+                  "name": "Buy Box",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "id": "c1fug4",
+                      "type": "ref",
+                      "ref": "xqA38",
+                      "name": "Size Select",
+                      "width": "fill_container",
+                      "descendants": {
+                        "S0pgM": {
+                          "enabled": false
+                        },
+                        "oBZ96": {
+                          "stroke": "$ink"
+                        },
+                        "Ih3sK": {
+                          "content": "Choose an option",
+                          "fill": "$ink-2"
+                        },
+                        "CzXpO": {
+                          "enabled": true
+                        }
+                      }
+                    },
+                    {
+                      "id": "aQ2x5",
+                      "type": "ref",
+                      "ref": "rUMLe",
+                      "name": "Add to Bag",
+                      "width": "fill_container",
+                      "descendants": {
+                        "m19oNs": {
+                          "content": "Add to bag"
+                        }
+                      }
+                    },
+                    {
+                      "id": "QdS7I",
+                      "type": "ref",
+                      "ref": "CFsCH",
+                      "name": "Order via WhatsApp",
+                      "width": "fill_container"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Z5KfP",
+                      "name": "WA Hint",
+                      "fill": "$ink-3",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Opens WhatsApp with this product, size and price filled in.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-xs",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GMfoY",
+                  "name": "Product Pager",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    24,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k7mZA",
+                      "name": "Previous product",
+                      "fill": "$ink-3",
+                      "content": "Previous product",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    },
+                    {
+                      "type": "text",
+                      "id": "QWVm6",
+                      "name": "Next product",
+                      "fill": "$ink-3",
+                      "content": "Next product",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "300",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fyKjZ",
+              "x": 326,
+              "y": 80,
+              "name": "Spacer",
+              "enabled": false,
+              "width": 124,
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "v1RaJ",
+              "name": "Additional product views",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "id": "ZznzN",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "height": 466.6666666666667,
+                  "width": "fill_container",
+                  "name": "Gallery Image 2"
+                },
+                {
+                  "id": "E4cDRt",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "height": 466.6666666666667,
+                  "width": "fill_container",
+                  "name": "Gallery Image 3"
+                },
+                {
+                  "id": "cslLu",
+                  "type": "ref",
+                  "ref": "Z5Qv0z",
+                  "height": 466.6666666666667,
+                  "width": "fill_container",
+                  "name": "Gallery Image 4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "QHnNh",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 46,
+          "name": "Dimmed backdrop",
+          "fill": "#00000033",
+          "width": 390,
+          "height": 798
+        },
+        {
+          "id": "QgRZo",
+          "type": "ref",
+          "ref": "D6pkju",
+          "name": "Added-to-bag bottom sheet",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 408,
+          "width": 390,
+          "height": "fit_content",
+          "descendants": {
+            "Ofeig": {
+              "content": "Bag"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "kfUFK",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "WordPress toolbar — visible above overlay",
+          "width": 390,
+          "height": 46,
+          "fill": "#1D2327",
+          "gap": 20,
+          "padding": [
+            0,
+            12
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "dtgXq",
+              "name": "WordPress toolbar label",
+              "fill": "#F0F0F1",
+              "content": "WordPress · Miroir",
+              "fontFamily": "$font-sans",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
         }
       ]
     }

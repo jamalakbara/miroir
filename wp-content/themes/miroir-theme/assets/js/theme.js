@@ -180,7 +180,7 @@
 	}
 
 	function updateDrawerViewport() {
-		if ( ! activeModal || ! activeModal.classList.contains( 'panel--drawer' ) ) {
+		if ( ! activeModal || ( ! activeModal.classList.contains( 'panel--drawer' ) && ! activeModal.classList.contains( 'panel--bag' ) ) ) {
 			return;
 		}
 		// Mobile WordPress toolbars scroll away; reserve only their visible portion.
@@ -234,7 +234,14 @@
 				url.searchParams.delete( 'panel' );
 				window.history.replaceState( null, '', url );
 			}
+			if ( dialog.dataset.panel === 'added' && url.searchParams.has( 'added' ) ) {
+				url.searchParams.delete( 'added' );
+				window.history.replaceState( null, '', url );
+			}
 			if ( modalOpener ) {
+				if ( ! modalOpener.isConnected && modalOpener.matches( 'a.site-nav__bag' ) ) {
+					modalOpener = document.querySelector( 'a.site-nav__bag' );
+				}
 				modalOpener.focus( { preventScroll: true } );
 			}
 		} );
@@ -315,6 +322,9 @@
 			}
 			panel.removeAttribute( 'open' );
 			panel.showModal();
+			if ( name === 'added' ) {
+				panel.querySelector( '#added-panel-title' ).focus( { preventScroll: true } );
+			}
 			// Resolve the resting lines before starting their morph animation.
 			if ( name === 'nav' ) {
 				panel.querySelector( '.site-nav__menu-mark' ).getBoundingClientRect();
@@ -323,7 +333,7 @@
 			if ( name === 'nav' ) {
 				panel.querySelector( '.site-nav__toggle' ).focus( { preventScroll: true } );
 			}
-			var field = panel.querySelector( 'input:not([type="hidden"]):not([type="radio"]), input:checked' );
+			var field = name !== 'added' && panel.querySelector( 'input:not([type="hidden"]):not([type="radio"]), input:checked' );
 			if ( field ) {
 				field.focus( { preventScroll: true } );
 			}
@@ -381,7 +391,108 @@
 		setExpanded( '' );
 	}
 
+	var miniBagRequest = 0;
+	var bagMutationPending = false;
+
+	function updateBagMarkup( doc ) {
+		var panel = document.getElementById( 'added-panel' );
+		var result = doc.querySelector( '#added-panel' );
+		if ( ! panel || ! result ) { throw new Error( 'Missing bag' ); }
+		panel.removeAttribute( 'aria-busy' );
+		panel.innerHTML = result.innerHTML;
+		var bag = doc.querySelector( 'a.site-nav__bag' );
+		if ( bag ) {
+			document.querySelectorAll( 'a.site-nav__bag' ).forEach( function ( current ) { current.replaceWith( document.importNode( bag, true ) ); } );
+		}
+		if ( window.jQuery ) { window.jQuery( document.body ).trigger( 'wc_fragment_refresh' ); }
+		return panel;
+	}
+
+	function bagFailure( feedback ) {
+		var panel = document.getElementById( 'added-panel' );
+		feedback.textContent = panel.dataset.error;
+		var link = document.createElement( 'a' );
+		link.href = panel.dataset.bagUrl;
+		link.textContent = panel.dataset.bagLabel;
+		feedback.append( ' ', link );
+	}
+
+	function bagDocument( response ) {
+		if ( ! response.ok ) { throw new Error( 'Unable to load bag' ); }
+		return response.text().then( function ( html ) { return new DOMParser().parseFromString( html, 'text/html' ); } );
+	}
+
+	function openBag( opener ) {
+		var panel = document.getElementById( 'added-panel' );
+		if ( ! panel || typeof panel.showModal !== 'function' ) { return false; }
+		if ( bagMutationPending || panel.getAttribute( 'aria-busy' ) === 'true' ) { return true; }
+		var request = ++miniBagRequest;
+		panel.querySelector( '#added-panel-title' ).textContent = panel.dataset.title;
+		openPanel( 'added' );
+		modalOpener = opener;
+		panel.setAttribute( 'aria-busy', 'true' );
+		panel.querySelectorAll( 'input, button' ).forEach( function ( control ) { control.disabled = true; } );
+		fetch( panel.dataset.bagUrl, { credentials: 'same-origin', cache: 'no-store' } )
+			.then( bagDocument )
+			.then( function ( doc ) {
+				if ( request !== miniBagRequest ) { return; }
+				updateBagMarkup( doc );
+				if ( activeModal === panel ) { panel.querySelector( '#added-panel-title' ).focus( { preventScroll: true } ); }
+			} )
+			.catch( function () {
+				if ( request === miniBagRequest ) { bagFailure( panel.querySelector( '.mini-bag__feedback' ) ); }
+			} )
+			.finally( function () {
+				if ( request === miniBagRequest ) { panel.removeAttribute( 'aria-busy' ); }
+			} );
+		return true;
+	}
+
+	document.addEventListener( 'submit', function ( event ) {
+		var form = event.target;
+		if ( ! form.matches( '[data-mini-bag-form]' ) ) { return; }
+		event.preventDefault();
+		var panel = form.closest( 'dialog' );
+		if ( bagMutationPending || panel.getAttribute( 'aria-busy' ) === 'true' || ! form.reportValidity() ) { return; }
+		var data = new FormData( form );
+		var focus = document.activeElement;
+		var item = focus.closest( '[data-mini-bag-item]' );
+		var key = item && item.dataset.miniBagItem;
+		var step = focus.dataset.qtyStep;
+		var title = panel.querySelector( '#added-panel-title' ).textContent;
+		var request = ++miniBagRequest;
+		bagMutationPending = true;
+		form.setAttribute( 'aria-busy', 'true' );
+		form.querySelectorAll( 'input, button' ).forEach( function ( control ) { control.disabled = true; } );
+		fetch( form.action, { method: 'POST', body: data, credentials: 'same-origin', cache: 'no-store' } )
+			.then( bagDocument )
+			.then( function ( doc ) {
+				if ( request !== miniBagRequest ) { return; }
+				updateBagMarkup( doc );
+				panel.querySelector( '#added-panel-title' ).textContent = title;
+				var feedback = panel.querySelector( '.mini-bag__feedback' );
+				var errors = doc.querySelectorAll( '.woocommerce-error' );
+				errors.forEach( function ( error ) { feedback.appendChild( document.importNode( error, true ) ); } );
+				if ( ! errors.length ) { feedback.textContent = panel.dataset.updated; }
+				var cart = document.querySelector( '.cart-wrap, .cart-empty' );
+				var nextCart = doc.querySelector( '.cart-wrap, .cart-empty' );
+				if ( cart && nextCart ) { cart.replaceWith( document.importNode( nextCart, true ) ); }
+				if ( activeModal === panel ) {
+					var row = key && panel.querySelector( '[data-mini-bag-item="' + key + '"]' );
+					var nextFocus = row && row.querySelector( step ? '[data-qty-step="' + step + '"]:not(:disabled)' : '.qty__input' );
+					( nextFocus || panel.querySelector( '#added-panel-title' ) ).focus( { preventScroll: true } );
+				}
+			} )
+			.catch( function () { bagFailure( panel.querySelector( '.mini-bag__feedback' ) ); } )
+			.finally( function () { bagMutationPending = false; form.removeAttribute( 'aria-busy' ); } );
+	} );
+
 	document.addEventListener( 'click', function ( event ) {
+		var bag = event.target.closest( 'a.site-nav__bag' );
+		if ( bag && event.button === 0 && ! event.metaKey && ! event.ctrlKey && ! event.shiftKey && ! event.altKey && openBag( bag ) ) {
+			event.preventDefault();
+			return;
+		}
 		var opener = event.target.closest( '[data-panel-open]' );
 		if ( opener && openPanel( opener.dataset.panelOpen ) ) {
 			event.preventDefault();
@@ -420,6 +531,69 @@
 	if ( initialModal ) {
 		openPanel( initialModal.dataset.panel );
 	}
+
+	/* Keep WooCommerce's native validation and POST handling, then show its result in place. */
+	document.addEventListener( 'submit', function ( event ) {
+		var form = event.target;
+		var button = form.matches( 'form.cart' ) && form.querySelector( '.single_add_to_cart_button' );
+		var panel = document.getElementById( 'added-panel' );
+		if ( ! button || ! panel || typeof panel.showModal !== 'function' ) {
+			return;
+		}
+		event.preventDefault();
+		if ( form.getAttribute( 'aria-busy' ) === 'true' || button.classList.contains( 'disabled' ) ) {
+			return;
+		}
+		var data = new FormData( form );
+		if ( button.name ) {
+			data.set( button.name, button.value );
+		}
+		var target = new URL( form.action || window.location.href );
+		[ 'added', 'choose-size', 'add-to-cart' ].forEach( function ( key ) { target.searchParams.delete( key ); } );
+		var feedback = form.querySelector( '[data-add-feedback]' );
+		if ( ! feedback ) {
+			feedback = document.createElement( 'div' );
+			feedback.dataset.addFeedback = '';
+			feedback.setAttribute( 'role', 'alert' );
+			button.closest( '.woocommerce-variation-add-to-cart' ) ? button.closest( '.woocommerce-variation-add-to-cart' ).after( feedback ) : form.appendChild( feedback );
+		}
+		feedback.replaceChildren();
+		form.setAttribute( 'aria-busy', 'true' );
+		button.disabled = true;
+		++miniBagRequest;
+		bagMutationPending = true;
+		fetch( target, { method: 'POST', body: data, credentials: 'same-origin', cache: 'no-store' } )
+			.then( function ( response ) {
+				if ( ! response.ok ) { throw new Error( 'Unable to confirm' ); }
+				return response.text();
+			} )
+			.then( function ( html ) {
+				var doc = new DOMParser().parseFromString( html, 'text/html' );
+				var result = doc.querySelector( '#added-panel[data-added-item]' );
+				if ( ! result ) {
+					var errors = doc.querySelectorAll( '.woocommerce-error' );
+					if ( ! errors.length ) { throw new Error( 'Missing confirmation' ); }
+					errors.forEach( function ( error ) { feedback.appendChild( document.importNode( error, true ) ); } );
+					return;
+				}
+				updateBagMarkup( doc );
+				openPanel( 'added' );
+				modalOpener = button;
+			} )
+			.catch( function () {
+				// The POST may already have succeeded. Never automatically submit it twice.
+				feedback.textContent = panel.dataset.error;
+				var link = document.createElement( 'a' );
+				link.href = panel.dataset.bagUrl;
+				link.textContent = panel.dataset.bagLabel;
+				feedback.append( ' ', link );
+			} )
+			.finally( function () {
+				bagMutationPending = false;
+				form.removeAttribute( 'aria-busy' );
+				button.disabled = false;
+			} );
+	} );
 
 	/*
 	 * Add to bag before picking a size: instead of WooCommerce's alert, the PDP
@@ -475,6 +649,8 @@
 	 * submits "update cart" (the lofi has no update button).
 	 */
 	function submitCart( input ) {
+		var mini = input.closest( '[data-mini-bag-form]' );
+		if ( mini ) { mini.requestSubmit(); return; }
 		var form = input.closest( '[data-cart-form]' );
 		if ( ! form ) {
 			return;

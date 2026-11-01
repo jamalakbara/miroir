@@ -401,7 +401,7 @@ add_filter(
 	'woocommerce_cart_fragment_name',
 	function ( $name ) {
 		$label = function_exists( 'miroir_text' ) ? miroir_text( 'nav_bag', 0 ) : __( 'bag (%d)', 'miroir' );
-		return $name . '_' . substr( md5( 'compact-header-v1_' . $label ), 0, 8 );
+		return $name . '_' . substr( md5( 'compact-header-v2-bag-dialog_' . $label ), 0, 8 );
 	}
 );
 
