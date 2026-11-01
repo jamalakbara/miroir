@@ -26,6 +26,7 @@ Session-bound screens have their own scripts:
 - `flow-account.js`: functional check of register (validation + success), address and details saves, lost password.
   Creates `reg<timestamp>@example.test` customers; delete them afterwards.
 - `spec-panels.json`: screens 31-34 via `?panel=nav|search|filters|currency`.
+- `flow-navigation.js`: persistent navbar, original hamburger morph, drawer reveal/close animations, shared desktop links, internal scrolling, focus/scroll restoration, admin toolbar offsets, reduced motion and search/currency transitions at responsive sizes.
 - `capture-states.js`: screens 35-44 (41 is a notice catalogue with no page). `STOCK_PRODUCT=<id>` enables 40: it bags 2,
   drops that product's stock to 1 through WP-CLI, captures, and restores stock to 12. Screen 42 registers a throwaway
   `reg<timestamp>@example.test` customer: delete it afterwards. `ids-phase5.json` maps screens to pen frame ids.

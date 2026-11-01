@@ -456,8 +456,8 @@
                       "id": "eN9oK",
                       "x": 7,
                       "y": 12,
-                      "name": "Menu lines",
-                      "geometry": "M0 0.5h30m-30 10h30m-30 9h30",
+                      "name": "Original thin-line hamburger",
+                      "geometry": "M0 0h30m-30 10h30m-30 10h30",
                       "viewBox": [
                         0,
                         0,
@@ -15936,6 +15936,7 @@
                           "id": "BK6IC",
                           "name": "31 Navigation open · Desktop presentation",
                           "width": 1440,
+                          "height": 941,
                           "layout": "vertical",
                           "gap": 20,
                           "children": [
@@ -15955,8 +15956,10 @@
                               "type": "frame",
                               "id": "eAYSY",
                               "name": "31 Navigation open · Desktop",
+                              "context": "Navbar remains visible with the same live logo, bag and menu toggle. Original 30×20 thin-line hamburger morphs into an X within its unchanged 44×44 touch target. No Menu heading or separate close control. Drawer reveals downward below the navbar over 280ms, closes upward over 220ms; navbar stays still. Content fills remaining viewport and scrolls internally; background stays locked. Escape or same navbar X closes and restores focus; search/currency replace the drawer with their dialogs. Reduced motion skips animation. Admin toolbar stays visible above navbar. Desktop state demonstrates a URL-opened drawer; the normal desktop navbar keeps its direct links.",
                               "clip": true,
                               "width": 1440,
+                              "height": 900,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -15965,18 +15968,36 @@
                                   "type": "ref",
                                   "ref": "dk4Eq",
                                   "name": "Header",
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "enabled": true,
+                                  "height": 132,
+                                  "descendants": {
+                                    "H7tLW3": {
+                                      "enabled": false,
+                                      "width": 1440
+                                    },
+                                    "wPSUi": {
+                                      "enabled": true
+                                    },
+                                    "OnisS": {
+                                      "enabled": false
+                                    },
+                                    "eN9oK": {
+                                      "name": "Hamburger morphed to X",
+                                      "geometry": "M4.393 -0.607L25.607 20.607 M4.393 20.607L25.607 -0.607",
+                                      "strokeWidth": 1
+                                    }
+                                  }
                                 },
                                 {
                                   "type": "frame",
                                   "id": "A6DoTZ",
                                   "name": "Content area",
                                   "width": "fill_container",
+                                  "height": "fill_container",
                                   "layout": "vertical",
                                   "padding": [
-                                    80,
-                                    56,
-                                    96,
+                                    24,
                                     56
                                   ],
                                   "alignItems": "center",
@@ -15985,39 +16006,100 @@
                                       "type": "frame",
                                       "id": "J38NI",
                                       "name": "Content column",
-                                      "width": 820,
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 24,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "m1ZhKD",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "type": "frame",
+                                          "id": "tFMX3",
+                                          "name": "sale",
                                           "width": "fill_container",
-                                          "content": "Navigation open",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
+                                          "stroke": "$line",
+                                          "strokeWidth": {
+                                            "bottom": 1
+                                          },
+                                          "padding": [
+                                            16,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "Kf9hq",
+                                              "name": "sale",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "sale",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-md",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.4
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "K16nu",
+                                              "x": 1310,
+                                              "y": 16,
+                                              "name": "Open Sale",
+                                              "enabled": false,
+                                              "width": 18,
+                                              "height": 18,
+                                              "icon": "arrow-up-right",
+                                              "library": "lucide",
+                                              "fill": "$ink"
+                                            }
+                                          ]
                                         },
                                         {
-                                          "id": "j7TCx",
-                                          "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Close menu",
+                                          "type": "frame",
+                                          "id": "p3UKbH",
+                                          "name": "shop women",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Close menu"
+                                          "stroke": "$line",
+                                          "strokeWidth": {
+                                            "bottom": 1
+                                          },
+                                          "padding": [
+                                            16,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "aKpxb",
+                                              "name": "shop women",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "shop women",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-md",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.4
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "m2Olfl",
+                                              "x": 1310,
+                                              "y": 16,
+                                              "name": "Open Shop women",
+                                              "enabled": false,
+                                              "width": 18,
+                                              "height": 18,
+                                              "icon": "arrow-up-right",
+                                              "library": "lucide",
+                                              "fill": "$ink"
                                             }
-                                          }
+                                          ]
                                         },
                                         {
                                           "type": "frame",
                                           "id": "IRXiJ",
-                                          "name": "New arrivals",
+                                          "name": "search",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -16031,11 +16113,11 @@
                                             {
                                               "type": "text",
                                               "id": "LEAjS",
-                                              "name": "New arrivals",
+                                              "name": "search",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "New arrivals",
+                                              "content": "search",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -16055,47 +16137,8 @@
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "p3UKbH",
-                                          "name": "Shop women",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "aKpxb",
-                                              "name": "Shop women",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Shop women",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "m2Olfl",
-                                              "name": "Open Shop women",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
                                           "id": "e0nMAU",
-                                          "name": "Collections",
+                                          "name": "Currency · IDR",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -16109,11 +16152,11 @@
                                             {
                                               "type": "text",
                                               "id": "T3qaO",
-                                              "name": "Collections",
+                                              "name": "Currency · IDR",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Collections",
+                                              "content": "Currency · IDR",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -16133,47 +16176,8 @@
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "tFMX3",
-                                          "name": "Sale",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "Kf9hq",
-                                              "name": "Sale",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Sale",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "K16nu",
-                                              "name": "Open Sale",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
                                           "id": "AJdKb",
-                                          "name": "My account",
+                                          "name": "my account",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -16187,11 +16191,11 @@
                                             {
                                               "type": "text",
                                               "id": "oAjZx",
-                                              "name": "My account",
+                                              "name": "my account",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "My account",
+                                              "content": "my account",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -16212,7 +16216,7 @@
                                         {
                                           "type": "frame",
                                           "id": "VJVRz",
-                                          "name": "Customer care",
+                                          "name": "bag (0)",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -16226,11 +16230,11 @@
                                             {
                                               "type": "text",
                                               "id": "bv71t",
-                                              "name": "Customer care",
+                                              "name": "bag (0)",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Customer care",
+                                              "content": "bag (0)",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -16247,19 +16251,6 @@
                                               "fill": "$ink"
                                             }
                                           ]
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "ChUjn",
-                                          "name": "Currency shortcut",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Currency · IDR",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-mono",
-                                          "fontSize": "$text-sm",
-                                          "fontWeight": "normal"
                                         }
                                       ]
                                     }
@@ -16270,7 +16261,8 @@
                                   "type": "ref",
                                   "ref": "oqbEv",
                                   "name": "Footer",
-                                  "width": "fill_container"
+                                  "width": 1440,
+                                  "enabled": false
                                 }
                               ]
                             }
@@ -31307,6 +31299,7 @@
                           "id": "irPGt",
                           "name": "31 Navigation open · Tablet presentation",
                           "width": 768,
+                          "height": 1065,
                           "layout": "vertical",
                           "gap": 20,
                           "children": [
@@ -31326,8 +31319,10 @@
                               "type": "frame",
                               "id": "VqwMF",
                               "name": "31 Navigation open · Tablet",
+                              "context": "Navbar remains visible with the same live logo, bag and menu toggle. Original 30×20 thin-line hamburger morphs into an X within its unchanged 44×44 touch target. No Menu heading or separate close control. Drawer reveals downward below the navbar over 280ms, closes upward over 220ms; navbar stays still. Content fills remaining viewport and scrolls internally; background stays locked. Escape or same navbar X closes and restores focus; search/currency replace the drawer with their dialogs. Reduced motion skips animation. Admin toolbar stays visible above navbar. Desktop state demonstrates a URL-opened drawer; the normal desktop navbar keeps its direct links.",
                               "clip": true,
                               "width": 768,
+                              "height": 1024,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -31337,14 +31332,16 @@
                                   "ref": "dk4Eq",
                                   "name": "Header",
                                   "width": "fill_container",
-                                  "height": 116,
+                                  "height": 76,
+                                  "enabled": true,
                                   "descendants": {
                                     "H7tLW3": {
                                       "justifyContent": "center",
                                       "layoutPosition": "absolute",
                                       "x": 0,
                                       "y": 76,
-                                      "width": 768
+                                      "width": 768,
+                                      "enabled": false
                                     },
                                     "Y1Oz73": {
                                       "enabled": false
@@ -31385,6 +31382,11 @@
                                     },
                                     "wPSUi": {
                                       "enabled": true
+                                    },
+                                    "eN9oK": {
+                                      "name": "Hamburger morphed to X",
+                                      "geometry": "M4.393 -0.607L25.607 20.607 M4.393 20.607L25.607 -0.607",
+                                      "strokeWidth": 1
                                     }
                                   }
                                 },
@@ -31393,11 +31395,10 @@
                                   "id": "lpcm4",
                                   "name": "Content area",
                                   "width": "fill_container",
+                                  "height": "fill_container",
                                   "layout": "vertical",
                                   "padding": [
-                                    40,
-                                    32,
-                                    56,
+                                    24,
                                     32
                                   ],
                                   "alignItems": "center",
@@ -31411,34 +31412,95 @@
                                       "gap": 24,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "tdbct",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "type": "frame",
+                                          "id": "TD8b8",
+                                          "name": "sale",
                                           "width": "fill_container",
-                                          "content": "Navigation open",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
+                                          "stroke": "$line",
+                                          "strokeWidth": {
+                                            "bottom": 1
+                                          },
+                                          "padding": [
+                                            16,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "W75Av",
+                                              "name": "sale",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "sale",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-md",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.4
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "KhCbF",
+                                              "x": 686,
+                                              "y": 16,
+                                              "name": "Open Sale",
+                                              "enabled": false,
+                                              "width": 18,
+                                              "height": 18,
+                                              "icon": "arrow-up-right",
+                                              "library": "lucide",
+                                              "fill": "$ink"
+                                            }
+                                          ]
                                         },
                                         {
-                                          "id": "yOlTy",
-                                          "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Close menu",
+                                          "type": "frame",
+                                          "id": "a8WbF",
+                                          "name": "shop women",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Close menu"
+                                          "stroke": "$line",
+                                          "strokeWidth": {
+                                            "bottom": 1
+                                          },
+                                          "padding": [
+                                            16,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "SwCQV",
+                                              "name": "shop women",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "shop women",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-md",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.4
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "T4LMq",
+                                              "x": 686,
+                                              "y": 16,
+                                              "name": "Open Shop women",
+                                              "enabled": false,
+                                              "width": 18,
+                                              "height": 18,
+                                              "icon": "arrow-up-right",
+                                              "library": "lucide",
+                                              "fill": "$ink"
                                             }
-                                          }
+                                          ]
                                         },
                                         {
                                           "type": "frame",
                                           "id": "CSM9K",
-                                          "name": "New arrivals",
+                                          "name": "search",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -31452,11 +31514,11 @@
                                             {
                                               "type": "text",
                                               "id": "xLI6B",
-                                              "name": "New arrivals",
+                                              "name": "search",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "New arrivals",
+                                              "content": "search",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -31476,47 +31538,8 @@
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "a8WbF",
-                                          "name": "Shop women",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "SwCQV",
-                                              "name": "Shop women",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Shop women",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "T4LMq",
-                                              "name": "Open Shop women",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
                                           "id": "o4pAU0",
-                                          "name": "Collections",
+                                          "name": "Currency · IDR",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -31530,11 +31553,11 @@
                                             {
                                               "type": "text",
                                               "id": "e5tbVV",
-                                              "name": "Collections",
+                                              "name": "Currency · IDR",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Collections",
+                                              "content": "Currency · IDR",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -31554,47 +31577,8 @@
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "TD8b8",
-                                          "name": "Sale",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "W75Av",
-                                              "name": "Sale",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Sale",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "KhCbF",
-                                              "name": "Open Sale",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
                                           "id": "v9JViK",
-                                          "name": "My account",
+                                          "name": "my account",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -31608,11 +31592,11 @@
                                             {
                                               "type": "text",
                                               "id": "xnP3J",
-                                              "name": "My account",
+                                              "name": "my account",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "My account",
+                                              "content": "my account",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -31633,7 +31617,7 @@
                                         {
                                           "type": "frame",
                                           "id": "AoZlZ",
-                                          "name": "Customer care",
+                                          "name": "bag (0)",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -31647,11 +31631,11 @@
                                             {
                                               "type": "text",
                                               "id": "NYaOn",
-                                              "name": "Customer care",
+                                              "name": "bag (0)",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Customer care",
+                                              "content": "bag (0)",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -31668,19 +31652,6 @@
                                               "fill": "$ink"
                                             }
                                           ]
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "uxT7P",
-                                          "name": "Currency shortcut",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Currency · IDR",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-mono",
-                                          "fontSize": "$text-sm",
-                                          "fontWeight": "normal"
                                         }
                                       ]
                                     }
@@ -31691,13 +31662,14 @@
                                   "type": "ref",
                                   "ref": "oqbEv",
                                   "name": "Footer",
-                                  "width": "fill_container",
+                                  "width": 768,
                                   "padding": [
                                     56,
                                     32,
                                     32,
                                     32
-                                  ]
+                                  ],
+                                  "enabled": false
                                 }
                               ]
                             }
@@ -47463,6 +47435,7 @@
                           "id": "tbCkB",
                           "name": "31 Navigation open · Mobile presentation",
                           "width": 390,
+                          "height": 885,
                           "layout": "vertical",
                           "gap": 20,
                           "children": [
@@ -47482,8 +47455,10 @@
                               "type": "frame",
                               "id": "k9Zvu",
                               "name": "31 Navigation open · Mobile",
+                              "context": "Navbar remains visible with the same live logo, bag and menu toggle. Original 30×20 thin-line hamburger morphs into an X within its unchanged 44×44 touch target. No Menu heading or separate close control. Drawer reveals downward below the navbar over 280ms, closes upward over 220ms; navbar stays still. Content fills remaining viewport and scrolls internally; background stays locked. Escape or same navbar X closes and restores focus; search/currency replace the drawer with their dialogs. Reduced motion skips animation. Admin toolbar stays visible above navbar. Desktop state demonstrates a URL-opened drawer; the normal desktop navbar keeps its direct links.",
                               "clip": true,
                               "width": 390,
+                              "height": 844,
                               "fill": "$bg",
                               "layout": "vertical",
                               "children": [
@@ -47493,14 +47468,16 @@
                                   "ref": "dk4Eq",
                                   "name": "Header",
                                   "width": "fill_container",
-                                  "height": 108,
+                                  "height": 68,
+                                  "enabled": true,
                                   "descendants": {
                                     "H7tLW3": {
                                       "justifyContent": "center",
                                       "layoutPosition": "absolute",
                                       "x": 0,
                                       "y": 68,
-                                      "width": 390
+                                      "width": 390,
+                                      "enabled": false
                                     },
                                     "Y1Oz73": {
                                       "enabled": false
@@ -47541,6 +47518,11 @@
                                     },
                                     "wPSUi": {
                                       "enabled": true
+                                    },
+                                    "eN9oK": {
+                                      "name": "Hamburger morphed to X",
+                                      "geometry": "M4.393 -0.607L25.607 20.607 M4.393 20.607L25.607 -0.607",
+                                      "strokeWidth": 1
                                     }
                                   }
                                 },
@@ -47549,11 +47531,10 @@
                                   "id": "x0zBYZ",
                                   "name": "Content area",
                                   "width": "fill_container",
+                                  "height": "fill_container",
                                   "layout": "vertical",
                                   "padding": [
-                                    40,
-                                    20,
-                                    56,
+                                    24,
                                     20
                                   ],
                                   "alignItems": "center",
@@ -47567,34 +47548,95 @@
                                       "gap": 24,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "T60PE",
-                                          "name": "Page title",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
+                                          "type": "frame",
+                                          "id": "JOs5v",
+                                          "name": "sale",
                                           "width": "fill_container",
-                                          "content": "Navigation open",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-sans",
-                                          "fontSize": "$text-xl",
-                                          "fontWeight": "300"
+                                          "stroke": "$line",
+                                          "strokeWidth": {
+                                            "bottom": 1
+                                          },
+                                          "padding": [
+                                            16,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "eqoeY",
+                                              "name": "sale",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "sale",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-md",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.4
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "UZ0Qc",
+                                              "x": 332,
+                                              "y": 16,
+                                              "name": "Open Sale",
+                                              "enabled": false,
+                                              "width": 18,
+                                              "height": 18,
+                                              "icon": "arrow-up-right",
+                                              "library": "lucide",
+                                              "fill": "$ink"
+                                            }
+                                          ]
                                         },
                                         {
-                                          "id": "fJH24",
-                                          "type": "ref",
-                                          "ref": "rUMLe",
-                                          "name": "Close menu",
+                                          "type": "frame",
+                                          "id": "EiJUA",
+                                          "name": "shop women",
                                           "width": "fill_container",
-                                          "descendants": {
-                                            "m19oNs": {
-                                              "content": "Close menu"
+                                          "stroke": "$line",
+                                          "strokeWidth": {
+                                            "bottom": 1
+                                          },
+                                          "padding": [
+                                            16,
+                                            0
+                                          ],
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "Z6Q4qH",
+                                              "name": "shop women",
+                                              "fill": "$ink",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "shop women",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$font-sans",
+                                              "fontSize": "$text-md",
+                                              "fontWeight": "300",
+                                              "letterSpacing": 0.4
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "rWq9v",
+                                              "x": 332,
+                                              "y": 16,
+                                              "name": "Open Shop women",
+                                              "enabled": false,
+                                              "width": 18,
+                                              "height": 18,
+                                              "icon": "arrow-up-right",
+                                              "library": "lucide",
+                                              "fill": "$ink"
                                             }
-                                          }
+                                          ]
                                         },
                                         {
                                           "type": "frame",
                                           "id": "P9lhmX",
-                                          "name": "New arrivals",
+                                          "name": "search",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -47608,11 +47650,11 @@
                                             {
                                               "type": "text",
                                               "id": "izNg1",
-                                              "name": "New arrivals",
+                                              "name": "search",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "New arrivals",
+                                              "content": "search",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -47632,47 +47674,8 @@
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "EiJUA",
-                                          "name": "Shop women",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "Z6Q4qH",
-                                              "name": "Shop women",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Shop women",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "rWq9v",
-                                              "name": "Open Shop women",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
                                           "id": "CswVH",
-                                          "name": "Collections",
+                                          "name": "Currency · IDR",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -47686,11 +47689,11 @@
                                             {
                                               "type": "text",
                                               "id": "a8cUe4",
-                                              "name": "Collections",
+                                              "name": "Currency · IDR",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Collections",
+                                              "content": "Currency · IDR",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -47710,47 +47713,8 @@
                                         },
                                         {
                                           "type": "frame",
-                                          "id": "JOs5v",
-                                          "name": "Sale",
-                                          "width": "fill_container",
-                                          "stroke": "$line",
-                                          "strokeWidth": {
-                                            "bottom": 1
-                                          },
-                                          "padding": [
-                                            16,
-                                            0
-                                          ],
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "eqoeY",
-                                              "name": "Sale",
-                                              "fill": "$ink",
-                                              "textGrowth": "fixed-width",
-                                              "width": "fill_container",
-                                              "content": "Sale",
-                                              "lineHeight": 1.5,
-                                              "fontFamily": "$font-sans",
-                                              "fontSize": "$text-md",
-                                              "fontWeight": "300"
-                                            },
-                                            {
-                                              "type": "icon",
-                                              "id": "UZ0Qc",
-                                              "name": "Open Sale",
-                                              "width": 18,
-                                              "height": 18,
-                                              "icon": "arrow-up-right",
-                                              "library": "lucide",
-                                              "fill": "$ink"
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
                                           "id": "OksCU",
-                                          "name": "My account",
+                                          "name": "my account",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -47764,11 +47728,11 @@
                                             {
                                               "type": "text",
                                               "id": "kCtJf",
-                                              "name": "My account",
+                                              "name": "my account",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "My account",
+                                              "content": "my account",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -47789,7 +47753,7 @@
                                         {
                                           "type": "frame",
                                           "id": "r63wo",
-                                          "name": "Customer care",
+                                          "name": "bag (0)",
                                           "width": "fill_container",
                                           "stroke": "$line",
                                           "strokeWidth": {
@@ -47803,11 +47767,11 @@
                                             {
                                               "type": "text",
                                               "id": "L9fl8E",
-                                              "name": "Customer care",
+                                              "name": "bag (0)",
                                               "fill": "$ink",
                                               "textGrowth": "fixed-width",
                                               "width": "fill_container",
-                                              "content": "Customer care",
+                                              "content": "bag (0)",
                                               "lineHeight": 1.5,
                                               "fontFamily": "$font-sans",
                                               "fontSize": "$text-md",
@@ -47824,19 +47788,6 @@
                                               "fill": "$ink"
                                             }
                                           ]
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "S2zcqc",
-                                          "name": "Currency shortcut",
-                                          "fill": "$ink",
-                                          "textGrowth": "fixed-width",
-                                          "width": "fill_container",
-                                          "content": "Currency · IDR",
-                                          "lineHeight": 1.5,
-                                          "fontFamily": "$font-mono",
-                                          "fontSize": "$text-sm",
-                                          "fontWeight": "normal"
                                         }
                                       ]
                                     }
@@ -47847,13 +47798,14 @@
                                   "type": "ref",
                                   "ref": "oqbEv",
                                   "name": "Footer",
-                                  "width": "fill_container",
+                                  "width": 390,
                                   "padding": [
                                     48,
                                     20,
                                     32,
                                     20
-                                  ]
+                                  ],
+                                  "enabled": false
                                 }
                               ]
                             }

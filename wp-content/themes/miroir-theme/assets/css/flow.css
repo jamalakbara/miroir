@@ -102,7 +102,7 @@ wc-order-attribution-inputs { display: none; }
 .flow__content .wp-block-button__link:hover { text-decoration: none; }
 .flow__content .is-style-outline .wp-block-button__link { outline-color: var(--ink-3); background: transparent; color: var(--ink-2); }
 
-/* Header panels (screens 31-34): shown in place of the page content. */
+/* Header dialogs (31, 32, 34) and the in-page filter panel (33). */
 .panel[hidden] { display: none; }
 .panel--modal:not([open]) { display: none; }
 .panel--modal {
@@ -126,6 +126,69 @@ wc-order-attribution-inputs { display: none; }
 .panel__close:hover { background: var(--line); }
 @media (max-width: 599px) {
 	.panel--modal { padding: 24px; }
+}
+.panel--drawer {
+	top: var(--panel-toolbar-offset, 0px);
+	margin: 0;
+	width: 100%;
+	height: calc(100dvh - var(--panel-toolbar-offset, 0px));
+	max-height: none;
+	padding: 0;
+	border: 0;
+	align-items: stretch;
+	overflow: hidden;
+	background: transparent;
+}
+.panel--drawer::backdrop { top: var(--panel-toolbar-offset, 0px); background: transparent; }
+.panel--drawer .site-nav { flex: none; background: var(--bg); }
+.panel--drawer .site-nav__toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
+.panel--drawer .flow__col {
+	width: 100%;
+	min-height: 0;
+	flex: 1;
+	gap: 24px;
+	padding: 24px var(--gutter);
+	background: var(--bg);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	animation: drawer-down 280ms ease both;
+}
+.panel--drawer.is-closing .flow__col { animation: drawer-up 220ms ease both; }
+@keyframes drawer-down {
+	from { clip-path: inset(0 0 100% 0); }
+	to { clip-path: inset(0); }
+}
+@keyframes drawer-up {
+	from { clip-path: inset(0); }
+	to { clip-path: inset(0 0 100% 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.panel--drawer .flow__col { animation: none; }
+}
+.panel__links { display: flex; flex-direction: column; gap: 24px; }
+.panel--drawer .panel__links,
+.panel--drawer .panel-row { flex: none; }
+.panel__currency {
+	align-self: flex-start;
+	flex: none;
+	margin-top: auto;
+	min-height: 44px;
+	padding: 10px 0;
+	font-size: var(--text-md);
+	line-height: 24px;
+	font-weight: 300;
+	letter-spacing: 0;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+.panel__links a {
+	display: block;
+	padding: 16px 0;
+	box-shadow: 0 0.5px 0 var(--line);
+	font-size: var(--text-md);
+	line-height: 24px;
+	font-weight: 300;
+	letter-spacing: var(--track-nav);
 }
 .site-main.has-panel > :not(.panel) { display: none; }
 .panel-row {

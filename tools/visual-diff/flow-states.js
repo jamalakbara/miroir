@@ -6,8 +6,9 @@ const base = 'http://localhost:8080';
   const errors = []; p.on('pageerror', e => errors.push(e.message)); p.on('dialog', d => { errors.push('dialog: ' + d.message()); d.dismiss(); });
   await p.goto(base + '/shop-2/', { waitUntil: 'networkidle' });
   await p.click('.site-nav__toggle');
-  console.log('menu opens in place:', await p.isVisible('#nav-panel'), '| listing hidden:', !(await p.isVisible('.plp')), '| url unchanged:', !p.url().includes('panel='));
+  console.log('menu opens as modal:', await p.locator('#nav-panel').evaluate(el => el.matches(':modal')), '| listing retained:', await p.locator('.plp').evaluate(el => getComputedStyle(el).display !== 'none'), '| url unchanged:', !p.url().includes('panel='));
   await p.keyboard.press('Escape');
+  await p.locator('#nav-panel').waitFor({ state: 'hidden' });
   console.log('escape closes:', !(await p.isVisible('#nav-panel')) && await p.isVisible('.plp'));
   // Below 1024px the currency link sits in the menu panel; the header toggle is a desktop control.
   await p.setViewportSize({ width: 1440, height: 900 });

@@ -1,13 +1,12 @@
 <?php
 /**
- * Menu and filters replace page content; search and currency open as modals.
+ * Menu, search and currency open as dialogs; filters replace page content.
  * Header links fall back to server-opened panels without JavaScript.
  */
 
 defined( 'ABSPATH' ) || exit;
 
 $open     = miroir_open_panel();
-$shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 $arrow    = miroir_icon( 'arrow-up-right', 18 );
 
 /**
@@ -21,33 +20,15 @@ $row = function ( $label, $url ) use ( $arrow ) {
 		$arrow // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG.
 	);
 };
-$close = function ( $label ) {
-	printf( '<button class="btn btn--block" type="button" data-panel-close>%s</button>', esc_html( $label ) );
-};
 ?>
-<div class="flow panel" id="nav-panel" data-panel="nav"<?php echo 'nav' === $open ? '' : ' hidden'; ?>>
+<dialog class="flow panel panel--modal panel--drawer" id="nav-panel" data-panel="nav" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>"<?php echo 'nav' === $open ? ' open' : ''; ?>>
 	<nav class="flow__col" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">
-		<h2 class="flow__title"><?php echo esc_html( miroir_text( 'menu_title' ) ); ?></h2>
-		<?php $close( miroir_text( 'menu_close' ) ); ?>
-		<?php
-		$locations = get_nav_menu_locations();
-		$items     = ! empty( $locations['panel-nav'] ) ? wp_get_nav_menu_items( $locations['panel-nav'] ) : array();
-		if ( $items ) {
-			foreach ( $items as $item ) {
-				$row( $item->title, $item->url );
-			}
-		} else {
-			$row( __( 'New arrivals', 'miroir' ), miroir_cat_url( 'new-collection' ) );
-			$row( __( 'Shop women', 'miroir' ), $shop_url );
-			$row( __( 'Collections', 'miroir' ), miroir_cat_url( 'shop-by-collection' ) );
-			$row( __( 'Sale', 'miroir' ), miroir_cat_url( 'sale' ) );
-			$row( __( 'My account', 'miroir' ), function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' ) );
-			$row( __( 'Customer care', 'miroir' ), miroir_page_url( 'contact' ) );
-		}
-		?>
-		<a class="flow__label panel__shortcut" href="<?php echo esc_url( add_query_arg( 'panel', 'currency' ) ); ?>" data-panel-open="currency"><?php echo esc_html( miroir_text( 'menu_currency', function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : 'IDR' ) ); ?></a>
+		<?php miroir_menu( 'primary', miroir_menu_fallback( 'primary' ), 'panel__links' ); ?>
+		<a class="panel-row hair-b" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' ) ); ?>"><?php echo esc_html( miroir_text( 'nav_account' ) ); ?></a>
+		<?php $currency = function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : 'IDR'; ?>
+		<a class="panel__currency" href="<?php echo esc_url( add_query_arg( 'panel', 'currency' ) ); ?>" data-panel-open="currency" aria-controls="currency-panel" aria-expanded="false" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: currency code. */ __( 'Currency: %s', 'miroir' ), $currency ) ); ?>"><?php echo esc_html( $currency ); ?></a>
 	</nav>
-</div>
+</dialog>
 
 <dialog class="flow panel panel--modal" id="search-panel" data-panel="search" aria-labelledby="search-panel-title"<?php echo 'search' === $open ? ' open' : ''; ?>>
 	<div class="flow__col">

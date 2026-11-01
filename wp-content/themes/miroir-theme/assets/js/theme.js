@@ -105,13 +105,36 @@
 	} );
 
 	/*
-	 * Search and currency use native modal dialogs; menu and filters replace
+	 * Menu, search and currency use native modal dialogs; filters replace
 	 * page content. Links fall back to ?panel=… reloads without JS.
 	 */
 	var main = document.getElementById( 'main' );
 	var activeModal = null;
 	var modalOpener = null;
 	var modalScroll = null;
+	var drawerPlaceholder = null;
+	var drawerCloseTimer = null;
+
+	function restoreDrawerNavbar( dialog ) {
+		if ( dialog.classList.contains( 'panel--drawer' ) && drawerPlaceholder ) {
+			drawerPlaceholder.replaceWith( dialog.querySelector( '.site-nav' ) );
+			drawerPlaceholder = null;
+			window.clearTimeout( drawerCloseTimer );
+			dialog.classList.remove( 'is-closing' );
+		}
+	}
+
+	function updateDrawerViewport() {
+		if ( ! activeModal || ! activeModal.classList.contains( 'panel--drawer' ) ) {
+			return;
+		}
+		// Mobile WordPress toolbars scroll away; reserve only their visible portion.
+		var toolbar = document.getElementById( 'wpadminbar' );
+		var rect = toolbar && toolbar.getBoundingClientRect();
+		var offset = rect && rect.width && rect.height ? Math.max( 0, Math.min( rect.bottom, window.innerHeight ) ) : 0;
+		activeModal.style.setProperty( '--panel-toolbar-offset', offset + 'px' );
+	}
+	window.addEventListener( 'resize', updateDrawerViewport );
 
 	// Keep the native scrollbar in place while the background stays still.
 	function preventBackgroundScroll( event ) {
@@ -138,6 +161,7 @@
 		// Keep dialogs outside page panels so the menu cannot hide them.
 		document.body.appendChild( dialog );
 		dialog.addEventListener( 'close', function () {
+			restoreDrawerNavbar( dialog );
 			if ( activeModal !== dialog ) {
 				return;
 			}
@@ -154,6 +178,12 @@
 				modalOpener.focus( { preventScroll: true } );
 			}
 		} );
+		dialog.addEventListener( 'cancel', function ( event ) {
+			if ( dialog.classList.contains( 'panel--drawer' ) ) {
+				event.preventDefault();
+				closePanels();
+			}
+		} );
 		var backdropPress = false;
 		function outside( event ) {
 			var rect = dialog.getBoundingClientRect();
@@ -166,13 +196,16 @@
 			}
 		} );
 	} );
-	document.querySelectorAll( '[data-panel-open="search"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
+	document.querySelectorAll( '[data-panel-open="nav"], [data-panel-open="search"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
 		toggle.setAttribute( 'aria-haspopup', 'dialog' );
 	} );
 
 	function setExpanded( name ) {
 		document.querySelectorAll( '[data-panel-open]' ).forEach( function ( toggle ) {
 			toggle.setAttribute( 'aria-expanded', toggle.dataset.panelOpen === name ? 'true' : 'false' );
+			if ( toggle.dataset.panelOpen === 'nav' ) {
+				toggle.setAttribute( 'aria-label', name === 'nav' ? toggle.dataset.closeLabel : toggle.dataset.menuLabel );
+			}
 		} );
 	}
 
@@ -182,12 +215,55 @@
 			return false;
 		}
 		if ( panel.tagName === 'DIALOG' ) {
-			modalOpener = document.activeElement;
-			modalScroll = { x: window.scrollX, y: window.scrollY };
+			if ( activeModal === panel ) {
+				if ( name === 'nav' ) {
+					if ( panel.classList.contains( 'is-closing' ) ) {
+						window.clearTimeout( drawerCloseTimer );
+						panel.classList.remove( 'is-closing' );
+						setExpanded( name );
+					} else {
+						closePanels();
+					}
+				}
+				return true;
+			}
+			if ( activeModal ) {
+				// Replace the drawer with search/currency and keep its original opener.
+				var modalUrl = new URL( window.location.href );
+				if ( modalUrl.searchParams.get( 'panel' ) === activeModal.dataset.panel ) {
+					modalUrl.searchParams.delete( 'panel' );
+					window.history.replaceState( null, '', modalUrl );
+				}
+				restoreDrawerNavbar( activeModal );
+				activeModal.close();
+			} else {
+				modalOpener = document.activeElement;
+				modalScroll = { x: window.scrollX, y: window.scrollY };
+			}
 			activeModal = panel;
+			updateDrawerViewport();
+			if ( name === 'nav' ) {
+				var navbar = document.querySelector( '.site-nav' );
+				if ( navbar ) {
+					// Keep the same live navbar and toggle inside the modal focus scope.
+					drawerPlaceholder = document.createElement( 'div' );
+					drawerPlaceholder.style.height = navbar.getBoundingClientRect().height + 'px';
+					navbar.before( drawerPlaceholder );
+					panel.prepend( navbar );
+					modalOpener = navbar.querySelector( '.site-nav__toggle' );
+				}
+				panel.querySelector( '.flow__col' ).scrollTop = 0;
+			}
 			panel.removeAttribute( 'open' );
 			panel.showModal();
+			// Resolve the resting lines before starting their morph animation.
+			if ( name === 'nav' ) {
+				panel.querySelector( '.site-nav__menu-mark' ).getBoundingClientRect();
+			}
 			setExpanded( name );
+			if ( name === 'nav' ) {
+				panel.querySelector( '.site-nav__toggle' ).focus( { preventScroll: true } );
+			}
 			var field = panel.querySelector( 'input:not([type="hidden"]):not([type="radio"]), input:checked' );
 			if ( field ) {
 				field.focus( { preventScroll: true } );
@@ -210,6 +286,16 @@
 
 	function closePanels() {
 		if ( activeModal ) {
+			if ( activeModal.classList.contains( 'panel--drawer' ) && ! window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ) {
+				if ( activeModal.classList.contains( 'is-closing' ) ) {
+					return;
+				}
+				var drawer = activeModal;
+				drawer.classList.add( 'is-closing' );
+				setExpanded( '' );
+				drawerCloseTimer = window.setTimeout( function () { drawer.close(); }, 220 );
+				return;
+			}
 			activeModal.close();
 			return;
 		}
