@@ -48,6 +48,7 @@ img { height: auto; }
 	position: absolute !important;
 	width: 1px;
 	height: 1px;
+	margin: -1px; /* As core: a live region at the end of the page must not add a pixel below it. */
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);

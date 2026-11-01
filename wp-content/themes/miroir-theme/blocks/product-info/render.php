@@ -10,7 +10,12 @@ if ( ! $product ) {
 	return;
 }
 if ( miroir_block_preview() ) {
-	$description = apply_filters( 'the_content', $product->get_description() );
+	// The sample product is the current post here: Elementor's editor fills the_content of the
+	// edited template, which would print the template again inside the description.
+	$current         = $GLOBALS['post'] ?? null;
+	$GLOBALS['post'] = get_post( $product->get_id() ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+	$description     = apply_filters( 'the_content', $product->get_description() );
+	$GLOBALS['post'] = $current; // phpcs:ignore WordPress.WP.GlobalVariablesOverride
 } else {
 	ob_start();
 	the_content();

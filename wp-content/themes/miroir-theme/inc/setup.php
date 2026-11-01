@@ -115,7 +115,8 @@ function miroir_global_styles_css() {
 	if ( $vars ) {
 		$css .= ":root{{$vars}}";
 	}
-	return $css . wp_get_global_stylesheet( array( 'custom-css' ) );
+	// Elementor Global Colors / Fonts override the presets (inc/elementor/kit-tab.php).
+	return apply_filters( 'miroir_global_styles_css', $css . wp_get_global_stylesheet( array( 'custom-css' ) ) );
 }
 
 add_action(
@@ -127,7 +128,7 @@ add_action(
 			'inter-tight-var-latin' => empty( $styles['typography']['fontFamily'] ),
 			'dm-mono-400-latin'     => empty( $styles['elements']['caption']['typography']['fontFamily'] ),
 		);
-		foreach ( array_keys( array_filter( $fonts ) ) as $font ) {
+		foreach ( array_keys( array_filter( apply_filters( 'miroir_bundled_fonts', $fonts ) ) ) as $font ) {
 			printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( MIROIR_THEME_URI . "/assets/fonts/{$font}.woff2" ) );
 		}
 	},

@@ -299,7 +299,35 @@ function miroir_texts() {
 }
 
 /**
- * An editable string: the Customizer value, or its default.
+ * Saved texts: Customizer values, or Elementor Site Settings > Miroir > Labels
+ * while Elementor manages the site (filter in inc/elementor/kit-tab.php).
+ *
+ * @return array Text id => text.
+ */
+function miroir_saved_texts() {
+	return (array) apply_filters( 'miroir_saved_texts', (array) get_theme_mod( 'miroir_text', array() ) );
+}
+
+/**
+ * Renders with some texts replaced, e.g. the texts set on an Elementor widget
+ * for the section it prints. Scopes nest; the innermost wins.
+ *
+ * @param array    $texts  Text id => text; empty texts are ignored.
+ * @param callable $render Prints or returns the section.
+ * @return mixed What $render returns.
+ */
+function miroir_with_texts( array $texts, callable $render ) {
+	$GLOBALS['miroir_text_scopes'][] = array_filter( array_map( 'strval', $texts ), fn( $text ) => '' !== trim( $text ) );
+	try {
+		return $render();
+	} finally {
+		array_pop( $GLOBALS['miroir_text_scopes'] );
+	}
+}
+
+/**
+ * An editable string: a section's own text (miroir_with_texts()), the saved
+ * value, or its default.
  *
  * @param string $id      Text id from miroir_texts().
  * @param mixed  ...$args sprintf() arguments for %s / %d placeholders.
@@ -308,8 +336,14 @@ function miroir_texts() {
 function miroir_text( $id, ...$args ) {
 	$texts   = miroir_texts();
 	$default = $texts[ $id ][1] ?? $id;
-	$mods    = (array) get_theme_mod( 'miroir_text', array() );
+	$mods    = miroir_saved_texts();
 	$text    = isset( $mods[ $id ] ) && '' !== trim( (string) $mods[ $id ] ) ? (string) $mods[ $id ] : $default;
+	foreach ( array_reverse( $GLOBALS['miroir_text_scopes'] ?? array() ) as $scope ) {
+		if ( isset( $scope[ $id ] ) ) {
+			$text = $scope[ $id ];
+			break;
+		}
+	}
 	if ( ! $args ) {
 		return $text;
 	}

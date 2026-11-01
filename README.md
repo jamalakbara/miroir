@@ -51,3 +51,30 @@ services in `docker-compose.yml`.
 
 The plugin volume survives ordinary `down`/`up` commands. `docker compose down -v`
 also deletes installed vendor plugins, along with database and core volumes.
+
+The volume root belongs to root, so WP-CLI (uid 33) cannot create a new plugin
+folder. Install a new vendor plugin as root, then hand it to uid 33:
+
+```bash
+docker compose run --rm --user 0:0 --entrypoint sh wpcli -c 'wp --allow-root plugin install <slug> && chown -R 33:33 /var/www/html/wp-content/plugins/<slug>'
+```
+
+## Editing the storefront (Elementor)
+
+The site is edited in Elementor (free). The `miroir-*` widgets print the theme's
+own sections, so the storefront stays 1:1 with the design in `docs/design/miroir.pen`.
+
+- Home, bag, checkout and account: Pages > edit with Elementor.
+- Header, footer, product page, shop/collections, search, text pages, 404 and
+  maintenance: Templates > Saved Templates ("Miroir: …"). Which template draws
+  each screen: Site Settings > Miroir > Templates.
+- Colours and fonts: Site Settings > Global Colors / Global Fonts ("miroir_*").
+  Layout, products, linked pages, maintenance and every label: Site Settings > Miroir.
+
+```bash
+docker compose run --rm wpcli miroir elementor setup [--force]   # build templates and pages from the current design
+docker compose run --rm wpcli miroir elementor reset             # back to the theme's block templates
+```
+
+With Elementor inactive, or a screen without a template, the theme's block
+templates draw the site as before.
