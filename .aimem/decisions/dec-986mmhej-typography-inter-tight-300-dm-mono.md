@@ -4,15 +4,16 @@ id: dec-986mmhej
 type: decision
 title: "Typography: Inter Tight 300 + DM Mono"
 summary: "User picked font pair 02 (2026-10-31): Inter Tight Light for UI/body/prices, DM Mono for logo, product names and labels"
-status: proposed
+status: superseded
 trust: agent
 roles: [all]
 tags: [design, typography]
 paths: [docs/design/miroir.pen]
 author: agent:claude-code:claude-opus-5-5
 created: 2026-10-30T22:31:07Z
-updated: 2026-10-30T22:31:07Z
+updated: 2026-11-02T06:54:14Z
 links: [dec-bf8ede4p]
+superseded_by: dec-he3rv7z6
 ---
 
 Chosen from the 'Font Pairs' board in miroir.pen (5 free Google Font pairs).
