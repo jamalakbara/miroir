@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 31 (proposed 26, accepted 1, superseded 4)
 - task: 1 (open 1)
 - memory: 36 (active 36)
-- handoff: 82 (final 82)
+- handoff: 83 (final 83)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-xrhz1jsr 2026-11-02 (agent:pen-dev) — Done: Added and verified Font Pairs / Avenir board s0OpM to the right of the original board with five Avenir Roman pairings: Instrument Serif, Bodoni Moda, EB Garamond, Cormorant Garamond, DM Mono. A…
 - hnd-9d6jeb87 2026-11-01 (human:akbar) — Done: Moved three loose Bag drawer from navbar screens into Lofi Design matching Desktop/Tablet/Mobile shopping rows alongside screens 43–44. Preserved components and reference boards separately; ver…
 - hnd-afrv27bd 2026-11-01 (human:akbar) — Done: Reviewed automatic listing scroll-loading diff for commit. JavaScript syntax and diff whitespace checks pass; prior responsive browser, error fallback and no-JS checks passed. Committing scoped…
 - hnd-8q1nbwtx 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Restyled PDP quantity selector from boxed stepper to underlined Quantity Field row matching size select (product-buy.php markup, product.css .qty-field, editable quantity_label text). Pen.dev:…
 - hnd-f9xe98tw 2026-11-01 (agent:claude-code:claude-opus-5-5) — Done: Added PDP quantity stepper (product-buy.php, product.css, theme.js): clamps to stock/variation limits, disables -/+ at limits, hides for sold-individually variations; Add to bag posts chosen qt…
-- hnd-809sxpk2 2026-11-01 (human:akbar) — Done: Reviewed and staged scoped bag drawer commit including responsive confirmation, navbar entry, editable quantities, toolbar clearance, native validation, regression scripts and Pen.dev designs.…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
