@@ -1,0 +1,4 @@
+#!/bin/sh
+# git pull --rebase: same as post-merge (ORIG_HEAD is the tip before the rebase).
+[ "$1" = rebase ] || exit 0
+exec "$(dirname "$0")/post-merge"

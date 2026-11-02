@@ -27,6 +27,55 @@ docker compose run --rm wpcli plugin list
 
 Stop: `docker compose down` (add `-v` to wipe the database and WordPress core volumes).
 
+## Working on two machines
+
+Git carries the code. Everything else is synced by two scripts. On macOS run
+`tools/*.sh` in Terminal. On Windows run the `tools\*.cmd` wrappers from
+PowerShell (`tools\snapshot.cmd export`): they use Git Bash, because a plain
+`bash` in PowerShell is WSL's and fails. The commands below use the macOS form.
+
+| What | Where it lives | Synced by |
+|---|---|---|
+| Theme, `miroir-*` plugins, tools, design | git | `git push` / `git pull` |
+| Vendor plugins (Elementor, WooCommerce …) | Docker `wp_plugins` volume | `plugins.txt` + git hooks |
+| Pages, Elementor layouts, settings, products, orders | Docker `db_data` volume | `tools/snapshot.sh` |
+| Uploads, licensed Avenir fonts | gitignored files | `tools/snapshot.sh` |
+
+Once per machine: set `MIROIR_SNAPSHOT_DIR` in `.env` to a private folder both
+machines sync (Google Drive, iCloud), then:
+
+```bash
+tools/setup.sh
+```
+
+```bash
+tools/snapshot.sh import
+```
+
+Every switch between machines:
+
+```bash
+tools/snapshot.sh export   # on the machine you leave, plus git push
+```
+
+```bash
+tools/snapshot.sh import   # on the machine you arrive at, after git pull
+```
+
+- **Plugins sync themselves.** Install or update one in wp-admin and commit: the
+  pre-commit hook writes `plugins.txt`. On the other machine `git pull` runs the
+  post-merge hook, which installs, updates, activates or removes exactly what
+  changed. Plugin settings live in the database and travel with the snapshot.
+  `tools/plugins.sh sync` applies the whole list by hand. A plugin that is not on
+  wordpress.org cannot be installed this way.
+- **Content does not merge.** Work on one machine at a time. Import replaces the
+  database; the previous one is kept in `.snapshots-backup/` (last three). Export
+  refuses to overwrite a snapshot this machine never imported (`--force` overrides).
+- Unchanged uploads are not re-packed or re-extracted. `tools/snapshot.sh status`
+  shows what this machine last synced; `git pull` also says when the snapshot is newer.
+- The snapshot holds customer data and password hashes: keep it private, never in git.
+- Hooks need Docker running; otherwise they skip with a message. `MIROIR_SKIP_HOOKS=1` turns them off.
+
 ## Plugin storage on Windows
 
 Third-party plugins run from the Linux `wp_plugins` volume to avoid slow Windows

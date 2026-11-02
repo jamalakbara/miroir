@@ -1,1 +1,5 @@
 .aimem/INDEX.md merge=ours
+*.sh text eol=lf
+.githooks/* text eol=lf
+plugins.txt text eol=lf
+*.cmd text eol=crlf

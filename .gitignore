@@ -1,6 +1,10 @@
 # Secrets
 .env
 
+# Content snapshots (customer data, password hashes) and pre-import backups: tools/snapshot.sh
+.snapshots/
+.snapshots-backup/
+
 # WordPress runtime
 wp-content/uploads/
 wp-content/upgrade/

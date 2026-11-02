@@ -1,0 +1,10 @@
+#!/bin/sh
+# Record the installed vendor plugins in plugins.txt so the other machine installs the same set.
+# Never blocks a commit. Skip with MIROIR_SKIP_HOOKS=1.
+[ -n "${MIROIR_SKIP_HOOKS:-}" ] && exit 0
+# "git commit <paths>" (aimem uses it) commits from a temporary index; adding there would
+# slip plugins.txt into that commit and leave the real index out of step. Next full commit picks it up.
+case "${GIT_INDEX_FILE:-index}" in *next-index*) exit 0 ;; esac
+bash tools/plugins.sh freeze --hook || echo "plugins: could not refresh plugins.txt (run tools/plugins.sh freeze)" >&2
+[ -f plugins.txt ] && git add plugins.txt
+exit 0
