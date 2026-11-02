@@ -80,7 +80,7 @@ function miroir_elementor_globals() {
 	return array(
 		'colors' => $colors,
 		'fonts'  => array(
-			'miroir_sans' => array( '--font-sans', __( 'Text (Inter Tight)', 'miroir' ), 'Inter Tight', 'system-ui, sans-serif' ),
+			'miroir_sans' => array( '--font-sans', __( 'Text (Avenir)', 'miroir' ), 'Avenir', 'system-ui, sans-serif' ),
 			'miroir_mono' => array( '--font-mono', __( 'Labels (DM Mono)', 'miroir' ), 'DM Mono', 'ui-monospace, monospace' ),
 		),
 	);

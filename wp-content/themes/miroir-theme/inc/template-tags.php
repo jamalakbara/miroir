@@ -314,7 +314,7 @@ function miroir_whatsapp_float() {
 		'<a class="wa-float" href="%1$s" target="_blank" rel="noopener" aria-label="%2$s">%3$s</a>',
 		esc_url( $url ),
 		esc_attr__( 'Chat with us on WhatsApp', 'miroir' ),
-		miroir_icon( 'message-circle', 24 ) // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG.
+		miroir_icon( 'whatsapp', 24 ) // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG.
 	);
 }
 

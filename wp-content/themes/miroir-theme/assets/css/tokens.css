@@ -19,7 +19,7 @@
 	--logo: var(--wp--preset--color--logo, #242122);
 
 	--font-mono: var(--wp--preset--font-family--mono, "DM Mono", ui-monospace, monospace);
-	--font-sans: var(--wp--preset--font-family--sans, "Inter Tight", system-ui, sans-serif);
+	--font-sans: var(--wp--preset--font-family--sans, "Avenir", "Avenir", "Inter Tight", system-ui, sans-serif);
 
 	--text-xs: 11px;
 	--text-sm: 12px;
@@ -61,7 +61,7 @@
 	--search-cols-d: 4;
 	--search-cols-t: 3;
 	--search-cols-m: 2;
-	--similar-cols-d: 7;
+	--similar-cols-d: 4;
 	--image-ratio: 3 / 4;
 	--logo-w: 110px;
 	--backdrop: color-mix(in srgb, var(--ink) 40%, transparent);

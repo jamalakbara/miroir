@@ -1,0 +1,263 @@
+[
+  {
+    "name": "Vibe Stripe White",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed striped shirt with a soft, easy silhouette and subtle volume on the sleeves. The classic white stripe pattern makes it easy to style for both casual and polished looks.",
+    "weight_grams": 250,
+    "details": "Material : Cotton  | All Size Fit to XXL | Bust : up to 120 cm | Length: 74 cm | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-59.jpg",
+      "catalog-60.jpg",
+      "catalog-61.jpg",
+      "catalog-62.jpg",
+      "catalog-63.jpg"
+    ],
+    "source_row": 4
+  },
+  {
+    "name": "Tempo Stripe White",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed white striped shirt with a longer silhouette and softly curved shape. Simple yet chic, perfect for effortless everyday styling.",
+    "weight_grams": 250,
+    "details": "Material : Cotton  | All Size Fit to XXL | Bust : up to 120 cm | Length: 75 cm  | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-64.jpg",
+      "catalog-65.jpg",
+      "catalog-66.jpg",
+      "catalog-67.jpg",
+      "catalog-68.jpg"
+    ],
+    "source_row": 5
+  },
+  {
+    "name": "Lui Stripe Yellow",
+    "price": "325000",
+    "category": "top",
+    "description": "A playful striped top with a loose silhouette and wide sleeves. The soft yellow stripe pattern adds a fresh and cheerful touch to your everyday look.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 140 cm | Length: 55 cm | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-69.jpg",
+      "catalog-70.jpg",
+      "catalog-71.jpg",
+      "catalog-72.jpg",
+      "catalog-73.jpg"
+    ],
+    "source_row": 6
+  },
+  {
+    "name": "Kala Stripe Yellow",
+    "price": "325000",
+    "category": "top",
+    "description": "A feminine striped top with a relaxed shape and short puff sleeves. The soft yellow stripes give it a fresh and effortless feel.",
+    "weight_grams": 250,
+    "details": "Material : Cotton  | All Size Fit to XXL | Bust : up to 120 cm | Length: 65 cm |  Arm Hole : 50 cm",
+    "photos": [
+      "catalog-74.jpg",
+      "catalog-75.jpg",
+      "catalog-76.jpg",
+      "catalog-77.jpg",
+      "catalog-78.jpg"
+    ],
+    "source_row": 7
+  },
+  {
+    "name": "Devon Cream Pants",
+    "price": "425000",
+    "category": "pants",
+    "description": "Relaxed wide-leg pants with a soft, flowing silhouette and an easy everyday shape. The simple cream color makes them easy to pair with almost anything.",
+    "weight_grams": 350,
+    "details": "Material : Cotton  | All Size Fit to XXL | Waist : up to 108 cm | Length: 93 cm |  Thigh : 98 cm",
+    "photos": [
+      "catalog-79.jpg",
+      "catalog-80.jpg",
+      "catalog-81.jpg",
+      "catalog-82.jpg",
+      "catalog-83.jpg",
+      "catalog-84.jpg"
+    ],
+    "source_row": 8
+  },
+  {
+    "name": "Lumi Pants",
+    "price": "425000",
+    "category": "pants",
+    "description": "Relaxed wide-leg pants with a cropped length and clean, minimal shape. An easy staple for creating effortless everyday looks.",
+    "weight_grams": 350,
+    "details": "Material : Cotton | All Size Fit to L | Waist : up to 88 cm | Thigh : 74 cm",
+    "photos": [
+      "workbook-row-9.jpg",
+      "catalog-85.jpg",
+      "catalog-86.jpg",
+      "catalog-87.jpg",
+      "catalog-88.jpg",
+      "catalog-89.jpg"
+    ],
+    "source_row": 9
+  },
+  {
+    "name": "Wave Stripe Navy",
+    "price": "325000",
+    "category": "top",
+    "description": "A sleeveless top with a relaxed silhouette and subtle gathered details around the neckline. The navy stripe pattern adds a timeless touch to the simple design.",
+    "weight_grams": 250,
+    "details": "Material : Cotton  | All Size Fit to XXL | Bust : up to 140 cm | Length: 60 cm | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-90.jpg",
+      "catalog-91.jpg",
+      "catalog-92.jpg",
+      "catalog-93.jpg",
+      "catalog-94.jpg",
+      "catalog-95.jpg"
+    ],
+    "source_row": 10
+  },
+  {
+    "name": "Lui Stripe Green",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed striped top with a loose silhouette and wide sleeves. The green and white stripes give the look a fresh and effortless feel.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 140 cm | Length: 55 cm | Arm Hole : 50 cm",
+    "photos": [
+      "workbook-row-11.jpg",
+      "catalog-104.jpg",
+      "catalog-105.jpg",
+      "catalog-106.jpg",
+      "catalog-107.jpg"
+    ],
+    "source_row": 11
+  },
+  {
+    "name": "Emme Stripe Green",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed striped shirt with a soft oversized silhouette and classic collar. The green stripe pattern gives this everyday piece a clean and timeless look.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 134 cm | Length: 65 cm | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-108.jpg",
+      "catalog-109.jpg"
+    ],
+    "source_row": 12
+  },
+  {
+    "name": "Morty Stripe Green",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed striped shirt with a loose silhouette, pointed collar, and long sleeves. The green stripe pattern makes it an easy piece for everyday styling.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 148 cm | Length: 77 cm | Arm Hole : 50 cm",
+    "photos": [
+      "workbook-row-13.jpg"
+    ],
+    "source_row": 13
+  },
+  {
+    "name": "Tara Green",
+    "price": "325000",
+    "category": "top",
+    "description": "An oversized shirt with a relaxed silhouette. Easy and versatile, perfect for effortless everyday looks or relaxed layering.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 166 cm | Length: 73 cm | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-100.jpg",
+      "catalog-99.jpg",
+      "catalog-101.jpg",
+      "catalog-102.jpg",
+      "catalog-103.jpg"
+    ],
+    "source_row": 14
+  },
+  {
+    "name": "Isley Stripe Navy",
+    "price": "325000",
+    "category": "top",
+    "description": "A statement striped top with a ruffled collar, voluminous sleeves, and a softly shaped waist. The navy stripes add a classic touch to the feminine silhouette.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to L | Bust : up to 108 cm | Length: 63 cm | Arm Hole : 50 cm",
+    "photos": [
+      "workbook-row-15.jpg"
+    ],
+    "source_row": 15
+  },
+  {
+    "name": "Flow Stripe Navy",
+    "price": "325000",
+    "category": "top",
+    "description": "A sleeveless striped top with a softly fitted waist and subtle gathered details. The navy stripe pattern keeps the look classic while the silhouette adds a feminine touch.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 120 cm | Length: 55 cm | Arm Hole : 50 cm",
+    "photos": [
+      "workbook-row-16.jpg"
+    ],
+    "source_row": 16
+  },
+  {
+    "name": "Devon Black Pants",
+    "price": "425000",
+    "category": "pants",
+    "description": "Relaxed pants with a voluminous, curved silhouette and gathered details around the ankles. The classic black color makes them easy to style from day to night.",
+    "weight_grams": 350,
+    "details": "Material : Cotton  | All Size Fit to XXL | Waist : up to 108 cm | Length: 93 cm |  Thigh : 98 cm",
+    "photos": [
+      "workbook-row-17.jpg"
+    ],
+    "source_row": 17
+  },
+  {
+    "name": "Emme Stripe Brown",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed striped shirt with a classic collar and easy oversized silhouette. The brown stripes give it a warm, timeless feel that works effortlessly for everyday looks.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 134 cm | Length: 65 cm | Arm Hole : 50 cm",
+    "photos": [
+      "workbook-row-18.jpg"
+    ],
+    "source_row": 18
+  },
+  {
+    "name": "Morty Stripe Brown",
+    "price": "325000",
+    "category": "top",
+    "description": "A relaxed striped shirt with a classic collar, long sleeves, and an easy silhouette. The brown stripe pattern adds a simple yet polished touch to everyday styling.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 148 cm | Length: 77 cm | Arm Hole : 50 cm",
+    "photos": [
+      "workbook-row-19.jpg"
+    ],
+    "source_row": 19
+  },
+  {
+    "name": "Tara Stripe Blue",
+    "price": "325000",
+    "category": "top",
+    "description": "An oversized striped shirt with a relaxed silhouette and dropped shoulders. Easy and versatile, perfect for effortless everyday looks or relaxed layering.",
+    "weight_grams": 250,
+    "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 166 cm | Length: 73 cm | Arm Hole : 50 cm",
+    "photos": [
+      "catalog-110.jpg",
+      "catalog-111.jpg",
+      "catalog-112.jpg",
+      "catalog-113.jpg"
+    ],
+    "source_row": 20
+  },
+  {
+    "name": "Sabine White Pants",
+    "price": "425000",
+    "category": "pants",
+    "description": "Relaxed balloon pants with a voluminous silhouette and gathered cuffs. Designed with a comfortable elastic waistband and practical side pockets, perfect for an effortless everyday look.",
+    "weight_grams": 350,
+    "details": "Material : Cotton  | All Size Fit to XXL | Waist : up to 108 cm | Length: 93 cm |  Thigh : 98 cm",
+    "photos": [
+      "catalog-114.jpg",
+      "catalog-115.jpg",
+      "catalog-116.jpg"
+    ],
+    "source_row": 21
+  }
+]

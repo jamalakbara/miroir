@@ -93,7 +93,7 @@ if ( $product->is_type( 'variable' ) ) :
 
 <?php if ( $wa_url ) : ?>
 	<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener" data-wa-product="<?php echo absint( $product->get_id() ); ?>">
-		<?php echo miroir_icon( 'message-circle', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
+		<?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
 		<?php echo esc_html( miroir_text( 'order_whatsapp' ) ); ?>
 	</a>
 	<p class="buy-hint"><?php echo esc_html( miroir_text( 'buy_hint' ) ); ?></p>

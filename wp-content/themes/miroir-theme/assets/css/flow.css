@@ -6,13 +6,13 @@
 .flow__col { display: flex; flex-direction: column; gap: 24px; width: 820px; max-width: 100%; }
 .flow__form { display: contents; }
 
-.flow__title { font-size: var(--text-xl); line-height: 42px; font-weight: 300; letter-spacing: 0; }
-.flow__heading { font-size: var(--text-lg); line-height: 29px; font-weight: 300; letter-spacing: 0; }
+.flow__title { font-size: var(--text-xl); line-height: 42px; font-weight: 400; letter-spacing: 0; }
+.flow__heading { font-size: var(--text-lg); line-height: 29px; font-weight: 400; letter-spacing: 0; }
 .flow__intro,
-.flow__copy { font-size: var(--text-base); line-height: 20px; font-weight: 300; letter-spacing: 0; }
-.flow__help { font-size: var(--text-sm); line-height: 18px; font-weight: 300; letter-spacing: 0; }
+.flow__copy { font-size: var(--text-base); line-height: 20px; font-weight: 400; letter-spacing: 0; }
+.flow__help { font-size: var(--text-sm); line-height: 18px; font-weight: 400; letter-spacing: 0; }
 .flow__help a, .flow__intro a { text-decoration: underline; text-underline-offset: 3px; }
-.flow__note { color: var(--ink-2); font-size: var(--text-xs); line-height: 17px; font-weight: 300; letter-spacing: 0; }
+.flow__note { color: var(--ink-2); font-size: var(--text-xs); line-height: 17px; font-weight: 400; letter-spacing: 0; }
 .flow__label {
 	font-family: var(--font-mono);
 	font-size: var(--text-sm);
@@ -58,7 +58,7 @@ wc-order-attribution-inputs { display: none; }
 .flow--loose .flow__label { line-height: 19px; }
 
 .flow__content { display: contents; }
-.flow__content > p { font-size: var(--text-base); line-height: 21px; font-weight: 300; letter-spacing: 0; }
+.flow__content > p { font-size: var(--text-base); line-height: 21px; font-weight: 400; letter-spacing: 0; }
 .flow__content > p.note-draft { font-family: var(--font-mono); font-size: var(--text-xs); line-height: 18px; font-weight: 400; }
 .flow__content > p.note-scope { font-size: var(--text-xs); line-height: 18px; }
 .flow__content > .section {
@@ -78,7 +78,7 @@ wc-order-attribution-inputs { display: none; }
 	font-weight: 400;
 	letter-spacing: 0;
 }
-.flow__content > .section p { font-size: var(--text-base); line-height: 21px; font-weight: 300; letter-spacing: 0; }
+.flow__content > .section p { font-size: var(--text-base); line-height: 21px; font-weight: 400; letter-spacing: 0; }
 .flow__content > .wp-block-buttons { display: flex; flex-direction: column; gap: 24px; }
 .flow__content .wp-block-button { display: flex; }
 .flow__content .wp-block-button__link {
@@ -246,7 +246,7 @@ form.cart[aria-busy="true"] .single_add_to_cart_button { opacity: 0.6; cursor: w
 	padding: 10px 0;
 	font-size: var(--text-md);
 	line-height: 24px;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0;
 	text-decoration: underline;
 	text-underline-offset: 4px;
@@ -257,7 +257,7 @@ form.cart[aria-busy="true"] .single_add_to_cart_button { opacity: 0.6; cursor: w
 	box-shadow: 0 0.5px 0 var(--line);
 	font-size: var(--text-md);
 	line-height: 24px;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: var(--track-nav);
 }
 .site-main.has-panel > :not(.panel) { display: none; }
@@ -269,7 +269,7 @@ form.cart[aria-busy="true"] .single_add_to_cart_button { opacity: 0.6; cursor: w
 	padding: 16px 0;
 	font-size: var(--text-md);
 	line-height: 24px;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0;
 }
 .panel-row:hover { text-decoration: none; }
@@ -297,7 +297,7 @@ form.cart[aria-busy="true"] .single_add_to_cart_button { opacity: 0.6; cursor: w
 	color: var(--ink);
 	font-size: var(--text-base);
 	line-height: 20px;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0;
 	text-align: left;
 	cursor: not-allowed;

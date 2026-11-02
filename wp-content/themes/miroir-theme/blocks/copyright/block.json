@@ -11,7 +11,10 @@
 		"format": {
 			"type": "string",
 			"default": ""
-		}
+		},
+		"creditLabel": { "type": "string", "default": "Website by" },
+		"creditName": { "type": "string", "default": "jamalakbara.com" },
+		"creditUrl": { "type": "string", "default": "https://jamalakbara.com" }
 	},
 	"supports": {
 		"html": false,
@@ -28,7 +31,10 @@
 				"type": "text",
 				"label": "Text",
 				"help": "Empty: © {year} {site}"
-			}
+			},
+			{ "attr": "creditLabel", "type": "text", "label": "Website credit label" },
+			{ "attr": "creditName", "type": "text", "label": "Website credit name (empty: hide credit)" },
+			{ "attr": "creditUrl", "type": "text", "label": "Website credit URL" }
 		]
 	}
 }

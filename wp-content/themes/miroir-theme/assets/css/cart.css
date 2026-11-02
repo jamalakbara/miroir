@@ -29,11 +29,11 @@
 	letter-spacing: 0;
 }
 .cart-item__variant,
-.cart-item__remove { font-size: var(--text-sm); line-height: var(--lh-sans-12); font-weight: 300; }
+.cart-item__remove { font-size: var(--text-sm); line-height: var(--lh-sans-12); font-weight: 400; }
 .cart-item__variant { color: var(--ink-2); }
 .cart-item__remove { align-self: flex-start; color: var(--ink-3); }
 .cart-item__price,
-.cart-item__subtotal { font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 300; }
+.cart-item__subtotal { font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 400; }
 
 .cart-footer { display: flex; justify-content: space-between; gap: 60px; }
 .cart-footer__note { flex: none; align-self: flex-start; width: 340px; }
@@ -58,7 +58,7 @@
 	color: var(--ink-2);
 	font-size: var(--text-sm);
 	line-height: var(--lh-sans-12);
-	font-weight: 300;
+	font-weight: 400;
 	text-align: center;
 }
 
