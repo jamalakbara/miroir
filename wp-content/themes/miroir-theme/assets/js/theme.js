@@ -2,6 +2,68 @@
 ( function () {
 	'use strict';
 
+	/* Keep native disclosure semantics; defer closing until the answer has collapsed. */
+	document.querySelectorAll( '.info__content > .wp-block-details' ).forEach( function ( details ) {
+		var summary = details.querySelector( 'summary' );
+		if ( ! summary || ! details.animate ) {
+			return;
+		}
+		var answer = document.createElement( 'div' );
+		answer.className = 'faq__answer';
+		Array.from( details.childNodes ).forEach( function ( node ) {
+			if ( node !== summary ) {
+				answer.appendChild( node );
+			}
+		} );
+		details.appendChild( answer );
+		details.classList.add( 'faq--animated' );
+		var expanded = details.open;
+		var motion = window.matchMedia( '(prefers-reduced-motion: reduce)' );
+		var animation;
+		var fade;
+		details.classList.toggle( 'faq-is-open', expanded );
+		function settle() {
+			details.open = expanded;
+			if ( animation ) {
+				animation.cancel();
+				animation = null;
+			}
+			if ( fade ) {
+				fade.cancel();
+				fade = null;
+			}
+			details.classList.remove( 'faq-is-moving' );
+			answer.inert = ! expanded;
+		}
+		summary.addEventListener( 'click', function ( event ) {
+			/* Links inside an editable summary keep their own action. */
+			if ( event.target.closest( 'a' ) ) {
+				return;
+			}
+			event.preventDefault();
+			var start = details.getBoundingClientRect().height;
+			var opacity = details.open ? getComputedStyle( answer ).opacity : '0';
+			expanded = ! expanded;
+			details.classList.toggle( 'faq-is-open', expanded );
+			if ( motion.matches ) {
+				settle();
+				return;
+			}
+			if ( animation ) { animation.cancel(); }
+			if ( fade ) { fade.cancel(); }
+			details.open = true;
+			answer.inert = ! expanded;
+			var style = getComputedStyle( details );
+			var end = expanded ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height + parseFloat( style.paddingTop ) + parseFloat( style.paddingBottom );
+			var timing = { duration: expanded ? 280 : 220, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'both' };
+			details.classList.add( 'faq-is-moving' );
+			animation = details.animate( [ { height: start + 'px' }, { height: end + 'px' } ], timing );
+			fade = answer.animate( [ { opacity: opacity }, { opacity: expanded ? 1 : 0 } ], timing );
+			animation.onfinish = settle;
+		} );
+		motion.addEventListener( 'change', function () { if ( motion.matches ) { settle(); } } );
+	} );
+
 	/* Real photos get a skeleton; static design placeholders stay unchanged. */
 	var watchedImages = new WeakSet();
 	function watchImages( root ) {
@@ -40,6 +102,58 @@
 		} );
 	}
 	watchImages( document );
+	/* Mobile PDP: one photo per swipe, with clamped controls and keyboard navigation. */
+	document.querySelectorAll( '[data-pdp-gallery]' ).forEach( function ( gallery ) {
+		var track = gallery.querySelector( '[data-pdp-track]' );
+		var slides = track.querySelectorAll( '[data-pdp-slide]' );
+		var prev = gallery.querySelector( '[data-pdp-prev]' );
+		var next = gallery.querySelector( '[data-pdp-next]' );
+		var counter = gallery.querySelector( '[data-pdp-counter]' );
+		var mobile = window.matchMedia( '(max-width: 599px)' );
+		var active = 0;
+		function updateGallery() {
+			active = mobile.matches ? Math.min( slides.length - 1, Math.max( 0, Math.round( track.scrollLeft / Math.max( 1, track.clientWidth ) ) ) ) : 0;
+			prev.disabled = active === 0;
+			next.disabled = active >= slides.length - 1;
+			counter.textContent = ( active + 1 ) + ' / ' + slides.length;
+		}
+		function movePhoto( direction ) {
+			track.scrollTo( { left: Math.min( slides.length - 1, Math.max( 0, active + direction ) ) * track.clientWidth, behavior: window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ? 'instant' : 'smooth' } );
+		}
+		prev.addEventListener( 'click', function () { movePhoto( -1 ); } );
+		next.addEventListener( 'click', function () { movePhoto( 1 ); } );
+		track.addEventListener( 'scroll', updateGallery, { passive: true } );
+		track.addEventListener( 'keydown', function ( event ) {
+			if ( mobile.matches && event.target === track && ( event.key === 'ArrowLeft' || event.key === 'ArrowRight' ) ) {
+				event.preventDefault(); movePhoto( event.key === 'ArrowLeft' ? -1 : 1 );
+			}
+		} );
+		new ResizeObserver( function () {
+			track.scrollLeft = mobile.matches ? active * track.clientWidth : 0;
+			updateGallery();
+		} ).observe( track );
+		/* Keep the zoom control over the active mobile image. */
+		var zoom = gallery.querySelector( '[data-zoom]' );
+		if ( zoom ) {
+			gallery.appendChild( zoom );
+			zoom.addEventListener( 'click', function () {
+				var image = slides[active].querySelector( 'img' );
+				if ( ! image ) { return; }
+				var dialog = document.createElement( 'dialog' );
+				dialog.className = 'pdp-lightbox';
+				var close = document.createElement( 'button' );
+				close.type = 'button'; close.textContent = 'Close'; close.setAttribute( 'aria-label', 'Close enlarged photo' );
+				var full = document.createElement( 'img' );
+				full.src = image.dataset.full || image.currentSrc || image.src; full.alt = image.alt;
+				dialog.append( close, full ); document.body.appendChild( dialog );
+				close.addEventListener( 'click', function () { dialog.close(); } );
+				dialog.addEventListener( 'click', function ( event ) { if ( event.target === dialog ) { dialog.close(); } } );
+				dialog.addEventListener( 'close', function () { dialog.remove(); zoom.focus(); } );
+				dialog.showModal();
+			} );
+		}
+		updateGallery();
+	} );
 	// Load-more cards and WooCommerce cart updates can insert photos after startup.
 	new MutationObserver( function ( records ) {
 		records.forEach( function ( record ) {

@@ -72,10 +72,10 @@ function miroir_settings() {
 				'1 / 1' => __( 'Square 1:1', 'miroir' ),
 			),
 		),
-		'product_photos'         => array( 'section' => 'miroir_product', 'label' => __( 'Show product photos (off: grey placeholders)', 'miroir' ), 'type' => 'checkbox', 'default' => false ),
+		'product_photos'         => array( 'section' => 'miroir_product', 'label' => __( 'Show product photos (off: grey placeholders)', 'miroir' ), 'type' => 'checkbox', 'default' => true ),
 		'card_hover_image'       => array( 'section' => 'miroir_product', 'label' => __( 'Show second gallery image on hover', 'miroir' ), 'type' => 'checkbox', 'default' => false ),
-		'related_count'          => array( 'section' => 'miroir_product', 'label' => __( 'Similar products shown', 'miroir' ), 'type' => 'number', 'default' => 7, 'min' => 0, 'max' => 24 ),
-		'similar_cols_d'         => $cols( __( 'Similar products columns · desktop', 'miroir' ), 7, '--similar-cols-d' ),
+		'related_count'          => array( 'section' => 'miroir_product', 'label' => __( 'Similar products shown', 'miroir' ), 'type' => 'number', 'default' => 4, 'min' => 0, 'max' => 24 ),
+		'similar_cols_d'         => $cols( __( 'Similar products columns · desktop', 'miroir' ), 4, '--similar-cols-d' ),
 		'pdp_size_guide'         => array( 'section' => 'miroir_product', 'label' => __( 'Show size guide link on product pages', 'miroir' ), 'type' => 'checkbox', 'default' => false ),
 
 		// Pages the theme links to.

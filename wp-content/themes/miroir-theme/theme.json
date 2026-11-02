@@ -42,7 +42,7 @@
 			"dropCap": false,
 			"fluid": false,
 			"fontFamilies": [
-				{ "slug": "sans", "name": "Inter Tight", "fontFamily": "\"Inter Tight\", system-ui, sans-serif" },
+				{ "slug": "sans", "name": "Avenir", "fontFamily": "\"Avenir\", system-ui, sans-serif" },
 				{ "slug": "mono", "name": "DM Mono", "fontFamily": "\"DM Mono\", ui-monospace, monospace" }
 			],
 			"fontSizes": []

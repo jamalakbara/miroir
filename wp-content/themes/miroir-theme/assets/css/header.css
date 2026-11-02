@@ -66,7 +66,7 @@ a.announce:focus-visible { outline-offset: -2px; }
 	font-size: var(--text-md);
 	font-style: normal;
 	line-height: var(--lh-sans-16);
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: var(--track-nav);
 	white-space: nowrap;
 }

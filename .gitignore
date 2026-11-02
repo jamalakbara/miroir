@@ -29,3 +29,10 @@ Thumbs.db
 
 # Client quotation (private)
 docs/Quotation Webdev Miroir.pdf
+
+# Licensed design-only fonts (supply locally per machine, never commit)
+docs/design/fonts/*
+!docs/design/fonts/README.md
+
+# Licensed webfonts supplied by the site owner; keep available locally for deployment.
+wp-content/themes/miroir-theme/assets/fonts/Avenir-*.ttf

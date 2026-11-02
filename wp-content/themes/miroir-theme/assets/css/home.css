@@ -22,12 +22,14 @@
 .home-editorial--large-first .home-editorial__large { justify-self: start; }
 
 /* Preserve the Pen.dev banner proportions at each breakpoint. */
-.home-banner__image { width: 100%; aspect-ratio: 1328 / 520; }
+.home-banner > a { display: flex; justify-content: center; }
+.home-banner__image { width: min(100%, 800px); aspect-ratio: 2049 / 1152; }
+.home-banner__image img { object-fit: contain; }
 
 .home-caption {
 	font-size: var(--text-sm);
 	line-height: var(--lh-sans-12);
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0.2px;
 }
 
@@ -61,7 +63,7 @@
 	.home-editorial, .home-strip { padding: var(--home-space-t) var(--gutter) 32px; }
 	.home-editorial__row { --editorial-image-cap: calc((100svh - 128px) * 0.75); }
 
-	.home-banner__image { aspect-ratio: 704 / 420; }
+	.home-banner__image { width: min(100%, 560px); }
 
 	.home-strip .grid { --cols: 3; }
 }
@@ -80,7 +82,7 @@
 	.home-editorial__small { width: min(60%, calc(var(--editorial-image-cap) * 0.6)); }
 	.home-editorial__large { display: none; }
 
-	.home-banner__image { aspect-ratio: 1; }
+	.home-banner__image { width: min(100%, 300px); }
 
 	.home-strip .grid { --cols: 2; --col-gap: 12px; }
 }
