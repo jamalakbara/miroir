@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 48 (proposed 35, accepted 7, superseded 6)
 - task: 1 (open 1)
 - memory: 46 (active 44, superseded 2)
-- handoff: 122 (final 122)
+- handoff: 123 (final 123)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-71d7gsfy 2026-11-03 (agent:codex) — Done: Removed dark campaign-video overlay across mobile/tablet/desktop lo-fi and hi-fi designs and local storefront. Deleted all 15 Pen scrim nodes, including modal backgrounds and disabled solid-hea…
 - hnd-6j0n5awa 2026-11-03 (agent:codex) — Done: Removed and saved all 15 hero playback controls in miroir.pen across desktop/tablet/mobile lo-fi and hi-fi, including search/currency backgrounds and solid-header previews. Removed storefront b…
 - hnd-66840zfc 2026-11-03 (agent:claude) — Done: Replaced hero posters with first frames of the current films (desktop 1920x854, tablet 1536x864, mobile 780x1040, 30-57 KB) in theme and docs/design hifi; bundled poster/video URLs now versione…
 - hnd-w5ytnb12 2026-11-03 (agent:claude) — Done: Replaced mobile hero video with the client's newer mobile film (2494x3324, 5.1s), encoded to 1080x1440 1.2 MB per mem-t3w0d385; verified playback at 375px. Desktop video unchanged. · Next: Comm…
 - hnd-1bcd1cfk 2026-11-03 (agent:claude) — Done: Compressed bundled hero videos (14->4.4 MB desktop 2560x1138, 18->3.8 MB mobile 1080x1440, no audio, faststart); verified playback at desktop and 375px. · Next: Commit; optionally replace poste…
-- hnd-0trjpr45 2026-11-03 (agent:claude) — Done: Bundled client desktop/mobile hero MP4s in miroir-theme/assets/video, made them the default hero sources, updated test-video-hero.php (passes), verified playback at 1024 and 375 wide. · Next: O…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
