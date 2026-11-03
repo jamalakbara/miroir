@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 52 (proposed 37, accepted 8, superseded 7)
 - task: 1 (open 1)
 - memory: 49 (active 45, superseded 4)
-- handoff: 127 (final 127)
+- handoff: 128 (final 128)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-e4x0y4wp 2026-11-03 (agent:claude) — Done: Explored higher-quality hero encodes, then user chose to keep current videos; all encoding stopped; decision recorded. · Next: Commit hero video/poster changes.
 - hnd-13qx9rmt 2026-11-03 (agent:claude-haiku-5-5) — Done: Traced carousel vertical-scroll stuck. theme.js drag handler only activates on horizontal >=6px; the real trigger is CSS: .home-strip__grid overflow-x:auto forces overflow-y:auto, and card__lin…
 - hnd-3kb4bqxj 2026-11-03 (agent:codex) — Done: Refined Browse Editorial and Sale Banner experience from live Velvet desktop/tablet/mobile measurements and supplied screenshots. Replaced viewport-height fitting with shared width-led8:5 deskt…
 - hnd-a4ny8w1p 2026-11-03 (agent:codex) — Done: Restored Browse Editorial caption EeEvY to original page gutter, matching Sale Banner and other homepage captions. Desktop lo-fi/hi-fi section padding uses shared gutter again; compact image pa…
 - hnd-yhww0hdf 2026-11-03 (agent:codex) — Done: Refined Browse Editorial to match Velvet's tighter asymmetric composition. Bound row+caption together using viewport cap, increased small image to half large width, reduced1440px image gap315.6…
-- hnd-71d7gsfy 2026-11-03 (agent:codex) — Done: Removed dark campaign-video overlay across mobile/tablet/desktop lo-fi and hi-fi designs and local storefront. Deleted all 15 Pen scrim nodes, including modal backgrounds and disabled solid-hea…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
