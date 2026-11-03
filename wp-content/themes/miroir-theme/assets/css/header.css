@@ -1,7 +1,8 @@
 /* Header (dk4Eq). Continuous announcement ticker + responsive navigation. */
-.site-header { background: var(--bg); }
+.site-header { display: flex; flex-direction: column; background: var(--bg); }
 
 .announce {
+	order: -1;
 	display: flex;
 	align-items: center;
 	height: 40px;
@@ -32,6 +33,38 @@ a.announce:focus-visible { outline-offset: -2px; }
 	letter-spacing: 0;
 	white-space: nowrap;
 }
+
+/* Homepage overlay is an opt-in; no campaign hero means the normal header. */
+html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { scroll-padding-top: var(--home-header-clearance, 176px); }
+.home-header-overlay:not(.elementor-editor-active):has(.home-hero) { --home-announcement-height: 0px; padding-top: var(--home-announcement-height); }
+.home-header-overlay:not(.elementor-editor-active):has(.home-hero):has(.site-header .announce) { --home-announcement-height: 40px; }
+.home-header-overlay:not(.elementor-editor-active):has(.home-hero) .site-header {
+	position: absolute;
+	top: var(--home-toolbar-offset, 0px);
+	inset-inline: 0;
+	z-index: 90;
+	display: flex;
+	flex-direction: column;
+	background: var(--bg);
+}
+.home-header-overlay:has(.home-hero) .site-header .announce { order: -1; background: var(--bg); color: var(--ink); }
+/* Keep the white, readable fallback until the preference-aware script is ready. */
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) { background: transparent; }
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .site-nav { --ink: var(--on-ink); --logo: var(--on-ink); color: var(--on-ink); }
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .logo-custom img { filter: brightness(0) invert(1); }
+.home-header-overlay.home-header-ready .home-hero__media::after {
+	content: '';
+	position: absolute;
+	inset: 0 0 auto;
+	height: 180px;
+	z-index: 1;
+	pointer-events: none;
+	background: linear-gradient(to bottom, #000a 0%, #0008 65%, transparent 100%);
+}
+.home-header-overlay .home-hero__toggle { z-index: 2; }
+.admin-bar.home-header-overlay:has(.home-hero) .site-header { top: var(--home-toolbar-offset, 32px); }
+@media (max-width: 1023px) { .home-header-overlay.home-header-ready .home-hero__media::after { height: 120px; } }
+@media (max-width: 782px) { .admin-bar.home-header-overlay:has(.home-hero) .site-header { top: var(--home-toolbar-offset, 46px); } }
 
 /* Two identical groups make the reset indistinguishable from normal movement. */
 @keyframes announce-scroll {
@@ -86,8 +119,6 @@ a.announce:focus-visible { outline-offset: -2px; }
 .site-nav__search-compact { display: none; }
 
 @media (max-width: 1023px) {
-	.site-header { display: flex; flex-direction: column; }
-	.announce { order: 1; }
 	.announce__track { animation-duration: 24s; }
 	.announce__text { min-width: 100vw; }
 	.announce__text + .announce__text { display: none; }

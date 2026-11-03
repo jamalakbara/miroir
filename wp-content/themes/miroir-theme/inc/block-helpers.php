@@ -152,6 +152,10 @@ function miroir_home_fallback() {
 	ob_start();
 	foreach ( miroir_home_sections() as $section ) {
 		switch ( $section['type'] ) {
+			case 'video-hero':
+				get_template_part( 'template-parts/home-video-hero', null, $section );
+				break;
+
 			case 'editorial':
 				get_template_part( 'template-parts/home-editorial', null, $section );
 				break;

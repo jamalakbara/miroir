@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function miroir_customizer_sections() {
 	return array(
+		'miroir_header'      => array( __( 'Header', 'miroir' ), __( 'Choose whether the homepage navigation overlays the campaign video. Other pages keep the solid header.', 'miroir' ) ),
 		'miroir_footer'      => array( __( 'Links', 'miroir' ), __( 'Logo, announcement, menus and footer lines are blocks: Appearance > Editor > Patterns > Header / Footer. Their links come from Appearance > Menus.', 'miroir' ) ),
 		'miroir_typography'  => array( __( 'Text size', 'miroir' ), __( 'Colours and fonts: Appearance > Editor > Styles (Text = body font, Captions = label font).', 'miroir' ) ),
 		'miroir_layout'      => array( __( 'Layout & spacing', 'miroir' ), '' ),

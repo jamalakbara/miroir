@@ -101,6 +101,36 @@ class Miroir_Widget_Footer extends Miroir_Widget {
 	}
 }
 
+/** Full-bleed campaign film with responsive posters and no-video fallback. */
+class Miroir_Widget_Video_Hero extends Miroir_Widget {
+	public function get_name() { return 'miroir-video-hero'; }
+	public function get_title() { return __( 'Campaign video hero', 'miroir' ); }
+	public function get_icon() { return 'eicon-video-camera'; }
+	protected function tree() { return array( 'block' => 'miroir/video-hero' ); }
+	protected function register_controls() {
+		$this->start_controls_section( 'section_content', array( 'label' => $this->get_title() ) );
+		foreach ( array( 'video' => __( 'Campaign video (MP4 or WebM)', 'miroir' ), 'videoMobile' => __( 'Mobile video (optional portrait version)', 'miroir' ) ) as $key => $label ) {
+			$this->add_control( $key, array( 'label' => $label, 'type' => \Elementor\Controls_Manager::MEDIA, 'media_types' => array( 'video' ), 'description' => __( 'Muted loop. Empty: show the poster. Reduced motion and data saver always use the poster.', 'miroir' ) ) );
+		}
+		foreach ( array( 'poster' => __( 'Desktop poster (9:4)', 'miroir' ), 'posterTablet' => __( 'Tablet poster (16:9)', 'miroir' ), 'posterMobile' => __( 'Mobile poster (3:4)', 'miroir' ) ) as $key => $label ) {
+			miroir_elementor_image_control( $this, $key, $label );
+		}
+		miroir_elementor_link_controls( $this, __( 'Empty: new arrivals.', 'miroir' ) );
+		$this->end_controls_section();
+	}
+	protected function markup( $settings ) {
+		return render_block( miroir_parsed_block( 'miroir/video-hero', array(
+			'video' => (string) ( $settings['video']['url'] ?? '' ),
+			'videoMobile' => (string) ( $settings['videoMobile']['url'] ?? '' ),
+			'poster' => miroir_elementor_image_id( $settings['poster'] ?? null ),
+			'posterTablet' => miroir_elementor_image_id( $settings['posterTablet'] ?? null ),
+			'posterMobile' => miroir_elementor_image_id( $settings['posterMobile'] ?? null ),
+			'caption' => (string) ( $settings['caption'] ?? 'new arrivals: browse the collection' ),
+			'url' => (string) ( $settings['url']['url'] ?? '' ),
+		) ) );
+	}
+}
+
 /** Two images (one small, one large) with a caption, linking to a collection or page. */
 class Miroir_Widget_Editorial extends Miroir_Widget {
 	public function get_name() {
@@ -630,6 +660,7 @@ function miroir_elementor_widget_classes() {
 		'Miroir_Widget_Announcement',
 		'Miroir_Widget_Navigation',
 		'Miroir_Widget_Footer',
+		'Miroir_Widget_Video_Hero',
 		'Miroir_Widget_Editorial',
 		'Miroir_Widget_Banner',
 		'Miroir_Widget_Product_Row',

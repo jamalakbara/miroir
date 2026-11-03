@@ -4,16 +4,15 @@ defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/catalog-media.php';
 $ids = array_map( 'intval', (array) get_option( 'miroir_catalog_product_ids', array() ) );
 if ( 18 !== count( $ids ) ) { WP_CLI::error( 'Run import-catalog.php first.' ); }
+require_once __DIR__ . '/apply-video-hero.php';
 $media = array();
-foreach ( array( 'hero-navy.jpg', 'hero-yellow.jpg', 'catalog-73.webp', 'editorial-brown.webp', 'catalog-108.webp', 'editorial-green.webp', 'banner-desktop-2.jpg' ) as $file ) {
+foreach ( array( 'hero-navy.jpg', 'hero-yellow.jpg', 'banner-desktop-2.jpg' ) as $file ) {
     $media[$file] = miroir_catalog_media( $file, 'Miroir collection' );
 }
 $shop = wc_get_page_permalink( 'shop' );
 $image = fn( $file ) => array( 'id' => $media[$file], 'url' => wp_get_attachment_url( $media[$file] ) );
 $pairs = array(
-    array( 'hero-navy.jpg', 'hero-yellow.jpg', 'new arrivals: browse the collection' ),
-    array( 'catalog-73.webp', 'editorial-brown.webp', 'soft structure: stripes for every day' ),
-    array( 'catalog-108.webp', 'editorial-green.webp', 'shop women: relaxed by design' ),
+    array( 'hero-navy.jpg', 'hero-yellow.jpg', 'shop women: relaxed by design' ),
 );
 $home = (int) get_option( 'page_on_front' );
 $elements = json_decode( get_post_meta( $home, '_elementor_data', true ), true );

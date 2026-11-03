@@ -1,4 +1,17 @@
-/* Home (screen 01). Editorial pairs, product strips, sale banner. */
+/* Home (screen 01). Campaign film, one editorial pair, product strips and banner. */
+.home-hero { display: flex; flex-direction: column; gap: 18px; }
+.home-hero__media { position: relative; aspect-ratio: 9 / 4; overflow: hidden; background: var(--ph); }
+.home-hero__link { position: absolute; inset: 0; display: block; }
+.home-hero__poster, .home-hero__poster img, .home-hero__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.home-hero__video { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.home-hero.has-video-frame .home-hero__video { opacity: 1; }
+.home-hero > .home-caption { padding: 0 var(--gutter); }
+.home-hero__toggle { position: absolute; right: var(--gutter); bottom: 20px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 0; background: #111111b3; color: #fff; cursor: pointer; }
+.home-hero__toggle[hidden] { display: none; }
+.home-hero__toggle:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.home-hero__pause, .home-hero.is-playing .home-hero__play { display: none; }
+.home-hero.is-playing .home-hero__pause { display: block; }
+
 .home-editorial,
 .home-strip {
 	display: flex;
@@ -60,6 +73,7 @@
 .home-strip__grid.is-dragging a { cursor: grabbing; }
 
 @media (max-width: 1023px) {
+	.home-hero__media { aspect-ratio: 16 / 9; }
 	.home-editorial, .home-strip { padding: var(--home-space-t) var(--gutter) 32px; }
 	.home-editorial__row { --editorial-image-cap: calc((100svh - 128px) * 0.75); }
 
@@ -69,6 +83,7 @@
 }
 
 @media (max-width: 599px) {
+	.home-hero__media { aspect-ratio: 3 / 4; }
 	.home-editorial, .home-strip { padding: var(--home-space-m) var(--gutter) 24px; }
 
 	.home-editorial__row {

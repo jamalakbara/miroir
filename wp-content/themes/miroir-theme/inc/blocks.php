@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /** Home section blocks with a hand-written editor UI. */
-const MIROIR_HOME_BLOCKS = array( 'editorial', 'banner', 'product-strip' );
+const MIROIR_HOME_BLOCKS = array( 'video-hero', 'editorial', 'banner', 'product-strip' );
 
 add_action(
 	'init',

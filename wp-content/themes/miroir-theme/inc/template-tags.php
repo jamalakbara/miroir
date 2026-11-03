@@ -263,8 +263,7 @@ function miroir_home_sections() {
 		'miroir_home_sections',
 		array(
 			array(
-				'type'    => 'editorial',
-				'layout'  => 'small-first',
+				'type'    => 'video-hero',
 				'caption' => __( 'new arrivals: browse the collection', 'miroir' ),
 				'url'     => miroir_cat_url( 'new-collection' ),
 			),
@@ -275,12 +274,6 @@ function miroir_home_sections() {
 				'columns'  => 5,
 				'limit'    => -1,
 				'url'      => miroir_cat_url( 'new-collection' ),
-			),
-			array(
-				'type'    => 'editorial',
-				'layout'  => 'small-first',
-				'caption' => __( 'shop women: summer collection', 'miroir' ),
-				'url'     => $shop,
 			),
 			array(
 				'type'    => 'editorial',

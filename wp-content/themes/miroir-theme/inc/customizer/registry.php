@@ -36,6 +36,19 @@ function miroir_settings() {
 		// Links (header and footer texts are blocks in Appearance > Editor).
 		'instagram_url'          => array( 'section' => 'miroir_footer', 'label' => __( 'Instagram URL', 'miroir' ), 'type' => 'url', 'default' => 'https://www.instagram.com/miroir.id/', 'description' => __( 'Used on the maintenance page and in the default footer links.', 'miroir' ) ),
 
+		// Homepage navigation; shared with Elementor Site Settings > Miroir > Header.
+		'home_header_style'       => array(
+			'section' => 'miroir_header',
+			'label' => __( 'Homepage navbar style', 'miroir' ),
+			'type' => 'select',
+			'default' => 'transparent',
+			'choices' => array(
+				'transparent' => __( 'Transparent over hero', 'miroir' ),
+				'solid' => __( 'Solid', 'miroir' ),
+			),
+			'description' => __( 'Homepage only. Transparent navigation overlays the hero and scrolls away without a paint transition; focus or dialogs use a solid fallback. The announcement is above the navbar in both modes and on every page.', 'miroir' ),
+		),
+
 		// Typography.
 		'type_scale'             => array( 'section' => 'miroir_typography', 'label' => __( 'Text size (%)', 'miroir' ), 'type' => 'number', 'default' => 100, 'min' => 80, 'max' => 140, 'description' => __( 'Scales every font size and line height.', 'miroir' ) ),
 

@@ -105,6 +105,42 @@
 		return el(c.TextControl, { label: label, value: value, onChange: onChange, help: help, __next40pxDefaultSize: true, __nextHasNoMarginBottom: true });
 	};
 
+	function VideoPicker(props) {
+		return el('div', { style: { marginBottom: '16px' } },
+			text(props.label, props.value, props.onChange, __('Direct MP4 or WebM URL; empty shows the poster.', 'miroir')),
+			el(be.MediaUploadCheck, null, el(be.MediaUpload, {
+				allowedTypes: ['video'],
+				onSelect: function (media) { props.onChange(media.url); },
+				render: function (picker) { return el(c.Button, { variant: 'secondary', onClick: picker.open }, __('Choose video', 'miroir')); }
+			}))
+		);
+	}
+
+	wp.blocks.registerBlockType('miroir/video-hero', {
+		edit: function (props) {
+			var a = props.attributes, set = props.setAttributes;
+			return el(Fragment, null,
+				el(be.InspectorControls, null,
+					el(c.PanelBody, { title: __('Campaign film', 'miroir') },
+						el(VideoPicker, { label: __('Video', 'miroir'), value: a.video, onChange: function (v) { set({ video: v }); } }),
+						el(VideoPicker, { label: __('Portrait mobile video (optional)', 'miroir'), value: a.videoMobile, onChange: function (v) { set({ videoMobile: v }); } })
+					),
+					el(c.PanelBody, { title: __('Poster images', 'miroir') },
+						el(ImagePicker, { label: __('Desktop poster (9:4)', 'miroir'), id: a.poster, onChange: function (id) { set({ poster: id }); } }),
+						el(ImagePicker, { label: __('Tablet poster (16:9)', 'miroir'), id: a.posterTablet, onChange: function (id) { set({ posterTablet: id }); } }),
+						el(ImagePicker, { label: __('Mobile poster (3:4)', 'miroir'), id: a.posterMobile, onChange: function (id) { set({ posterMobile: id }); } })
+					),
+					el(c.PanelBody, { title: __('Caption & link', 'miroir') },
+						text(__('Caption', 'miroir'), a.caption, function (v) { set({ caption: v }); }),
+						el(LinkField, { label: __('Link', 'miroir'), value: a.url, onChange: function (v) { set({ url: v }); } })
+					)
+				),
+				el(Preview, { name: 'miroir/video-hero', attributes: a })
+			);
+		},
+		save: function () { return null; }
+	});
+
 	wp.blocks.registerBlockType('miroir/editorial', {
 		edit: function (props) {
 			var a = props.attributes, set = props.setAttributes;

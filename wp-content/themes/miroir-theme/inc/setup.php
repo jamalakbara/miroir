@@ -37,6 +37,17 @@ add_action(
 	}
 );
 
+/** Homepage-only overlay opt-in; CSS also requires a campaign hero on the page. */
+add_filter(
+	'body_class',
+	function ( $classes ) {
+		if ( is_front_page() && 'transparent' === miroir_mod( 'home_header_style' ) ) {
+			$classes[] = 'home-header-overlay';
+		}
+		return $classes;
+	}
+);
+
 /**
  * Stylesheets in cascade order. Page CSS files are small and always loaded:
  * one request per file is cheaper to maintain than conditional loading while

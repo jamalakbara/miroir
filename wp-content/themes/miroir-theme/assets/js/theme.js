@@ -2,6 +2,106 @@
 ( function () {
 	'use strict';
 
+	/* Homepage-only transparent navigation; layout is reserved before this enhancement. */
+	( function () {
+		var body = document.body;
+		var header = document.querySelector( '.site-header' );
+		var hero = document.querySelector( '.home-hero' );
+		if ( ! body.classList.contains( 'home-header-overlay' ) || body.classList.contains( 'elementor-editor-active' ) || ! header || ! hero ) { return; }
+		var announcement = header.querySelector( '.announce' );
+		var scheduled = false;
+		function updateHeader() {
+			scheduled = false;
+			var toolbar = document.getElementById( 'wpadminbar' );
+			var rect = toolbar && toolbar.getBoundingClientRect();
+			var offset = rect && rect.width && rect.height ? Math.max( 0, Math.min( rect.bottom, window.innerHeight ) ) : 0;
+			body.style.setProperty( '--home-toolbar-offset', offset + 'px' );
+			document.documentElement.style.setProperty( '--home-header-clearance', ( header.getBoundingClientRect().height + offset + 8 ) + 'px' );
+			body.style.setProperty( '--home-announcement-height', ( announcement ? announcement.getBoundingClientRect().height : 0 ) + 'px' );
+		}
+		function scheduleHeader() {
+			if ( ! scheduled ) { scheduled = true; window.requestAnimationFrame( updateHeader ); }
+		}
+		updateHeader();
+		body.classList.add( 'home-header-ready' );
+		window.addEventListener( 'resize', scheduleHeader );
+		window.addEventListener( 'pageshow', scheduleHeader );
+		if ( announcement && window.ResizeObserver ) { new ResizeObserver( scheduleHeader ).observe( announcement ); }
+	} )();
+
+	/* Campaign films enhance a usable poster; do not fetch video for reduced motion or save-data. */
+	document.querySelectorAll( '[data-video-hero]' ).forEach( function ( hero ) {
+		var video = hero.querySelector( 'video' );
+		var button = hero.querySelector( '.home-hero__toggle' );
+		if ( ! video || ! button ) { return; }
+		var reduced = window.matchMedia( '(prefers-reduced-motion: reduce)' );
+		var mobile = window.matchMedia( '(max-width: 599px)' );
+		var connection = navigator.connection;
+		var manualPause = false;
+		var inView = true;
+		var failed = false;
+		var source = '';
+		video.muted = true;
+		function allowed() { return ! reduced.matches && ! ( connection && connection.saveData ); }
+		function syncButton() {
+			var playing = ! video.paused;
+			hero.classList.toggle( 'is-playing', playing );
+			button.setAttribute( 'aria-label', playing ? button.dataset.pauseLabel : button.dataset.playLabel );
+		}
+		function play() {
+			if ( ! allowed() || manualPause || ! inView || document.hidden || failed || ! source ) { return; }
+			var attempt = video.play();
+			if ( attempt && attempt.catch ) {
+				attempt.catch( function () {
+					if ( allowed() && ! failed && source ) { button.hidden = false; syncButton(); }
+				} );
+			}
+		}
+		function updateSource() {
+			if ( ! allowed() ) {
+				video.pause();
+				video.removeAttribute( 'src' );
+				video.load();
+				source = '';
+				button.hidden = true;
+				hero.classList.remove( 'has-video-frame' );
+				return;
+			}
+			var next = mobile.matches ? video.dataset.mobileSrc : video.dataset.src;
+			if ( next !== source ) {
+				source = next;
+				failed = false;
+				button.hidden = true;
+				hero.classList.remove( 'has-video-frame' );
+				video.src = source;
+				video.load();
+			}
+			play();
+		}
+		video.addEventListener( 'playing', function () {
+			hero.classList.add( 'has-video-frame' ); button.hidden = false; syncButton();
+		} );
+		video.addEventListener( 'pause', syncButton );
+		video.addEventListener( 'error', function () {
+			failed = true; video.pause(); button.hidden = true; hero.classList.remove( 'has-video-frame' );
+		} );
+		button.addEventListener( 'click', function () {
+			manualPause = ! video.paused;
+			if ( manualPause ) { video.pause(); } else { play(); }
+		} );
+		document.addEventListener( 'visibilitychange', function () { if ( document.hidden ) { video.pause(); } else { play(); } } );
+		if ( window.IntersectionObserver ) {
+			new IntersectionObserver( function ( entries ) {
+				inView = entries[0].isIntersecting;
+				if ( inView ) { play(); } else { video.pause(); }
+			} ).observe( hero );
+		}
+		reduced.addEventListener( 'change', updateSource );
+		mobile.addEventListener( 'change', updateSource );
+		if ( connection && connection.addEventListener ) { connection.addEventListener( 'change', updateSource ); }
+		updateSource();
+	} );
+
 	/* Keep native disclosure semantics; defer closing until the answer has collapsed. */
 	document.querySelectorAll( '.info__content > .wp-block-details' ).forEach( function ( details ) {
 		var summary = details.querySelector( 'summary' );
@@ -301,6 +401,14 @@
 		var toolbar = document.getElementById( 'wpadminbar' );
 		var rect = toolbar && toolbar.getBoundingClientRect();
 		var offset = rect && rect.width && rect.height ? Math.max( 0, Math.min( rect.bottom, window.innerHeight ) ) : 0;
+		// Preserve the visible announcement above the live navbar on every page.
+		if ( activeModal.classList.contains( 'panel--drawer' ) ) {
+			var announcement = document.querySelector( '.site-header .announce' );
+			var announcementRect = announcement && announcement.getBoundingClientRect();
+			if ( announcementRect && announcementRect.width && announcementRect.height ) {
+				offset = Math.max( offset, Math.min( window.innerHeight, Math.max( 0, announcementRect.bottom ) ) );
+			}
+		}
 		activeModal.style.setProperty( '--panel-toolbar-offset', offset + 'px' );
 	}
 	window.addEventListener( 'resize', updateDrawerViewport );

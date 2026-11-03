@@ -255,6 +255,9 @@ class Miroir_Theme_Command {
 		$blocks = array();
 		foreach ( miroir_home_sections() as $section ) {
 			switch ( $section['type'] ) {
+				case 'video-hero':
+					$attrs = array( 'caption' => $section['caption'], 'url' => wp_make_link_relative( $section['url'] ) );
+					break;
 				case 'editorial':
 					$attrs = array( 'layout' => $section['layout'], 'caption' => $section['caption'], 'url' => wp_make_link_relative( $section['url'] ) );
 					break;

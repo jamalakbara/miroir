@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "miroir/video-hero",
+	"title": "Campaign video hero",
+	"category": "miroir",
+	"icon": "video-alt3",
+	"description": "Full-width, muted campaign film with responsive posters and a collection link.",
+	"keywords": [ "video", "home", "hero" ],
+	"textdomain": "miroir",
+	"attributes": {
+		"video": { "type": "string", "default": "" },
+		"videoMobile": { "type": "string", "default": "" },
+		"poster": { "type": "number", "default": 0 },
+		"posterTablet": { "type": "number", "default": 0 },
+		"posterMobile": { "type": "number", "default": 0 },
+		"caption": { "type": "string", "default": "new arrivals: browse the collection" },
+		"url": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "className": false, "customClassName": false },
+	"editorScript": "miroir-blocks-editor",
+	"render": "file:./render.php"
+}

@@ -131,6 +131,55 @@ docker compose run --rm wpcli miroir elementor reset             # back to the t
 With Elementor inactive, or a screen without a template, the theme's block
 templates draw the site as before.
 
+## Optional transparent homepage navbar
+
+In **Elementor > Site Settings > Miroir > Header > Homepage navbar style**,
+choose **Transparent over hero** (default) or **Solid**. The same choice is in
+**Appearance > Customize > Miroir theme > Header** when not using Elementor.
+
+The announcement bar is always above the navbar on every page and breakpoint,
+including mobile menus and both homepage header modes.
+
+Transparent mode puts white navigation over the campaign video/poster, with a
+subtle dark contrast scrim. This header is non-sticky: it scrolls away without
+changing paint state or animating. Keyboard focus or an open dialog uses a
+readable solid/dark-text fallback. Solid mode uses an in-flow header with the
+same announcement-first order. No hero or no JavaScript safely keeps a solid
+header. The WordPress admin toolbar and the visible announcement above the
+mobile menu are respected on all pages.
+
+Main lo-fi/hi-fi homepage designs show Transparent; the **Homepage Header /
+Solid Option** canvas board shows the alternative at 1440 / 768 / 390.
+
+```bash
+node tools/visual-diff/check-announcement-order.cjs
+node tools/visual-diff/check-header-overlay.cjs
+docker compose run --rm -v "$PWD/tools:/miroir-tools:ro" wpcli eval-file /miroir-tools/test-header-overlay.php
+```
+
+## Homepage campaign video
+
+Home now follows: campaign video → new arrivals → Browse Editorial → centered
+collection banner → collection products. Browse Editorial reuses the previous
+hero photographs: yellow large/left and navy small/right (navy only on mobile). The duplicate “soft structure” editorial
+is removed in both lo-fi/hi-fi designs and the editable storefront.
+
+In **Pages > Home > Edit with Elementor > Campaign video hero**, upload an MP4
+or WebM and, optionally, a portrait mobile video. Poster images can be changed
+per breakpoint. The included Miroir still is a temporary poster, not a video.
+Media ratios: desktop 9:4, tablet 16:9, mobile 3:4. Playback is muted and looping,
+with a 44px pause/play control. Reduced motion, data saver, no JS, missing video
+and video errors leave the poster visible. Hidden tabs and offscreen videos pause.
+
+To upgrade an existing database without rebuilding other page content (safe to
+repeat; original content is backed up in `_miroir_before_video_hero`):
+
+```bash
+docker compose run --rm -v "$PWD/tools:/miroir-tools:ro" wpcli eval-file /miroir-tools/apply-video-hero.php
+node tools/visual-diff/check-video-hero.cjs
+docker compose run --rm -v "$PWD/tools:/miroir-tools:ro" wpcli eval-file /miroir-tools/test-video-hero.php
+```
+
 ## Automatic popular searches
 
 The search modal ranks the top three successful product searches over the last

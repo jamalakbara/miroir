@@ -264,6 +264,9 @@ class Miroir_Elementor_Command {
 			}
 			$a = $type->prepare_attributes_for_render( $block['attrs'] );
 			switch ( $block['blockName'] ) {
+				case 'miroir/video-hero':
+					$widgets[] = self::widget( 'miroir-video-hero', array( 'video' => array( 'url' => $a['video'] ), 'videoMobile' => array( 'url' => $a['videoMobile'] ), 'poster' => $image( $a['poster'] ), 'posterTablet' => $image( $a['posterTablet'] ), 'posterMobile' => $image( $a['posterMobile'] ), 'caption' => $a['caption'], 'url' => $link( $a['url'] ) ) );
+					break;
 				case 'miroir/editorial':
 					$widgets[] = self::widget( 'miroir-editorial', array( 'layout' => $a['layout'], 'smallImage' => $image( $a['smallImage'] ), 'largeImage' => $image( $a['largeImage'] ), 'caption' => $a['caption'], 'url' => $link( $a['url'] ) ) );
 					break;
