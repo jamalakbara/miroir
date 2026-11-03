@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 41 (proposed 33, accepted 3, superseded 5)
 - task: 1 (open 1)
 - memory: 44 (active 42, superseded 2)
-- handoff: 110 (final 110)
+- handoff: 111 (final 111)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-xb0ab49s 2026-11-03 (agent:pi) — Done: Implemented optional transparent homepage navbar: home_header_style select in shared Elementor Site Settings > Miroir > Header and Customizer, default transparent. Fixed nav overlays hero with…
 - hnd-8qmgy249 2026-11-03 (agent:pi) — Done: Changed retained Browse Editorial hi-fi MnYqY/rBI9w/FltNF to former hero photos: yellow large left and navy small right; mobile navy only. Existing geometry, caption and link preserved. Saved m…
 - hnd-9rce8yfz 2026-11-03 (agent:pi) — Done: Updated and saved miroir.pen: six lo-fi/hi-fi homepages at1440/768/390 replace hero pairs with full-bleed campaign video wireframe/poster (640/432/520 high), remove Collection Editorial soft-st…
 - hnd-j0tdvytd 2026-11-03 (agent:pi) — Done: Reviewed Josephine Anni live video hero and hi-fi homepage Ue7po. Recommendation only: replace Hero Editorial MFVh9 with video and remove Collection Editorial uDOF4 ('soft structure: stripes fo…
 - hnd-dhx6f0zr 2026-11-02 (agent:codex:gpt-5) — Done: Installed the user-provided licensed Avenir Roman and Avenir Medium TrueType files at docs/design/fonts/Avenir-Roman.ttf and docs/design/fonts/Avenir-Medium.ttf. Verified both font binaries, ex…
-- hnd-051xtjf5 2026-11-02 (agent:claude-code:claude-opus-5-5) — Done: Built two-machine sync: plugins.txt + tools/plugins.sh (freeze/sync), .githooks (pre-commit freeze, post-merge/post-rewrite apply), tools/snapshot.sh (export/import/status of DB, uploads, licen…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
