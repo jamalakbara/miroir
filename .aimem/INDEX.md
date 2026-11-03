@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 46 (proposed 35, accepted 5, superseded 6)
 - task: 1 (open 1)
 - memory: 45 (active 43, superseded 2)
-- handoff: 118 (final 118)
+- handoff: 119 (final 119)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-1bcd1cfk 2026-11-03 (agent:claude) — Done: Compressed bundled hero videos (14->4.4 MB desktop 2560x1138, 18->3.8 MB mobile 1080x1440, no audio, faststart); verified playback at desktop and 375px. · Next: Commit; optionally replace poste…
 - hnd-0trjpr45 2026-11-03 (agent:claude) — Done: Bundled client desktop/mobile hero MP4s in miroir-theme/assets/video, made them the default hero sources, updated test-video-hero.php (passes), verified playback at 1024 and 375 wide. · Next: O…
 - hnd-a5asntx9 2026-11-03 (agent:codex) — Done: Committed every workspace change as 9ef4aaa (responsive video hero, homepage header refinements, Pen design updates, assets, scripts, and visual checks) and pushed main to origin. · Next: No fo…
 - hnd-es7wpna4 2026-11-03 (agent:pi) — Done: Inspected current Pen image dimensions read-only and prepared client-facing source-resolution recommendations. Recommendations only, not approved requirements: desktop hero 2880x1280; mobile he…
 - hnd-6cvfe25m 2026-11-03 (agent:pi) — Done: Made announcement globally precede navbar in storefront CSS, removing compact order1 override. Drawer offset now respects visible announcement on every page plus toolbar; preserves bag offset a…
-- hnd-yz8ewr8m 2026-11-03 (agent:codex) — Done: Removed all homepage overlay header paint transitions and the scroll-triggered home-header-solid state/listener. The non-sticky navbar now stays transparent while visible and scrolls away. Kept…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
