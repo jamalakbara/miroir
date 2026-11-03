@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 45 (proposed 34, accepted 5, superseded 6)
 - task: 1 (open 1)
 - memory: 44 (active 42, superseded 2)
-- handoff: 116 (final 116)
+- handoff: 117 (final 117)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-a5asntx9 2026-11-03 (agent:codex) — Done: Committed every workspace change as 9ef4aaa (responsive video hero, homepage header refinements, Pen design updates, assets, scripts, and visual checks) and pushed main to origin. · Next: No fo…
 - hnd-es7wpna4 2026-11-03 (agent:pi) — Done: Inspected current Pen image dimensions read-only and prepared client-facing source-resolution recommendations. Recommendations only, not approved requirements: desktop hero 2880x1280; mobile he…
 - hnd-6cvfe25m 2026-11-03 (agent:pi) — Done: Made announcement globally precede navbar in storefront CSS, removing compact order1 override. Drawer offset now respects visible announcement on every page plus toolbar; preserves bag offset a…
 - hnd-yz8ewr8m 2026-11-03 (agent:codex) — Done: Removed all homepage overlay header paint transitions and the scroll-triggered home-header-solid state/listener. The non-sticky navbar now stays transparent while visible and scrolls away. Kept…
 - hnd-h9x34yfj 2026-11-03 (agent:codex) — Done: Changed the transparent homepage overlay header from fixed to absolute positioning, so it remains at the page top and scrolls fully offscreen instead of following the viewport. Added regression…
-- hnd-pznw4mv1 2026-11-03 (agent:codex) — Done: Added a 280ms cubic-bezier crossfade between transparent and solid homepage header states for the header background, nav text/icons and custom-logo filter. Added prefers-reduced-motion instant…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
