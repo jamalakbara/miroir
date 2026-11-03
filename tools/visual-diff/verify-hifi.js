@@ -30,6 +30,20 @@ let browser;
         photos: document.querySelectorAll('[data-pdp-slide]').length,
         footer: document.querySelector('.site-footer__copyright')?.textContent,
         bannerWidth: document.querySelector('.home-banner__image')?.getBoundingClientRect().width,
+        editorial: (() => {
+          const row = document.querySelector('.home-editorial__row');
+          if (!row) return null;
+          const box = selector => row.parentElement.querySelector(selector).getBoundingClientRect().toJSON();
+          const section = row.parentElement;
+          return {
+            row: row.getBoundingClientRect().toJSON(), large: box('.home-editorial__large'), small: box('.home-editorial__small'), caption: box('.home-caption'),
+            section: section.getBoundingClientRect().toJSON(), gutter: parseFloat(getComputedStyle(section).paddingLeft),
+            paddingTop: parseFloat(getComputedStyle(section).paddingTop), paddingBottom: parseFloat(getComputedStyle(section).paddingBottom),
+            bannerCaption: document.querySelector('.home-banner > .home-caption').getBoundingClientRect().toJSON(),
+            bannerStage: document.querySelector('.home-banner > a').getBoundingClientRect().toJSON(),
+            bannerImage: document.querySelector('.home-banner__image').getBoundingClientRect().toJSON(),
+          };
+        })(),
         columns: getComputedStyle(document.querySelector('.plp__grid') || document.body).gridTemplateColumns,
       }));
       assert.equal(data.overflow, false, `${width} ${name} page overflow`);
@@ -37,7 +51,36 @@ let browser;
       assert.ok(data.font.includes('Avenir') && data.avenirLoaded, `${width} ${name} Avenir`);
       assert.ok(data.footer.includes('Website by jamalakbara.com'));
       if (name === 'home') {
-        assert.equal(Math.round(data.bannerWidth), width === 1440 ? 800 : width === 768 ? 560 : 300);
+        const { row, large, small, caption, section, gutter, bannerCaption, bannerStage, bannerImage, paddingTop, paddingBottom } = data.editorial;
+        const near = (actual, expected, label, tolerance = 1) => assert.ok(Math.abs(actual - expected) < tolerance, `${width} editorial ${label}: ${actual} vs ${expected}`);
+        near(caption.x, section.x + gutter, 'caption page-gutter alignment');
+        near(caption.width, section.width - gutter * 2, 'caption content width');
+        near(caption.x, bannerCaption.x, 'caption aligns with sale banner');
+        near(caption.y - row.bottom, 18, 'caption vertical spacing');
+        const stageWidth = Math.min(width - gutter * 2, 1280);
+        near(row.width, stageWidth, 'width-led campaign canvas');
+        near(row.height, stageWidth * (width < 600 ? 7 / 5 : 5 / 8), 'campaign canvas proportions');
+        near(bannerStage.width, stageWidth, 'matching banner canvas width');
+        near(bannerStage.height, stageWidth * (width < 600 ? 3 / 2 : 5 / 8), 'banner canvas proportions');
+        near(bannerImage.width, stageWidth * (width < 600 ? 1 : 0.625), 'banner artwork scale');
+        near(bannerImage.width / bannerImage.height, 2049 / 1152, 'uncropped triptych ratio', 0.001);
+        near(paddingTop, width < 600 ? 112 : 64, 'section leading space');
+        near(paddingBottom, width < 600 ? 48 : 32, 'section trailing space');
+        near(small.x + small.width / 2, width < 600 ? width / 2 : large.right + large.width / 2, 'small image center');
+        near(small.width / small.height, 3 / 4, 'small image ratio', 0.001);
+        if (width >= 600) {
+          near(large.width / large.height, 4 / 5, 'dominant portrait ratio', 0.001);
+          near(row.width, large.width * 2, 'bounded pair width');
+          near(small.width, large.width / 2, 'small image scale');
+          near(small.left - large.right, large.width / 4, 'proportional image gap');
+          near(small.y + small.height / 2, large.y + large.height / 2, 'vertical center');
+          near(row.x, (width - row.width) / 2, 'centered composition');
+        } else {
+          assert.equal(large.width, 0, 'Mobile retains the smaller image only');
+          near(small.width, row.width * 2 / 3, 'mobile portrait scale');
+          near(small.y + small.height / 2, row.y + row.height / 2, 'mobile portrait vertical center');
+          near(bannerImage.y - bannerStage.y, bannerStage.width / 4, 'mobile triptych placement');
+        }
         const track = page.locator('[data-carousel-track]').first();
         await page.locator('[data-carousel-next]').first().click();
         assert.ok(await track.evaluate(n => n.scrollLeft > 0), 'Home carousel next');

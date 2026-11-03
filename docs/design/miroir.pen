@@ -6187,7 +6187,7 @@
                                   "type": "frame",
                                   "id": "xC39e",
                                   "name": "Hero / Campaign Video",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -6202,7 +6202,7 @@
                                       "type": "frame",
                                       "id": "k7jeCF",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 640,
@@ -6211,40 +6211,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "nLp5T",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 1440,
-                                          "height": 180
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "FSVgD",
@@ -6273,32 +6239,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "SU4Nw",
-                                          "layoutPosition": "absolute",
-                                          "x": 1340,
-                                          "y": 576,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "Bl3ly",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -6649,37 +6589,53 @@
                                   "type": "frame",
                                   "id": "K0NImU",
                                   "name": "Browse Editorial",
+                                  "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
                                   "padding": [
-                                    96,
+                                    "$editorial-space-d",
                                     "$gutter",
-                                    0,
+                                    32,
                                     "$gutter"
                                   ],
                                   "children": [
                                     {
-                                      "id": "jJcrY",
-                                      "type": "ref",
-                                      "ref": "Im0MZ",
-                                      "name": "Editorial Pair / Large Left",
+                                      "type": "frame",
+                                      "id": "HUwZ2",
+                                      "name": "Centered editorial image row",
                                       "width": "fill_container",
-                                      "height": 740,
-                                      "descendants": {
-                                        "gg90L": {
-                                          "x": 870.6234939759036,
-                                          "y": 202.83132530120483,
-                                          "width": 250.75301204819277,
-                                          "height": 334.33734939759034
-                                        },
-                                        "MK1ZL": {
-                                          "x": 0,
-                                          "y": 0,
-                                          "width": 555,
-                                          "height": 740
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "id": "jJcrY",
+                                          "type": "ref",
+                                          "ref": "Im0MZ",
+                                          "name": "Editorial Pair / Large Left",
+                                          "width": 1280,
+                                          "height": 800,
+                                          "context": "Campaign canvas scales with width, not viewport height. Mobile shows only the smaller navy photo, centered in a5:7 artboard; desktop/tablet retain the large-left composition.",
+                                          "descendants": {
+                                            "gg90L": {
+                                              "x": 800,
+                                              "y": 186.66666666666666,
+                                              "width": 320,
+                                              "height": 426.6666666666667,
+                                              "enabled": true,
+                                              "context": "Original smaller editorial photo,3:4. Half the large-photo width on desktop/tablet; two thirds of the portrait canvas width on mobile."
+                                            },
+                                            "MK1ZL": {
+                                              "x": 0,
+                                              "y": 0,
+                                              "width": 640,
+                                              "height": 800,
+                                              "enabled": true,
+                                              "context": "Original large editorial photo with a Velvet-style4:5 cover crop. Hidden on mobile."
+                                            }
+                                          }
                                         }
-                                      }
+                                      ]
                                     },
                                     {
                                       "type": "text",
@@ -6698,22 +6654,25 @@
                                   "type": "frame",
                                   "id": "jZuXe",
                                   "name": "Sale Banner",
-                                  "context": "Centered editorial banner, following user-provided Velvet reference. Image is intentionally narrower than the content area; caption stays aligned with the section gutter. Desktop800x449.78, tablet560x314.85, mobile300x168.67. No image cropping or stretching.",
+                                  "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
                                   "padding": [
-                                    96,
+                                    "$editorial-space-d",
                                     "$gutter",
-                                    0,
+                                    32,
                                     "$gutter"
                                   ],
+                                  "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "YkCoC",
-                                      "name": "Centered banner image row",
-                                      "width": "fill_container",
+                                      "name": "Editorial canvas / Triptych",
+                                      "context": "Same8:5 editorial canvas as Browse on desktop/tablet, with artwork centered at62.5% width. Mobile2:3 canvas places full-width artwork in its upper portion, like the reference.",
+                                      "width": 1280,
+                                      "height": 800,
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
@@ -6724,7 +6683,7 @@
                                           "name": "Sale Image",
                                           "width": 800,
                                           "height": 449.7803806734993,
-                                          "context": "Reference-style centered banner with surrounding whitespace. Preserve full 2049:1152 source ratio; desktop width800, tablet560, mobile300. Grey placeholder in lo-fi, complete contain-fitted photo in hi-fi."
+                                          "context": "Miroir triptych retained intact at2049:1152; contain fit, no cropping or stretching. Width800 desktop/440 tablet/350 mobile in the nominal canvas sizes."
                                         }
                                       ]
                                     },
@@ -6733,6 +6692,8 @@
                                       "id": "Ac34x",
                                       "name": "Caption",
                                       "fill": "$ink",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
                                       "content": "sale: mid year sale 2026",
                                       "fontFamily": "$font-sans",
                                       "fontSize": "$text-sm",
@@ -16771,7 +16732,7 @@
                                   "type": "frame",
                                   "id": "xnw6W",
                                   "name": "Campaign Video behind modal",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -16786,7 +16747,7 @@
                                       "type": "frame",
                                       "id": "fcFhZ",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 640,
@@ -16795,40 +16756,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "abBKn",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 1440,
-                                          "height": 180
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "xfNO7",
@@ -16857,32 +16784,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "tDlBK",
-                                          "layoutPosition": "absolute",
-                                          "x": 1340,
-                                          "y": 576,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "pvYLX",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -17591,7 +17492,7 @@
                                   "type": "frame",
                                   "id": "SRCwD",
                                   "name": "Campaign Video behind modal",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -17606,7 +17507,7 @@
                                       "type": "frame",
                                       "id": "FAIGa",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 640,
@@ -17615,40 +17516,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "QawmJ",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 1440,
-                                          "height": 180
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "O5Ksl",
@@ -17677,32 +17544,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "ng3fm",
-                                          "layoutPosition": "absolute",
-                                          "x": 1340,
-                                          "y": 576,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "QzmOI",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -20869,7 +20710,7 @@
                                   "type": "frame",
                                   "id": "nVs9Z",
                                   "name": "Hero / Campaign Video",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -20884,7 +20725,7 @@
                                       "type": "frame",
                                       "id": "Up1y1",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 432,
@@ -20893,40 +20734,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "YXZSa",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 768,
-                                          "height": 120
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "Y6TMoc",
@@ -20955,32 +20762,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "NzbKc",
-                                          "layoutPosition": "absolute",
-                                          "x": 692,
-                                          "y": 368,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "RllR9",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -21331,11 +21112,12 @@
                                   "type": "frame",
                                   "id": "LGpI6",
                                   "name": "Browse Editorial",
+                                  "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
                                   "padding": [
-                                    40,
+                                    "$editorial-space-t",
                                     32,
                                     32,
                                     32
@@ -21347,19 +21129,24 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Left",
                                       "width": "fill_container",
-                                      "height": 469.3333333333333,
+                                      "height": 440,
+                                      "context": "Campaign canvas scales with width, not viewport height. Mobile shows only the smaller navy photo, centered in a5:7 artboard; desktop/tablet retain the large-left composition.",
                                       "descendants": {
                                         "gg90L": {
-                                          "x": 448.48192771084337,
-                                          "y": 128.64257028112448,
-                                          "width": 159.03614457831327,
-                                          "height": 212.04819277108436
+                                          "x": 440,
+                                          "y": 102.66666666666667,
+                                          "width": 176,
+                                          "height": 234.66666666666666,
+                                          "enabled": true,
+                                          "context": "Original smaller editorial photo,3:4. Half the large-photo width on desktop/tablet; two thirds of the portrait canvas width on mobile."
                                         },
                                         "MK1ZL": {
                                           "x": 0,
                                           "y": 0,
                                           "width": 352,
-                                          "height": 469.3333333333333
+                                          "height": 440,
+                                          "enabled": true,
+                                          "context": "Original large editorial photo with a Velvet-style4:5 cover crop. Hidden on mobile."
                                         }
                                       }
                                     },
@@ -21382,22 +21169,25 @@
                                   "type": "frame",
                                   "id": "Exf2t",
                                   "name": "Sale Banner",
-                                  "context": "Centered editorial banner, following user-provided Velvet reference. Image is intentionally narrower than the content area; caption stays aligned with the section gutter. Desktop800x449.78, tablet560x314.85, mobile300x168.67. No image cropping or stretching.",
+                                  "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
                                   "padding": [
-                                    40,
+                                    "$editorial-space-t",
                                     32,
                                     32,
                                     32
                                   ],
+                                  "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "I5cgPS",
-                                      "name": "Centered banner image row",
+                                      "name": "Editorial canvas / Triptych",
+                                      "context": "Same8:5 editorial canvas as Browse on desktop/tablet, with artwork centered at62.5% width. Mobile2:3 canvas places full-width artwork in its upper portion, like the reference.",
                                       "width": "fill_container",
+                                      "height": 440,
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
@@ -21405,10 +21195,10 @@
                                           "id": "xWjWA",
                                           "type": "ref",
                                           "ref": "Z5Qv0z",
-                                          "width": 560,
-                                          "height": 314.8462664714495,
+                                          "width": 440,
+                                          "height": 247.3792093704246,
                                           "name": "Sale Image",
-                                          "context": "Reference-style centered banner with surrounding whitespace. Preserve full 2049:1152 source ratio; desktop width800, tablet560, mobile300. Grey placeholder in lo-fi, complete contain-fitted photo in hi-fi."
+                                          "context": "Miroir triptych retained intact at2049:1152; contain fit, no cropping or stretching. Width800 desktop/440 tablet/350 mobile in the nominal canvas sizes."
                                         }
                                       ]
                                     },
@@ -33219,7 +33009,7 @@
                                   "type": "frame",
                                   "id": "P9FGZA",
                                   "name": "Campaign Video behind modal",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -33234,7 +33024,7 @@
                                       "type": "frame",
                                       "id": "fS64T",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 432,
@@ -33243,40 +33033,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "z3Y9lL",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 768,
-                                          "height": 120
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "ryT6Q",
@@ -33305,32 +33061,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "O6NQcB",
-                                          "layoutPosition": "absolute",
-                                          "x": 692,
-                                          "y": 368,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "xrHvT",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -34164,7 +33894,7 @@
                                   "type": "frame",
                                   "id": "EIS77",
                                   "name": "Campaign Video behind modal",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -34179,7 +33909,7 @@
                                       "type": "frame",
                                       "id": "D5ytPu",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 432,
@@ -34188,40 +33918,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "y4NAta",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 768,
-                                          "height": 120
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "twURk",
@@ -34250,32 +33946,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "HS1RP",
-                                          "layoutPosition": "absolute",
-                                          "x": 692,
-                                          "y": 368,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "Ewpxk",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -38121,7 +37791,7 @@
                                   "type": "frame",
                                   "id": "S4ocOr",
                                   "name": "Hero / Campaign Video",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -38136,7 +37806,7 @@
                                       "type": "frame",
                                       "id": "czf6S",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 520,
@@ -38145,40 +37815,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "ilEc4",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 390,
-                                          "height": 120
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "T5hU2",
@@ -38207,32 +37843,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "fUQYi",
-                                          "layoutPosition": "absolute",
-                                          "x": 326,
-                                          "y": 456,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "hVFZm",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -38603,13 +38213,14 @@
                                   "type": "frame",
                                   "id": "Fyz8s",
                                   "name": "Browse Editorial",
+                                  "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
                                   "padding": [
-                                    32,
+                                    "$editorial-space-m",
                                     20,
-                                    24,
+                                    48,
                                     20
                                   ],
                                   "children": [
@@ -38619,22 +38230,24 @@
                                       "ref": "Im0MZ",
                                       "name": "Editorial Pair / Large Left",
                                       "width": "fill_container",
-                                      "height": 267,
-                                      "context": "WordPress mobile editorial behavior below600px: display only the smaller image centered in the content width; hide larger image and remove its reserved height. Desktop and tablet retain the two-image editorial composition.",
+                                      "height": 489.99999999999994,
+                                      "context": "Campaign canvas scales with width, not viewport height. Mobile shows only the smaller navy photo, centered in a5:7 artboard; desktop/tablet retain the large-left composition.",
                                       "descendants": {
                                         "gg90L": {
-                                          "x": 74.875,
-                                          "y": 0,
-                                          "width": 200.25,
-                                          "height": 267,
-                                          "enabled": true
+                                          "x": 58.33333333333333,
+                                          "y": 89.4444444444444,
+                                          "width": 233.33333333333334,
+                                          "height": 311.11111111111114,
+                                          "enabled": true,
+                                          "context": "Original smaller editorial photo,3:4. Half the large-photo width on desktop/tablet; two thirds of the portrait canvas width on mobile."
                                         },
                                         "MK1ZL": {
-                                          "x": 8.125,
+                                          "x": 0,
                                           "y": 0,
-                                          "width": 333.75,
-                                          "height": 445,
-                                          "enabled": false
+                                          "width": 175,
+                                          "height": 218.75,
+                                          "enabled": false,
+                                          "context": "Original large editorial photo with a Velvet-style4:5 cover crop. Hidden on mobile."
                                         }
                                       }
                                     },
@@ -38657,33 +38270,41 @@
                                   "type": "frame",
                                   "id": "txg9x",
                                   "name": "Sale Banner",
-                                  "context": "Centered editorial banner, following user-provided Velvet reference. Image is intentionally narrower than the content area; caption stays aligned with the section gutter. Desktop800x449.78, tablet560x314.85, mobile300x168.67. No image cropping or stretching.",
+                                  "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
                                   "padding": [
-                                    32,
+                                    "$editorial-space-m",
                                     20,
-                                    24,
+                                    48,
                                     20
                                   ],
+                                  "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "fCjbS",
-                                      "name": "Centered banner image row",
+                                      "name": "Editorial canvas / Triptych",
+                                      "context": "Same8:5 editorial canvas as Browse on desktop/tablet, with artwork centered at62.5% width. Mobile2:3 canvas places full-width artwork in its upper portion, like the reference.",
                                       "width": "fill_container",
+                                      "height": 525,
+                                      "padding": [
+                                        87.5,
+                                        0,
+                                        0,
+                                        0
+                                      ],
                                       "justifyContent": "center",
-                                      "alignItems": "center",
                                       "children": [
                                         {
                                           "id": "lxXuI",
                                           "type": "ref",
                                           "ref": "Z5Qv0z",
-                                          "height": 168.66764275256222,
-                                          "width": 300,
+                                          "height": 196.77891654465594,
+                                          "width": "fill_container",
                                           "name": "Sale Image",
-                                          "context": "Reference-style centered banner with surrounding whitespace. Preserve full 2049:1152 source ratio; desktop width800, tablet560, mobile300. Grey placeholder in lo-fi, complete contain-fitted photo in hi-fi."
+                                          "context": "Miroir triptych retained intact at2049:1152; contain fit, no cropping or stretching. Width800 desktop/440 tablet/350 mobile in the nominal canvas sizes."
                                         }
                                       ]
                                     },
@@ -50460,7 +50081,7 @@
                                   "type": "frame",
                                   "id": "AA4QN",
                                   "name": "Campaign Video behind modal",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -50475,7 +50096,7 @@
                                       "type": "frame",
                                       "id": "sM1EO",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 520,
@@ -50484,40 +50105,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "udDCR",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 390,
-                                          "height": 120
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "y546J",
@@ -50546,32 +50133,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "ePRnJ",
-                                          "layoutPosition": "absolute",
-                                          "x": 326,
-                                          "y": 456,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "EJ14D",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -51434,7 +50995,7 @@
                                   "type": "frame",
                                   "id": "GehWF",
                                   "name": "Campaign Video behind modal",
-                                  "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                                  "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                                   "width": "fill_container",
                                   "layout": "vertical",
                                   "gap": 18,
@@ -51449,7 +51010,7 @@
                                       "type": "frame",
                                       "id": "k2SUbL",
                                       "name": "Campaign Video / Wireframe",
-                                      "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                                      "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                                       "clip": true,
                                       "width": "fill_container",
                                       "height": 520,
@@ -51458,40 +51019,6 @@
                                       "justifyContent": "center",
                                       "alignItems": "center",
                                       "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "T8bAUp",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "Hero / Navigation Contrast Scrim",
-                                          "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                                          "fill": {
-                                            "type": "gradient",
-                                            "gradientType": "linear",
-                                            "enabled": true,
-                                            "rotation": 180,
-                                            "size": {
-                                              "height": 1
-                                            },
-                                            "colors": [
-                                              {
-                                                "color": "#000000AA",
-                                                "position": 0
-                                              },
-                                              {
-                                                "color": "#00000088",
-                                                "position": 0.65
-                                              },
-                                              {
-                                                "color": "#00000000",
-                                                "position": 1
-                                              }
-                                            ]
-                                          },
-                                          "width": 390,
-                                          "height": 120
-                                        },
                                         {
                                           "type": "frame",
                                           "id": "UTtpM",
@@ -51520,32 +51047,6 @@
                                               "fontSize": 12,
                                               "fontWeight": "normal",
                                               "letterSpacing": 1
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "h0uqa",
-                                          "layoutPosition": "absolute",
-                                          "x": 326,
-                                          "y": 456,
-                                          "name": "Video / Pause Control",
-                                          "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                                          "width": 44,
-                                          "height": 44,
-                                          "fill": "#FFFFFF",
-                                          "justifyContent": "center",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "icon",
-                                              "id": "aSiyV",
-                                              "name": "Pause video",
-                                              "width": 16,
-                                              "height": 16,
-                                              "icon": "pause",
-                                              "library": "lucide",
-                                              "fill": "$ink"
                                             }
                                           ]
                                         }
@@ -55900,9 +55401,10 @@
       "x": 3200,
       "y": -4940,
       "name": "Editorial Pair / Reversible",
+      "context": "Width-led Velvet-style campaign canvas: desktop max1280×800 (8:5), tablet fills available width at8:5. Large portrait occupies half the canvas at4:5; small portrait is one quarter canvas width at3:4, vertically centered. No viewport-height scaling, scroll snap or parallax. Mobile uses a5:7 canvas with the smaller photo only.",
       "reusable": true,
-      "width": 1328,
-      "height": 740,
+      "width": 1280,
+      "height": 800,
       "layout": "none",
       "children": [
         {
@@ -55910,20 +55412,20 @@
           "type": "ref",
           "ref": "Z5Qv0z",
           "name": "Small Image",
-          "x": 206.6234939759036,
-          "y": 202.83132530120483,
-          "width": 250.75301204819277,
-          "height": 334.33734939759034
+          "x": 160,
+          "y": 186.66666666666666,
+          "width": 320,
+          "height": 426.6666666666667
         },
         {
           "id": "MK1ZL",
           "type": "ref",
           "ref": "Z5Qv0z",
           "name": "Large Image",
-          "x": 773,
+          "x": 640,
           "y": 0,
-          "width": 555,
-          "height": 740
+          "width": 640,
+          "height": 800
         }
       ]
     },
@@ -57916,7 +57418,7 @@
                       "type": "frame",
                       "id": "MFVh9",
                       "name": "Hero / Campaign Video",
-                      "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                      "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
@@ -57931,7 +57433,7 @@
                           "type": "frame",
                           "id": "uPglD",
                           "name": "Campaign Video / Miroir Poster",
-                          "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                          "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                           "clip": true,
                           "width": "fill_container",
                           "height": 640,
@@ -57943,69 +57445,7 @@
                           },
                           "layout": "vertical",
                           "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "rectangle",
-                              "id": "x1WOv",
-                              "layoutPosition": "absolute",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Hero / Navigation Contrast Scrim",
-                              "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                              "fill": {
-                                "type": "gradient",
-                                "gradientType": "linear",
-                                "enabled": true,
-                                "rotation": 180,
-                                "size": {
-                                  "height": 1
-                                },
-                                "colors": [
-                                  {
-                                    "color": "#000000AA",
-                                    "position": 0
-                                  },
-                                  {
-                                    "color": "#00000088",
-                                    "position": 0.65
-                                  },
-                                  {
-                                    "color": "#00000000",
-                                    "position": 1
-                                  }
-                                ]
-                              },
-                              "width": 1440,
-                              "height": 180
-                            },
-                            {
-                              "type": "frame",
-                              "id": "MwHWU",
-                              "layoutPosition": "absolute",
-                              "x": 1340,
-                              "y": 576,
-                              "name": "Video / Pause Control",
-                              "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                              "width": 44,
-                              "height": 44,
-                              "fill": "#111111B3",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "bcRZc",
-                                  "name": "Pause video",
-                                  "width": 16,
-                                  "height": 16,
-                                  "icon": "pause",
-                                  "library": "lucide",
-                                  "fill": "#FFFFFF"
-                                }
-                              ]
-                            }
-                          ]
+                          "alignItems": "center"
                         },
                         {
                           "type": "frame",
@@ -58500,60 +57940,73 @@
                       "type": "frame",
                       "id": "MnYqY",
                       "name": "Browse Editorial",
-                      "context": "Uses the former hero photos: yellow large left, navy small right. Layout, caption and link unchanged. Mobile retains the smaller navy image only.",
+                      "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
                       "padding": [
-                        96,
+                        "$editorial-space-d",
                         "$gutter",
-                        0,
+                        32,
                         "$gutter"
                       ],
                       "children": [
                         {
-                          "id": "x9UhH5",
-                          "type": "ref",
-                          "ref": "Im0MZ",
-                          "name": "Editorial Pair / Large Left",
+                          "type": "frame",
+                          "id": "p2CVL",
+                          "name": "Centered editorial image row",
                           "width": "fill_container",
-                          "height": 740,
-                          "descendants": {
-                            "gg90L": {
-                              "x": 870.6234939759036,
-                              "y": 202.83132530120483,
-                              "width": 250.75301204819277,
-                              "height": 334.33734939759034,
-                              "fill": {
-                                "type": "image",
-                                "enabled": true,
-                                "url": "images/hifi/hero-navy.jpg",
-                                "mode": "cover"
-                              },
-                              "context": "Reused original hero photograph: navy look in smaller editorial image. Preserve existing responsive geometry and mobile visibility.",
-                              "name": "Browse / Previous Hero Navy"
-                            },
-                            "gg90L/tYzk8": {
-                              "enabled": false
-                            },
-                            "MK1ZL": {
-                              "x": 0,
-                              "y": 0,
-                              "width": 555,
-                              "height": 740,
-                              "fill": {
-                                "type": "image",
-                                "enabled": true,
-                                "url": "images/hifi/hero-yellow.jpg",
-                                "mode": "cover"
-                              },
-                              "context": "Reused original hero photograph: yellow look in larger left editorial image. Hidden on mobile, matching existing editorial behavior.",
-                              "name": "Browse / Previous Hero Yellow"
-                            },
-                            "MK1ZL/tYzk8": {
-                              "enabled": false
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "x9UhH5",
+                              "type": "ref",
+                              "ref": "Im0MZ",
+                              "name": "Editorial Pair / Large Left",
+                              "width": 1280,
+                              "height": 800,
+                              "context": "Campaign canvas scales with width, not viewport height. Mobile shows only the smaller navy photo, centered in a5:7 artboard; desktop/tablet retain the large-left composition.",
+                              "descendants": {
+                                "gg90L": {
+                                  "x": 800,
+                                  "y": 186.66666666666666,
+                                  "width": 320,
+                                  "height": 426.6666666666667,
+                                  "fill": {
+                                    "type": "image",
+                                    "enabled": true,
+                                    "url": "images/hifi/hero-navy.jpg",
+                                    "mode": "cover"
+                                  },
+                                  "context": "Original smaller editorial photo,3:4. Half the large-photo width on desktop/tablet; two thirds of the portrait canvas width on mobile.",
+                                  "name": "Browse / Previous Hero Navy",
+                                  "enabled": true
+                                },
+                                "gg90L/tYzk8": {
+                                  "enabled": false
+                                },
+                                "MK1ZL": {
+                                  "x": 0,
+                                  "y": 0,
+                                  "width": 640,
+                                  "height": 800,
+                                  "fill": {
+                                    "type": "image",
+                                    "enabled": true,
+                                    "url": "images/hifi/hero-yellow.jpg",
+                                    "mode": "cover"
+                                  },
+                                  "context": "Original large editorial photo with a Velvet-style4:5 cover crop. Hidden on mobile.",
+                                  "name": "Browse / Previous Hero Yellow",
+                                  "enabled": true
+                                },
+                                "MK1ZL/tYzk8": {
+                                  "enabled": false
+                                }
+                              }
                             }
-                          }
+                          ]
                         },
                         {
                           "type": "text",
@@ -58572,22 +58025,25 @@
                       "type": "frame",
                       "id": "gs1oK",
                       "name": "Sale Banner",
-                      "context": "Centered editorial banner, following user-provided Velvet reference. Image is intentionally narrower than the content area; caption stays aligned with the section gutter. Desktop800x449.78, tablet560x314.85, mobile300x168.67. No image cropping or stretching.",
+                      "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
                       "padding": [
-                        96,
+                        "$editorial-space-d",
                         "$gutter",
-                        0,
+                        32,
                         "$gutter"
                       ],
+                      "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
                           "id": "rDHsp",
-                          "name": "Centered banner image row",
-                          "width": "fill_container",
+                          "name": "Editorial canvas / Triptych",
+                          "context": "Same8:5 editorial canvas as Browse on desktop/tablet, with artwork centered at62.5% width. Mobile2:3 canvas places full-width artwork in its upper portion, like the reference.",
+                          "width": 1280,
+                          "height": 800,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -58604,7 +58060,7 @@
                                 "url": "images/hifi/banner-desktop-2.webp",
                                 "mode": "contain"
                               },
-                              "context": "Reference-style centered banner with surrounding whitespace. Preserve full 2049:1152 source ratio; desktop width800, tablet560, mobile300. Grey placeholder in lo-fi, complete contain-fitted photo in hi-fi.",
+                              "context": "Miroir triptych retained intact at2049:1152; contain fit, no cropping or stretching. Width800 desktop/440 tablet/350 mobile in the nominal canvas sizes.",
                               "descendants": {
                                 "tYzk8": {
                                   "enabled": false
@@ -58618,6 +58074,8 @@
                           "id": "WtGGP",
                           "name": "Caption",
                           "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
                           "content": "the collection: everyday, in good company",
                           "fontFamily": "$font-sans",
                           "fontSize": "$text-sm",
@@ -60614,7 +60072,7 @@
                       "type": "frame",
                       "id": "mC1qZ",
                       "name": "Hero / Campaign Video",
-                      "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                      "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
@@ -60629,7 +60087,7 @@
                           "type": "frame",
                           "id": "c6hfCa",
                           "name": "Campaign Video / Miroir Poster",
-                          "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                          "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                           "clip": true,
                           "width": "fill_container",
                           "height": 432,
@@ -60641,69 +60099,7 @@
                           },
                           "layout": "vertical",
                           "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "rectangle",
-                              "id": "p3pBA",
-                              "layoutPosition": "absolute",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Hero / Navigation Contrast Scrim",
-                              "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                              "fill": {
-                                "type": "gradient",
-                                "gradientType": "linear",
-                                "enabled": true,
-                                "rotation": 180,
-                                "size": {
-                                  "height": 1
-                                },
-                                "colors": [
-                                  {
-                                    "color": "#000000AA",
-                                    "position": 0
-                                  },
-                                  {
-                                    "color": "#00000088",
-                                    "position": 0.65
-                                  },
-                                  {
-                                    "color": "#00000000",
-                                    "position": 1
-                                  }
-                                ]
-                              },
-                              "width": 768,
-                              "height": 120
-                            },
-                            {
-                              "type": "frame",
-                              "id": "sHIBZ",
-                              "layoutPosition": "absolute",
-                              "x": 692,
-                              "y": 368,
-                              "name": "Video / Pause Control",
-                              "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                              "width": 44,
-                              "height": 44,
-                              "fill": "#111111B3",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "LrgW5",
-                                  "name": "Pause video",
-                                  "width": 16,
-                                  "height": 16,
-                                  "icon": "pause",
-                                  "library": "lucide",
-                                  "fill": "#FFFFFF"
-                                }
-                              ]
-                            }
-                          ]
+                          "alignItems": "center"
                         },
                         {
                           "type": "frame",
@@ -61193,12 +60589,12 @@
                       "type": "frame",
                       "id": "rBI9w",
                       "name": "Browse Editorial",
-                      "context": "Uses the former hero photos: yellow large left, navy small right. Layout, caption and link unchanged. Mobile retains the smaller navy image only.",
+                      "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
                       "padding": [
-                        40,
+                        "$editorial-space-t",
                         32,
                         32,
                         32
@@ -61210,21 +60606,23 @@
                           "ref": "Im0MZ",
                           "name": "Editorial Pair / Large Left",
                           "width": "fill_container",
-                          "height": 469.3333333333333,
+                          "height": 440,
+                          "context": "Campaign canvas scales with width, not viewport height. Mobile shows only the smaller navy photo, centered in a5:7 artboard; desktop/tablet retain the large-left composition.",
                           "descendants": {
                             "gg90L": {
-                              "x": 448.48192771084337,
-                              "y": 128.64257028112448,
-                              "width": 159.03614457831327,
-                              "height": 212.04819277108436,
+                              "x": 440,
+                              "y": 102.66666666666667,
+                              "width": 176,
+                              "height": 234.66666666666666,
                               "fill": {
                                 "type": "image",
                                 "enabled": true,
                                 "url": "images/hifi/hero-navy.jpg",
                                 "mode": "cover"
                               },
-                              "context": "Reused original hero photograph: navy look in smaller editorial image. Preserve existing responsive geometry and mobile visibility.",
-                              "name": "Browse / Previous Hero Navy"
+                              "context": "Original smaller editorial photo,3:4. Half the large-photo width on desktop/tablet; two thirds of the portrait canvas width on mobile.",
+                              "name": "Browse / Previous Hero Navy",
+                              "enabled": true
                             },
                             "gg90L/tYzk8": {
                               "enabled": false
@@ -61233,15 +60631,16 @@
                               "x": 0,
                               "y": 0,
                               "width": 352,
-                              "height": 469.3333333333333,
+                              "height": 440,
                               "fill": {
                                 "type": "image",
                                 "enabled": true,
                                 "url": "images/hifi/hero-yellow.jpg",
                                 "mode": "cover"
                               },
-                              "context": "Reused original hero photograph: yellow look in larger left editorial image. Hidden on mobile, matching existing editorial behavior.",
-                              "name": "Browse / Previous Hero Yellow"
+                              "context": "Original large editorial photo with a Velvet-style4:5 cover crop. Hidden on mobile.",
+                              "name": "Browse / Previous Hero Yellow",
+                              "enabled": true
                             },
                             "MK1ZL/tYzk8": {
                               "enabled": false
@@ -61267,22 +60666,25 @@
                       "type": "frame",
                       "id": "soKbk",
                       "name": "Sale Banner",
-                      "context": "Centered editorial banner, following user-provided Velvet reference. Image is intentionally narrower than the content area; caption stays aligned with the section gutter. Desktop800x449.78, tablet560x314.85, mobile300x168.67. No image cropping or stretching.",
+                      "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
                       "padding": [
-                        40,
+                        "$editorial-space-t",
                         32,
                         32,
                         32
                       ],
+                      "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
                           "id": "ZTTuC",
-                          "name": "Centered banner image row",
+                          "name": "Editorial canvas / Triptych",
+                          "context": "Same8:5 editorial canvas as Browse on desktop/tablet, with artwork centered at62.5% width. Mobile2:3 canvas places full-width artwork in its upper portion, like the reference.",
                           "width": "fill_container",
+                          "height": 440,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -61290,8 +60692,8 @@
                               "id": "hBuRm",
                               "type": "ref",
                               "ref": "Z5Qv0z",
-                              "width": 560,
-                              "height": 314.8462664714495,
+                              "width": 440,
+                              "height": 247.3792093704246,
                               "name": "Sale Image",
                               "fill": {
                                 "type": "image",
@@ -61299,7 +60701,7 @@
                                 "url": "images/hifi/banner-desktop-2.webp",
                                 "mode": "contain"
                               },
-                              "context": "Reference-style centered banner with surrounding whitespace. Preserve full 2049:1152 source ratio; desktop width800, tablet560, mobile300. Grey placeholder in lo-fi, complete contain-fitted photo in hi-fi.",
+                              "context": "Miroir triptych retained intact at2049:1152; contain fit, no cropping or stretching. Width800 desktop/440 tablet/350 mobile in the nominal canvas sizes.",
                               "descendants": {
                                 "tYzk8": {
                                   "enabled": false
@@ -63424,7 +62826,7 @@
                       "type": "frame",
                       "id": "dbuQZ",
                       "name": "Hero / Campaign Video",
-                      "context": "Transparent homepage mode: announcement remains solid above the video; white navigation overlays media. Desktop1440×640, tablet768×432, mobile390×520 video sizes unchanged. Solid mode restores normal header flow. Video source pending.",
+                      "context": "Announcement remains above the transparent, non-sticky navigation over campaign media. Desktop 1440×640, tablet 768×432, mobile 390×520; dimensions and caption spacing unchanged. Muted looping video has no play/pause button; poster fallback respects reduced motion and save-data.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
@@ -63439,7 +62841,7 @@
                           "type": "frame",
                           "id": "iA6Dm",
                           "name": "Campaign Video / Miroir Poster",
-                          "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                          "context": "Campaign film preview. Storefront autoplays muted, looping and inline without play/pause controls. Keep poster for reduced motion, save-data, blocked autoplay or playback failure. Pause automatically offscreen or in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                           "clip": true,
                           "width": "fill_container",
                           "height": 520,
@@ -63451,69 +62853,7 @@
                           },
                           "layout": "vertical",
                           "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "rectangle",
-                              "id": "iqBVh",
-                              "layoutPosition": "absolute",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Hero / Navigation Contrast Scrim",
-                              "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                              "fill": {
-                                "type": "gradient",
-                                "gradientType": "linear",
-                                "enabled": true,
-                                "rotation": 180,
-                                "size": {
-                                  "height": 1
-                                },
-                                "colors": [
-                                  {
-                                    "color": "#000000AA",
-                                    "position": 0
-                                  },
-                                  {
-                                    "color": "#00000088",
-                                    "position": 0.65
-                                  },
-                                  {
-                                    "color": "#00000000",
-                                    "position": 1
-                                  }
-                                ]
-                              },
-                              "width": 390,
-                              "height": 120
-                            },
-                            {
-                              "type": "frame",
-                              "id": "M7h9NN",
-                              "layoutPosition": "absolute",
-                              "x": 326,
-                              "y": 456,
-                              "name": "Video / Pause Control",
-                              "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                              "width": 44,
-                              "height": 44,
-                              "fill": "#111111B3",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "v8IDR",
-                                  "name": "Pause video",
-                                  "width": 16,
-                                  "height": 16,
-                                  "icon": "pause",
-                                  "library": "lucide",
-                                  "fill": "#FFFFFF"
-                                }
-                              ]
-                            }
-                          ]
+                          "alignItems": "center"
                         },
                         {
                           "type": "frame",
@@ -64023,14 +63363,14 @@
                       "type": "frame",
                       "id": "FltNF",
                       "name": "Browse Editorial",
-                      "context": "Uses the former hero photos: yellow large left, navy small right. Layout, caption and link unchanged. Mobile retains the smaller navy image only.",
+                      "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
                       "padding": [
-                        32,
+                        "$editorial-space-m",
                         20,
-                        24,
+                        48,
                         20
                       ],
                       "children": [
@@ -64040,21 +63380,21 @@
                           "ref": "Im0MZ",
                           "name": "Editorial Pair / Large Left",
                           "width": "fill_container",
-                          "height": 267,
-                          "context": "WordPress mobile editorial behavior below600px: display only the smaller image centered in the content width; hide larger image and remove its reserved height. Desktop and tablet retain the two-image editorial composition.",
+                          "height": 489.99999999999994,
+                          "context": "Campaign canvas scales with width, not viewport height. Mobile shows only the smaller navy photo, centered in a5:7 artboard; desktop/tablet retain the large-left composition.",
                           "descendants": {
                             "gg90L": {
-                              "x": 74.875,
-                              "y": 0,
-                              "width": 200.25,
-                              "height": 267,
+                              "x": 58.33333333333333,
+                              "y": 89.4444444444444,
+                              "width": 233.33333333333334,
+                              "height": 311.11111111111114,
                               "fill": {
                                 "type": "image",
                                 "enabled": true,
                                 "url": "images/hifi/hero-navy.jpg",
                                 "mode": "cover"
                               },
-                              "context": "Reused original hero photograph: navy look in smaller editorial image. Preserve existing responsive geometry and mobile visibility.",
+                              "context": "Original smaller editorial photo,3:4. Half the large-photo width on desktop/tablet; two thirds of the portrait canvas width on mobile.",
                               "enabled": true,
                               "name": "Browse / Previous Hero Navy"
                             },
@@ -64062,10 +63402,10 @@
                               "enabled": false
                             },
                             "MK1ZL": {
-                              "x": 8.125,
+                              "x": 0,
                               "y": 0,
-                              "width": 333.75,
-                              "height": 445,
+                              "width": 175,
+                              "height": 218.75,
                               "enabled": false,
                               "fill": {
                                 "type": "image",
@@ -64073,7 +63413,7 @@
                                 "url": "images/hifi/hero-yellow.jpg",
                                 "mode": "cover"
                               },
-                              "context": "Reused original hero photograph: yellow look in larger left editorial image. Hidden on mobile, matching existing editorial behavior.",
+                              "context": "Original large editorial photo with a Velvet-style4:5 cover crop. Hidden on mobile.",
                               "name": "Browse / Previous Hero Yellow"
                             },
                             "MK1ZL/tYzk8": {
@@ -64100,31 +63440,39 @@
                       "type": "frame",
                       "id": "QsqkQ",
                       "name": "Sale Banner",
-                      "context": "Centered editorial banner, following user-provided Velvet reference. Image is intentionally narrower than the content area; caption stays aligned with the section gutter. Desktop800x449.78, tablet560x314.85, mobile300x168.67. No image cropping or stretching.",
+                      "context": "Velvet-inspired width-led editorial rhythm, preserving Miroir photos and page-gutter captions. Desktop/tablet share8:5 canvases with max width1280; desktop/tablet spacing64px top/32px bottom. Mobile uses portrait canvases with112px top/48px bottom. Native continuous scrolling; no forced viewport fit or added effects.",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 18,
                       "padding": [
-                        32,
+                        "$editorial-space-m",
                         20,
-                        24,
+                        48,
                         20
                       ],
+                      "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
                           "id": "hjbXl",
-                          "name": "Centered banner image row",
+                          "name": "Editorial canvas / Triptych",
+                          "context": "Same8:5 editorial canvas as Browse on desktop/tablet, with artwork centered at62.5% width. Mobile2:3 canvas places full-width artwork in its upper portion, like the reference.",
                           "width": "fill_container",
+                          "height": 525,
+                          "padding": [
+                            87.5,
+                            0,
+                            0,
+                            0
+                          ],
                           "justifyContent": "center",
-                          "alignItems": "center",
                           "children": [
                             {
                               "id": "EXBbw",
                               "type": "ref",
                               "ref": "Z5Qv0z",
-                              "height": 168.66764275256222,
-                              "width": 300,
+                              "height": 196.77891654465594,
+                              "width": "fill_container",
                               "name": "Sale Image",
                               "fill": {
                                 "type": "image",
@@ -64132,7 +63480,7 @@
                                 "url": "images/hifi/banner-desktop-2.webp",
                                 "mode": "contain"
                               },
-                              "context": "Reference-style centered banner with surrounding whitespace. Preserve full 2049:1152 source ratio; desktop width800, tablet560, mobile300. Grey placeholder in lo-fi, complete contain-fitted photo in hi-fi.",
+                              "context": "Miroir triptych retained intact at2049:1152; contain fit, no cropping or stretching. Width800 desktop/440 tablet/350 mobile in the nominal canvas sizes.",
                               "descendants": {
                                 "tYzk8": {
                                   "enabled": false
@@ -83103,7 +82451,7 @@
                           "type": "frame",
                           "id": "BOOam",
                           "name": "Campaign Video / Miroir Poster",
-                          "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                          "context": "Static campaign film poster preview. Storefront uses muted looping inline autoplay with no play/pause control. Keep poster for reduced motion, save-data, blocked autoplay or playback failure; suspend video offscreen and in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                           "clip": true,
                           "width": "fill_container",
                           "height": 640,
@@ -83115,70 +82463,7 @@
                           },
                           "layout": "vertical",
                           "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "rectangle",
-                              "id": "BePKQ",
-                              "layoutPosition": "absolute",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Hero / Navigation Contrast Scrim",
-                              "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                              "enabled": false,
-                              "fill": {
-                                "type": "gradient",
-                                "gradientType": "linear",
-                                "enabled": true,
-                                "rotation": 180,
-                                "size": {
-                                  "height": 1
-                                },
-                                "colors": [
-                                  {
-                                    "color": "#000000AA",
-                                    "position": 0
-                                  },
-                                  {
-                                    "color": "#00000088",
-                                    "position": 0.65
-                                  },
-                                  {
-                                    "color": "#00000000",
-                                    "position": 1
-                                  }
-                                ]
-                              },
-                              "width": 1440,
-                              "height": 180
-                            },
-                            {
-                              "type": "frame",
-                              "id": "E18XFV",
-                              "layoutPosition": "absolute",
-                              "x": 1340,
-                              "y": 576,
-                              "name": "Video / Pause Control",
-                              "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                              "width": 44,
-                              "height": 44,
-                              "fill": "#111111B3",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "lXfua",
-                                  "name": "Pause video",
-                                  "width": 16,
-                                  "height": 16,
-                                  "icon": "pause",
-                                  "library": "lucide",
-                                  "fill": "#FFFFFF"
-                                }
-                              ]
-                            }
-                          ]
+                          "alignItems": "center"
                         },
                         {
                           "type": "frame",
@@ -83332,7 +82617,7 @@
                           "type": "frame",
                           "id": "LORrL",
                           "name": "Campaign Video / Miroir Poster",
-                          "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                          "context": "Static campaign film poster preview. Storefront uses muted looping inline autoplay with no play/pause control. Keep poster for reduced motion, save-data, blocked autoplay or playback failure; suspend video offscreen and in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                           "clip": true,
                           "width": "fill_container",
                           "height": 432,
@@ -83344,70 +82629,7 @@
                           },
                           "layout": "vertical",
                           "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "rectangle",
-                              "id": "wDBqC",
-                              "layoutPosition": "absolute",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Hero / Navigation Contrast Scrim",
-                              "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                              "enabled": false,
-                              "fill": {
-                                "type": "gradient",
-                                "gradientType": "linear",
-                                "enabled": true,
-                                "rotation": 180,
-                                "size": {
-                                  "height": 1
-                                },
-                                "colors": [
-                                  {
-                                    "color": "#000000AA",
-                                    "position": 0
-                                  },
-                                  {
-                                    "color": "#00000088",
-                                    "position": 0.65
-                                  },
-                                  {
-                                    "color": "#00000000",
-                                    "position": 1
-                                  }
-                                ]
-                              },
-                              "width": 768,
-                              "height": 120
-                            },
-                            {
-                              "type": "frame",
-                              "id": "tSXEQ",
-                              "layoutPosition": "absolute",
-                              "x": 692,
-                              "y": 368,
-                              "name": "Video / Pause Control",
-                              "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                              "width": 44,
-                              "height": 44,
-                              "fill": "#111111B3",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "A07NCB",
-                                  "name": "Pause video",
-                                  "width": 16,
-                                  "height": 16,
-                                  "icon": "pause",
-                                  "library": "lucide",
-                                  "fill": "#FFFFFF"
-                                }
-                              ]
-                            }
-                          ]
+                          "alignItems": "center"
                         },
                         {
                           "type": "frame",
@@ -83561,7 +82783,7 @@
                           "type": "frame",
                           "id": "zE6Au",
                           "name": "Campaign Video / Miroir Poster",
-                          "context": "Video asset not supplied. This is a poster preview, not a playable video. Show poster when autoplay is unavailable or reduced motion/save-data is enabled.",
+                          "context": "Static campaign film poster preview. Storefront uses muted looping inline autoplay with no play/pause control. Keep poster for reduced motion, save-data, blocked autoplay or playback failure; suspend video offscreen and in hidden tabs. Campaign media is unshaded: no dark overlay, gradient or contrast scrim.",
                           "clip": true,
                           "width": "fill_container",
                           "height": 520,
@@ -83573,70 +82795,7 @@
                           },
                           "layout": "vertical",
                           "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "rectangle",
-                              "id": "mnPPf",
-                              "layoutPosition": "absolute",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Hero / Navigation Contrast Scrim",
-                              "context": "Hero-only dark scrim protects white navigation against bright frames; navbar itself is transparent. Shown only in transparent mode.",
-                              "enabled": false,
-                              "fill": {
-                                "type": "gradient",
-                                "gradientType": "linear",
-                                "enabled": true,
-                                "rotation": 180,
-                                "size": {
-                                  "height": 1
-                                },
-                                "colors": [
-                                  {
-                                    "color": "#000000AA",
-                                    "position": 0
-                                  },
-                                  {
-                                    "color": "#00000088",
-                                    "position": 0.65
-                                  },
-                                  {
-                                    "color": "#00000000",
-                                    "position": 1
-                                  }
-                                ]
-                              },
-                              "width": 390,
-                              "height": 120
-                            },
-                            {
-                              "type": "frame",
-                              "id": "zfTJH",
-                              "layoutPosition": "absolute",
-                              "x": 326,
-                              "y": 456,
-                              "name": "Video / Pause Control",
-                              "context": "Accessible button. Pause playing campaign video; toggle to play when paused. Hidden until actual video is available and usable.",
-                              "width": 44,
-                              "height": 44,
-                              "fill": "#111111B3",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "bcopg",
-                                  "name": "Pause video",
-                                  "width": 16,
-                                  "height": 16,
-                                  "icon": "pause",
-                                  "library": "lucide",
-                                  "fill": "#FFFFFF"
-                                }
-                              ]
-                            }
-                          ]
+                          "alignItems": "center"
                         },
                         {
                           "type": "frame",
@@ -83811,6 +82970,22 @@
     "stroke-hair": {
       "type": "number",
       "value": 1
+    },
+    "editorial-stage-max": {
+      "type": "number",
+      "value": 1280
+    },
+    "editorial-space-d": {
+      "type": "number",
+      "value": 64
+    },
+    "editorial-space-t": {
+      "type": "number",
+      "value": 64
+    },
+    "editorial-space-m": {
+      "type": "number",
+      "value": 112
     }
   },
   "fileToken": "fc32a2fe-88c1-442b-84a1-06437e983062",

@@ -25,10 +25,10 @@ function harness({ reduced = false, mobile = false, saveData = false, blocked = 
   video.pause = () => { video.paused = true; video.dispatchEvent(new Event('pause')); };
   video.load = () => {};
   video.removeAttribute = key => { if (key === 'src') video.src = ''; };
-  const button = new EventTarget();
-  Object.assign(button, { hidden: true, dataset: { playLabel: 'Play campaign video', pauseLabel: 'Pause campaign video' } });
-  button.setAttribute = (key, value) => { button[key] = value; };
-  hero.querySelector = selector => missing ? null : selector === 'video' ? video : button;
+  hero.querySelector = selector => {
+    assert.equal(selector, 'video', 'Playback must not depend on a play/pause button');
+    return missing ? null : video;
+  };
   const motion = new EventTarget(); motion.matches = reduced;
   const compact = new EventTarget(); compact.matches = mobile;
   const connection = new EventTarget(); connection.saveData = saveData;
@@ -38,28 +38,22 @@ function harness({ reduced = false, mobile = false, saveData = false, blocked = 
   class IntersectionObserver { constructor(callback) { observer = callback; } observe() {} }
   const window = { IntersectionObserver, matchMedia: query => query.includes('reduced-motion') ? motion : compact };
   vm.runInNewContext(initializer, { document, window, navigator: { connection }, IntersectionObserver });
-  return { video, button, classes, document, motion, compact, connection, view: isIntersecting => observer([{ isIntersecting }]) };
+  return { video, classes, document, motion, compact, connection, view: isIntersecting => observer([{ isIntersecting }]) };
 }
 
 (async () => {
   const a = harness();
   assert.equal(a.video.src, '/campaign.mp4');
   assert.equal(a.video.muted, true);
-  assert.equal(a.button.hidden, false);
-  assert.equal(a.button['aria-label'], 'Pause campaign video');
-  a.button.dispatchEvent(new Event('click'));
-  assert.equal(a.video.paused, true);
-  a.view(false); a.view(true);
-  assert.equal(a.video.paused, true, 'Manual pause survives scrolling');
-  a.button.dispatchEvent(new Event('click'));
   assert.equal(a.video.paused, false);
+  assert.equal(a.classes.has('has-video-frame'), true);
   a.view(false); assert.equal(a.video.paused, true);
   a.view(true); assert.equal(a.video.paused, false);
   a.document.hidden = true; a.document.dispatchEvent(new Event('visibilitychange'));
   assert.equal(a.video.paused, true);
   a.document.hidden = false; a.document.dispatchEvent(new Event('visibilitychange'));
   assert.equal(a.video.paused, false);
-  console.log('PASS muted playback, accessible play/pause, offscreen/tab suspension, manual pause retained');
+  console.log('PASS muted playback without controls and offscreen/tab suspension');
 
   a.compact.matches = true; a.compact.dispatchEvent(new Event('change'));
   assert.equal(a.video.src, '/portrait.webm');
@@ -67,22 +61,23 @@ function harness({ reduced = false, mobile = false, saveData = false, blocked = 
 
   for (const setting of [{ reduced: true }, { saveData: true }]) {
     const b = harness(setting);
-    assert.equal(b.video.src, ''); assert.equal(b.video.plays, 0); assert.equal(b.button.hidden, true);
+    assert.equal(b.video.src, ''); assert.equal(b.video.plays, 0);
+    assert.equal(b.classes.has('has-video-frame'), false);
   }
   a.motion.matches = true; a.motion.dispatchEvent(new Event('change'));
   assert.equal(a.video.src, ''); assert.equal(a.classes.has('has-video-frame'), false);
   a.motion.matches = false; a.motion.dispatchEvent(new Event('change'));
   assert.equal(a.video.paused, false);
   a.connection.saveData = true; a.connection.dispatchEvent(new Event('change'));
-  assert.equal(a.video.src, ''); assert.equal(a.button.hidden, true);
+  assert.equal(a.video.src, ''); assert.equal(a.classes.has('has-video-frame'), false);
   console.log('PASS reduced-motion and data-saver poster-only fallback, including preference changes');
 
   const c = harness({ blocked: true });
   await Promise.resolve(); await Promise.resolve();
-  assert.equal(c.button.hidden, false); assert.equal(c.button['aria-label'], 'Play campaign video');
-  assert.equal(c.classes.has('has-video-frame'), false);
+  assert.equal(c.video.paused, true); assert.equal(c.video.plays, 1);
+  assert.equal(c.classes.has('has-video-frame'), false, 'Blocked autoplay keeps the poster visible');
   const d = harness(); d.video.dispatchEvent(new Event('error'));
-  assert.equal(d.button.hidden, true); assert.equal(d.classes.has('has-video-frame'), false);
+  assert.equal(d.video.paused, true); assert.equal(d.classes.has('has-video-frame'), false);
   const plays = d.video.plays; d.view(false); d.view(true); assert.equal(d.video.plays, plays);
   harness({ missing: true });
   const e = harness({ hidden: true }); assert.equal(e.video.plays, 0);

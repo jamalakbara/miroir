@@ -11,12 +11,13 @@ $type = WP_Block_Type_Registry::get_instance()->get_registered( 'miroir/video-he
 $check( (bool) $type, 'Video hero is registered' );
 $render = static fn( $attrs ) => render_block( miroir_parsed_block( 'miroir/video-hero', $attrs ) );
 $html = $render( array() );
-$check( false === strpos( $html, '<video' ) && false === strpos( $html, '<button' ), 'No source renders only the poster and link, with no inert controls' );
+$check( false !== strpos( $html, 'data-src="' . MIROIR_THEME_URI . '/assets/video/hero-desktop.mp4?ver=' ) && false !== strpos( $html, 'data-mobile-src="' . MIROIR_THEME_URI . '/assets/video/hero-mobile.mp4?ver=' ), 'No upload falls back to the versioned bundled desktop and mobile campaign films' );
+$check( false !== strpos( $html, '/assets/images/hero-video-poster-mobile.webp?ver=' ), 'Bundled posters are versioned' );
 $check( false !== strpos( $html, '<picture' ) && 2 === substr_count( $html, '<source' ) && false !== strpos( $html, 'loading="eager"' ), 'Hero has responsive eager posters' );
 $html = $render( array( 'video' => 'https://example.test/campaign.mp4', 'videoMobile' => 'https://example.test/mobile.webm' ) );
 $check( false !== strpos( $html, 'muted loop playsinline preload="none"' ), 'Video is muted, looping, inline and not preloaded' );
 $check( false !== strpos( $html, 'data-src="https://example.test/campaign.mp4"' ) && false !== strpos( $html, 'data-mobile-src="https://example.test/mobile.webm"' ), 'Video sources wait for preference-aware initialization' );
-$check( false !== strpos( $html, 'class="home-hero__toggle" hidden' ) && false !== strpos( $html, 'Pause campaign video' ), 'Playback control is labelled and initially hidden' );
+$check( false === strpos( $html, '<button' ) && false === strpos( $html, ' controls' ), 'Campaign hero has no custom or native playback controls' );
 $home = (int) get_option( 'page_on_front' );
 $content = (string) get_post_meta( $home, '_miroir_blocks_before_elementor', true );
 $names = array_values( array_filter( array_column( parse_blocks( $content ), 'blockName' ) ) );

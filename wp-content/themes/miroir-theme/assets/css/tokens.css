@@ -53,6 +53,10 @@
 	--home-strip-space-d: 120px;
 	--home-space-t: 40px;
 	--home-space-m: 32px;
+	--editorial-stage-max: 1280px;
+	--editorial-space-d: 64px;
+	--editorial-space-t: 64px;
+	--editorial-space-m: 112px;
 	--shop-cols-d: 4;
 	--shop-cols-t: 3;
 	--shop-cols-m: 2;

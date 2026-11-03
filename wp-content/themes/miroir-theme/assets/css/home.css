@@ -6,11 +6,6 @@
 .home-hero__video { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
 .home-hero.has-video-frame .home-hero__video { opacity: 1; }
 .home-hero > .home-caption { padding: 0 var(--gutter); }
-.home-hero__toggle { position: absolute; right: var(--gutter); bottom: 20px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 0; background: #111111b3; color: #fff; cursor: pointer; }
-.home-hero__toggle[hidden] { display: none; }
-.home-hero__toggle:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
-.home-hero__pause, .home-hero.is-playing .home-hero__play { display: none; }
-.home-hero.is-playing .home-hero__pause { display: block; }
 
 .home-editorial,
 .home-strip {
@@ -18,25 +13,38 @@
 	flex-direction: column;
 	padding: var(--home-space-d) var(--gutter) 0;
 }
-.home-editorial { gap: 18px; }
+.home-editorial {
+	/* Consistent, width-led campaign canvases; captions stay on the page gutter. */
+	gap: 18px;
+	padding-top: var(--editorial-space-d);
+	padding-bottom: 32px;
+}
 .home-strip { gap: 14px; padding-top: var(--home-strip-space-d); }
 
 .home-editorial__row {
-	/* Reserve room for section padding, caption and breathing space. */
-	--editorial-image-cap: calc((100svh - 160px) * 0.75);
+	width: min(100%, var(--editorial-stage-max));
+	aspect-ratio: 8 / 5;
+	align-self: center;
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	align-items: center;
 }
 .home-editorial__row:hover { text-decoration: none; }
 .home-editorial__small-col { display: flex; flex: 1 1 0; min-width: 0; align-items: center; justify-content: center; }
-.home-editorial__small { width: min(45.1807228916%, calc(var(--editorial-image-cap) * 0.451807228916)); aspect-ratio: 3 / 4; }
-.home-editorial__large { width: min(100%, var(--editorial-image-cap)); aspect-ratio: 3 / 4; justify-self: end; }
+.home-editorial__small { width: 50%; aspect-ratio: 3 / 4; }
+.home-editorial__large { width: 100%; aspect-ratio: 4 / 5; justify-self: end; }
 .home-editorial--large-first .home-editorial__large { justify-self: start; }
 
-/* Preserve the Pen.dev banner proportions at each breakpoint. */
-.home-banner > a { display: flex; justify-content: center; }
-.home-banner__image { width: min(100%, 800px); aspect-ratio: 2049 / 1152; }
+/* The triptych sits inside the same campaign canvas without cropping its artwork. */
+.home-banner > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	width: min(100%, var(--editorial-stage-max));
+	aspect-ratio: 8 / 5;
+}
+.home-banner__image { width: 62.5%; aspect-ratio: 2049 / 1152; }
 .home-banner__image img { object-fit: contain; }
 
 .home-caption {
@@ -59,6 +67,7 @@
 	grid-auto-flow: column;
 	grid-auto-columns: calc((100% - (var(--cols) - 1) * var(--col-gap, 20px)) / var(--cols));
 	overflow-x: auto;
+	overflow-y: clip;
 	scroll-snap-type: x mandatory;
 	overscroll-behavior-x: contain;
 	scrollbar-width: none;
@@ -74,30 +83,30 @@
 
 @media (max-width: 1023px) {
 	.home-hero__media { aspect-ratio: 16 / 9; }
-	.home-editorial, .home-strip { padding: var(--home-space-t) var(--gutter) 32px; }
-	.home-editorial__row { --editorial-image-cap: calc((100svh - 128px) * 0.75); }
-
-	.home-banner__image { width: min(100%, 560px); }
+	.home-strip { padding: var(--home-space-t) var(--gutter) 32px; }
+	.home-editorial { padding-top: var(--editorial-space-t); }
 
 	.home-strip .grid { --cols: 3; }
 }
 
 @media (max-width: 599px) {
 	.home-hero__media { aspect-ratio: 3 / 4; }
-	.home-editorial, .home-strip { padding: var(--home-space-m) var(--gutter) 24px; }
+	.home-strip { padding: var(--home-space-m) var(--gutter) 24px; }
 
+	.home-editorial { padding-top: var(--editorial-space-m); padding-bottom: 48px; }
 	.home-editorial__row {
-		--editorial-image-cap: calc((100svh - 132px) * 0.46875);
+		width: 100%;
+		aspect-ratio: 5 / 7;
 		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-		gap: 20px;
+		align-items: center;
+		justify-content: center;
 	}
-	.home-editorial__small-col { flex: none; }
-	.home-editorial__small { width: min(60%, calc(var(--editorial-image-cap) * 0.6)); }
+	.home-editorial__small-col { flex: none; width: 100%; }
+	.home-editorial__small { width: calc(100% * 2 / 3); }
 	.home-editorial__large { display: none; }
 
-	.home-banner__image { width: min(100%, 300px); }
+	.home-banner > a { aspect-ratio: 2 / 3; align-items: start; padding-top: 25%; }
+	.home-banner__image { width: 100%; }
 
 	.home-strip .grid { --cols: 2; --col-gap: 12px; }
 }

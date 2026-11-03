@@ -32,29 +32,20 @@
 	/* Campaign films enhance a usable poster; do not fetch video for reduced motion or save-data. */
 	document.querySelectorAll( '[data-video-hero]' ).forEach( function ( hero ) {
 		var video = hero.querySelector( 'video' );
-		var button = hero.querySelector( '.home-hero__toggle' );
-		if ( ! video || ! button ) { return; }
+		if ( ! video ) { return; }
 		var reduced = window.matchMedia( '(prefers-reduced-motion: reduce)' );
 		var mobile = window.matchMedia( '(max-width: 599px)' );
 		var connection = navigator.connection;
-		var manualPause = false;
 		var inView = true;
 		var failed = false;
 		var source = '';
 		video.muted = true;
 		function allowed() { return ! reduced.matches && ! ( connection && connection.saveData ); }
-		function syncButton() {
-			var playing = ! video.paused;
-			hero.classList.toggle( 'is-playing', playing );
-			button.setAttribute( 'aria-label', playing ? button.dataset.pauseLabel : button.dataset.playLabel );
-		}
 		function play() {
-			if ( ! allowed() || manualPause || ! inView || document.hidden || failed || ! source ) { return; }
+			if ( ! allowed() || ! inView || document.hidden || failed || ! source ) { return; }
 			var attempt = video.play();
 			if ( attempt && attempt.catch ) {
-				attempt.catch( function () {
-					if ( allowed() && ! failed && source ) { button.hidden = false; syncButton(); }
-				} );
+				attempt.catch( function () { hero.classList.remove( 'has-video-frame' ); } );
 			}
 		}
 		function updateSource() {
@@ -63,7 +54,6 @@
 				video.removeAttribute( 'src' );
 				video.load();
 				source = '';
-				button.hidden = true;
 				hero.classList.remove( 'has-video-frame' );
 				return;
 			}
@@ -71,7 +61,6 @@
 			if ( next !== source ) {
 				source = next;
 				failed = false;
-				button.hidden = true;
 				hero.classList.remove( 'has-video-frame' );
 				video.src = source;
 				video.load();
@@ -79,15 +68,10 @@
 			play();
 		}
 		video.addEventListener( 'playing', function () {
-			hero.classList.add( 'has-video-frame' ); button.hidden = false; syncButton();
+			hero.classList.add( 'has-video-frame' );
 		} );
-		video.addEventListener( 'pause', syncButton );
 		video.addEventListener( 'error', function () {
-			failed = true; video.pause(); button.hidden = true; hero.classList.remove( 'has-video-frame' );
-		} );
-		button.addEventListener( 'click', function () {
-			manualPause = ! video.paused;
-			if ( manualPause ) { video.pause(); } else { play(); }
+			failed = true; video.pause(); hero.classList.remove( 'has-video-frame' );
 		} );
 		document.addEventListener( 'visibilitychange', function () { if ( document.hidden ) { video.pause(); } else { play(); } } );
 		if ( window.IntersectionObserver ) {

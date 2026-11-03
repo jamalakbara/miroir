@@ -56,3 +56,5 @@ assert.doesNotMatch(css, /\.home-header-overlay:not\(\.elementor-editor-active\)
 assert.doesNotMatch(css, /\.home-header-overlay[^}]*\{[^}]*transition:/);
 assert.doesNotMatch(initializer, /addEventListener\( 'scroll'/);
 console.log('PASS header stays at the page top without paint transitions or scroll-state listeners');
+assert.doesNotMatch(css, /\.home-hero__media::after/);
+console.log('PASS campaign media has no dark gradient overlay at any breakpoint');
