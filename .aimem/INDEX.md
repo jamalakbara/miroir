@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 52 (proposed 37, accepted 8, superseded 7)
 - task: 1 (open 1)
 - memory: 52 (active 48, superseded 4)
-- handoff: 132 (final 132)
+- handoff: 133 (final 133)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
@@ -21,11 +21,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-qny39p45 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Wrote full Hostinger migration and auto-deploy steps. Tested package commands in scratchpad and deleted the output. Checked go-live state: 18 published real products, 25 demo drafts, 17 on-hold…
 - hnd-bq441v02 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Explained CI/CD options for Hostinger and recommended GitHub Actions over SSH, syncing only miroir theme and plugins. · Next: After the first migration, confirm the plan includes SSH and that r…
 - hnd-3veprnga 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Explained how to move the local Docker store to Hostinger; measured site (914 MB uploads, 43 products, 17 orders, 8 users; PHP 8.3, WP 7.1.4) and confirmed Hostinger's upload route for offline…
 - hnd-kehq718k 2026-11-03 (agent:codex) — Done: Committed all current tracked and untracked repository changes as bcaa344 (feat: refine campaign video hero and editorials) and pushed main to origin, including 24 prior local commits. · Next:…
 - hnd-tp3ttc19 2026-11-03 (agent:claude-haiku-5-5) — Done: Applied overflow-y: clip to .home-strip__grid (home.css) and .pdp__track (product.css). Live localhost:8080: computed overflow-y resolves to hidden (clip with scrollable x), so the track no lon…
-- hnd-e4x0y4wp 2026-11-03 (agent:claude) — Done: Explored higher-quality hero encodes, then user chose to keep current videos; all encoding stopped; decision recorded. · Next: Commit hero video/poster changes.
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
