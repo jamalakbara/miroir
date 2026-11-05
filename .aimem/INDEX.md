@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 53 (proposed 38, accepted 8, superseded 7)
+- decision: 54 (proposed 39, accepted 8, superseded 7)
 - task: 1 (open 1)
 - memory: 58 (active 53, superseded 5)
-- handoff: 143 (final 143)
+- handoff: 144 (final 144)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-5h74v61m 2026-11-05 (agent:claude:claude-opus-5-5) — Done: WhatsApp now opens in a new tab while order sent page stays; retry buttons use target blank; plugin 0.2.3. Tested in real Chrome locally: orders 456 and 457 opened api.whatsapp.com with line br…
 - hnd-qpky9mtg 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Preview now includes Order ref: #… in PHP and JS; plugin 0.2.1 blocks submit when displayed bag changed. Local curl run: stale submit blocked, typed values kept, updated submit created order 45…
 - hnd-mk5yry7a 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Changed WhatsApp links to esc_attr in thankyou.php, view-order.php, product-buy.php and product-state.php. php -l passed. Local render: sent page links decode exactly to saved message with 9 li…
 - hnd-0k26we04 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Diagnosed WhatsApp message losing line breaks: esc_url removes %0A from wa.me href on order sent page (thankyou.php), same gotcha as mem-2f087ftk. Reproduced with wp eval locally. · Next: If us…
 - hnd-nz167bqs 2026-11-05 (human:akbar) — Done: Tidied miroir.pen through canvas tools: aligned five design/state boards at y=0 with 240px gaps, organized component rows and moved icon and mini-bag references into foundation area above scree…
-- hnd-1ft025w3 2026-11-05 (human:akbar) — Done: Deployed bag, checkout review and sent template icon fixes to Hostinger temporary domain by scp. Remote backup in ~/backups/theme-whatsapp-icon-20261106. php -l passed; object cache flushed; li…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
