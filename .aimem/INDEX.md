@@ -14,6 +14,7 @@ Project: `miroir` · mode: solo · sync: none
 - task: 1 (open 1)
 - memory: 53 (active 49, superseded 4)
 - handoff: 136 (final 136)
+- incident: 1 (investigating 1)
 
 ## Pinned
 - mem-6gpn6a3h [agent] Project overview — Rebuild of miroir.id store on WordPress + WooCommerce; keep every legacy URL working via redirects
