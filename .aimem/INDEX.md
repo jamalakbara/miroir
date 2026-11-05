@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 52 (proposed 37, accepted 8, superseded 7)
 - task: 1 (open 1)
 - memory: 53 (active 49, superseded 4)
-- handoff: 136 (final 136)
+- handoff: 137 (final 137)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-x9a9tkp2 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Hostinger migration completed on temporary domain. Enabled SSH with a deploy key, secured migration backups, backed up DB, replaced 51 :8080 URLs, shuffled salts, flushed ca…
 - hnd-8trykyaz 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Temporary site responds with Miroir homepage, product page, wp-login, wp-json, hero video and Avenir font. Found 11 homepage links still using :8080. · Next: After hPanel shows complete and use…
 - hnd-2m2aaeng 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Hostinger accepted the backup files and migration request for the temporary domain. Status in progress, 59 minutes estimated. · Next: When migration finishes, inspect th…
 - hnd-4pshe3zw 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Built Hostinger package in F:/projects/miroir-hostinger and verified contents. In hPanel, opened Upload your website files on the temporary domain. · Ne…
 - hnd-qny39p45 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Wrote full Hostinger migration and auto-deploy steps. Tested package commands in scratchpad and deleted the output. Checked go-live state: 18 published real products, 25 demo drafts, 17 on-hold…
-- hnd-bq441v02 2026-11-05 (agent:claude:claude-opus-5-5) — Done: Explained CI/CD options for Hostinger and recommended GitHub Actions over SSH, syncing only miroir theme and plugins. · Next: After the first migration, confirm the plan includes SSH and that r…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
