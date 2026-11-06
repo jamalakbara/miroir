@@ -27,5 +27,5 @@ $wa_url = apply_filters( 'miroir_whatsapp_url', 'https://wa.me/' . preg_replace(
 			<?php endif; ?>
 		</div>
 	</main>
-	<p class="maint__copyright"><?php echo esc_html( miroir_copyright() ); ?><?php echo '' !== miroir_text( 'maint_place' ) ? ' · ' . esc_html( miroir_text( 'maint_place' ) ) : ''; ?></p>
+	<?php get_template_part( 'template-parts/maintenance-copyright' ); ?>
 </div>

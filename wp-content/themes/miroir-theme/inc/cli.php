@@ -444,7 +444,7 @@ class Miroir_Theme_Command {
 					'About us'              => $page( 'about' ),
 					'Studio location'       => $page( 'studio-location' ),
 					'Contact customer care' => $page( 'contact' ),
-					'Instagram'             => 'https://www.instagram.com/miroir.id/',
+					'Instagram'             => 'https://www.instagram.com/miroirstore/',
 				),
 			),
 		);

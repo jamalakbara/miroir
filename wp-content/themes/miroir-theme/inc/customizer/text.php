@@ -28,6 +28,7 @@ function miroir_text_sections() {
 		'notices'     => __( 'Notice titles', 'miroir' ),
 		'notfound'    => __( 'Page not found (404)', 'miroir' ),
 		'maintenance' => __( 'Maintenance page', 'miroir' ),
+		'staging'     => __( 'Staging access page', 'miroir' ),
 	);
 }
 
@@ -70,6 +71,16 @@ function miroir_texts() {
 		'maint_retry'     => array( 'maintenance', __( 'Try again', 'miroir' ), __( 'Retry button', 'miroir' ) ),
 		'maint_social'    => array( 'maintenance', __( 'Follow miroir on Instagram ↗', 'miroir' ), __( 'Instagram link', 'miroir' ) ),
 		'maint_place'     => array( 'maintenance', __( 'Indonesia', 'miroir' ), __( 'Place after the copyright', 'miroir' ) ),
+		'maint_credit'    => array( 'maintenance', __( 'website by', 'miroir' ), __( 'Website credit label', 'miroir' ) ),
+
+		// Staging access page.
+		'staging_status'   => array( 'staging', __( 'PRIVATE PREVIEW', 'miroir' ), __( 'Status line', 'miroir' ) ),
+		'staging_headline' => array( 'staging', __( 'This store is private.', 'miroir' ), __( 'Headline', 'miroir' ) ),
+		'staging_copy'     => array( 'staging', __( 'Enter the password you were given to preview the store.', 'miroir' ), __( 'Message', 'miroir' ) ),
+		'staging_label'    => array( 'staging', __( 'Password', 'miroir' ), __( 'Password label', 'miroir' ) ),
+		'staging_button'   => array( 'staging', __( 'Enter store', 'miroir' ), __( 'Button', 'miroir' ) ),
+		'staging_error'    => array( 'staging', __( 'That password didn’t work. Please try again.', 'miroir' ), __( 'Wrong password message', 'miroir' ) ),
+		'staging_locked'   => array( 'staging', __( 'Too many attempts. Please try again in 15 minutes.', 'miroir' ), __( 'Too many attempts message', 'miroir' ) ),
 
 		// product.
 		'prev_product' => array( 'product', __( 'Previous product', 'miroir' ), __( 'Previous product link', 'miroir' ) ),
