@@ -173,7 +173,8 @@ wc-order-attribution-inputs { display: none; }
 .mini-bag__item { display: flex; align-items: flex-start; gap: 20px; }
 .mini-bag__image { width: 96px; aspect-ratio: 3 / 4; flex: none; }
 .mini-bag__details { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
-.mini-bag__details .qty { align-self: flex-start; margin-top: 4px; }
+.mini-bag__controls { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
+.mini-bag__remove { color: var(--ink-3); font-size: var(--text-sm); line-height: var(--lh-sans-12); }
 .mini-bag__subtotal { padding-top: 24px; border-top: 1px solid var(--line); }
 .mini-bag__actions { display: flex; flex-direction: column; gap: 12px; }
 .panel--bag.panel--modal[open] { animation: bag-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both; }

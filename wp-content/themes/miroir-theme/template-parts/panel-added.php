@@ -19,24 +19,28 @@ $back = remove_query_arg( array( 'added', 'choose-size', 'quantity', 'add-to-car
 				continue;
 			}
 			$max_qty = $product->get_max_purchase_quantity();
+			$link    = $product->is_visible() ? $product->get_permalink( $cart_item ) : '';
 			?>
 		<div class="mini-bag__item" data-mini-bag-item="<?php echo esc_attr( $cart_key ); ?>">
 			<?php miroir_image( miroir_product_image_id( $product ), 'woocommerce_thumbnail', 'mini-bag__image', $product->get_name(), 20 ); ?>
 			<div class="mini-bag__details">
-				<p class="flow__label"><?php echo esc_html( $product->get_name() ); ?></p>
+				<p class="flow__label"><?php echo $link ? '<a href="' . esc_url( $link ) . '">' . esc_html( $product->get_name() ) . '</a>' : esc_html( $product->get_name() ); ?></p>
 				<?php $variant = miroir_cart_item_variant( $cart_item ); ?>
 				<?php if ( $variant ) : ?><p class="flow__intro"><?php echo esc_html( $variant ); ?></p><?php endif; ?>
 				<p class="flow__intro"><?php echo wp_kses_post( WC()->cart->get_product_price( $product ) ); ?></p>
-				<?php if ( $product->is_sold_individually() ) : ?>
-					<input type="hidden" name="cart[<?php echo esc_attr( $cart_key ); ?>][qty]" value="1">
-					<p class="flow__intro"><?php echo esc_html( miroir_text( 'state_quantity', 1 ) ); ?></p>
-				<?php else : ?>
-					<div class="qty" data-qty>
-						<button class="qty__btn" type="button" data-qty-step="-1" aria-label="<?php esc_attr_e( 'Decrease quantity', 'miroir' ); ?>"<?php disabled( $cart_item['quantity'] <= 0 ); ?>>−</button>
-						<input class="qty__input" type="number" inputmode="numeric" name="cart[<?php echo esc_attr( $cart_key ); ?>][qty]" value="<?php echo esc_attr( $cart_item['quantity'] ); ?>" min="0" step="1"<?php echo $max_qty > 0 ? ' max="' . esc_attr( $max_qty ) . '"' : ''; ?> aria-label="<?php echo esc_attr( sprintf( __( '%s quantity', 'miroir' ), $product->get_name() ) ); ?>">
-						<button class="qty__btn" type="button" data-qty-step="1" aria-label="<?php esc_attr_e( 'Increase quantity', 'miroir' ); ?>"<?php disabled( $max_qty > 0 && $cart_item['quantity'] >= $max_qty ); ?>>+</button>
-					</div>
-				<?php endif; ?>
+				<div class="mini-bag__controls">
+					<?php if ( $product->is_sold_individually() ) : ?>
+						<input type="hidden" name="cart[<?php echo esc_attr( $cart_key ); ?>][qty]" value="1">
+						<p class="flow__intro"><?php echo esc_html( miroir_text( 'state_quantity', 1 ) ); ?></p>
+					<?php else : ?>
+						<div class="qty" data-qty>
+							<button class="qty__btn" type="button" data-qty-step="-1" aria-label="<?php esc_attr_e( 'Decrease quantity', 'miroir' ); ?>"<?php disabled( $cart_item['quantity'] <= 0 ); ?>>−</button>
+							<input class="qty__input" type="number" inputmode="numeric" name="cart[<?php echo esc_attr( $cart_key ); ?>][qty]" value="<?php echo esc_attr( $cart_item['quantity'] ); ?>" min="0" step="1"<?php echo $max_qty > 0 ? ' max="' . esc_attr( $max_qty ) . '"' : ''; ?> aria-label="<?php echo esc_attr( sprintf( __( '%s quantity', 'miroir' ), $product->get_name() ) ); ?>">
+							<button class="qty__btn" type="button" data-qty-step="1" aria-label="<?php esc_attr_e( 'Increase quantity', 'miroir' ); ?>"<?php disabled( $max_qty > 0 && $cart_item['quantity'] >= $max_qty ); ?>>+</button>
+						</div>
+					<?php endif; ?>
+					<a class="mini-bag__remove" href="<?php echo esc_url( wc_get_cart_remove_url( $cart_key ) ); ?>" data-mini-bag-remove aria-label="<?php echo esc_attr( sprintf( /* translators: %s: product name. */ __( 'Remove %s from bag', 'miroir' ), $product->get_name() ) ); ?>"><?php echo esc_html( miroir_text( 'remove' ) ); ?></a>
+				</div>
 			</div>
 		</div>
 		<?php endforeach; ?>

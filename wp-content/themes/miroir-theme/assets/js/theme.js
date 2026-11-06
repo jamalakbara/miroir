@@ -654,13 +654,9 @@
 		return true;
 	}
 
-	document.addEventListener( 'submit', function ( event ) {
-		var form = event.target;
-		if ( ! form.matches( '[data-mini-bag-form]' ) ) { return; }
-		event.preventDefault();
+	/* Sends a drawer edit, then redraws the drawer (and the bag page behind it) from the returned bag page. */
+	function changeBag( form, url, options ) {
 		var panel = form.closest( 'dialog' );
-		if ( bagMutationPending || panel.getAttribute( 'aria-busy' ) === 'true' || ! form.reportValidity() ) { return; }
-		var data = new FormData( form );
 		var focus = document.activeElement;
 		var item = focus.closest( '[data-mini-bag-item]' );
 		var key = item && item.dataset.miniBagItem;
@@ -670,7 +666,7 @@
 		bagMutationPending = true;
 		form.setAttribute( 'aria-busy', 'true' );
 		form.querySelectorAll( 'input, button' ).forEach( function ( control ) { control.disabled = true; } );
-		fetch( form.action, { method: 'POST', body: data, credentials: 'same-origin', cache: 'no-store' } )
+		fetch( url, Object.assign( { credentials: 'same-origin', cache: 'no-store' }, options ) )
 			.then( bagDocument )
 			.then( function ( doc ) {
 				if ( request !== miniBagRequest ) { return; }
@@ -691,9 +687,25 @@
 			} )
 			.catch( function () { bagFailure( panel.querySelector( '.mini-bag__feedback' ) ); } )
 			.finally( function () { bagMutationPending = false; form.removeAttribute( 'aria-busy' ); } );
+	}
+
+	document.addEventListener( 'submit', function ( event ) {
+		var form = event.target;
+		if ( ! form.matches( '[data-mini-bag-form]' ) ) { return; }
+		event.preventDefault();
+		if ( bagMutationPending || form.closest( 'dialog' ).getAttribute( 'aria-busy' ) === 'true' || ! form.reportValidity() ) { return; }
+		changeBag( form, form.action, { method: 'POST', body: new FormData( form ) } );
 	} );
 
 	document.addEventListener( 'click', function ( event ) {
+		var remove = event.target.closest( '[data-mini-bag-remove]' );
+		if ( remove ) {
+			event.preventDefault();
+			if ( ! bagMutationPending && remove.closest( 'dialog' ).getAttribute( 'aria-busy' ) !== 'true' ) {
+				changeBag( remove.closest( 'form' ), remove.href );
+			}
+			return;
+		}
 		var bag = event.target.closest( 'a.site-nav__bag' );
 		if ( bag && event.button === 0 && ! event.metaKey && ! event.ctrlKey && ! event.shiftKey && ! event.altKey && openBag( bag ) ) {
 			event.preventDefault();
