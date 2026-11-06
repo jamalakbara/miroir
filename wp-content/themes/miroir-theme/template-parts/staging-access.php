@@ -40,7 +40,7 @@ $error = isset( $args['error'] ) ? (string) $args['error'] : '';
 			</form>
 		</div>
 	</main>
-	<p class="maint__copyright"><?php echo esc_html( miroir_copyright() ); ?><?php echo '' !== miroir_text( 'maint_place' ) ? ' · ' . esc_html( miroir_text( 'maint_place' ) ) : ''; ?></p>
+	<?php get_template_part( 'template-parts/maintenance-copyright' ); ?>
 </div>
 <?php wp_footer(); ?>
 </body>

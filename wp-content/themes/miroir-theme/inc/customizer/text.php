@@ -71,6 +71,7 @@ function miroir_texts() {
 		'maint_retry'     => array( 'maintenance', __( 'Try again', 'miroir' ), __( 'Retry button', 'miroir' ) ),
 		'maint_social'    => array( 'maintenance', __( 'Follow miroir on Instagram ↗', 'miroir' ), __( 'Instagram link', 'miroir' ) ),
 		'maint_place'     => array( 'maintenance', __( 'Indonesia', 'miroir' ), __( 'Place after the copyright', 'miroir' ) ),
+		'maint_credit'    => array( 'maintenance', __( 'website by', 'miroir' ), __( 'Website credit label', 'miroir' ) ),
 
 		// Staging access page.
 		'staging_status'   => array( 'staging', __( 'PRIVATE PREVIEW', 'miroir' ), __( 'Status line', 'miroir' ) ),

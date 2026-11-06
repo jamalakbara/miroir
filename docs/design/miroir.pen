@@ -16828,17 +16828,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "vSHO5",
+                                  "type": "frame",
+                                  "id": "Bz1Xn",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "yUI5M",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "P1WkAw",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -17020,17 +17040,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "n5YhgD",
+                                  "type": "frame",
+                                  "id": "CVYd5",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "L2m5t",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "W1taTD",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -17225,17 +17265,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "mEsAO",
+                                  "type": "frame",
+                                  "id": "B08enQ",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "p3Mzj9",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "ZYmvO",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -33938,17 +33998,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "Qd7g8",
+                                  "type": "frame",
+                                  "id": "frapI",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "q9kB6d",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "RWngS",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -34130,17 +34210,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "TEwT0",
+                                  "type": "frame",
+                                  "id": "btL5r",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "fmw6R",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "RTFdv",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -34335,17 +34435,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "pg8rL",
+                                  "type": "frame",
+                                  "id": "U8HOo",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "i2Nam",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "HVNIq",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -52024,17 +52144,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "PXb1G",
+                                  "type": "frame",
+                                  "id": "zs27Y",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "FdMkm",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "RJvwq",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -52216,17 +52356,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "Bs345",
+                                  "type": "frame",
+                                  "id": "xxbHa",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "X12YQ",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "IMC2u",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -52421,17 +52581,37 @@
                                   ]
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "B1xXP",
+                                  "type": "frame",
+                                  "id": "efGFm",
                                   "name": "Copyright",
-                                  "fill": "$ink",
-                                  "textGrowth": "fixed-width",
                                   "width": "fill_container",
-                                  "content": "© 2026 miroir · Indonesia",
-                                  "lineHeight": 1.6,
-                                  "fontFamily": "$font-sans",
-                                  "fontSize": "$text-xs",
-                                  "fontWeight": "normal"
+                                  "gap": 4,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "RB2nS",
+                                      "name": "Copyright and website credit",
+                                      "fill": "$ink",
+                                      "content": "© 2026 miroir · Indonesia · website by",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "odkem",
+                                      "name": "Creator website link",
+                                      "context": "Creator credit link: jamalakbara.com → https://jamalakbara.com.",
+                                      "fill": "$ink",
+                                      "content": "jamalakbara.com",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-xs",
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
                                 }
                               ]
                             }
