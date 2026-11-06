@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 62 (proposed 44, accepted 9, superseded 9)
 - task: 1 (open 1)
 - memory: 66 (active 59, superseded 7)
-- handoff: 169 (final 169)
+- handoff: 170 (final 170)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-y9rt9sng 2026-11-06 (agent:claude:claude-opus-5-5) — Done: Bag drawer rows now link product name to PDP and have a Remove link beside quantity. Remove reuses WooCommerce remove URL through new changeBag in theme.js, no-JS falls back to bag page. Tested…
 - hnd-p820epf9 2026-11-06 (agent:claude:claude-opus-5-5) — Done: Fixed PDP gap growing after Add to bag: flow.css hides empty [data-add-feedback]. Measured on Lui Stripe Yellow locally: gap stays 20px after add (was 40px); error message still displays. · Nex…
 - hnd-f0d03d67 2026-11-06 (human:akbar) — Done: Bare wa.me links in page content now render with the current shop number; four pages verified locally with one icon per button. Pen Get gotcha recorded. · Next: Commit and deploy theme files to…
 - hnd-qzc3tcxs 2026-11-06 (human:akbar) — Done: Tidied miroir.pen canvas through MCP: resolved Lofi/Hi-fi board overlap, aligned five presentation boards at y=0 with 240px gutters, spaced shared components above screens. Verified zero top-le…
 - hnd-jkhp1qat 2026-11-06 (human:akbar) — Done: Added WhatsApp icon to all buttons opening WhatsApp, including saved block buttons via the_content filter. Added fill wipe button animation with tokens, reduced-motion rules and small-control p…
-- hnd-9543p0xn 2026-11-06 (human:akbar) — Done: Homepage overlay navbar stays transparent while search, currency and bag dialogs are open: header.css lines 52-54 now only drop the overlay for dialog.panel--drawer[open]. Checked computed styl…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
