@@ -181,6 +181,8 @@ wc-order-attribution-inputs { display: none; }
 @keyframes bag-in { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes bag-out { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(32px); } }
 form.cart[aria-busy="true"] .single_add_to_cart_button { opacity: 0.6; cursor: wait; }
+/* Empty feedback stays out of layout: .buy-form is a flex column, so even a 0px child adds a 20px gap. */
+[data-add-feedback]:empty { display: none; }
 [data-add-feedback]:not(:empty) { padding-top: 16px; font-size: var(--text-base); }
 [data-add-feedback] a { text-decoration: underline; }
 @media (max-width: 599px) {
