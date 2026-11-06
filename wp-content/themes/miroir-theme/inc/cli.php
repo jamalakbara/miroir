@@ -349,6 +349,26 @@ class Miroir_Theme_Command {
 	}
 
 	/**
+	 * Print the secret link that shows the store during maintenance.
+	 *
+	 * ## OPTIONS
+	 *
+	 * [--rotate]
+	 * : Replace the secret. Every existing preview stops working.
+	 *
+	 * @subcommand preview-link
+	 * @when after_wp_load
+	 */
+	public function preview_link( $args, $assoc ) {
+		$token = (string) get_option( 'miroir_preview_token', '' );
+		if ( '' === $token || ! empty( $assoc['rotate'] ) ) {
+			$token = wp_generate_password( 32, false );
+			update_option( 'miroir_preview_token', $token, false );
+		}
+		WP_CLI::log( add_query_arg( 'miroir-preview', $token, home_url( '/' ) ) );
+	}
+
+	/**
 	 * Menus for each theme location, built from the lofi's links. Existing menus
 	 * (matched by name) are left as they are so client edits survive a re-run.
 	 */
