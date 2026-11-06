@@ -49,9 +49,9 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 }
 .home-header-overlay:has(.home-hero) .site-header .announce { order: -1; background: var(--bg); color: var(--ink); }
 /* Keep the white, readable fallback until the preference-aware script is ready. */
-.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) { background: transparent; }
-.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .site-nav { --ink: var(--on-ink); --logo: var(--on-ink); --sale: #ff5a4f; color: var(--on-ink); }
-.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .logo-custom img { filter: brightness(0) invert(1); }
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog.panel--drawer[open])) .site-header:not(:has(:focus-visible)) { background: transparent; }
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog.panel--drawer[open])) .site-header:not(:has(:focus-visible)) .site-nav { --ink: var(--on-ink); --logo: var(--on-ink); --sale: #ff5a4f; color: var(--on-ink); }
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog.panel--drawer[open])) .site-header:not(:has(:focus-visible)) .logo-custom img { filter: brightness(0) invert(1); }
 .admin-bar.home-header-overlay:has(.home-hero) .site-header { top: var(--home-toolbar-offset, 32px); }
 @media (max-width: 782px) { .admin-bar.home-header-overlay:has(.home-hero) .site-header { top: var(--home-toolbar-offset, 46px); } }
 
