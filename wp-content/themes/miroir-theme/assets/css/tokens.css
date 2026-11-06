@@ -15,6 +15,7 @@
 	--surface: var(--wp--preset--color--surface, #f6f6f6);
 	--on-ink: var(--wp--preset--color--on-ink, #ffffff);
 	--error: var(--wp--preset--color--error, #b3261e);
+	--sale: var(--error);
 	--success: var(--wp--preset--color--success, #2e6b3f);
 	--logo: var(--wp--preset--color--logo, #242122);
 
@@ -67,7 +68,7 @@
 	--search-cols-m: 2;
 	--similar-cols-d: 4;
 	--image-ratio: 3 / 4;
-	--logo-w: 110px;
+	--logo-w: 88px;
 	--backdrop: color-mix(in srgb, var(--ink) 40%, transparent);
 	--shadow: rgba(0, 0, 0, 0.15);
 

@@ -66,7 +66,7 @@ class Miroir_Theme_Command {
 		$questions = array(
 			'How long does shipping take?',
 			'Do you ship outside Indonesia?',
-			'How do I confirm my bank transfer?',
+			'How do I confirm my payment?',
 			'Can I return or exchange an item?',
 			'How do I find my size?',
 			'How do I track my order?',
@@ -128,11 +128,23 @@ class Miroir_Theme_Command {
 					'#whatsapp'
 				),
 			),
+			'studio-location'      => array(
+				'Studio location',
+				self::blocks(
+					'Visit the Miroir studio in Bandung, by appointment only.',
+					array(
+						'Address'       => 'Jl. Nayaga no 6, Bandung',
+						'Opening hours' => "By appointment only\nMonday–Friday: 9AM–2PM\nSaturday: 9AM–12PM\nSunday: Off",
+					),
+					'Book an appointment on WhatsApp',
+					'#whatsapp'
+				),
+			),
 			'payment-confirmation' => array(
 				'Payment confirmation',
 				self::blocks(
-					'Only pay after our team confirms stock, shipping and the final total. Use the bank details supplied in your order conversation.',
-					array( 'Confirm your payment' => 'Send your transfer receipt and order reference in the same WhatsApp chat. Our team will verify the payment and reply.' ),
+					'Only pay after our team confirms stock, shipping and the final total. Use the bank or PayPal details supplied in your order conversation.',
+					array( 'Confirm your payment' => 'Send your payment receipt and order reference in the same WhatsApp chat. Our team will verify the payment and reply.' ),
 					'Send receipt via WhatsApp',
 					'#whatsapp',
 					'',
@@ -192,7 +204,7 @@ class Miroir_Theme_Command {
 			$out .= '<!-- wp:group {"className":"section","layout":{"type":"default"}} -->' . "\n"
 				. '<div class="wp-block-group section"><!-- wp:heading -->' . "\n"
 				. '<h2 class="wp-block-heading">' . esc_html( $heading ) . "</h2>\n<!-- /wp:heading -->\n\n"
-				. "<!-- wp:paragraph -->\n<p>" . esc_html( $copy ) . "</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n";
+				. "<!-- wp:paragraph -->\n<p>" . nl2br( esc_html( $copy ), false ) . "</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n";
 		}
 		if ( $before ) {
 			$out .= self::note( $before, 'note-draft' );
@@ -355,8 +367,9 @@ class Miroir_Theme_Command {
 			'primary'        => array(
 				'name'  => 'Header',
 				'items' => array(
-					'sale'       => $cat( 'sale' ),
-					'shop women' => $shop,
+					'new collection' => $cat( 'new-collection' ),
+					'shop'           => $shop,
+					'sale'           => $cat( 'sale' ),
 				),
 			),
 			'plp-categories' => array(
@@ -385,14 +398,14 @@ class Miroir_Theme_Command {
 					'Shop women'    => $shop,
 					'Collections'   => $cat( 'shop-by-collection' ),
 					'Sale'          => $cat( 'sale' ),
-					'My account'    => $account,
+					'Account'       => $account,
 					'Customer care' => $page( 'contact' ),
 				),
 			),
 			'footer-account' => array(
 				'name'  => 'Footer: account',
 				'items' => array(
-					'My account'           => $account,
+					'Account'              => $account,
 					'Payment confirmation' => $page( 'payment-confirmation' ),
 					'Shipping information' => $page( 'shipping-information' ),
 				),
@@ -408,6 +421,8 @@ class Miroir_Theme_Command {
 			'footer-contact' => array(
 				'name'  => 'Footer: contact',
 				'items' => array(
+					'About us'              => $page( 'about' ),
+					'Studio location'       => $page( 'studio-location' ),
 					'Contact customer care' => $page( 'contact' ),
 					'Instagram'             => 'https://www.instagram.com/miroir.id/',
 				),

@@ -38,6 +38,9 @@ $wa_url   = function_exists( 'miroir_wa_order_url' ) && $order->get_meta( '_miro
 </section>
 
 <div class="totals-row"><span><?php echo esc_html( miroir_text( 'subtotal' ) ); ?></span><span><?php echo wp_kses_post( wc_price( $order->get_subtotal(), $currency ) ); ?></span></div>
+<?php if ( $order->get_discount_total() > 0 ) : ?>
+	<div class="totals-row"><span><?php echo esc_html( miroir_text( 'discount' ) . ' (' . strtoupper( implode( ', ', $order->get_coupon_codes() ) ) . ')' ); ?></span><span><?php echo wp_kses_post( '-' . wc_price( $order->get_discount_total(), $currency ) ); ?></span></div>
+<?php endif; ?>
 <div class="totals-row"><span><?php echo esc_html( miroir_text( 'shipping' ) ); ?></span><span><?php echo $waiting ? esc_html( miroir_text( 'order_awaiting' ) ) : wp_kses_post( wc_price( $order->get_shipping_total(), $currency ) ); ?></span></div>
 <div class="totals-row"><span><?php echo esc_html( miroir_text( 'payment' ) ); ?></span><span><?php echo esc_html( $order->is_paid() ? miroir_text( 'order_paid' ) : miroir_text( 'order_pending' ) ); ?></span></div>
 
@@ -53,6 +56,6 @@ $wa_url   = function_exists( 'miroir_wa_order_url' ) && $order->get_meta( '_miro
 </section>
 
 <?php if ( $wa_url ) : ?>
-	<a class="btn btn--primary btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'contact_whatsapp' ) ); ?></a>
+	<a class="btn btn--primary btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'contact_whatsapp' ) ); ?></a>
 <?php endif; ?>
 <a class="btn btn--block" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>"><?php echo esc_html( miroir_text( 'back_to_orders' ) ); ?></a>

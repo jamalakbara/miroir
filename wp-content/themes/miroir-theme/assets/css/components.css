@@ -205,6 +205,21 @@ a:hover .ph--filled .ph__hover, a:focus-visible .ph--filled .ph__hover { opacity
 .section-link__arrow { flex: none; }
 
 /* Totals Row (lpasV): key/value, 12px bottom padding, line under. */
+.coupon { display: flex; flex-direction: column; gap: 10px; padding-top: 14px; }
+.coupon__row { display: flex; align-items: flex-end; gap: 12px; }
+.coupon__row .field__input { flex: 1 1 auto; width: auto; min-width: 0; }
+.coupon__row .btn { flex: none; width: auto; }
+.coupon-remove {
+	margin-left: 6px;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--ink-2);
+	font: inherit;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .totals-row {
 	display: flex;
 	justify-content: space-between;

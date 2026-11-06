@@ -51,7 +51,6 @@ class Miroir_Widget_Navigation extends Miroir_Widget {
 					'attrs'    => array( 'slot' => 'primary' ),
 					'children' => array(
 						array( 'block' => 'miroir/menu', 'attrs' => array( 'location' => 'primary' ), 'part' => 'menu', 'label' => __( 'Menu (Appearance > Menus > Primary)', 'miroir' ) ),
-						$item( 'search', __( 'Search link', 'miroir' ) ),
 					),
 				),
 				array(
@@ -59,6 +58,7 @@ class Miroir_Widget_Navigation extends Miroir_Widget {
 					'attrs'    => array( 'slot' => 'utility' ),
 					'children' => array(
 						$item( 'currency', __( 'Currency', 'miroir' ) ),
+						$item( 'search', __( 'Search link', 'miroir' ) ),
 						$item( 'account', __( 'Account link', 'miroir' ) ),
 						$item( 'bag', __( 'Bag link', 'miroir' ) ),
 					),
@@ -342,7 +342,7 @@ class Miroir_Widget_Collection extends Miroir_Widget {
 	}
 	protected function texts() {
 		return array(
-			__( 'Texts', 'miroir' )       => array( 'filter_sort_link', 'filter_featured', 'filter_colour', 'load_more' ),
+			__( 'Texts', 'miroir' )       => array( 'filter_sort_link', 'filter_featured', 'load_more' ),
 			__( 'Empty states', 'miroir' ) => array( 'no_matches', 'no_matches_heading', 'no_matches_text', 'clear_filters', 'empty_collection', 'empty_collection_text', 'back_to_collection' ),
 		);
 	}

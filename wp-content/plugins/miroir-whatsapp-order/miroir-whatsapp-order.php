@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Miroir WhatsApp Order
  * Description: Catalogue-mode ordering (quotation QUO-2026-003): product pages and the bag hand the order to the shop's WhatsApp with a prefilled message. The checkout page becomes a short review form; submitting it saves an on-hold WooCommerce order (so it shows under My account > Orders) and opens WhatsApp. No payment gateway. Number, message wording and order handling: WooCommerce > Settings > WhatsApp ordering.
- * Version:     0.2.0
+ * Version:     0.2.8
  * Author:      Miroir
  * Requires Plugins: woocommerce
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'MIROIR_WA_VERSION', '0.2.0' );
+define( 'MIROIR_WA_VERSION', '0.2.8' );
 
 /**
  * Message building and order creation. Markup lives in the theme's
@@ -19,6 +19,15 @@ class Miroir_WA_Order {
 
 	const NONCE    = 'miroir_wa_checkout';
 	const META_MSG = '_miroir_wa_message';
+
+	/** Stands in for the order number on the review page; the order does not exist yet. */
+	const REF_PENDING = '…';
+
+	/** Browser window name shared by the review page, which opens the tab, and the sent page, which fills it. */
+	const WINDOW_NAME = 'miroir-whatsapp';
+
+	/** Query flag on a product add that continues to the review form instead of the bag dialog. */
+	const ORDER_NOW = 'wa-order';
 
 	/** Settings tab id under WooCommerce > Settings. */
 	const TAB = 'miroir_wa';
@@ -32,14 +41,18 @@ class Miroir_WA_Order {
 			'miroir_wa_greeting'       => __( "Hi {shop}, I'd like to order:", 'miroir' ),
 			'miroir_wa_line'           => '{n}. {name} — {variant} × {qty} — {price}',
 			'miroir_wa_subtotal'       => __( 'Subtotal: {subtotal} (excl. shipping)', 'miroir' ),
+			'miroir_wa_discount'       => __( 'Discount ({code}): {amount}', 'miroir' ),
+			'miroir_wa_total'          => __( 'Total: {total} (excl. shipping)', 'miroir' ),
 			'miroir_wa_name'           => __( 'Name: {name}', 'miroir' ),
-			'miroir_wa_deliver'        => __( 'Deliver to: {city}, {country}', 'miroir' ),
+			'miroir_wa_phone'          => __( 'Phone: {phone}', 'miroir' ),
+			'miroir_wa_deliver'        => __( 'Deliver to: {address}', 'miroir' ),
 			'miroir_wa_notes'          => __( 'Notes: {notes}', 'miroir' ),
 			'miroir_wa_ref'            => __( 'Order ref: #{ref}', 'miroir' ),
 			'miroir_wa_one_size'       => __( 'One size', 'miroir' ),
-			'miroir_wa_payment_title'  => __( 'Bank transfer after confirmation', 'miroir' ),
+			'miroir_wa_payment_title'  => __( 'Bank transfer or PayPal after confirmation', 'miroir' ),
 			'miroir_wa_order_status'   => 'on-hold',
 			'miroir_wa_require_city'   => 'yes',
+			'miroir_wa_require_address' => 'yes',
 			'miroir_wa_open_delay'     => 800,
 			'miroir_wa_fallback_delay' => 4000,
 		);
@@ -135,13 +148,80 @@ class Miroir_WA_Order {
 		return $lines;
 	}
 
+	/** Bag total after coupons, before shipping. */
+	public static function discounted_total() {
+		$cart     = WC()->cart;
+		$discount = $cart->get_discount_total() + ( $cart->display_prices_including_tax() ? $cart->get_discount_tax() : 0 );
+		return max( 0, $cart->get_displayed_subtotal() - $discount );
+	}
+
+	/**
+	 * Message lines for applied coupons, ending with the total after discount.
+	 *
+	 * @return string[] Empty without coupons.
+	 */
+	public static function discount_lines() {
+		$cart  = WC()->cart;
+		$lines = array();
+		foreach ( $cart->get_applied_coupons() as $code ) {
+			$amount  = $cart->get_coupon_discount_amount( $code, $cart->display_cart_ex_tax );
+			$lines[] = self::fill(
+				'miroir_wa_discount',
+				array(
+					'code'   => strtoupper( $code ),
+					'amount' => $amount > 0 ? '-' . self::price( $amount ) : __( 'free shipping', 'miroir' ),
+				)
+			);
+		}
+		if ( $lines ) {
+			$lines[] = self::fill( 'miroir_wa_total', array( 'total' => self::price( self::discounted_total() ) ) );
+		}
+		return $lines;
+	}
+
+	/**
+	 * Address parts as one line, skipping empty ones. checkout.js joins them the same way.
+	 *
+	 * @param string[] $parts Street, line 2, city, state, postcode, country.
+	 */
+	public static function full_address( $parts ) {
+		return implode( ', ', array_filter( array_map( 'trim', $parts ), 'strlen' ) );
+	}
+
+	/**
+	 * Display name of a state code.
+	 *
+	 * @param string $country Country code.
+	 * @param string $state   State code.
+	 */
+	public static function state_name( $country, $state ) {
+		$states = WC()->countries->get_states( $country );
+		return is_array( $states ) && isset( $states[ $state ] ) ? $states[ $state ] : $state;
+	}
+
+	/** Plain-text bag subtotal for messages. */
+	public static function cart_subtotal() {
+		return html_entity_decode( wp_strip_all_tags( WC()->cart->get_cart_subtotal() ), ENT_QUOTES, 'UTF-8' );
+	}
+
+	/** Fingerprint of the products and subtotal the review page shows. */
+	public static function bag_hash() {
+		$lines = array_map(
+			function ( $line ) {
+				return array( $line['name'], $line['variant'], $line['qty'], $line['total'] );
+			},
+			self::cart_lines()
+		);
+		return md5( (string) wp_json_encode( array( $lines, self::cart_subtotal(), self::discount_lines() ) ) );
+	}
+
 	/**
 	 * Full order message. The review page builds the same text live in JS
 	 * (assets/checkout.js) from the fields; keep both in step.
 	 *
 	 * @param array  $lines   From cart_lines() or order_lines().
 	 * @param string $subtotal Plain-text subtotal.
-	 * @param array  $details { name, city, country, notes }.
+	 * @param array  $details { name, phone, address (full, from full_address()), city, country, notes }.
 	 * @param string $ref     Order reference appended once the order exists.
 	 */
 	public static function message( $lines, $subtotal, $details, $ref = '' ) {
@@ -152,9 +232,11 @@ class Miroir_WA_Order {
 		}
 		$out[] = '';
 		$out[] = self::fill( 'miroir_wa_subtotal', array( 'subtotal' => $subtotal ) );
+		$out   = array_merge( $out, self::discount_lines() );
 		$out[] = '';
 		$out[] = self::fill( 'miroir_wa_name', array( 'name' => $details['name'] ) );
-		$out[] = self::fill( 'miroir_wa_deliver', array( 'city' => $details['city'], 'country' => $details['country'] ) );
+		$out[] = self::fill( 'miroir_wa_phone', array( 'phone' => $details['phone'] ) );
+		$out[] = self::fill( 'miroir_wa_deliver', array( 'address' => $details['address'], 'city' => $details['city'], 'country' => $details['country'] ) );
 		$out[] = self::fill( 'miroir_wa_notes', array( 'notes' => '' !== $details['notes'] ? $details['notes'] : '—' ) );
 		if ( $ref ) {
 			$out[] = self::fill( 'miroir_wa_ref', array( 'ref' => $ref ) );
@@ -193,8 +275,14 @@ class Miroir_WA_Order {
 		$name     = $customer ? trim( $customer->get_billing_first_name() . ' ' . $customer->get_billing_last_name() ) : '';
 		return array(
 			'name'    => wc_clean( $posted['wa_name'] ?? $name ),
+			'phone'   => wc_clean( $posted['wa_phone'] ?? ( $customer ? $customer->get_billing_phone() : '' ) ),
+			'email'   => sanitize_email( $posted['wa_email'] ?? ( $customer ? $customer->get_billing_email() : '' ) ),
 			'country' => wc_clean( $posted['wa_country'] ?? ( $customer && $customer->get_billing_country() ? $customer->get_billing_country() : WC()->countries->get_base_country() ) ),
+			'address' => wc_clean( $posted['wa_address'] ?? ( $customer ? $customer->get_billing_address_1() : '' ) ),
+			'address_2' => wc_clean( $posted['wa_address_2'] ?? ( $customer ? $customer->get_billing_address_2() : '' ) ),
 			'city'    => wc_clean( $posted['wa_city'] ?? ( $customer ? $customer->get_billing_city() : '' ) ),
+			'state'   => wc_clean( $posted['wa_state'] ?? ( $customer ? $customer->get_billing_state() : '' ) ),
+			'postcode' => wc_clean( $posted['wa_postcode'] ?? ( $customer ? $customer->get_billing_postcode() : '' ) ),
 			'notes'   => sanitize_textarea_field( $posted['wa_notes'] ?? '' ),
 		);
 	}
@@ -207,6 +295,10 @@ class Miroir_WA_Order {
 		if ( ! isset( $_POST['miroir_wa_checkout'] ) || ! is_checkout() ) {
 			return;
 		}
+		// Coupon buttons post this form so typed details survive; WooCommerce already handled them on wp_loaded.
+		if ( isset( $_REQUEST['apply_coupon'] ) || isset( $_REQUEST['remove_coupon'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+			return;
+		}
 		if ( ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ?? '' ), self::NONCE ) ) {
 			wc_add_notice( __( 'Your session expired. Please check your details and try again.', 'miroir' ), 'error' );
 			return;
@@ -215,10 +307,26 @@ class Miroir_WA_Order {
 			wp_safe_redirect( wc_get_cart_url() );
 			exit;
 		}
+		// The bag changed after the review page loaded: show the new message before sending it.
+		if ( ! hash_equals( self::bag_hash(), sanitize_key( $_POST['miroir_wa_bag'] ?? '' ) ) ) {
+			wc_add_notice( __( 'Your bag changed. Check the updated order, then send it again.', 'miroir' ), 'error' );
+			return;
+		}
 
 		$values    = self::field_values();
 		$countries = WC()->countries->get_allowed_countries();
-		$required  = array( 'name' => __( 'Full name', 'miroir' ) );
+		$required  = array(
+			'name'  => __( 'Full name', 'miroir' ),
+			'phone' => __( 'Phone number', 'miroir' ),
+		);
+		$states    = WC()->countries->get_states( $values['country'] );
+		if ( 'yes' === self::opt( 'miroir_wa_require_address' ) ) {
+			$required['address']  = __( 'Street address', 'miroir' );
+			$required['postcode'] = __( 'Postcode', 'miroir' );
+			if ( $states ) {
+				$required['state'] = __( 'State / Province', 'miroir' );
+			}
+		}
 		if ( 'yes' === self::opt( 'miroir_wa_require_city' ) ) {
 			$required['city'] = __( 'Town / City', 'miroir' );
 		}
@@ -228,16 +336,23 @@ class Miroir_WA_Order {
 				wc_add_notice( sprintf( __( '%s is required.', 'miroir' ), $label ), 'error', array( 'id' => 'wa_' . $key ) );
 			}
 		}
+		if ( '' !== $values['phone'] && ! WC_Validation::is_phone( $values['phone'] ) ) {
+			wc_add_notice( __( 'Please enter a valid phone number.', 'miroir' ), 'error', array( 'id' => 'wa_phone' ) );
+		}
+		if ( ! empty( $_POST['wa_email'] ) && ! is_email( $values['email'] ) ) {
+			wc_add_notice( __( 'Please enter a valid email address.', 'miroir' ), 'error', array( 'id' => 'wa_email' ) );
+		}
 		if ( ! isset( $countries[ $values['country'] ] ) ) {
 			wc_add_notice( __( 'Please choose a country we deliver to.', 'miroir' ), 'error', array( 'id' => 'wa_country' ) );
 		}
 		WC()->cart->check_cart_items();
+		WC()->cart->check_cart_coupons();
 		if ( wc_notice_count( 'error' ) ) {
 			return;
 		}
 
 		$lines    = self::cart_lines();
-		$subtotal = html_entity_decode( wp_strip_all_tags( WC()->cart->get_cart_subtotal() ), ENT_QUOTES, 'UTF-8' );
+		$subtotal = self::cart_subtotal();
 
 		$order = wc_create_order(
 			array(
@@ -249,18 +364,39 @@ class Miroir_WA_Order {
 			$order->add_product( $item['data'], $item['quantity'], array( 'variation' => $item['variation'] ) );
 		}
 		$order->set_billing_first_name( $values['name'] );
+		$order->set_billing_phone( $values['phone'] );
+		$order->set_billing_email( $values['email'] );
+		$order->set_billing_address_1( $values['address'] );
+		$order->set_billing_address_2( $values['address_2'] );
 		$order->set_billing_city( $values['city'] );
+		$order->set_billing_state( $values['state'] );
+		$order->set_billing_postcode( $values['postcode'] );
 		$order->set_billing_country( $values['country'] );
 		$order->set_shipping_first_name( $values['name'] );
+		$order->set_shipping_phone( $values['phone'] );
+		$order->set_shipping_address_1( $values['address'] );
+		$order->set_shipping_address_2( $values['address_2'] );
 		$order->set_shipping_city( $values['city'] );
+		$order->set_shipping_state( $values['state'] );
+		$order->set_shipping_postcode( $values['postcode'] );
 		$order->set_shipping_country( $values['country'] );
 		$order->set_customer_note( $values['notes'] );
 		$order->set_payment_method_title( self::opt( 'miroir_wa_payment_title' ) );
 		$order->set_currency( get_woocommerce_currency() );
 		$order->calculate_totals( false );
+		foreach ( WC()->cart->get_applied_coupons() as $code ) {
+			$applied = $order->apply_coupon( $code );
+			if ( is_wp_error( $applied ) ) {
+				$order->delete( true );
+				wc_add_notice( $applied->get_error_message(), 'error' );
+				return;
+			}
+		}
 
 		$details = array(
 			'name'    => $values['name'],
+			'phone'   => $values['phone'],
+			'address' => self::full_address( array( $values['address'], $values['address_2'], $values['city'], self::state_name( $values['country'], $values['state'] ), $values['postcode'], $countries[ $values['country'] ] ) ),
 			'city'    => $values['city'],
 			'country' => $countries[ $values['country'] ],
 			'notes'   => $values['notes'],
@@ -285,7 +421,7 @@ class Miroir_WA_Order {
 	}
 
 	/**
-	 * Product-page message before a size is picked; product.js rewrites it on selection.
+	 * Message for asking about a product that cannot be ordered, such as a sold-out one.
 	 *
 	 * @param WC_Product $product Product.
 	 */
@@ -334,6 +470,20 @@ class Miroir_WA_Order {
 				'css'         => 'min-width: 420px;',
 			),
 			array(
+				'id'          => 'miroir_wa_paypal',
+				'title'       => __( 'PayPal account', 'miroir' ),
+				'type'        => 'text',
+				'css'         => 'min-width: 420px;',
+				'desc'        => __( 'Shown on the order sent page under the bank details. Leave empty to hide it.', 'miroir' ),
+			),
+			array(
+				'id'      => 'miroir_wa_require_address',
+				'title'   => __( 'Require full delivery address', 'miroir' ),
+				'type'    => 'checkbox',
+				'default' => $d['miroir_wa_require_address'],
+				'desc'    => __( 'Customers must fill in street address, postcode and state on the review page.', 'miroir' ),
+			),
+			array(
 				'id'      => 'miroir_wa_require_city',
 				'title'   => __( 'Require town / city', 'miroir' ),
 				'type'    => 'checkbox',
@@ -347,8 +497,11 @@ class Miroir_WA_Order {
 			$template( 'miroir_wa_line', __( 'Product line', 'miroir' ), '{n} {name} {variant} {qty} {price}' ),
 			$template( 'miroir_wa_one_size', __( 'Size for products without sizes', 'miroir' ), '—' ),
 			$template( 'miroir_wa_subtotal', __( 'Subtotal line', 'miroir' ), '{subtotal}' ),
+			$template( 'miroir_wa_discount', __( 'Discount line', 'miroir' ), '{code} {amount}' ),
+			$template( 'miroir_wa_total', __( 'Total after discount line', 'miroir' ), '{total}' ),
 			$template( 'miroir_wa_name', __( 'Name line', 'miroir' ), '{name}' ),
-			$template( 'miroir_wa_deliver', __( 'Delivery line', 'miroir' ), '{city} {country}' ),
+			$template( 'miroir_wa_phone', __( 'Phone line', 'miroir' ), '{phone}' ),
+			$template( 'miroir_wa_deliver', __( 'Delivery line', 'miroir' ), __( '{address} (full address)', 'miroir' ) ),
 			$template( 'miroir_wa_notes', __( 'Notes line', 'miroir' ), '{notes}' ),
 			$template( 'miroir_wa_ref', __( 'Order reference line', 'miroir' ), '{ref}' ),
 			array( 'id' => 'miroir_wa_message', 'type' => 'sectionend' ),
@@ -389,6 +542,7 @@ function miroir_wa_field_values() {
 function miroir_wa_form_fields() {
 	wp_nonce_field( Miroir_WA_Order::NONCE );
 	echo '<input type="hidden" name="miroir_wa_checkout" value="1">';
+	echo '<input type="hidden" name="miroir_wa_bag" value="' . esc_attr( Miroir_WA_Order::bag_hash() ) . '">';
 }
 
 /** @return array[] Lines of a saved order. */
@@ -401,19 +555,36 @@ function miroir_wa_order_url( $order ) {
 	return Miroir_WA_Order::order_url( $order );
 }
 
+/** @return string Form action that adds a product to the bag and continues to the review form. */
+function miroir_wa_order_now_url( $product ) {
+	return add_query_arg( Miroir_WA_Order::ORDER_NOW, '1', $product->get_permalink() );
+}
+
 /** @return string Message text for the review page's first render. */
 function miroir_wa_preview_message() {
 	$values    = Miroir_WA_Order::field_values();
 	$countries = WC()->countries->get_allowed_countries();
 	return Miroir_WA_Order::message(
 		Miroir_WA_Order::cart_lines(),
-		html_entity_decode( wp_strip_all_tags( WC()->cart->get_cart_subtotal() ), ENT_QUOTES, 'UTF-8' ),
+		Miroir_WA_Order::cart_subtotal(),
 		array(
 			'name'    => '' !== $values['name'] ? $values['name'] : __( 'Full Name', 'miroir' ),
-			'city'    => '' !== $values['city'] ? $values['city'] : __( 'Town / City', 'miroir' ),
+			'phone'   => '' !== $values['phone'] ? $values['phone'] : __( 'Phone number', 'miroir' ),
+			'address' => Miroir_WA_Order::full_address(
+				array(
+					'' !== $values['address'] ? $values['address'] : __( 'Street address', 'miroir' ),
+					$values['address_2'],
+					'' !== $values['city'] ? $values['city'] : __( 'Town / City', 'miroir' ),
+					Miroir_WA_Order::state_name( $values['country'], $values['state'] ),
+					$values['postcode'],
+					$countries[ $values['country'] ] ?? $values['country'],
+				)
+			),
+			'city'    => $values['city'],
 			'country' => $countries[ $values['country'] ] ?? $values['country'],
 			'notes'   => $values['notes'],
-		)
+		),
+		Miroir_WA_Order::REF_PENDING
 	);
 }
 
@@ -424,7 +595,17 @@ add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
 add_filter( 'woocommerce_order_needs_payment', '__return_false' );
 add_filter( 'woocommerce_available_payment_gateways', '__return_empty_array' );
 
-// The theme's "Order via WhatsApp" button and floating button.
+// "Order via WhatsApp" on a product goes through the bag so the order is saved in WooCommerce.
+add_filter(
+	'woocommerce_add_to_cart_redirect',
+	function ( $url ) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only picks the redirect after WooCommerce's own add.
+		return isset( $_GET[ Miroir_WA_Order::ORDER_NOW ] ) ? wc_get_checkout_url() : $url;
+	},
+	20 // After the theme's "added to bag" redirect.
+);
+
+// Product enquiry link and the theme's floating button.
 add_filter(
 	'miroir_wa_product_url',
 	function ( $url, $product ) {
@@ -444,33 +625,6 @@ add_action(
 	'wp_enqueue_scripts',
 	function () {
 		$base = plugin_dir_url( __FILE__ ) . 'assets/';
-		if ( is_product() ) {
-			$product = wc_get_product( get_queried_object_id() );
-			wp_enqueue_script( 'miroir-wa-product', $base . 'product.js', array( 'jquery' ), MIROIR_WA_VERSION, true );
-			wp_localize_script(
-				'miroir-wa-product',
-				'miroirWaProduct',
-				array(
-					'number'   => Miroir_WA_Order::number(),
-					'greeting' => Miroir_WA_Order::greeting(),
-					'line'     => Miroir_WA_Order::opt( 'miroir_wa_line' ),
-					'name'     => $product ? $product->get_name() : '',
-					'url'      => $product ? $product->get_permalink() : '',
-					'oneSize'  => Miroir_WA_Order::opt( 'miroir_wa_one_size' ),
-					// Starting size and unit price, as product_message() puts them in the initial link.
-					'variant'  => $product && ! $product->is_type( 'variable' ) ? (string) $product->get_attribute( 'size' ) : '',
-					'price'    => $product ? (float) wc_get_price_to_display( $product ) : 0,
-					// WooCommerce leaves price_html empty when all variations cost the same; format display_price instead.
-					'currency' => array(
-						'symbol'    => html_entity_decode( get_woocommerce_currency_symbol(), ENT_QUOTES, 'UTF-8' ),
-						'format'    => html_entity_decode( get_woocommerce_price_format(), ENT_QUOTES, 'UTF-8' ),
-						'decimals'  => wc_get_price_decimals(),
-						'thousands' => wc_get_price_thousand_separator(),
-						'decimal'   => wc_get_price_decimal_separator(),
-					),
-				)
-			);
-		}
 		if ( is_checkout() && ! is_wc_endpoint_url( 'order-received' ) ) {
 			wp_enqueue_script( 'miroir-wa-checkout', $base . 'checkout.js', array(), MIROIR_WA_VERSION, true );
 			wp_localize_script(
@@ -485,16 +639,26 @@ add_action(
 						Miroir_WA_Order::cart_lines(),
 						array_keys( Miroir_WA_Order::cart_lines() )
 					),
-					'subtotal'    => Miroir_WA_Order::fill( 'miroir_wa_subtotal', array( 'subtotal' => html_entity_decode( wp_strip_all_tags( WC()->cart->get_cart_subtotal() ), ENT_QUOTES, 'UTF-8' ) ) ),
+					'subtotal'    => Miroir_WA_Order::fill( 'miroir_wa_subtotal', array( 'subtotal' => Miroir_WA_Order::cart_subtotal() ) ),
+					'discounts'   => Miroir_WA_Order::discount_lines(),
 					'labels'      => array(
 						'name'    => Miroir_WA_Order::opt( 'miroir_wa_name' ),
+						'phone'   => Miroir_WA_Order::opt( 'miroir_wa_phone' ),
 						'deliver' => Miroir_WA_Order::opt( 'miroir_wa_deliver' ),
 						'notes'   => Miroir_WA_Order::opt( 'miroir_wa_notes' ),
+						'ref'     => Miroir_WA_Order::opt( 'miroir_wa_ref' ),
 					),
 					'placeholder' => array(
-						'name' => __( 'Full Name', 'miroir' ),
-						'city' => __( 'Town / City', 'miroir' ),
+						'name'    => __( 'Full Name', 'miroir' ),
+						'phone'   => __( 'Phone number', 'miroir' ),
+						'address' => __( 'Street address', 'miroir' ),
+						'city'    => __( 'Town / City', 'miroir' ),
+						'ref'     => Miroir_WA_Order::REF_PENDING,
 					),
+					'states'      => array_filter( array_intersect_key( WC()->countries->get_states(), WC()->countries->get_allowed_countries() ) ),
+					'requireState' => 'yes' === Miroir_WA_Order::opt( 'miroir_wa_require_address' ),
+					'windowName'  => Miroir_WA_Order::WINDOW_NAME,
+					'opening'     => __( 'Opening WhatsApp…', 'miroir' ),
 				)
 			);
 		}
@@ -506,6 +670,7 @@ add_action(
 				array(
 					'openDelay'     => absint( Miroir_WA_Order::opt( 'miroir_wa_open_delay' ) ),
 					'fallbackDelay' => absint( Miroir_WA_Order::opt( 'miroir_wa_fallback_delay' ) ),
+					'windowName'    => Miroir_WA_Order::WINDOW_NAME,
 				)
 			);
 		}

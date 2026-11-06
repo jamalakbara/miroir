@@ -13,6 +13,7 @@ $product  = $args['product'];
 $wa_url   = apply_filters( 'miroir_wa_product_url', '', $product );
 $chevron  = miroir_icon( 'chevron-down', 14, 'field__icon' );
 $disabled = ! $product->is_purchasable() || ! $product->is_in_stock();
+$form_id  = 'buy-form-' . $product->get_id();
 
 /*
  * Quantity Field (nCGKo): underlined row like the size select, label left and
@@ -43,7 +44,7 @@ if ( $product->is_type( 'variable' ) ) :
 	wp_enqueue_script( 'wc-add-to-cart-variation' );
 	$variations = $product->get_available_variations();
 	?>
-	<form class="variations_form cart buy-form" action="<?php echo esc_url( $product->get_permalink() ); ?>" method="post" enctype="multipart/form-data"
+	<form id="<?php echo esc_attr( $form_id ); ?>" class="variations_form cart buy-form" action="<?php echo esc_url( $product->get_permalink() ); ?>" method="post" enctype="multipart/form-data"
 		data-product_id="<?php echo absint( $product->get_id() ); ?>"
 		data-product_variations="<?php echo wc_esc_json( wp_json_encode( $variations ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>">
 		<?php foreach ( $product->get_variation_attributes() as $attribute => $options ) : ?>
@@ -76,7 +77,7 @@ if ( $product->is_type( 'variable' ) ) :
 		</div>
 	</form>
 <?php else : ?>
-	<form class="cart buy-form" action="<?php echo esc_url( $product->get_permalink() ); ?>" method="post" enctype="multipart/form-data">
+	<form id="<?php echo esc_attr( $form_id ); ?>" class="cart buy-form" action="<?php echo esc_url( $product->get_permalink() ); ?>" method="post" enctype="multipart/form-data">
 		<div class="field buy-form__size">
 			<label class="screen-reader-text" for="size-static"><?php esc_html_e( 'Size', 'miroir' ); ?></label>
 			<div class="field__control">
@@ -92,9 +93,17 @@ if ( $product->is_type( 'variable' ) ) :
 <?php endif; ?>
 
 <?php if ( $wa_url ) : ?>
-	<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener" data-wa-product="<?php echo absint( $product->get_id() ); ?>">
-		<?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
-		<?php echo esc_html( miroir_text( 'order_whatsapp' ) ); ?>
-	</a>
+	<?php if ( $disabled ) : ?>
+		<a class="btn btn--whatsapp btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener">
+			<?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
+			<?php echo esc_html( miroir_text( 'order_whatsapp' ) ); ?>
+		</a>
+	<?php else : ?>
+		<?php /* Submits the buy form: the product joins the bag and the customer continues to the review form. */ ?>
+		<button class="btn btn--whatsapp btn--block" type="submit" form="<?php echo esc_attr( $form_id ); ?>" formaction="<?php echo esc_url( miroir_wa_order_now_url( $product ) ); ?>"<?php echo $product->is_type( 'variable' ) ? '' : ' name="add-to-cart" value="' . absint( $product->get_id() ) . '"'; ?> data-wa-product>
+			<?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?>
+			<?php echo esc_html( miroir_text( 'order_whatsapp' ) ); ?>
+		</button>
+	<?php endif; ?>
 	<p class="buy-hint"><?php echo esc_html( miroir_text( 'buy_hint' ) ); ?></p>
 <?php endif; ?>

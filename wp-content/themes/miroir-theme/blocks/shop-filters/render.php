@@ -1,6 +1,6 @@
 <?php
 /**
- * Desktop sidebar of the listing: category links and colour filters.
+ * Desktop sidebar of the listing: category links.
  */
 
 defined( 'ABSPATH' ) || exit;

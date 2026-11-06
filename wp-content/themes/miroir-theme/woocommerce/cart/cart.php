@@ -1,7 +1,7 @@
 <?php
 /**
- * Bag (screen 04). Replaces WooCommerce's cart table and totals: no coupon,
- * no shipping calculator; shipping is confirmed in WhatsApp.
+ * Bag (screen 04). Replaces WooCommerce's cart table and totals: coupon
+ * field, no shipping calculator; shipping is confirmed in WhatsApp.
  *
  * Keeps the cart form contract (cart[key][qty], nonce, update_cart) so
  * quantity changes go through WooCommerce; the stepper submits on change.
@@ -85,9 +85,24 @@ if ( $stock_problem ) {
 			<div class="cart-totals cart_totals">
 				<p class="cart-totals__title"><?php echo esc_html( miroir_text( 'bag_totals' ) ); ?></p>
 				<div class="totals-row"><span><?php echo esc_html( miroir_text( 'subtotal' ) ); ?></span><span><?php wc_cart_totals_subtotal_html(); ?></span></div>
+				<?php foreach ( miroir_cart_discounts() as $discount ) : ?>
+					<div class="totals-row">
+						<span><?php echo esc_html( $discount['label'] ); ?> <a class="coupon-remove" href="<?php echo esc_url( add_query_arg( 'remove_coupon', rawurlencode( $discount['code'] ), wc_get_cart_url() ) ); ?>"><?php echo esc_html( miroir_text( 'coupon_remove' ) ); ?></a></span>
+						<span><?php echo wp_kses_post( $discount['amount_html'] ); ?></span>
+					</div>
+				<?php endforeach; ?>
 				<div class="totals-row"><span><?php echo esc_html( miroir_text( 'shipping' ) ); ?></span><span class="totals-row__muted"><?php echo esc_html( miroir_text( 'shipping_note' ) ); ?></span></div>
-				<div class="totals-row totals-row--total"><span><?php echo esc_html( miroir_text( 'estimated_total' ) ); ?></span><span><?php wc_cart_totals_subtotal_html(); ?></span></div>
-				<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( wc_get_checkout_url() ); ?>"><?php echo miroir_icon( 'message-circle', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'checkout_button' ) ); ?></a>
+				<div class="totals-row totals-row--total"><span><?php echo esc_html( miroir_text( 'estimated_total' ) ); ?></span><span><?php echo wp_kses_post( miroir_cart_total_html() ); ?></span></div>
+				<?php if ( wc_coupons_enabled() ) : ?>
+					<form class="coupon" method="post" action="<?php echo esc_url( wc_get_cart_url() ); ?>">
+						<label class="field__label" for="coupon_code"><?php echo esc_html( miroir_text( 'coupon_label' ) ); ?></label>
+						<div class="coupon__row">
+							<input class="field__input" id="coupon_code" name="coupon_code" type="text" autocomplete="off" required>
+							<button class="btn" type="submit" name="apply_coupon" value="1"><?php echo esc_html( miroir_text( 'coupon_apply' ) ); ?></button>
+						</div>
+					</form>
+				<?php endif; ?>
+				<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( wc_get_checkout_url() ); ?>"><?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'checkout_button' ) ); ?></a>
 				<a class="btn-link" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php echo esc_html( miroir_text( 'continue_shopping' ) ); ?></a>
 			</div>
 		</div>

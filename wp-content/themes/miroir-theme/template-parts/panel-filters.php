@@ -1,8 +1,8 @@
 <?php
 /**
  * Filter & sort panel (screen 33) for the shop and category listings. A GET
- * form back to the listing: orderby, colour and size checkboxes
- * (filter_color[] / filter_size[], joined for WooCommerce in inc/states.php).
+ * form back to the listing: orderby and size checkboxes
+ * (filter_size[], joined for WooCommerce in inc/states.php).
  *
  * @var array $args { open: bool }
  */
@@ -22,7 +22,7 @@ $orders = array(
 $current = sanitize_key( wp_unslash( $_GET['orderby'] ?? 'date' ) );
 
 $groups = array();
-foreach ( array( 'pa_color' => miroir_text( 'filter_colour_panel' ), 'pa_size' => miroir_text( 'filter_size_panel' ) ) as $taxonomy => $label ) {
+foreach ( array( 'pa_size' => miroir_text( 'filter_size_panel' ) ) as $taxonomy => $label ) {
 	if ( ! taxonomy_exists( $taxonomy ) ) {
 		continue;
 	}

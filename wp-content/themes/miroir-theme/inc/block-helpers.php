@@ -101,14 +101,16 @@ function miroir_menu_fallback( $location ) {
 	$account = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' );
 	switch ( $location ) {
 		case 'primary':
+			$new  = get_term_by( 'slug', 'new-collection', 'product_cat' );
 			$sale = get_term_by( 'slug', 'sale', 'product_cat' );
 			return array(
-				__( 'sale', 'miroir' )       => $sale && ! is_wp_error( $sale ) ? get_term_link( $sale ) : $shop,
-				__( 'shop women', 'miroir' ) => $shop,
+				__( 'new collection', 'miroir' ) => $new && ! is_wp_error( $new ) ? get_term_link( $new ) : $shop,
+				__( 'shop', 'miroir' )           => $shop,
+				__( 'sale', 'miroir' )           => $sale && ! is_wp_error( $sale ) ? get_term_link( $sale ) : $shop,
 			);
 		case 'footer-account':
 			return array(
-				__( 'My account', 'miroir' )           => $account,
+				__( 'Account', 'miroir' )              => $account,
 				__( 'Payment confirmation', 'miroir' ) => miroir_page_url( 'payment-confirmation' ),
 				__( 'Shipping information', 'miroir' ) => miroir_page_url( 'shipping-information' ),
 			);
@@ -120,6 +122,8 @@ function miroir_menu_fallback( $location ) {
 			);
 		case 'footer-contact':
 			return array(
+				__( 'About us', 'miroir' )              => miroir_page_url( 'about' ),
+				__( 'Studio location', 'miroir' )       => miroir_page_url( 'studio-location' ),
 				__( 'Contact customer care', 'miroir' ) => miroir_page_url( 'contact' ),
 				__( 'Instagram', 'miroir' )             => miroir_mod( 'instagram_url' ),
 			);

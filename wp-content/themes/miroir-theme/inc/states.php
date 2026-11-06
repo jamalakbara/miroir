@@ -60,7 +60,7 @@ add_action(
 );
 
 /*
- * The filter panel (33) submits checkboxes as filter_color[]=a&filter_color[]=b;
+ * The filter panel (33) submits checkboxes as filter_size[]=a&filter_size[]=b;
  * WooCommerce's layered nav reads comma lists, so join arrays before it runs.
  */
 add_action(

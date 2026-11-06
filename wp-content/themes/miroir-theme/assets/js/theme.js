@@ -746,6 +746,10 @@
 		if ( ! button || ! panel || typeof panel.showModal !== 'function' ) {
 			return;
 		}
+		// "Order via WhatsApp" continues to the review form as a normal page load.
+		if ( event.submitter && event.submitter.matches( '[data-wa-product]' ) ) {
+			return;
+		}
 		event.preventDefault();
 		if ( form.getAttribute( 'aria-busy' ) === 'true' || button.classList.contains( 'disabled' ) ) {
 			return;
@@ -808,7 +812,8 @@
 	document.addEventListener(
 		'click',
 		function ( event ) {
-			var button = event.target.closest( '.variations_form .single_add_to_cart_button.disabled' );
+			var whatsapp = event.target.closest( '[data-wa-product]' );
+			var button = whatsapp ? whatsapp.form && whatsapp.form.querySelector( '.single_add_to_cart_button.disabled' ) : event.target.closest( '.variations_form .single_add_to_cart_button.disabled' );
 			if ( ! button ) {
 				return;
 			}

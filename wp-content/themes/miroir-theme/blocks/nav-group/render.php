@@ -1,7 +1,7 @@
 <?php
 /**
- * One side of the navigation bar: .site-nav__primary (menu, search) or
- * .site-nav__utility (currency, account, bag).
+ * One side of the navigation bar: .site-nav__primary (menu) or
+ * .site-nav__utility (currency, search, account, bag).
  *
  * @var array  $attributes { slot }
  * @var string $content    Inner blocks.

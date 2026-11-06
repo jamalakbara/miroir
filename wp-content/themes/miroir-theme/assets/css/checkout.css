@@ -22,6 +22,7 @@
 .form-section--preview { gap: 14px; }
 .form-row { display: flex; gap: 28px; }
 .form-row > .field { flex: 1 1 0; min-width: 0; }
+.form-row > .field[hidden] { display: none; }
 
 .preview-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .preview-head__hint { color: var(--ink-3); font-size: var(--text-sm); line-height: var(--lh-sans-12); font-weight: 400; }

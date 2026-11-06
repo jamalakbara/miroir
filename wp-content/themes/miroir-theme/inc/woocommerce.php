@@ -185,46 +185,29 @@ function miroir_filter_group( $location, $title, $fallback ) {
 }
 
 /**
- * Colour filter checkboxes from the global Colour attribute (pa_color). Each
- * links to the current listing with that colour toggled in WooCommerce's
- * layered-nav query (?filter_color=a,b&query_type_color=or).
+ * Coupons on the bag, for the bag and review totals.
  *
- * @return array [ {label, url, checked} ]
+ * @return array[] { code, label, amount_html }
  */
-function miroir_colour_filters() {
-	$taxonomy = apply_filters( 'miroir_colour_taxonomy', 'pa_color' );
-	if ( ! taxonomy_exists( $taxonomy ) ) {
-		return array();
-	}
-	$terms = get_terms(
-		array(
-			'taxonomy'   => $taxonomy,
-			'hide_empty' => false,
-			'orderby'    => 'menu_order',
-		)
-	);
-	if ( is_wp_error( $terms ) || ! $terms ) {
-		return array();
-	}
-
-	$param   = 'filter_' . wc_attribute_taxonomy_slug( $taxonomy );
-	$chosen  = array_filter( explode( ',', wc_clean( wp_unslash( $_GET[ $param ] ?? '' ) ) ) ); // phpcs:ignore WordPress.Security.NonceVerification
-	$base    = remove_query_arg( array( 'paged', 'product-page' ) );
-	$base    = preg_replace( '#/page/\d+/?#', '/', $base );
-	$filters = array();
-	foreach ( $terms as $term ) {
-		$checked = in_array( $term->slug, $chosen, true );
-		$next    = $checked ? array_diff( $chosen, array( $term->slug ) ) : array_merge( $chosen, array( $term->slug ) );
-		$url     = $next
-			? add_query_arg( array( $param => implode( ',', $next ), 'query_type_' . wc_attribute_taxonomy_slug( $taxonomy ) => 'or' ), $base )
-			: remove_query_arg( array( $param, 'query_type_' . wc_attribute_taxonomy_slug( $taxonomy ) ), $base );
-		$filters[] = array(
-			'label'   => $term->name,
-			'url'     => $url,
-			'checked' => $checked,
+function miroir_cart_discounts() {
+	$cart = WC()->cart;
+	$rows = array();
+	foreach ( $cart->get_applied_coupons() as $code ) {
+		$amount = $cart->get_coupon_discount_amount( $code, $cart->display_cart_ex_tax );
+		$rows[] = array(
+			'code'        => $code,
+			'label'       => miroir_text( 'discount' ) . ' (' . strtoupper( $code ) . ')',
+			'amount_html' => $amount > 0 ? '-' . wc_price( $amount ) : esc_html( miroir_text( 'discount_free_shipping' ) ),
 		);
 	}
-	return $filters;
+	return $rows;
+}
+
+/** Bag total after coupons, before shipping (confirmed in WhatsApp). */
+function miroir_cart_total_html() {
+	$cart     = WC()->cart;
+	$discount = $cart->get_discount_total() + ( $cart->display_prices_including_tax() ? $cart->get_discount_tax() : 0 );
+	return wc_price( max( 0, $cart->get_displayed_subtotal() - $discount ) );
 }
 
 /**

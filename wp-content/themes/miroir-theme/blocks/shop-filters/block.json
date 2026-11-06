@@ -5,7 +5,7 @@
 	"title": "Shop sidebar",
 	"category": "miroir",
 	"icon": "filter",
-	"description": "Category links and colour filters (desktop).",
+	"description": "Category links (desktop).",
 	"textdomain": "miroir",
 	"attributes": {},
 	"supports": {

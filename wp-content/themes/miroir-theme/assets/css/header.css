@@ -50,7 +50,7 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 .home-header-overlay:has(.home-hero) .site-header .announce { order: -1; background: var(--bg); color: var(--ink); }
 /* Keep the white, readable fallback until the preference-aware script is ready. */
 .home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) { background: transparent; }
-.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .site-nav { --ink: var(--on-ink); --logo: var(--on-ink); color: var(--on-ink); }
+.home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .site-nav { --ink: var(--on-ink); --logo: var(--on-ink); --sale: #ff5a4f; color: var(--on-ink); }
 .home-header-overlay.home-header-ready:not(.home-header-solid):not(:has(dialog[open])) .site-header:not(:has(:focus-visible)) .logo-custom img { filter: brightness(0) invert(1); }
 .admin-bar.home-header-overlay:has(.home-hero) .site-header { top: var(--home-toolbar-offset, 32px); }
 @media (max-width: 782px) { .admin-bar.home-header-overlay:has(.home-hero) .site-header { top: var(--home-toolbar-offset, 46px); } }
@@ -67,9 +67,8 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 	padding: 44px var(--gutter);
 }
 
-.site-nav__logo { display: block; flex: none; height: 37.512px; color: var(--logo); }
-.site-nav__logo .logo-mark { width: 110px; height: 37.512px; }
-.site-nav__logo:has(.logo-custom) { height: auto; }
+.site-nav__logo { display: block; flex: none; color: var(--logo); }
+.site-nav__logo .logo-mark { display: block; width: var(--logo-w); height: auto; }
 .logo-custom img { display: block; width: var(--logo-w); height: auto; }
 
 .site-nav__primary,
@@ -93,6 +92,10 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 	white-space: nowrap;
 }
 
+/* Matched by link so it holds for the assigned menu and the code fallback, in the navbar and the drawer. */
+.site-nav__menu a[href*="/product-category/sale"],
+.panel__links a[href*="/product-category/sale"] { color: var(--sale); }
+
 .site-nav__toggle { display: none; width: 24px; height: 24px; flex: none; }
 .site-nav__menu-mark { display: block; position: relative; width: 30px; height: 20px; }
 .site-nav__menu-mark::before,
@@ -113,7 +116,7 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 	.announce__text + .announce__text { display: none; }
 
 	.site-nav { gap: 8px; min-height: 76px; padding: 16px var(--gutter); }
-	.site-nav__primary, .site-nav__account, .site-nav__currency, .site-nav__bag-label { display: none; }
+	.site-nav__primary, .site-nav__search, .site-nav__account, .site-nav__currency, .site-nav__bag-label { display: none; }
 	.site-nav__logo { margin-right: auto; }
 	.site-nav__toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
 	.site-nav__utility { gap: 0; }

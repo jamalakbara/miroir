@@ -1,7 +1,8 @@
 /*
- * "Order sent" page (screen 07): open WhatsApp once; the button retries. If the
- * page is still showing a few seconds after the attempt (WhatsApp blocked or
- * not installed), switch to the fallback (screen 43) with a copyable message.
+ * "Order sent" page (screen 07): open WhatsApp once, in the tab checkout.js opened
+ * on submit; the button retries. Without that tab, redirect here instead; if this page
+ * is still showing a few seconds later (WhatsApp blocked or not installed), switch to
+ * the fallback (screen 43) with a copyable message.
  */
 ( function ( timing ) {
 	'use strict';
@@ -43,6 +44,7 @@
 	}
 	var key = 'miroir-wa-opened:' + window.location.pathname + window.location.search;
 	try {
+		window.sessionStorage.removeItem( 'miroir-wa-tab' );
 		if ( window.sessionStorage.getItem( key ) ) {
 			return;
 		}
@@ -51,6 +53,13 @@
 		return;
 	}
 	window.setTimeout( function () {
+		// Without a waiting tab the browser may block this; stay with the same-tab redirect then.
+		var tab = window.open( link.href, timing.windowName );
+		if ( tab ) {
+			// WhatsApp has its own tab, so this page staying visible says nothing about it opening.
+			tab.focus();
+			return;
+		}
 		window.location.href = link.href;
 		window.setTimeout( showFallback, timing.fallbackDelay || 4000 );
 	}, timing.openDelay === undefined ? 800 : timing.openDelay );
