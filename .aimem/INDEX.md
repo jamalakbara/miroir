@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 55 (proposed 39, accepted 8, superseded 8)
+- decision: 61 (proposed 44, accepted 8, superseded 9)
 - task: 1 (open 1)
-- memory: 60 (active 55, superseded 5)
-- handoff: 153 (final 153)
+- memory: 63 (active 57, superseded 6)
+- handoff: 163 (final 163)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
-- hnd-6cpwrvny 2026-11-05 (agent:claude-haiku-5-5) — Done: Answered client follow-up question after Hostinger migration: drafted client update and future asks. Read aimem index, context, Hostinger migration records (temp domain, backup-exposure inciden…
-- hnd-ycf8tfcs 2026-11-05 (human:akbar) — Done: Correction to hnd-eakypaex: miroir.pen on disk was saved at 06:21, after all Pen edits from this session, so no Ctrl+S is pending. · Next: Commit theme, plugin, design and aimem changes.
-- hnd-eakypaex 2026-11-05 (human:akbar) — Done: Deployed search move and Account rename to Hostinger temp domain: 7 theme files, footer menu item 264, Menu panel item 288, page 8 title. Backup in ~/backups/navbar-search-account-20261106. php…
-- hnd-87j38d87 2026-11-05 (human:akbar) — Done: Renamed My account to Account locally: my_account text default, footer fallback, CLI seeds, Footer: account and Menu panel items, WooCommerce page 8 title. URL stays /my-account/. Page title ta…
-- hnd-5brkevk1 2026-11-05 (human:akbar) — Done: Locally moved desktop search into utility group: IDR, search, account, bag. Renamed nav_account default to account, so navbar and drawer both change. Updated parts/header.html, Elementor naviga…
+- hnd-gzknbrdr 2026-11-06 (human:akbar) — Done: Deployed client feedback to Hostinger temp domain: 19 theme files, plugin 0.2.8 with checkout.js, studio page 459, About copy, FAQ and Payment confirmation copy, Footer: contact items, bank and…
+- hnd-63tps2qt 2026-11-06 (human:akbar) — Done: Logo reduced from 110 to 88 wide on site and in miroir.pen, saved. Measured 88 x 30 at desktop and 375 wide, centred in navbar, homepage overlay checked. · Next: Deploy with tokens.css and head…
+- hnd-2vnt116t 2026-11-06 (human:akbar) — Done: Coupons added: field and discount rows on bag and review, discount on saved order, sent page, account order and WhatsApp message; plugin 0.2.8. Tested with 10% coupon at desktop and mobile: inv…
+- hnd-fyy3qjtw 2026-11-06 (human:akbar) — Done: miroir.pen synced with client feedback and saved: footer component has About us and Studio location; colour removed from shop sidebar and filter panel in lo-fi and hi-fi; review form has full d…
+- hnd-4bxwpkhx 2026-11-06 (human:akbar) — Done: Sent page shows client bank details and new PayPal line; plugin 0.2.7. Values set in local DB only, checked by rendering a test order, which was deleted. · Next: On deploy also set woocommerce_…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
