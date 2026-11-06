@@ -122,9 +122,10 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 	.site-nav__utility { gap: 0; }
 	.site-nav__search-compact { display: flex; width: 44px; height: 44px; flex: none; align-items: center; justify-content: center; }
 	.site-nav__bag { display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
-	.site-nav__bag-compact { display: grid; place-items: center; position: relative; width: 24px; height: 28px; }
+	.site-nav__bag-compact { display: block; position: relative; width: 24px; height: 28px; }
 	.site-nav__bag-compact svg { position: absolute; inset: 0; width: 24px; height: 28px; }
-	.site-nav__bag-count { position: relative; padding-top: 6px; font-family: var(--font-mono); font-size: 10px; line-height: 1; letter-spacing: 0; }
+	/* Fills the open body of the bag artwork, below the handle legs, so the count centres there. */
+	.site-nav__bag-count { position: absolute; top: 11px; right: 0; left: 0; display: grid; height: 16px; place-items: center; font-family: var(--font-mono); font-size: 11px; line-height: 1; letter-spacing: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
