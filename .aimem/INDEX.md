@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 66 (proposed 44, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 72 (active 64, superseded 8)
-- handoff: 182 (final 182)
+- handoff: 183 (final 183)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-bqh8jqdv 2026-11-06 (human:akbar) — Done: Approved live dry run and deploy at user request. First production deploy succeeded, no files deleted. Live shows website credit and keeps maintenance and Avenir fonts. · Next: Client reviews o…
 - hnd-m82nesem 2026-11-06 (human:akbar) — Done: Changed Instagram to miroirstore on both sites. Added website credit to maintenance and staging pages through a shared copyright part, designed in miroir.pen. Deployed to staging and merged dev…
 - hnd-eyqh3z6n 2026-11-06 (human:akbar) — Done: Added GitHub Actions deploy: development to staging, main to live with approval. Dedicated restricted key and secrets set. First staging deploy succeeded, no files deleted, Avenir fonts kept. F…
 - hnd-6a4dygjg 2026-11-06 (human:akbar) — Done: Replaced staging browser popup with theme password page designed in miroir.pen as S1. Password is set in Settings > Staging access. Deployed theme files to staging only. Public routes, REST, AJ…
 - hnd-aqkn56n6 2026-11-06 (human:akbar) — Done: Deleted live preview secret at user request. Old link and old cookie now get 503; public pages show maintenance. · Next: Client reviews on staging only. Running wp miroir theme preview-link on…
-- hnd-7ed4rbaq 2026-11-06 (human:akbar) — Done: Created staging.miroir.id with Hostinger Staging tool. Added Basic Auth, noindex, staging environment type, cron off, mail block, placeholder WhatsApp number, deactivated Jetpack, MailPoet, Goo…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
