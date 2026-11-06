@@ -1,0 +1,62 @@
+# development deploys to staging; main deploys to live after approval.
+# Copies code only. Database, uploads, wp-config.php and vendor plugins are never touched.
+# Server details live in GitHub secrets because this repository is public.
+name: Deploy
+
+on:
+  push:
+    branches: [development, main]
+    paths:
+      - 'wp-content/themes/miroir-theme/**'
+      - 'wp-content/plugins/miroir-*/**'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: List changes without copying anything
+        type: boolean
+        default: true
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.ref_name == 'development' || github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+    env:
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+      DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
+
+      - name: Copy theme and plugins
+        run: |
+          # Avenir files are licensed and kept out of git, so --delete must not remove them.
+          for dir in wp-content/themes/miroir-theme wp-content/plugins/miroir-currency wp-content/plugins/miroir-demo wp-content/plugins/miroir-redirects wp-content/plugins/miroir-whatsapp-order; do
+            rsync -rlzc --itemize-changes --delete --chmod=D755,F644 $DRY_RUN \
+              --exclude='._*' --exclude='.DS_Store' --exclude='/assets/fonts/Avenir-*.ttf' \
+              -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o BatchMode=yes" \
+              "$dir/" "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/$dir/"
+          done
+
+      - name: Flush WordPress cache
+        if: ${{ !inputs.dry_run }}
+        run: ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" -o BatchMode=yes "$SSH_USER@$SSH_HOST" "cd '$DEPLOY_PATH' && wp cache flush"
