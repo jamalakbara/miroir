@@ -12,8 +12,8 @@ Project: `miroir` · mode: solo · sync: none
 ## Counts
 - decision: 63 (proposed 45, accepted 9, superseded 9)
 - task: 1 (open 1)
-- memory: 67 (active 60, superseded 7)
-- handoff: 175 (final 175)
+- memory: 69 (active 61, superseded 8)
+- handoff: 177 (final 177)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-xvq2prv8 2026-11-06 (human:akbar) — Done: Reinstalled SSL; new certificate covers miroir.id and www. Flushed CDN cache. miroir.id HTTPS, maintenance and preview still work. · Next: Recheck www later. If still failing, ask Hostinger sup…
+- hnd-pfccr17h 2026-11-06 (human:akbar) — Done: DNS propagated. miroir.id serves maintenance over HTTPS through Hostinger CDN; home and siteurl are https. Preview tested over public HTTPS: home, shop, account 200, public 503, preview respons…
 - hnd-vvb8j309 2026-11-06 (human:akbar) — Done: Built client preview link in maintenance.php and cli.php, deployed by scp with DB and file backup in ~/backups/domain-cutover-20261106. Maintenance on. Connected miroir.id in hPanel, which move…
 - hnd-wmmh7556 2026-11-06 (human:akbar) — Done: Fast-forwarded main to 246a0db and pushed. Deployed 15 files to Hostinger temp domain: 13 theme files plus new bag.svg, miroir-demo seed copy. Backup in ~/backups/navbar-bag-drawer-20261106. St…
 - hnd-eegbv315 2026-11-06 (human:akbar) — Done: Tidied selected canvas bag SVG o3uypB: renamed Icon / Bag / Source, named path Bag silhouette, moved stray source to icon assets area at 7360,-5700. Artwork and storefront unchanged; screenshot…
-- hnd-8kdce8m8 2026-11-06 (human:akbar) — Done: Refined compact navbar bag count: 11px digit now centred in open bag body below handle legs (was 10px, about 2px high, between legs). header.css plus Pen Header z55I6 updated and saved; 139 Hea…
-- hnd-qekdf312 2026-11-06 (human:akbar) — Done: Replaced compact navbar bag icon with selected o3uypB exact SVG artwork. Canvas shared Header MHdhV now filled artwork with preserved ratio/count; updated nine white/colour instance overrides a…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
