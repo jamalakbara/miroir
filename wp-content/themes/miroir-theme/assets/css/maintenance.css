@@ -20,6 +20,7 @@
 	box-shadow: inset 0 0.5px 0 var(--line), 0 -0.5px 0 var(--line);
 }
 .maint__social { align-self: flex-start; font-size: var(--text-sm); line-height: 19px; font-weight: 400; letter-spacing: 0; }
+.maint__form { display: flex; flex-direction: column; gap: 20px; }
 .maint__copyright { font-size: var(--text-xs); line-height: 18px; font-weight: 400; letter-spacing: 0; }
 
 @media (max-width: 1023px) {
