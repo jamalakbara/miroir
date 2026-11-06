@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 61 (proposed 44, accepted 8, superseded 9)
 - task: 1 (open 1)
 - memory: 63 (active 57, superseded 6)
-- handoff: 163 (final 163)
+- handoff: 164 (final 164)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-rqkmpdfq 2026-11-06 (agent:claude:claude-opus-5-5) — Done: Committed client feedback code and aimem records, redacted server access details and incident specifics from 22 unpushed commits, pushed main. Repo is public. aimem validate passed; no redacted…
 - hnd-gzknbrdr 2026-11-06 (human:akbar) — Done: Deployed client feedback to Hostinger temp domain: 19 theme files, plugin 0.2.8 with checkout.js, studio page 459, About copy, FAQ and Payment confirmation copy, Footer: contact items, bank and…
 - hnd-63tps2qt 2026-11-06 (human:akbar) — Done: Logo reduced from 110 to 88 wide on site and in miroir.pen, saved. Measured 88 x 30 at desktop and 375 wide, centred in navbar, homepage overlay checked. · Next: Deploy with tokens.css and head…
 - hnd-2vnt116t 2026-11-06 (human:akbar) — Done: Coupons added: field and discount rows on bag and review, discount on saved order, sent page, account order and WhatsApp message; plugin 0.2.8. Tested with 10% coupon at desktop and mobile: inv…
 - hnd-fyy3qjtw 2026-11-06 (human:akbar) — Done: miroir.pen synced with client feedback and saved: footer component has About us and Studio location; colour removed from shop sidebar and filter panel in lo-fi and hi-fi; review form has full d…
-- hnd-4bxwpkhx 2026-11-06 (human:akbar) — Done: Sent page shows client bank details and new PayPal line; plugin 0.2.7. Values set in local DB only, checked by rendering a test order, which was deleted. · Next: On deploy also set woocommerce_…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
