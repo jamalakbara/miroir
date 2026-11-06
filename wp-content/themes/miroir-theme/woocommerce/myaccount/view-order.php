@@ -56,6 +56,6 @@ $wa_url   = function_exists( 'miroir_wa_order_url' ) && $order->get_meta( '_miro
 </section>
 
 <?php if ( $wa_url ) : ?>
-	<a class="btn btn--primary btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'contact_whatsapp' ) ); ?></a>
+	<a class="btn btn--whatsapp btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'contact_whatsapp' ) ); ?></a>
 <?php endif; ?>
 <a class="btn btn--block" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>"><?php echo esc_html( miroir_text( 'back_to_orders' ) ); ?></a>

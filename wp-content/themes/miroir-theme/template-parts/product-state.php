@@ -83,7 +83,7 @@ $titles = array(
 				</div>
 				<p class="disabled-bar" aria-disabled="true"><?php echo esc_html( miroir_text( 'out_of_stock' ) ); ?></p>
 				<?php if ( $wa_url ) : ?>
-					<a class="btn btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'ask_availability' ) ); ?></a>
+					<a class="btn btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'ask_availability' ) ); ?></a>
 				<?php endif; ?>
 			<?php else : ?>
 				<?php wp_enqueue_script( 'wc-add-to-cart-variation' ); ?>

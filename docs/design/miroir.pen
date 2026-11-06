@@ -5,7 +5,7 @@
       "type": "frame",
       "id": "Z5Qv0z",
       "x": 3200,
-      "y": -4000,
+      "y": -3820,
       "name": "Image Placeholder",
       "context": "Photo loading behavior — desktop, tablet and mobile: real photos show the existing grey media area with no icon while pending. A translucent white highlight sweeps left to right over 1.4s, repeating until the primary image loads. Reduced motion keeps a static grey area. Loaded and cached photos display immediately with unchanged dimensions. Failed primary photos show the existing grey image-icon fallback and retain the image label; failed hover images stay hidden. Static design placeholders never animate. Applies to product cards, galleries, editorial images, banners and cart thumbnails through the shared media helper, including dynamically inserted cards. Product photos remain disabled by default.",
       "reusable": true,
@@ -32,7 +32,7 @@
       "type": "frame",
       "id": "rUMLe",
       "x": 3520,
-      "y": -3500,
+      "y": -3300,
       "name": "Button/Outline",
       "reusable": true,
       "stroke": "$ink-3",
@@ -61,7 +61,7 @@
       "type": "frame",
       "id": "xqA38",
       "x": 3840,
-      "y": -4000,
+      "y": -3820,
       "name": "Field",
       "reusable": true,
       "width": 360,
@@ -122,7 +122,7 @@
       "type": "frame",
       "id": "xK7Fl",
       "x": 3520,
-      "y": -4000,
+      "y": -3820,
       "name": "Product Card",
       "context": "Photo loading behavior — desktop, tablet and mobile: real photos show the existing grey media area with no icon while pending. A translucent white highlight sweeps left to right over 1.4s, repeating until the primary image loads. Reduced motion keeps a static grey area. Loaded and cached photos display immediately with unchanged dimensions. Failed primary photos show the existing grey image-icon fallback and retain the image label; failed hover images stay hidden. Static design placeholders never animate. Applies to product cards, galleries, editorial images, banners and cart thumbnails through the shared media helper, including dynamically inserted cards. Product photos remain disabled by default.",
       "reusable": true,
@@ -459,36 +459,35 @@
                         {
                           "type": "path",
                           "id": "MHdhV",
-                          "x": 10,
+                          "x": 11.3459119497,
                           "y": 8,
-                          "name": "Shopping bag outline",
-                          "geometry": "M3.5 7.5h17v19h-17z m5 0v-3a3.5 3.5 0 0 1 7 0v3",
+                          "name": "Selected shopping bag artwork",
+                          "geometry": "M37.84836 0.12421c8.851-0.346 18.92 0.164 27.877-0.053 3.389-0.081 15.728-0.181 18.665 0.339 1.525 2.198 10.986 14.89 11.245 15.8 1.148 4.044 0.6 20.174 0.426 25.183 5.735 0.395 18.78701-1.09 23.092 1.347 0.43699 0.814 1.27 2.317 1.31 3.19201 0.168 3.631 0.10199 7.44 0.099 11.07999l-0.01301 21.598 0.01201 68.269c-0.01101 7.608-0.073 11.562-9.559 11.422-2.37001-0.034-5.154 0.002-7.582 0.002l-21.42-0.026-51.223 0-15.816 0.01699c-3.982 0.004-9.839 0.73801-12.953-2.07-1.847-1.663-1.876-4.342-1.892-6.67-0.052-7.836-0.005-15.679 0.007-23.518l-0.009-41.38199-0.007-25.46899c0.001-4.234-0.309-8.798 0.12-12.996 0.116-1.133 0.78-2.733 1.622-3.52 2.194-2.048 18.693-1.338 22.508-1.096-0.224-2.311-0.058-6.654-0.084-9.25 0.052-4.496-0.184-8.89 0.204-13.38601 0.365-4.223 4.48-7.777 6.788-11.155 1.496-2.188 2.878-4.443 4.576-6.437 0.596-0.7 1.137-0.973 2.007-1.22m1.04 63.04001c-2.436 0.094-12.144 0.685-13.524-0.601-1.7-1.585-1.15-12.828-0.934-15.504q0.07-0.877 0.206-1.747l-12.906-0.006c-2.24 0-5.782-0.08-7.93 0.166-0.87 3.401-0.573 10.789-0.577 14.673l-0.021 22.02399-0.02 46.092c0.014 7.17199 0.024 14.37399 0.072 21.548 0.037 1.101 0.1 2.409 0.656 3.377 0.36 0.62399 1.57 1.291 2.272 1.343 4.747 0.358 10.108 0.213 14.837 0.213l34.441 0 40.07 0.00999c4.165 0 15.956 0.263 19.573-0.16099 0.99199-0.864 1.371-1.168 2.137-2.27901 0.287-5.707 0.17299-12.15201 0.176-17.914l0.005-28.06399c-0.001-19.77001 0.385-41.198-0.1-60.814-2.412-0.336-5.906-0.226-8.418-0.222l-12.878 0.03c0.287 3.064 0.206 6.594 0.195 9.692-0.008 2.261 0.687 7.989-2.265 8.213l-0.287-0.384c-1.874-0.684-8.836-0.463-10.63 0.255-0.686-0.064-1.027-0.014-1.513-0.48-0.865-2.245-0.648-14.35-0.406-17.298-13.218-0.009-28.492 0.374-41.558-0.029 0.418 3.438 0.567 14.953-0.673 17.866m41.619-21.782l0.347-0.018c0.402-0.888-0.046-26.038 0.24501-29.733-12.793-0.277-25.65 0.067-38.45001-0.053-0.873-0.008-1.9-0.015-2.75999-0.124-0.533 1.083 0.163 26.287-0.277 30.014 13.083-0.41 27.666-0.074 40.89499-0.087m0.517-38.05501l-27.375-0.01599c-2.52 0-11.826 0.187-13.812-0.293-0.03 1.492-0.014 3.86-0.198 5.269 13.583 0.065 27.697 0.203 41.24999-0.012 0.24-1.22 0.088-3.59 0.135-4.947m3.88301 4.373c-0.427 15.523 0.283 31.306-0.07 46.85201-0.035 1.56-0.08 3.301-0.04 4.852 2.204-0.049 5.092-0.18 7.22699 0.08 1.176-2.62 0.005-37.019-0.084-41.967-0.017-0.942-5.716-9.252-7.03199-9.817m-49.038-0.21001c-3.87 3.352-8.262 10.83-7.543 15.692 0.658 4.454-0.747 34.045 0.148 36.006l0.444 0.175q3.824-0.055 7.652-0.043c-0.184-2.57-0.16-5.145-0.171-7.72-0.047-11.747 0.055-23.493-0.029-35.24-0.02-2.763-0.141-5.541 0.163-8.296 0.001-0.008-0.28-0.402-0.32601-0.424l-0.33799-0.15z",
                           "viewBox": [
                             0,
                             0,
-                            24,
-                            28
+                            121,
+                            159
                           ],
-                          "width": 24,
-                          "height": 28,
-                          "stroke": "$ink",
-                          "strokeWidth": 1
+                          "fill": "$ink",
+                          "width": 21.3081761006,
+                          "height": 28
                         },
                         {
                           "type": "text",
                           "id": "z55I6",
                           "x": 10,
-                          "y": 20,
+                          "y": 21.5,
                           "name": "Bag item count",
                           "fill": "$ink",
                           "textGrowth": "fixed-width-height",
                           "width": 24,
-                          "height": 10,
+                          "height": 11,
                           "content": "0",
                           "lineHeight": 1,
                           "textAlign": "center",
                           "fontFamily": "$font-mono",
-                          "fontSize": 10,
+                          "fontSize": 11,
                           "fontWeight": "normal"
                         }
                       ]
@@ -533,7 +532,7 @@
       "type": "frame",
       "id": "oqbEv",
       "x": 3200,
-      "y": -5450,
+      "y": -5420,
       "name": "Footer",
       "reusable": true,
       "width": 1440,
@@ -735,7 +734,7 @@
       "type": "frame",
       "id": "CFsCH",
       "x": 3840,
-      "y": -3500,
+      "y": -3300,
       "name": "Button/WhatsApp",
       "reusable": true,
       "fill": "$ink",
@@ -776,7 +775,7 @@
       "type": "frame",
       "id": "xhCII",
       "x": 4280,
-      "y": -3100,
+      "y": -2870,
       "name": "WhatsApp Float",
       "reusable": true,
       "width": 56,
@@ -2109,7 +2108,7 @@
       "type": "frame",
       "id": "IwhUS",
       "x": 3200,
-      "y": -3500,
+      "y": -3300,
       "name": "Button/Primary",
       "reusable": true,
       "fill": "$ink",
@@ -2139,7 +2138,7 @@
       "type": "frame",
       "id": "J4dks",
       "x": 4280,
-      "y": -3500,
+      "y": -3300,
       "name": "Button/Link",
       "reusable": true,
       "alignItems": "center",
@@ -2161,7 +2160,7 @@
       "type": "frame",
       "id": "qSMF4",
       "x": 3200,
-      "y": -3300,
+      "y": -3070,
       "name": "Checkbox/Off",
       "reusable": true,
       "gap": "$space-2",
@@ -2195,7 +2194,7 @@
       "type": "frame",
       "id": "f25hM",
       "x": 3520,
-      "y": -3300,
+      "y": -3070,
       "name": "Checkbox/On",
       "reusable": true,
       "gap": "$space-2",
@@ -2241,7 +2240,7 @@
       "type": "frame",
       "id": "z3t7k5",
       "x": 3840,
-      "y": -3300,
+      "y": -3070,
       "name": "Radio/Off",
       "reusable": true,
       "gap": "$space-2",
@@ -2276,7 +2275,7 @@
       "type": "frame",
       "id": "lbC11",
       "x": 4280,
-      "y": -3300,
+      "y": -3070,
       "name": "Radio/On",
       "reusable": true,
       "gap": "$space-2",
@@ -2321,7 +2320,7 @@
       "type": "frame",
       "id": "y40JRr",
       "x": 3200,
-      "y": -3100,
+      "y": -2870,
       "name": "Qty Stepper",
       "reusable": true,
       "stroke": "$line",
@@ -2400,7 +2399,7 @@
       "type": "frame",
       "id": "c9PEE0",
       "x": 3520,
-      "y": -3100,
+      "y": -2870,
       "name": "Badge",
       "reusable": true,
       "stroke": "$ink",
@@ -2427,7 +2426,7 @@
       "type": "frame",
       "id": "w4UZ2C",
       "x": 3840,
-      "y": -3100,
+      "y": -2870,
       "name": "Section Link",
       "reusable": true,
       "gap": 14,
@@ -2468,7 +2467,7 @@
       "type": "frame",
       "id": "lpasV",
       "x": 3200,
-      "y": -2900,
+      "y": -2670,
       "name": "Totals Row",
       "reusable": true,
       "width": 320,
@@ -2512,7 +2511,7 @@
       "type": "frame",
       "id": "V20Jy",
       "x": 4280,
-      "y": -4000,
+      "y": -3820,
       "name": "Notice",
       "reusable": true,
       "width": 360,
@@ -7133,7 +7132,9 @@
                                       "stroke": "#FFFFFF"
                                     },
                                     "MHdhV": {
-                                      "stroke": "#FFFFFF"
+                                      "stroke": [],
+                                      "fill": "#FFFFFF",
+                                      "strokeWidth": 0
                                     },
                                     "eN9oK": {
                                       "stroke": "#FFFFFF"
@@ -14549,13 +14550,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "Mxzwg",
+                                          "id": "X8uRD6",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -15824,13 +15825,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "Y4kGA1",
+                                          "id": "ch8k2",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -16286,13 +16287,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "nT2e0",
+                                          "id": "XNkp3",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Book an appointment on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Book an appointment on WhatsApp"
                                             }
                                           }
@@ -16449,13 +16450,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "N42rIT",
+                                          "id": "CkivX",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Send receipt via WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Send receipt via WhatsApp"
                                             }
                                           }
@@ -16573,13 +16574,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "bEEa5",
+                                          "id": "gGewb",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Ask about my delivery",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Ask about my delivery"
                                             }
                                           }
@@ -16786,13 +16787,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "YpdF3",
+                                          "id": "pzxOr",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -18925,13 +18926,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "D939e",
+                                          "id": "KizCX",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about sizing",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about sizing"
                                             }
                                           }
@@ -19145,13 +19146,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "t2EfhH",
+                                          "id": "g86lVY",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about availability",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about availability"
                                             }
                                           }
@@ -20191,13 +20192,13 @@
                                           }
                                         },
                                         {
-                                          "id": "a5Q3o",
+                                          "id": "uEFCU",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about an existing order",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about an existing order"
                                             }
                                           }
@@ -20348,13 +20349,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "ZzA0S",
+                                          "id": "Z4Ej24",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Open WhatsApp again",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Open WhatsApp again"
                                             }
                                           }
@@ -22044,7 +22045,9 @@
                                       "stroke": "#FFFFFF"
                                     },
                                     "MHdhV": {
-                                      "stroke": "#FFFFFF"
+                                      "stroke": [],
+                                      "fill": "#FFFFFF",
+                                      "strokeWidth": 0
                                     },
                                     "z55I6": {
                                       "fill": "#FFFFFF"
@@ -30694,13 +30697,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "DVbV5",
+                                          "id": "Xb04f",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -32249,13 +32252,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "iHyut",
+                                          "id": "WTOsP",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -32879,13 +32882,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "h8QoeB",
+                                          "id": "nvTuT",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Book an appointment on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Book an appointment on WhatsApp"
                                             }
                                           }
@@ -33098,13 +33101,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "feniM",
+                                          "id": "EnYCl",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Send receipt via WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Send receipt via WhatsApp"
                                             }
                                           }
@@ -33278,13 +33281,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "sZNhP",
+                                          "id": "o6fynz",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Ask about my delivery",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Ask about my delivery"
                                             }
                                           }
@@ -33497,13 +33500,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "lz1EW",
+                                          "id": "VvitE",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -36033,13 +36036,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "qBcvS",
+                                          "id": "ffHRF",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about sizing",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about sizing"
                                             }
                                           }
@@ -36309,13 +36312,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "IfFs2",
+                                          "id": "tqJZj",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about availability",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about availability"
                                             }
                                           }
@@ -37576,13 +37579,13 @@
                                           }
                                         },
                                         {
-                                          "id": "h3Npf",
+                                          "id": "Nlb6j",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about an existing order",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about an existing order"
                                             }
                                           }
@@ -37789,13 +37792,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "e9Zicx",
+                                          "id": "FqT9s",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Open WhatsApp again",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Open WhatsApp again"
                                             }
                                           }
@@ -39649,7 +39652,9 @@
                                       "stroke": "#FFFFFF"
                                     },
                                     "MHdhV": {
-                                      "stroke": "#FFFFFF"
+                                      "stroke": [],
+                                      "fill": "#FFFFFF",
+                                      "strokeWidth": 0
                                     },
                                     "z55I6": {
                                       "fill": "#FFFFFF"
@@ -48381,13 +48386,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "EjJdM",
+                                          "id": "qDDSI",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -49936,13 +49941,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "FnJcy",
+                                          "id": "TqqD9",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -50566,13 +50571,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "sx0jE",
+                                          "id": "c0Wiw",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Book an appointment on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Book an appointment on WhatsApp"
                                             }
                                           }
@@ -50785,13 +50790,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "cV5lk",
+                                          "id": "uZcJV",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Send receipt via WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Send receipt via WhatsApp"
                                             }
                                           }
@@ -50965,13 +50970,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "wshsj",
+                                          "id": "X6iZT",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Ask about my delivery",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Ask about my delivery"
                                             }
                                           }
@@ -51184,13 +51189,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "PmujV",
+                                          "id": "IIK2m",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Contact us on WhatsApp",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Contact us on WhatsApp"
                                             }
                                           }
@@ -53778,13 +53783,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "S752y",
+                                          "id": "GRT6k",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about sizing",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about sizing"
                                             }
                                           }
@@ -54213,13 +54218,13 @@
                                           ]
                                         },
                                         {
-                                          "id": "OVUbD",
+                                          "id": "s3sEn9",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about availability",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about availability"
                                             }
                                           }
@@ -55580,13 +55585,13 @@
                                           }
                                         },
                                         {
-                                          "id": "lDjMg",
+                                          "id": "DKhvS",
                                           "type": "ref",
-                                          "ref": "rUMLe",
+                                          "ref": "mbsnn",
                                           "name": "Ask about an existing order",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "m19oNs": {
+                                            "E4JVq": {
                                               "content": "Ask about an existing order"
                                             }
                                           }
@@ -55793,13 +55798,13 @@
                                           "fontWeight": "normal"
                                         },
                                         {
-                                          "id": "mhhlm",
+                                          "id": "j2koX",
                                           "type": "ref",
-                                          "ref": "IwhUS",
+                                          "ref": "CFsCH",
                                           "name": "Open WhatsApp again",
                                           "width": "fill_container",
                                           "descendants": {
-                                            "zYhxA": {
+                                            "Cz8FE": {
                                               "content": "Open WhatsApp again"
                                             }
                                           }
@@ -56888,7 +56893,7 @@
       "type": "frame",
       "id": "Im0MZ",
       "x": 3200,
-      "y": -4940,
+      "y": -4780,
       "name": "Editorial Pair / Reversible",
       "context": "Width-led Velvet-style campaign canvas: desktop max1280×800 (8:5), tablet fills available width at8:5. Large portrait occupies half the canvas at4:5; small portrait is one quarter canvas width at3:4, vertically centered. No viewport-height scaling, scroll snap or parallax. Mobile uses a5:7 canvas with the smaller photo only.",
       "reusable": true,
@@ -57320,7 +57325,7 @@
       "type": "frame",
       "id": "nCGKo",
       "x": 3840,
-      "y": -2900,
+      "y": -2670,
       "name": "Quantity Field",
       "context": "Underlined row matching Field/select: label left, minus / value / plus right. Minus and plus are 28x36 hit areas; ink-3 when at a limit.",
       "reusable": true,
@@ -58841,7 +58846,7 @@
     {
       "type": "frame",
       "id": "vmoZB",
-      "x": 9408,
+      "x": 12448,
       "y": 0,
       "name": "Hi-fi Design",
       "context": "Responsive hi-fi Home, Shop and Product Detail. Announcement always precedes navbar on desktop/tablet/mobile. Homepage supports transparent or solid non-sticky navigation; solid only for keyboard focus or dialog interaction, not scrolling. Browse Editorial uses original hero yellow/navy photos. Actual campaign video pending.",
@@ -60115,7 +60120,9 @@
                           "stroke": "#FFFFFF"
                         },
                         "MHdhV": {
-                          "stroke": "#FFFFFF"
+                          "stroke": [],
+                          "fill": "#FFFFFF",
+                          "strokeWidth": 0
                         },
                         "eN9oK": {
                           "stroke": "#FFFFFF"
@@ -63363,7 +63370,9 @@
                           "stroke": "#FFFFFF"
                         },
                         "MHdhV": {
-                          "stroke": "#FFFFFF"
+                          "stroke": [],
+                          "fill": "#FFFFFF",
+                          "strokeWidth": 0
                         },
                         "z55I6": {
                           "fill": "#FFFFFF"
@@ -66835,7 +66844,9 @@
                           "stroke": "#FFFFFF"
                         },
                         "MHdhV": {
-                          "stroke": "#FFFFFF"
+                          "stroke": [],
+                          "fill": "#FFFFFF",
+                          "strokeWidth": 0
                         },
                         "z55I6": {
                           "fill": "#FFFFFF"
@@ -69028,7 +69039,7 @@
       "type": "frame",
       "id": "vF3L4",
       "x": 4080,
-      "y": -3100,
+      "y": -2870,
       "name": "Carousel / Navigation",
       "reusable": true,
       "width": 100,
@@ -69094,7 +69105,7 @@
     {
       "type": "frame",
       "id": "dRBrf",
-      "x": 15776,
+      "x": 18816,
       "y": 0,
       "name": "Carousel States / Responsive",
       "width": 7800,
@@ -84421,7 +84432,7 @@
     {
       "type": "frame",
       "id": "bB57s",
-      "x": 23816,
+      "x": 26856,
       "y": 0,
       "name": "Mobile PDP / Gallery Carousel States",
       "width": 1450,
@@ -85796,7 +85807,7 @@
       "type": "frame",
       "id": "iS6e3",
       "x": 7040,
-      "y": -5700,
+      "y": -5500,
       "name": "Icon / WhatsApp / 16",
       "context": "Exact green vector artwork from user-selected whatsapp icon m6KsNm, normalized to remove outer source whitespace. Used only by hi-fi WhatsApp controls.",
       "reusable": true,
@@ -85832,7 +85843,7 @@
       "type": "frame",
       "id": "Yx6Vq",
       "x": 7200,
-      "y": -5700,
+      "y": -5500,
       "name": "Icon / WhatsApp / 24",
       "context": "Exact green vector artwork from user-selected whatsapp icon m6KsNm, normalized to remove outer source whitespace. Used only by hi-fi WhatsApp controls.",
       "reusable": true,
@@ -85867,7 +85878,7 @@
     {
       "type": "frame",
       "id": "rtb4F",
-      "x": 25506,
+      "x": 28546,
       "y": 0,
       "name": "Homepage Header / Solid Option",
       "fill": "#E5E5E5",
@@ -85981,7 +85992,9 @@
                           "stroke": "$ink"
                         },
                         "MHdhV": {
-                          "stroke": "$ink"
+                          "stroke": [],
+                          "fill": "$ink",
+                          "strokeWidth": 0
                         },
                         "eN9oK": {
                           "stroke": "$ink"
@@ -86144,7 +86157,9 @@
                           "stroke": "$ink"
                         },
                         "MHdhV": {
-                          "stroke": "$ink"
+                          "stroke": [],
+                          "fill": "$ink",
+                          "strokeWidth": 0
                         },
                         "z55I6": {
                           "fill": "$ink"
@@ -86310,7 +86325,9 @@
                           "stroke": "$ink"
                         },
                         "MHdhV": {
-                          "stroke": "$ink"
+                          "stroke": [],
+                          "fill": "$ink",
+                          "strokeWidth": 0
                         },
                         "z55I6": {
                           "fill": "$ink"
@@ -86382,6 +86399,762 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "mbsnn",
+      "x": 3840,
+      "y": -3228,
+      "name": "Button/WhatsApp Outline",
+      "reusable": true,
+      "stroke": "$ink-3",
+      "strokeWidth": 1,
+      "gap": 10,
+      "padding": [
+        15,
+        32
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon",
+          "id": "w9f5ES",
+          "name": "WA Icon",
+          "width": 16,
+          "height": 16,
+          "icon": "message-circle",
+          "library": "lucide",
+          "fill": "$ink-2"
+        },
+        {
+          "type": "text",
+          "id": "E4JVq",
+          "name": "Label",
+          "fill": "$ink-2",
+          "content": "Ask about availability",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-base",
+          "fontWeight": "normal",
+          "letterSpacing": 0.3
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "SO9Ay",
+      "x": 3200,
+      "y": -2450,
+      "name": "Button states",
+      "width": 1000,
+      "fill": "$bg",
+      "stroke": "$line",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 32,
+      "padding": 48,
+      "children": [
+        {
+          "type": "text",
+          "id": "R8000N",
+          "name": "Title",
+          "fill": "$ink",
+          "content": "Button states",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-lg",
+          "fontWeight": "normal",
+          "letterSpacing": 0.3
+        },
+        {
+          "type": "frame",
+          "id": "VDnwQ",
+          "name": "Header row",
+          "width": "fill_container",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "Qzzwr",
+              "name": "Button",
+              "fill": "$ink-3",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Button",
+              "fontFamily": "$font-mono",
+              "fontSize": "$text-xs",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "G3IC5",
+              "name": "Rest",
+              "fill": "$ink-3",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Rest",
+              "fontFamily": "$font-mono",
+              "fontSize": "$text-xs",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "HdJ3N",
+              "name": "Mid wipe",
+              "fill": "$ink-3",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Mid wipe",
+              "fontFamily": "$font-mono",
+              "fontSize": "$text-xs",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Aj9mw",
+              "name": "Hover / focus",
+              "fill": "$ink-3",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Hover / focus",
+              "fontFamily": "$font-mono",
+              "fontSize": "$text-xs",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "nvzRP",
+              "name": "Press",
+              "fill": "$ink-3",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Press",
+              "fontFamily": "$font-mono",
+              "fontSize": "$text-xs",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Nnaj2",
+          "name": "Primary row",
+          "width": "fill_container",
+          "gap": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "JbmUO",
+              "name": "Primary",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Primary",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-sm",
+              "fontWeight": "normal"
+            },
+            {
+              "id": "l9sAl",
+              "type": "ref",
+              "ref": "IwhUS",
+              "name": "Primary / Rest",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "descendants": {
+                "zYhxA": {
+                  "content": "Continue",
+                  "fontSize": "$text-sm"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "sgif4",
+              "name": "Primary / Mid wipe",
+              "clip": true,
+              "width": "fill_container",
+              "height": 46,
+              "fill": "$ink",
+              "stroke": "$ink",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "KpBgH",
+                  "x": 0,
+                  "y": 23,
+                  "name": "Fill rising",
+                  "fill": "$bg",
+                  "width": 150,
+                  "height": 23
+                }
+              ]
+            },
+            {
+              "id": "L0csNC",
+              "type": "ref",
+              "ref": "IwhUS",
+              "name": "Primary / Hover",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$bg",
+              "stroke": "$ink",
+              "descendants": {
+                "zYhxA": {
+                  "content": "Continue",
+                  "fontSize": "$text-sm",
+                  "fill": "$ink"
+                }
+              }
+            },
+            {
+              "id": "z5SnJ",
+              "type": "ref",
+              "ref": "IwhUS",
+              "name": "Primary / Press 0.98",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$bg",
+              "stroke": "$ink",
+              "opacity": 0.9,
+              "descendants": {
+                "zYhxA": {
+                  "content": "Continue",
+                  "fontSize": "$text-sm",
+                  "fill": "$ink"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SIVey",
+          "name": "Outline row",
+          "width": "fill_container",
+          "gap": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ORGnd",
+              "name": "Outline",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Outline",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-sm",
+              "fontWeight": "normal"
+            },
+            {
+              "id": "Wdzih",
+              "type": "ref",
+              "ref": "rUMLe",
+              "name": "Outline / Rest",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "descendants": {
+                "m19oNs": {
+                  "content": "Add to bag",
+                  "fontSize": "$text-sm"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "uC5ki",
+              "name": "Outline / Mid wipe",
+              "clip": true,
+              "width": "fill_container",
+              "height": 46,
+              "fill": "$bg",
+              "stroke": "$ink",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "hZJs9",
+                  "x": 0,
+                  "y": 23,
+                  "name": "Fill rising",
+                  "fill": "$ink",
+                  "width": 150,
+                  "height": 23
+                }
+              ]
+            },
+            {
+              "id": "JI5RD",
+              "type": "ref",
+              "ref": "rUMLe",
+              "name": "Outline / Hover",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$ink",
+              "stroke": "$ink",
+              "descendants": {
+                "m19oNs": {
+                  "content": "Add to bag",
+                  "fontSize": "$text-sm",
+                  "fill": "$on-ink"
+                }
+              }
+            },
+            {
+              "id": "W97o21",
+              "type": "ref",
+              "ref": "rUMLe",
+              "name": "Outline / Press 0.98",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$ink",
+              "stroke": "$ink",
+              "opacity": 0.9,
+              "descendants": {
+                "m19oNs": {
+                  "content": "Add to bag",
+                  "fontSize": "$text-sm",
+                  "fill": "$on-ink"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ouVVn",
+          "name": "WhatsApp row",
+          "width": "fill_container",
+          "gap": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "xJD4S",
+              "name": "WhatsApp",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "WhatsApp",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-sm",
+              "fontWeight": "normal"
+            },
+            {
+              "id": "G93WN",
+              "type": "ref",
+              "ref": "CFsCH",
+              "name": "WhatsApp / Rest",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "descendants": {
+                "SwEIh": {
+                  "fill": "$on-ink"
+                },
+                "Cz8FE": {
+                  "content": "Order via WhatsApp",
+                  "fontSize": "$text-sm"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "WEQUB",
+              "name": "WhatsApp / Mid wipe",
+              "clip": true,
+              "width": "fill_container",
+              "height": 46,
+              "fill": "$ink",
+              "stroke": "$ink",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "Fhkex",
+                  "x": 0,
+                  "y": 23,
+                  "name": "Fill rising",
+                  "fill": "$bg",
+                  "width": 150,
+                  "height": 23
+                }
+              ]
+            },
+            {
+              "id": "M5cOY",
+              "type": "ref",
+              "ref": "CFsCH",
+              "name": "WhatsApp / Hover",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$bg",
+              "stroke": "$ink",
+              "descendants": {
+                "SwEIh": {
+                  "fill": "$ink"
+                },
+                "Cz8FE": {
+                  "content": "Order via WhatsApp",
+                  "fontSize": "$text-sm",
+                  "fill": "$ink"
+                }
+              }
+            },
+            {
+              "id": "l40K8",
+              "type": "ref",
+              "ref": "CFsCH",
+              "name": "WhatsApp / Press 0.98",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$bg",
+              "stroke": "$ink",
+              "opacity": 0.9,
+              "descendants": {
+                "SwEIh": {
+                  "fill": "$ink"
+                },
+                "Cz8FE": {
+                  "content": "Order via WhatsApp",
+                  "fontSize": "$text-sm",
+                  "fill": "$ink"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TFjZu",
+          "name": "WhatsApp Outline row",
+          "width": "fill_container",
+          "gap": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "MEkWo",
+              "name": "WhatsApp Outline",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "WhatsApp Outline",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-sm",
+              "fontWeight": "normal"
+            },
+            {
+              "id": "gwj4f",
+              "type": "ref",
+              "ref": "mbsnn",
+              "name": "WhatsApp Outline / Rest",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "descendants": {
+                "w9f5ES": {
+                  "fill": "$ink-2"
+                },
+                "E4JVq": {
+                  "content": "Ask about availability",
+                  "fontSize": "$text-sm"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "H9nSj",
+              "name": "WhatsApp Outline / Mid wipe",
+              "clip": true,
+              "width": "fill_container",
+              "height": 46,
+              "fill": "$bg",
+              "stroke": "$ink",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "gP8IR",
+                  "x": 0,
+                  "y": 23,
+                  "name": "Fill rising",
+                  "fill": "$ink",
+                  "width": 150,
+                  "height": 23
+                }
+              ]
+            },
+            {
+              "id": "dpqBC",
+              "type": "ref",
+              "ref": "mbsnn",
+              "name": "WhatsApp Outline / Hover",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$ink",
+              "stroke": "$ink",
+              "descendants": {
+                "w9f5ES": {
+                  "fill": "$on-ink"
+                },
+                "E4JVq": {
+                  "content": "Ask about availability",
+                  "fontSize": "$text-sm",
+                  "fill": "$on-ink"
+                }
+              }
+            },
+            {
+              "id": "hEE7u",
+              "type": "ref",
+              "ref": "mbsnn",
+              "name": "WhatsApp Outline / Press 0.98",
+              "width": "fill_container",
+              "padding": [
+                15,
+                8
+              ],
+              "fill": "$ink",
+              "stroke": "$ink",
+              "opacity": 0.9,
+              "descendants": {
+                "w9f5ES": {
+                  "fill": "$on-ink"
+                },
+                "E4JVq": {
+                  "content": "Ask about availability",
+                  "fontSize": "$text-sm",
+                  "fill": "$on-ink"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "AtfBZ",
+          "name": "Link row",
+          "width": "fill_container",
+          "gap": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Q24sG0",
+              "name": "Link",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Link",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-sm",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "W4B5W",
+              "name": "Link / Rest",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "a92v8",
+                  "name": "Label",
+                  "fill": "$ink-2",
+                  "content": "Continue shopping",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.3
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zqkJz",
+              "name": "Link / Mid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SWlhs",
+                  "name": "Label",
+                  "fill": "$ink-2",
+                  "content": "Continue shopping",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "rectangle",
+                  "id": "Ow2aK",
+                  "name": "Underline",
+                  "fill": "$ink-2",
+                  "width": 52,
+                  "height": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QLImC",
+              "name": "Link / Hover",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Lhyx0",
+                  "name": "Label",
+                  "fill": "$ink-2",
+                  "content": "Continue shopping",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "rectangle",
+                  "id": "mKaDp",
+                  "name": "Underline",
+                  "fill": "$ink-2",
+                  "width": 112,
+                  "height": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "W5Oriv",
+              "name": "Link / Press",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SJ3S1",
+                  "name": "Label",
+                  "fill": "$ink-2",
+                  "content": "Continue shopping",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.3
+                },
+                {
+                  "type": "rectangle",
+                  "id": "oUoEe",
+                  "name": "Underline",
+                  "fill": "$ink-2",
+                  "width": 112,
+                  "height": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "PtiB4",
+          "name": "Motion notes",
+          "fill": "$ink-2",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Fill rises from the bottom edge, 280ms, cubic-bezier(0.22, 1, 0.36, 1). Label colour inverts over the same time. Press scales to 0.98 in 120ms, on touch too. Hover needs a mouse; keyboard focus shows the filled state. Disabled buttons do not animate. Links draw an underline from the left. Small icon controls fade to 60% and press to 0.92. WhatsApp float scales to 1.06, presses to 0.94. Reduced motion: colours swap instantly with no scaling.",
+          "lineHeight": 1.6,
+          "fontFamily": "$font-mono",
+          "fontSize": "$text-xs",
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "o3uypB",
+      "x": -5464.911764705881,
+      "y": 6574.911764705882,
+      "name": "Vector.svg",
+      "clip": true,
+      "width": 121,
+      "height": 159,
+      "layout": "none",
+      "children": [
+        {
+          "type": "path",
+          "id": "JTtDv",
+          "x": -0.000359855592250824,
+          "y": -0.00021220743656158447,
+          "geometry": "M37.84836 0.12421c8.851-0.346 18.92 0.164 27.877-0.053 3.389-0.081 15.728-0.181 18.665 0.339 1.525 2.198 10.986 14.89 11.245 15.8 1.148 4.044 0.6 20.174 0.426 25.183 5.735 0.395 18.78701-1.09 23.092 1.347 0.43699 0.814 1.27 2.317 1.31 3.19201 0.168 3.631 0.10199 7.44 0.099 11.07999l-0.01301 21.598 0.01201 68.269c-0.01101 7.608-0.073 11.562-9.559 11.422-2.37001-0.034-5.154 0.002-7.582 0.002l-21.42-0.026-51.223 0-15.816 0.01699c-3.982 0.004-9.839 0.73801-12.953-2.07-1.847-1.663-1.876-4.342-1.892-6.67-0.052-7.836-0.005-15.679 0.007-23.518l-0.009-41.38199-0.007-25.46899c0.001-4.234-0.309-8.798 0.12-12.996 0.116-1.133 0.78-2.733 1.622-3.52 2.194-2.048 18.693-1.338 22.508-1.096-0.224-2.311-0.058-6.654-0.084-9.25 0.052-4.496-0.184-8.89 0.204-13.38601 0.365-4.223 4.48-7.777 6.788-11.155 1.496-2.188 2.878-4.443 4.576-6.437 0.596-0.7 1.137-0.973 2.007-1.22m1.04 63.04001c-2.436 0.094-12.144 0.685-13.524-0.601-1.7-1.585-1.15-12.828-0.934-15.504q0.07-0.877 0.206-1.747l-12.906-0.006c-2.24 0-5.782-0.08-7.93 0.166-0.87 3.401-0.573 10.789-0.577 14.673l-0.021 22.02399-0.02 46.092c0.014 7.17199 0.024 14.37399 0.072 21.548 0.037 1.101 0.1 2.409 0.656 3.377 0.36 0.62399 1.57 1.291 2.272 1.343 4.747 0.358 10.108 0.213 14.837 0.213l34.441 0 40.07 0.00999c4.165 0 15.956 0.263 19.573-0.16099 0.99199-0.864 1.371-1.168 2.137-2.27901 0.287-5.707 0.17299-12.15201 0.176-17.914l0.005-28.06399c-0.001-19.77001 0.385-41.198-0.1-60.814-2.412-0.336-5.906-0.226-8.418-0.222l-12.878 0.03c0.287 3.064 0.206 6.594 0.195 9.692-0.008 2.261 0.687 7.989-2.265 8.213l-0.287-0.384c-1.874-0.684-8.836-0.463-10.63 0.255-0.686-0.064-1.027-0.014-1.513-0.48-0.865-2.245-0.648-14.35-0.406-17.298-13.218-0.009-28.492 0.374-41.558-0.029 0.418 3.438 0.567 14.953-0.673 17.866m41.619-21.782l0.347-0.018c0.402-0.888-0.046-26.038 0.24501-29.733-12.793-0.277-25.65 0.067-38.45001-0.053-0.873-0.008-1.9-0.015-2.75999-0.124-0.533 1.083 0.163 26.287-0.277 30.014 13.083-0.41 27.666-0.074 40.89499-0.087m0.517-38.05501l-27.375-0.01599c-2.52 0-11.826 0.187-13.812-0.293-0.03 1.492-0.014 3.86-0.198 5.269 13.583 0.065 27.697 0.203 41.24999-0.012 0.24-1.22 0.088-3.59 0.135-4.947m3.88301 4.373c-0.427 15.523 0.283 31.306-0.07 46.85201-0.035 1.56-0.08 3.301-0.04 4.852 2.204-0.049 5.092-0.18 7.22699 0.08 1.176-2.62 0.005-37.019-0.084-41.967-0.017-0.942-5.716-9.252-7.03199-9.817m-49.038-0.21001c-3.87 3.352-8.262 10.83-7.543 15.692 0.658 4.454-0.747 34.045 0.148 36.006l0.444 0.175q3.824-0.055 7.652-0.043c-0.184-2.57-0.16-5.145-0.171-7.72-0.047-11.747 0.055-23.493-0.029-35.24-0.02-2.763-0.141-5.541 0.163-8.296 0.001-0.008-0.28-0.402-0.32601-0.424l-0.33799-0.15z",
+          "fill": "#000000f8",
+          "width": 120.57761510461569,
+          "height": 158.38358928263187
+        }
+      ]
+    },
+    {
+      "type": "browser",
+      "id": "P3vZk9",
+      "x": 31608,
+      "y": 0,
+      "name": "Storefront / Desktop",
+      "width": 1440,
+      "height": 1000,
+      "url": "localhost:8080"
+    },
+    {
+      "type": "browser",
+      "id": "bDEGg",
+      "x": 33128,
+      "y": 0,
+      "name": "Storefront / Phone",
+      "width": 390,
+      "height": 1000,
+      "url": "localhost:8080"
     }
   ],
   "variables": {

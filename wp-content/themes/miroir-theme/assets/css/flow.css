@@ -83,6 +83,7 @@ wc-order-attribution-inputs { display: none; }
 .flow__content .wp-block-button { display: flex; }
 .flow__content .wp-block-button__link {
 	display: flex;
+	gap: 10px;
 	border: 0;
 	border-radius: 0;
 	flex: 1 1 auto;

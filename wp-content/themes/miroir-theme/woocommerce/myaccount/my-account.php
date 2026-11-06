@@ -20,7 +20,7 @@ if ( 'orders' === $endpoint && ! wc_get_orders( array( 'customer' => get_current
 			<p class="flow__heading"><?php echo esc_html( miroir_text( 'orders_empty' ) ); ?></p>
 			<p class="flow__intro"><?php echo esc_html( miroir_text( 'orders_empty_text' ) ); ?></p>
 			<a class="btn btn--primary btn--block" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php echo esc_html( miroir_text( 'orders_empty_shop' ) ); ?></a>
-			<a class="btn btn--block" href="<?php echo esc_url( apply_filters( 'miroir_whatsapp_url', miroir_page_url( 'contact' ) ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'orders_empty_ask' ) ); ?></a>
+			<a class="btn btn--block" href="<?php echo esc_url( apply_filters( 'miroir_whatsapp_url', miroir_page_url( 'contact' ) ) ); ?>" target="_blank" rel="noopener"><?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'orders_empty_ask' ) ); ?></a>
 		</div>
 	</div>
 	<?php

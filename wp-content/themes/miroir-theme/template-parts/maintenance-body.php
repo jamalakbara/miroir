@@ -20,7 +20,7 @@ $wa_url = apply_filters( 'miroir_whatsapp_url', 'https://wa.me/' . preg_replace(
 				<h2 class="maint__label"><?php echo esc_html( miroir_text( 'maint_label' ) ); ?></h2>
 				<p class="maint__copy"><?php echo esc_html( miroir_text( 'maint_help' ) ); ?></p>
 			</section>
-			<a class="btn btn--primary btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'maint_whatsapp' ) ); ?></a>
+			<a class="btn btn--whatsapp btn--block" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'maint_whatsapp' ) ); ?></a>
 			<a class="btn btn--block" href="<?php echo esc_url( home_url( add_query_arg( array() ) ) ); ?>"><?php echo esc_html( miroir_text( 'maint_retry' ) ); ?></a>
 			<?php if ( miroir_mod( 'instagram_url' ) ) : ?>
 				<a class="maint__social" href="<?php echo esc_url( miroir_mod( 'instagram_url' ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'maint_social' ) ); ?></a>

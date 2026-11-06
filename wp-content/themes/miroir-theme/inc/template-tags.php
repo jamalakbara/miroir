@@ -313,16 +313,32 @@ function miroir_whatsapp_float() {
 
 /**
  * Page content links to "#whatsapp" (e.g. a Button block) open the shop's
- * WhatsApp, so editors never paste the number into content.
+ * WhatsApp, so editors never paste the number into content. Saved wa.me links
+ * follow the current number too. Button blocks also get the WhatsApp icon, so
+ * saved pages pick it up without being edited.
  */
 add_filter(
 	'the_content',
 	function ( $content ) {
-		if ( false === strpos( $content, '#whatsapp' ) ) {
+		if ( false === strpos( $content, '#whatsapp' ) && false === strpos( $content, 'wa.me/' ) ) {
 			return $content;
 		}
-		$url = apply_filters( 'miroir_whatsapp_url', 'https://wa.me/' . preg_replace( '/\D/', '', (string) get_option( 'miroir_wa_number', '' ) ) );
-		return str_replace( array( 'href="#whatsapp"', "href='#whatsapp'" ), 'href="' . esc_url( $url ) . '" target="_blank" rel="noopener"', $content );
+		$icon = miroir_icon( 'whatsapp', 16 );
+		$url  = esc_url( apply_filters( 'miroir_whatsapp_url', 'https://wa.me/' . preg_replace( '/\D/', '', (string) get_option( 'miroir_wa_number', '' ) ) ) );
+		return preg_replace_callback(
+			'/<a\b[^>]*>(<svg)?/i',
+			function ( $match ) use ( $icon, $url ) {
+				$link = $match[0];
+				if ( ! preg_match( '~href=["\'](#whatsapp["\']|https://wa\.me/)~', $link ) ) {
+					return $link;
+				}
+				// Elementor pages store the number from when they were converted, so bare wa.me links follow the current setting.
+				$link = preg_replace( '~href=(["\'])#whatsapp\1~', 'href="' . $url . '" target="_blank" rel="noopener"', $link );
+				$link = preg_replace( '~href=(["\'])https://wa\.me/\d*\1~', 'href="' . $url . '"', $link );
+				return false !== strpos( $link, 'wp-block-button__link' ) && empty( $match[1] ) ? $link . $icon : $link;
+			},
+			$content
+		);
 	}
 );
 

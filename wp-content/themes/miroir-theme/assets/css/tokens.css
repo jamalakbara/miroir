@@ -71,6 +71,9 @@
 	--logo-w: 88px;
 	--backdrop: color-mix(in srgb, var(--ink) 40%, transparent);
 	--shadow: rgba(0, 0, 0, 0.15);
+	--ease-site: cubic-bezier(0.22, 1, 0.36, 1);
+	--motion-button: 280ms;
+	--motion-press: 120ms;
 
 	--stroke-hair: 1px;
 

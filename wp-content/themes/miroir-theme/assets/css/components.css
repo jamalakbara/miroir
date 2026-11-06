@@ -73,9 +73,64 @@ a:hover .ph--filled .ph__hover, a:focus-visible .ph--filled .ph__hover { opacity
 	color: var(--on-ink);
 }
 .btn--whatsapp { padding-inline: 32px; }
-.btn--whatsapp .icon { width: 16px; height: 16px; }
+.btn .icon-whatsapp, .wp-block-button__link .icon-whatsapp { flex: none; width: 16px; height: 16px; }
 .btn--block { display: flex; width: 100%; }
 .btn[disabled], .btn.is-disabled { cursor: not-allowed; }
+
+/*
+ * Fill wipe: colour rises from the bottom edge and the label inverts. Outline
+ * buttons fill with ink; solid ones fill with the page colour. The fill sits
+ * behind the label (isolation keeps z-index -1 inside the button).
+ */
+.btn, .flow__content .wp-block-button__link, .state-buy .single_add_to_cart_button:not(.disabled) {
+	--btn-fill: var(--ink);
+	--btn-fill-ink: var(--on-ink);
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	transition: color var(--motion-button) var(--ease-site), outline-color var(--motion-button) var(--ease-site), transform var(--motion-press) var(--ease-site);
+}
+.btn--primary, .btn--whatsapp, .flow__content .wp-block-button__link, .state-buy .single_add_to_cart_button:not(.disabled) {
+	--btn-fill: var(--bg);
+	--btn-fill-ink: var(--ink);
+}
+.flow__content .is-style-outline .wp-block-button__link {
+	--btn-fill: var(--ink);
+	--btn-fill-ink: var(--on-ink);
+}
+.btn::before, .flow__content .wp-block-button__link::before, .state-buy .single_add_to_cart_button:not(.disabled)::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: var(--btn-fill);
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform var(--motion-button) var(--ease-site);
+}
+.btn:not([disabled], .is-disabled, .disabled):focus-visible, .flow__content .wp-block-button__link:focus-visible { color: var(--btn-fill-ink); }
+.btn:not([disabled], .is-disabled, .disabled):focus-visible::before, .flow__content .wp-block-button__link:focus-visible::before { transform: scaleY(1); }
+.btn:not([disabled], .is-disabled, .disabled):active, .flow__content .wp-block-button__link:active, .state-buy .single_add_to_cart_button:not(.disabled):active { transform: scale(0.98); }
+@media (hover: hover) {
+	.btn:not([disabled], .is-disabled, .disabled):hover, .flow__content .wp-block-button__link:hover, .state-buy .single_add_to_cart_button:not(.disabled):hover { outline-color: var(--ink); color: var(--btn-fill-ink); }
+	.btn:not([disabled], .is-disabled, .disabled):hover::before, .flow__content .wp-block-button__link:hover::before, .state-buy .single_add_to_cart_button:not(.disabled):hover::before { transform: scaleY(1); }
+}
+/* flow.css colours this variant at equal specificity and loads later. */
+.flow__content .is-style-outline .wp-block-button__link:focus-visible { color: var(--btn-fill-ink); }
+@media (hover: hover) {
+	.flow__content .is-style-outline .wp-block-button__link:hover { outline-color: var(--ink); color: var(--btn-fill-ink); }
+}
+form.cart[aria-busy="true"] .btn::before { transform: scaleY(0); }
+form.cart[aria-busy="true"] .btn:hover { outline-color: var(--ink-3); color: var(--ink-2); }
+
+/* Small controls have no fill to wipe: they fade and press. */
+.qty__btn, .qty-field__btn, .home-strip__button, .pdp__arrows button, .panel__close, .coupon-remove, .field__toggle, .pdp__zoom {
+	transition: opacity var(--motion-press) ease, background-color var(--motion-press) ease, transform var(--motion-press) var(--ease-site);
+}
+.qty__btn:not(:disabled):active, .qty-field__btn:not(:disabled):active, .home-strip__button:not(:disabled):active, .pdp__arrows button:not(:disabled):active, .panel__close:active, .coupon-remove:active, .field__toggle:active, .pdp__zoom:active { transform: scale(0.92); }
+@media (hover: hover) {
+	.qty__btn:not(:disabled):hover, .qty-field__btn:not(:disabled):hover, .home-strip__button:not(:disabled):hover, .pdp__arrows button:not(:disabled):hover, .coupon-remove:hover, .field__toggle:hover, .pdp__zoom:hover { opacity: 0.6; }
+}
 
 /* Button/Link (J4dks). */
 .btn-link {
@@ -86,7 +141,10 @@ a:hover .ph--filled .ph__hover, a:focus-visible .ph--filled .ph__hover { opacity
 	line-height: var(--lh-sans-12);
 	font-weight: 400;
 	letter-spacing: var(--track-ui);
+	background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+	transition: background-size var(--motion-button) var(--ease-site);
 }
+.btn-link:hover, .btn-link:focus-visible { text-decoration: none; background-size: 100% 1px; }
 
 /* Checkbox (qSMF4 / f25hM): 12px box, DM Mono 12 label, gap 8. */
 .check {
@@ -313,8 +371,13 @@ select.field__input { padding-right: 24px; cursor: pointer; }
 	background: var(--ink);
 	color: var(--on-ink);
 	box-shadow: 0 4px 16px var(--shadow);
+	transition: transform var(--motion-button) var(--ease-site);
 }
 .wa-float:hover { text-decoration: none; }
+@media (hover: hover) {
+	.wa-float:hover { transform: scale(1.06); }
+}
+.wa-float:active { transform: scale(0.94); }
 
 @media (max-width: 1023px) {
 	.wa-float { right: 24px; bottom: 24px; width: 48px; height: 48px; }
@@ -385,3 +448,14 @@ select.field__input { padding-right: 24px; cursor: pointer; }
 .notice--flat .notice__text .button { margin-left: 8px; }
 .notice--flat + .notice--flat { margin-top: 8px; }
 .field-error { color: var(--error); font-size: var(--text-sm); line-height: 18px; font-weight: 400; letter-spacing: 0; }
+
+/* Reduced motion: buttons still change colour on hover, but instantly and without scaling. */
+@media (prefers-reduced-motion: reduce) {
+	.btn, .btn::before, .btn-link, .wa-float,
+	.flow__content .wp-block-button__link, .flow__content .wp-block-button__link::before,
+	.state-buy .single_add_to_cart_button:not(.disabled), .state-buy .single_add_to_cart_button:not(.disabled)::before,
+	.qty__btn, .qty-field__btn, .home-strip__button, .pdp__arrows button, .panel__close, .coupon-remove, .field__toggle, .pdp__zoom { transition: none; }
+	.btn:active, .wa-float:hover, .wa-float:active,
+	.flow__content .wp-block-button__link:active, .state-buy .single_add_to_cart_button:not(.disabled):active,
+	.qty__btn:active, .qty-field__btn:active, .home-strip__button:active, .pdp__arrows button:active, .panel__close:active, .coupon-remove:active, .field__toggle:active, .pdp__zoom:active { transform: none !important; }
+}

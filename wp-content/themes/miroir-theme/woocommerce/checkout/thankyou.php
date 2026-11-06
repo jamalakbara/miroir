@@ -89,7 +89,7 @@ $qty      = array_sum( wp_list_pluck( $lines, 'qty' ) );
 				<p class="notice__text"><?php echo esc_html( miroir_text( 'sent_fallback_text' ) ); ?></p>
 			</div>
 			<p class="flow__intro wa-message" data-wa-message><?php echo esc_html( $message ); ?></p>
-			<a class="btn btn--primary btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( miroir_text( 'sent_fallback_retry' ) ); ?></a>
+			<a class="btn btn--whatsapp btn--block" href="<?php echo esc_attr( $wa_url ); ?>" target="_blank" rel="noopener"><?php echo miroir_icon( 'whatsapp', 16 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?><?php echo esc_html( miroir_text( 'sent_fallback_retry' ) ); ?></a>
 			<button class="btn btn--block" type="button" data-copy-message><?php echo esc_html( miroir_text( 'sent_copy' ) ); ?></button>
 			<a class="btn btn--block" href="<?php echo esc_url( miroir_page_url( 'contact' ) ); ?>"><?php echo esc_html( miroir_text( 'contact_care' ) ); ?></a>
 			<p class="flow__help wa-copied" data-copied role="status"><?php echo esc_html( miroir_text( 'sent_copied' ) ); ?></p>
