@@ -34,7 +34,7 @@ function miroir_settings() {
 
 	$settings = array(
 		// Links (header and footer texts are blocks in Appearance > Editor).
-		'instagram_url'          => array( 'section' => 'miroir_footer', 'label' => __( 'Instagram URL', 'miroir' ), 'type' => 'url', 'default' => 'https://www.instagram.com/miroir.id/', 'description' => __( 'Used on the maintenance page and in the default footer links.', 'miroir' ) ),
+		'instagram_url'          => array( 'section' => 'miroir_footer', 'label' => __( 'Instagram URL', 'miroir' ), 'type' => 'url', 'default' => 'https://www.instagram.com/miroirstore/', 'description' => __( 'Used on the maintenance page and in the default footer links.', 'miroir' ) ),
 
 		// Homepage navigation; shared with Elementor Site Settings > Miroir > Header.
 		'home_header_style'       => array(
