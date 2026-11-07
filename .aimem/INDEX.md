@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 66 (proposed 44, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 76 (active 66, superseded 10)
-- handoff: 188 (final 188)
+- handoff: 189 (final 189)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-zsbw28j1 2026-11-07 (human:akbar) — Done: Committed photo work, pushed development and main (no deploy run; tools paths do not trigger it). Applied 15 photos and 5 product updates on staging and live with update-catalog-photos.php. Ima…
 - hnd-6r49scfz 2026-11-07 (human:akbar) — Done: Imported sharp photos locally for Flow Stripe Navy, Emme Stripe Brown, Morty Stripe Brown; Lumi Pants and Lui Stripe Green now lead with gallery photos. Added tools/update-catalog-photos.php; u…
 - hnd-qeq9jq74 2026-11-07 (human:akbar) — Done: Downloaded 30 unimported Drive photos with user approval and matched them: Flow Stripe Navy, Emme Stripe Brown, Morty Stripe Brown have sharp sets. · Next: On user OK add matched photos to tool…
 - hnd-w584ehxk 2026-11-07 (human:akbar) — Done: Diagnosed blurry PDP photo: Morty Stripe Green uses 470px workbook image. Audited all products: 8 of 18 published leads are low-res, 10 sharp. Found 30 unimported Drive photos (49-58, 117-136).…
 - hnd-te3tc0ds 2026-11-06 (agent:claude:haiku-5-5) — Done: SEO audit via openseo (project Miroir, miroir.id). Fresh audit ff3959a0 completed: only 1 page crawled, https://miroir.id/ returns 503 (critical server-error). Existing audit 1ffaf567 showed sa…
-- hnd-ws5emk34 2026-11-06 (human:akbar) — Done: Rechecked CDN: https://www.miroir.id now has a valid certificate on all checked edges. · Next: At launch check www redirect, robots.txt and CDN Development mode. Finish tsk-gw91zc27.
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
