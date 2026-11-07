@@ -24,7 +24,7 @@ for anchor in ET.fromstring(z.read('xl/drawings/drawing1.xml')):
     filename = f'workbook-row-{row}.jpg'
     (dest / filename).write_bytes(z.read(rels[rid]))
     references[row] = filename
-groups = [[59,60,61,62,63], [64,65,66,67,68], [69,70,71,72,73], [74,75,76,77,78], [79,80,81,82,83,84], [85,86,87,88,89], [90,91,92,93,94,95], [104,105,106,107], [108,109], [], [100,99,101,102,103], [], [], [], [], [], [110,111,112,113], [114,115,116]]
+groups = [[59,60,61,62,63], [64,65,66,67,68], [69,70,71,72,73], [74,75,76,77,78], [79,80,81,82,83,84], [85,86,87,88,89], [90,91,92,93,94,95], [104,105,106,107], [108,109], [], [100,99,101,102,103], [], [117,118,119,120], [], [126,127,128,129,130], [131,132,133,134,135,136], [110,111,112,113], [114,115,116]]
 rows = []
 for row in sheet.findall('.//m:row', ns):
     cells = {}
@@ -40,7 +40,7 @@ for row in sheet.findall('.//m:row', ns):
         details = ' | '.join(s.strip() for s in details.split('|') if '962 cm' not in s)
     source_row = int(row.attrib['r'])
     photos = [f'catalog-{n}.jpg' for n in groups[i]]
-    if not photos or i in (5, 7):
+    if not photos:
         photos.insert(0, references[source_row])
     rows.append({'name': cells['B'].strip(), 'price': cells['F'], 'category': cells['G'].lower(), 'description': cells['H'], 'weight_grams': int(re.search(r'\d+', cells['I'])[0]), 'details': details, 'photos': photos, 'source_row': source_row})
 (root / 'tools/catalog.json').write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding='utf-8')

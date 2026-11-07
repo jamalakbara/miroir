@@ -88,7 +88,6 @@
     "weight_grams": 350,
     "details": "Material : Cotton | All Size Fit to L | Waist : up to 88 cm | Thigh : 74 cm",
     "photos": [
-      "workbook-row-9.jpg",
       "catalog-85.jpg",
       "catalog-86.jpg",
       "catalog-87.jpg",
@@ -122,7 +121,6 @@
     "weight_grams": 250,
     "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 140 cm | Length: 55 cm | Arm Hole : 50 cm",
     "photos": [
-      "workbook-row-11.jpg",
       "catalog-104.jpg",
       "catalog-105.jpg",
       "catalog-106.jpg",
@@ -191,7 +189,10 @@
     "weight_grams": 250,
     "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 120 cm | Length: 55 cm | Arm Hole : 50 cm",
     "photos": [
-      "workbook-row-16.jpg"
+      "catalog-117.jpg",
+      "catalog-118.jpg",
+      "catalog-119.jpg",
+      "catalog-120.jpg"
     ],
     "source_row": 16
   },
@@ -215,7 +216,11 @@
     "weight_grams": 250,
     "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 134 cm | Length: 65 cm | Arm Hole : 50 cm",
     "photos": [
-      "workbook-row-18.jpg"
+      "catalog-126.jpg",
+      "catalog-127.jpg",
+      "catalog-128.jpg",
+      "catalog-129.jpg",
+      "catalog-130.jpg"
     ],
     "source_row": 18
   },
@@ -227,7 +232,12 @@
     "weight_grams": 250,
     "details": "Material : Cotton | All Size Fit to XXL | Bust : up to 148 cm | Length: 77 cm | Arm Hole : 50 cm",
     "photos": [
-      "workbook-row-19.jpg"
+      "catalog-131.jpg",
+      "catalog-132.jpg",
+      "catalog-133.jpg",
+      "catalog-134.jpg",
+      "catalog-135.jpg",
+      "catalog-136.jpg"
     ],
     "source_row": 19
   },
