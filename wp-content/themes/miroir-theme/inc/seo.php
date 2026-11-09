@@ -158,7 +158,10 @@ add_filter(
 		if ( miroir_seo_is_variant_request() || $empty_listing ) {
 			unset( $robots['index'] );
 			$robots['noindex'] = true;
-			$robots['follow']  = true;
+			// Keep core's nofollow when the site discourages search engines (staging).
+			if ( empty( $robots['nofollow'] ) ) {
+				$robots['follow'] = true;
+			}
 		}
 		return $robots;
 	}
