@@ -83,7 +83,8 @@ function miroir_block_listing_products() {
  */
 function miroir_block_load_more() {
 	$next_url = get_next_posts_page_link();
-	if ( miroir_block_preview() || ! $next_url || get_query_var( 'paged', 1 ) >= $GLOBALS['wp_query']->max_num_pages ) {
+	// paged is 0, not unset, on page 1, so get_query_var()'s default never applies.
+	if ( miroir_block_preview() || ! $next_url || max( 1, (int) get_query_var( 'paged' ) ) >= $GLOBALS['wp_query']->max_num_pages ) {
 		return '';
 	}
 	return sprintf( '<a class="btn listing-more" href="%s" data-load-more>%s</a>', esc_url( $next_url ), esc_html( miroir_text( 'load_more' ) ) );
