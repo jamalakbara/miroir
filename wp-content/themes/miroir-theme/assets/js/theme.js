@@ -346,7 +346,8 @@
 				if ( photo.image.srcset ) { full.srcset = photo.image.srcset; full.sizes = '100vw'; }
 				full.src = photo.image.currentSrc || photo.image.src;
 				full.alt = photo.image.alt;
-				full.decoding = 'async';
+				full.width = photo.image.naturalWidth || Number( photo.image.getAttribute( 'width' ) ) || 3;
+				full.height = photo.image.naturalHeight || Number( photo.image.getAttribute( 'height' ) ) || 4;
 				figure.appendChild( full );
 				lbTrack.appendChild( figure );
 			} );
@@ -370,16 +371,55 @@
 					event.preventDefault(); go( current + ( event.key === 'ArrowLeft' ? -1 : 1 ) );
 				}
 			} );
-			dialog.querySelector( '.pdp-lightbox__close' ).addEventListener( 'click', function () { dialog.close(); } );
 			var resize = new ResizeObserver( function () { go( current, true ); sync(); } );
-			dialog.addEventListener( 'close', function () {
+			/* The photo zooms between its place on the page and the carousel. */
+			var ease = { open: 'cubic-bezier(.2, .7, .2, 1)', close: 'cubic-bezier(.4, 0, .2, 1)' };
+			function lightboxImage( index ) { return lbTrack.children[ index ].querySelector( 'img' ); }
+			function pageRect( index ) {
+				var rect = photos[ index ].image.getBoundingClientRect();
+				return rect.width && rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth ? rect : null;
+			}
+			function flight( image, rect ) {
+				var target = image.getBoundingClientRect();
+				if ( ! rect || ! target.width ) { return null; }
+				return 'translate(' + ( rect.left - target.left ) + 'px, ' + ( rect.top - target.top ) + 'px) scale(' + ( rect.width / target.width ) + ', ' + ( rect.height / target.height ) + ')';
+			}
+			function hideSource( index, hidden ) { photos[ index ].image.style.visibility = hidden ? 'hidden' : ''; }
+			/* Clean up right after closing: the close event can wait while the tab is in the background. */
+			var finished = false;
+			function finish() {
+				if ( finished ) { return; }
+				finished = true;
+				if ( dialog.open ) { dialog.close(); }
 				resize.disconnect();
 				dialog.remove();
+				photos.forEach( function ( photo, index ) { hideSource( index, false ); } );
 				document.documentElement.classList.remove( 'has-lightbox' );
-				// Leave the page on the photo last viewed.
-				if ( mobile.matches ) { track.scrollLeft = photos[ current ].slide * track.clientWidth; }
 				if ( zoom ) { zoom.focus( { preventScroll: true } ); }
-			} );
+			}
+			/* Play the closing animation before the dialog leaves; Esc goes through here too. */
+			var closing = false;
+			function closeLightbox() {
+				if ( closing ) { return; }
+				closing = true;
+				// Leave the page on the photo last viewed, so the photo can land there.
+				if ( mobile.matches ) { track.scrollLeft = photos[ current ].slide * track.clientWidth; }
+				if ( reduce || ! lightboxImage( current ).animate ) { finish(); return; }
+				var image = lightboxImage( current );
+				image.parentElement.classList.add( 'is-current' );
+				dialog.classList.add( 'is-closing' );
+				var to = flight( image, pageRect( current ) );
+				hideSource( current, !! to );
+				var landing = image.animate(
+					to ? [ { transform: 'none' }, { transform: to } ] : [ { opacity: 1 }, { opacity: 0, transform: 'translateY(12px) scale(.98)' } ],
+					{ duration: to ? 340 : 220, easing: ease.close, fill: 'forwards' }
+				);
+				landing.onfinish = finish;
+				setTimeout( finish, 600 );
+			}
+			dialog.addEventListener( 'cancel', function ( event ) { event.preventDefault(); closeLightbox(); } );
+			dialog.addEventListener( 'close', finish );
+			dialog.querySelector( '.pdp-lightbox__close' ).addEventListener( 'click', closeLightbox );
 			document.body.appendChild( dialog );
 			document.documentElement.classList.add( 'has-lightbox' );
 			dialog.showModal();
@@ -387,6 +427,16 @@
 			go( current, true );
 			sync();
 			lbTrack.focus( { preventScroll: true } );
+			var openIndex = current;
+			var opening = lightboxImage( openIndex );
+			if ( ! reduce && opening.animate ) {
+				var from = flight( opening, pageRect( openIndex ) );
+				hideSource( openIndex, !! from );
+				opening.animate(
+					from ? [ { transform: from }, { transform: 'none' } ] : [ { opacity: 0, transform: 'translateY(24px) scale(.98)' }, { opacity: 1, transform: 'none' } ],
+					{ duration: from ? 420 : 450, easing: ease.open }
+				).onfinish = function () { if ( ! closing ) { hideSource( openIndex, false ); } };
+			}
 		}
 		if ( zoom ) {
 			zoom.addEventListener( 'click', function () {

@@ -86870,7 +86870,7 @@
           "fill": "$ink-2",
           "textGrowth": "fixed-width",
           "width": 1800,
-          "content": "Zoom button or any photo opens a full-screen carousel at that photo · Swipe, arrows or ← → keys · Counter follows active photo · No looping, arrows fade at ends · Esc or close returns to the page on the last viewed photo · Fade in 280ms, instant under reduced motion",
+          "content": "Zoom button or any photo opens a full-screen carousel at that photo · Swipe, arrows or ← → keys · Counter follows active photo · No looping, arrows fade at ends · Open: clicked photo zooms from its place on the page to full screen in 420ms while the page fades to white; controls fade in after 220ms · Close (X or Esc): photo shrinks back onto its page photo in 340ms (page gallery moves to that photo first); if that photo is off-screen it drops and fades instead · Reduced motion: instant",
           "fontFamily": "$font-sans",
           "fontSize": 16,
           "fontWeight": "normal"
