@@ -159,8 +159,7 @@
 			watchedImages.add( image );
 			var media = image.closest( '.ph--filled' );
 			var primary = ! image.classList.contains( 'ph__hover' );
-			function settle() {
-				var failed = image.naturalWidth === 0;
+			function settle( failed ) {
 				image.classList.toggle( 'has-image-error', failed );
 				if ( primary ) {
 					media.classList.remove( 'is-image-loading' );
@@ -175,13 +174,19 @@
 					}
 				}
 			}
-			image.addEventListener( 'load', settle );
-			image.addEventListener( 'error', settle );
-			if ( image.complete ) {
-				settle();
-			} else if ( primary ) {
-				media.classList.add( 'is-image-loading' );
-				media.setAttribute( 'aria-busy', 'true' );
+			image.addEventListener( 'load', function () { settle( false ); } );
+			image.addEventListener( 'error', function () { settle( true ); } );
+			if ( ! image.complete ) {
+				if ( primary ) {
+					media.classList.add( 'is-image-loading' );
+					media.setAttribute( 'aria-busy', 'true' );
+				}
+			} else if ( image.naturalWidth || ! image.decode ) {
+				settle( ! image.naturalWidth );
+			} else {
+				// A finished photo can report zero width while the page has no width yet
+				// (srcset sizes resolve to 0px), so only a failed decode means it is broken.
+				image.decode().then( function () { settle( false ); }, function () { settle( ! image.naturalWidth ); } );
 			}
 		} );
 	}
