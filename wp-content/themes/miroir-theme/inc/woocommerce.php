@@ -113,6 +113,41 @@ function miroir_strip_products( $args ) {
 }
 
 /**
+ * Keep the "sale" product category in step with sale prices: a product is in it
+ * exactly while it is on sale (a variable product while any variation is).
+ *
+ * Runs after every product or variation save: the edit screen, quick/bulk edit,
+ * REST, imports and WooCommerce's daily scheduled-sales cron, which saves each
+ * product when a dated sale starts or ends. Manual "sale" ticks are overridden.
+ *
+ * @param WC_Product $product Product or variation.
+ * @return bool Whether the category was added or removed.
+ */
+function miroir_sync_sale_category( $product ) {
+	if ( $product instanceof WC_Product && $product->is_type( 'variation' ) ) {
+		$product = wc_get_product( $product->get_parent_id() );
+	}
+	$term = get_term_by( 'slug', 'sale', 'product_cat' );
+	if ( ! $product instanceof WC_Product || ! $term ) {
+		return false;
+	}
+
+	$id      = $product->get_id();
+	$has     = has_term( $term->term_id, 'product_cat', $id );
+	$on_sale = $product->is_on_sale();
+	if ( $on_sale && ! $has ) {
+		wp_add_object_terms( $id, $term->term_id, 'product_cat' );
+		return true;
+	}
+	if ( ! $on_sale && $has ) {
+		wp_remove_object_terms( $id, $term->term_id, 'product_cat' );
+		return true;
+	}
+	return false;
+}
+add_action( 'woocommerce_after_product_object_save', 'miroir_sync_sale_category' );
+
+/**
  * Render product cards for a list of products.
  *
  * @param WC_Product[] $products Products.

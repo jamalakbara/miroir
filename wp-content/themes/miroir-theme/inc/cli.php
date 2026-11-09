@@ -342,6 +342,36 @@ class Miroir_Theme_Command {
 		WP_CLI::success( 'Templates, parts and styles are back to the theme files.' );
 	}
 
+	/**
+	 * Put every on-sale product in the "sale" category and take the rest out.
+	 * Saves keep it in step afterwards; run once for products saved before that.
+	 *
+	 * @subcommand sync-sale
+	 * @when after_wp_load
+	 */
+	public function sync_sale() {
+		if ( ! get_term_by( 'slug', 'sale', 'product_cat' ) ) {
+			WP_CLI::error( 'No product category with the slug "sale".' );
+		}
+		$ids     = wc_get_products(
+			array(
+				'status' => array( 'publish', 'private', 'draft', 'pending', 'future' ),
+				'type'   => array_keys( wc_get_product_types() ),
+				'limit'  => -1,
+				'return' => 'ids',
+			)
+		);
+		$changed = 0;
+		foreach ( $ids as $id ) {
+			$product = wc_get_product( $id );
+			if ( $product && miroir_sync_sale_category( $product ) ) {
+				WP_CLI::log( sprintf( '#%d %s: %s', $id, $product->get_name(), $product->is_on_sale() ? 'added' : 'removed' ) );
+				++$changed;
+			}
+		}
+		WP_CLI::success( sprintf( '%d of %d products changed.', $changed, count( $ids ) ) );
+	}
+
 	public function maintenance( $args ) {
 		$state = 'on' === ( $args[0] ?? '' ) ? 'on' : 'off';
 		update_option( 'miroir_maintenance', $state );
