@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 67 (proposed 45, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 78 (active 68, superseded 10)
-- handoff: 196 (final 196)
+- handoff: 197 (final 197)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-c6jag9nh 2026-11-09 (agent:claude-code:sonnet-5.5) — Done: SEO audit. OpenSEO crawl of live miroir.id hit maintenance 503 (1 page, same as 2026-11-06 audits). OpenSEO cannot reach localhost, so ran own stdlib crawl of local build (150 URLs). Findings o…
 - hnd-zs22n6wh 2026-11-09 (human:akbar) — Done: Photo carousel open/close now zooms from and back to the page photo (3723106 on development). Earlier fade CSS rode along in 8ee66aa from another session. · Next: Push development for staging,…
 - hnd-gxpetn56 2026-11-09 (human:akbar) — Done: PDP zoom button and photo clicks open full-screen photo carousel (theme.js, product.css); verified desktop+mobile locally. Pencil board 'PDP / Photo Lightbox Carousel' (zNJ9T) added to miroir.p…
 - hnd-2b0087kf 2026-11-09 (human:akbar) — Done: PDP price row had no gap: .pdp__price.card__price never matched (no card__price class). Now .pdp__price is flex with 8px gap and text-base. Pen PDP Hi-fi desktop/tablet/mobile prices now show s…
 - hnd-hq834f97 2026-11-09 (human:akbar) — Done: Card/PDP old price now struck through (.card__was line-through). Product Card Was in miroir.pen rebuilt as frame with drawn 1px strike, still hidden by default. · Next: Commit and push developm…
-- hnd-75mhvvs2 2026-11-09 (human:akbar) — Done: Fixed theme.js image skeleton (naturalWidth 0 no longer means broken). Committed, pushed development and main; staging and live deploys succeeded (live approved at user request). theme.js on bo…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
