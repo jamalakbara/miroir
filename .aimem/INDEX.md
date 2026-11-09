@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 66 (proposed 44, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 77 (active 67, superseded 10)
-- handoff: 192 (final 192)
+- handoff: 193 (final 193)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-hq834f97 2026-11-09 (human:akbar) — Done: Card/PDP old price now struck through (.card__was line-through). Product Card Was in miroir.pen rebuilt as frame with drawn 1px strike, still hidden by default. · Next: Commit and push developm…
 - hnd-75mhvvs2 2026-11-09 (human:akbar) — Done: Fixed theme.js image skeleton (naturalWidth 0 no longer means broken). Committed, pushed development and main; staging and live deploys succeeded (live approved at user request). theme.js on bo…
 - hnd-46w9bsqc 2026-11-09 (human:akbar) — Done: Ran update-catalog-photos.php on live for the 10 products at user request; leads verified in WP and image files return 200. Removed ~/miroir-tools-tmp. · Next: Fix theme.js settle() leaving has…
 - hnd-0jqrmyqp 2026-11-09 (human:akbar) — Done: Applied client photo mapping (catalog, drive-N and pic revisi files) to 10 products locally and on staging; verify-catalog passed locally. Pushed development and main. · Next: With user OK run…
 - hnd-zsbw28j1 2026-11-07 (human:akbar) — Done: Committed photo work, pushed development and main (no deploy run; tools paths do not trigger it). Applied 15 photos and 5 product updates on staging and live with update-catalog-photos.php. Ima…
-- hnd-6r49scfz 2026-11-07 (human:akbar) — Done: Imported sharp photos locally for Flow Stripe Navy, Emme Stripe Brown, Morty Stripe Brown; Lumi Pants and Lui Stripe Green now lead with gallery photos. Added tools/update-catalog-photos.php; u…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
