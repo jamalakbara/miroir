@@ -39,17 +39,80 @@
 		var inView = true;
 		var failed = false;
 		var source = '';
+		var retries = 0;
+		var MAX_RETRIES = 3;
+		var retryTimer = 0;
+		var stallTimer = 0;
+		var awaitingGesture = false;
 		video.muted = true;
 		function allowed() { return ! reduced.matches && ! ( connection && connection.saveData ); }
+		function shouldPlay() { return allowed() && inView && ! document.hidden && ! failed && !! source; }
+		function clearTimers() {
+			window.clearTimeout( retryTimer );
+			window.clearTimeout( stallTimer );
+			retryTimer = stallTimer = 0;
+		}
+		// Autoplay can be refused (iOS Low Power Mode, browser policy); a muted play
+		// started from the visitor's first tap or click is always allowed.
+		function playOnGesture() {
+			if ( awaitingGesture ) { return; }
+			awaitingGesture = true;
+			function retry() {
+				awaitingGesture = false;
+				document.removeEventListener( 'touchend', retry );
+				document.removeEventListener( 'click', retry );
+				play();
+			}
+			document.addEventListener( 'touchend', retry, { passive: true } );
+			document.addEventListener( 'click', retry );
+		}
 		function play() {
-			if ( ! allowed() || ! inView || document.hidden || failed || ! source ) { return; }
+			if ( ! shouldPlay() || ! video.paused ) { return; }
 			var attempt = video.play();
 			if ( attempt && attempt.catch ) {
-				attempt.catch( function () { hero.classList.remove( 'has-video-frame' ); } );
+				attempt.catch( function ( err ) {
+					if ( ! video.paused ) { return; }
+					hero.classList.remove( 'has-video-frame' );
+					if ( err && err.name === 'NotAllowedError' ) {
+						playOnGesture();
+					} else if ( retries < MAX_RETRIES ) {
+						// AbortError: a pause() or load() interrupted the request; try again shortly.
+						retries++;
+						window.clearTimeout( retryTimer );
+						retryTimer = window.setTimeout( play, 500 * retries );
+					}
+				} );
 			}
+		}
+		// Reload the film and resume where it froze, for network errors and stalled buffering.
+		function recover() {
+			clearTimers();
+			if ( ! source || retries >= MAX_RETRIES ) {
+				failed = true;
+				video.pause();
+				hero.classList.remove( 'has-video-frame' );
+				return;
+			}
+			retries++;
+			var resumeAt = video.currentTime || 0;
+			hero.classList.remove( 'has-video-frame' );
+			video.addEventListener( 'loadedmetadata', function seek() {
+				video.removeEventListener( 'loadedmetadata', seek );
+				if ( resumeAt && resumeAt < video.duration ) { video.currentTime = resumeAt; }
+			} );
+			video.load();
+			play();
+		}
+		function watchStall() {
+			if ( stallTimer || ! shouldPlay() ) { return; }
+			stallTimer = window.setTimeout( function () {
+				stallTimer = 0;
+				if ( shouldPlay() && video.readyState < 3 ) { recover(); }
+			}, 8000 );
 		}
 		function updateSource() {
 			if ( ! allowed() ) {
+				clearTimers();
 				video.pause();
 				video.removeAttribute( 'src' );
 				video.load();
@@ -59,8 +122,10 @@
 			}
 			var next = mobile.matches ? video.dataset.mobileSrc : video.dataset.src;
 			if ( next !== source ) {
+				clearTimers();
 				source = next;
 				failed = false;
+				retries = 0;
 				hero.classList.remove( 'has-video-frame' );
 				video.src = source;
 				video.load();
@@ -68,12 +133,25 @@
 			play();
 		}
 		video.addEventListener( 'playing', function () {
+			window.clearTimeout( stallTimer );
+			stallTimer = 0;
 			hero.classList.add( 'has-video-frame' );
 		} );
+		video.addEventListener( 'timeupdate', function () {
+			if ( retries && video.currentTime > 0 && ! stallTimer ) { retries = 0; }
+		} );
+		video.addEventListener( 'canplay', play );
+		video.addEventListener( 'waiting', watchStall );
+		video.addEventListener( 'stalled', watchStall );
 		video.addEventListener( 'error', function () {
+			// Only a network failure is worth retrying; an unsupported or corrupt file stays on the poster.
+			var code = video.error && video.error.code;
+			if ( code === 2 && source ) { recover(); return; }
+			clearTimers();
 			failed = true; video.pause(); hero.classList.remove( 'has-video-frame' );
 		} );
 		document.addEventListener( 'visibilitychange', function () { if ( document.hidden ) { video.pause(); } else { play(); } } );
+		window.addEventListener( 'pageshow', function ( event ) { if ( event.persisted ) { play(); } } );
 		if ( window.IntersectionObserver ) {
 			new IntersectionObserver( function ( entries ) {
 				inView = entries[0].isIntersecting;
