@@ -30,7 +30,7 @@ $row = function ( $label, $url ) use ( $arrow ) {
 		<?php miroir_menu( 'primary', miroir_menu_fallback( 'primary' ), 'panel__links' ); ?>
 		<a class="panel-row hair-b" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' ) ); ?>"><?php echo esc_html( miroir_text( 'nav_account' ) ); ?></a>
 		<?php $currency = function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : 'IDR'; ?>
-		<a class="panel__currency" href="<?php echo esc_url( add_query_arg( 'panel', 'currency' ) ); ?>" data-panel-open="currency" aria-controls="currency-panel" aria-expanded="false" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: currency code. */ __( 'Currency: %s', 'miroir' ), $currency ) ); ?>"><?php echo esc_html( $currency ); ?></a>
+		<a class="panel__currency" href="<?php echo esc_url( add_query_arg( 'panel', 'currency' ) ); ?>" rel="nofollow" data-panel-open="currency" aria-controls="currency-panel" aria-expanded="false" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: currency code. */ __( 'Currency: %s', 'miroir' ), $currency ) ); ?>"><?php echo esc_html( $currency ); ?></a>
 	</nav>
 </dialog>
 

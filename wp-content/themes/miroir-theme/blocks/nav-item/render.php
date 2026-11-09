@@ -13,7 +13,7 @@ $label = trim( (string) $attributes['label'] );
 switch ( $attributes['kind'] ) {
 	case 'search':
 		printf(
-			'<a class="site-nav__search" href="%s" data-panel-open="search" aria-controls="search-panel" aria-expanded="false">%s</a>',
+			'<a class="site-nav__search" href="%s" rel="nofollow" data-panel-open="search" aria-controls="search-panel" aria-expanded="false">%s</a>',
 			esc_url( add_query_arg( 'panel', 'search' ) ),
 			esc_html( '' !== $label ? $label : miroir_text( 'nav_search' ) )
 		);
@@ -29,7 +29,7 @@ switch ( $attributes['kind'] ) {
 
 	case 'bag':
 		?>
-		<a class="site-nav__search-compact" href="<?php echo esc_url( add_query_arg( 'panel', 'search' ) ); ?>" data-panel-open="search" aria-controls="search-panel" aria-expanded="false" aria-label="<?php echo esc_attr( miroir_text( 'nav_search' ) ); ?>">
+		<a class="site-nav__search-compact" href="<?php echo esc_url( add_query_arg( 'panel', 'search' ) ); ?>" rel="nofollow" data-panel-open="search" aria-controls="search-panel" aria-expanded="false" aria-label="<?php echo esc_attr( miroir_text( 'nav_search' ) ); ?>">
 			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
 		</a>
 		<?php
@@ -42,7 +42,7 @@ switch ( $attributes['kind'] ) {
 
 	case 'menu-toggle':
 		?>
-		<a class="site-nav__toggle" href="<?php echo esc_url( add_query_arg( 'panel', 'nav' ) ); ?>" data-panel-open="nav" data-menu-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>" data-close-label="<?php echo esc_attr( miroir_text( 'menu_close' ) ); ?>" aria-controls="nav-panel" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">
+		<a class="site-nav__toggle" href="<?php echo esc_url( add_query_arg( 'panel', 'nav' ) ); ?>" rel="nofollow" data-panel-open="nav" data-menu-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>" data-close-label="<?php echo esc_attr( miroir_text( 'menu_close' ) ); ?>" aria-controls="nav-panel" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'miroir' ); ?>">
 			<span class="site-nav__menu-mark" aria-hidden="true"><span></span></span>
 		</a>
 		<?php

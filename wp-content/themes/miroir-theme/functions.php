@@ -21,6 +21,7 @@ require MIROIR_THEME_DIR . '/inc/template-tags.php';
 require MIROIR_THEME_DIR . '/inc/search-popularity.php';
 require MIROIR_THEME_DIR . '/inc/staging-access.php';
 require MIROIR_THEME_DIR . '/inc/maintenance.php';
+require MIROIR_THEME_DIR . '/inc/seo.php';
 require MIROIR_THEME_DIR . '/inc/blocks.php';
 require MIROIR_THEME_DIR . '/inc/block-helpers.php';
 require MIROIR_THEME_DIR . '/inc/templates.php';

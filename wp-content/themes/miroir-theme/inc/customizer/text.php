@@ -29,6 +29,7 @@ function miroir_text_sections() {
 		'notfound'    => __( 'Page not found (404)', 'miroir' ),
 		'maintenance' => __( 'Maintenance page', 'miroir' ),
 		'staging'     => __( 'Staging access page', 'miroir' ),
+		'seo'         => __( 'Search engines', 'miroir' ),
 	);
 }
 
@@ -322,6 +323,13 @@ function miroir_texts() {
 		'register_help'       => array( 'account', __( 'Use at least 12 characters. Your personal data is used to manage your account. Read our %s.', 'miroir' ), __( 'Register: help (%s = privacy policy link)', 'miroir' ) ),
 		/* translators: %s: order number. */
 		'order_number'        => array( 'account', __( 'Order #%s', 'miroir' ), __( 'Order details: heading (%s = number)', 'miroir' ) ),
+
+		// Search engines (meta descriptions; inc/seo.php).
+		'seo_home_description'    => array( 'seo', __( 'Everyday womenswear from Miroir. Shop tops, bottoms and the new collection, and order through WhatsApp.', 'miroir' ), __( 'Home page description', 'miroir' ) ),
+		/* translators: %s: collection name. */
+		'seo_listing_description' => array( 'seo', __( '%s – everyday womenswear from Miroir. Browse the collection and order through WhatsApp.', 'miroir' ), __( 'Collection description when the category has none (%s = collection name)', 'miroir' ) ),
+		/* translators: %s: product name. */
+		'seo_product_description' => array( 'seo', __( '%s by Miroir, everyday womenswear. Choose your size and order through WhatsApp.', 'miroir' ), __( 'Product description when the product has none (%s = product name)', 'miroir' ) ),
 	);
 	return $texts;
 }
