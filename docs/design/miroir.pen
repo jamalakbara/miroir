@@ -61975,15 +61975,54 @@
                               ]
                             },
                             {
-                              "type": "text",
-                              "id": "xvCrb",
-                              "name": "Price",
-                              "fill": "$ink",
-                              "content": "IDR 325,000",
-                              "fontFamily": "$font-sans",
-                              "fontSize": "$text-base",
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.3
+                              "type": "frame",
+                              "id": "AFXJE",
+                              "name": "Price Row",
+                              "context": "Sale state: original price struck through in $ink-3, 8px gap, then current price. Regular products show only Price.",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "XbI1c",
+                                  "name": "Was",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "HVWEe",
+                                      "name": "Was Amount",
+                                      "fill": "$ink-3",
+                                      "content": "IDR 325,000",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-base",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "rectangle",
+                                      "id": "GSiAW",
+                                      "layoutPosition": "absolute",
+                                      "x": 0,
+                                      "y": 9,
+                                      "name": "Strike",
+                                      "fill": "$ink-3",
+                                      "width": 72,
+                                      "height": 1
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "XSeY5",
+                                  "name": "Price",
+                                  "fill": "$ink",
+                                  "content": "IDR 300,000",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-base",
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.3
+                                }
+                              ]
                             },
                             {
                               "type": "frame",
@@ -65203,15 +65242,54 @@
                               ]
                             },
                             {
-                              "type": "text",
-                              "id": "AEHBb",
-                              "name": "Price",
-                              "fill": "$ink",
-                              "content": "IDR 325,000",
-                              "fontFamily": "$font-sans",
-                              "fontSize": "$text-base",
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.3
+                              "type": "frame",
+                              "id": "NpdJq",
+                              "name": "Price Row",
+                              "context": "Sale state: original price struck through in $ink-3, 8px gap, then current price. Regular products show only Price.",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "vto3k",
+                                  "name": "Was",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "S29D5g",
+                                      "name": "Was Amount",
+                                      "fill": "$ink-3",
+                                      "content": "IDR 325,000",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-base",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "rectangle",
+                                      "id": "WlOkv",
+                                      "layoutPosition": "absolute",
+                                      "x": 0,
+                                      "y": 9,
+                                      "name": "Strike",
+                                      "fill": "$ink-3",
+                                      "width": 72,
+                                      "height": 1
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "NHkET",
+                                  "name": "Price",
+                                  "fill": "$ink",
+                                  "content": "IDR 300,000",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-base",
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.3
+                                }
+                              ]
                             },
                             {
                               "type": "frame",
@@ -68703,15 +68781,54 @@
                               ]
                             },
                             {
-                              "type": "text",
-                              "id": "S03Dxe",
-                              "name": "Price",
-                              "fill": "$ink",
-                              "content": "IDR 325,000",
-                              "fontFamily": "$font-sans",
-                              "fontSize": "$text-base",
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.3
+                              "type": "frame",
+                              "id": "tXzJ4",
+                              "name": "Price Row",
+                              "context": "Sale state: original price struck through in $ink-3, 8px gap, then current price. Regular products show only Price.",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "tOMep",
+                                  "name": "Was",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "sxhoB",
+                                      "name": "Was Amount",
+                                      "fill": "$ink-3",
+                                      "content": "IDR 325,000",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-base",
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "rectangle",
+                                      "id": "G82Mi",
+                                      "layoutPosition": "absolute",
+                                      "x": 0,
+                                      "y": 9,
+                                      "name": "Strike",
+                                      "fill": "$ink-3",
+                                      "width": 72,
+                                      "height": 1
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "NoKlY",
+                                  "name": "Price",
+                                  "fill": "$ink",
+                                  "content": "IDR 300,000",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-base",
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.3
+                                }
+                              ]
                             },
                             {
                               "type": "frame",
@@ -86724,6 +86841,402 @@
       "width": 390,
       "height": 1000,
       "url": "localhost:8080"
+    },
+    {
+      "type": "frame",
+      "id": "zNJ9T",
+      "x": 26856,
+      "y": 1687.3333333333335,
+      "name": "PDP / Photo Lightbox Carousel",
+      "fill": "$bg",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 64,
+      "children": [
+        {
+          "type": "text",
+          "id": "yVngi",
+          "name": "Lightbox board title",
+          "fill": "$ink",
+          "content": "PDP / PHOTO LIGHTBOX CAROUSEL",
+          "fontFamily": "$font-mono",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "VQX0m",
+          "name": "Lightbox interaction notes",
+          "fill": "$ink-2",
+          "textGrowth": "fixed-width",
+          "width": 1800,
+          "content": "Zoom button or any photo opens a full-screen carousel at that photo · Swipe, arrows or ← → keys · Counter follows active photo · No looping, arrows fade at ends · Esc or close returns to the page on the last viewed photo · Fade in 280ms, instant under reduced motion",
+          "fontFamily": "$font-sans",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Eup0I",
+          "name": "Lightbox state row",
+          "gap": 64,
+          "children": [
+            {
+              "type": "frame",
+              "id": "VHbSA",
+              "name": "Desktop · opened from zoom",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "H58HxC",
+                  "name": "Lightbox state label",
+                  "fill": "$ink",
+                  "content": "Desktop · opened from zoom",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "ReY2n",
+                  "name": "Desktop · opened from zoom screen",
+                  "clip": true,
+                  "width": 1440,
+                  "height": 900,
+                  "fill": "$bg",
+                  "stroke": "$line",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hr3Yb",
+                      "name": "Lightbox photo stage",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "padding": [
+                        24,
+                        56,
+                        0,
+                        56
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "g3KNJ",
+                          "name": "Lightbox photo",
+                          "width": 588,
+                          "height": 784,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "images/hifi/catalog-59.webp",
+                            "mode": "cover"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "D5RSQg",
+                      "name": "Lightbox bar",
+                      "width": "fill_container",
+                      "height": 92,
+                      "padding": [
+                        0,
+                        56
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FRvZZ",
+                          "name": "Lightbox counter",
+                          "fill": "$ink",
+                          "content": "1 / 4",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "q4hcdY",
+                          "name": "Lightbox arrows",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "HjoZ1",
+                              "name": "Previous photo",
+                              "opacity": 0.25,
+                              "width": 44,
+                              "height": 44,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "unKeJ",
+                                  "name": "Previous photo arrow",
+                                  "geometry": "M24 6h-23m5-5l-5 5 5 5",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    24,
+                                    12
+                                  ],
+                                  "width": 24,
+                                  "height": 12,
+                                  "stroke": "$ink",
+                                  "strokeWidth": 1
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "hwYN1",
+                              "name": "Next photo",
+                              "width": 44,
+                              "height": 44,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "Qo3QI",
+                                  "name": "Next photo arrow",
+                                  "geometry": "M0 6h23m-5-5l5 5-5 5",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    24,
+                                    12
+                                  ],
+                                  "width": 24,
+                                  "height": 12,
+                                  "stroke": "$ink",
+                                  "strokeWidth": 1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "C1U8Il",
+                      "layoutPosition": "absolute",
+                      "x": 1332,
+                      "y": 24,
+                      "name": "Close photos",
+                      "width": 52,
+                      "height": 52,
+                      "fill": "$bg",
+                      "cornerRadius": 26,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "rfFaY",
+                          "name": "Close icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "x",
+                          "library": "lucide",
+                          "fill": "$ink"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tWJrJ",
+              "name": "Mobile · second photo",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cnMFK",
+                  "name": "Lightbox state label",
+                  "fill": "$ink",
+                  "content": "Mobile · second photo",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "saTwq",
+                  "name": "Mobile · second photo screen",
+                  "clip": true,
+                  "width": 390,
+                  "height": 844,
+                  "fill": "$bg",
+                  "stroke": "$line",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "S46XTJ",
+                      "name": "Lightbox photo stage",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "padding": [
+                        68,
+                        0,
+                        0,
+                        0
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "czoso",
+                          "name": "Lightbox photo",
+                          "width": 375,
+                          "height": 500,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "images/hifi/catalog-60.webp",
+                            "mode": "cover"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "i7rur",
+                      "name": "Lightbox bar",
+                      "width": "fill_container",
+                      "height": 68,
+                      "padding": [
+                        0,
+                        20
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "EyyGs",
+                          "name": "Lightbox counter",
+                          "fill": "$ink",
+                          "content": "2 / 4",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "c8cxcC",
+                          "name": "Lightbox arrows",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "fC5u1",
+                              "name": "Previous photo",
+                              "width": 44,
+                              "height": 44,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "iyqHA",
+                                  "name": "Previous photo arrow",
+                                  "geometry": "M24 6h-23m5-5l-5 5 5 5",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    24,
+                                    12
+                                  ],
+                                  "width": 24,
+                                  "height": 12,
+                                  "stroke": "$ink",
+                                  "strokeWidth": 1
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "rFkmJ",
+                              "name": "Next photo",
+                              "width": 44,
+                              "height": 44,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "jpbaC",
+                                  "name": "Next photo arrow",
+                                  "geometry": "M0 6h23m-5-5l5 5-5 5",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    24,
+                                    12
+                                  ],
+                                  "width": 24,
+                                  "height": 12,
+                                  "stroke": "$ink",
+                                  "strokeWidth": 1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Qb1IQ",
+                      "layoutPosition": "absolute",
+                      "x": 326,
+                      "y": 12,
+                      "name": "Close photos",
+                      "width": 44,
+                      "height": 44,
+                      "fill": "$bg",
+                      "cornerRadius": 22,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "N3ZLl",
+                          "name": "Close icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "x",
+                          "library": "lucide",
+                          "fill": "$ink"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
