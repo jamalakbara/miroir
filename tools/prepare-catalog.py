@@ -6,7 +6,7 @@ root = Path(__file__).resolve().parents[1]
 source = Path(sys.argv[1])
 dest = root / 'wp-content/uploads/miroir-catalog-source'
 dest.mkdir(parents=True, exist_ok=True)
-for f in source.glob('catalog-*.jpg'):
+for f in [*source.glob('catalog-*.jpg'), *source.glob('drive-*.jpg'), *source.glob('revisi-*.jpg')]:
     shutil.copy2(f, dest / f.name)
 for f in (root / 'docs/design/images/hifi').iterdir():
     if f.suffix in ('.jpg', '.webp'):
@@ -24,7 +24,8 @@ for anchor in ET.fromstring(z.read('xl/drawings/drawing1.xml')):
     filename = f'workbook-row-{row}.jpg'
     (dest / filename).write_bytes(z.read(rels[rid]))
     references[row] = filename
-groups = [[59,60,61,62,63], [64,65,66,67,68], [69,70,71,72,73], [74,75,76,77,78], [79,80,81,82,83,84], [85,86,87,88,89], [90,91,92,93,94,95], [104,105,106,107], [108,109], [], [100,99,101,102,103], [], [117,118,119,120], [], [126,127,128,129,130], [131,132,133,134,135,136], [110,111,112,113], [114,115,116]]
+# Client mapping 2026-11-09: catalog-N are local originals, drive-N are Drive catalog files, revisi-N are from the Drive "pic revisi" folder.
+groups = [[59, 60, 61, 62, 63], [64, 65, 66, 67, 68], [69, 70, 71, 72, 73], [74, 75, 76, 77, 78], [79, 80, 81, 82, 83], [85, 86, 87, 88, 89], [90, 91, 92, 93, 94, 95], ['revisi-49.jpg', 'revisi-50.jpg'], ['revisi-33.jpg', 'revisi-34.jpg', 'revisi-35.jpg', 'revisi-36.jpg', 'revisi-37.jpg'], ['revisi-38.jpg', 'revisi-39.jpg', 'revisi-40.jpg'], [96, 97, 98, 99, 100, 101], ['revisi-41.jpg', 'revisi-42.jpg', 'revisi-43.jpg', 'revisi-44.jpg'], ['drive-116.jpg', 117, 118, 119, 120], ['revisi-45.jpg', 'revisi-46.jpg', 'revisi-47.jpg', 'revisi-48.jpg'], [126, 127, 128, 129, 130], [131, 132, 133, 134, 135, 136], [110, 111, 112], [113, 114, 'drive-109.jpg', 115, 116]]
 rows = []
 for row in sheet.findall('.//m:row', ns):
     cells = {}
@@ -39,7 +40,7 @@ for row in sheet.findall('.//m:row', ns):
     if '962 cm' in details:
         details = ' | '.join(s.strip() for s in details.split('|') if '962 cm' not in s)
     source_row = int(row.attrib['r'])
-    photos = [f'catalog-{n}.jpg' for n in groups[i]]
+    photos = [f'catalog-{n}.jpg' if isinstance(n, int) else n for n in groups[i]]
     if not photos:
         photos.insert(0, references[source_row])
     rows.append({'name': cells['B'].strip(), 'price': cells['F'], 'category': cells['G'].lower(), 'description': cells['H'], 'weight_grams': int(re.search(r'\d+', cells['I'])[0]), 'details': details, 'photos': photos, 'source_row': source_row})
