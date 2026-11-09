@@ -219,6 +219,8 @@ add_action(
 	function () {
 		if ( ! has_site_icon() ) {
 			printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_url( MIROIR_THEME_URI . '/assets/images/favicon.svg' ) );
+			// Same mark on white, 180px: iOS home screens need a PNG and fill transparency with black.
+			printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( MIROIR_THEME_URI . '/assets/images/apple-touch-icon.png' ) );
 		}
 		if ( miroir_seo_plugin_active() || is_404() || is_search() ) {
 			return;
