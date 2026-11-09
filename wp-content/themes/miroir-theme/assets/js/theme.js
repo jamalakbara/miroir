@@ -39,17 +39,80 @@
 		var inView = true;
 		var failed = false;
 		var source = '';
+		var retries = 0;
+		var MAX_RETRIES = 3;
+		var retryTimer = 0;
+		var stallTimer = 0;
+		var awaitingGesture = false;
 		video.muted = true;
 		function allowed() { return ! reduced.matches && ! ( connection && connection.saveData ); }
+		function shouldPlay() { return allowed() && inView && ! document.hidden && ! failed && !! source; }
+		function clearTimers() {
+			window.clearTimeout( retryTimer );
+			window.clearTimeout( stallTimer );
+			retryTimer = stallTimer = 0;
+		}
+		// Autoplay can be refused (iOS Low Power Mode, browser policy); a muted play
+		// started from the visitor's first tap or click is always allowed.
+		function playOnGesture() {
+			if ( awaitingGesture ) { return; }
+			awaitingGesture = true;
+			function retry() {
+				awaitingGesture = false;
+				document.removeEventListener( 'touchend', retry );
+				document.removeEventListener( 'click', retry );
+				play();
+			}
+			document.addEventListener( 'touchend', retry, { passive: true } );
+			document.addEventListener( 'click', retry );
+		}
 		function play() {
-			if ( ! allowed() || ! inView || document.hidden || failed || ! source ) { return; }
+			if ( ! shouldPlay() || ! video.paused ) { return; }
 			var attempt = video.play();
 			if ( attempt && attempt.catch ) {
-				attempt.catch( function () { hero.classList.remove( 'has-video-frame' ); } );
+				attempt.catch( function ( err ) {
+					if ( ! video.paused ) { return; }
+					hero.classList.remove( 'has-video-frame' );
+					if ( err && err.name === 'NotAllowedError' ) {
+						playOnGesture();
+					} else if ( retries < MAX_RETRIES ) {
+						// AbortError: a pause() or load() interrupted the request; try again shortly.
+						retries++;
+						window.clearTimeout( retryTimer );
+						retryTimer = window.setTimeout( play, 500 * retries );
+					}
+				} );
 			}
+		}
+		// Reload the film and resume where it froze, for network errors and stalled buffering.
+		function recover() {
+			clearTimers();
+			if ( ! source || retries >= MAX_RETRIES ) {
+				failed = true;
+				video.pause();
+				hero.classList.remove( 'has-video-frame' );
+				return;
+			}
+			retries++;
+			var resumeAt = video.currentTime || 0;
+			hero.classList.remove( 'has-video-frame' );
+			video.addEventListener( 'loadedmetadata', function seek() {
+				video.removeEventListener( 'loadedmetadata', seek );
+				if ( resumeAt && resumeAt < video.duration ) { video.currentTime = resumeAt; }
+			} );
+			video.load();
+			play();
+		}
+		function watchStall() {
+			if ( stallTimer || ! shouldPlay() ) { return; }
+			stallTimer = window.setTimeout( function () {
+				stallTimer = 0;
+				if ( shouldPlay() && video.readyState < 3 ) { recover(); }
+			}, 8000 );
 		}
 		function updateSource() {
 			if ( ! allowed() ) {
+				clearTimers();
 				video.pause();
 				video.removeAttribute( 'src' );
 				video.load();
@@ -59,8 +122,10 @@
 			}
 			var next = mobile.matches ? video.dataset.mobileSrc : video.dataset.src;
 			if ( next !== source ) {
+				clearTimers();
 				source = next;
 				failed = false;
+				retries = 0;
 				hero.classList.remove( 'has-video-frame' );
 				video.src = source;
 				video.load();
@@ -68,12 +133,25 @@
 			play();
 		}
 		video.addEventListener( 'playing', function () {
+			window.clearTimeout( stallTimer );
+			stallTimer = 0;
 			hero.classList.add( 'has-video-frame' );
 		} );
+		video.addEventListener( 'timeupdate', function () {
+			if ( retries && video.currentTime > 0 && ! stallTimer ) { retries = 0; }
+		} );
+		video.addEventListener( 'canplay', play );
+		video.addEventListener( 'waiting', watchStall );
+		video.addEventListener( 'stalled', watchStall );
 		video.addEventListener( 'error', function () {
+			// Only a network failure is worth retrying; an unsupported or corrupt file stays on the poster.
+			var code = video.error && video.error.code;
+			if ( code === 2 && source ) { recover(); return; }
+			clearTimers();
 			failed = true; video.pause(); hero.classList.remove( 'has-video-frame' );
 		} );
 		document.addEventListener( 'visibilitychange', function () { if ( document.hidden ) { video.pause(); } else { play(); } } );
+		window.addEventListener( 'pageshow', function ( event ) { if ( event.persisted ) { play(); } } );
 		if ( window.IntersectionObserver ) {
 			new IntersectionObserver( function ( entries ) {
 				inView = entries[0].isIntersecting;
@@ -225,20 +303,145 @@
 		var zoom = gallery.querySelector( '[data-zoom]' );
 		if ( zoom ) {
 			gallery.appendChild( zoom );
-			zoom.addEventListener( 'click', function () {
-				var image = slides[active].querySelector( 'img' );
-				if ( ! image ) { return; }
-				var dialog = document.createElement( 'dialog' );
-				dialog.className = 'pdp-lightbox';
-				var close = document.createElement( 'button' );
-				close.type = 'button'; close.textContent = 'Close'; close.setAttribute( 'aria-label', 'Close enlarged photo' );
+		}
+		/* Zoom button or any photo opens a full-screen carousel of every photo. */
+		var photos = [];
+		slides.forEach( function ( slide, index ) {
+			var image = slide.querySelector( 'img:not(.ph__hover)' );
+			if ( image ) {
+				photos.push( { image: image, slide: index } );
+				image.addEventListener( 'click', function () { openLightbox( photoIndex( index ) ); } );
+			}
+		} );
+		gallery.classList.toggle( 'pdp__gallery--zoomable', photos.length > 0 );
+		if ( zoom && ! photos.length ) { zoom.hidden = true; }
+		function photoIndex( slideIndex ) {
+			for ( var i = 0; i < photos.length; i++ ) { if ( photos[ i ].slide === slideIndex ) { return i; } }
+			return 0;
+		}
+		var arrow = function ( d ) { return '<svg width="24" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" aria-hidden="true"><path d="' + d + '"/></svg>'; };
+		function openLightbox( start ) {
+			if ( ! photos.length ) { return; }
+			var reduce = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+			var dialog = document.createElement( 'dialog' );
+			dialog.className = 'pdp-lightbox';
+			dialog.setAttribute( 'aria-label', 'Product photos' );
+			dialog.innerHTML =
+				'<button class="pdp-lightbox__close" type="button" aria-label="Close photos"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><path d="M2 2l16 16M18 2L2 18"/></svg></button>' +
+				'<div class="pdp-lightbox__track" tabindex="-1"></div>' +
+				'<div class="pdp-lightbox__bar">' +
+				'<span class="pdp-lightbox__counter" aria-live="polite" aria-atomic="true"></span>' +
+				'<div class="pdp-lightbox__arrows">' +
+				'<button type="button" data-dir="-1" aria-label="Previous photo">' + arrow( 'M24 6H1m5-5L1 6l5 5' ) + '</button>' +
+				'<button type="button" data-dir="1" aria-label="Next photo">' + arrow( 'M0 6h23m-5-5l5 5-5 5' ) + '</button>' +
+				'</div></div>';
+			var lbTrack = dialog.querySelector( '.pdp-lightbox__track' );
+			var lbCounter = dialog.querySelector( '.pdp-lightbox__counter' );
+			var lbButtons = dialog.querySelectorAll( '[data-dir]' );
+			var current = start || 0;
+			photos.forEach( function ( photo ) {
+				var figure = document.createElement( 'figure' );
+				figure.className = 'pdp-lightbox__slide';
 				var full = document.createElement( 'img' );
-				full.src = image.dataset.full || image.currentSrc || image.src; full.alt = image.alt;
-				dialog.append( close, full ); document.body.appendChild( dialog );
-				close.addEventListener( 'click', function () { dialog.close(); } );
-				dialog.addEventListener( 'click', function ( event ) { if ( event.target === dialog ) { dialog.close(); } } );
-				dialog.addEventListener( 'close', function () { dialog.remove(); zoom.focus(); } );
-				dialog.showModal();
+				if ( photo.image.srcset ) { full.srcset = photo.image.srcset; full.sizes = '100vw'; }
+				full.src = photo.image.currentSrc || photo.image.src;
+				full.alt = photo.image.alt;
+				full.width = photo.image.naturalWidth || Number( photo.image.getAttribute( 'width' ) ) || 3;
+				full.height = photo.image.naturalHeight || Number( photo.image.getAttribute( 'height' ) ) || 4;
+				figure.appendChild( full );
+				lbTrack.appendChild( figure );
+			} );
+			lbButtons.forEach( function ( button ) { button.parentElement.hidden = photos.length < 2; } );
+			function sync() {
+				current = Math.min( photos.length - 1, Math.max( 0, Math.round( lbTrack.scrollLeft / Math.max( 1, lbTrack.clientWidth ) ) ) );
+				lbCounter.textContent = ( current + 1 ) + ' / ' + photos.length;
+				lbButtons[0].disabled = current === 0;
+				lbButtons[1].disabled = current >= photos.length - 1;
+			}
+			function go( index, instant ) {
+				index = Math.min( photos.length - 1, Math.max( 0, index ) );
+				lbTrack.scrollTo( { left: index * lbTrack.clientWidth, behavior: instant || reduce ? 'instant' : 'smooth' } );
+			}
+			lbButtons.forEach( function ( button ) {
+				button.addEventListener( 'click', function () { go( current + Number( button.dataset.dir ) ); } );
+			} );
+			lbTrack.addEventListener( 'scroll', sync, { passive: true } );
+			dialog.addEventListener( 'keydown', function ( event ) {
+				if ( event.key === 'ArrowLeft' || event.key === 'ArrowRight' ) {
+					event.preventDefault(); go( current + ( event.key === 'ArrowLeft' ? -1 : 1 ) );
+				}
+			} );
+			var resize = new ResizeObserver( function () { go( current, true ); sync(); } );
+			/* The photo zooms between its place on the page and the carousel. */
+			var ease = { open: 'cubic-bezier(.2, .7, .2, 1)', close: 'cubic-bezier(.4, 0, .2, 1)' };
+			function lightboxImage( index ) { return lbTrack.children[ index ].querySelector( 'img' ); }
+			function pageRect( index ) {
+				var rect = photos[ index ].image.getBoundingClientRect();
+				return rect.width && rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth ? rect : null;
+			}
+			function flight( image, rect ) {
+				var target = image.getBoundingClientRect();
+				if ( ! rect || ! target.width ) { return null; }
+				return 'translate(' + ( rect.left - target.left ) + 'px, ' + ( rect.top - target.top ) + 'px) scale(' + ( rect.width / target.width ) + ', ' + ( rect.height / target.height ) + ')';
+			}
+			function hideSource( index, hidden ) { photos[ index ].image.style.visibility = hidden ? 'hidden' : ''; }
+			/* Clean up right after closing: the close event can wait while the tab is in the background. */
+			var finished = false;
+			function finish() {
+				if ( finished ) { return; }
+				finished = true;
+				if ( dialog.open ) { dialog.close(); }
+				resize.disconnect();
+				dialog.remove();
+				photos.forEach( function ( photo, index ) { hideSource( index, false ); } );
+				document.documentElement.classList.remove( 'has-lightbox' );
+				if ( zoom ) { zoom.focus( { preventScroll: true } ); }
+			}
+			/* Play the closing animation before the dialog leaves; Esc goes through here too. */
+			var closing = false;
+			function closeLightbox() {
+				if ( closing ) { return; }
+				closing = true;
+				// Leave the page on the photo last viewed, so the photo can land there.
+				if ( mobile.matches ) { track.scrollLeft = photos[ current ].slide * track.clientWidth; }
+				if ( reduce || ! lightboxImage( current ).animate ) { finish(); return; }
+				var image = lightboxImage( current );
+				image.parentElement.classList.add( 'is-current' );
+				dialog.classList.add( 'is-closing' );
+				var to = flight( image, pageRect( current ) );
+				hideSource( current, !! to );
+				var landing = image.animate(
+					to ? [ { transform: 'none' }, { transform: to } ] : [ { opacity: 1 }, { opacity: 0, transform: 'translateY(12px) scale(.98)' } ],
+					{ duration: to ? 340 : 220, easing: ease.close, fill: 'forwards' }
+				);
+				landing.onfinish = finish;
+				setTimeout( finish, 600 );
+			}
+			dialog.addEventListener( 'cancel', function ( event ) { event.preventDefault(); closeLightbox(); } );
+			dialog.addEventListener( 'close', finish );
+			dialog.querySelector( '.pdp-lightbox__close' ).addEventListener( 'click', closeLightbox );
+			document.body.appendChild( dialog );
+			document.documentElement.classList.add( 'has-lightbox' );
+			dialog.showModal();
+			resize.observe( lbTrack );
+			go( current, true );
+			sync();
+			lbTrack.focus( { preventScroll: true } );
+			var openIndex = current;
+			var opening = lightboxImage( openIndex );
+			if ( ! reduce && opening.animate ) {
+				var from = flight( opening, pageRect( openIndex ) );
+				hideSource( openIndex, !! from );
+				opening.animate(
+					from ? [ { transform: from }, { transform: 'none' } ] : [ { opacity: 0, transform: 'translateY(24px) scale(.98)' }, { opacity: 1, transform: 'none' } ],
+					{ duration: from ? 420 : 450, easing: ease.open }
+				).onfinish = function () { if ( ! closing ) { hideSource( openIndex, false ); } };
+			}
+		}
+		if ( zoom ) {
+			zoom.addEventListener( 'click', function () {
+				var image = slides[ active ].querySelector( 'img:not(.ph__hover)' );
+				openLightbox( image ? photoIndex( active ) : 0 );
 			} );
 		}
 		updateGallery();

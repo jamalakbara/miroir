@@ -402,7 +402,7 @@ select.field__input { padding-right: 24px; cursor: pointer; }
 	letter-spacing: 0;
 }
 .card__price { display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); line-height: var(--lh-sans-12); font-weight: 400; }
-.card__was { color: var(--ink-3); text-decoration: none; letter-spacing: 0; }
+.card__was { color: var(--ink-3); text-decoration: line-through; letter-spacing: 0; }
 .card__now { letter-spacing: var(--track-ui); }
 
 @media (max-width: 599px) {

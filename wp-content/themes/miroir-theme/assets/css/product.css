@@ -5,7 +5,7 @@
 	width: 100%;
 	max-width: 1046px;
 	margin-inline: auto;
-	padding: 80px var(--gutter) 0;
+	padding: 80px var(--gutter-edge) 0;
 }
 
 .pdp__info { display: flex; flex: none; flex-direction: column; gap: 28px; width: 270px; }
@@ -24,7 +24,7 @@
 	letter-spacing: var(--track-ui);
 }
 .pdp__desc ul, .pdp__desc ol { display: flex; flex-direction: column; gap: 4px; }
-.pdp__price.card__price { font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 400; }
+.pdp__price { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: var(--text-base); line-height: var(--lh-sans-13); font-weight: 400; }
 
 .pdp__buy, .buy-form, .buy-form .variations_button { display: flex; flex-direction: column; gap: 20px; }
 /* Quantity Field (nCGKo): same 36px underline and type as the size select. */
@@ -92,10 +92,101 @@
 
 .pdp__gallery, .pdp__more { display: flex; flex: none; flex-direction: column; gap: 44px; width: 540px; }
 .pdp__gallery { position: relative; flex: 0 1 540px; min-width: 0; }
-.pdp-lightbox { border: 0; padding: 20px; max-width: 96vw; max-height: 96dvh; background: var(--bg); }
-.pdp-lightbox::backdrop { background: #0009; }
-.pdp-lightbox > button { display: block; margin: 0 0 12px auto; min-height: 44px; }
-.pdp-lightbox img { max-height: calc(96dvh - 96px); width: auto; object-fit: contain; }
+.pdp__gallery--zoomable .pdp__view img { cursor: zoom-in; }
+html.has-lightbox { overflow: hidden; scrollbar-gutter: stable; }
+/* Full-screen photo carousel opened from the zoom button or any photo. */
+.pdp-lightbox {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	max-height: none;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background: transparent;
+	color: var(--ink);
+}
+.pdp-lightbox:not([open]) { display: none; }
+/* White sits on the backdrop so it can fade while the photo stays opaque in flight. */
+.pdp-lightbox::backdrop { background: var(--bg); }
+/* Open: page fades to white while the clicked photo grows into place (theme.js); controls follow. Close reverses it. */
+.pdp-lightbox[open]::backdrop { animation: pdp-lightbox-in 320ms cubic-bezier(.2, .7, .2, 1); }
+.pdp-lightbox[open] .pdp-lightbox__close,
+.pdp-lightbox[open] .pdp-lightbox__bar { animation: pdp-lightbox-in 280ms 220ms cubic-bezier(.2, .7, .2, 1) both; }
+.pdp-lightbox.is-closing::backdrop { animation: pdp-lightbox-out 340ms cubic-bezier(.4, 0, .2, 1) both; }
+.pdp-lightbox.is-closing .pdp-lightbox__close,
+.pdp-lightbox.is-closing .pdp-lightbox__bar { animation: pdp-lightbox-out 140ms cubic-bezier(.4, 0, 1, 1) both; }
+.pdp-lightbox.is-closing .pdp-lightbox__slide:not(.is-current) { visibility: hidden; }
+@keyframes pdp-lightbox-in { from { opacity: 0; } }
+@keyframes pdp-lightbox-out { to { opacity: 0; } }
+.pdp-lightbox__close {
+	position: absolute;
+	top: 24px;
+	right: var(--gutter-edge);
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 52px;
+	height: 52px;
+	border-radius: 26px;
+	background: var(--bg);
+	color: var(--ink);
+	transition: opacity 160ms;
+}
+.pdp-lightbox__track {
+	display: flex;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-snap-type: x mandatory;
+	overscroll-behavior: contain;
+	scrollbar-width: none;
+	outline: none;
+}
+.pdp-lightbox__track::-webkit-scrollbar { display: none; }
+.pdp-lightbox__slide {
+	display: flex;
+	flex: 0 0 100%;
+	align-items: center;
+	justify-content: center;
+	min-width: 0;
+	margin: 0;
+	padding: 24px var(--gutter-edge) 0;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+.pdp-lightbox__slide img { width: auto; max-width: 100%; height: auto; max-height: 100%; object-fit: contain; transform-origin: 0 0; }
+.pdp-lightbox__bar {
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: space-between;
+	height: 92px;
+	padding: 0 var(--gutter-edge);
+}
+.pdp-lightbox__counter { font-family: var(--font-mono); font-size: var(--text-base); letter-spacing: 0; }
+.pdp-lightbox__arrows { display: flex; gap: 12px; }
+.pdp-lightbox__arrows[hidden] { display: none; }
+.pdp-lightbox__arrows button { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--ink); transition: opacity 160ms; }
+.pdp-lightbox__arrows button:disabled { opacity: .25; cursor: default; }
+@media (hover: hover) {
+	.pdp-lightbox__close:hover, .pdp-lightbox__arrows button:not(:disabled):hover { opacity: .6; }
+}
+@media (max-width: 599px) {
+	.pdp-lightbox__close { top: 12px; width: 44px; height: 44px; }
+	.pdp-lightbox__slide { padding: 68px 0 0; }
+	.pdp-lightbox__bar { height: 68px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.pdp-lightbox[open]::backdrop, .pdp-lightbox[open] *, .pdp-lightbox.is-closing::backdrop, .pdp-lightbox.is-closing * { animation: none !important; }
+	.pdp-lightbox__close, .pdp-lightbox__arrows button { transition: none; }
+}
 .pdp__more { width: 100%; }
 .pdp__lead { position: relative; }
 .pdp__track { display: contents; }

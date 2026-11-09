@@ -49,7 +49,15 @@
 	--gutter-d: 56px;
 	--gutter-t: 32px;
 	--gutter-m: 20px;
-	--gutter: var(--gutter-d);
+	--gutter-edge: var(--gutter-d);
+	/*
+	 * Page content stops at --page-max on very wide screens: the gutter grows to
+	 * centre it while section backgrounds stay full-bleed. The 100% resolves where
+	 * --gutter is used (padding % = containing block width), so use it only on
+	 * full-width sections; boxes that are already narrower use --gutter-edge.
+	 */
+	--page-max: 1440px;
+	--gutter: max(var(--gutter-edge), (100% - var(--page-max)) / 2);
 	--home-space-d: 96px;
 	--home-strip-space-d: 120px;
 	--home-space-t: 40px;
@@ -115,9 +123,9 @@
 }
 
 @media (max-width: 1023px) {
-	:root { --gutter: var(--gutter-t); }
+	:root { --gutter-edge: var(--gutter-t); }
 }
 
 @media (max-width: 599px) {
-	:root { --gutter: var(--gutter-m); }
+	:root { --gutter-edge: var(--gutter-m); }
 }
