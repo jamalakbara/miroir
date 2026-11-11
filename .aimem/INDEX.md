@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 68 (proposed 46, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 79 (active 69, superseded 10)
-- handoff: 200 (final 200)
+- handoff: 201 (final 201)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-enhqsd13 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: FAQ copy replaced with client text: faq_items() in theme inc/cli.php (seed) and local FAQ page 251 (_elementor_data, post_content) refreshed and verified rendering at localhost:8080/faq/. Q3 no…
 - hnd-8y1471gf 2026-11-09 (agent:claude-code:opus-5.5) — Done: Trashed hello-world (1) and sample-page (2) on staging and live via wp-cli (recoverable from trash). 94137a5 on development: apple-touch-icon.png (favicon mark on white 180px via headless Edge)…
 - hnd-acn7r3v7 2026-11-09 (agent:claude-code:opus-5.5) — Done: SEO changes committed (29add0f, plus 6d22163 keeping core nofollow on noindexed variant URLs on staging), pushed development, staging deploy ok and verified over SSH with gate cookie: descripti…
 - hnd-b49y5tf5 2026-11-09 (agent:claude-code:opus-5.5) — Done: SEO fixes from local audit (uncommitted): new theme inc/seo.php (meta description, canonical on shop/collections, OG/Twitter, JSON-LD Org/WebSite/Product/BreadcrumbList, SVG favicon fallback, p…
 - hnd-c6jag9nh 2026-11-09 (agent:claude-code:sonnet-5.5) — Done: SEO audit. OpenSEO crawl of live miroir.id hit maintenance 503 (1 page, same as 2026-11-06 audits). OpenSEO cannot reach localhost, so ran own stdlib crawl of local build (150 URLs). Findings o…
-- hnd-zs22n6wh 2026-11-09 (human:akbar) — Done: Photo carousel open/close now zooms from and back to the page photo (3723106 on development). Earlier fade CSS rode along in 8ee66aa from another session. · Next: Push development for staging,…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
