@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 68 (proposed 46, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 80 (active 70, superseded 10)
-- handoff: 210 (final 210)
+- handoff: 211 (final 211)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-22scrk6g 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Committed 82b6cfc (all copy changes) and added 'wp miroir theme refresh-copy' (cli.php): updates FAQ/Returns/Terms pages (title, Elementor widget, content), footer labels, shop-women/featured m…
 - hnd-zsh6sgg2 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Shop sidebar menus: removed accessories from 'shop women' (plp-categories); 'featured' (plp-featured) is now new arrivals, best sellers, by miroir collection (at-the-studio category), collabora…
 - hnd-5f315yct 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Home studio strip label 'shop studio collection' -> 'shop by miroir' in template-tags.php default and local home 121 (_elementor_data, _miroir_blocks_before_elementor, post_content). Verified o…
 - hnd-081yt33a 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Home triptych caption 'the collection: everyday, in good company' -> 'where everyday meets elegance' on local home 121 (_elementor_data, _miroir_blocks_before_elementor, post_content). No code…
 - hnd-8wtadg9p 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Home editorial caption 'shop women: relaxed by design' -> 'shop women: everyday femininity, effortlessly.' on local home 121 (_elementor_data, _miroir_blocks_before_elementor, post_content) and…
-- hnd-4vdej445 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Home product strip label 'new arrivals' -> 'discover what’s new' in template-tags.php (miroir_home_sections default) and local home 121 (_elementor_data, _miroir_blocks_before_elementor, post_c…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
