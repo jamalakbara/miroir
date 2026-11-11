@@ -6,15 +6,14 @@
 defined( 'ABSPATH' ) || exit;
 
 $groups = array(
-	miroir_filter_group( 'plp-categories', miroir_text( 'shop_title' ), array( 'accessories', 'bottoms', 'dress', 'outerwear', 'tops' ) ),
+	miroir_filter_group( 'plp-categories', miroir_text( 'shop_title' ), array( 'bottoms', 'dress', 'outerwear', 'tops' ) ),
 	miroir_filter_group(
 		'plp-featured',
 		miroir_text( 'filter_featured' ),
 		array(
-			'best-seller'     => __( 'best sellers', 'miroir' ),
-			'new-collection'  => __( 'new arrivals', 'miroir' ),
-			'at-the-studio'   => __( 'studio collection', 'miroir' ),
-			'miroir-x-naluri' => __( 'collaboration', 'miroir' ),
+			'new-collection' => __( 'new arrivals', 'miroir' ),
+			'best-seller'    => __( 'best sellers', 'miroir' ),
+			'at-the-studio'  => __( 'by miroir collection', 'miroir' ),
 		)
 	),
 );

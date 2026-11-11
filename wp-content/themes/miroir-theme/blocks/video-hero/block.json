@@ -14,7 +14,7 @@
 		"poster": { "type": "number", "default": 0 },
 		"posterTablet": { "type": "number", "default": 0 },
 		"posterMobile": { "type": "number", "default": 0 },
-		"caption": { "type": "string", "default": "new arrivals: browse the collection" },
+		"caption": { "type": "string", "default": "new arrivals: a little something new, made to be loved." },
 		"url": { "type": "string", "default": "" }
 	},
 	"supports": { "html": false, "className": false, "customClassName": false },

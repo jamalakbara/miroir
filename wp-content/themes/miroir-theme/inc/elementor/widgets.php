@@ -125,7 +125,7 @@ class Miroir_Widget_Video_Hero extends Miroir_Widget {
 			'poster' => miroir_elementor_image_id( $settings['poster'] ?? null ),
 			'posterTablet' => miroir_elementor_image_id( $settings['posterTablet'] ?? null ),
 			'posterMobile' => miroir_elementor_image_id( $settings['posterMobile'] ?? null ),
-			'caption' => (string) ( $settings['caption'] ?? 'new arrivals: browse the collection' ),
+			'caption' => (string) ( $settings['caption'] ?? 'new arrivals: a little something new, made to be loved.' ),
 			'url' => (string) ( $settings['url']['url'] ?? '' ),
 		) ) );
 	}

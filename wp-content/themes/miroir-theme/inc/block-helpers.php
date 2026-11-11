@@ -118,8 +118,8 @@ function miroir_menu_fallback( $location ) {
 		case 'footer-policy':
 			return array(
 				__( 'FAQ', 'miroir' )              => miroir_page_url( 'faq' ),
-				__( 'Return policy', 'miroir' )    => miroir_page_url( 'returns-exchanges' ),
-				__( 'Condition of use', 'miroir' ) => miroir_page_url( 'terms-of-use' ),
+				__( 'Returns & Exchanges', 'miroir' ) => miroir_page_url( 'returns-exchanges' ),
+				__( 'Terms of Use', 'miroir' )        => miroir_page_url( 'terms-of-use' ),
 			);
 		case 'footer-contact':
 			return array(

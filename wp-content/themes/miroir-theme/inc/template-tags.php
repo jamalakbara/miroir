@@ -265,12 +265,12 @@ function miroir_home_sections() {
 		array(
 			array(
 				'type'    => 'video-hero',
-				'caption' => __( 'new arrivals: browse the collection', 'miroir' ),
+				'caption' => __( 'new arrivals: a little something new, made to be loved.', 'miroir' ),
 				'url'     => miroir_cat_url( 'new-collection' ),
 			),
 			array(
 				'type'     => 'strip',
-				'label'    => __( 'new arrivals', 'miroir' ),
+				'label'    => __( 'discover what’s new', 'miroir' ),
 				'category' => 'new-collection',
 				'columns'  => 5,
 				'limit'    => -1,
@@ -279,7 +279,7 @@ function miroir_home_sections() {
 			array(
 				'type'    => 'editorial',
 				'layout'  => 'large-first',
-				'caption' => __( 'shop women: browse the collection', 'miroir' ),
+				'caption' => __( 'shop women: everyday femininity, effortlessly.', 'miroir' ),
 				'url'     => $shop,
 			),
 			array(
@@ -289,7 +289,7 @@ function miroir_home_sections() {
 			),
 			array(
 				'type'     => 'strip',
-				'label'    => __( 'shop studio collection', 'miroir' ),
+				'label'    => __( 'shop by miroir', 'miroir' ),
 				'category' => 'at-the-studio',
 				'columns'  => 6,
 				'limit'    => -1,

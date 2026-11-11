@@ -2,7 +2,7 @@
 /** Full-bleed campaign film; the poster is usable with no video, no JS or reduced motion. */
 defined( 'ABSPATH' ) || exit;
 
-$caption = trim( (string) ( $args['caption'] ?? '' ) ) ?: __( 'new arrivals: browse the collection', 'miroir' );
+$caption = trim( (string) ( $args['caption'] ?? '' ) ) ?: __( 'new arrivals: a little something new, made to be loved.', 'miroir' );
 $url     = $args['url'] ?? miroir_cat_url( 'new-collection' );
 // Bundled media is versioned by mtime so replaced files bypass browser caches.
 $bundled = static fn( $file ) => MIROIR_THEME_URI . $file . '?ver=' . filemtime( MIROIR_THEME_DIR . $file );
