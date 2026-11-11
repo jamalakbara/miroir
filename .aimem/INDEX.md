@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 68 (proposed 46, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 80 (active 70, superseded 10)
-- handoff: 203 (final 203)
+- handoff: 204 (final 204)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-72w9z38w 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Home video hero caption changed to 'new arrivals: a little something new, made to be loved.' in defaults (video-hero block.json, template-tags.php, elementor/widgets.php, home-video-hero.php) a…
 - hnd-thhgx9bv 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Terms of Use: seed (cli.php), footer label (cli.php + block-helpers.php) and local page 259 (title, content, Elementor data, menu item 269) updated; verified at localhost:8080/terms-of-use/. Un…
 - hnd-7393ed3p 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Returns & Exchanges: seed (cli.php, blocks() accepts paragraph lists), footer label in cli.php + block-helpers.php, and local page 258 (title, content, Elementor data, menu item 268) updated an…
 - hnd-enhqsd13 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: FAQ copy replaced with client text: faq_items() in theme inc/cli.php (seed) and local FAQ page 251 (_elementor_data, post_content) refreshed and verified rendering at localhost:8080/faq/. Q3 no…
 - hnd-8y1471gf 2026-11-09 (agent:claude-code:opus-5.5) — Done: Trashed hello-world (1) and sample-page (2) on staging and live via wp-cli (recoverable from trash). 94137a5 on development: apple-touch-icon.png (favicon mark on white 180px via headless Edge)…
-- hnd-acn7r3v7 2026-11-09 (agent:claude-code:opus-5.5) — Done: SEO changes committed (29add0f, plus 6d22163 keeping core nofollow on noindexed variant URLs on staging), pushed development, staging deploy ok and verified over SSH with gate cookie: descripti…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
