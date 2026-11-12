@@ -79,6 +79,8 @@ wc-order-attribution-inputs { display: none; }
 	letter-spacing: 0;
 }
 .flow__content > .section p { font-size: var(--text-base); line-height: 21px; font-weight: 400; letter-spacing: 0; }
+.flow__content > .section ul { margin: 0; padding-left: 20px; list-style: disc; font-size: var(--text-base); line-height: 21px; font-weight: 400; letter-spacing: 0; }
+.flow__content > .section li { padding-left: 4px; }
 .flow__content > .wp-block-buttons { display: flex; flex-direction: column; gap: 24px; }
 .flow__content .wp-block-button { display: flex; }
 .flow__content .wp-block-button__link {

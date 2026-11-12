@@ -75,16 +75,7 @@ class Miroir_Theme_Command {
 		};
 		$pages   = array(
 			'faq'                  => array( 'FAQ', $faq, 'page-faq' ),
-			'shipping-information' => array(
-				'Shipping information',
-				self::blocks(
-					'Our team confirms stock, delivery availability and the final shipping cost in WhatsApp before you pay.',
-					$drafts( 'Destinations & couriers', 'Delivery estimates', 'International duties' ),
-					'Contact customer care',
-					$contact,
-					'DRAFT · Policy copy requires approval before launch.'
-				),
-			),
+			'shipping-information' => array( 'Shipping Information', self::shipping_blocks() ),
 			'returns-exchanges'    => array(
 				'Returns & Exchanges',
 				self::returns_blocks(),
@@ -184,6 +175,40 @@ class Miroir_Theme_Command {
 			);
 		}
 		return $faq;
+	}
+
+	/** Shipping Information page copy. */
+	private static function shipping_blocks() {
+		return self::blocks(
+			'We ship with care, wherever you are. Our team will confirm product availability, shipping options, and the final delivery cost via WhatsApp before you complete your payment.',
+			array(
+				'Destinations & couriers'      => array(
+					'We offer domestic shipping across Indonesia through J&T Express.',
+					'For international orders, we currently offer:',
+					array(
+						'TLX: Singapore and Malaysia.',
+						'DHL: Available for other international destinations.',
+					),
+					'International shipping availability depends on the destination. Please contact our team via WhatsApp to check available shipping options and rates.',
+				),
+				'Delivery estimates'           => array(
+					'Orders are dispatched within 24 hours after order confirmation on weekdays and within 2 days for orders placed over the weekend.',
+					'Estimated delivery times after dispatch:',
+					array(
+						'Singapore & Malaysia: Approximately 3–4 business days.',
+						'Other international destinations: Delivery times vary depending on the destination and DHL service selected.',
+					),
+					'Once your parcel has been shipped, you will receive tracking details to follow your order.',
+				),
+				'International duties & taxes' => array(
+					'International orders may be subject to customs duties, import taxes, and other fees imposed by the destination country.',
+					'Any applicable duties, taxes, or customs charges are the responsibility of the customer and are not included in the shipping fee. These charges are determined by local customs authorities and must be paid by the recipient upon arrival, if applicable.',
+					'We recommend checking your country’s import regulations before placing an order.',
+				),
+			),
+			'Contact customer care',
+			'/contact/'
+		);
 	}
 
 	/** Returns & Exchanges page copy. */
@@ -301,7 +326,7 @@ class Miroir_Theme_Command {
 	 * editors delete once approved copy is in.
 	 *
 	 * @param string $intro    Intro paragraph.
-	 * @param array  $sections heading => copy (a string, or a list of paragraphs; line breaks kept).
+	 * @param array  $sections heading => copy (a string, or a list of paragraphs; a nested array is a bullet list).
 	 * @param string $button   Button label.
 	 * @param string $url      Button URL ("#whatsapp" opens the shop's WhatsApp).
 	 * @param string $before   Draft note shown above the button.
@@ -310,6 +335,13 @@ class Miroir_Theme_Command {
 	private static function blocks( $intro, $sections, $button, $url, $before = '', $after = '' ) {
 		$out       = "<!-- wp:paragraph -->\n<p>" . esc_html( $intro ) . "</p>\n<!-- /wp:paragraph -->\n\n";
 		$paragraph = function ( $text ) {
+			if ( is_array( $text ) ) { // A nested array is a bullet list.
+				$items = '';
+				foreach ( $text as $item ) {
+					$items .= "<!-- wp:list-item -->\n<li>" . esc_html( $item ) . "</li>\n<!-- /wp:list-item -->";
+				}
+				return "<!-- wp:list -->\n<ul class=\"wp-block-list\">" . $items . "</ul>\n<!-- /wp:list -->";
+			}
 			return "<!-- wp:paragraph -->\n<p>" . nl2br( esc_html( $text ), false ) . "</p>\n<!-- /wp:paragraph -->";
 		};
 		foreach ( $sections as $heading => $copy ) {
@@ -527,6 +559,7 @@ class Miroir_Theme_Command {
 	public function refresh_copy() {
 		$pages = array(
 			'faq'               => array( 'FAQ', self::faq_blocks() ),
+			'shipping-information' => array( 'Shipping Information', self::shipping_blocks() ),
 			'returns-exchanges' => array( 'Returns & Exchanges', self::returns_blocks() ),
 			'terms-of-use'      => array( 'Terms of Use', self::terms_blocks() ),
 		);
@@ -536,6 +569,7 @@ class Miroir_Theme_Command {
 
 		// Menus: rename, remove and reorder by item title.
 		$this->refresh_menu( 'footer-policies', array( 'Return policy' => 'Returns & Exchanges', 'Condition of use' => 'Terms of Use' ), array() );
+		$this->refresh_menu( 'footer-account', array( 'Shipping information' => 'Shipping Information' ), array() );
 		$this->refresh_menu( 'shop-women', array(), array( 'accessories' ) );
 		$this->refresh_menu(
 			'featured',
@@ -732,7 +766,7 @@ class Miroir_Theme_Command {
 				'items' => array(
 					'Account'              => $account,
 					'Payment confirmation' => $page( 'payment-confirmation' ),
-					'Shipping information' => $page( 'shipping-information' ),
+					'Shipping Information' => $page( 'shipping-information' ),
 				),
 			),
 			'footer-policy'  => array(

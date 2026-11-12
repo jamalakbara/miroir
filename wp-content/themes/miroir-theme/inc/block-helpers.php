@@ -113,7 +113,7 @@ function miroir_menu_fallback( $location ) {
 			return array(
 				__( 'Account', 'miroir' )              => $account,
 				__( 'Payment confirmation', 'miroir' ) => miroir_page_url( 'payment-confirmation' ),
-				__( 'Shipping information', 'miroir' ) => miroir_page_url( 'shipping-information' ),
+				__( 'Shipping Information', 'miroir' ) => miroir_page_url( 'shipping-information' ),
 			);
 		case 'footer-policy':
 			return array(
