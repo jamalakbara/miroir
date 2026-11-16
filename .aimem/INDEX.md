@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 70 (proposed 48, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 82 (active 72, superseded 10)
-- handoff: 220 (final 220)
+- handoff: 221 (final 221)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-k84nd6dp 2026-11-16 (agent:claude-code:opus-5.5) — Done: Drafted client handoff manual outline (12 chapters: access/roles, Elementor + Miroir widgets, pages/home, WhatsApp order SOP with flow diagram, products/media, header/footer/Site Settings, curr…
 - hnd-ymmyzz1g 2026-11-16 (agent:claude-code:opus-5.5) — Done: Mobile logo scaled to 80% (59fb614) and snapshot tooling committed (fc2a2eb). Deployed: staging run 43905067611, live run 43905419341 (approved at user request), header.css verified on both via…
 - hnd-axvpfsq4 2026-11-16 (agent:claude-code:opus-5.5) — Done: Added Image width (Framed/Full width) to Banner widget, block, editor JS, CLI importer, home.css. Previewed full mode on localhost by toggling class. · Next: User picks Full width in Elementor…
 - hnd-yq8zpty8 2026-11-16 (agent:claude-code:opus-5.5) — Done: First real export with server uploads: snapshot 20261116T141050Z, 1638 files / 1.2 GB rsynced to ~/miroir-sync/uploads; server list matches Mac exactly (size+path). snapshot.env has UPLOADS_VIA…
 - hnd-c3tqaz1s 2026-11-16 (agent:claude-code:opus-5.5) — Done: SSH login to Hostinger with ~/.ssh/miroir_hostinger verified (port 65002). Added MIROIR_UPLOADS_REMOTE=...:~/miroir-sync/uploads, port, key to the Mac .env. Real-server tests: rsync round-trip…
-- hnd-eqm5amkn 2026-11-16 (agent:claude-code:opus-5.5) — Done: tools/snapshot.sh export pushes uploads to MIROIR_UPLOADS_REMOTE (rsync --delete; ssh+tar size-diff fallback; public_html guard) and records UPLOADS_VIA=server; import pulls automatically, chec…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
