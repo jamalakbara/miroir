@@ -4,7 +4,10 @@
  * its own proportions, so it takes a desktop, tablet and mobile image; a
  * missing one falls back to the next larger.
  *
- * @var array $args { caption, url, image?, image_tablet?, image_mobile? (attachment ids) }
+ * "full" width drops the framed canvas: the image runs edge to edge at its
+ * own proportions, the caption stays on the page gutter.
+ *
+ * @var array $args { caption, url, width? (framed|full), image?, image_tablet?, image_mobile? (attachment ids) }
  */
 defined( 'ABSPATH' ) || exit;
 
@@ -13,8 +16,9 @@ $tablet  = (int) ( $args['image_tablet'] ?? 0 );
 $tablet  = $tablet ? $tablet : $desktop;
 $mobile  = (int) ( $args['image_mobile'] ?? 0 );
 $mobile  = $mobile ? $mobile : $tablet;
+$full    = 'full' === ( $args['width'] ?? '' );
 ?>
-<section class="home-editorial home-banner">
+<section class="home-editorial home-banner<?php echo $full ? ' home-banner--full' : ''; ?>">
 	<a href="<?php echo esc_url( $args['url'] ); ?>" aria-label="<?php echo esc_attr( $args['caption'] ); ?>">
 		<?php if ( $desktop || $tablet || $mobile ) : ?>
 			<div class="ph ph--filled home-banner__image">

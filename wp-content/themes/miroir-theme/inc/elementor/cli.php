@@ -271,7 +271,7 @@ class Miroir_Elementor_Command {
 					$widgets[] = self::widget( 'miroir-editorial', array( 'layout' => $a['layout'], 'smallImage' => $image( $a['smallImage'] ), 'largeImage' => $image( $a['largeImage'] ), 'caption' => $a['caption'], 'url' => $link( $a['url'] ) ) );
 					break;
 				case 'miroir/banner':
-					$widgets[] = self::widget( 'miroir-banner', array( 'image' => $image( $a['image'] ), 'imageTablet' => $image( $a['imageTablet'] ), 'imageMobile' => $image( $a['imageMobile'] ), 'caption' => $a['caption'], 'url' => $link( $a['url'] ) ) );
+					$widgets[] = self::widget( 'miroir-banner', array( 'width' => $a['width'] ?? 'framed', 'image' => $image( $a['image'] ), 'imageTablet' => $image( $a['imageTablet'] ), 'imageMobile' => $image( $a['imageMobile'] ), 'caption' => $a['caption'], 'url' => $link( $a['url'] ) ) );
 					break;
 				case 'miroir/product-strip':
 					$widgets[] = self::widget(

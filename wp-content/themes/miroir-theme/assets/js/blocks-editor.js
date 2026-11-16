@@ -180,6 +180,7 @@
 			return el(Fragment, null,
 				el(be.InspectorControls, null,
 					el(c.PanelBody, { title: __('Images', 'miroir') },
+						el(c.SelectControl, { label: __('Image width', 'miroir'), value: a.width, options: [{ label: __('Framed (centred canvas)', 'miroir'), value: 'framed' }, { label: __('Full width (edge to edge)', 'miroir'), value: 'full' }], onChange: function (v) { set({ width: v }); } }),
 						el(ImagePicker, { label: __('Desktop image', 'miroir'), help: __('Wide, about 1328 × 520.', 'miroir'), id: a.image, onChange: function (id) { set({ image: id }); } }),
 						el(ImagePicker, { label: __('Tablet image', 'miroir'), help: __('About 704 × 420. Empty: the desktop image.', 'miroir'), id: a.imageTablet, onChange: function (id) { set({ imageTablet: id }); } }),
 						el(ImagePicker, { label: __('Mobile image', 'miroir'), help: __('Square. Empty: the tablet image.', 'miroir'), id: a.imageMobile, onChange: function (id) { set({ imageMobile: id }); } })

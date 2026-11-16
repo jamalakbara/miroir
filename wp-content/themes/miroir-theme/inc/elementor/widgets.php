@@ -196,6 +196,18 @@ class Miroir_Widget_Banner extends Miroir_Widget {
 	}
 	protected function register_controls() {
 		$this->start_controls_section( 'section_content', array( 'label' => $this->get_title() ) );
+		$this->add_control(
+			'width',
+			array(
+				'label'   => __( 'Image width', 'miroir' ),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'default' => 'framed',
+				'options' => array(
+					'framed' => __( 'Framed (centred canvas)', 'miroir' ),
+					'full'   => __( 'Full width (edge to edge)', 'miroir' ),
+				),
+			)
+		);
 		miroir_elementor_image_control( $this, 'image', __( 'Desktop image', 'miroir' ) );
 		miroir_elementor_image_control( $this, 'imageTablet', __( 'Tablet image (empty: desktop image)', 'miroir' ) );
 		miroir_elementor_image_control( $this, 'imageMobile', __( 'Mobile image (empty: tablet image)', 'miroir' ) );
@@ -207,6 +219,7 @@ class Miroir_Widget_Banner extends Miroir_Widget {
 			miroir_parsed_block(
 				'miroir/banner',
 				array(
+					'width'       => 'full' === ( $settings['width'] ?? '' ) ? 'full' : 'framed',
 					'image'       => miroir_elementor_image_id( $settings['image'] ?? null ),
 					'imageTablet' => miroir_elementor_image_id( $settings['imageTablet'] ?? null ),
 					'imageMobile' => miroir_elementor_image_id( $settings['imageMobile'] ?? null ),
