@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 68 (proposed 46, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 82 (active 72, superseded 10)
-- handoff: 214 (final 214)
+- handoff: 215 (final 215)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-kjeq4bkd 2026-11-16 (agent:claude-code:opus-5.5) — Done: Reviewed multi-machine sync (git, plugins.txt hooks, snapshot.sh). Answered user with gap list; no code changes. · Next: If user agrees: shard uploads.tar per year/month so Drive re-uploads onl…
 - hnd-m3js6dw9 2026-11-16 (agent:claude-code:sonnet-5.5) — Done: Added import --uploads-from-server to tools/snapshot.sh (rsync, ssh+tar fallback, count-mismatch warning) and .env.example vars. Tested fetch with a fake ssh in both modes; bash -n ok. Diagnose…
 - hnd-ka7w4jn1 2026-11-12 (agent:claude-code:sonnet-5.5) — Done: Shipping Information copy: shipping_blocks() seed in cli.php, blocks() now renders nested arrays as bullet lists (wp:list), flow.css styles section lists (disc, 20px indent), footer label 'Ship…
 - hnd-362evw4w 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Deployed copy changes to staging and live. Staging: development pushed (run 42954602648), then wp miroir theme refresh-copy over SSH, verified in DB. Live: pushed main (98b0ded), approved produ…
 - hnd-22scrk6g 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Committed 82b6cfc (all copy changes) and added 'wp miroir theme refresh-copy' (cli.php): updates FAQ/Returns/Terms pages (title, Elementor widget, content), footer labels, shop-women/featured m…
-- hnd-zsh6sgg2 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Shop sidebar menus: removed accessories from 'shop women' (plp-categories); 'featured' (plp-featured) is now new arrivals, best sellers, by miroir collection (at-the-studio category), collabora…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
