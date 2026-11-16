@@ -128,6 +128,11 @@ html:has(body.home-header-overlay:not(.elementor-editor-active) .home-hero) { sc
 	.site-nav__bag-count { position: absolute; top: 11px; right: 0; left: 0; display: grid; height: 16px; place-items: center; font-family: var(--font-mono); font-size: 11px; line-height: 1; letter-spacing: 0; }
 }
 
+/* Phones: scale the logo down from --logo-w (token or logo-block width) so it sits lighter in the 68px bar. */
+@media (max-width: 767px) {
+	.site-nav__logo .logo-mark, .site-nav__logo .logo-custom img { width: calc(var(--logo-w) * 0.8); }
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.site-nav__menu-mark::before, .site-nav__menu-mark::after, .site-nav__menu-mark > span { transition: none; }
 	.announce__track { animation: none; }
