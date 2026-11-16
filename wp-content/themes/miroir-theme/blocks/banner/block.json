@@ -9,6 +9,7 @@
 	"keywords": [ "image", "sale", "home", "hero" ],
 	"textdomain": "miroir",
 	"attributes": {
+		"width": { "type": "string", "enum": [ "framed", "full" ], "default": "framed" },
 		"image": { "type": "number", "default": 0 },
 		"imageTablet": { "type": "number", "default": 0 },
 		"imageMobile": { "type": "number", "default": 0 },

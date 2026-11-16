@@ -11,6 +11,7 @@ get_template_part(
 	'template-parts/home-banner',
 	null,
 	array(
+		'width'        => $attributes['width'] ?? 'framed',
 		'image'        => $attributes['image'],
 		'image_tablet' => $attributes['imageTablet'],
 		'image_mobile' => $attributes['imageMobile'],

@@ -47,6 +47,13 @@
 .home-banner__image { width: 62.5%; aspect-ratio: 2049 / 1152; }
 .home-banner__image img { object-fit: contain; }
 
+/* Full-width option: edge to edge at the image's own proportions; caption keeps the gutter. */
+.home-banner.home-banner--full { padding-left: 0; padding-right: 0; }
+.home-banner.home-banner--full > a { display: block; width: 100%; aspect-ratio: auto; padding-top: 0; }
+.home-banner.home-banner--full .home-banner__image { width: 100%; aspect-ratio: auto; }
+.home-banner.home-banner--full .home-banner__image img { position: static; display: block; height: auto; object-fit: cover; }
+.home-banner.home-banner--full > .home-caption { padding: 0 var(--gutter); }
+
 .home-caption {
 	font-size: var(--text-sm);
 	line-height: var(--lh-sans-12);
