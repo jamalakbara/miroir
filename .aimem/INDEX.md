@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 69 (proposed 47, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 82 (active 72, superseded 10)
-- handoff: 216 (final 216)
+- handoff: 217 (final 217)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-c3tqaz1s 2026-11-16 (agent:claude-code:opus-5.5) — Done: SSH login to Hostinger with ~/.ssh/miroir_hostinger verified (port 65002). Added MIROIR_UPLOADS_REMOTE=...:~/miroir-sync/uploads, port, key to the Mac .env. Real-server tests: rsync round-trip…
 - hnd-eqm5amkn 2026-11-16 (agent:claude-code:opus-5.5) — Done: tools/snapshot.sh export pushes uploads to MIROIR_UPLOADS_REMOTE (rsync --delete; ssh+tar size-diff fallback; public_html guard) and records UPLOADS_VIA=server; import pulls automatically, chec…
 - hnd-kjeq4bkd 2026-11-16 (agent:claude-code:opus-5.5) — Done: Reviewed multi-machine sync (git, plugins.txt hooks, snapshot.sh). Answered user with gap list; no code changes. · Next: If user agrees: shard uploads.tar per year/month so Drive re-uploads onl…
 - hnd-m3js6dw9 2026-11-16 (agent:claude-code:sonnet-5.5) — Done: Added import --uploads-from-server to tools/snapshot.sh (rsync, ssh+tar fallback, count-mismatch warning) and .env.example vars. Tested fetch with a fake ssh in both modes; bash -n ok. Diagnose…
 - hnd-ka7w4jn1 2026-11-12 (agent:claude-code:sonnet-5.5) — Done: Shipping Information copy: shipping_blocks() seed in cli.php, blocks() now renders nested arrays as bullet lists (wp:list), flow.css styles section lists (disc, 20px indent), footer label 'Ship…
-- hnd-362evw4w 2026-11-11 (agent:claude-code:sonnet-5.5) — Done: Deployed copy changes to staging and live. Staging: development pushed (run 42954602648), then wp miroir theme refresh-copy over SSH, verified in DB. Live: pushed main (98b0ded), approved produ…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
