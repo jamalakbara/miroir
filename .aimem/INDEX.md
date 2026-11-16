@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 70 (proposed 48, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 82 (active 72, superseded 10)
-- handoff: 224 (final 224)
+- handoff: 225 (final 225)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-v7ybc9h2 2026-11-16 (agent:claude-code:opus-5.5) — Done: Client manual doc: Bab 4 (pages and home) written in full: general Elementor widget workflow, home section order, Campaign video hero fields with verified fallbacks (bundled films, poster chain…
 - hnd-jbrxjz4h 2026-11-16 (agent:claude-code:opus-5.5) — Done: Client manual doc: Bab 2 (access and accounts) written in full: login live/staging, roles table (Admin/Shop manager/Editor/Customer), add/edit user, offboarding with content reassignment, accou…
 - hnd-1wfr0m2m 2026-11-16 (agent:claude-code:opus-5.5) — Done: Client manual doc: Bab 6 (products, collections, media) written in full: prep checklist, simple and variable product steps (Colour global attribute, Size custom attribute used for variations),…
 - hnd-nbhzbrgy 2026-11-16 (agent:claude-code:opus-5.5) — Done: Client manual doc: Bab 9 now says content is edited on live, staging is developer + client preview only (user confirmed). Bab 5 (WhatsApp orders) written in full: customer flow, message format,…
 - hnd-k84nd6dp 2026-11-16 (agent:claude-code:opus-5.5) — Done: Drafted client handoff manual outline (12 chapters: access/roles, Elementor + Miroir widgets, pages/home, WhatsApp order SOP with flow diagram, products/media, header/footer/Site Settings, curr…
-- hnd-ymmyzz1g 2026-11-16 (agent:claude-code:opus-5.5) — Done: Mobile logo scaled to 80% (59fb614) and snapshot tooling committed (fc2a2eb). Deployed: staging run 43905067611, live run 43905419341 (approved at user request), header.css verified on both via…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
