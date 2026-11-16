@@ -39,7 +39,15 @@ PowerShell (`tools\snapshot.cmd export`): they use Git Bash, because a plain
 | Theme, `miroir-*` plugins, tools, design | git | `git push` / `git pull` |
 | Vendor plugins (Elementor, WooCommerce …) | Docker `wp_plugins` volume | `plugins.txt` + git hooks |
 | Pages, Elementor layouts, settings, products, orders | Docker `db_data` volume | `tools/snapshot.sh` |
-| Uploads, licensed Avenir fonts | gitignored files | `tools/snapshot.sh` |
+| Uploads (images, media) | gitignored `wp-content/uploads` | `tools/snapshot.sh` via the server (rsync) |
+| Licensed Avenir fonts | gitignored files | `tools/snapshot.sh` |
+
+**Uploads through the server.** Set `MIROIR_UPLOADS_REMOTE` (and the SSH port/key) in
+`.env` on every machine, pointing at a private folder outside `public_html`, e.g.
+`user@host:~/miroir-sync/uploads`. Export then mirrors `wp-content/uploads` there with
+rsync, sending only new or changed files, and writes no `uploads.tar`; import pulls from
+there. Without the setting, uploads go into `uploads.tar` in the snapshot folder as before.
+On Windows without rsync, ssh + tar sends only files whose size differs.
 
 Once per machine: set `MIROIR_SNAPSHOT_DIR` in `.env` to a private folder both
 machines sync (Google Drive, iCloud), then:
@@ -71,7 +79,7 @@ tools/snapshot.sh import   # on the machine you arrive at, after git pull
 - **Content does not merge.** Work on one machine at a time. Import replaces the
   database; the previous one is kept in `.snapshots-backup/` (last three). Export
   refuses to overwrite a snapshot this machine never imported (`--force` overrides).
-- Unchanged uploads are not re-packed or re-extracted. `tools/snapshot.sh status`
+- Unchanged uploads are not re-sent, re-packed or re-extracted. `tools/snapshot.sh status`
   shows what this machine last synced; `git pull` also says when the snapshot is newer.
 - The snapshot holds customer data and password hashes: keep it private, never in git.
 - Hooks need Docker running; otherwise they skip with a message. `MIROIR_SKIP_HOOKS=1` turns them off.
