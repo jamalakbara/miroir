@@ -94575,7 +94575,7 @@
           "fill": {
             "type": "image",
             "enabled": true,
-            "url": "miroir-assets/manual-guide/pages/p61-07.png",
+            "url": "miroir-assets/manual-guide/pages/p61-07-swapped.png",
             "mode": "stretch"
           },
           "width": 702,
@@ -94591,6 +94591,6724 @@
             "type": "image",
             "enabled": true,
             "url": "miroir-assets/manual-guide/pages/p61-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "UFQkD",
+      "x": 5864,
+      "y": 53200,
+      "name": "Panduan Bahasa Indonesia / 01 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "tK1pU",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p01-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 268
+        },
+        {
+          "type": "rectangle",
+          "id": "PmL8X",
+          "x": 46,
+          "y": 317,
+          "name": "Client and application",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p01-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 139
+        },
+        {
+          "type": "rectangle",
+          "id": "ajVhP",
+          "x": 46,
+          "y": 467,
+          "name": "At a glance",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p01-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 85
+        },
+        {
+          "type": "rectangle",
+          "id": "U9sLNf",
+          "x": 46,
+          "y": 563,
+          "name": "Contents",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p01-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 223
+        },
+        {
+          "type": "rectangle",
+          "id": "w9zUDY",
+          "x": 46,
+          "y": 797,
+          "name": "Copy / Screenshot di panduan ini diambil dari s",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p01-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "fGSRT",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p01-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "rhktv",
+      "x": 6818,
+      "y": 53200,
+      "name": "Panduan Bahasa Indonesia / 02 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "yWM3A",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "V35J52",
+          "x": 46,
+          "y": 147,
+          "name": "Section 01 / Tentang panduan ini",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "pkXoR",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Panduan ini membantu tim Miroir mengelol",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 81
+        },
+        {
+          "type": "rectangle",
+          "id": "yFhci",
+          "x": 46,
+          "y": 294,
+          "name": "Copy / Setiap tugas dijelaskan dalam langkah-la",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 82
+        },
+        {
+          "type": "rectangle",
+          "id": "F1SuHb",
+          "x": 46,
+          "y": 387,
+          "name": "Table / Admin toko",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 191
+        },
+        {
+          "type": "rectangle",
+          "id": "L1xZ0",
+          "x": 46,
+          "y": 589,
+          "name": "Note / Cara memakai panduan ini",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 150
+        },
+        {
+          "type": "rectangle",
+          "id": "dhw6L",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p02-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nGnVR",
+      "x": 7772,
+      "y": 53200,
+      "name": "Panduan Bahasa Indonesia / 03 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "f8Jac",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "DkN6q",
+          "x": 46,
+          "y": 147,
+          "name": "Section 02 / Gambaran sistem",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "P2Brem",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Toko ini berjalan di WordPress dan WooCo",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 81
+        },
+        {
+          "type": "rectangle",
+          "id": "UJ0vB",
+          "x": 46,
+          "y": 294,
+          "name": "Heading 02.1 / Komponen utama",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "wqF74",
+          "x": 46,
+          "y": 345,
+          "name": "Table / WordPress",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 371
+        },
+        {
+          "type": "rectangle",
+          "id": "EkA0H",
+          "x": 46,
+          "y": 727,
+          "name": "Table / Multilingual + Miroir Currency",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 255
+        },
+        {
+          "type": "rectangle",
+          "id": "jP3dq",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p03-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "eL5S9",
+      "x": 8726,
+      "y": 53200,
+      "name": "Panduan Bahasa Indonesia / 04 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "j0wGdC",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "Iw3Yh",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Hostinger hPanel",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 92
+        },
+        {
+          "type": "rectangle",
+          "id": "emEre",
+          "x": 46,
+          "y": 250,
+          "name": "Copy / Plugin Miroir Demo Store adalah alat dev",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "R6shH",
+          "x": 46,
+          "y": 308,
+          "name": "Heading 02.2 / Lingkungan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "D0hvyt",
+          "x": 46,
+          "y": 358,
+          "name": "Table / Livemiroir.id",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 253
+        },
+        {
+          "type": "rectangle",
+          "id": "OhEDP",
+          "x": 46,
+          "y": 622,
+          "name": "Note / Kode dan konten dipisah",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 128
+        },
+        {
+          "type": "rectangle",
+          "id": "i2ZGw",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p04-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "z0iUce",
+      "x": 5864,
+      "y": 54723,
+      "name": "Panduan Bahasa Indonesia / 05 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "aDxOA",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p05-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "BRM5D",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 02.3 / Siapa melakukan apa",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p05-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "LKQT9",
+          "x": 46,
+          "y": 197,
+          "name": "Do and avoid",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p05-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 227
+        },
+        {
+          "type": "rectangle",
+          "id": "ZWUzW",
+          "x": 46,
+          "y": 435,
+          "name": "Note / Jangan sentuh",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p05-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 150
+        },
+        {
+          "type": "rectangle",
+          "id": "Qq7hX",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p05-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "PSP0S",
+      "x": 6818,
+      "y": 54723,
+      "name": "Panduan Bahasa Indonesia / 06 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "z0m1Ky",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "rWLIA",
+          "x": 46,
+          "y": 147,
+          "name": "Section 03 / Akses & akun",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "OZRth",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Setiap anggota tim punya akun sendiri de",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "D4yZYh",
+          "x": 46,
+          "y": 262,
+          "name": "Heading 03.1 / Login",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "x8J9n",
+          "x": 46,
+          "y": 313,
+          "name": "Steps / Buka halaman adminBuka miroir.id/wp-admi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 210
+        },
+        {
+          "type": "rectangle",
+          "id": "y1DnWO",
+          "x": 46,
+          "y": 534,
+          "name": "Screenshot / login — Halaman login WordPress.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 442
+        },
+        {
+          "type": "rectangle",
+          "id": "aSQRS",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p06-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Jn71o",
+      "x": 7772,
+      "y": 54723,
+      "name": "Panduan Bahasa Indonesia / 07 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Kjc4R",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "Al134",
+          "x": 46,
+          "y": 147,
+          "name": "Note / Perlu diketahui",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 127
+        },
+        {
+          "type": "rectangle",
+          "id": "Vtjim",
+          "x": 46,
+          "y": 285,
+          "name": "Heading 03.2 / Peran dan izin",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "BPpqE",
+          "x": 46,
+          "y": 335,
+          "name": "Table / AdministratorPemilik / penanggung jawab ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 367
+        },
+        {
+          "type": "rectangle",
+          "id": "zYRe8",
+          "x": 46,
+          "y": 713,
+          "name": "Copy / Rekomendasi: CS dan tim operasional paka",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "uEJjk",
+          "x": 46,
+          "y": 774,
+          "name": "Heading 03.3 / Menambah user baru (Administrator",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "piNk2",
+          "x": 46,
+          "y": 824,
+          "name": "Steps / Buka Users → Add New User.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 160
+        },
+        {
+          "type": "rectangle",
+          "id": "qqS2E",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p07-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Y9j9W",
+      "x": 8726,
+      "y": 54723,
+      "name": "Panduan Bahasa Indonesia / 08 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "R0AMs",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p08-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "G8WKe6",
+          "x": 46,
+          "y": 147,
+          "name": "Steps / Pilih Role sesuai tabel 03.2, lalu klik ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p08-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "JvZmH",
+          "x": 46,
+          "y": 207,
+          "name": "Screenshot / user-new — Users → Add New User.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p08-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 370
+        },
+        {
+          "type": "rectangle",
+          "id": "a0ByF",
+          "x": 46,
+          "y": 589,
+          "name": "Heading 03.4 / Mengubah role atau data user",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p08-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "Ezj4l",
+          "x": 46,
+          "y": 639,
+          "name": "Steps / Users → All Users, lalu klik nama user.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p08-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 139
+        },
+        {
+          "type": "rectangle",
+          "id": "qOdYX",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p08-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Knh4M",
+      "x": 5864,
+      "y": 56246,
+      "name": "Panduan Bahasa Indonesia / 09 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "OwLQq",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p09-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "SLszr",
+          "x": 46,
+          "y": 147,
+          "name": "Screenshot / users — Users → All Users: cek daft",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p09-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 332
+        },
+        {
+          "type": "rectangle",
+          "id": "Q27bxc",
+          "x": 46,
+          "y": 490,
+          "name": "Heading 03.5 / Kalau staf keluar (offboarding)",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p09-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "sKbPu",
+          "x": 46,
+          "y": 541,
+          "name": "Steps / Di hari terakhirnya: buka profil user, S",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p09-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 184
+        },
+        {
+          "type": "rectangle",
+          "id": "SEKZe",
+          "x": 46,
+          "y": 736,
+          "name": "Note / Peringatan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p09-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 105
+        },
+        {
+          "type": "rectangle",
+          "id": "fmr5x",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p09-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ZZ49P",
+      "x": 6818,
+      "y": 56246,
+      "name": "Panduan Bahasa Indonesia / 10 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "H9uov",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "BMK1h",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 03.6 / Keamanan akun",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "A9xT1b",
+          "x": 46,
+          "y": 197,
+          "name": "List / Password minimal 12 karakter, unik, dan ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 203
+        },
+        {
+          "type": "rectangle",
+          "id": "dSvdi",
+          "x": 46,
+          "y": 412,
+          "name": "Heading 03.7 / Layanan pendukung",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "h6WqX4",
+          "x": 46,
+          "y": 462,
+          "name": "Table / Hostinger hPanel",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 290
+        },
+        {
+          "type": "rectangle",
+          "id": "knsza",
+          "x": 46,
+          "y": 763,
+          "name": "Copy / Password tidak pernah ditulis di panduan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "q4wyHL",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p10-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "BkeAT",
+      "x": 7772,
+      "y": 56246,
+      "name": "Panduan Bahasa Indonesia / 11 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "aPhzW",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "i2YVWC",
+          "x": 46,
+          "y": 147,
+          "name": "Section 04 / Mengenal dashboard",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "L6NOeV",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Ini layar pertama yang Anda lihat setela",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 27
+        },
+        {
+          "type": "rectangle",
+          "id": "SNOQR",
+          "x": 46,
+          "y": 240,
+          "name": "Screenshot / dashboard",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 315
+        },
+        {
+          "type": "rectangle",
+          "id": "x28wr",
+          "x": 46,
+          "y": 566,
+          "name": "Screenshot legend",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 220
+        },
+        {
+          "type": "rectangle",
+          "id": "zJunP",
+          "x": 46,
+          "y": 797,
+          "name": "Table / Pages",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 211
+        },
+        {
+          "type": "rectangle",
+          "id": "W6W4PT",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p11-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "M3DZ9w",
+      "x": 8726,
+      "y": 56246,
+      "name": "Panduan Bahasa Indonesia / 12 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "GRm48",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p12-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "z8yOQ",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Media",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p12-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 289
+        },
+        {
+          "type": "rectangle",
+          "id": "AhbCj",
+          "x": 46,
+          "y": 448,
+          "name": "Note / Tip",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p12-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 104
+        },
+        {
+          "type": "rectangle",
+          "id": "yUB9i",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p12-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Zgntu",
+      "x": 5864,
+      "y": 57769,
+      "name": "Panduan Bahasa Indonesia / 13 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "QkvxI",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "D5ZghB",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 04.1 / Dasar-dasar Elementor",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "zFPTN",
+          "x": 46,
+          "y": 197,
+          "name": "Copy / Buka halaman lewat Pages → arahkan kurso",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 27
+        },
+        {
+          "type": "rectangle",
+          "id": "i46EkS",
+          "x": 46,
+          "y": 235,
+          "name": "Screenshot / elementor-home",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 373
+        },
+        {
+          "type": "rectangle",
+          "id": "hhAwp",
+          "x": 46,
+          "y": 619,
+          "name": "Screenshot legend",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 220
+        },
+        {
+          "type": "rectangle",
+          "id": "z5JL6n",
+          "x": 46,
+          "y": 850,
+          "name": "List / Ctrl + Z (Mac Cmd + Z) untuk undo langka",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 116
+        },
+        {
+          "type": "rectangle",
+          "id": "J4eER",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p13-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "JeuRD",
+      "x": 6818,
+      "y": 57769,
+      "name": "Panduan Bahasa Indonesia / 14 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "kiwjR",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p14-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "YEw0W",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 04.2 / Tiga tempat untuk mengubah pengat",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p14-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "PrlfD",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Satu halaman",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p14-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 275
+        },
+        {
+          "type": "rectangle",
+          "id": "zHcNW",
+          "x": 46,
+          "y": 483,
+          "name": "Copy / Konten toko (produk, harga, kategori, pe",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p14-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 72
+        },
+        {
+          "type": "rectangle",
+          "id": "EeKe1",
+          "x": 46,
+          "y": 566,
+          "name": "Do and avoid",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p14-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 180
+        },
+        {
+          "type": "rectangle",
+          "id": "z0MB9",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p14-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mklDF",
+      "x": 7772,
+      "y": 57769,
+      "name": "Panduan Bahasa Indonesia / 15 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Y3QQdb",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "xfHTA",
+          "x": 46,
+          "y": 147,
+          "name": "Section 05 / Halaman & homepage",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "N9ReM",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Setiap halaman disusun dari widget Miroi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "L6Le4I",
+          "x": 46,
+          "y": 262,
+          "name": "Heading 05.1 / Cara kerja widget Miroir",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "R5o1Up",
+          "x": 46,
+          "y": 313,
+          "name": "Steps / Buka Pages → All Pages, arahkan kursor k",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 185
+        },
+        {
+          "type": "rectangle",
+          "id": "x0FfT",
+          "x": 46,
+          "y": 509,
+          "name": "List / Widget Miroir ada di kategori Miroir. Wa",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 116
+        },
+        {
+          "type": "rectangle",
+          "id": "RgLXQ",
+          "x": 46,
+          "y": 636,
+          "name": "Screenshot / pages — Pages → All Pages. Arahkan ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 332
+        },
+        {
+          "type": "rectangle",
+          "id": "PGRuS",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p15-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "GJ4AM",
+      "x": 8726,
+      "y": 57769,
+      "name": "Panduan Bahasa Indonesia / 16 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "s11kZ",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p16-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "sAckw",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 05.2 / Homepage",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p16-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "AMVpC",
+          "x": 46,
+          "y": 197,
+          "name": "Copy / Urutan bagian dari atas ke bawah. Header",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p16-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "uBTlT",
+          "x": 46,
+          "y": 258,
+          "name": "Screenshot / store-home",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p16-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 441
+        },
+        {
+          "type": "rectangle",
+          "id": "sfOnW",
+          "x": 46,
+          "y": 710,
+          "name": "Table / Campaign film",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p16-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 290
+        },
+        {
+          "type": "rectangle",
+          "id": "l7zKf",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p16-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "PjDrU",
+      "x": 5864,
+      "y": 59292,
+      "name": "Panduan Bahasa Indonesia / 17 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "yn1yW",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p17-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "y0MGtf",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 05.3 / Video hero kampanye",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p17-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "r6QRlV",
+          "x": 46,
+          "y": 197,
+          "name": "Screenshot / elementor-hero — Hero yang dipilih:",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p17-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 371
+        },
+        {
+          "type": "rectangle",
+          "id": "bg1g8",
+          "x": 46,
+          "y": 579,
+          "name": "Table / Campaign video",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p17-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 339
+        },
+        {
+          "type": "rectangle",
+          "id": "C934w",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p17-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "yDNiB",
+      "x": 6818,
+      "y": 59292,
+      "name": "Panduan Bahasa Indonesia / 18 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "X1ZTEI",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "MISsn",
+          "x": 46,
+          "y": 147,
+          "name": "Task / A / Ganti video kampanye",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 231
+        },
+        {
+          "type": "rectangle",
+          "id": "W923C",
+          "x": 46,
+          "y": 389,
+          "name": "Note / Selalu ganti posternya juga",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 127
+        },
+        {
+          "type": "rectangle",
+          "id": "Lf6f3",
+          "x": 46,
+          "y": 527,
+          "name": "Heading 05.4 / Editorial pair",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "M7JxAb",
+          "x": 46,
+          "y": 578,
+          "name": "Table / Urutan gambar",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 191
+        },
+        {
+          "type": "rectangle",
+          "id": "xrUmc",
+          "x": 46,
+          "y": 780,
+          "name": "Copy / Di HP hanya satu foto yang tampil. Cek t",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 25
+        },
+        {
+          "type": "rectangle",
+          "id": "c8mnG",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p18-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "x3x8z",
+      "x": 7772,
+      "y": 59292,
+      "name": "Panduan Bahasa Indonesia / 19 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "PtE8h",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "G1A2SN",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 05.5 / Banner",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "z7UhmB",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Lebar gambar",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 240
+        },
+        {
+          "type": "rectangle",
+          "id": "VXSd6",
+          "x": 46,
+          "y": 449,
+          "name": "Copy / Gambar desktop yang lebar sering terpoto",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 25
+        },
+        {
+          "type": "rectangle",
+          "id": "STZMd",
+          "x": 46,
+          "y": 485,
+          "name": "Heading 05.6 / Product row",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "MUUKL",
+          "x": 46,
+          "y": 536,
+          "name": "Table / Judul",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 359
+        },
+        {
+          "type": "rectangle",
+          "id": "WfP8J",
+          "x": 46,
+          "y": 906,
+          "name": "Copy / Baris yang kosong (mis. koleksi tanpa pr",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 26
+        },
+        {
+          "type": "rectangle",
+          "id": "wLcMX",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p19-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hfv25",
+      "x": 8726,
+      "y": 59292,
+      "name": "Panduan Bahasa Indonesia / 20 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "VJUX3",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "L6Alrt",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 05.7 / Text page",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "oCXLM",
+          "x": 46,
+          "y": 197,
+          "name": "Copy / Teks FAQ, panduan ukuran, kebijakan, kon",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "P7Jg6y",
+          "x": 46,
+          "y": 258,
+          "name": "Steps / Buka halaman → Edit with Elementor → kli",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 205
+        },
+        {
+          "type": "rectangle",
+          "id": "r38H0x",
+          "x": 46,
+          "y": 474,
+          "name": "Note / Mengedit FAQ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 105
+        },
+        {
+          "type": "rectangle",
+          "id": "tMab1",
+          "x": 46,
+          "y": 590,
+          "name": "Heading 05.8 / Membuat halaman baru",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "iHqcx",
+          "x": 46,
+          "y": 640,
+          "name": "Steps / Pages → Add New Page, lalu isi judul (ju",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 206
+        },
+        {
+          "type": "rectangle",
+          "id": "UAson",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p20-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pucrk",
+      "x": 5864,
+      "y": 60815,
+      "name": "Panduan Bahasa Indonesia / 21 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "w91nhf",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p21-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "WjhyG",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 05.9 / Halaman toko dan template",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p21-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "o007M",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Bag, Checkout, Account",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p21-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 261
+        },
+        {
+          "type": "rectangle",
+          "id": "i2b7qz",
+          "x": 46,
+          "y": 469,
+          "name": "Note / Template dipakai bersama",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p21-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 105
+        },
+        {
+          "type": "rectangle",
+          "id": "OsEP1",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p21-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "w72hb",
+      "x": 6818,
+      "y": 60815,
+      "name": "Panduan Bahasa Indonesia / 22 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Z214cR",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "JaCVb",
+          "x": 46,
+          "y": 147,
+          "name": "Section 06 / Pesanan WhatsApp",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "fbCEv",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Situs ini tidak menerima pembayaran. Pel",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "cQ646",
+          "x": 46,
+          "y": 262,
+          "name": "Table / Customer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 183
+        },
+        {
+          "type": "rectangle",
+          "id": "COcdN",
+          "x": 46,
+          "y": 456,
+          "name": "Copy / Pesanan tercatat begitu pelanggan meneka",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "CLJli",
+          "x": 46,
+          "y": 514,
+          "name": "Heading 06.1 / Apa yang dilihat pelanggan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "X3JHR",
+          "x": 46,
+          "y": 564,
+          "name": "Steps / Pilih produk dan ukuran, lalu klik Add t",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 250
+        },
+        {
+          "type": "rectangle",
+          "id": "a0JFf",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p22-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fUoZr",
+      "x": 7772,
+      "y": 60815,
+      "name": "Panduan Bahasa Indonesia / 23 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "czaFb",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p23-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "yj5Bt",
+          "x": 46,
+          "y": 147,
+          "name": "Screenshot / store-product — Halaman produk: uku",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p23-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 409
+        },
+        {
+          "type": "rectangle",
+          "id": "A5bDX",
+          "x": 46,
+          "y": 567,
+          "name": "Note / Perlu diketahui",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p23-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 105
+        },
+        {
+          "type": "rectangle",
+          "id": "qGT8u",
+          "x": 46,
+          "y": 683,
+          "name": "Heading 06.2 / Membaca pesan WhatsApp",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p23-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "NgkxY",
+          "x": 46,
+          "y": 734,
+          "name": "WhatsApp message",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p23-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 281
+        },
+        {
+          "type": "rectangle",
+          "id": "Q9lvqS",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p23-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "z0pjNP",
+      "x": 8726,
+      "y": 60815,
+      "name": "Panduan Bahasa Indonesia / 24 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "E7RqZ",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p24-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "gngTU",
+          "x": 46,
+          "y": 147,
+          "name": "List / Order ref: #… adalah kunci untuk menemuk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p24-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 116
+        },
+        {
+          "type": "rectangle",
+          "id": "KFUZn",
+          "x": 46,
+          "y": 274,
+          "name": "Heading 06.3 / SOP harian: memproses pesanan bar",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p24-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "bYY7F",
+          "x": 46,
+          "y": 324,
+          "name": "Steps / Terima chat-nyaBuka chat baru di WhatsAp",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p24-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 530
+        },
+        {
+          "type": "rectangle",
+          "id": "c1N5Yp",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p24-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "QnlFh",
+      "x": 5864,
+      "y": 62338,
+      "name": "Panduan Bahasa Indonesia / 25 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "F9EW7O",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p25-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "MrI4M",
+          "x": 46,
+          "y": 147,
+          "name": "Screenshot / orders — WooCommerce → Orders. Cari",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p25-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 370
+        },
+        {
+          "type": "rectangle",
+          "id": "UG5XO",
+          "x": 46,
+          "y": 528,
+          "name": "Screenshot / order-detail",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p25-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 439
+        },
+        {
+          "type": "rectangle",
+          "id": "YwC9o",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p25-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "dgPAP",
+      "x": 6818,
+      "y": 62338,
+      "name": "Panduan Bahasa Indonesia / 26 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "pCfiJ",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p26-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "oKMGL",
+          "x": 46,
+          "y": 147,
+          "name": "Screenshot legend",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p26-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 178
+        },
+        {
+          "type": "rectangle",
+          "id": "m2SYrE",
+          "x": 46,
+          "y": 336,
+          "name": "Heading 06.4 / Status pesanan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p26-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "KWRBs",
+          "x": 46,
+          "y": 386,
+          "name": "Table / On hold",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p26-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 377
+        },
+        {
+          "type": "rectangle",
+          "id": "eRP3k",
+          "x": 46,
+          "y": 774,
+          "name": "Copy / Stok tidak dilacak, jadi perubahan statu",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p26-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 47
+        },
+        {
+          "type": "rectangle",
+          "id": "F5cp4",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p26-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "BMUO2",
+      "x": 7772,
+      "y": 62338,
+      "name": "Panduan Bahasa Indonesia / 27 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "S2stO",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "p0MM5",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 06.5 / Mengedit pesanan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "HaKxI",
+          "x": 46,
+          "y": 197,
+          "name": "Copy / Pesanan hanya bisa diedit selama statusn",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "Dqdl9",
+          "x": 46,
+          "y": 258,
+          "name": "Table / Tambah ongkos kirim",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 301
+        },
+        {
+          "type": "rectangle",
+          "id": "tquO5",
+          "x": 46,
+          "y": 570,
+          "name": "Copy / Kalau total berubah, kirim total barunya",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 26
+        },
+        {
+          "type": "rectangle",
+          "id": "W1j5R",
+          "x": 46,
+          "y": 607,
+          "name": "Heading 06.6 / Catatan pesanan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "omz7K",
+          "x": 46,
+          "y": 658,
+          "name": "List / Private note: hanya terlihat oleh tim, m",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 92
+        },
+        {
+          "type": "rectangle",
+          "id": "B8FZ4M",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p27-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "TAcmB",
+      "x": 8726,
+      "y": 62338,
+      "name": "Panduan Bahasa Indonesia / 28 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "l9SmQ",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p28-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "hTT3j",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 06.7 / Pengaturan pemesanan WhatsApp",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p28-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "Ob2YO",
+          "x": 46,
+          "y": 197,
+          "name": "Copy / WooCommerce → Settings → WhatsApp orderi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p28-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 27
+        },
+        {
+          "type": "rectangle",
+          "id": "N3d6F",
+          "x": 46,
+          "y": 235,
+          "name": "Screenshot / wa-settings — Tab pemesanan WhatsAp",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p28-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 455
+        },
+        {
+          "type": "rectangle",
+          "id": "k5qVG",
+          "x": 46,
+          "y": 701,
+          "name": "Table / Nomor WhatsApp",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p28-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 270
+        },
+        {
+          "type": "rectangle",
+          "id": "ue7Dd",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p28-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "TRZdn",
+      "x": 5864,
+      "y": 63861,
+      "name": "Panduan Bahasa Indonesia / 29 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "NN1g6",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p29-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "Am28n",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Akun PayPal",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p29-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 233
+        },
+        {
+          "type": "rectangle",
+          "id": "FHB4u",
+          "x": 46,
+          "y": 392,
+          "name": "Screenshot / bank-transfer — WooCommerce → Setti",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p29-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 369
+        },
+        {
+          "type": "rectangle",
+          "id": "e2HfR",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p29-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OFjBm",
+      "x": 6818,
+      "y": 63861,
+      "name": "Panduan Bahasa Indonesia / 30 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "e6nv6",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p30-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "L8Ro9d",
+          "x": 46,
+          "y": 147,
+          "name": "Task / B / Mengubah redaksi pesan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p30-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 272
+        },
+        {
+          "type": "rectangle",
+          "id": "NNVs1",
+          "x": 46,
+          "y": 430,
+          "name": "Heading 06.8 / Kasus khusus",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p30-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "ENDGe",
+          "x": 46,
+          "y": 480,
+          "name": "Table / Pesanan tanpa chat",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p30-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 522
+        },
+        {
+          "type": "rectangle",
+          "id": "GbT2N",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p30-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VtOAp",
+      "x": 7772,
+      "y": 63861,
+      "name": "Panduan Bahasa Indonesia / 31 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "cu4gf",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "r7j1u",
+          "x": 46,
+          "y": 147,
+          "name": "Copy / \"3 hari\" hanya usulan; sesuaikan dengan ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 25
+        },
+        {
+          "type": "rectangle",
+          "id": "BlcqW",
+          "x": 46,
+          "y": 183,
+          "name": "Heading 06.9 / Tes setelah mengubah pengaturan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "p0qtEW",
+          "x": 46,
+          "y": 234,
+          "name": "Steps / Buka toko di jendela incognito dan masuk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 205
+        },
+        {
+          "type": "rectangle",
+          "id": "FkCAw",
+          "x": 46,
+          "y": 450,
+          "name": "Heading 06.10 / Data pelanggan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "P5Js7w",
+          "x": 46,
+          "y": 500,
+          "name": "List / Pesanan dari pelanggan yang login muncul",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 117
+        },
+        {
+          "type": "rectangle",
+          "id": "ykZPs",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p31-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fXro1",
+      "x": 8726,
+      "y": 63861,
+      "name": "Panduan Bahasa Indonesia / 32 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "jflQd",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "X2vVF",
+          "x": 46,
+          "y": 147,
+          "name": "Section 07 / Produk & media",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "ALW99",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Produk dikelola di Products. Semua harga",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "HxnhH",
+          "x": 46,
+          "y": 262,
+          "name": "Screenshot / products — Products → All Products.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 333
+        },
+        {
+          "type": "rectangle",
+          "id": "H94yY9",
+          "x": 46,
+          "y": 606,
+          "name": "Heading 07.1 / Siapkan dulu sebelum mulai",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "onjjd",
+          "x": 46,
+          "y": 657,
+          "name": "Table / Nama",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 339
+        },
+        {
+          "type": "rectangle",
+          "id": "btZi1",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p32-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gOILv",
+      "x": 5864,
+      "y": 65384,
+      "name": "Panduan Bahasa Indonesia / 33 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "d3Sv9",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p33-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "tBQVV",
+          "x": 46,
+          "y": 147,
+          "name": "Task / C / Menambah produk satu ukuran",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p33-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 251
+        },
+        {
+          "type": "rectangle",
+          "id": "yJ4hI",
+          "x": 46,
+          "y": 409,
+          "name": "Screenshot / product-general — Editor produk: Da",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p33-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 466
+        },
+        {
+          "type": "rectangle",
+          "id": "behEN",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p33-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Oy9tK",
+      "x": 6818,
+      "y": 65384,
+      "name": "Panduan Bahasa Indonesia / 34 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "wd3xs",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p34-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "hmfsN",
+          "x": 46,
+          "y": 147,
+          "name": "Task / D / Menambah produk dengan pilihan ukuran",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p34-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 272
+        },
+        {
+          "type": "rectangle",
+          "id": "P5RWQy",
+          "x": 46,
+          "y": 430,
+          "name": "Screenshot / product-variations — Variasi setela",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p34-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 370
+        },
+        {
+          "type": "rectangle",
+          "id": "b50J8",
+          "x": 46,
+          "y": 811,
+          "name": "Heading 07.2 / Mengubah produk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p34-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "E2Ym5",
+          "x": 46,
+          "y": 861,
+          "name": "List / Price: buka produk, ubah harganya (produ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p34-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 124
+        },
+        {
+          "type": "rectangle",
+          "id": "O3iv1",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p34-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "W01MQv",
+      "x": 7772,
+      "y": 65384,
+      "name": "Panduan Bahasa Indonesia / 35 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "w6MmN",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p35-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "C08JI",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 07.3 / Kategori dan koleksi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p35-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "LjVKH",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Jenis produk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p35-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 331
+        },
+        {
+          "type": "rectangle",
+          "id": "rXegs",
+          "x": 46,
+          "y": 539,
+          "name": "Screenshot / categories — Products → Categories.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p35-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 332
+        },
+        {
+          "type": "rectangle",
+          "id": "I4kJN",
+          "x": 46,
+          "y": 882,
+          "name": "List / Koleksi baru: isi nama, Parent category,",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p35-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 109
+        },
+        {
+          "type": "rectangle",
+          "id": "JGuoe",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p35-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "dAlb5",
+      "x": 8726,
+      "y": 65384,
+      "name": "Panduan Bahasa Indonesia / 36 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "RxwUL",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "H5xvT",
+          "x": 46,
+          "y": 147,
+          "name": "List / Mengganti nama kategori boleh. Mengubah ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 52
+        },
+        {
+          "type": "rectangle",
+          "id": "gfE6w",
+          "x": 46,
+          "y": 210,
+          "name": "Heading 07.4 / Harga diskon dan kategori Sale",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "oS2aI",
+          "x": 46,
+          "y": 261,
+          "name": "Steps / Isi Sale price (produk variabel: isi di ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 114
+        },
+        {
+          "type": "rectangle",
+          "id": "WWRI7",
+          "x": 46,
+          "y": 387,
+          "name": "Copy / Kategori Sale yang dicentang pada produk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "JNTuY",
+          "x": 46,
+          "y": 444,
+          "name": "Heading 07.5 / Foto produk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "r4VOy",
+          "x": 46,
+          "y": 494,
+          "name": "List / Product image adalah foto utama di kartu",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 172
+        },
+        {
+          "type": "rectangle",
+          "id": "Y9Tcjh",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p36-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "TIQGw",
+      "x": 5864,
+      "y": 66907,
+      "name": "Panduan Bahasa Indonesia / 37 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "vfzfU",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p37-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "xwIX4",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 07.6 / Media Library",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p37-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "X0wfu3",
+          "x": 46,
+          "y": 197,
+          "name": "Screenshot / media — Media → Library.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p37-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 342
+        },
+        {
+          "type": "rectangle",
+          "id": "GjVpI",
+          "x": 46,
+          "y": 550,
+          "name": "Table / Foto produk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p37-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 191
+        },
+        {
+          "type": "rectangle",
+          "id": "f9rTvA",
+          "x": 46,
+          "y": 752,
+          "name": "List / Nama file: pakai nama yang deskriptif, h",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p37-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 164
+        },
+        {
+          "type": "rectangle",
+          "id": "bn25B",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p37-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ngU7Z",
+      "x": 6818,
+      "y": 66907,
+      "name": "Panduan Bahasa Indonesia / 38 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Lzh8V",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p38-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "TLGEN",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 07.7 / Habis terjual, unggulan, dan dise",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p38-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "OorDK",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Terjual habis",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p38-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 367
+        },
+        {
+          "type": "rectangle",
+          "id": "bmaXz",
+          "x": 46,
+          "y": 575,
+          "name": "Copy / Jumlah produk per halaman toko dan produ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p38-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 47
+        },
+        {
+          "type": "rectangle",
+          "id": "Cn23b",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p38-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "jLAA8",
+      "x": 7772,
+      "y": 66907,
+      "name": "Panduan Bahasa Indonesia / 39 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "X72g1",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "SwV1S",
+          "x": 46,
+          "y": 147,
+          "name": "Section 08 / Header, footer & pengaturan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "yKsoS",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Bagian yang tampil di setiap halaman, se",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "JLVSf",
+          "x": 46,
+          "y": 262,
+          "name": "Heading 08.1 / Membuka Site Settings",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "KaXuP",
+          "x": 46,
+          "y": 313,
+          "name": "Steps / Buka halaman mana pun dengan Edit with E",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 139
+        },
+        {
+          "type": "rectangle",
+          "id": "v0N8xc",
+          "x": 46,
+          "y": 463,
+          "name": "Screenshot / site-settings-miroir — Site Setting",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 371
+        },
+        {
+          "type": "rectangle",
+          "id": "eg81U",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p39-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "saXlb",
+      "x": 8726,
+      "y": 66907,
+      "name": "Panduan Bahasa Indonesia / 40 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "I5VHt",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p40-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "sAHDi",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 08.2 / Menu navigasi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p40-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "P2tPz3",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Header: link utama",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p40-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 287
+        },
+        {
+          "type": "rectangle",
+          "id": "GtvBM",
+          "x": 46,
+          "y": 495,
+          "name": "Screenshot / menus — Appearance → Menus, dengan ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p40-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 429
+        },
+        {
+          "type": "rectangle",
+          "id": "D1fian",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p40-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hWU4d",
+      "x": 5864,
+      "y": 68430,
+      "name": "Panduan Bahasa Indonesia / 41 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "myemj",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p41-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "G9vpb",
+          "x": 46,
+          "y": 147,
+          "name": "Steps / Pilih menu di Select a menu to edit.",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p41-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 184
+        },
+        {
+          "type": "rectangle",
+          "id": "KsSUO",
+          "x": 46,
+          "y": 342,
+          "name": "Heading 08.3 / Announcement bar",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p41-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "E3Sdd",
+          "x": 46,
+          "y": 393,
+          "name": "Screenshot / header-template — Template \"Miroir:",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p41-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 283
+        },
+        {
+          "type": "rectangle",
+          "id": "lABhW",
+          "x": 46,
+          "y": 687,
+          "name": "Steps / Templates → Saved Templates → buka \"Miro",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p41-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 95
+        },
+        {
+          "type": "rectangle",
+          "id": "tZynk",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p41-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "m3GRco",
+      "x": 6818,
+      "y": 68430,
+      "name": "Panduan Bahasa Indonesia / 42 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "l1Lv5K",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "O6KfIn",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 08.4 / Logo, header dan footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "o0VSu",
+          "x": 46,
+          "y": 197,
+          "name": "List / Logo: Site Settings → Site Identity → Si",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 195
+        },
+        {
+          "type": "rectangle",
+          "id": "zrc9T",
+          "x": 46,
+          "y": 404,
+          "name": "Heading 08.5 / Site Settings → Miroir",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "EWj8j",
+          "x": 46,
+          "y": 454,
+          "name": "Table / Template",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 493
+        },
+        {
+          "type": "rectangle",
+          "id": "e8xd4",
+          "x": 46,
+          "y": 958,
+          "name": "Copy / Angka layout mengikuti desain. Ubah hany",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 25
+        },
+        {
+          "type": "rectangle",
+          "id": "uaumA",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p42-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gx38R",
+      "x": 7772,
+      "y": 68430,
+      "name": "Panduan Bahasa Indonesia / 43 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "P3jLjL",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p43-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "FsZQk",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 08.6 / Teks dan label toko",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p43-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "T3MA1",
+          "x": 46,
+          "y": 197,
+          "name": "Copy / Semua teks kecil (tombol, judul panel, t",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p43-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "MC0Uz",
+          "x": 46,
+          "y": 258,
+          "name": "Screenshot / site-settings-labels — Grup label d",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p43-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 437
+        },
+        {
+          "type": "rectangle",
+          "id": "o0jtU",
+          "x": 46,
+          "y": 707,
+          "name": "Table / Header & menu, Search",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p43-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 289
+        },
+        {
+          "type": "rectangle",
+          "id": "BpSPZ",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p43-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "DT5dd",
+      "x": 8726,
+      "y": 68430,
+      "name": "Panduan Bahasa Indonesia / 44 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "a91Yq",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "G9XsR",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Search engines",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 92
+        },
+        {
+          "type": "rectangle",
+          "id": "optek",
+          "x": 46,
+          "y": 250,
+          "name": "Steps / Buka grupnya dan cari kolom yang dimaksu",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 94
+        },
+        {
+          "type": "rectangle",
+          "id": "F2Amii",
+          "x": 46,
+          "y": 355,
+          "name": "Note / Jangan hapus kodenya",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 105
+        },
+        {
+          "type": "rectangle",
+          "id": "E9kw9",
+          "x": 46,
+          "y": 471,
+          "name": "Heading 08.7 / Warna dan font",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "BupG1",
+          "x": 46,
+          "y": 522,
+          "name": "List / Site Settings → Global Colors / Global F",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 140
+        },
+        {
+          "type": "rectangle",
+          "id": "E2DhY8",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p44-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "D2jFvn",
+      "x": 5864,
+      "y": 69953,
+      "name": "Panduan Bahasa Indonesia / 45 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "OgnSP",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "kpDPB",
+          "x": 46,
+          "y": 147,
+          "name": "Section 09 / Harga, promo & SEO",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "zPJeF",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Harga disimpan dalam IDR lalu dikonversi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "zcuHs",
+          "x": 46,
+          "y": 262,
+          "name": "Heading 09.1 / Mata uang dan kurs",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "a2cKDd",
+          "x": 46,
+          "y": 313,
+          "name": "Screenshot / currency — WooCommerce → WooCommerc",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 434
+        },
+        {
+          "type": "rectangle",
+          "id": "FgtY0",
+          "x": 46,
+          "y": 758,
+          "name": "List / Pelanggan bisa mengganti mata uang di he",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 163
+        },
+        {
+          "type": "rectangle",
+          "id": "AeT1f",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p45-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "TcRDu",
+      "x": 6818,
+      "y": 69953,
+      "name": "Panduan Bahasa Indonesia / 46 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "dTUCq",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "N6YWT",
+          "x": 46,
+          "y": 147,
+          "name": "Note / Peringatan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 104
+        },
+        {
+          "type": "rectangle",
+          "id": "CPUS6",
+          "x": 46,
+          "y": 263,
+          "name": "Heading 09.2 / Kupon",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "ZuwyU",
+          "x": 46,
+          "y": 313,
+          "name": "Screenshot / coupon — Marketing → Coupons → tab ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 328
+        },
+        {
+          "type": "rectangle",
+          "id": "xBMBI",
+          "x": 46,
+          "y": 652,
+          "name": "Steps / Marketing → Coupons → Add coupon; isi ko",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 226
+        },
+        {
+          "type": "rectangle",
+          "id": "jjk7X",
+          "x": 46,
+          "y": 889,
+          "name": "Copy / Batas per pelanggan didasarkan pada emai",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "jCX0Z",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p46-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fvDzr",
+      "x": 7772,
+      "y": 69953,
+      "name": "Panduan Bahasa Indonesia / 47 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "UJYXe",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "JY9Ck",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 09.3 / Ongkos kirim, format harga, dan p",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "ONfK0",
+          "x": 46,
+          "y": 197,
+          "name": "List / Ongkos kirim tidak dihitung di situs; to",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 219
+        },
+        {
+          "type": "rectangle",
+          "id": "XMtmx",
+          "x": 46,
+          "y": 427,
+          "name": "Copy / Minta pemilik atau akuntan mengonfirmasi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 26
+        },
+        {
+          "type": "rectangle",
+          "id": "FBxkJ",
+          "x": 46,
+          "y": 464,
+          "name": "Heading 09.4 / SEO",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "UKFyk",
+          "x": 46,
+          "y": 515,
+          "name": "Table / Beranda",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 301
+        },
+        {
+          "type": "rectangle",
+          "id": "QnSjF",
+          "x": 46,
+          "y": 827,
+          "name": "Do and avoid",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 150
+        },
+        {
+          "type": "rectangle",
+          "id": "erQxV",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p47-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "r2DN4B",
+      "x": 8726,
+      "y": 69953,
+      "name": "Panduan Bahasa Indonesia / 48 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "cUXe3",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p48-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "u0IyzO",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 09.5 / Link lama dan integrasi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p48-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "MxCri",
+          "x": 46,
+          "y": 197,
+          "name": "List / Sebagian link lama miroir.id sudah diali",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p48-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 195
+        },
+        {
+          "type": "rectangle",
+          "id": "ID1xg",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p48-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "g0RM4",
+      "x": 5864,
+      "y": 71476,
+      "name": "Panduan Bahasa Indonesia / 49 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "TGXUM",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "bnG8d",
+          "x": 46,
+          "y": 147,
+          "name": "Section 10 / Publish & backup",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "HchdY",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Tim klien mengedit semua konten langsung",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "wHnup",
+          "x": 46,
+          "y": 262,
+          "name": "Heading 10.1 / Mengedit di live",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "TXt5T",
+          "x": 46,
+          "y": 313,
+          "name": "Do and avoid",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 256
+        },
+        {
+          "type": "rectangle",
+          "id": "EYAXa",
+          "x": 46,
+          "y": 580,
+          "name": "Heading 10.2 / Staging dan preview",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "hqEI6",
+          "x": 46,
+          "y": 630,
+          "name": "List / Staging (staging.miroir.id) adalah salin",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 243
+        },
+        {
+          "type": "rectangle",
+          "id": "w7bfmc",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p49-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pyHyg",
+      "x": 6818,
+      "y": 71476,
+      "name": "Panduan Bahasa Indonesia / 50 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "rhmwc",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "D8z1qT",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 10.3 / Update dari developer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "CUCtw",
+          "x": 46,
+          "y": 197,
+          "name": "Steps / Developer mengirim perubahan ke staging ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 139
+        },
+        {
+          "type": "rectangle",
+          "id": "PjUc4",
+          "x": 46,
+          "y": 348,
+          "name": "List / Halaman yang disebutkan tampil benar di ",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 116
+        },
+        {
+          "type": "rectangle",
+          "id": "GxkhM",
+          "x": 46,
+          "y": 475,
+          "name": "Copy / Rilis hanya menyalin kode. Produk, halam",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 25
+        },
+        {
+          "type": "rectangle",
+          "id": "u8sfam",
+          "x": 46,
+          "y": 511,
+          "name": "Heading 10.4 / Jadwal tayang dan revisi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "nfCr7",
+          "x": 46,
+          "y": 562,
+          "name": "Copy / Untuk menjadwalkan: di kotak Publish kli",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "FUpFK",
+          "x": 46,
+          "y": 623,
+          "name": "Screenshot / elementor-history — Elementor → His",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-08.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 370
+        },
+        {
+          "type": "rectangle",
+          "id": "QHfOU",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p50-09.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Zrbh3",
+      "x": 7772,
+      "y": 71476,
+      "name": "Panduan Bahasa Indonesia / 51 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "dAz20",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p51-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "WLAHv",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Halaman atau template Elementor",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p51-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 214
+        },
+        {
+          "type": "rectangle",
+          "id": "D9raH",
+          "x": 46,
+          "y": 372,
+          "name": "Copy / Revisi tidak menyimpan harga variasi mau",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p51-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 26
+        },
+        {
+          "type": "rectangle",
+          "id": "Jl0Ao",
+          "x": 46,
+          "y": 409,
+          "name": "Heading 10.5 / Backup dan restore",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p51-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "i8blc",
+          "x": 46,
+          "y": 459,
+          "name": "List / Hostinger menyimpan backup rutin (file d",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p51-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 220
+        },
+        {
+          "type": "rectangle",
+          "id": "Yl2UA",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p51-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xtL0R",
+      "x": 8726,
+      "y": 71476,
+      "name": "Panduan Bahasa Indonesia / 52 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "pTGvH",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "GziPY",
+          "x": 46,
+          "y": 147,
+          "name": "Section 11 / Maintenance & keamanan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "BUCTj",
+          "x": 46,
+          "y": 202,
+          "name": "Heading 11.1 / Maintenance mode",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "IvvLN",
+          "x": 46,
+          "y": 252,
+          "name": "Copy / Menutup toko untuk pengunjung dengan hal",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 50
+        },
+        {
+          "type": "rectangle",
+          "id": "e4xRMj",
+          "x": 46,
+          "y": 313,
+          "name": "Screenshot / site-settings-maintenance — Site Se",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 362
+        },
+        {
+          "type": "rectangle",
+          "id": "pHJ4o",
+          "x": 46,
+          "y": 686,
+          "name": "Steps / Site Settings → Miroir → Maintenance (at",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 139
+        },
+        {
+          "type": "rectangle",
+          "id": "jvaHk",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p52-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "SXsKt",
+      "x": 5864,
+      "y": 72999,
+      "name": "Panduan Bahasa Indonesia / 53 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "m1ElXq",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p53-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "NuSsd",
+          "x": 46,
+          "y": 147,
+          "name": "Screenshot / store-maintenance — Apa yang diliha",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p53-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 399
+        },
+        {
+          "type": "rectangle",
+          "id": "cXlPV",
+          "x": 46,
+          "y": 557,
+          "name": "Table / Pengunjung",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p53-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 282
+        },
+        {
+          "type": "rectangle",
+          "id": "rKHTW",
+          "x": 46,
+          "y": 850,
+          "name": "Copy / Teks halaman: Site Settings → Miroir → L",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p53-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 46
+        },
+        {
+          "type": "rectangle",
+          "id": "E8gb4K",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p53-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "vaKOZ",
+      "x": 6818,
+      "y": 72999,
+      "name": "Panduan Bahasa Indonesia / 54 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "NFtge",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "e66i8k",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 11.2 / Update",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "mlnUm",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Update minor WordPress",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 308
+        },
+        {
+          "type": "rectangle",
+          "id": "wvCL9",
+          "x": 46,
+          "y": 516,
+          "name": "Note / Waspada",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 105
+        },
+        {
+          "type": "rectangle",
+          "id": "BazI8",
+          "x": 46,
+          "y": 632,
+          "name": "Heading 11.3 / Plugin dan keamanan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "C8bTE",
+          "x": 46,
+          "y": 682,
+          "name": "List / Pasang plugin baru hanya setelah disetuj",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 251
+        },
+        {
+          "type": "rectangle",
+          "id": "mdIcm",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p54-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VHnZA",
+      "x": 7772,
+      "y": 72999,
+      "name": "Panduan Bahasa Indonesia / 55 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "KprBx",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "q0BSd",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 11.4 / Cache dan kecepatan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "wpHKv",
+          "x": 46,
+          "y": 197,
+          "name": "Steps / Perubahan tidak muncul? Pastikan Anda su",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 160
+        },
+        {
+          "type": "rectangle",
+          "id": "HYIQW",
+          "x": 46,
+          "y": 368,
+          "name": "Copy / Supaya situs tetap cepat: ikuti batas uk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 47
+        },
+        {
+          "type": "rectangle",
+          "id": "NIKhg",
+          "x": 46,
+          "y": 426,
+          "name": "Heading 11.5 / Checklist rutin",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "GHKKL",
+          "x": 46,
+          "y": 476,
+          "name": "Table / Sehari-hari",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 322
+        },
+        {
+          "type": "rectangle",
+          "id": "M3fDZ",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p55-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ii8Q2",
+      "x": 8726,
+      "y": 72999,
+      "name": "Panduan Bahasa Indonesia / 56 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Ky64B",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p56-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "SGKI7",
+          "x": 46,
+          "y": 147,
+          "name": "Section 12 / Troubleshooting",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p56-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "T5Mjgw",
+          "x": 46,
+          "y": 202,
+          "name": "Copy / Cari masalah yang paling mirip, lalu cob",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p56-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 49
+        },
+        {
+          "type": "rectangle",
+          "id": "N5G74L",
+          "x": 46,
+          "y": 262,
+          "name": "Table / Perubahan tidak muncul",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p56-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 549
+        },
+        {
+          "type": "rectangle",
+          "id": "PMjY7",
+          "x": 46,
+          "y": 823,
+          "name": "Table / Produk tidak muncul di koleksi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p56-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 188
+        },
+        {
+          "type": "rectangle",
+          "id": "Qn7cz",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p56-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "lLEn1",
+      "x": 5864,
+      "y": 74522,
+      "name": "Panduan Bahasa Indonesia / 57 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "eNNjS",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p57-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "Ij8Es",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Ukuran tidak bisa dipilih",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p57-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 429
+        },
+        {
+          "type": "rectangle",
+          "id": "gWBvs",
+          "x": 46,
+          "y": 587,
+          "name": "Table / Tidak bisa login",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p57-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 357
+        },
+        {
+          "type": "rectangle",
+          "id": "aBpE4",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p57-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "CxrLS",
+      "x": 6818,
+      "y": 74522,
+      "name": "Panduan Bahasa Indonesia / 58 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "ttLP8",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p58-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "ZPstA",
+          "x": 46,
+          "y": 147,
+          "name": "Heading 12.1 / Siapa yang dihubungi",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p58-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "gRdkV",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Error situs, layout, alur pesanan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p58-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 287
+        },
+        {
+          "type": "rectangle",
+          "id": "yyUbe",
+          "x": 46,
+          "y": 495,
+          "name": "Note / Saat melaporkan masalah, sertakan",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p58-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 128
+        },
+        {
+          "type": "rectangle",
+          "id": "RNx5j",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p58-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "XT0jG",
+      "x": 7772,
+      "y": 74522,
+      "name": "Panduan Bahasa Indonesia / 59 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "wXOz6",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p59-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "Wz8mg",
+          "x": 46,
+          "y": 147,
+          "name": "Section 13 / Lampiran",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p59-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 44
+        },
+        {
+          "type": "rectangle",
+          "id": "bDpeY",
+          "x": 46,
+          "y": 202,
+          "name": "Heading A / Glosarium",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p59-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "CuknQ",
+          "x": 46,
+          "y": 252,
+          "name": "Table / wp-admin / Dashboard",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p59-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 676
+        },
+        {
+          "type": "rectangle",
+          "id": "HaKuG",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p59-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "l6HVZ8",
+      "x": 8726,
+      "y": 74522,
+      "name": "Panduan Bahasa Indonesia / 60 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "nfyR4",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p60-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "QKat5",
+          "x": 46,
+          "y": 147,
+          "name": "Heading B / Peta menu",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p60-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "Dmbad",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Akun staf",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p60-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 682
+        },
+        {
+          "type": "rectangle",
+          "id": "nf83e",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p60-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "qbzv6",
+      "x": 5864,
+      "y": 76045,
+      "name": "Panduan Bahasa Indonesia / 61 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "t3i3uS",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "vuw44",
+          "x": 46,
+          "y": 147,
+          "name": "Heading C / Spesifikasi aset",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "G3HFjm",
+          "x": 46,
+          "y": 197,
+          "name": "Table / Foto produk",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 380
+        },
+        {
+          "type": "rectangle",
+          "id": "AzslR",
+          "x": 46,
+          "y": 588,
+          "name": "Heading D / Pemegang akses",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 39
+        },
+        {
+          "type": "rectangle",
+          "id": "RfIeJ",
+          "x": 46,
+          "y": 638,
+          "name": "Copy / Diisi oleh klien: cukup nama pemegang ak",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 26
+        },
+        {
+          "type": "rectangle",
+          "id": "nT41q",
+          "x": 46,
+          "y": 675,
+          "name": "Table / WordPress Administrator",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 339
+        },
+        {
+          "type": "rectangle",
+          "id": "Z0BJKn",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p61-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "d3pIiv",
+      "x": 6818,
+      "y": 76045,
+      "name": "Panduan Bahasa Indonesia / 62 / A4",
+      "clip": true,
+      "width": 794,
+      "height": 1123,
+      "fill": "#FFFEFA",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "S72yr1",
+          "x": 46,
+          "y": 38,
+          "name": "Masthead",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-01.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 97
+        },
+        {
+          "type": "rectangle",
+          "id": "DwZg6",
+          "x": 46,
+          "y": 147,
+          "name": "Table / Google",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-02.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 141
+        },
+        {
+          "type": "rectangle",
+          "id": "TWKMg",
+          "x": 46,
+          "y": 299,
+          "name": "Heading E / Dukungan & serah terima",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-03.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "id": "EqKTh",
+          "x": 46,
+          "y": 350,
+          "name": "At a glance",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-04.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 84
+        },
+        {
+          "type": "rectangle",
+          "id": "R4HNq",
+          "x": 46,
+          "y": 445,
+          "name": "List / Termasuk: perbaikan bug sesuai cakupan y",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-05.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 172
+        },
+        {
+          "type": "rectangle",
+          "id": "XGO4a",
+          "x": 46,
+          "y": 628,
+          "name": "Copy / Dengan menandatangani di bawah ini, kedu",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-06.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 56
+        },
+        {
+          "type": "rectangle",
+          "id": "w3BtU",
+          "x": 46,
+          "y": 695,
+          "name": "Signatures",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-07.png",
+            "mode": "stretch"
+          },
+          "width": 702,
+          "height": 181
+        },
+        {
+          "type": "rectangle",
+          "id": "qJb76",
+          "x": 46,
+          "y": 1029,
+          "name": "Footer",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "miroir-assets/manual-guide-id/pages-r6/p62-08.png",
             "mode": "stretch"
           },
           "width": 702,
