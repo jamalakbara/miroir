@@ -1,0 +1,968 @@
+<!--
+  Miroir manual guide: content blocks. build.mjs paginates these into A4 pages (manual-guide.html).
+  One top-level element = one block. class "kwn" keeps a block with the next one.
+  <figure class="shot" data-src="NAME" data-crop="x,y,w,h"> uses docs/design/miroir-assets/manual-guide/shots/NAME.png.
+-->
+
+<!-- ===== 01 About ===== -->
+<div class="sec" data-ch="01"><span class="sec__n">01</span><h2 class="h-sec">About this guide.</h2></div>
+<p class="lead">This guide shows the Miroir team how to run miroir.id day to day without a developer: signing in, finding your way around the dashboard, handling WhatsApp orders, and keeping products, pages and campaigns up to date.</p>
+<p class="lead">Each task is written as short, numbered steps. Menu and button names, such as <span class="path">Publish</span>, match the labels you see on screen. If something does not look the way this guide describes, check the troubleshooting chapter first, then contact me.</p>
+<table class="table">
+  <thead><tr><th>Reader</th><th>Read these chapters</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Store admin</p></td><td><p class="body">Owner or ops lead. Every chapter.</p></td></tr>
+    <tr><td><p class="h-item">Content / marketing</p></td><td><p class="body">Chapters 04 Dashboard, 05 Pages, 07 Products, 08 Header &amp; settings, 09 Prices &amp; SEO.</p></td></tr>
+    <tr><td><p class="h-item">CS / order handler</p></td><td><p class="body">Chapters 06 WhatsApp orders and 07 Products.</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">How to read it</p><p class="body">Read chapters 02 and 03 once. Use the rest as a reference per task, for example "I want to change a banner" → 05.5. Menu paths are written as <span class="path">Menu → Submenu → Tab</span>. Warnings mark risky actions: deleting, maintenance mode and exchange rates. Plugin versions at the time of writing: WooCommerce 11.2, Elementor 4.3, WooCommerce Multilingual 5.6.</p></div>
+
+<!-- ===== 02 System overview ===== -->
+<div class="sec" data-ch="02"><span class="sec__n">02</span><h2 class="h-sec">System overview.</h2></div>
+<p class="lead kwn">The store runs on WordPress and WooCommerce, hosted at Hostinger. Pages are built with Elementor using custom Miroir widgets. Customers do not pay on the site: they choose products, the order is sent by WhatsApp and saved in WooCommerce at the same time for the team to process.</p>
+<div class="sub kwn"><span class="sec__n">02.1</span><h3 class="h-item">Components to know</h3></div>
+<table class="table">
+  <thead><tr><th>Component</th><th>What it does for you</th><th style="width:30%">Managed in</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">WordPress</p></td><td><p class="body">Site foundation: accounts, media, pages, menus.</p></td><td><p class="small">Dashboard (wp-admin)</p></td></tr>
+    <tr><td><p class="h-item">WooCommerce</p></td><td><p class="body">Products, categories and collections, orders, coupons.</p></td><td><p class="small">Products, WooCommerce → Orders, Marketing → Coupons</p></td></tr>
+    <tr><td><p class="h-item">Elementor + Miroir widgets</p></td><td><p class="body">Page content, home page, header, footer, store templates.</p></td><td><p class="small">Pages → Edit with Elementor; Site Settings → Miroir</p></td></tr>
+    <tr><td><p class="h-item">Miroir theme</p></td><td><p class="body">Store design, layout, text labels, maintenance mode.</p></td><td><p class="small">Site Settings → Miroir</p></td></tr>
+    <tr><td><p class="h-item">Miroir WhatsApp Order</p></td><td><p class="body">The WhatsApp order flow and saving orders.</p></td><td><p class="small">WooCommerce → Settings → WhatsApp ordering</p></td></tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead><tr><th>Component</th><th>What it does for you</th><th style="width:30%">Managed in</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Multilingual + Miroir Currency</p></td><td><p class="body">Prices in IDR, USD, SGD and MYR.</p></td><td><p class="small">WooCommerce → WCML → Multi-currency</p></td></tr>
+    <tr><td><p class="h-item">Miroir Legacy Redirects</p></td><td><p class="body">Old miroir.id links keep reaching the new pages.</p></td><td><p class="small">No screen; via the developer</p></td></tr>
+    <tr><td><p class="h-item">TikTok for Business</p></td><td><p class="body">TikTok pixel and product catalog.</p></td><td><p class="small">Marketing → TikTok</p></td></tr>
+    <tr><td><p class="h-item">Hostinger hPanel</p></td><td><p class="body">Hosting, domain, SSL, backups, CDN cache.</p></td><td><p class="small">hPanel, account owner only</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">The Miroir Demo Store plugin is a developer tool for sample data. It has no screen and does not affect the store.</p>
+<div class="sub kwn"><span class="sec__n">02.2</span><h3 class="h-item">Environments</h3></div>
+<table class="table">
+  <thead><tr><th>Site</th><th>Used by</th><th style="width:38%">Contents</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Live</p><p class="small muted">miroir.id</p></td><td><p class="body">Customers and the client team.</p></td><td><p class="body">The real store. All daily edits happen here.</p></td></tr>
+    <tr><td><p class="h-item">Staging</p><p class="small muted">staging.miroir.id</p></td><td><p class="body">Developer; the client team only to preview features.</p></td><td><p class="body">A password-protected copy for testing.</p></td></tr>
+    <tr><td><p class="h-item">Local</p><p class="small muted">Developer's computer</p></td><td><p class="body">Developer.</p></td><td><p class="body">Where code is written.</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">The one rule to remember</p><p class="body">Code (the Miroir theme and plugins) flows one way: local → staging → live, and only the developer sends it. Content (products, orders, pages, photos, settings) stays on each site and is never copied. Edits made on staging never appear on live.</p></div>
+<div class="sub kwn"><span class="sec__n">02.3</span><h3 class="h-item">Who does what</h3></div>
+<div class="dodont">
+  <div class="do"><p class="label">Client team does it</p><ul>
+    <li>Products, prices, stock, photos, categories.</li>
+    <li>Processing orders and statuses.</li>
+    <li>Page content, home page, banners, campaigns.</li>
+    <li>Menus, announcement bar, logo, footer.</li>
+    <li>Text labels and WhatsApp message templates.</li>
+    <li>Coupons, staff accounts, maintenance on/off.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Through the developer</p><ul>
+    <li>Design or layout changes beyond the settings.</li>
+    <li>New features and bug fixes.</li>
+    <li>Redirects for old links; automatic rate updates.</li>
+    <li>Major WordPress, WooCommerce, Elementor updates.</li>
+    <li>Installing or removing plugins.</li>
+    <li>Restoring backups; domain, SSL and DNS.</li>
+  </ul></div>
+</div>
+<div class="note note--warn"><p class="label">Do not touch</p><p class="body">Theme File Editor and Plugin File Editor; deactivating, deleting or updating Miroir theme and plugins; Elementor → Tools (Regenerate, Replace URL, Rollback); deleting "Miroir: …" templates; Settings → Permalinks and Settings → General; WooCommerce → Status → Tools unless the developer asks. They can break the store and are hard to undo.</p></div>
+
+<!-- ===== 03 Access ===== -->
+<div class="sec" data-ch="03"><span class="sec__n">03</span><h2 class="h-sec">Access &amp; accounts.</h2></div>
+<p class="body kwn">Every team member has their own account with the smallest role that covers their job. Administrator accounts are limited to one or two people.</p>
+<div class="sub kwn"><span class="sec__n">03.1</span><h3 class="h-item">Signing in</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="h-item">Open the admin</p><p class="body">Go to <span class="path">miroir.id/wp-admin</span>. Staging (<span class="path">staging.miroir.id/wp-admin</span>) is for developer previews only.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="h-item">Sign in</p><p class="body">Fill in Username or Email Address and Password, then press <span class="path">Log In</span>. A black admin bar appears at the top of the site.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="h-item">Forgot your password</p><p class="body">Press <span class="path">Lost your password?</span>, enter the account email and open the reset link.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="login" data-crop="240,40,800,470"></figure><p class="small muted cap">The WordPress sign-in page.</p></div>
+<div class="note note--accent"><p class="label">Good to know</p><p class="body">The store's <span class="path">My account</span> page (/my-account) is for customers. Staff always reach the dashboard through /wp-admin. While maintenance mode is on, only Administrators still see the store; other roles see the maintenance page but can still open /wp-admin.</p></div>
+<div class="sub kwn"><span class="sec__n">03.2</span><h3 class="h-item">Roles and permissions</h3></div>
+<table class="table">
+  <thead><tr><th>Role</th><th>Can</th><th style="width:30%">Cannot</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Administrator</p><p class="small muted">Owner / technical lead, max. 2</p></td><td><p class="body">Everything: users, plugins, Site Settings, maintenance mode, staging access.</p></td><td><p class="body">—</p></td></tr>
+    <tr><td><p class="h-item">Shop manager</p><p class="small muted">Store ops, order CS</p></td><td><p class="body">Products, orders, customers, coupons, WooCommerce Settings (incl. WhatsApp ordering), pages and media.</p></td><td><p class="body">Plugins, other users, general settings, seeing the store in maintenance.</p></td></tr>
+    <tr><td><p class="h-item">Editor</p><p class="small muted">Content / marketing</p></td><td><p class="body">Pages, media, editing with Elementor.</p></td><td><p class="body">Products, orders, store settings.</p></td></tr>
+    <tr><td><p class="h-item">Customer</p><p class="small muted">Shoppers</p></td><td><p class="body">Their own account and order history.</p></td><td><p class="body">The dashboard.</p></td></tr>
+  </tbody>
+</table>
+<p class="body">Recommendation: CS and ops = Shop manager; content team = Editor. Do not hand out Administrator "to make things easier". To verify on live before handover: whether Shop manager and Editor can open Elementor Site Settings. If not, chapter 08 changes are done by an Administrator.</p>
+<div class="sub kwn"><span class="sec__n">03.3</span><h3 class="h-item">Adding a user (Administrator)</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Open <span class="path">Users → Add New User</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Fill in Username (cannot be changed later, e.g. <span class="path">name.miroir</span>), work Email, First and Last Name.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Keep the generated password and tick <span class="path">Send User Notification</span> so they set their own password by email.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Choose the Role from 03.2, then press <span class="path">Add New User</span>.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="user-new" data-crop="0,0,1440,700"></figure><p class="small muted cap">Users → Add New User.</p></div>
+<div class="sub kwn"><span class="sec__n">03.4</span><h3 class="h-item">Changing a user's role or details</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Users → All Users</span>, click the user's name.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Change the Role, email or name. Use <span class="path">Set New Password</span> to change the password.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Press <span class="path">Update User</span>.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="users" data-crop="0,0,1440,620"></figure><p class="small muted cap">Users → All Users: review this list every month.</p></div>
+<div class="sub kwn"><span class="sec__n">03.5</span><h3 class="h-item">When staff leave (offboarding)</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">On their last day: open the user, <span class="path">Set New Password</span> (random) → <span class="path">Update User</span>, then <span class="path">Log Out Everywhere Else</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Delete the user and choose <span class="path">Attribute all content to</span> another staff account, so their pages and notes stay.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Change shared passwords they knew: WhatsApp Business, Instagram, store email, Hostinger.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Update the access list in appendix D.</p></div></li>
+</ol>
+<div class="note note--warn"><p class="label">Warning</p><p class="body">Deleting a user without choosing "Attribute all content to" also deletes every page and post they created.</p></div>
+<div class="sub kwn"><span class="sec__n">03.6</span><h3 class="h-item">Account security</h3></div>
+<ul class="bullets">
+  <li>Passwords of at least 12 characters, unique, kept in a password manager. Customer accounts also need 12 characters.</li>
+  <li>One account per person. Never share an Administrator login. Log out on shared computers.</li>
+  <li>There is no 2FA plugin yet. Recommended for Administrators; arrange it with the developer (10.3).</li>
+  <li>Review Users every month: remove unused accounts, check for unknown Administrators.</li>
+  <li>Emails asking you to log in or "verify your WordPress/Hostinger account" via a link are suspicious. Type the address yourself.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">03.7</span><h3 class="h-item">Supporting services</h3></div>
+<table class="table">
+  <thead><tr><th>Service</th><th>Used for</th><th style="width:28%">Access holder</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Hostinger hPanel</p></td><td><p class="body">Hosting, backups, email, staging.</p></td><td><p class="body">Client</p></td></tr>
+    <tr><td><p class="h-item">Cloudflare</p></td><td><p class="body">DNS for miroir.id.</p></td><td><p class="body">Client</p></td></tr>
+    <tr><td><p class="h-item">WhatsApp Business</p></td><td><p class="body">Receiving orders.</p></td><td><p class="body">Client</p></td></tr>
+    <tr><td><p class="h-item">Instagram, TikTok</p></td><td><p class="body">Footer link; pixel and catalog.</p></td><td><p class="body">Client</p></td></tr>
+    <tr><td><p class="h-item">GitHub</p></td><td><p class="body">Theme and plugin code, deploys.</p></td><td><p class="body">Developer</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Passwords are never written in this guide. Keep them in the team's password manager; appendix D records only who holds them.</p>
+
+<!-- ===== 04 Dashboard ===== -->
+<div class="sec" data-ch="04"><span class="sec__n">04</span><h2 class="h-sec">Dashboard tour.</h2></div>
+<p class="body kwn">This is the first screen after you sign in. The numbers match the list below.</p>
+<figure class="shot" data-src="dashboard" data-crop="0,0,1440,640">
+  <span class="pin" style="left:62px;top:2px">1</span>
+  <span class="pin" style="left:30px;top:114px">2</span>
+  <span class="pin" style="left:226px;top:238px">3</span>
+  <span class="pin" style="left:668px;top:2px">4</span>
+  <span class="pin" style="left:576px;top:12px">5</span>
+</figure>
+<ol class="legend">
+  <li><span class="pin">1</span><div><p class="h-item">Admin bar</p><p class="small">Visit the live store, see updates, open Elementor for the page you are on.</p></div></li>
+  <li><span class="pin">4</span><div><p class="h-item">Account menu</p><p class="small">Your profile, password and log out.</p></div></li>
+  <li><span class="pin">2</span><div><p class="h-item">Main menu</p><p class="small">Every section: Pages, Media, WooCommerce, Products, Appearance, Users.</p></div></li>
+  <li><span class="pin">5</span><div><p class="h-item">Screen options</p><p class="small">Show or hide boxes on the current screen.</p></div></li>
+  <li><span class="pin">3</span><div><p class="h-item">Workspace</p><p class="small">Lists and editors open here. The WooCommerce box shows orders on hold.</p></div></li>
+</ol>
+<table class="table">
+  <thead><tr><th>Menu</th><th>Contents</th><th style="width:16%">Chapter</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Pages</p></td><td><p class="body">Home, About, FAQ, Contact, policies.</p></td><td><p class="body">05</p></td></tr>
+    <tr><td><p class="h-item">WooCommerce</p></td><td><p class="body">Orders, Customers, Settings (WhatsApp ordering, payments), Multi-currency.</p></td><td><p class="body">06, 09</p></td></tr>
+    <tr><td><p class="h-item">Products</p></td><td><p class="body">Products, Categories, Attributes.</p></td><td><p class="body">07</p></td></tr>
+    <tr><td><p class="h-item">Media</p></td><td><p class="body">All photos and videos.</p></td><td><p class="body">07.6</p></td></tr>
+    <tr><td><p class="h-item">Marketing</p></td><td><p class="body">Coupons, TikTok.</p></td><td><p class="body">09</p></td></tr>
+    <tr><td><p class="h-item">Templates</p></td><td><p class="body">Saved Templates "Miroir: …" (header, footer, product page).</p></td><td><p class="body">08</p></td></tr>
+    <tr><td><p class="h-item">Appearance, Users</p></td><td><p class="body">Menus and Customize; staff and customer accounts.</p></td><td><p class="body">08, 03</p></td></tr>
+    <tr><td><p class="h-item">Posts, Settings, Plugins</p></td><td><p class="body">Not used by the store, or look-only. Do not change.</p></td><td><p class="body">—</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">Tip</p><p class="body">Yellow or blue notices and red numbers on Plugins are usually update offers or promotions. Do not press Update or Install from there; pass them to the developer (11.2).</p></div>
+<div class="sub kwn"><span class="sec__n">04.1</span><h3 class="h-item">Elementor basics</h3></div>
+<p class="body kwn">Open a page with <span class="path">Pages → hover → Edit with Elementor</span>, or from the store with the admin bar.</p>
+<figure class="shot" data-src="elementor-home" data-crop="0,0,1440,760">
+  <span class="pin" style="left:6px;top:24px">1</span>
+  <span class="pin" style="left:100px;top:120px">2</span>
+  <span class="pin" style="left:420px;top:200px">3</span>
+  <span class="pin" style="left:322px;top:24px">4</span>
+  <span class="pin" style="left:92px;top:24px">5</span>
+  <span class="pin" style="right:64px;top:24px">6</span>
+</figure>
+<ol class="legend">
+  <li><span class="pin">1</span><div><p class="h-item">Elementor menu</p><p class="small">Site Settings, exit to the dashboard.</p></div></li>
+  <li><span class="pin">4</span><div><p class="h-item">Responsive mode</p><p class="small">Desktop, tablet, mobile. Some fields differ per device.</p></div></li>
+  <li><span class="pin">2</span><div><p class="h-item">Left panel</p><p class="small">Settings of the clicked section: Content, Style, Advanced.</p></div></li>
+  <li><span class="pin">5</span><div><p class="h-item">History</p><p class="small">Undo in this session, or go back to a saved revision.</p></div></li>
+  <li><span class="pin">3</span><div><p class="h-item">Canvas</p><p class="small">The page itself. Click a section to edit it.</p></div></li>
+  <li><span class="pin">6</span><div><p class="h-item">Preview / Publish</p><p class="small">Eye icon previews; the button publishes to visitors.</p></div></li>
+</ol>
+<ul class="bullets">
+  <li><span class="kbd">Ctrl</span> + <span class="kbd">Z</span> (Mac <span class="kbd">Cmd</span> + <span class="kbd">Z</span>) undoes the last step while the editor is open.</li>
+  <li>The arrow next to the publish button → <span class="path">Save Draft</span> saves without publishing (pages never published).</li>
+  <li>Closing the editor without Update loses the changes. Elementor asks first.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">04.2</span><h3 class="h-item">The three places for settings</h3></div>
+<table class="table">
+  <thead><tr><th>What you change</th><th>Where</th><th style="width:30%">Examples</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">One page</p></td><td><p class="body">That page's Elementor editor (Pages → Edit with Elementor).</p></td><td><p class="small">Home video hero, banners, About text, FAQ.</p></td></tr>
+    <tr><td><p class="h-item">Parts on many pages</p></td><td><p class="body">"Miroir: …" templates (Templates → Saved Templates, or Site Settings → Miroir → Templates).</p></td><td><p class="small">Header, footer, product page, collections, search, 404.</p></td></tr>
+    <tr><td><p class="h-item">Global settings</p></td><td><p class="body">Elementor Site Settings → Miroir (same as Appearance → Customize).</p></td><td><p class="small">Logo, colours, text size, products per page, labels, maintenance.</p></td></tr>
+  </tbody>
+</table>
+<p class="body">Store content (products, prices, categories, orders) is not in Elementor at all: it lives in WooCommerce and Products. Rule of thumb: if a change must appear on every product page or every page, look in a template or Site Settings.</p>
+<div class="dodont">
+  <div class="do"><p class="label">Do</p><ul>
+    <li>Use Miroir widgets (Video hero, Editorial pair, Banner, Product row, Text page) for store sections.</li>
+    <li>Check Mobile mode before Update; most customers shop on phones.</li>
+    <li>Change one thing, check it, then continue.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Avoid</p><ul>
+    <li>Built-in Elementor widgets (Heading, Image, Button) for store sections.</li>
+    <li>Deleting "Miroir: …" templates or switching templates without the developer.</li>
+    <li>Pressing Update when the layout looks broken. Close without saving or use Revisions.</li>
+  </ul></div>
+</div>
+
+<!-- ===== 05 Pages ===== -->
+<div class="sec" data-ch="05"><span class="sec__n">05</span><h2 class="h-sec">Pages &amp; home page.</h2></div>
+<p class="body kwn">Every page is built from Miroir widgets. You change widget content (images, text, links, options), not the layout, so the design stays as intended.</p>
+<div class="sub kwn"><span class="sec__n">05.1</span><h3 class="h-item">How Miroir widgets work</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Open <span class="path">Pages → All Pages</span>, hover over the page → <span class="path">Edit with Elementor</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Click the section on the canvas. Its settings open in the left panel.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Change the content, then check desktop, tablet and mobile in Responsive mode.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Press <span class="path">Update</span>. The change is live immediately.</p></div></li>
+</ol>
+<ul class="bullets">
+  <li>Miroir widgets sit in the <span class="path">Miroir</span> category. Colours, spacing and fonts come from Site Settings (08), not the widget.</li>
+  <li>Many widgets have a <span class="path">Show</span> switch for optional parts, and a <span class="path">Texts</span> section for that widget's small labels.</li>
+  <li>An empty image field uses a fallback, as described under the field.</li>
+</ul>
+<div class="fig"><figure class="shot" data-src="pages" data-crop="0,0,1440,620"></figure><p class="small muted cap">Pages → All Pages. Hover a row for Edit with Elementor.</p></div>
+<div class="sub kwn"><span class="sec__n">05.2</span><h3 class="h-item">The home page</h3></div>
+<p class="body kwn">Sections from the top. The header (announcement bar, menu) and footer are not part of the page; change them in chapter 08.</p>
+<figure class="shot" data-src="store-home" data-crop="0,0,1440,900"></figure>
+<table class="table">
+  <thead><tr><th>Section</th><th>Widget</th><th style="width:16%">See</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Campaign film</p></td><td><p class="body">Campaign video hero: full-screen video.</p></td><td><p class="body">05.3</p></td></tr>
+    <tr><td><p class="h-item">New arrivals</p></td><td><p class="body">Product row.</p></td><td><p class="body">05.6</p></td></tr>
+    <tr><td><p class="h-item">Browse editorial</p></td><td><p class="body">Editorial pair: two photos.</p></td><td><p class="body">05.4</p></td></tr>
+    <tr><td><p class="h-item">Collection banner</p></td><td><p class="body">Banner.</p></td><td><p class="body">05.5</p></td></tr>
+    <tr><td><p class="h-item">Collection products</p></td><td><p class="body">Product row.</p></td><td><p class="body">05.6</p></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">05.3</span><h3 class="h-item">Campaign video hero</h3></div>
+<div class="fig"><figure class="shot" data-src="elementor-hero" data-crop="0,0,1440,700"></figure><p class="small muted cap">The hero selected: its fields open in the left panel.</p></div>
+<table class="table">
+  <thead><tr><th>Field</th><th>Content</th><th style="width:34%">If empty</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Campaign video</p></td><td><p class="body">Desktop video, 9:4, MP4 or WebM.</p></td><td><p class="small">The built-in campaign film plays.</p></td></tr>
+    <tr><td><p class="h-item">Mobile video</p></td><td><p class="body">Portrait version, 3:4.</p></td><td><p class="small">The built-in mobile film plays.</p></td></tr>
+    <tr><td><p class="h-item">Desktop poster</p></td><td><p class="body">Still image, 9:4.</p></td><td><p class="small">The built-in poster.</p></td></tr>
+    <tr><td><p class="h-item">Tablet poster</p></td><td><p class="body">Still image, 16:9.</p></td><td><p class="small">Uses the desktop poster.</p></td></tr>
+    <tr><td><p class="h-item">Mobile poster</p></td><td><p class="body">Still image, 3:4.</p></td><td><p class="small">Tablet poster, then desktop.</p></td></tr>
+    <tr><td><p class="h-item">Caption / Link</p></td><td><p class="body">Text over the video; where a click goes.</p></td><td><p class="small">"new arrivals: …"; New Collection.</p></td></tr>
+  </tbody>
+</table>
+<div class="task">
+  <div class="task__head"><h3 class="h-item">A / Replace the campaign video</h3><p class="label">Home → Edit with Elementor / ~10 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Prepare a desktop (9:4) and mobile (3:4) video: MP4 H.264, no sound, sizes in appendix C.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Prepare a poster for each size: the first frame or a campaign photo with the same ratio.</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Click the hero, replace the videos and posters, fill in Caption and Link.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Press <span class="path">Update</span>, then check on a phone.</p></div></li>
+  </ol>
+</div>
+<div class="note note--accent"><p class="label">Always replace the posters too</p><p class="body">The video plays muted and loops, with a pause button. Visitors with reduced motion or data saver, or whose video fails to load, see the poster instead, so it must match the new campaign.</p></div>
+<div class="sub kwn"><span class="sec__n">05.4</span><h3 class="h-item">Editorial pair</h3></div>
+<table class="table">
+  <thead><tr><th>Field</th><th>Content</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Image order</p></td><td><p class="body">Small image first, or Large image first.</p></td></tr>
+    <tr><td><p class="h-item">Small / Large image</p></td><td><p class="body">Portrait photos, 3:4.</p></td></tr>
+    <tr><td><p class="h-item">Caption / Link</p></td><td><p class="body">Short text; where a click goes (empty: the shop page).</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">On mobile only one photo shows. Check the mobile view after replacing photos.</p>
+<div class="sub kwn"><span class="sec__n">05.5</span><h3 class="h-item">Banner</h3></div>
+<table class="table">
+  <thead><tr><th>Field</th><th>Content</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Image width</p></td><td><p class="body">Framed (inside the centre column) or Full width (screen wide).</p></td></tr>
+    <tr><td><p class="h-item">Desktop image</p></td><td><p class="body">The main image.</p></td></tr>
+    <tr><td><p class="h-item">Tablet / Mobile image</p></td><td><p class="body">Empty: uses the desktop, then the tablet image.</p></td></tr>
+    <tr><td><p class="h-item">Caption / Link</p></td><td><p class="body">Banner text; empty link goes to the Sale collection.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Wide desktop images often crop badly on phones. Fill in Mobile image with a portrait version.</p>
+<div class="sub kwn"><span class="sec__n">05.6</span><h3 class="h-item">Product row</h3></div>
+<table class="table">
+  <thead><tr><th>Field</th><th>Options</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Title</p></td><td><p class="body">Row title, e.g. "new arrivals".</p></td></tr>
+    <tr><td><p class="h-item">Show</p></td><td><p class="body">A collection, Products on sale, Featured products, Newest products, Hand-picked products.</p></td></tr>
+    <tr><td><p class="h-item">Collection / Products</p></td><td><p class="body">Appear for "A collection" and "Hand-picked". Hand-picked keeps your selection order.</p></td></tr>
+    <tr><td><p class="h-item">How many</p></td><td><p class="body">4–24 or All (not for Hand-picked).</p></td></tr>
+    <tr><td><p class="h-item">Cards per row</p></td><td><p class="body">Desktop, default 5.</p></td></tr>
+    <tr><td><p class="h-item">"View all" link</p></td><td><p class="body">Empty: the collection page.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">An empty row (e.g. a collection with no products) shows no cards. Check the product categories (07.3).</p>
+<div class="sub kwn"><span class="sec__n">05.7</span><h3 class="h-item">Text pages</h3></div>
+<p class="body kwn">FAQ, size guide, policies, contact, shipping and payment confirmation keep their text in the <span class="path">Text page</span> widget, not the regular page editor.</p>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Open the page → <span class="path">Edit with Elementor</span> → click the Text page widget.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Edit the <span class="path">Text</span> field: headings, bold, lists and links like in Word.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Choose a Layout: From the page template, Text column, Guide or Information. The title comes from the page title; <span class="path">Show</span> hides it.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Press <span class="path">Update</span>.</p></div></li>
+</ol>
+<div class="note note--accent"><p class="label">Editing the FAQ</p><p class="body">Each question is an expand/collapse block. Open the <span class="path">Text</span> (code) tab, copy an existing question block with its answer, then change the words. Questions typed freely in the Visual tab will not expand and collapse.</p></div>
+<div class="sub kwn"><span class="sec__n">05.8</span><h3 class="h-item">Creating a new page</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Pages → Add New Page</span>, enter the title (it shows on the page).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Check the URL slug on the right: lowercase with hyphens, e.g. <span class="path">care-guide</span>.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body"><span class="path">Edit with Elementor</span>, add a Text page widget from the Miroir category, fill in Text, then <span class="path">Publish</span>.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Add it to a menu (08.2). For Customer care, Size guide, Payment confirmation or Shipping information, also select it in Site Settings → Miroir → Linked pages (08.5).</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">05.9</span><h3 class="h-item">Store pages and templates</h3></div>
+<table class="table">
+  <thead><tr><th>Screen</th><th>Edited in</th><th style="width:30%">What can change</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Bag, Checkout, Account</p></td><td><p class="body">Their own pages: Bag / Checkout / Account widgets.</p></td><td><p class="small">Texts only.</p></td></tr>
+    <tr><td><p class="h-item">Product page</p></td><td><p class="body">Template "Miroir: Product page".</p></td><td><p class="small">Section switches and texts.</p></td></tr>
+    <tr><td><p class="h-item">Shop, collections</p></td><td><p class="body">Template "Miroir: Shop and collections".</p></td><td><p class="small">Filter sidebar, title bar, texts.</p></td></tr>
+    <tr><td><p class="h-item">Search, 404, Maintenance</p></td><td><p class="body">Their "Miroir: …" templates.</p></td><td><p class="small">Texts (maintenance: 11.1).</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--warn"><p class="label">Templates are shared</p><p class="body">One change to the product template applies to every product. Do not delete or rename "Miroir: …" templates.</p></div>
+
+<!-- ===== 06 Orders ===== -->
+<div class="sec" data-ch="06"><span class="sec__n">06</span><h2 class="h-sec">WhatsApp orders.</h2></div>
+<p class="body kwn">The site does not take payments. Customers send their order by WhatsApp, the order is saved in WooCommerce, and payment (bank transfer or PayPal) is confirmed in the chat. This chapter is the CS team's daily SOP.</p>
+<table class="table">
+  <thead><tr><th>Who</th><th>Flow</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Customer</p></td><td><p class="body">Choose product and size → Bag (qty, coupon) → Review (delivery details, send) → Order sent page + WhatsApp opens with the message.</p></td></tr>
+    <tr><td><p class="h-item">Store team</p></td><td><p class="body">Match the Order ref in Orders → send payment details → check proof, set Processing → ship, add tracking, set Completed.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">The order is recorded the moment the customer presses send on Review. Everything after happens in the chat and ends with a status update in WooCommerce.</p>
+<div class="sub kwn"><span class="sec__n">06.1</span><h3 class="h-item">What the customer sees</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Chooses a product and size, then <span class="path">Add to bag</span> or <span class="path">Order via WhatsApp</span> (both go to the bag).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">In the Bag: sets quantities, can enter a coupon code.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">On Review: full name, phone, country, address, postcode, province, city, optional email and notes.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Presses send. The order is saved in WooCommerce right away and the bag is emptied.</p></div></li>
+  <li><span class="n">05</span><div class="t"><p class="body">The Order sent page opens with summary, address, bank account, PayPal and a button to reopen WhatsApp. WhatsApp opens with the message filled in.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="store-product" data-crop="0,0,1440,780"></figure><p class="small muted cap">A product page: size, Add to bag and Order via WhatsApp.</p></div>
+<div class="note note--accent"><p class="label">Good to know</p><p class="body">Totals in the message and on the page exclude shipping; CS gives shipping in the chat. Sold-out products show an ask-via-WhatsApp button that does not create an order.</p></div>
+<div class="sub kwn"><span class="sec__n">06.2</span><h3 class="h-item">Reading the WhatsApp message</h3></div>
+<pre class="msg">Hi miroir, I'd like to order:
+
+1. &lt;Product&gt; — &lt;Size&gt; × &lt;Qty&gt; — &lt;Price&gt;
+
+Subtotal: &lt;subtotal&gt; (excl. shipping)
+Discount (&lt;CODE&gt;): &lt;discount&gt;
+Total: &lt;total&gt; (excl. shipping)
+
+Name: &lt;name&gt;
+Phone: &lt;phone&gt;
+Deliver to: &lt;full address&gt;
+Notes: &lt;notes&gt;
+Order ref: #&lt;order number&gt;</pre>
+<ul class="bullets">
+  <li><span class="path">Order ref: #…</span> is the key for finding the order in WooCommerce.</li>
+  <li>Discount and Total lines appear only with a coupon; Notes only when the customer wrote some.</li>
+  <li>Customers can edit the message before sending. WooCommerce data is the source of truth, not the chat text.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">06.3</span><h3 class="h-item">Daily SOP: processing a new order</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="h-item">Receive the chat</p><p class="body">Open the new chat in WhatsApp Business and note the Order ref.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="h-item">Find the order</p><p class="body"><span class="path">WooCommerce → Orders</span>, search the ref, open it. New orders are On hold.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="h-item">Check the contents</p><p class="body">Compare products, sizes, quantities and address with the chat. If they differ, follow WooCommerce or edit the order with the customer (06.5).</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="h-item">Confirm stock and shipping</p><p class="body">Check availability, calculate shipping, send the final total in the chat.</p></div></li>
+  <li><span class="n">05</span><div class="t"><p class="h-item">Send payment details</p><p class="body">Bank or PayPal, as on the Order sent page. Add shipping to the order (06.5) so the totals match.</p></div></li>
+  <li><span class="n">06</span><div class="t"><p class="h-item">Check the payment</p><p class="body">When funds arrive, set the status to Processing and keep the proof as a private note.</p></div></li>
+  <li><span class="n">07</span><div class="t"><p class="h-item">Ship</p><p class="body">Add courier and tracking number as a note to the customer, send it in the chat, set Completed.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="orders" data-crop="0,0,1440,700"></figure><p class="small muted cap">WooCommerce → Orders. Search by order number at the top right.</p></div>
+<figure class="shot" data-src="order-detail" data-crop="120,40,1320,820">
+  <span class="pin" style="left:102px;top:161px">1</span>
+  <span class="pin" style="left:333px;top:85px">2</span>
+  <span class="pin" style="left:61px;top:409px">3</span>
+  <span class="pin" style="left:475px;top:409px">4</span>
+  <span class="pin" style="left:578px;top:343px">5</span>
+  <span class="pin" style="left:646px;top:112px">6</span>
+</figure>
+<ol class="legend">
+  <li><span class="pin">1</span><div><p class="h-item">Status</p><p class="small">On hold → Processing → Completed.</p></div></li>
+  <li><span class="pin">4</span><div><p class="h-item">Recalculate</p><p class="small">After adding shipping or changing items.</p></div></li>
+  <li><span class="pin">2</span><div><p class="h-item">Billing / Shipping</p><p class="small">Pencil icon edits the address.</p></div></li>
+  <li><span class="pin">5</span><div><p class="h-item">Order notes</p><p class="small">Private notes and notes to the customer.</p></div></li>
+  <li><span class="pin">3</span><div><p class="h-item">Add item(s)</p><p class="small">Add products or a shipping line.</p></div></li>
+  <li><span class="pin">6</span><div><p class="h-item">Update</p><p class="small">Saves the order.</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">06.4</span><h3 class="h-item">Order statuses</h3></div>
+<table class="table">
+  <thead><tr><th>Status</th><th>Meaning here</th><th style="width:32%">When</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">On hold</p></td><td><p class="body">Received, waiting for chat confirmation and payment.</p></td><td><p class="small">Automatic when the customer sends (default).</p></td></tr>
+    <tr><td><p class="h-item">Pending payment</p></td><td><p class="body">Alternative starting status.</p></td><td><p class="small">Only if changed in settings (06.7).</p></td></tr>
+    <tr><td><p class="h-item">Processing</p></td><td><p class="body">Paid, being prepared.</p></td><td><p class="small">After the proof is checked.</p></td></tr>
+    <tr><td><p class="h-item">Completed</p></td><td><p class="body">Shipped.</p></td><td><p class="small">Once tracking is available.</p></td></tr>
+    <tr><td><p class="h-item">Cancelled</p></td><td><p class="body">Cancelled before payment.</p></td><td><p class="small">Customer cancels or goes silent (06.8).</p></td></tr>
+    <tr><td><p class="h-item">Refunded</p></td><td><p class="body">Money returned.</p></td><td><p class="small">After a manual refund (06.8).</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Stock is not tracked, so statuses do not change stock. A status change can email the customer if they gave an email and WooCommerce emails are on (WooCommerce → Settings → Emails).</p>
+<div class="sub kwn"><span class="sec__n">06.5</span><h3 class="h-item">Editing an order</h3></div>
+<p class="body kwn">Orders can be edited only while On hold or Pending payment. Finish all changes before Processing.</p>
+<table class="table">
+  <thead><tr><th>Change</th><th>How</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Add shipping</p></td><td><p class="body"><span class="path">Add item(s) → Add shipping</span>, name (e.g. "JNE REG") and amount, then <span class="path">Recalculate</span> and <span class="path">Update</span>.</p></td></tr>
+    <tr><td><p class="h-item">Size or quantity</p></td><td><p class="body">Pencil icon on the line, or delete it and <span class="path">Add product(s)</span> in the right size. Recalculate.</p></td></tr>
+    <tr><td><p class="h-item">Address</p></td><td><p class="body">Pencil icon in Billing / Shipping.</p></td></tr>
+    <tr><td><p class="h-item">Coupon</p></td><td><p class="body">The customer's coupon is already recorded; add another with <span class="path">Apply coupon</span>.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">After the total changes, send the new total in the chat.</p>
+<div class="sub kwn"><span class="sec__n">06.6</span><h3 class="h-item">Order notes</h3></div>
+<ul class="bullets">
+  <li><span class="path">Private note</span>: team only, e.g. "BCA transfer proof received 16/11, checked by &lt;name&gt;".</li>
+  <li><span class="path">Note to customer</span>: emailed to the customer if they gave an email. Use it for tracking numbers.</li>
+  <li>The customer's own notes from Review appear under <span class="path">Customer provided note</span>.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">06.7</span><h3 class="h-item">WhatsApp ordering settings</h3></div>
+<p class="body kwn"><span class="path">WooCommerce → Settings → WhatsApp ordering</span>. Administrator or Shop manager only.</p>
+<div class="fig"><figure class="shot" data-src="wa-settings" data-crop="120,40,1320,800"></figure><p class="small muted cap">The WhatsApp ordering tab.</p></div>
+<table class="table">
+  <thead><tr><th>Setting</th><th>Purpose</th><th style="width:34%">Notes</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">WhatsApp number</p></td><td><p class="body">Where every order message goes.</p></td><td><p class="small">Country code first, digits only (62812…). A wrong number = orders never arrive.</p></td></tr>
+    <tr><td><p class="h-item">Status of new orders</p></td><td><p class="body">Starting status.</p></td><td><p class="small">Default On hold; or Pending payment, Processing.</p></td></tr>
+    <tr><td><p class="h-item">Payment method shown</p></td><td><p class="body">Payment text on orders.</p></td><td><p class="small">"Bank transfer or PayPal after confirmation".</p></td></tr>
+    <tr><td><p class="h-item">PayPal account</p></td><td><p class="body">Shown on Order sent.</p></td><td><p class="small">Empty = hidden.</p></td></tr>
+    <tr><td><p class="h-item">Require address / city</p></td><td><p class="body">Required fields on Review.</p></td><td><p class="small">Both on by default.</p></td></tr>
+    <tr><td><p class="h-item">Open WhatsApp after</p></td><td><p class="body">Delay before WhatsApp opens; when "didn't open" help appears.</p></td><td><p class="small">800 ms; 4000 ms.</p></td></tr>
+  </tbody>
+</table>
+<div class="fig"><figure class="shot" data-src="bank-transfer" data-crop="120,40,1320,640"></figure><p class="small muted cap">WooCommerce → Settings → Payments → Direct bank transfer: only the first account shows on Order sent.</p></div>
+<div class="task">
+  <div class="task__head"><h3 class="h-item">B / Change the message wording</h3><p class="label">WhatsApp ordering → Message wording / ~5 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Each line has its own field: Greeting, Product line, Size for products without sizes, Subtotal, Discount, Total, Name, Phone, Delivery, Notes, Order reference.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Use placeholders in curly braces such as <span class="path">{name}</span>, <span class="path">{total}</span>, <span class="path">{ref}</span>; each field lists its own.</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Empty a field to restore its default. Never remove <span class="path">{ref}</span> from Order reference.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Press <span class="path">Save changes</span>, then place a test order (06.9).</p></div></li>
+  </ol>
+</div>
+<div class="sub kwn"><span class="sec__n">06.8</span><h3 class="h-item">Special cases</h3></div>
+<table class="table">
+  <thead><tr><th>Case</th><th>What to do</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Order but no chat</p></td><td><p class="body">The customer never pressed send. Contact them if there is a phone number; after 3 days with no reply, set Cancelled with a note.</p></td></tr>
+    <tr><td><p class="h-item">Chat without Order ref</p></td><td><p class="body">Probably a sold-out enquiry or typed by hand. Search Orders by name/phone; if none, treat it as an enquiry.</p></td></tr>
+    <tr><td><p class="h-item">Duplicate order</p></td><td><p class="body">Process one; cancel the other with "duplicate of #…".</p></td></tr>
+    <tr><td><p class="h-item">Customer changes items</p></td><td><p class="body">Edit the order (06.5) before Processing.</p></td></tr>
+    <tr><td><p class="h-item">Cancel before payment</p></td><td><p class="body">Set Cancelled and write the reason as a private note.</p></td></tr>
+    <tr><td><p class="h-item">Refund after payment</p></td><td><p class="body">Return the money by bank/PayPal, then <span class="path">Refund</span> on the order with the amount, without any gateway's automatic refund button.</p></td></tr>
+    <tr><td><p class="h-item">Paying in another currency</p></td><td><p class="body">The order is in the currency the customer chose. Agree amount and rate in the chat; note it privately.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">"3 days" is a proposal; set it to the store's policy.</p>
+<div class="sub kwn"><span class="sec__n">06.9</span><h3 class="h-item">Test after changing settings</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Open the store in a private window and add one product to the bag.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Fill in Review with test data (name "TEST") and send.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Check WhatsApp opens to the right number with the right message, and Order sent shows the right bank and PayPal.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">In Orders, set the test order to Cancelled, then move it to Trash.</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">06.10</span><h3 class="h-item">Customer data</h3></div>
+<ul class="bullets">
+  <li>Logged-in customers' orders appear in their account; guest orders are kept with name and phone.</li>
+  <li>Customer list: <span class="path">WooCommerce → Customers</span>. Erasure requests: <span class="path">Tools → Erase Personal Data</span> (Administrator).</li>
+  <li>Never copy customer data into group chats or shared spreadsheets.</li>
+</ul>
+
+<!-- ===== 07 Products ===== -->
+<div class="sec" data-ch="07"><span class="sec__n">07</span><h2 class="h-sec">Products &amp; media.</h2></div>
+<p class="body kwn">Products live in <span class="path">Products</span>. All prices are in IDR, stock is not tracked, and the Sale category and popular searches run on their own.</p>
+<div class="fig"><figure class="shot" data-src="products" data-crop="0,0,1440,620"></figure><p class="small muted cap">Products → All Products. The star marks featured products.</p></div>
+<div class="sub kwn"><span class="sec__n">07.1</span><h3 class="h-item">Prepare before you start</h3></div>
+<table class="table">
+  <thead><tr><th>Material</th><th>Requirement</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Name</p></td><td><p class="body">Follow existing naming, e.g. "Como Black Polka Pants".</p></td></tr>
+    <tr><td><p class="h-item">Description</p></td><td><p class="body">Fabric, cut, care, model's size.</p></td></tr>
+    <tr><td><p class="h-item">Price</p></td><td><p class="body">IDR. Other currencies are calculated (09.1).</p></td></tr>
+    <tr><td><p class="h-item">Sizes / Colour</p></td><td><p class="body">Available sizes (S / M / L); one colour from the Colour list.</p></td></tr>
+    <tr><td><p class="h-item">Photos</p></td><td><p class="body">3:4 portrait, at least 1500 × 2000 px, JPG or WebP, under 500 KB.</p></td></tr>
+    <tr><td><p class="h-item">Categories</p></td><td><p class="body">Product type + collection (07.3).</p></td></tr>
+  </tbody>
+</table>
+<div class="task">
+  <div class="task__head"><h3 class="h-item">C / Add a one-size product</h3><p class="label">Products → Add New / ~5 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Fill in name and description; in <span class="path">Product data</span> choose <span class="path">Simple product</span>.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">General: <span class="path">Regular price</span> (Sale price only when discounted, 07.4).</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Inventory: SKU if used; leave Manage stock off; Stock status = In stock. Attributes: add Colour.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Tick categories, set Product image and Product gallery, <span class="path">Preview</span>, then <span class="path">Publish</span>.</p></div></li>
+  </ol>
+</div>
+<div class="fig"><figure class="shot" data-src="product-general" data-crop="120,60,1320,820"></figure><p class="small muted cap">The product editor: Product data, categories and images.</p></div>
+<div class="task">
+  <div class="task__head"><h3 class="h-item">D / Add a product with sizes</h3><p class="label">Products → Add New / ~8 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">As task C, but choose <span class="path">Variable product</span>.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Attributes: add Colour (do not tick Used for variations). <span class="path">Add new</span> custom attribute named exactly <span class="path">Size</span>, values <span class="path">S | M | L</span>, tick Used for variations, <span class="path">Save attributes</span>.</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Variations: <span class="path">Generate variations</span>; open each and fill in Regular price. Variations without a price cannot be ordered.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body"><span class="path">Save changes</span>, then categories, photos, Preview and Publish.</p></div></li>
+  </ol>
+</div>
+<div class="fig"><figure class="shot" data-src="product-variations" data-crop="120,40,1320,640"></figure><p class="small muted cap">Variations after Generate: one per size, each with its own price.</p></div>
+<div class="sub kwn"><span class="sec__n">07.2</span><h3 class="h-item">Changing products</h3></div>
+<ul class="bullets">
+  <li><span class="path">Price</span>: open the product, change it (variable: per variation), Update. Simple products also via Quick Edit.</li>
+  <li><span class="path">New size</span>: Attributes → add to Size → Save attributes → Variations → Add variation → price.</li>
+  <li><span class="path">Many products</span>: tick them in the list → Bulk actions → Edit (categories, stock status, price).</li>
+  <li><span class="path">Similar product</span>: hover → Duplicate, change name, photos and colour; check the slug before Publish.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">07.3</span><h3 class="h-item">Categories and collections</h3></div>
+<table class="table">
+  <thead><tr><th>Group</th><th>Examples</th><th style="width:34%">Rule</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Product type</p></td><td><p class="body">Tops, Bottoms, Dress, Outerwear, Accessories.</p></td><td><p class="small">Tick one.</p></td></tr>
+    <tr><td><p class="h-item">Collection</p></td><td><p class="body">Riviera, Textura, Ligne, Holiday Edit, At the Studio, Miroir x Naluri.</p></td><td><p class="small">Tick the product's collection.</p></td></tr>
+    <tr><td><p class="h-item">Curation</p></td><td><p class="body">New Collection, Best Seller.</p></td><td><p class="small">Per campaign.</p></td></tr>
+    <tr><td><p class="h-item">Sale</p></td><td><p class="body">Sale.</p></td><td><p class="small">Never tick by hand: automatic (07.4).</p></td></tr>
+    <tr><td><p class="h-item">Shop</p></td><td><p class="body">Shop.</p></td><td><p class="small">Redirects to the main shop page.</p></td></tr>
+  </tbody>
+</table>
+<div class="fig"><figure class="shot" data-src="categories" data-crop="0,0,1440,620"></figure><p class="small muted cap">Products → Categories. Fill in Description and Thumbnail for each collection.</p></div>
+<ul class="bullets">
+  <li>New collection: Name, Parent category, Thumbnail (the social share image), <span class="path">Add new category</span>.</li>
+  <li>The shop sidebar comes from the menus Shop sidebar: categories and Shop sidebar: featured. Add new categories there (08.2).</li>
+  <li>Renaming is fine. Changing a slug changes the URL and breaks old links: ask the developer. Never sell from Uncategorized.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">07.4</span><h3 class="h-item">Sale prices and the Sale category</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Fill in <span class="path">Sale price</span> (variable: on each discounted variation). For dates, press <span class="path">Schedule</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Save. Cards show the old price struck through, and the product joins Sale while the discount runs and leaves on its own afterwards.</p></div></li>
+</ol>
+<p class="small muted">Ticking Sale by hand on a product without a sale price is undone on save. For code-based discounts use coupons (09.2).</p>
+<div class="sub kwn"><span class="sec__n">07.5</span><h3 class="h-item">Product photos</h3></div>
+<ul class="bullets">
+  <li><span class="path">Product image</span> is the main photo on cards, bag and orders; <span class="path">Product gallery</span> holds the rest. Drag to reorder.</li>
+  <li><span class="path">Show second gallery image on hover</span> (08.5) shows the first gallery photo when hovering a card.</li>
+  <li><span class="path">Product image shape</span> (default Portrait 3:4) crops every photo to that shape. Upload at the same ratio.</li>
+  <li>Turning off <span class="path">Show product photos</span> replaces every photo with a grey box. Keep it on.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">07.6</span><h3 class="h-item">Media library</h3></div>
+<div class="fig"><figure class="shot" data-src="media" data-crop="0,0,1440,640"></figure><p class="small muted cap">Media → Library.</p></div>
+<table class="table">
+  <thead><tr><th>Type</th><th>Size</th><th style="width:34%">Format / limit</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Product photo</p></td><td><p class="body">1500 × 2000 px (3:4).</p></td><td><p class="small">JPG / WebP, ± 500 KB.</p></td></tr>
+    <tr><td><p class="h-item">Banner, editorial</p></td><td><p class="body">See appendix C.</p></td><td><p class="small">JPG / WebP, ± 800 KB.</p></td></tr>
+    <tr><td><p class="h-item">Hero video</p></td><td><p class="body">Desktop 9:4, mobile 3:4.</p></td><td><p class="small">MP4 H.264, ± 5 MB / ± 1.5 MB.</p></td></tr>
+  </tbody>
+</table>
+<ul class="bullets">
+  <li>File names: descriptive, lowercase, hyphens: <span class="path">como-black-polka-pants-front.jpg</span>. Fill in Alt text.</li>
+  <li>Replacing: upload the new file and select it. Do not delete the old one until it is unused everywhere, or an empty box appears.</li>
+  <li>Compress before upload (Squoosh, TinyPNG). Limits are proposals based on the current media.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">07.7</span><h3 class="h-item">Sold out, featured, hidden</h3></div>
+<table class="table">
+  <thead><tr><th>Goal</th><th>How</th><th style="width:32%">Effect</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Sold out</p></td><td><p class="body">Inventory → Stock status = Out of stock (variable: on the size).</p></td><td><p class="small">Sold-out label; ask-via-WhatsApp button.</p></td></tr>
+    <tr><td><p class="h-item">Featured</p></td><td><p class="body">Star icon in the Products list.</p></td><td><p class="small">Used by Product row "Featured" (05.6).</p></td></tr>
+    <tr><td><p class="h-item">Hide for now</p></td><td><p class="body">Status Draft.</p></td><td><p class="small">Gone from the store; link closes.</p></td></tr>
+    <tr><td><p class="h-item">Link only</p></td><td><p class="body">Catalog visibility: Hidden.</p></td><td><p class="small">Not in listings, link works.</p></td></tr>
+    <tr><td><p class="h-item">Delete</p></td><td><p class="body">Trash (restorable for 30 days).</p></td><td><p class="small">Link becomes 404; ask for a redirect (09.5).</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Products per shop page and similar products are set in Site Settings (08.5). Popular searches are counted automatically from the last 30 days.</p>
+
+<!-- ===== 08 Header & settings ===== -->
+<div class="sec" data-ch="08"><span class="sec__n">08</span><h2 class="h-sec">Header, footer &amp; settings.</h2></div>
+<p class="body kwn">Parts shown on every page, plus store-wide settings and text, are managed in one place. A change here applies everywhere at once.</p>
+<div class="sub kwn"><span class="sec__n">08.1</span><h3 class="h-item">Opening Site Settings</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Open any page with <span class="path">Edit with Elementor</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Elementor menu (top left) → <span class="path">Site Settings</span> → <span class="path">Miroir</span>; or Global Colors, Global Fonts, Site Identity.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Change the setting, then <span class="path">Save Changes</span> at the bottom of the panel.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="site-settings-miroir" data-crop="0,0,1440,700"></figure><p class="small muted cap">Site Settings → Miroir, with the Templates group open.</p></div>
+<div class="sub kwn"><span class="sec__n">08.2</span><h3 class="h-item">Navigation menus</h3></div>
+<table class="table">
+  <thead><tr><th>Menu location</th><th>Shown in</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Header: primary links</p></td><td><p class="body">Main menu in the header.</p></td></tr>
+    <tr><td><p class="h-item">Menu panel</p></td><td><p class="body">The menu behind the hamburger button.</p></td></tr>
+    <tr><td><p class="h-item">Footer: account / policy / contact</p></td><td><p class="body">The three footer columns.</p></td></tr>
+    <tr><td><p class="h-item">Shop sidebar: categories / featured</p></td><td><p class="body">Shop sidebar groups (menu name = group title).</p></td></tr>
+  </tbody>
+</table>
+<div class="fig"><figure class="shot" data-src="menus" data-crop="0,0,1440,820"></figure><p class="small muted cap">Appearance → Menus, with Menu Settings → Menu location at the bottom.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Choose the menu in <span class="path">Select a menu to edit</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Tick pages, Product categories or Custom Links on the left → <span class="path">Add to Menu</span>.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Drag to reorder (slightly right = submenu); change <span class="path">Navigation Label</span> if needed.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body"><span class="path">Save Menu</span>, then check desktop and mobile.</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">08.3</span><h3 class="h-item">Announcement bar</h3></div>
+<div class="fig"><figure class="shot" data-src="header-template" data-crop="0,0,1440,520"></figure><p class="small muted cap">Template "Miroir: Header" with the announcement bar selected.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Templates → Saved Templates</span> → open "Miroir: Header" with Elementor.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Click the bar: change <span class="path">Text</span>, add a <span class="path">Link</span> (optional), or turn off <span class="path">Show announcement bar</span>. Update.</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">08.4</span><h3 class="h-item">Logo, header and footer</h3></div>
+<ul class="bullets">
+  <li>Logo: Site Settings → Site Identity → Site Logo (SVG or transparent PNG). Width: Navigation widget → Uploaded logo width (0 = default).</li>
+  <li>Favicon: Site Identity → Site Icon, 512 × 512 px.</li>
+  <li>Homepage navbar style (Site Settings → Miroir → Header): Transparent over hero (default) or Solid. Choose Solid when a bright film makes the white menu hard to read.</li>
+  <li>Footer: open "Miroir: Footer". Footer line ("Location : Indonesia"), Copyright and credit; column links come from the footer menus; Instagram URL from Site Settings → Miroir → Links.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">08.5</span><h3 class="h-item">Site Settings → Miroir</h3></div>
+<table class="table">
+  <thead><tr><th>Group</th><th>Key settings</th><th style="width:30%">Default</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Templates</p></td><td><p class="body">Header, footer, product, shop, search, 404, maintenance.</p></td><td><p class="small">"Miroir: …" templates</p></td></tr>
+    <tr><td><p class="h-item">Header / Links</p></td><td><p class="body">Homepage navbar style; Instagram URL.</p></td><td><p class="small">Transparent; miroirstore</p></td></tr>
+    <tr><td><p class="h-item">Text size</p></td><td><p class="body">Scale of all text, 80–140%.</p></td><td><p class="small">100%</p></td></tr>
+    <tr><td><p class="h-item">Layout &amp; spacing</p></td><td><p class="body">Margins, spacing, columns per device, products per page.</p></td><td><p class="small">4 / 3 / 2; 12</p></td></tr>
+    <tr><td><p class="h-item">Products</p></td><td><p class="body">Image shape, photos on/off, hover photo, similar products, size guide link.</p></td><td><p class="small">3:4; on; off; 4; off</p></td></tr>
+    <tr><td><p class="h-item">Linked pages</p></td><td><p class="body">Customer care, Size guide, Payment confirmation, Shipping information.</p></td><td><p class="small">/contact/, /size-guide/ …</p></td></tr>
+    <tr><td><p class="h-item">Maintenance</p></td><td><p class="body">Maintenance mode on/off.</p></td><td><p class="small">Off (11.1)</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Layout numbers follow the design. Change them only on a design request, and note the old values first.</p>
+<div class="sub kwn"><span class="sec__n">08.6</span><h3 class="h-item">Store text and labels</h3></div>
+<p class="body kwn">All small text (buttons, panel titles, empty states, Order sent text, SEO descriptions) is edited without code in <span class="path">Site Settings → Miroir → Labels: …</span>.</p>
+<div class="fig"><figure class="shot" data-src="site-settings-labels" data-crop="0,0,1100,640"></figure><p class="small muted cap">Labels groups in Site Settings → Miroir.</p></div>
+<table class="table">
+  <thead><tr><th>Label group</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Header &amp; menu, Search</p></td><td><p class="body">Menu buttons, search placeholder.</p></td></tr>
+    <tr><td><p class="h-item">Shop, Empty results</p></td><td><p class="body">Listing titles, "no results" text.</p></td></tr>
+    <tr><td><p class="h-item">Product page, states</p></td><td><p class="body">Buy button, "sold out", "added to bag".</p></td></tr>
+    <tr><td><p class="h-item">Bag, Checkout, Order sent</p></td><td><p class="body">Form labels, payment text, bank lines.</p></td></tr>
+    <tr><td><p class="h-item">404, Maintenance, Staging</p></td><td><p class="body">Titles and text of special pages.</p></td></tr>
+    <tr><td><p class="h-item">Search engines</p></td><td><p class="body">Home and collection descriptions for Google (09.4).</p></td></tr>
+  </tbody>
+</table>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Open the group and find the field. The current text shows faded inside it.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Type the new text; empty the field to restore the default. Save, then check the page.</p></div></li>
+</ol>
+<div class="note note--warn"><p class="label">Keep the codes</p><p class="body">Text with <span class="path">%s</span>, <span class="path">%d</span> or <span class="path">%1$d</span> must keep the same codes: they are replaced with a name, number or price. If one is missing, the store falls back to the default text.</p></div>
+<div class="sub kwn"><span class="sec__n">08.7</span><h3 class="h-item">Colours and fonts</h3></div>
+<ul class="bullets">
+  <li>Site Settings → Global Colors / Global Fonts: the "miroir_*" entries are used everywhere. Change them only per the brand guideline, and note old values first.</li>
+  <li>The Avenir font is licensed and installed by the developer; do not upload a replacement.</li>
+  <li>If Elementor is ever inactive, the same settings are in Appearance → Customize → Miroir theme and Text &amp; labels.</li>
+</ul>
+
+<!-- ===== 09 Prices ===== -->
+<div class="sec" data-ch="09"><span class="sec__n">09</span><h2 class="h-sec">Prices, promos &amp; SEO.</h2></div>
+<p class="body kwn">Prices are stored in IDR and converted to USD, SGD and MYR with manual rates. Discounts use Sale price or coupons, shipping is agreed in the chat, and basic SEO is generated by the theme.</p>
+<div class="sub kwn"><span class="sec__n">09.1</span><h3 class="h-item">Currencies and exchange rates</h3></div>
+<div class="fig"><figure class="shot" data-src="currency" data-crop="120,60,1320,760"></figure><p class="small muted cap">WooCommerce → WooCommerce Multilingual &amp; Multicurrency → Multicurrency. The pencil edits a rate.</p></div>
+<ul class="bullets">
+  <li>Customers switch currency in the header; everyone starts in IDR. Enter prices in IDR only; others are calculated without rounding.</li>
+  <li>Rates do not update by themselves. The developer fetches ECB rates on request, or edit the rate (1 IDR = …) here and save.</li>
+  <li>Check rates monthly or when the rupiah moves sharply. Orders keep the customer's currency; payment is agreed in the chat.</li>
+</ul>
+<div class="note note--warn"><p class="label">Warning</p><p class="body">Do not add or remove currencies, or change the base currency in WooCommerce → Settings → General. It changes every price and goes through the developer.</p></div>
+<div class="sub kwn"><span class="sec__n">09.2</span><h3 class="h-item">Coupons</h3></div>
+<div class="fig"><figure class="shot" data-src="coupon" data-crop="120,40,1320,560"></figure><p class="small muted cap">Marketing → Coupons → a coupon's General tab.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Marketing → Coupons → Add coupon</span>; type the code customers use, e.g. <span class="path">MIROIR10</span> (not case-sensitive).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">General: Discount type (Percentage, Fixed cart, Fixed product), amount, expiry date.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Usage restriction: minimum spend, products or categories, <span class="path">Exclude sale items</span>. Usage limits: total and per customer.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body"><span class="path">Publish</span>, then test it in the store (06.9) before announcing.</p></div></li>
+</ol>
+<p class="small muted">Per-customer limits use email, so guests without email are hard to limit. Fixed amounts are in IDR and converted. Stop a coupon with Draft or an end date, never by deleting it.</p>
+<div class="sub kwn"><span class="sec__n">09.3</span><h3 class="h-item">Shipping, price format and tax</h3></div>
+<ul class="bullets">
+  <li>Shipping is not calculated on the site; totals say "excl. shipping". CS adds it to the order (06.5).</li>
+  <li>Countries on Review come from WooCommerce → Settings → General → Selling and Shipping location(s). Shipping zones are not used by the WhatsApp flow.</li>
+  <li>Keep an internal shipping table (courier, destination, weight, rate) for CS, outside the site.</li>
+  <li>Currency IDR with no decimals; do not change. Tax (Tax tab) is the owner's or accountant's decision; recheck prices if it changes.</li>
+</ul>
+<p class="small muted">Local values: tax on, all countries selectable. Match against live before handover.</p>
+<div class="sub kwn"><span class="sec__n">09.4</span><h3 class="h-item">SEO</h3></div>
+<table class="table">
+  <thead><tr><th>Page</th><th>Google description from</th><th style="width:28%">Share image from</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Home</p></td><td><p class="body">Label Search engines → Home page description (08.6).</p></td><td><p class="small">Built-in campaign poster.</p></td></tr>
+    <tr><td><p class="h-item">Product</p></td><td><p class="body">Short description, else description, else default text.</p></td><td><p class="small">Main product photo.</p></td></tr>
+    <tr><td><p class="h-item">Collection</p></td><td><p class="body">Category Description, else default with the collection name.</p></td><td><p class="small">Category Thumbnail.</p></td></tr>
+    <tr><td><p class="h-item">Text page</p></td><td><p class="body">Page Excerpt, else the page content.</p></td><td><p class="small">Featured image.</p></td></tr>
+  </tbody>
+</table>
+<div class="dodont">
+  <div class="do"><p class="label">Do</p><ul>
+    <li>Clear names: type, colour, feature.</li>
+    <li>Short description of 1–2 sentences, about 150 characters.</li>
+    <li>Description and Thumbnail on every collection; alt text on photos.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Avoid</p><ul>
+    <li>Installing Yoast, Rank Math or another SEO plugin without the developer: it switches off the theme's SEO.</li>
+    <li>Worrying about filter, sort or currency pages: they are kept out of Google automatically.</li>
+  </ul></div>
+</div>
+<div class="sub kwn"><span class="sec__n">09.5</span><h3 class="h-item">Old links and integrations</h3></div>
+<ul class="bullets">
+  <li>Old miroir.id links without a new page redirect (301) automatically, and only when they would otherwise 404. There is no redirect screen: send old and new addresses to the developer.</li>
+  <li>TikTok for Business: active, Marketing → TikTok (pixel and catalog). Google Listings &amp; Ads: installed, inactive; activate with the developer.</li>
+  <li>Instagram: link only (Site Settings → Miroir → Links). Search Console: recommended; record the access holder in appendix D.</li>
+  <li>Connecting or disconnecting an integration can affect running ads. Leave it to the account holder.</li>
+</ul>
+
+<!-- ===== 10 Workflow ===== -->
+<div class="sec" data-ch="10"><span class="sec__n">10</span><h2 class="h-sec">Publishing &amp; backup.</h2></div>
+<p class="body kwn">The client team edits all content directly on live. Staging is only for the developer to test code and to preview new features with you before release.</p>
+<div class="sub kwn"><span class="sec__n">10.1</span><h3 class="h-item">Editing on live</h3></div>
+<div class="dodont">
+  <div class="do"><p class="label">Do</p><ul>
+    <li>Small changes: edit, Update, then open the page in a new tab to check.</li>
+    <li>Big changes: prepare with Save Draft or Elementor Preview; publish after checking desktop and phone.</li>
+    <li>Risky changes (home hero, main menu) outside busy order hours.</li>
+    <li>Log big changes (who, when, what) in the team chat.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Avoid</p><ul>
+    <li>Two people on one page. If WordPress says "… is currently editing", wait.</li>
+    <li>Real content work on any address starting with <span class="path">staging.</span></li>
+  </ul></div>
+</div>
+<div class="sub kwn"><span class="sec__n">10.2</span><h3 class="h-item">Staging and previews</h3></div>
+<ul class="bullets">
+  <li>Staging (staging.miroir.id) is the developer's copy for testing code and showing you new features.</li>
+  <li>Content edits there never move to live, and can be overwritten when the developer recopies live data.</li>
+  <li>It sends no email and its WhatsApp number is a sample, so test orders never reach the team. It is hidden from Google.</li>
+  <li>Guests enter a shared password (remembered 30 days); Administrators pass. Set in Settings → Staging access. Changing it signs every guest out; 10 wrong tries lock for 15 minutes.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">10.3</span><h3 class="h-item">Updates from the developer</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">The developer sends the change to staging and tells you what to check.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">You check on staging with the list below and approve in writing in the chat.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">The developer releases to live (needs approval in GitHub), the cache clears, you check once more on live.</p></div></li>
+</ol>
+<ul class="bullets">
+  <li>The pages mentioned look right on desktop and phone; home, one collection and one product are normal.</li>
+  <li>Order flow works: bag → checkout → review → order sent (staging WhatsApp goes to a sample number).</li>
+  <li>Changed text has no typos; switching IDR/USD/SGD/MYR still works.</li>
+</ul>
+<p class="small muted">A release copies code only. Live products, pages and orders are never touched.</p>
+<div class="sub kwn"><span class="sec__n">10.4</span><h3 class="h-item">Scheduling and revisions</h3></div>
+<p class="body kwn">Schedule: in the Publish box click <span class="path">Immediately</span>, choose date and time, press <span class="path">Schedule</span>. Times use Settings → General → Timezone (Jakarta).</p>
+<div class="fig"><figure class="shot" data-src="elementor-history" data-crop="0,0,1440,700"></figure><p class="small muted cap">Elementor → History → Revisions: choose a version and Apply.</p></div>
+<table class="table">
+  <thead><tr><th>What changed</th><th>How to go back</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Elementor page or template</p></td><td><p class="body">History (clock) → Revisions → choose → Apply → Update.</p></td></tr>
+    <tr><td><p class="h-item">Product / regular page</p></td><td><p class="body">Revisions in the right panel → Restore This Revision.</p></td></tr>
+    <tr><td><p class="h-item">Settings and labels</p></td><td><p class="body">No history. Note old values before changing.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Revisions do not store variation prices or stock.</p>
+<div class="sub kwn"><span class="sec__n">10.5</span><h3 class="h-item">Backup and restore</h3></div>
+<ul class="bullets">
+  <li>Hostinger keeps regular backups (files and database) in hPanel → Websites → miroir.id → Files → Backups. Frequency depends on the plan.</li>
+  <li>Before big changes (plugin updates, deleting many products, rebuilding the home page) ask for a manual backup.</li>
+  <li>Restore only by the developer or hPanel owner. It returns the whole site to that point: later orders and changes are lost, so note them first. For one page, use Revisions.</li>
+  <li>Never put backup files (.zip, .sql) in the site folder or behind a public link.</li>
+</ul>
+
+<!-- ===== 11 Maintenance ===== -->
+<div class="sec" data-ch="11"><span class="sec__n">11</span><h2 class="h-sec">Maintenance &amp; security.</h2></div>
+<div class="sub kwn"><span class="sec__n">11.1</span><h3 class="h-item">Maintenance mode</h3></div>
+<p class="body kwn">Closes the store to visitors with a "back soon" page: for big fixes, migrations or a closure such as a long holiday.</p>
+<div class="fig"><figure class="shot" data-src="site-settings-maintenance" data-crop="0,0,1100,520"></figure><p class="small muted cap">Site Settings → Miroir → Maintenance.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Site Settings → Miroir → <span class="path">Maintenance</span> (or Appearance → Customize).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Choose <span class="path">On: visitors see the maintenance page</span> or <span class="path">Off: store is open</span>, then save.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">When done, turn it off and open the store in a private window to check.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot" data-src="store-maintenance" data-crop="0,0,1440,760"></figure><p class="small muted cap">What visitors see while maintenance is on.</p></div>
+<table class="table">
+  <thead><tr><th>Who</th><th>Sees</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Visitors</p></td><td><p class="body">The maintenance page. Google is told it is temporary (503), so rankings hold unless it stays on for days.</p></td></tr>
+    <tr><td><p class="h-item">Administrators</p></td><td><p class="body">The normal store.</p></td></tr>
+    <tr><td><p class="h-item">Shop manager / Editor</p></td><td><p class="body">The maintenance page.</p></td></tr>
+    <tr><td><p class="h-item">Preview link holders</p></td><td><p class="body">The normal store, 30 days per browser. The developer creates and revokes these links.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Page text: Site Settings → Miroir → Labels: Maintenance page. Preview it without switching on: store address + <span class="path">?miroir-maintenance-preview</span> (Administrator).</p>
+<div class="sub kwn"><span class="sec__n">11.2</span><h3 class="h-item">Updates</h3></div>
+<table class="table">
+  <thead><tr><th>Component</th><th>Who</th><th style="width:36%">Notes</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">WordPress minor</p></td><td><p class="body">Automatic.</p></td><td><p class="small">No action.</p></td></tr>
+    <tr><td><p class="h-item">WordPress major, WooCommerce, Elementor, Multilingual</p></td><td><p class="body">Developer.</p></td><td><p class="small">Most likely to clash; tested on staging.</p></td></tr>
+    <tr><td><p class="h-item">TikTok, Google Listings</p></td><td><p class="body">Administrator, after telling the developer.</p></td><td><p class="small">Usually safe.</p></td></tr>
+    <tr><td><p class="h-item">Miroir theme and plugins</p></td><td><p class="body">Developer only.</p></td><td><p class="small">Arrive with a release (10.3).</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--warn"><p class="label">Red flag</p><p class="body">If WordPress offers an "update" for the Miroir theme or a Miroir plugin from an outside source, do not click it. Report it to the developer.</p></div>
+<div class="sub kwn"><span class="sec__n">11.3</span><h3 class="h-item">Plugins and security</h3></div>
+<ul class="bullets">
+  <li>New plugins only after the developer approves: cache, SEO, popup, chat and image plugins often clash with the theme and the WhatsApp flow. Send name, business need and link.</li>
+  <li>Never deactivate or delete Elementor, WooCommerce, WooCommerce Multilingual or the Miroir plugins.</li>
+  <li>Unknown Administrator in Users: report it at once, do not delete it yet.</li>
+  <li>"WordPress", "Hostinger" or "WooCommerce" emails asking you to log in via a link are almost always fake.</li>
+  <li>Never install themes or plugins from .zip files sent by others or "nulled" sites. Key access (hPanel, Cloudflare, GitHub, WhatsApp Business) stays with the owner.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">11.4</span><h3 class="h-item">Cache and speed</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Change not showing? Check you pressed Update and are on live, not staging.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Open it in a private window or press <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span>; wait 5–10 minutes.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Still old: hPanel → Websites → miroir.id → Performance → CDN → <span class="path">Flush cache</span>, or ask the developer.</p></div></li>
+</ol>
+<p class="small muted">Keep it fast: follow file limits (appendix C), keep hero films 10–20 seconds and silent, avoid stacking many product rows or banners, delete unused media.</p>
+<div class="sub kwn"><span class="sec__n">11.5</span><h3 class="h-item">Routine checklist</h3></div>
+<table class="table">
+  <thead><tr><th>When</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Daily</p></td><td><p class="body">Match new orders with WhatsApp chats (06.3). Move paid orders to Processing, shipped to Completed.</p></td></tr>
+    <tr><td><p class="h-item">Weekly</p></td><td><p class="body">Orders hanging over 3 days (06.8); sold-out items marked (07.7); expired coupons (09.2).</p></td></tr>
+    <tr><td><p class="h-item">Monthly</p></td><td><p class="body">Users and roles; currency rates (09.1); latest backup exists (10.5); plugin update status; one test order from a phone (06.9).</p></td></tr>
+    <tr><td><p class="h-item">Per campaign</p></td><td><p class="body">Hero film and posters, banners, editorial (05); announcement bar and menus (08); sale prices and coupons; check on a phone before announcing.</p></td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 12 Troubleshooting ===== -->
+<div class="sec" data-ch="12"><span class="sec__n">12</span><h2 class="h-sec">Troubleshooting.</h2></div>
+<p class="body kwn">Find the symptom and try the fix. If it is still wrong, contact the developer with the details listed at the end of this chapter.</p>
+<table class="table">
+  <thead><tr><th>If this happens</th><th>Try this</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Change not showing</p></td><td><p class="body">Check Update was pressed and you are not on <span class="path">staging.</span>; private window; wait 10 minutes; flush the CDN (11.4).</p></td></tr>
+    <tr><td><p class="h-item">Layout broken after an edit</p></td><td><p class="body">History → Revisions → Apply the version before it broke (10.4).</p></td></tr>
+    <tr><td><p class="h-item">White page or "critical error"</p></td><td><p class="body">Change nothing else. Note the time and your last step; contact the developer at once.</p></td></tr>
+    <tr><td><p class="h-item">Header or footer missing</p></td><td><p class="body">Check Site Settings → Miroir → Templates (08.1).</p></td></tr>
+    <tr><td><p class="h-item">Home film not playing</p></td><td><p class="body">Normal on power-saving phones; otherwise use a smaller MP4 (05.3). The poster still shows.</p></td></tr>
+    <tr><td><p class="h-item">Photo blurry or cropped</p></td><td><p class="body">Re-upload at 3:4 and full size (07.5, appendix C).</p></td></tr>
+    <tr><td><p class="h-item">Label reverted to default</p></td><td><p class="body">A %s or %d code was removed. Edit it back in (08.6).</p></td></tr>
+    <tr><td><p class="h-item">Menu not changing</p></td><td><p class="body">Check Appearance → Menus → Manage Locations (08.2).</p></td></tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead><tr><th>If this happens</th><th>Try this</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Product not in a collection</p></td><td><p class="body">Category ticked, status Published, Catalog visibility not Hidden (07.3).</p></td></tr>
+    <tr><td><p class="h-item">Product in or out of Sale</p></td><td><p class="body">Normal: Sale follows the sale price and its dates (07.4).</p></td></tr>
+    <tr><td><p class="h-item">Size cannot be chosen</p></td><td><p class="body">That variation has no price or is Out of stock (07.7).</p></td></tr>
+    <tr><td><p class="h-item">USD/SGD/MYR look wrong</p></td><td><p class="body">Check the rates (09.1); ask the developer for new ones.</p></td></tr>
+    <tr><td><p class="h-item">WhatsApp does not open</p></td><td><p class="body">Check the number (06.7). Order sent has a button to reopen the chat.</p></td></tr>
+    <tr><td><p class="h-item">Order without chat, or chat without order</p></td><td><p class="body">Follow the special cases in 06.8.</p></td></tr>
+    <tr><td><p class="h-item">Message looks odd</p></td><td><p class="body">A placeholder was removed: empty the field to restore it (06.7).</p></td></tr>
+    <tr><td><p class="h-item">Wrong bank account shown</p></td><td><p class="body">Reorder accounts in Direct bank transfer: the first one shows (06.7).</p></td></tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead><tr><th>If this happens</th><th>Try this</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Cannot log in</p></td><td><p class="body">Lost your password?; ask an Administrator to check the account (03.4). Escalate if no reset email arrives.</p></td></tr>
+    <tr><td><p class="h-item">Menus missing in admin</p></td><td><p class="body">Your role changed; ask an Administrator (03.2).</p></td></tr>
+    <tr><td><p class="h-item">Store shows maintenance</p></td><td><p class="body">Still on, or you are a Shop manager/Editor. An Administrator turns it off (11.1).</p></td></tr>
+    <tr><td><p class="h-item">Old link opens 404</p></td><td><p class="body">Send the full URL to the developer for a redirect (09.5).</p></td></tr>
+    <tr><td><p class="h-item">Wrong share title or image</p></td><td><p class="body">Fill in image and description (09.4); WhatsApp/Instagram may cache the old preview for a while.</p></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">12.1</span><h3 class="h-item">Who to contact</h3></div>
+<table class="table">
+  <thead><tr><th>Problem</th><th>Contact</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Site errors, layout, order flow</p></td><td><p class="body">Developer, also for redirects, rates and plugin updates (appendix E).</p></td></tr>
+    <tr><td><p class="h-item">Hosting down, domain, SSL, backups</p></td><td><p class="body">hPanel owner → Hostinger support (live chat in hPanel).</p></td></tr>
+    <tr><td><p class="h-item">WhatsApp Business blocked</p></td><td><p class="body">The WhatsApp account owner, in the WhatsApp Business app.</p></td></tr>
+    <tr><td><p class="h-item">Admin account compromised</p></td><td><p class="body">Developer and hPanel owner, immediately, by phone.</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">When you report a problem, send</p><p class="body">The page URL; a screenshot or recording with the full error; time and device; the last thing you did before it happened; and the impact: customers cannot order (urgent) or visual only (can wait). Never send passwords in chat.</p></div>
+
+<!-- ===== 13 Appendices ===== -->
+<div class="sec" data-ch="13"><span class="sec__n">13</span><h2 class="h-sec">Appendices.</h2></div>
+<div class="sub kwn"><span class="sec__n">A</span><h3 class="h-item">Glossary</h3></div>
+<table class="table">
+  <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">wp-admin / Dashboard</p></td><td><p class="body">The back end of the site, opened after logging in.</p></td></tr>
+    <tr><td><p class="h-item">Template</p></td><td><p class="body">Design of a part used on many pages ("Miroir: …").</p></td></tr>
+    <tr><td><p class="h-item">Widget</p></td><td><p class="body">One content block in Elementor, e.g. Product row.</p></td></tr>
+    <tr><td><p class="h-item">Site Settings</p></td><td><p class="body">Elementor's global settings; tab Miroir holds the theme's.</p></td></tr>
+    <tr><td><p class="h-item">Slug</p></td><td><p class="body">The address part after the domain, e.g. new-collection.</p></td></tr>
+    <tr><td><p class="h-item">Attribute / variation</p></td><td><p class="body">An option like Size; a buyable combination with its own price.</p></td></tr>
+    <tr><td><p class="h-item">Placeholder</p></td><td><p class="body">A code like {name} or %s replaced automatically.</p></td></tr>
+    <tr><td><p class="h-item">Live / staging / release</p></td><td><p class="body">The real store; the developer's test copy; sending new code.</p></td></tr>
+    <tr><td><p class="h-item">Cache / CDN</p></td><td><p class="body">Stored copies that make the site fast and can delay changes.</p></td></tr>
+    <tr><td><p class="h-item">301 redirect</p></td><td><p class="body">A permanent forward from an old address to a new one.</p></td></tr>
+    <tr><td><p class="h-item">Revision</p></td><td><p class="body">An earlier saved version that can be restored.</p></td></tr>
+    <tr><td><p class="h-item">hPanel</p></td><td><p class="body">Hostinger's control panel.</p></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">B</span><h3 class="h-item">Menu map</h3></div>
+<table class="table">
+  <thead><tr><th>Task</th><th>Menu</th><th style="width:14%">See</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Staff accounts</p></td><td><p class="body">Users</p></td><td><p class="body">03</p></td></tr>
+    <tr><td><p class="h-item">Process orders</p></td><td><p class="body">WooCommerce → Orders</p></td><td><p class="body">06.3</p></td></tr>
+    <tr><td><p class="h-item">WhatsApp number, wording</p></td><td><p class="body">WooCommerce → Settings → WhatsApp ordering</p></td><td><p class="body">06.7</p></td></tr>
+    <tr><td><p class="h-item">Bank account</p></td><td><p class="body">Settings → Payments → Direct bank transfer</p></td><td><p class="body">06.7</p></td></tr>
+    <tr><td><p class="h-item">Add or edit products</p></td><td><p class="body">Products → Add New / Edit</p></td><td><p class="body">07</p></td></tr>
+    <tr><td><p class="h-item">Categories</p></td><td><p class="body">Products → Categories</p></td><td><p class="body">07.3</p></td></tr>
+    <tr><td><p class="h-item">Photos and videos</p></td><td><p class="body">Media → Library</p></td><td><p class="body">07.6</p></td></tr>
+    <tr><td><p class="h-item">Home page, banners</p></td><td><p class="body">Pages → Edit with Elementor</p></td><td><p class="body">05</p></td></tr>
+    <tr><td><p class="h-item">Menus</p></td><td><p class="body">Appearance → Menus</p></td><td><p class="body">08.2</p></td></tr>
+    <tr><td><p class="h-item">Settings, labels, maintenance</p></td><td><p class="body">Site Settings → Miroir</p></td><td><p class="body">08, 11.1</p></td></tr>
+    <tr><td><p class="h-item">Rates, coupons</p></td><td><p class="body">WCML → Multi-currency; Marketing → Coupons</p></td><td><p class="body">09</p></td></tr>
+    <tr><td><p class="h-item">Backup, cache</p></td><td><p class="body">hPanel</p></td><td><p class="body">10.5, 11.4</p></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">C</span><h3 class="h-item">Asset specifications</h3></div>
+<table class="table">
+  <thead><tr><th>Asset</th><th>Ratio / size</th><th style="width:34%">Format</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Product photo</p></td><td><p class="body">3:4, 1500 × 2000 px</p></td><td><p class="small">JPG/WebP, &lt; 500 KB</p></td></tr>
+    <tr><td><p class="h-item">Hero video desktop / mobile</p></td><td><p class="body">9:4, ≥ 1920 px wide / 3:4, ≥ 1080 px</p></td><td><p class="small">MP4 H.264, silent, ± 5 / 1.5 MB</p></td></tr>
+    <tr><td><p class="h-item">Hero posters</p></td><td><p class="body">9:4 1440 × 640+; 16:9 1920 × 1080; 3:4 1080 × 1440</p></td><td><p class="small">JPG/WebP</p></td></tr>
+    <tr><td><p class="h-item">Editorial pair</p></td><td><p class="body">3:4, 1500 × 2000 px</p></td><td><p class="small">JPG/WebP</p></td></tr>
+    <tr><td><p class="h-item">Banner</p></td><td><p class="body">Desktop ≥ 1920 px wide, plus tablet and mobile versions</p></td><td><p class="small">JPG/WebP, ± 800 KB</p></td></tr>
+    <tr><td><p class="h-item">Logo / favicon</p></td><td><p class="body">Miroir logo file / 512 × 512 px</p></td><td><p class="small">SVG or PNG / PNG</p></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">D</span><h3 class="h-item">Access holders</h3></div>
+<p class="small muted kwn">Filled in by the client: holder and where it is stored only. Passwords are never written here.</p>
+<table class="table fill">
+  <thead><tr><th>Access</th><th>Main holder</th><th>Backup</th><th>Stored in</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">WordPress Administrator</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">Hostinger hPanel</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">Cloudflare DNS</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">WhatsApp Business</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">GitHub</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">TikTok for Business</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">Google</p></td><td></td><td></td><td></td></tr>
+    <tr><td><p class="h-item">Staging preview</p></td><td></td><td></td><td></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">E</span><h3 class="h-item">Support &amp; handover</h3></div>
+<div class="band">
+  <div><p class="label">Contact</p><p class="lead"><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></p></div>
+  <div><p class="label">Reply within</p><p class="h-fact">1 working day</p></div>
+  <div><p class="label">Support until</p><p class="h-fact accent">20 December 2026</p></div>
+</div>
+<ul class="bullets">
+  <li>Included: bug fixes within the agreed scope, security and plugin updates, small text or image changes.</li>
+  <li>Not included: new pages, features or integrations; these are quoted separately.</li>
+  <li>Emergencies (site down, orders cannot be placed): WhatsApp at +62 813-2176-6565, with an initial response within 2 hours during working hours.</li>
+  <li>Hostinger support: live chat in hPanel, by the account owner.</li>
+</ul>
+<div class="gap-12 kwn">
+  <p class="lead">By signing below, both parties confirm that access, training and this guide have been handed over.</p>
+</div>
+<div class="sign">
+  <div class="party"><p class="label">Service provider</p><p class="h-name">Jamal Akbar Alam</p><p class="small muted">UI/UX Designer &amp; Web Developer</p><div class="sign__line"></div><p class="small">Jamal Akbar Alam / Date</p></div>
+  <div class="party"><p class="label">Client</p><p class="h-name">Miroir</p><p class="small muted">Kania</p><div class="sign__line"></div><p class="small">Kania / Date</p></div>
+</div>
