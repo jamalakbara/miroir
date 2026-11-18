@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 70 (proposed 48, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 232 (final 232)
+- handoff: 233 (final 233)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-nfbd6yt5 2026-11-18 (agent:codex) — Done: Added the supplied emergency WhatsApp contact to the support section; rebuilt 61 pages and 389 Pen assets; verified page 61; PDF export not run. · Next: User can define support working hours/ti…
 - hnd-v6248pdg 2026-11-18 (agent:codex) — Done: Reviewed the 61-page manual guide in the open miroir.pen canvas and rendered a full contact sheet from docs/manual/manual-guide.html. Confirmed 61 A4 frames, consistent page order/layout, and a…
 - hnd-3vm0xkrf 2026-11-16 (agent:claude-code:opus-5.5) — Done: Built the English client manual in miroir.pen following the jamalakbara manual-guide template: 61 A4 frames (Manual guide / 01..61) at y=53200, 27 local screenshots (privacy scrubbed, pinned le…
 - hnd-7y4k7cgn 2026-11-16 (agent:claude-code:opus-5.5) — Done: Created English version of the client manual as a separate Claude Doc (Manual Book - Managing the Miroir Website in WordPress): Chapters 0-12 fully translated, order-flow diagram redrawn with E…
 - hnd-3rd4feq8 2026-11-16 (agent:claude-code:opus-5.5) — Done: Client manual doc: Bab 1 (components table, environments, responsibility split, do-not-touch list), Bab 3 (dashboard tour, Elementor basics, three settings places, safe rules) and Bab 12 (gloss…
-- hnd-mt2h688z 2026-11-16 (agent:claude-code:opus-5.5) — Done: Client manual doc: Bab 9 (live editing, staging role, staging access, release flow + preview checklist, schedule/revisions, Hostinger backup/restore), Bab 10 (maintenance mode incl. who bypasse…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
