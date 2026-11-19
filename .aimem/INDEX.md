@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 70 (proposed 48, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 246 (final 246)
+- handoff: 248 (final 248)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-hyyk9t7s 2026-11-19 (agent:claude-code:opus-5.5) — Done: Site tagline (blogdescription) changed from 'Everyday womenswear' to 'Modern & vintage shades' on local, staging and live via WP-CLI; live home title verified. miroir-demo configure_store defau…
+- hnd-b49v7sfa 2026-11-18 (human:akbar) — Done: Checked docs folder Git status after push: tracked docs are clean and development matches origin; private quotation and licensed fonts remain ignored. · Next: Check editor Problems or Source Co…
 - hnd-jy87z392 2026-11-18 (human:akbar) — Done: Prepared remaining untracked manual artwork revisions and review files under docs for commit as requested. · Next: Commit and push remaining docs files to development.
 - hnd-qq4ncpjd 2026-11-18 (human:akbar) — Done: Prepared English and Indonesian manual updates, design assets and project handoffs for commit to development. · Next: Commit the manual changes and push development.
 - hnd-8yehzq2z 2026-11-18 (human:akbar) — Done: Second proofreading pass over docs/manual-id/content.html (fixed leftovers: Login headings, menu names, corrupted 07.2 bullets, English captions, order legend, th labels). Fixed broken screensh…
-- hnd-rhjate4n 2026-11-18 (human:akbar) — Done: Rewrote Indonesian manual (docs/manual-id/content.html + build.mjs cover) into natural Indonesian, keeping UI terms/widget names in English (Dashboard, Site Settings, Order sent, developer, pas…
-- hnd-zsnnjp9p 2026-11-18 (human:akbar) — Done: Reviewed Indonesian manual text across all 13 chapters, corrected major translation and UI-label errors, translated remaining English instructions, rebuilt 62 pages and synchronized Pencil fram…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
