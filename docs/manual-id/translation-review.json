@@ -1,0 +1,4074 @@
+[
+  {
+    "en": "About this guide.",
+    "id": "Tentang panduan ini."
+  },
+  {
+    "en": "This guide shows the Miroir team how to run miroir.id day to day without a developer: signing in, finding your way around the dashboard, handling WhatsApp orders, and keeping products, pages and campaigns up to date.",
+    "id": "Panduan ini menunjukkan kepada tim Miroir cara menjalankan QZP000QZ sehari-hari tanpa pengembang: masuk, menjelajahi dasbor, menangani pesanan WhatsApp, dan selalu memperbarui produk, halaman, dan kampanye."
+  },
+  {
+    "en": "Each task is written as short, numbered steps. Menu and button names, such as <span class=\"path\">Publish</span>, match the labels you see on screen. If something does not look the way this guide describes, check the troubleshooting chapter first, then contact me.",
+    "id": "Setiap tugas ditulis sebagai langkah pendek dan bernomor. Nama menu dan tombol, seperti QZP000QZ, cocok dengan label yang Anda lihat di layar. Jika ada yang tidak sesuai dengan penjelasan panduan ini, periksa bab pemecahan masalah terlebih dahulu, lalu hubungi saya."
+  },
+  {
+    "en": "Reader",
+    "id": "Pembaca"
+  },
+  {
+    "en": "Read these chapters",
+    "id": "Bacalah bab-bab ini"
+  },
+  {
+    "en": "Store admin",
+    "id": "Admin toko"
+  },
+  {
+    "en": "Owner or ops lead. Every chapter.",
+    "id": "Pemilik atau pimpinan operasi. Setiap bab."
+  },
+  {
+    "en": "Content / marketing",
+    "id": "Konten / pemasaran"
+  },
+  {
+    "en": "Chapters 04 Dashboard, 05 Pages, 07 Products, 08 Header & settings, 09 Prices & SEO.",
+    "id": "Bab 04 Dasbor, 05 Halaman, 07 Produk, 08 Header & Pengaturan, 09 Harga & SEO."
+  },
+  {
+    "en": "CS / order handler",
+    "id": "CS/penanganan pesanan"
+  },
+  {
+    "en": "Chapters 06 WhatsApp orders and 07 Products.",
+    "id": "Bab 06 Pesanan WhatsApp dan 07 Produk."
+  },
+  {
+    "en": "How to read it",
+    "id": "Bagaimana cara membacanya"
+  },
+  {
+    "en": "Read chapters 02 and 03 once. Use the rest as a reference per task, for example \"I want to change a banner\" → 05.5. Menu paths are written as <span class=\"path\">Menu → Submenu → Tab</span>. Warnings mark risky actions: deleting, maintenance mode and exchange rates. Plugin versions at the time of writing: WooCommerce 11.2, Elementor 4.3, WooCommerce Multilingual 5.6.",
+    "id": "Baca bab 02 dan 03 satu kali. Gunakan sisanya sebagai referensi per tugas, misalnya \"Saya ingin mengganti banner\" → 05.5. Jalur menu ditulis sebagai QZP000QZ. Peringatan menandai tindakan berisiko: penghapusan, mode pemeliharaan, dan nilai tukar. Versi plugin pada saat penulisan: QZP001QZ 11.2, QZP002QZ 4.3, QZP003QZ Multilingual 5.6."
+  },
+  {
+    "en": "System overview.",
+    "id": "Ikhtisar sistem."
+  },
+  {
+    "en": "The store runs on WordPress and WooCommerce, hosted at Hostinger. Pages are built with Elementor using custom Miroir widgets. Customers do not pay on the site: they choose products, the order is sent by WhatsApp and saved in WooCommerce at the same time for the team to process.",
+    "id": "Toko berjalan pada QZP000QZ dan QZP001QZ, dihosting di Hostinger. Halaman dibuat dengan QZP002QZ menggunakan widget Miroir khusus. Pelanggan tidak membayar di situs: mereka memilih produk, pesanan dikirim melalui WhatsApp dan disimpan di QZP003QZ pada saat yang sama untuk diproses oleh tim."
+  },
+  {
+    "en": "Components to know",
+    "id": "Komponen yang perlu diketahui"
+  },
+  {
+    "en": "Component",
+    "id": "Komponen"
+  },
+  {
+    "en": "What it does for you",
+    "id": "Apa manfaatnya bagi Anda"
+  },
+  {
+    "en": "Managed in",
+    "id": "Dikelola dalam"
+  },
+  {
+    "en": "WordPress",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Site foundation: accounts, media, pages, menus.",
+    "id": "Fondasi situs: akun, media, halaman, menu."
+  },
+  {
+    "en": "Dashboard (wp-admin)",
+    "id": "Dasbor (wp-admin)"
+  },
+  {
+    "en": "WooCommerce",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Products, categories and collections, orders, coupons.",
+    "id": "Produk, kategori dan koleksi, pesanan, kupon."
+  },
+  {
+    "en": "Products, WooCommerce → Orders, Marketing → Coupons",
+    "id": "Products, QZP000QZ → Orders, Marketing → Coupons"
+  },
+  {
+    "en": "Elementor + Miroir widgets",
+    "id": "QZP000QZ + widget Miroir"
+  },
+  {
+    "en": "Page content, home page, header, footer, store templates.",
+    "id": "Konten halaman, halaman beranda, header, footer, templat toko."
+  },
+  {
+    "en": "Pages → Edit with Elementor; Site Settings → Miroir",
+    "id": "Pages → Edit with QZP000QZ; Site Settings → Miroir"
+  },
+  {
+    "en": "Miroir theme",
+    "id": "Tema Miroir"
+  },
+  {
+    "en": "Store design, layout, text labels, maintenance mode.",
+    "id": "Desain toko, tata letak, label teks, mode pemeliharaan."
+  },
+  {
+    "en": "Site Settings → Miroir",
+    "id": "Site Settings → Miroir"
+  },
+  {
+    "en": "Miroir WhatsApp Order",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "The WhatsApp order flow and saving orders.",
+    "id": "Alur pesanan WhatsApp dan penyimpanan pesanan."
+  },
+  {
+    "en": "WooCommerce → Settings → WhatsApp ordering",
+    "id": "QZP000QZ → Settings → WhatsApp ordering"
+  },
+  {
+    "en": "Component",
+    "id": "Komponen"
+  },
+  {
+    "en": "What it does for you",
+    "id": "Apa manfaatnya bagi Anda"
+  },
+  {
+    "en": "Managed in",
+    "id": "Dikelola dalam"
+  },
+  {
+    "en": "Multilingual + Miroir Currency",
+    "id": "Multibahasa + QZP000QZ"
+  },
+  {
+    "en": "Prices in IDR, USD, SGD and MYR.",
+    "id": "Harga dalam IDR, USD, SGD dan MYR."
+  },
+  {
+    "en": "WooCommerce → WCML → Multi-currency",
+    "id": "QZP000QZ → WCML → Multi-currency"
+  },
+  {
+    "en": "Miroir Legacy Redirects",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Redirects supported old links to new pages.",
+    "id": "Pengalihan tautan lama yang didukung ke halaman baru."
+  },
+  {
+    "en": "No screen; via the developer",
+    "id": "Tidak ada layar; melalui pengembang"
+  },
+  {
+    "en": "TikTok for Business",
+    "id": "TikTok for Business"
+  },
+  {
+    "en": "TikTok pixel and product catalog.",
+    "id": "Piksel TikTok dan katalog produk."
+  },
+  {
+    "en": "Marketing → TikTok",
+    "id": "Marketing → TikTok"
+  },
+  {
+    "en": "Hostinger hPanel",
+    "id": "Hostinger hPanel"
+  },
+  {
+    "en": "Hosting, domain, SSL, backups, CDN cache.",
+    "id": "Hosting, domain, SSL, cadangan, cache CDN."
+  },
+  {
+    "en": "hPanel, account owner only",
+    "id": "hPanel, hanya pemilik akun"
+  },
+  {
+    "en": "The Miroir Demo Store plugin is a developer tool for sample data. It has no screen and does not affect the store.",
+    "id": "Plugin Miroir Demo Store adalah alat pengembang untuk data sampel. Itu tidak memiliki layar dan tidak mempengaruhi toko."
+  },
+  {
+    "en": "Environments",
+    "id": "Lingkungan"
+  },
+  {
+    "en": "Site",
+    "id": "Lokasi"
+  },
+  {
+    "en": "Used by",
+    "id": "Digunakan oleh"
+  },
+  {
+    "en": "Contents",
+    "id": "Isi"
+  },
+  {
+    "en": "Live",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "miroir.id",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Customers and the client team.",
+    "id": "Pelanggan dan tim klien."
+  },
+  {
+    "en": "The real store. All daily edits happen here.",
+    "id": "Toko sebenarnya. Semua pengeditan harian terjadi di sini."
+  },
+  {
+    "en": "Staging",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "staging.miroir.id",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Developer; the client team only to preview features.",
+    "id": "Pengembang; tim klien hanya untuk melihat pratinjau fitur."
+  },
+  {
+    "en": "A password-protected copy for testing.",
+    "id": "Salinan yang dilindungi kata sandi untuk pengujian."
+  },
+  {
+    "en": "Local",
+    "id": "Local"
+  },
+  {
+    "en": "Developer's computer",
+    "id": "komputer pengembang"
+  },
+  {
+    "en": "Developer.",
+    "id": "Pengembang."
+  },
+  {
+    "en": "Where code is written.",
+    "id": "Di mana kode ditulis."
+  },
+  {
+    "en": "The one rule to remember",
+    "id": "Satu-satunya aturan yang perlu diingat"
+  },
+  {
+    "en": "Code (the Miroir theme and plugins) flows one way: local → staging → live, and only the developer sends it. Content (products, orders, pages, photos, settings) stays on each site and is never copied. Edits made on staging never appear on live.",
+    "id": "Kode (tema dan plugin Miroir) mengalir dalam satu cara: lokal → QZP000QZ → QZP001QZ, dan hanya pengembang yang mengirimkannya. Konten (produk, pesanan, halaman, foto, pengaturan) tetap ada di setiap situs dan tidak pernah disalin. Pengeditan yang dilakukan pada QZP002QZ tidak pernah muncul di QZP003QZ."
+  },
+  {
+    "en": "Who does what",
+    "id": "Siapa melakukan apa"
+  },
+  {
+    "en": "Client team does it",
+    "id": "Tim klien melakukannya"
+  },
+  {
+    "en": "Products, prices, stock, photos, categories.",
+    "id": "Produk, harga, stok, foto, kategori."
+  },
+  {
+    "en": "Processing orders and statuses.",
+    "id": "Memproses pesanan dan status."
+  },
+  {
+    "en": "Page content, home page, banners, campaigns.",
+    "id": "Konten halaman, halaman beranda, spanduk, kampanye."
+  },
+  {
+    "en": "Menus, announcement bar, logo, footer.",
+    "id": "Menu, bilah pengumuman, logo, footer."
+  },
+  {
+    "en": "Text labels and WhatsApp message templates.",
+    "id": "Label teks dan templat pesan WhatsApp."
+  },
+  {
+    "en": "Coupons, staff accounts, maintenance on/off.",
+    "id": "Kupon, akun staf, pemeliharaan aktif/nonaktif."
+  },
+  {
+    "en": "Through the developer",
+    "id": "Melalui pengembang"
+  },
+  {
+    "en": "Design or layout changes beyond the settings.",
+    "id": "Perubahan desain atau tata letak di luar pengaturan."
+  },
+  {
+    "en": "New features and bug fixes.",
+    "id": "Fitur baru dan perbaikan bug."
+  },
+  {
+    "en": "Redirects for old links; automatic rate updates.",
+    "id": "Pengalihan untuk tautan lama; pembaruan tarif otomatis."
+  },
+  {
+    "en": "Major WordPress, WooCommerce, Elementor updates.",
+    "id": "Pembaruan utama QZP000QZ, QZP001QZ, QZP002QZ."
+  },
+  {
+    "en": "Installing or removing plugins.",
+    "id": "Memasang atau menghapus plugin."
+  },
+  {
+    "en": "Restoring backups; domain, SSL and DNS.",
+    "id": "Memulihkan cadangan; domain, SSL dan DNS."
+  },
+  {
+    "en": "Do not touch",
+    "id": "Jangan sentuh"
+  },
+  {
+    "en": "Theme File Editor and Plugin File Editor; deactivating, deleting or updating Miroir theme and plugins; Elementor → Tools (Regenerate, Replace URL, Rollback); deleting \"Miroir: …\" templates; Settings → Permalinks and Settings → General; WooCommerce → Status → Tools unless the developer asks. They can break the store and are hard to undo.",
+    "id": "Editor File Tema dan Editor File Plugin; menonaktifkan, menghapus atau memperbarui tema dan plugin Miroir; QZP000QZ → Alat (Regenerasi, Ganti URL, Kembalikan); menghapus templat \"Miroir: …\"; Pengaturan → Tautan Perma dan Pengaturan → Umum; QZP001QZ → Status → Alat kecuali pengembang memintanya. Mereka dapat merusak toko dan sulit untuk dibatalkan."
+  },
+  {
+    "en": "Access & accounts.",
+    "id": "Akses & akun."
+  },
+  {
+    "en": "Every team member has their own account with the smallest role that covers their job. Administrator accounts are limited to one or two people.",
+    "id": "Setiap anggota tim memiliki akun masing-masing dengan peran terkecil yang mencakup pekerjaannya. Akun QZP000QZ dibatasi untuk satu atau dua orang."
+  },
+  {
+    "en": "Signing in",
+    "id": "Masuk"
+  },
+  {
+    "en": "Open the admin",
+    "id": "Buka adminnya"
+  },
+  {
+    "en": "Go to <span class=\"path\">miroir.id/wp-admin</span>. Staging (<span class=\"path\">staging.miroir.id/wp-admin</span>) is for developer previews only.",
+    "id": "Pergi ke QZP000QZ. QZP001QZ (QZP002QZ) hanya untuk pratinjau pengembang."
+  },
+  {
+    "en": "Sign in",
+    "id": "Masuk"
+  },
+  {
+    "en": "Fill in Username or Email Address and Password, then press <span class=\"path\">Log In</span>. A black admin bar appears at the top of the site.",
+    "id": "Isi Username atau Alamat Email dan Password, lalu tekan QZP000QZ. Bilah admin hitam muncul di bagian atas situs."
+  },
+  {
+    "en": "Forgot your password",
+    "id": "Lupa kata sandi Anda"
+  },
+  {
+    "en": "Press <span class=\"path\">Lost your password?</span>, enter the account email and open the reset link.",
+    "id": "Tekan QZP000QZ, masukkan email akun dan buka tautan reset."
+  },
+  {
+    "en": "The WordPress sign-in page.",
+    "id": "Halaman masuk QZP000QZ."
+  },
+  {
+    "en": "Good to know",
+    "id": "Senang mengetahuinya"
+  },
+  {
+    "en": "The store's <span class=\"path\">My account</span> page (/my-account) is for customers. Staff always reach the dashboard through /wp-admin. While maintenance mode is on, only Administrators still see the store; other roles see the maintenance page but can still open /wp-admin.",
+    "id": "Halaman QZP000QZ toko (QZP001QZ) ditujukan untuk pelanggan. Staf selalu mencapai dashboard melalui QZP002QZ. Saat mode pemeliharaan aktif, hanya Administrator yang masih dapat melihat toko; peran lain melihat halaman pemeliharaan tetapi masih dapat membuka QZP003QZ."
+  },
+  {
+    "en": "Roles and permissions",
+    "id": "Peran dan izin"
+  },
+  {
+    "en": "Role",
+    "id": "Peran"
+  },
+  {
+    "en": "Can",
+    "id": "Bisa"
+  },
+  {
+    "en": "Cannot",
+    "id": "Tidak bisa"
+  },
+  {
+    "en": "Administrator",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Owner / technical lead, max. 2",
+    "id": "Pemilik / pimpinan teknis, maks. 2"
+  },
+  {
+    "en": "Everything: users, plugins, Site Settings, maintenance mode, staging access.",
+    "id": "Semuanya: pengguna, plugin, Pengaturan Situs, mode pemeliharaan, akses QZP000QZ."
+  },
+  {
+    "en": "Shop manager",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Store ops, order CS",
+    "id": "Operasi toko, pesan CS"
+  },
+  {
+    "en": "Products, orders, customers, coupons, WooCommerce Settings (incl. WhatsApp ordering), pages and media.",
+    "id": "Produk, pesanan, pelanggan, kupon, Pengaturan QZP000QZ (termasuk pemesanan WhatsApp), halaman dan media."
+  },
+  {
+    "en": "Plugins, other users, general settings, seeing the store in maintenance.",
+    "id": "Plugin, pengguna lain, pengaturan umum, melihat toko dalam pemeliharaan."
+  },
+  {
+    "en": "Editor",
+    "id": "Editor"
+  },
+  {
+    "en": "Content / marketing",
+    "id": "Konten / pemasaran"
+  },
+  {
+    "en": "Pages, media, editing with Elementor.",
+    "id": "Halaman, media, pengeditan dengan QZP000QZ."
+  },
+  {
+    "en": "Products, orders, store settings.",
+    "id": "Produk, pesanan, pengaturan toko."
+  },
+  {
+    "en": "Customer",
+    "id": "Customer"
+  },
+  {
+    "en": "Shoppers",
+    "id": "Pembeli"
+  },
+  {
+    "en": "Their own account and order history.",
+    "id": "Akun mereka sendiri dan riwayat pesanan."
+  },
+  {
+    "en": "The dashboard.",
+    "id": "Dasbor."
+  },
+  {
+    "en": "Recommendation: CS and ops = Shop manager; content team = Editor. Do not hand out Administrator \"to make things easier\". If your role cannot open Site Settings, ask an Administrator to make the changes in chapter 08.",
+    "id": "Rekomendasi: CS dan ops = QZP000QZ; tim konten = Editor. Jangan membagikan QZP001QZ \"untuk mempermudah\". Jika peran Anda tidak dapat membuka Pengaturan Situs, minta QZP002QZ untuk melakukan perubahan di bab 08."
+  },
+  {
+    "en": "Adding a user (Administrator)",
+    "id": "Menambahkan pengguna (QZP000QZ)"
+  },
+  {
+    "en": "Open <span class=\"path\">Users → Add New User</span>.",
+    "id": "Buka QZP000QZ."
+  },
+  {
+    "en": "Fill in Username (cannot be changed later, e.g. <span class=\"path\">name.miroir</span>), work Email, First and Last Name.",
+    "id": "Isikan Username (tidak dapat diubah lagi, misal QZP000QZ), Email kantor, Nama Depan dan Nama Belakang."
+  },
+  {
+    "en": "Keep the generated password and tick <span class=\"path\">Send User Notification</span> so they set their own password by email.",
+    "id": "Simpan kata sandi yang dibuat dan centang QZP000QZ sehingga mereka mengatur kata sandi mereka sendiri melalui email."
+  },
+  {
+    "en": "Choose the Role from 03.2, then press <span class=\"path\">Add New User</span>.",
+    "id": "Pilih Peran dari 03.2, lalu tekan QZP000QZ."
+  },
+  {
+    "en": "Users → Add New User.",
+    "id": "Users → Add New User."
+  },
+  {
+    "en": "Changing a user's role or details",
+    "id": "Mengubah peran atau detail pengguna"
+  },
+  {
+    "en": "<span class=\"path\">Users → All Users</span>, click the user's name.",
+    "id": "QZP000QZ, klik nama pengguna."
+  },
+  {
+    "en": "Change the Role, email or name. Use <span class=\"path\">Set New Password</span> to change the password.",
+    "id": "Ubah Peran, email, atau nama. Gunakan QZP000QZ untuk mengubah kata sandi."
+  },
+  {
+    "en": "Press <span class=\"path\">Update User</span>.",
+    "id": "Tekan QZP000QZ."
+  },
+  {
+    "en": "Users → All Users: review this list every month.",
+    "id": "Users → All Users: review this list every month."
+  },
+  {
+    "en": "When staff leave (offboarding)",
+    "id": "Ketika staf pergi (offboarding)"
+  },
+  {
+    "en": "On their last day: open the user, <span class=\"path\">Set New Password</span> (random) → <span class=\"path\">Update User</span>, then <span class=\"path\">Log Out Everywhere Else</span>.",
+    "id": "Pada hari terakhirnya: buka pengguna, QZP000QZ (acak) → QZP001QZ, lalu QZP002QZ."
+  },
+  {
+    "en": "Delete the user and choose <span class=\"path\">Attribute all content to</span> another staff account, so their pages and notes stay.",
+    "id": "Hapus pengguna dan pilih QZP000QZ akun staf lain, sehingga halaman dan catatan mereka tetap ada."
+  },
+  {
+    "en": "Change shared passwords they knew: WhatsApp Business, Instagram, store email, Hostinger.",
+    "id": "Ubah kata sandi bersama yang mereka ketahui: WhatsApp Business, Instagram, email toko, Hostinger."
+  },
+  {
+    "en": "Update the access list in appendix D.",
+    "id": "Perbarui daftar akses di lampiran D."
+  },
+  {
+    "en": "Warning",
+    "id": "Peringatan"
+  },
+  {
+    "en": "Deleting a user without choosing \"Attribute all content to\" also deletes every page and post they created.",
+    "id": "Menghapus pengguna tanpa memilih \"Atribusikan semua konten ke\" juga akan menghapus setiap halaman dan postingan yang mereka buat."
+  },
+  {
+    "en": "Account security",
+    "id": "Keamanan akun"
+  },
+  {
+    "en": "Passwords of at least 12 characters, unique, kept in a password manager. Customer accounts also need 12 characters.",
+    "id": "Kata sandi minimal 12 karakter, unik, disimpan di pengelola kata sandi. Akun pelanggan juga membutuhkan 12 karakter."
+  },
+  {
+    "en": "One account per person. Never share an Administrator login. Log out on shared computers.",
+    "id": "Satu akun per orang. Jangan pernah membagikan login QZP000QZ. Keluar dari komputer bersama."
+  },
+  {
+    "en": "Two-factor authentication is recommended for Administrators; arrange it with the developer (11.3).",
+    "id": "Otentikasi dua faktor direkomendasikan untuk Administrator; mengaturnya dengan pengembang (11.3)."
+  },
+  {
+    "en": "Review Users every month: remove unused accounts, check for unknown Administrators.",
+    "id": "Tinjau Pengguna setiap bulan: hapus akun yang tidak digunakan, periksa Administrator yang tidak dikenal."
+  },
+  {
+    "en": "Emails asking you to log in or \"verify your WordPress/Hostinger account\" via a link are suspicious. Type the address yourself.",
+    "id": "Email yang meminta Anda untuk masuk atau \"verifikasi akun QZP000QZ/Hostinger Anda\" melalui tautan mencurigakan. Ketik sendiri alamatnya."
+  },
+  {
+    "en": "Supporting services",
+    "id": "Layanan pendukung"
+  },
+  {
+    "en": "Service",
+    "id": "Melayani"
+  },
+  {
+    "en": "Used for",
+    "id": "Digunakan untuk"
+  },
+  {
+    "en": "Access holder",
+    "id": "Pemegang akses"
+  },
+  {
+    "en": "Hostinger hPanel",
+    "id": "Hostinger hPanel"
+  },
+  {
+    "en": "Hosting, backups, email, staging.",
+    "id": "Hosting, pencadangan, email, QZP000QZ."
+  },
+  {
+    "en": "Client",
+    "id": "Klien"
+  },
+  {
+    "en": "Cloudflare",
+    "id": "awan suar"
+  },
+  {
+    "en": "DNS for miroir.id.",
+    "id": "DNS untuk QZP000QZ."
+  },
+  {
+    "en": "Client",
+    "id": "Klien"
+  },
+  {
+    "en": "WhatsApp Business",
+    "id": "Bisnis WhatsApp"
+  },
+  {
+    "en": "Receiving orders.",
+    "id": "Menerima pesanan."
+  },
+  {
+    "en": "Client",
+    "id": "Klien"
+  },
+  {
+    "en": "Instagram, TikTok",
+    "id": "Instagram, TikTok"
+  },
+  {
+    "en": "Footer link; pixel and catalog.",
+    "id": "Tautan catatan kaki; piksel dan katalog."
+  },
+  {
+    "en": "Client",
+    "id": "Klien"
+  },
+  {
+    "en": "GitHub",
+    "id": "GitHub"
+  },
+  {
+    "en": "Theme and plugin code, deploys.",
+    "id": "Kode tema dan plugin, diterapkan."
+  },
+  {
+    "en": "Developer",
+    "id": "Pengembang"
+  },
+  {
+    "en": "Passwords are never written in this guide. Keep them in the team's password manager; appendix D records only who holds them.",
+    "id": "Kata sandi tidak pernah ditulis dalam panduan ini. Simpan di pengelola kata sandi tim; lampiran D hanya mencatat siapa yang memegangnya."
+  },
+  {
+    "en": "Dashboard tour.",
+    "id": "Tur dasbor."
+  },
+  {
+    "en": "This is the first screen after you sign in. The numbers match the list below.",
+    "id": "Ini adalah layar pertama setelah Anda masuk. Angka-angkanya cocok dengan daftar di bawah."
+  },
+  {
+    "en": "Admin bar",
+    "id": "Bilah admin"
+  },
+  {
+    "en": "Visit the live store, see updates, open Elementor for the page you are on.",
+    "id": "Kunjungi toko QZP000QZ, lihat pembaruan, buka QZP001QZ untuk halaman yang Anda buka."
+  },
+  {
+    "en": "Account menu",
+    "id": "Menu akun"
+  },
+  {
+    "en": "Your profile, password and log out.",
+    "id": "Profil Anda, kata sandi, dan keluar."
+  },
+  {
+    "en": "Main menu",
+    "id": "Menu utama"
+  },
+  {
+    "en": "Every section: Pages, Media, WooCommerce, Products, Appearance, Users.",
+    "id": "Setiap bagian: Halaman, Media, QZP000QZ, Produk, Penampilan, Pengguna."
+  },
+  {
+    "en": "Screen options",
+    "id": "Opsi layar"
+  },
+  {
+    "en": "Show or hide boxes on the current screen.",
+    "id": "Menampilkan atau menyembunyikan kotak di layar saat ini."
+  },
+  {
+    "en": "Workspace",
+    "id": "Ruang kerja"
+  },
+  {
+    "en": "Lists and editors open here. The WooCommerce box shows orders on hold.",
+    "id": "Daftar dan editor terbuka di sini. Kotak QZP000QZ menunjukkan pesanan ditahan."
+  },
+  {
+    "en": "Menu",
+    "id": "Menu"
+  },
+  {
+    "en": "Contents",
+    "id": "Isi"
+  },
+  {
+    "en": "Chapter",
+    "id": "Bab"
+  },
+  {
+    "en": "Pages",
+    "id": "Halaman"
+  },
+  {
+    "en": "Home, About, FAQ, Contact, policies.",
+    "id": "Beranda, Tentang, FAQ, Kontak, kebijakan."
+  },
+  {
+    "en": "WooCommerce",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Orders, Customers, Settings (WhatsApp ordering, payments), Multi-currency.",
+    "id": "Pesanan, Pelanggan, Pengaturan (Pemesanan WhatsApp, pembayaran), Multi-mata uang."
+  },
+  {
+    "en": "Products",
+    "id": "Produk"
+  },
+  {
+    "en": "Products, Categories, Attributes.",
+    "id": "Produk, Kategori, Atribut."
+  },
+  {
+    "en": "Media",
+    "id": "Media"
+  },
+  {
+    "en": "All photos and videos.",
+    "id": "Semua foto dan video."
+  },
+  {
+    "en": "Marketing",
+    "id": "Pemasaran"
+  },
+  {
+    "en": "Coupons, TikTok.",
+    "id": "Kupon, TikTok."
+  },
+  {
+    "en": "Templates",
+    "id": "Templat"
+  },
+  {
+    "en": "Saved Templates \"Miroir: …\" (header, footer, product page).",
+    "id": "Templat Tersimpan \"Miroir: …\" (header, footer, halaman produk)."
+  },
+  {
+    "en": "Appearance, Users",
+    "id": "Penampilan, Pengguna"
+  },
+  {
+    "en": "Menus and Customize; staff and customer accounts.",
+    "id": "Menu dan Sesuaikan; akun staf dan pelanggan."
+  },
+  {
+    "en": "Posts, Settings, Plugins",
+    "id": "Posting, Pengaturan, Plugin"
+  },
+  {
+    "en": "Not used by the store, or look-only. Do not change.",
+    "id": "Tidak digunakan oleh toko, atau hanya dilihat-lihat. Jangan berubah."
+  },
+  {
+    "en": "Tip",
+    "id": "Tip"
+  },
+  {
+    "en": "Yellow or blue notices and red numbers on Plugins are usually update offers or promotions. Do not press Update or Install from there; pass them to the developer (11.2).",
+    "id": "Pemberitahuan berwarna kuning atau biru dan angka merah pada Plugin biasanya merupakan penawaran atau promosi pembaruan. Jangan tekan Perbarui atau Instal dari sana; meneruskannya ke pengembang (11.2)."
+  },
+  {
+    "en": "Elementor basics",
+    "id": "Dasar-dasar QZP000QZ"
+  },
+  {
+    "en": "Open a page with <span class=\"path\">Pages → hover → Edit with Elementor</span>, or from the store with the admin bar.",
+    "id": "Buka halaman dengan QZP000QZ, atau dari toko dengan bilah admin."
+  },
+  {
+    "en": "Elementor menu",
+    "id": "Menu QZP000QZ"
+  },
+  {
+    "en": "Site Settings, exit to the dashboard.",
+    "id": "Pengaturan Situs, keluar ke dashboard."
+  },
+  {
+    "en": "Responsive mode",
+    "id": "Modus responsif"
+  },
+  {
+    "en": "Desktop, tablet, mobile. Some fields differ per device.",
+    "id": "Desktop, tablet, seluler. Beberapa bidang berbeda untuk setiap perangkat."
+  },
+  {
+    "en": "Left panel",
+    "id": "Panel kiri"
+  },
+  {
+    "en": "Settings of the clicked section: Content, Style, Advanced.",
+    "id": "Pengaturan bagian yang diklik: Konten, Gaya, Lanjutan."
+  },
+  {
+    "en": "History",
+    "id": "Sejarah"
+  },
+  {
+    "en": "Undo in this session, or go back to a saved revision.",
+    "id": "Urungkan dalam sesi ini, atau kembali ke revisi yang disimpan."
+  },
+  {
+    "en": "Canvas",
+    "id": "Kanvas"
+  },
+  {
+    "en": "The page itself. Click a section to edit it.",
+    "id": "Halaman itu sendiri. Klik bagian untuk mengeditnya."
+  },
+  {
+    "en": "Preview / Publish",
+    "id": "Pratinjau / Publikasikan"
+  },
+  {
+    "en": "Eye icon previews; the button publishes to visitors.",
+    "id": "Pratinjau ikon mata; tombol dipublikasikan kepada pengunjung."
+  },
+  {
+    "en": "<span class=\"kbd\">Ctrl</span> + <span class=\"kbd\">Z</span> (Mac <span class=\"kbd\">Cmd</span> + <span class=\"kbd\">Z</span>) undoes the last step while the editor is open.",
+    "id": "QZP000QZ + QZP001QZ (Mac QZP002QZ + QZP003QZ) membatalkan langkah terakhir saat editor terbuka."
+  },
+  {
+    "en": "The arrow next to the publish button → <span class=\"path\">Save Draft</span> saves without publishing (pages never published).",
+    "id": "The arrow next to the publish button → QZP000QZ saves without publishing (pages never published)."
+  },
+  {
+    "en": "Closing the editor without Update loses the changes. Elementor asks first.",
+    "id": "Menutup editor tanpa Pembaruan akan menghilangkan perubahan. QZP000QZ bertanya terlebih dahulu."
+  },
+  {
+    "en": "The three places for settings",
+    "id": "Tiga tempat untuk pengaturan"
+  },
+  {
+    "en": "What you change",
+    "id": "Apa yang Anda ubah"
+  },
+  {
+    "en": "Where",
+    "id": "Di mana"
+  },
+  {
+    "en": "Examples",
+    "id": "Contoh"
+  },
+  {
+    "en": "One page",
+    "id": "Satu halaman"
+  },
+  {
+    "en": "That page's Elementor editor (Pages → Edit with Elementor).",
+    "id": "That page's QZP000QZ editor (Pages → Edit with QZP001QZ)."
+  },
+  {
+    "en": "Home video hero, banners, About text, FAQ.",
+    "id": "Pahlawan video rumahan, spanduk, Tentang teks, FAQ."
+  },
+  {
+    "en": "Parts on many pages",
+    "id": "Bagian di banyak halaman"
+  },
+  {
+    "en": "\"Miroir: …\" templates (Templates → Saved Templates, or Site Settings → Miroir → Templates).",
+    "id": "\"Miroir: …\" templates (Templates → Saved Templates, or Site Settings → Miroir → Templates)."
+  },
+  {
+    "en": "Header, footer, product page, collections, search, 404.",
+    "id": "Header, footer, halaman produk, koleksi, pencarian, 404."
+  },
+  {
+    "en": "Global settings",
+    "id": "Pengaturan global"
+  },
+  {
+    "en": "Elementor Site Settings → Miroir (same as Appearance → Customize).",
+    "id": "QZP000QZ Site Settings → Miroir (same as Appearance → Customize)."
+  },
+  {
+    "en": "Logo, colours, text size, products per page, labels, maintenance.",
+    "id": "Logo, warna, ukuran teks, produk per halaman, label, pemeliharaan."
+  },
+  {
+    "en": "Store content (products, prices, categories, orders) is not in Elementor at all: it lives in WooCommerce and Products. Rule of thumb: if a change must appear on every product page or every page, look in a template or Site Settings.",
+    "id": "Konten toko (produk, harga, kategori, pesanan) sama sekali tidak ada di QZP000QZ: konten ada di QZP001QZ dan Produk. Aturan praktisnya: jika perubahan harus muncul di setiap halaman produk atau setiap halaman, lihat di template atau Pengaturan Situs."
+  },
+  {
+    "en": "Do",
+    "id": "Melakukan"
+  },
+  {
+    "en": "Use Miroir widgets (Video hero, Editorial pair, Banner, Product row, Text page) for store sections.",
+    "id": "Gunakan widget Miroir (Pahlawan video, Pasangan editorial, Spanduk, Baris produk, Halaman teks) untuk bagian toko."
+  },
+  {
+    "en": "Check Mobile mode before Update; most customers shop on phones.",
+    "id": "Periksa mode Seluler sebelum Pembaruan; sebagian besar pelanggan berbelanja melalui ponsel."
+  },
+  {
+    "en": "Change one thing, check it, then continue.",
+    "id": "Ubah satu hal, periksa, lalu lanjutkan."
+  },
+  {
+    "en": "Avoid",
+    "id": "Menghindari"
+  },
+  {
+    "en": "Built-in Elementor widgets (Heading, Image, Button) for store sections.",
+    "id": "Widget QZP000QZ bawaan (Judul, Gambar, Tombol) untuk bagian toko."
+  },
+  {
+    "en": "Deleting \"Miroir: …\" templates or switching templates without the developer.",
+    "id": "Menghapus templat \"Miroir: …\" atau mengganti templat tanpa pengembang."
+  },
+  {
+    "en": "Pressing Update when the layout looks broken. Close without saving or use Revisions.",
+    "id": "Menekan Perbarui ketika tata letak terlihat rusak. Tutup tanpa menyimpan atau menggunakan Revisi."
+  },
+  {
+    "en": "Pages & home page.",
+    "id": "Halaman & halaman beranda."
+  },
+  {
+    "en": "Every page is built from Miroir widgets. You change widget content (images, text, links, options), not the layout, so the design stays as intended.",
+    "id": "Setiap halaman dibuat dari widget Miroir. Anda mengubah konten widget (gambar, teks, tautan, opsi), bukan tata letaknya, sehingga desainnya tetap sesuai keinginan."
+  },
+  {
+    "en": "How Miroir widgets work",
+    "id": "Cara kerja widget Miroir"
+  },
+  {
+    "en": "Open <span class=\"path\">Pages → All Pages</span>, hover over the page → <span class=\"path\">Edit with Elementor</span>.",
+    "id": "Buka QZP000QZ, arahkan kursor ke halaman → QZP001QZ."
+  },
+  {
+    "en": "Click the section on the canvas. Its settings open in the left panel.",
+    "id": "Klik bagian di kanvas. Pengaturannya terbuka di panel kiri."
+  },
+  {
+    "en": "Change the content, then check desktop, tablet and mobile in Responsive mode.",
+    "id": "Ubah konten, lalu periksa desktop, tablet, dan seluler dalam mode Responsif."
+  },
+  {
+    "en": "Press <span class=\"path\">Update</span>. The change is live immediately.",
+    "id": "Tekan QZP000QZ. Perubahannya adalah QZP001QZ segera."
+  },
+  {
+    "en": "Miroir widgets sit in the <span class=\"path\">Miroir</span> category. Colours, spacing and fonts come from Site Settings (08), not the widget.",
+    "id": "Widget Miroir berada di kategori QZP000QZ. Warna, spasi dan font berasal dari Pengaturan Situs (08), bukan widget."
+  },
+  {
+    "en": "Many widgets have a <span class=\"path\">Show</span> switch for optional parts, and a <span class=\"path\">Texts</span> section for that widget's small labels.",
+    "id": "Banyak widget memiliki tombol QZP000QZ untuk bagian opsional, dan bagian QZP001QZ untuk label kecil widget tersebut."
+  },
+  {
+    "en": "An empty image field uses a fallback, as described under the field.",
+    "id": "Bidang gambar kosong menggunakan fallback, seperti dijelaskan di bawah bidang."
+  },
+  {
+    "en": "Pages → All Pages. Hover a row for Edit with Elementor.",
+    "id": "Pages → All Pages. Hover a row for Edit with QZP000QZ."
+  },
+  {
+    "en": "The home page",
+    "id": "Halaman beranda"
+  },
+  {
+    "en": "Sections from the top. The header (announcement bar, menu) and footer are not part of the page; change them in chapter 08.",
+    "id": "Bagian dari atas. Header (bilah pengumuman, menu) dan footer bukan bagian dari halaman; ubahlah di bab 08."
+  },
+  {
+    "en": "Section",
+    "id": "Bagian"
+  },
+  {
+    "en": "Widget",
+    "id": "Widget"
+  },
+  {
+    "en": "See",
+    "id": "Melihat"
+  },
+  {
+    "en": "Campaign film",
+    "id": "Film kampanye"
+  },
+  {
+    "en": "Campaign video hero: full-screen video.",
+    "id": "Pahlawan video kampanye: video layar penuh."
+  },
+  {
+    "en": "New arrivals",
+    "id": "Pendatang baru"
+  },
+  {
+    "en": "Product row.",
+    "id": "Baris produk."
+  },
+  {
+    "en": "Browse editorial",
+    "id": "Telusuri editorial"
+  },
+  {
+    "en": "Editorial pair: two photos.",
+    "id": "Pasangan editorial: dua foto."
+  },
+  {
+    "en": "Collection banner",
+    "id": "Spanduk koleksi"
+  },
+  {
+    "en": "Banner.",
+    "id": "Spanduk."
+  },
+  {
+    "en": "Collection products",
+    "id": "Produk koleksi"
+  },
+  {
+    "en": "Product row.",
+    "id": "Baris produk."
+  },
+  {
+    "en": "Campaign video hero",
+    "id": "Pahlawan video kampanye"
+  },
+  {
+    "en": "The hero selected: its fields open in the left panel.",
+    "id": "Pahlawan yang dipilih: bidangnya terbuka di panel kiri."
+  },
+  {
+    "en": "Field",
+    "id": "Bidang"
+  },
+  {
+    "en": "Content",
+    "id": "Isi"
+  },
+  {
+    "en": "If empty",
+    "id": "Jika kosong"
+  },
+  {
+    "en": "Campaign video",
+    "id": "Video kampanye"
+  },
+  {
+    "en": "Desktop video, 9:4, MP4 or WebM.",
+    "id": "Video desktop, 9:4, MP4 atau WebM."
+  },
+  {
+    "en": "The built-in campaign film plays.",
+    "id": "Film kampanye bawaan diputar."
+  },
+  {
+    "en": "Mobile video",
+    "id": "Video seluler"
+  },
+  {
+    "en": "Portrait version, 3:4.",
+    "id": "Versi potret, 3:4."
+  },
+  {
+    "en": "The built-in mobile film plays.",
+    "id": "Film seluler bawaan diputar."
+  },
+  {
+    "en": "Desktop poster",
+    "id": "Poster desktop"
+  },
+  {
+    "en": "Still image, 9:4.",
+    "id": "Gambar diam, 9:4."
+  },
+  {
+    "en": "The built-in poster.",
+    "id": "Poster bawaan."
+  },
+  {
+    "en": "Tablet poster",
+    "id": "Poster tablet"
+  },
+  {
+    "en": "Still image, 16:9.",
+    "id": "Gambar diam, 16:9."
+  },
+  {
+    "en": "Uses the desktop poster.",
+    "id": "Menggunakan poster desktop."
+  },
+  {
+    "en": "Mobile poster",
+    "id": "Poster seluler"
+  },
+  {
+    "en": "Still image, 3:4.",
+    "id": "Gambar diam, 3:4."
+  },
+  {
+    "en": "Tablet poster, then desktop.",
+    "id": "Poster tablet, lalu desktop."
+  },
+  {
+    "en": "Caption / Link",
+    "id": "Keterangan / Tautan"
+  },
+  {
+    "en": "Text over the video; where a click goes.",
+    "id": "Kirim SMS ke video; kemana perginya sebuah klik."
+  },
+  {
+    "en": "\"new arrivals: …\"; New Collection.",
+    "id": "\"pendatang baru: …\"; Koleksi Baru."
+  },
+  {
+    "en": "A / Replace the campaign video",
+    "id": "A / Ganti video kampanye"
+  },
+  {
+    "en": "Home → Edit with Elementor / ~10 min",
+    "id": "Home → Edit with QZP000QZ / ~10 min"
+  },
+  {
+    "en": "Prepare a desktop (9:4) and mobile (3:4) video: MP4 H.264, no sound, sizes in appendix C.",
+    "id": "Siapkan video desktop (9:4) dan seluler (3:4): MP4 H.264, tanpa suara, ukuran ada di lampiran C."
+  },
+  {
+    "en": "Prepare a poster for each size: the first frame or a campaign photo with the same ratio.",
+    "id": "Siapkan poster untuk masing-masing ukuran: frame pertama atau foto kampanye dengan perbandingan yang sama."
+  },
+  {
+    "en": "Click the hero, replace the videos and posters, fill in Caption and Link.",
+    "id": "Klik hero, ganti video dan poster, isi Caption dan Link."
+  },
+  {
+    "en": "Press <span class=\"path\">Update</span>, then check on a phone.",
+    "id": "Tekan QZP000QZ, lalu periksa di ponsel."
+  },
+  {
+    "en": "Always replace the posters too",
+    "id": "Selalu ganti posternya juga"
+  },
+  {
+    "en": "The video plays muted and loops, with a pause button. Visitors with reduced motion or data saver, or whose video fails to load, see the poster instead, so it must match the new campaign.",
+    "id": "Video diputar tanpa suara dan berulang, dengan tombol jeda. Pengunjung yang gerakannya berkurang atau penghemat datanya, atau yang videonya gagal dimuat, akan melihat posternya, sehingga harus cocok dengan kampanye baru."
+  },
+  {
+    "en": "Editorial pair",
+    "id": "Pasangan redaksi"
+  },
+  {
+    "en": "Field",
+    "id": "Bidang"
+  },
+  {
+    "en": "Content",
+    "id": "Isi"
+  },
+  {
+    "en": "Image order",
+    "id": "Urutan gambar"
+  },
+  {
+    "en": "Small image first, or Large image first.",
+    "id": "Gambar kecil dulu, atau Gambar besar dulu."
+  },
+  {
+    "en": "Small / Large image",
+    "id": "Gambar Kecil / Besar"
+  },
+  {
+    "en": "Portrait photos, 3:4.",
+    "id": "Foto potret, 3:4."
+  },
+  {
+    "en": "Caption / Link",
+    "id": "Keterangan / Tautan"
+  },
+  {
+    "en": "Short text; where a click goes (empty: the shop page).",
+    "id": "teks pendek; kemana perginya klik (kosong: halaman toko)."
+  },
+  {
+    "en": "On mobile only one photo shows. Check the mobile view after replacing photos.",
+    "id": "Di ponsel hanya satu foto yang ditampilkan. Periksa tampilan seluler setelah mengganti foto."
+  },
+  {
+    "en": "Banner",
+    "id": "Spanduk"
+  },
+  {
+    "en": "Field",
+    "id": "Bidang"
+  },
+  {
+    "en": "Content",
+    "id": "Isi"
+  },
+  {
+    "en": "Image width",
+    "id": "Lebar gambar"
+  },
+  {
+    "en": "Framed (inside the centre column) or Full width (screen wide).",
+    "id": "Berbingkai (di dalam kolom tengah) atau Lebar penuh (lebar layar)."
+  },
+  {
+    "en": "Desktop image",
+    "id": "Gambar desktop"
+  },
+  {
+    "en": "The main image.",
+    "id": "Gambar utama."
+  },
+  {
+    "en": "Tablet / Mobile image",
+    "id": "Tablet / Gambar seluler"
+  },
+  {
+    "en": "Empty: uses the desktop, then the tablet image.",
+    "id": "Kosong: menggunakan desktop, lalu gambar tablet."
+  },
+  {
+    "en": "Caption / Link",
+    "id": "Keterangan / Tautan"
+  },
+  {
+    "en": "Banner text; empty link goes to the Sale collection.",
+    "id": "teks spanduk; tautan kosong menuju ke koleksi Penjualan."
+  },
+  {
+    "en": "Wide desktop images often crop badly on phones. Fill in Mobile image with a portrait version.",
+    "id": "Gambar desktop yang lebar sering kali terpotong dengan buruk di ponsel. Isi gambar Seluler dengan versi potret."
+  },
+  {
+    "en": "Product row",
+    "id": "Baris produk"
+  },
+  {
+    "en": "Field",
+    "id": "Bidang"
+  },
+  {
+    "en": "Options",
+    "id": "Pilihan"
+  },
+  {
+    "en": "Title",
+    "id": "Judul"
+  },
+  {
+    "en": "Row title, e.g. \"new arrivals\".",
+    "id": "Judul baris, mis. \"pendatang baru\"."
+  },
+  {
+    "en": "Show",
+    "id": "Menunjukkan"
+  },
+  {
+    "en": "A collection, Products on sale, Featured products, Newest products, Hand-picked products.",
+    "id": "Koleksi, Produk yang dijual, Produk unggulan, Produk terbaru, Produk pilihan."
+  },
+  {
+    "en": "Collection / Products",
+    "id": "Koleksi / Produk"
+  },
+  {
+    "en": "Appear for \"A collection\" and \"Hand-picked\". Hand-picked keeps your selection order.",
+    "id": "Muncul untuk \"Koleksi\" dan \"Pilihan\". Dipilih sendiri menjaga urutan pilihan Anda."
+  },
+  {
+    "en": "How many",
+    "id": "Berapa banyak"
+  },
+  {
+    "en": "4–24 or All (not for Hand-picked).",
+    "id": "4–24 atau Semua (bukan untuk Dipilih)."
+  },
+  {
+    "en": "Cards per row",
+    "id": "Kartu per baris"
+  },
+  {
+    "en": "Desktop, default 5.",
+    "id": "Desktop, bawaan 5."
+  },
+  {
+    "en": "\"View all\" link",
+    "id": "Tautan \"Lihat semua\"."
+  },
+  {
+    "en": "Empty: the collection page.",
+    "id": "Kosong: halaman koleksi."
+  },
+  {
+    "en": "An empty row (e.g. a collection with no products) shows no cards. Check the product categories (07.3).",
+    "id": "Baris kosong (misalnya koleksi tanpa produk) tidak menunjukkan kartu. Periksa kategori produk (07.3)."
+  },
+  {
+    "en": "Text pages",
+    "id": "Halaman teks"
+  },
+  {
+    "en": "FAQ, size guide, policies, contact, shipping and payment confirmation keep their text in the <span class=\"path\">Text page</span> widget, not the regular page editor.",
+    "id": "FAQ, panduan ukuran, kebijakan, kontak, pengiriman dan konfirmasi pembayaran menyimpan teksnya di widget QZP000QZ, bukan editor halaman biasa."
+  },
+  {
+    "en": "Open the page → <span class=\"path\">Edit with Elementor</span> → click the Text page widget.",
+    "id": "Buka halaman → QZP000QZ → klik widget halaman Teks."
+  },
+  {
+    "en": "Edit the <span class=\"path\">Text</span> field: headings, bold, lists and links like in Word.",
+    "id": "Edit bidang QZP000QZ: judul, huruf tebal, daftar, dan tautan seperti di Word."
+  },
+  {
+    "en": "Choose a Layout: From the page template, Text column, Guide or Information. The title comes from the page title; <span class=\"path\">Show</span> hides it.",
+    "id": "Pilih Tata Letak: Dari templat halaman, kolom Teks, Panduan, atau Informasi. Judul berasal dari judul halaman; QZP000QZ menyembunyikannya."
+  },
+  {
+    "en": "Press <span class=\"path\">Update</span>.",
+    "id": "Tekan QZP000QZ."
+  },
+  {
+    "en": "Editing the FAQ",
+    "id": "Mengedit FAQ"
+  },
+  {
+    "en": "Each question is an expand/collapse block. Open the <span class=\"path\">Text</span> (code) tab, copy an existing question block with its answer, then change the words. Questions typed freely in the Visual tab will not expand and collapse.",
+    "id": "Setiap pertanyaan adalah blok perluas/ciutkan. Buka tab QZP000QZ (kode), salin blok pertanyaan yang ada beserta jawabannya, lalu ubah kata-katanya. Pertanyaan yang diketik dengan bebas di tab Visual tidak akan diperluas dan diciutkan."
+  },
+  {
+    "en": "Creating a new page",
+    "id": "Membuat halaman baru"
+  },
+  {
+    "en": "<span class=\"path\">Pages → Add New Page</span>, enter the title (it shows on the page).",
+    "id": "QZP000QZ, masukkan judul (terlihat di halaman)."
+  },
+  {
+    "en": "Check the URL slug on the right: lowercase with hyphens, e.g. <span class=\"path\">care-guide</span>.",
+    "id": "Periksa slug URL di sebelah kanan: huruf kecil dengan tanda hubung, mis. QZP000QZ."
+  },
+  {
+    "en": "<span class=\"path\">Edit with Elementor</span>, add a Text page widget from the Miroir category, fill in Text, then <span class=\"path\">Publish</span>.",
+    "id": "QZP000QZ, tambahkan widget halaman Teks dari kategori Miroir, isi Teks, lalu QZP001QZ."
+  },
+  {
+    "en": "Add it to a menu (08.2). For Customer care, Size guide, Payment confirmation or Shipping information, also select it in Site Settings → Miroir → Linked pages (08.5).",
+    "id": "Tambahkan ke menu (08.2). Untuk Layanan Pelanggan, Panduan Ukuran, Konfirmasi Pembayaran atau Informasi Pengiriman, pilih juga di Pengaturan Situs → Miroir → Halaman tertaut (08.5)."
+  },
+  {
+    "en": "Store pages and templates",
+    "id": "Simpan halaman dan templat"
+  },
+  {
+    "en": "Screen",
+    "id": "Layar"
+  },
+  {
+    "en": "Edited in",
+    "id": "Diedit di"
+  },
+  {
+    "en": "What can change",
+    "id": "Apa yang bisa berubah"
+  },
+  {
+    "en": "Bag, Checkout, Account",
+    "id": "Tas, Checkout, Akun"
+  },
+  {
+    "en": "Their own pages: Bag / Checkout / Account widgets.",
+    "id": "Halamannya sendiri: Widget Tas / Checkout / Akun."
+  },
+  {
+    "en": "Texts only.",
+    "id": "Hanya teks."
+  },
+  {
+    "en": "Product page",
+    "id": "Halaman produk"
+  },
+  {
+    "en": "Template \"Miroir: Product page\".",
+    "id": "Templat \"Miroir: Halaman produk\"."
+  },
+  {
+    "en": "Section switches and texts.",
+    "id": "Sakelar bagian dan teks."
+  },
+  {
+    "en": "Shop, collections",
+    "id": "Toko, koleksi"
+  },
+  {
+    "en": "Template \"Miroir: Shop and collections\".",
+    "id": "Templat \"Miroir: Toko dan koleksi\"."
+  },
+  {
+    "en": "Filter sidebar, title bar, texts.",
+    "id": "Filter sidebar, bilah judul, teks."
+  },
+  {
+    "en": "Search, 404, Maintenance",
+    "id": "Pencarian, 404, Pemeliharaan"
+  },
+  {
+    "en": "Their \"Miroir: …\" templates.",
+    "id": "Templat \"Miroir: …\" mereka."
+  },
+  {
+    "en": "Texts (maintenance: 11.1).",
+    "id": "Teks (pemeliharaan: 11.1)."
+  },
+  {
+    "en": "Templates are shared",
+    "id": "Templat dibagikan"
+  },
+  {
+    "en": "One change to the product template applies to every product. Do not delete or rename \"Miroir: …\" templates.",
+    "id": "Satu perubahan pada template produk berlaku untuk setiap produk. Jangan menghapus atau mengganti nama template \"Miroir: …\"."
+  },
+  {
+    "en": "WhatsApp orders.",
+    "id": "Pesanan WhatsApp."
+  },
+  {
+    "en": "The site does not take payments. Customers send their order by WhatsApp, the order is saved in WooCommerce, and payment (bank transfer or PayPal) is confirmed in the chat. This chapter is the CS team's daily SOP.",
+    "id": "Situs ini tidak menerima pembayaran. Pelanggan mengirimkan pesanannya melalui WhatsApp, pesanan disimpan di QZP000QZ, dan pembayaran (transfer bank atau PayPal) dikonfirmasi dalam chat. Bab ini adalah SOP harian tim CS."
+  },
+  {
+    "en": "Who",
+    "id": "Siapa"
+  },
+  {
+    "en": "Flow",
+    "id": "Mengalir"
+  },
+  {
+    "en": "Customer",
+    "id": "Customer"
+  },
+  {
+    "en": "Choose product and size → Bag (qty, coupon) → Review (delivery details, send) → Order sent page + WhatsApp opens with the message.",
+    "id": "Pilih produk dan ukuran → Tas (jumlah, kupon) → Ulasan (detail pengiriman, kirim) → Halaman pesanan terkirim + WhatsApp terbuka dengan pesan."
+  },
+  {
+    "en": "Store team",
+    "id": "tim toko"
+  },
+  {
+    "en": "Match the Order ref in Orders → send payment details → check proof, set Processing → ship, add tracking, set Completed.",
+    "id": "Cocokkan referensi Pesanan di Pesanan → kirim detail pembayaran → periksa bukti, setel Pemrosesan → kirim, tambahkan pelacakan, setel Selesai."
+  },
+  {
+    "en": "The order is recorded the moment the customer presses send on Review. Everything after happens in the chat and ends with a status update in WooCommerce.",
+    "id": "Pesanan dicatat saat pelanggan menekan kirim pada Review. Semuanya setelahnya terjadi dalam obrolan dan diakhiri dengan pembaruan status di QZP000QZ."
+  },
+  {
+    "en": "What the customer sees",
+    "id": "Apa yang dilihat pelanggan"
+  },
+  {
+    "en": "Chooses a product and size, then <span class=\"path\">Add to bag</span> or <span class=\"path\">Order via WhatsApp</span> (both go to the bag).",
+    "id": "Pilih produk dan ukuran, lalu QZP000QZ atau QZP001QZ (keduanya masuk ke tas)."
+  },
+  {
+    "en": "In the Bag: sets quantities, can enter a coupon code.",
+    "id": "Di dalam Tas: menentukan jumlah, dapat memasukkan kode kupon."
+  },
+  {
+    "en": "On Review: full name, phone, country, address, postcode, province, city, optional email and notes.",
+    "id": "Saat Ditinjau: nama lengkap, telepon, negara, alamat, kode pos, provinsi, kota, email opsional, dan catatan."
+  },
+  {
+    "en": "Presses send. The order is saved in WooCommerce right away and the bag is emptied.",
+    "id": "Menekan kirim. Pesanan segera disimpan di QZP000QZ dan tas dikosongkan."
+  },
+  {
+    "en": "The Order sent page opens with summary, address, bank account, PayPal and a button to reopen WhatsApp. WhatsApp opens with the message filled in.",
+    "id": "Halaman Pesanan terkirim terbuka dengan ringkasan, alamat, rekening bank, PayPal dan tombol untuk membuka kembali WhatsApp. WhatsApp terbuka dengan pesan terisi."
+  },
+  {
+    "en": "A product page: size, Add to bag and Order via WhatsApp.",
+    "id": "Halaman produk: ukuran, Tambahkan ke tas dan Pesan melalui WhatsApp."
+  },
+  {
+    "en": "Good to know",
+    "id": "Senang mengetahuinya"
+  },
+  {
+    "en": "Totals in the message and on the page exclude shipping; CS gives shipping in the chat. Sold-out products show an ask-via-WhatsApp button that does not create an order.",
+    "id": "Total dalam pesan dan halaman tidak termasuk ongkos kirim; CS memberikan pengiriman di chat. Produk yang terjual habis menunjukkan tombol tanya melalui WhatsApp yang tidak membuat pesanan."
+  },
+  {
+    "en": "Reading the WhatsApp message",
+    "id": "Membaca pesan WhatsApp"
+  },
+  {
+    "en": "<span class=\"path\">Order ref: #…</span> is the key for finding the order in WooCommerce.",
+    "id": "QZP000QZ adalah kunci untuk menemukan pesanan di QZP001QZ."
+  },
+  {
+    "en": "Discount and Total lines appear only with a coupon; Notes only when the customer wrote some.",
+    "id": "Garis Diskon dan Total hanya muncul dengan kupon; Catatan hanya ketika pelanggan menulis beberapa."
+  },
+  {
+    "en": "Customers can edit the message before sending. WooCommerce data is the source of truth, not the chat text.",
+    "id": "Pelanggan dapat mengedit pesan sebelum mengirim. Data QZP000QZ adalah sumber kebenaran, bukan teks obrolan."
+  },
+  {
+    "en": "Daily SOP: processing a new order",
+    "id": "SOP Harian: memproses pesanan baru"
+  },
+  {
+    "en": "Receive the chat",
+    "id": "Terima obrolannya"
+  },
+  {
+    "en": "Open the new chat in WhatsApp Business and note the Order ref.",
+    "id": "Buka obrolan baru di WhatsApp Business dan catat referensi Pesanan."
+  },
+  {
+    "en": "Find the order",
+    "id": "Temukan pesanannya"
+  },
+  {
+    "en": "<span class=\"path\">WooCommerce → Orders</span>, search the ref, open it. New orders are On hold.",
+    "id": "QZP000QZ, cari ref, buka. Pesanan baru sedang ditahan."
+  },
+  {
+    "en": "Check the contents",
+    "id": "Periksa isinya"
+  },
+  {
+    "en": "Compare products, sizes, quantities and address with the chat. If they differ, follow WooCommerce or edit the order with the customer (06.5).",
+    "id": "Bandingkan produk, ukuran, jumlah dan alamat dengan chat. Jika berbeda, ikuti QZP000QZ atau edit pesanan dengan pelanggan (06.5)."
+  },
+  {
+    "en": "Confirm stock and shipping",
+    "id": "Konfirmasi stok dan pengiriman"
+  },
+  {
+    "en": "Check availability, calculate shipping, send the final total in the chat.",
+    "id": "Cek ketersediaan, hitung ongkos kirim, kirim total akhir di chat."
+  },
+  {
+    "en": "Send payment details",
+    "id": "Kirim detail pembayaran"
+  },
+  {
+    "en": "Bank or PayPal, as on the Order sent page. Add shipping to the order (06.5) so the totals match.",
+    "id": "Bank atau PayPal, seperti pada halaman Pesanan terkirim. Tambahkan ongkos kirim ke pesanan (06.5) agar totalnya cocok."
+  },
+  {
+    "en": "Check the payment",
+    "id": "Periksa pembayarannya"
+  },
+  {
+    "en": "When funds arrive, set the status to Processing and keep the proof as a private note.",
+    "id": "Saat dana sudah masuk, atur status menjadi Processing dan simpan buktinya sebagai catatan pribadi."
+  },
+  {
+    "en": "Ship",
+    "id": "Mengirimkan"
+  },
+  {
+    "en": "Add courier and tracking number as a note to the customer, send it in the chat, set Completed.",
+    "id": "Tambahkan kurir dan nomor tracking sebagai catatan kepada pelanggan, kirim di chat, setel Selesai."
+  },
+  {
+    "en": "WooCommerce → Orders. Search by order number at the top right.",
+    "id": "QZP000QZ → Orders. Search by order number at the top right."
+  },
+  {
+    "en": "Status",
+    "id": "Status"
+  },
+  {
+    "en": "On hold → Processing → Completed.",
+    "id": "On hold → Processing → Completed."
+  },
+  {
+    "en": "Recalculate",
+    "id": "Hitung ulang"
+  },
+  {
+    "en": "After adding shipping or changing items.",
+    "id": "Setelah menambahkan pengiriman atau mengubah item."
+  },
+  {
+    "en": "Billing / Shipping",
+    "id": "Penagihan / Pengiriman"
+  },
+  {
+    "en": "Pencil icon edits the address.",
+    "id": "Ikon pensil mengedit alamat."
+  },
+  {
+    "en": "Order notes",
+    "id": "Catatan pesanan"
+  },
+  {
+    "en": "Private notes and notes to the customer.",
+    "id": "Catatan pribadi dan catatan untuk pelanggan."
+  },
+  {
+    "en": "Add item(s)",
+    "id": "Tambahkan item"
+  },
+  {
+    "en": "Add products or a shipping line.",
+    "id": "Tambahkan produk atau jalur pelayaran."
+  },
+  {
+    "en": "Update",
+    "id": "Memperbarui"
+  },
+  {
+    "en": "Saves the order.",
+    "id": "Menyimpan pesanan."
+  },
+  {
+    "en": "Order statuses",
+    "id": "Status pesanan"
+  },
+  {
+    "en": "Status",
+    "id": "Status"
+  },
+  {
+    "en": "Meaning here",
+    "id": "Artinya di sini"
+  },
+  {
+    "en": "When",
+    "id": "Kapan"
+  },
+  {
+    "en": "On hold",
+    "id": "Ditahan"
+  },
+  {
+    "en": "Received, waiting for chat confirmation and payment.",
+    "id": "Sudah diterima, tunggu konfirmasi chat dan pembayaran."
+  },
+  {
+    "en": "Automatic when the customer sends (default).",
+    "id": "Otomatis saat pelanggan mengirim (default)."
+  },
+  {
+    "en": "Pending payment",
+    "id": "Pembayaran tertunda"
+  },
+  {
+    "en": "Alternative starting status.",
+    "id": "Status awal alternatif."
+  },
+  {
+    "en": "Only if changed in settings (06.7).",
+    "id": "Hanya jika diubah dalam pengaturan (06.7)."
+  },
+  {
+    "en": "Processing",
+    "id": "Pengolahan"
+  },
+  {
+    "en": "Paid, being prepared.",
+    "id": "Dibayar, sedang dipersiapkan."
+  },
+  {
+    "en": "After the proof is checked.",
+    "id": "Setelah buktinya diperiksa."
+  },
+  {
+    "en": "Completed",
+    "id": "Selesai"
+  },
+  {
+    "en": "Shipped.",
+    "id": "Dikirim."
+  },
+  {
+    "en": "Once tracking is available.",
+    "id": "Setelah pelacakan tersedia."
+  },
+  {
+    "en": "Cancelled",
+    "id": "Dibatalkan"
+  },
+  {
+    "en": "Cancelled before payment.",
+    "id": "Dibatalkan sebelum pembayaran."
+  },
+  {
+    "en": "Customer cancels or goes silent (06.8).",
+    "id": "Pelanggan membatalkan atau terdiam (06.8)."
+  },
+  {
+    "en": "Refunded",
+    "id": "Dikembalikan"
+  },
+  {
+    "en": "Money returned.",
+    "id": "Uang dikembalikan."
+  },
+  {
+    "en": "After a manual refund (06.8).",
+    "id": "Setelah pengembalian dana manual (06.8)."
+  },
+  {
+    "en": "Stock is not tracked, so statuses do not change stock. A status change can email the customer if they gave an email and WooCommerce emails are on (WooCommerce → Settings → Emails).",
+    "id": "Stok tidak terlacak, jadi status tidak mengubah stok. Perubahan status dapat mengirim email ke pelanggan jika mereka memberikan email dan email QZP000QZ aktif (QZP001QZ → Pengaturan → Email)."
+  },
+  {
+    "en": "Editing an order",
+    "id": "Mengedit pesanan"
+  },
+  {
+    "en": "Orders can be edited only while On hold or Pending payment. Finish all changes before Processing.",
+    "id": "Pesanan hanya dapat diedit saat pembayaran Ditahan atau Ditunda. Selesaikan semua perubahan sebelum Memproses."
+  },
+  {
+    "en": "Change",
+    "id": "Mengubah"
+  },
+  {
+    "en": "How",
+    "id": "Bagaimana"
+  },
+  {
+    "en": "Add shipping",
+    "id": "Tambahkan pengiriman"
+  },
+  {
+    "en": "<span class=\"path\">Add item(s) → Add shipping</span>, name (e.g. \"JNE REG\") and amount, then <span class=\"path\">Recalculate</span> and <span class=\"path\">Update</span>.",
+    "id": "QZP000QZ, nama (misalnya \"JNE REG\") dan jumlah, lalu QZP001QZ dan QZP002QZ."
+  },
+  {
+    "en": "Size or quantity",
+    "id": "Ukuran atau kuantitas"
+  },
+  {
+    "en": "Pencil icon on the line, or delete it and <span class=\"path\">Add product(s)</span> in the right size. Recalculate.",
+    "id": "Ikon pensil pada garis, atau hapus dan QZP000QZ dalam ukuran yang tepat. Hitung ulang."
+  },
+  {
+    "en": "Address",
+    "id": "Alamat"
+  },
+  {
+    "en": "Pencil icon in Billing / Shipping.",
+    "id": "Ikon pensil di Penagihan / Pengiriman."
+  },
+  {
+    "en": "Coupon",
+    "id": "Kupon"
+  },
+  {
+    "en": "The customer's coupon is already recorded; add another with <span class=\"path\">Apply coupon</span>.",
+    "id": "Kupon pelanggan sudah tercatat; tambahkan yang lain dengan QZP000QZ."
+  },
+  {
+    "en": "After the total changes, send the new total in the chat.",
+    "id": "Setelah total berubah, kirimkan total baru di chat."
+  },
+  {
+    "en": "Order notes",
+    "id": "Catatan pesanan"
+  },
+  {
+    "en": "<span class=\"path\">Private note</span>: team only, e.g. \"BCA transfer proof received 16/11, checked by &lt;name&gt;\".",
+    "id": "QZP000QZ: hanya tim, mis. \"Bukti transfer BCA diterima 16/11, diperiksa oleh <nama>\"."
+  },
+  {
+    "en": "<span class=\"path\">Note to customer</span>: emailed to the customer if they gave an email. Use it for tracking numbers.",
+    "id": "QZP000QZ: dikirim melalui email ke pelanggan jika mereka memberikan email. Gunakan untuk melacak nomor."
+  },
+  {
+    "en": "The customer's own notes from Review appear under <span class=\"path\">Customer provided note</span>.",
+    "id": "Catatan pelanggan dari Ulasan muncul di bawah QZP000QZ."
+  },
+  {
+    "en": "WhatsApp ordering settings",
+    "id": "Pengaturan pemesanan WhatsApp"
+  },
+  {
+    "en": "<span class=\"path\">WooCommerce → Settings → WhatsApp ordering</span>. Administrator or Shop manager only.",
+    "id": "QZP000QZ. QZP001QZ atau QZP002QZ saja."
+  },
+  {
+    "en": "The WhatsApp ordering tab.",
+    "id": "Tab pemesanan WhatsApp."
+  },
+  {
+    "en": "Setting",
+    "id": "Pengaturan"
+  },
+  {
+    "en": "Purpose",
+    "id": "Tujuan"
+  },
+  {
+    "en": "Notes",
+    "id": "Catatan"
+  },
+  {
+    "en": "WhatsApp number",
+    "id": "Nomor WhatsApp"
+  },
+  {
+    "en": "Where every order message goes.",
+    "id": "Kemana perginya setiap pesan pesanan."
+  },
+  {
+    "en": "Country code first, digits only (62812…). A wrong number = orders never arrive.",
+    "id": "Kode negara terlebih dahulu, hanya angka (62812…). Nomor yang salah = pesanan tidak pernah sampai."
+  },
+  {
+    "en": "Status of new orders",
+    "id": "Status pesanan baru"
+  },
+  {
+    "en": "Starting status.",
+    "id": "Status awal."
+  },
+  {
+    "en": "Default On hold; or Pending payment, Processing.",
+    "id": "Default Ditahan; atau Pembayaran tertunda, Sedang Diproses."
+  },
+  {
+    "en": "Payment method shown",
+    "id": "Metode pembayaran ditampilkan"
+  },
+  {
+    "en": "Payment text on orders.",
+    "id": "Teks pembayaran pada pesanan."
+  },
+  {
+    "en": "\"Bank transfer or PayPal after confirmation\".",
+    "id": "\"Transfer bank atau PayPal setelah konfirmasi\"."
+  },
+  {
+    "en": "PayPal account",
+    "id": "akun PayPal"
+  },
+  {
+    "en": "Shown on Order sent.",
+    "id": "Ditampilkan pada Pesanan terkirim."
+  },
+  {
+    "en": "Empty = hidden.",
+    "id": "Kosong = tersembunyi."
+  },
+  {
+    "en": "Require address / city",
+    "id": "Membutuhkan alamat/kota"
+  },
+  {
+    "en": "Required fields on Review.",
+    "id": "Bidang yang wajib diisi pada Tinjauan."
+  },
+  {
+    "en": "Both on by default.",
+    "id": "Keduanya aktif secara default."
+  },
+  {
+    "en": "Open WhatsApp after",
+    "id": "Buka WhatsApp setelahnya"
+  },
+  {
+    "en": "Delay before WhatsApp opens; when \"didn't open\" help appears.",
+    "id": "Penundaan sebelum WhatsApp dibuka; ketika bantuan \"tidak terbuka\" muncul."
+  },
+  {
+    "en": "800 ms; 4000 ms.",
+    "id": "800 ms; 4000 ms."
+  },
+  {
+    "en": "WooCommerce → Settings → Payments → Direct bank transfer: only the first account shows on Order sent.",
+    "id": "QZP000QZ → Settings → Payments → Direct bank transfer: only the first account shows on Order sent."
+  },
+  {
+    "en": "B / Change the message wording",
+    "id": "B / Mengubah kata-kata pesan"
+  },
+  {
+    "en": "WhatsApp ordering → Message wording / ~5 min",
+    "id": "WhatsApp ordering → Message wording / ~5 min"
+  },
+  {
+    "en": "Each line has its own field: Greeting, Product line, Size for products without sizes, Subtotal, Discount, Total, Name, Phone, Delivery, Notes, Order reference.",
+    "id": "Setiap baris memiliki bidangnya sendiri: Salam, Lini produk, Ukuran untuk produk tanpa ukuran, Subtotal, Diskon, Total, Nama, Telepon, Pengiriman, Catatan, Referensi pesanan."
+  },
+  {
+    "en": "Use placeholders in curly braces such as <span class=\"path\">{name}</span>, <span class=\"path\">{total}</span>, <span class=\"path\">{ref}</span>; each field lists its own.",
+    "id": "Gunakan placeholder dalam kurung kurawal seperti QZP000QZ, QZP001QZ, QZP002QZ; setiap bidang mencantumkannya sendiri."
+  },
+  {
+    "en": "Empty a field to restore its default. Never remove <span class=\"path\">{ref}</span> from Order reference.",
+    "id": "Kosongkan bidang untuk mengembalikan defaultnya. Jangan pernah menghapus QZP000QZ dari referensi Pesanan."
+  },
+  {
+    "en": "Press <span class=\"path\">Save changes</span>, then place a test order (06.9).",
+    "id": "Tekan QZP000QZ, lalu lakukan test order (06.9)."
+  },
+  {
+    "en": "Special cases",
+    "id": "Kasus khusus"
+  },
+  {
+    "en": "Case",
+    "id": "Kasus"
+  },
+  {
+    "en": "What to do",
+    "id": "Apa yang harus dilakukan"
+  },
+  {
+    "en": "Order but no chat",
+    "id": "Pesan tetapi tidak ada obrolan"
+  },
+  {
+    "en": "The customer never pressed send. Contact them if there is a phone number; after 3 days with no reply, set Cancelled with a note.",
+    "id": "Pelanggan tidak pernah menekan kirim. Hubungi mereka jika ada nomor telepon; setelah 3 hari tidak ada balasan, atur Dibatalkan dengan catatan."
+  },
+  {
+    "en": "Chat without Order ref",
+    "id": "Obrolan tanpa Pesanan ref"
+  },
+  {
+    "en": "Probably a sold-out enquiry or typed by hand. Search Orders by name/phone; if none, treat it as an enquiry.",
+    "id": "Mungkin pertanyaan yang terjual habis atau diketik dengan tangan. Cari Pesanan berdasarkan nama/telepon; jika tidak ada, perlakukan itu sebagai pertanyaan."
+  },
+  {
+    "en": "Duplicate order",
+    "id": "Pesanan duplikat"
+  },
+  {
+    "en": "Process one; cancel the other with \"duplicate of #…\".",
+    "id": "Proses satu; batalkan yang lain dengan \"duplikat #...\"."
+  },
+  {
+    "en": "Customer changes items",
+    "id": "Pelanggan mengubah item"
+  },
+  {
+    "en": "Edit the order (06.5) before Processing.",
+    "id": "Edit pesanan (06.5) sebelum Diproses."
+  },
+  {
+    "en": "Cancel before payment",
+    "id": "Batalkan sebelum pembayaran"
+  },
+  {
+    "en": "Set Cancelled and write the reason as a private note.",
+    "id": "Setel Dibatalkan dan tulis alasannya sebagai catatan pribadi."
+  },
+  {
+    "en": "Refund after payment",
+    "id": "Pengembalian dana setelah pembayaran"
+  },
+  {
+    "en": "Return the money by bank/PayPal, then <span class=\"path\">Refund</span> on the order with the amount, without any gateway's automatic refund button.",
+    "id": "Kembalikan uang melalui bank/PayPal, lalu QZP000QZ sesuai pesanan dengan jumlahnya, tanpa tombol pengembalian dana otomatis gateway apa pun."
+  },
+  {
+    "en": "Paying in another currency",
+    "id": "Membayar dalam mata uang lain"
+  },
+  {
+    "en": "The order is in the currency the customer chose. Agree amount and rate in the chat; note it privately.",
+    "id": "Pesanan dalam mata uang yang dipilih pelanggan. Setujui jumlah dan tarif dalam obrolan; mencatatnya secara pribadi."
+  },
+  {
+    "en": "\"3 days\" is a proposal; set it to the store's policy.",
+    "id": "\"3 hari\" adalah sebuah proposal; atur sesuai kebijakan toko."
+  },
+  {
+    "en": "Test after changing settings",
+    "id": "Uji setelah mengubah pengaturan"
+  },
+  {
+    "en": "Open the store in a private window and add one product to the bag.",
+    "id": "Buka toko di jendela pribadi dan tambahkan satu produk ke tas."
+  },
+  {
+    "en": "Fill in Review with test data (name \"TEST\") and send.",
+    "id": "Isi Review dengan data uji (nama \"TEST\") dan kirim."
+  },
+  {
+    "en": "Check WhatsApp opens to the right number with the right message, and Order sent shows the right bank and PayPal.",
+    "id": "Periksa WhatsApp terbuka ke nomor yang tepat dengan pesan yang benar, dan Pesanan terkirim menunjukkan bank dan PayPal yang tepat."
+  },
+  {
+    "en": "In Orders, set the test order to Cancelled, then move it to Trash.",
+    "id": "Di Pesanan, atur pesanan pengujian ke Dibatalkan, lalu pindahkan ke Sampah."
+  },
+  {
+    "en": "Customer data",
+    "id": "data pelanggan"
+  },
+  {
+    "en": "Logged-in customers' orders appear in their account; guest orders are kept with name and phone.",
+    "id": "Pesanan pelanggan yang masuk akan muncul di akun mereka; pesanan tamu disimpan dengan nama dan telepon."
+  },
+  {
+    "en": "Customer list: <span class=\"path\">WooCommerce → Customers</span>. Erasure requests: <span class=\"path\">Tools → Erase Personal Data</span> (Administrator).",
+    "id": "Daftar pelanggan: QZP000QZ. Permintaan penghapusan: QZP001QZ (QZP002QZ)."
+  },
+  {
+    "en": "Never copy customer data into group chats or shared spreadsheets.",
+    "id": "Jangan pernah menyalin data pelanggan ke dalam obrolan grup atau spreadsheet bersama."
+  },
+  {
+    "en": "Products & media.",
+    "id": "Produk & media."
+  },
+  {
+    "en": "Products live in <span class=\"path\">Products</span>. All prices are in IDR, stock is not tracked, and the Sale category and popular searches run on their own.",
+    "id": "Produk QZP000QZ di QZP001QZ. Semua harga dalam IDR, stok tidak terlacak, dan kategori Sale serta pencarian populer berjalan sendiri."
+  },
+  {
+    "en": "Products → All Products. The star marks featured products.",
+    "id": "Products → All Products. The star marks featured products."
+  },
+  {
+    "en": "Prepare before you start",
+    "id": "Persiapkan sebelum Anda mulai"
+  },
+  {
+    "en": "Material",
+    "id": "Bahan"
+  },
+  {
+    "en": "Requirement",
+    "id": "Persyaratan"
+  },
+  {
+    "en": "Name",
+    "id": "Nama"
+  },
+  {
+    "en": "Follow existing naming, e.g. \"Como Black Polka Pants\".",
+    "id": "Ikuti penamaan yang ada, mis. \"Celana Polka Hitam Como\"."
+  },
+  {
+    "en": "Description",
+    "id": "Keterangan"
+  },
+  {
+    "en": "Fabric, cut, care, model's size.",
+    "id": "Kain, potongan, perawatan, ukuran model."
+  },
+  {
+    "en": "Price",
+    "id": "Harga"
+  },
+  {
+    "en": "IDR. Other currencies are calculated (09.1).",
+    "id": "Rp. Mata uang lainnya dihitung (09.1)."
+  },
+  {
+    "en": "Sizes / Colour",
+    "id": "Ukuran / Warna"
+  },
+  {
+    "en": "Available sizes (S / M / L); one colour from the Colour list.",
+    "id": "Tersedia ukuran (S/M/L); satu warna dari daftar Warna."
+  },
+  {
+    "en": "Photos",
+    "id": "Foto"
+  },
+  {
+    "en": "3:4 portrait, at least 1500 × 2000 px, JPG or WebP, under 500 KB.",
+    "id": "Potret 3:4, setidaknya 1500 × 2000 piksel, JPG atau WebP, di bawah 500 KB."
+  },
+  {
+    "en": "Categories",
+    "id": "Kategori"
+  },
+  {
+    "en": "Product type + collection (07.3).",
+    "id": "Jenis produk + koleksi (07.3)."
+  },
+  {
+    "en": "C / Add a one-size product",
+    "id": "C / Tambahkan produk satu ukuran"
+  },
+  {
+    "en": "Products → Add New / ~5 min",
+    "id": "Products → Add New / ~5 min"
+  },
+  {
+    "en": "Fill in name and description; in <span class=\"path\">Product data</span> choose <span class=\"path\">Simple product</span>.",
+    "id": "Isi nama dan deskripsi; di QZP000QZ pilih QZP001QZ."
+  },
+  {
+    "en": "General: <span class=\"path\">Regular price</span> (Sale price only when discounted, 07.4).",
+    "id": "Umum: QZP000QZ (Harga jual hanya jika didiskon, 07.4)."
+  },
+  {
+    "en": "Inventory: SKU if used; leave Manage stock off; Stock status = In stock. Attributes: add Colour.",
+    "id": "Inventaris: SKU jika digunakan; biarkan Kelola stok mati; Status stok = Tersedia. Atribut: tambahkan Warna."
+  },
+  {
+    "en": "Tick categories, set Product image and Product gallery, <span class=\"path\">Preview</span>, then <span class=\"path\">Publish</span>.",
+    "id": "Centang kategori, atur Gambar Produk dan Galeri Produk, QZP000QZ, lalu QZP001QZ."
+  },
+  {
+    "en": "The product editor: Product data, categories and images.",
+    "id": "Editor produk: Data produk, kategori, dan gambar."
+  },
+  {
+    "en": "D / Add a product with sizes",
+    "id": "D / Tambahkan produk dengan ukuran"
+  },
+  {
+    "en": "Products → Add New / ~8 min",
+    "id": "Products → Add New / ~8 min"
+  },
+  {
+    "en": "As task C, but choose <span class=\"path\">Variable product</span>.",
+    "id": "Sebagai tugas C, tetapi pilih QZP000QZ."
+  },
+  {
+    "en": "Attributes: add Colour (do not tick Used for variations). <span class=\"path\">Add new</span> custom attribute named exactly <span class=\"path\">Size</span>, values <span class=\"path\">S | M | L</span>, tick Used for variations, <span class=\"path\">Save attributes</span>.",
+    "id": "Atribut : tambahkan Warna (jangan centang Digunakan untuk variasi). Atribut khusus QZP000QZ bernama persis QZP001QZ, nilai QZP002QZ, centang Digunakan untuk variasi, QZP003QZ."
+  },
+  {
+    "en": "Variations: <span class=\"path\">Generate variations</span>; open each and fill in Regular price. Variations without a price cannot be ordered.",
+    "id": "Variasi: QZP000QZ; buka masing-masing dan isi harga Reguler. Variasi tanpa harga tidak dapat dipesan."
+  },
+  {
+    "en": "<span class=\"path\">Save changes</span>, then categories, photos, Preview and Publish.",
+    "id": "QZP000QZ, lalu kategori, foto, Pratinjau dan Publikasikan."
+  },
+  {
+    "en": "Variations after Generate: one per size, each with its own price.",
+    "id": "Variasi setelah Hasilkan: satu per ukuran, masing-masing dengan harganya sendiri."
+  },
+  {
+    "en": "Changing products",
+    "id": "Mengubah produk"
+  },
+  {
+    "en": "<span class=\"path\">Price</span>: open the product, change it (variable: per variation), Update. Simple products also via Quick Edit.",
+    "id": "QZP000QZ: buka produk, ubah (variabel: per variasi), Update. Produk sederhana juga melalui Quick Edit."
+  },
+  {
+    "en": "<span class=\"path\">New size</span>: Attributes → add to Size → Save attributes → Variations → Add variation → price.",
+    "id": "QZP000QZ: Atribut → tambahkan ke Ukuran → Simpan atribut → Variasi → Tambahkan variasi → harga."
+  },
+  {
+    "en": "<span class=\"path\">Many products</span>: tick them in the list → Bulk actions → Edit (categories, stock status, price).",
+    "id": "QZP000QZ: tick them in the list → Bulk actions → Edit (categories, stock status, price)."
+  },
+  {
+    "en": "<span class=\"path\">Similar product</span>: hover → Duplicate, change name, photos and colour; check the slug before Publish.",
+    "id": "QZP000QZ: arahkan kursor → Gandakan, ubah nama, foto, dan warna; periksa siput sebelum Publikasikan."
+  },
+  {
+    "en": "Categories and collections",
+    "id": "Kategori dan koleksi"
+  },
+  {
+    "en": "Group",
+    "id": "Kelompok"
+  },
+  {
+    "en": "Examples",
+    "id": "Contoh"
+  },
+  {
+    "en": "Rule",
+    "id": "Aturan"
+  },
+  {
+    "en": "Product type",
+    "id": "Jenis produk"
+  },
+  {
+    "en": "Tops, Bottoms, Dress, Outerwear, Accessories.",
+    "id": "Atasan, Bawahan, Gaun, Pakaian Luar, Aksesori."
+  },
+  {
+    "en": "Tick one.",
+    "id": "Centang satu."
+  },
+  {
+    "en": "Collection",
+    "id": "Koleksi"
+  },
+  {
+    "en": "Riviera, Textura, Ligne, Holiday Edit, At the Studio, Miroir x Naluri.",
+    "id": "Riviera, Textura, Ligne, Edit Liburan, Di Studio, Miroir x Naluri."
+  },
+  {
+    "en": "Tick the product's collection.",
+    "id": "Centang koleksi produk."
+  },
+  {
+    "en": "Curation",
+    "id": "Kurasi"
+  },
+  {
+    "en": "New Collection, Best Seller.",
+    "id": "Koleksi Baru, Best Seller."
+  },
+  {
+    "en": "Per campaign.",
+    "id": "Per kampanye."
+  },
+  {
+    "en": "Sale",
+    "id": "Penjualan"
+  },
+  {
+    "en": "Sale.",
+    "id": "Penjualan."
+  },
+  {
+    "en": "Never tick by hand: automatic (07.4).",
+    "id": "Jangan pernah mencentang dengan tangan: otomatis (07.4)."
+  },
+  {
+    "en": "Shop",
+    "id": "Toko"
+  },
+  {
+    "en": "Shop.",
+    "id": "Toko."
+  },
+  {
+    "en": "Redirects to the main shop page.",
+    "id": "Mengalihkan ke halaman utama toko."
+  },
+  {
+    "en": "Products → Categories. Fill in Description and Thumbnail for each collection.",
+    "id": "Products → Categories. Fill in Description and Thumbnail for each collection."
+  },
+  {
+    "en": "New collection: Name, Parent category, Thumbnail (the social share image), <span class=\"path\">Add new category</span>.",
+    "id": "Koleksi baru: Nama, Kategori Induk, Thumbnail (gambar berbagi sosial), QZP000QZ."
+  },
+  {
+    "en": "The shop sidebar comes from the menus Shop sidebar: categories and Shop sidebar: featured. Add new categories there (08.2).",
+    "id": "Bilah samping toko berasal dari menu Bilah samping toko: kategori dan Bilah samping toko: unggulan. Tambahkan kategori baru di sana (08.2)."
+  },
+  {
+    "en": "Renaming is fine. Changing a slug changes the URL and breaks old links: ask the developer. Never sell from Uncategorized.",
+    "id": "Mengganti nama baik-baik saja. Mengubah siput akan mengubah URL dan merusak tautan lama: tanyakan pada pengembang. Jangan pernah menjual dari Uncategorized."
+  },
+  {
+    "en": "Sale prices and the Sale category",
+    "id": "Harga jual dan kategori Jual"
+  },
+  {
+    "en": "Fill in <span class=\"path\">Sale price</span> (variable: on each discounted variation). For dates, press <span class=\"path\">Schedule</span>.",
+    "id": "Isikan QZP000QZ (variabel : pada setiap variasi diskon). Untuk tanggal, tekan QZP001QZ."
+  },
+  {
+    "en": "Save. Cards show the old price struck through, and the product joins Sale while the discount runs and leaves on its own afterwards.",
+    "id": "Menyimpan. Kartu menunjukkan harga lama yang berlaku, dan produk bergabung dalam Penjualan sementara diskon berjalan dan hilang dengan sendirinya setelahnya."
+  },
+  {
+    "en": "Ticking Sale by hand on a product without a sale price is undone on save. For code-based discounts use coupons (09.2).",
+    "id": "Mencentang Penjualan dengan tangan pada produk tanpa harga jual dibatalkan pada penyimpanan. Untuk diskon berbasis kode gunakan kupon (09.2)."
+  },
+  {
+    "en": "Product photos",
+    "id": "Foto produk"
+  },
+  {
+    "en": "<span class=\"path\">Product image</span> is the main photo on cards, bag and orders; <span class=\"path\">Product gallery</span> holds the rest. Drag to reorder.",
+    "id": "QZP000QZ adalah foto utama pada kartu, tas dan pesanan; QZP001QZ menampung sisanya. Tarik untuk menyusun ulang."
+  },
+  {
+    "en": "<span class=\"path\">Show second gallery image on hover</span> (08.5) shows the first gallery photo when hovering a card.",
+    "id": "QZP000QZ (08.5) menampilkan foto galeri pertama saat mengarahkan kartu."
+  },
+  {
+    "en": "<span class=\"path\">Product image shape</span> (default Portrait 3:4) crops every photo to that shape. Upload at the same ratio.",
+    "id": "QZP000QZ (Potret default 3:4) memotong setiap foto ke bentuk itu. Unggah dengan rasio yang sama."
+  },
+  {
+    "en": "Turning off <span class=\"path\">Show product photos</span> replaces every photo with a grey box. Keep it on.",
+    "id": "Mematikan QZP000QZ akan menggantikan setiap foto dengan kotak abu-abu. Tetap pakai."
+  },
+  {
+    "en": "Media library",
+    "id": "Perpustakaan media"
+  },
+  {
+    "en": "Media → Library.",
+    "id": "Media → Library."
+  },
+  {
+    "en": "Type",
+    "id": "Jenis"
+  },
+  {
+    "en": "Size",
+    "id": "Ukuran"
+  },
+  {
+    "en": "Format / limit",
+    "id": "Format / batas"
+  },
+  {
+    "en": "Product photo",
+    "id": "Foto produk"
+  },
+  {
+    "en": "1500 × 2000 px (3:4).",
+    "id": "1500 × 2000 piksel (3:4)."
+  },
+  {
+    "en": "JPG / WebP, ± 500 KB.",
+    "id": "JPG / WebP, ± 500 KB."
+  },
+  {
+    "en": "Banner, editorial",
+    "id": "Spanduk, editorial"
+  },
+  {
+    "en": "See appendix C.",
+    "id": "Lihat lampiran C."
+  },
+  {
+    "en": "JPG / WebP, ± 800 KB.",
+    "id": "JPG / WebP, ± 800 KB."
+  },
+  {
+    "en": "Hero video",
+    "id": "Video pahlawan"
+  },
+  {
+    "en": "Desktop 9:4, mobile 3:4.",
+    "id": "Desktop 9:4, seluler 3:4."
+  },
+  {
+    "en": "MP4 H.264, ± 5 MB / ± 1.5 MB.",
+    "id": "MP4 H.264, ± 5 MB / ± 1,5 MB."
+  },
+  {
+    "en": "File names: descriptive, lowercase, hyphens: <span class=\"path\">como-black-polka-pants-front.jpg</span>. Fill in Alt text.",
+    "id": "Nama file: deskriptif, huruf kecil, tanda hubung: QZP000QZ. Isi teks Alt."
+  },
+  {
+    "en": "Replacing: upload the new file and select it. Do not delete the old one until it is unused everywhere, or an empty box appears.",
+    "id": "Mengganti: unggah file baru dan pilih. Jangan hapus yang lama sampai tidak terpakai dimana-mana, atau muncul kotak kosong."
+  },
+  {
+    "en": "Compress before upload (Squoosh, TinyPNG). Limits are proposals based on the current media.",
+    "id": "Kompres sebelum diunggah (Squoosh, TinyPNG). Batasan adalah usulan berdasarkan media yang ada saat ini."
+  },
+  {
+    "en": "Sold out, featured, hidden",
+    "id": "Terjual habis, ditampilkan, disembunyikan"
+  },
+  {
+    "en": "Goal",
+    "id": "Sasaran"
+  },
+  {
+    "en": "How",
+    "id": "Bagaimana"
+  },
+  {
+    "en": "Effect",
+    "id": "Memengaruhi"
+  },
+  {
+    "en": "Sold out",
+    "id": "Terjual habis"
+  },
+  {
+    "en": "Inventory → Stock status = Out of stock (variable: on the size).",
+    "id": "Inventory → Stock status = Out of stock (variable: on the size)."
+  },
+  {
+    "en": "Sold-out label; ask-via-WhatsApp button.",
+    "id": "Label terjual habis; tombol tanya-melalui-WhatsApp."
+  },
+  {
+    "en": "Featured",
+    "id": "Unggulan"
+  },
+  {
+    "en": "Star icon in the Products list.",
+    "id": "Ikon bintang di daftar Produk."
+  },
+  {
+    "en": "Used by Product row \"Featured\" (05.6).",
+    "id": "Digunakan oleh baris Produk \"Unggulan\" (05.6)."
+  },
+  {
+    "en": "Hide for now",
+    "id": "Sembunyikan untuk saat ini"
+  },
+  {
+    "en": "Status Draft.",
+    "id": "Draf Status."
+  },
+  {
+    "en": "Gone from the store; link closes.",
+    "id": "Pergi dari toko; tautan ditutup."
+  },
+  {
+    "en": "Link only",
+    "id": "Tautan saja"
+  },
+  {
+    "en": "Catalog visibility: Hidden.",
+    "id": "Visibilitas katalog: Tersembunyi."
+  },
+  {
+    "en": "Not in listings, link works.",
+    "id": "Tidak ada dalam daftar, tautan berfungsi."
+  },
+  {
+    "en": "Delete",
+    "id": "Menghapus"
+  },
+  {
+    "en": "Trash (restorable for 30 days).",
+    "id": "Sampah (dapat dipulihkan selama 30 hari)."
+  },
+  {
+    "en": "Link becomes 404; ask for a redirect (09.5).",
+    "id": "Tautan menjadi 404; minta pengalihan (09.5)."
+  },
+  {
+    "en": "Products per shop page and similar products are set in Site Settings (08.5). Popular searches are counted automatically from the last 30 days.",
+    "id": "Produk per halaman toko dan produk serupa diatur di Pengaturan Situs (08.5). Pencarian populer dihitung secara otomatis dari 30 hari terakhir."
+  },
+  {
+    "en": "Header, footer & settings.",
+    "id": "Header, footer & pengaturan."
+  },
+  {
+    "en": "Parts shown on every page, plus store-wide settings and text, are managed in one place. A change here applies everywhere at once.",
+    "id": "Bagian yang ditampilkan di setiap halaman, ditambah pengaturan dan teks di seluruh toko, dikelola di satu tempat. Perubahan di sini berlaku di semua tempat sekaligus."
+  },
+  {
+    "en": "Opening Site Settings",
+    "id": "Membuka Pengaturan Situs"
+  },
+  {
+    "en": "Open any page with <span class=\"path\">Edit with Elementor</span>.",
+    "id": "Buka halaman mana pun dengan QZP000QZ."
+  },
+  {
+    "en": "Elementor menu (top left) → <span class=\"path\">Site Settings</span> → <span class=\"path\">Miroir</span>; or Global Colors, Global Fonts, Site Identity.",
+    "id": "QZP000QZ menu (top left) → QZP001QZ → QZP002QZ; or Global Colors, Global Fonts, Site Identity."
+  },
+  {
+    "en": "Change the setting, then <span class=\"path\">Save Changes</span> at the bottom of the panel.",
+    "id": "Ubah pengaturannya, lalu QZP000QZ di bagian bawah panel."
+  },
+  {
+    "en": "Site Settings → Miroir, with the Templates group open.",
+    "id": "Pengaturan Situs → Miroir, dengan grup Templat terbuka."
+  },
+  {
+    "en": "Navigation menus",
+    "id": "Menu navigasi"
+  },
+  {
+    "en": "Menu location",
+    "id": "Lokasi menu"
+  },
+  {
+    "en": "Shown in",
+    "id": "Ditampilkan di"
+  },
+  {
+    "en": "Header: primary links",
+    "id": "Header: tautan utama"
+  },
+  {
+    "en": "Main menu in the header.",
+    "id": "Menu utama di header."
+  },
+  {
+    "en": "Menu panel",
+    "id": "Panel menu"
+  },
+  {
+    "en": "The menu behind the hamburger button.",
+    "id": "Menu di belakang tombol hamburger."
+  },
+  {
+    "en": "Footer: account / policy / contact",
+    "id": "Footer: akun / kebijakan / kontak"
+  },
+  {
+    "en": "The three footer columns.",
+    "id": "Kolom tiga footer."
+  },
+  {
+    "en": "Shop sidebar: categories / featured",
+    "id": "Sidebar toko: kategori / unggulan"
+  },
+  {
+    "en": "Shop sidebar groups (menu name = group title).",
+    "id": "Grup sidebar toko (nama menu = judul grup)."
+  },
+  {
+    "en": "Appearance → Menus, with Menu Settings → Menu location at the bottom.",
+    "id": "Appearance → Menus, with Menu Settings → Menu location at the bottom."
+  },
+  {
+    "en": "Choose the menu in <span class=\"path\">Select a menu to edit</span>.",
+    "id": "Pilih menu di QZP000QZ."
+  },
+  {
+    "en": "Tick pages, Product categories or Custom Links on the left → <span class=\"path\">Add to Menu</span>.",
+    "id": "Tick pages, Product categories or Custom Links on the left → QZP000QZ."
+  },
+  {
+    "en": "Drag to reorder (slightly right = submenu); change <span class=\"path\">Navigation Label</span> if needed.",
+    "id": "Tarik untuk menyusun ulang (sedikit ke kanan = submenu); ubah QZP000QZ jika diperlukan."
+  },
+  {
+    "en": "<span class=\"path\">Save Menu</span>, then check desktop and mobile.",
+    "id": "QZP000QZ, lalu periksa desktop dan seluler."
+  },
+  {
+    "en": "Announcement bar",
+    "id": "Bilah pengumuman"
+  },
+  {
+    "en": "Template \"Miroir: Header\" with the announcement bar selected.",
+    "id": "Templat \"Miroir: Header\" dengan bilah pengumuman dipilih."
+  },
+  {
+    "en": "<span class=\"path\">Templates → Saved Templates</span> → open \"Miroir: Header\" with Elementor.",
+    "id": "QZP000QZ → buka \"Miroir: Header\" dengan QZP001QZ."
+  },
+  {
+    "en": "Click the bar: change <span class=\"path\">Text</span>, add a <span class=\"path\">Link</span> (optional), or turn off <span class=\"path\">Show announcement bar</span>. Update.",
+    "id": "Klik bilah: ubah QZP000QZ, tambahkan QZP001QZ (opsional), atau matikan QZP002QZ. Memperbarui."
+  },
+  {
+    "en": "Logo, header and footer",
+    "id": "Logo, header dan footer"
+  },
+  {
+    "en": "Logo: Site Settings → Site Identity → Site Logo (SVG or transparent PNG). Width: Navigation widget → Uploaded logo width (0 = default).",
+    "id": "Logo: Pengaturan Situs → Identitas Situs → Logo Situs (SVG atau PNG transparan). Lebar: Widget navigasi → Lebar logo yang diunggah (0 = default)."
+  },
+  {
+    "en": "Favicon: Site Identity → Site Icon, 512 × 512 px.",
+    "id": "Favicon: Site Identity → Site Icon, 512 × 512 px."
+  },
+  {
+    "en": "Homepage navbar style (Site Settings → Miroir → Header): Transparent over hero (default) or Solid. Choose Solid when a bright film makes the white menu hard to read.",
+    "id": "Gaya navbar beranda (Pengaturan Situs → Miroir → Header): Transparan di atas hero (default) atau Solid. Pilih Solid bila film terang membuat menu putih sulit dibaca."
+  },
+  {
+    "en": "Footer: open \"Miroir: Footer\". Footer line (\"Location : Indonesia\"), Copyright and credit; column links come from the footer menus; Instagram URL from Site Settings → Miroir → Links.",
+    "id": "Catatan kaki: buka \"Miroir: Catatan kaki\". Baris footer (\"Lokasi : Indonesia\"), Hak Cipta dan kredit; tautan kolom berasal dari menu footer; URL Instagram dari Pengaturan Situs → Miroir → Tautan."
+  },
+  {
+    "en": "Site Settings → Miroir",
+    "id": "Site Settings → Miroir"
+  },
+  {
+    "en": "Group",
+    "id": "Kelompok"
+  },
+  {
+    "en": "Key settings",
+    "id": "Pengaturan kunci"
+  },
+  {
+    "en": "Default",
+    "id": "Bawaan"
+  },
+  {
+    "en": "Templates",
+    "id": "Templat"
+  },
+  {
+    "en": "Header, footer, product, shop, search, 404, maintenance.",
+    "id": "Header, footer, produk, toko, pencarian, 404, pemeliharaan."
+  },
+  {
+    "en": "\"Miroir: …\" templates",
+    "id": "\"Miroir: …\" templat"
+  },
+  {
+    "en": "Header / Links",
+    "id": "Tajuk / Tautan"
+  },
+  {
+    "en": "Homepage navbar style; Instagram URL.",
+    "id": "Gaya bilah navigasi beranda; URL Instagram."
+  },
+  {
+    "en": "Transparent; miroirstore",
+    "id": "Transparan; toko miroir"
+  },
+  {
+    "en": "Text size",
+    "id": "Ukuran teks"
+  },
+  {
+    "en": "Scale of all text, 80–140%.",
+    "id": "Skala seluruh teks, 80–140%."
+  },
+  {
+    "en": "Layout & spacing",
+    "id": "Tata letak & jarak"
+  },
+  {
+    "en": "Margins, spacing, columns per device, products per page.",
+    "id": "Margin, spasi, kolom per perangkat, produk per halaman."
+  },
+  {
+    "en": "Products",
+    "id": "Produk"
+  },
+  {
+    "en": "Image shape, photos on/off, hover photo, similar products, size guide link.",
+    "id": "Bentuk gambar, foto aktif/nonaktif, foto hover, produk serupa, tautan panduan ukuran."
+  },
+  {
+    "en": "3:4; on; off; 4; off",
+    "id": "3:4; pada; mati; 4; mati"
+  },
+  {
+    "en": "Linked pages",
+    "id": "Halaman tertaut"
+  },
+  {
+    "en": "Customer care, Size guide, Payment confirmation, Shipping information.",
+    "id": "Layanan pelanggan, Panduan ukuran, Konfirmasi pembayaran, Informasi pengiriman."
+  },
+  {
+    "en": "/contact/, /size-guide/ …",
+    "id": "QZP000QZ, QZP001QZ …"
+  },
+  {
+    "en": "Maintenance",
+    "id": "Pemeliharaan"
+  },
+  {
+    "en": "Maintenance mode on/off.",
+    "id": "Mode pemeliharaan hidup/mati."
+  },
+  {
+    "en": "Off (11.1)",
+    "id": "Mati (11.1)"
+  },
+  {
+    "en": "Layout numbers follow the design. Change them only on a design request, and note the old values first.",
+    "id": "Nomor tata letak mengikuti desain. Ubah hanya berdasarkan permintaan desain, dan catat nilai lama terlebih dahulu."
+  },
+  {
+    "en": "Store text and labels",
+    "id": "Simpan teks dan label"
+  },
+  {
+    "en": "All small text (buttons, panel titles, empty states, Order sent text, SEO descriptions) is edited without code in <span class=\"path\">Site Settings → Miroir → Labels: …</span>.",
+    "id": "Semua teks kecil (tombol, judul panel, status kosong, teks Pesanan terkirim, deskripsi SEO) diedit tanpa kode di QZP000QZ."
+  },
+  {
+    "en": "Labels groups in Site Settings → Miroir.",
+    "id": "Labels groups in Site Settings → Miroir."
+  },
+  {
+    "en": "Label group",
+    "id": "Grup label"
+  },
+  {
+    "en": "Examples",
+    "id": "Contoh"
+  },
+  {
+    "en": "Header & menu, Search",
+    "id": "Tajuk & menu, Pencarian"
+  },
+  {
+    "en": "Menu buttons, search placeholder.",
+    "id": "Tombol menu, cari placeholder."
+  },
+  {
+    "en": "Shop, Empty results",
+    "id": "Belanja, Hasil Kosong"
+  },
+  {
+    "en": "Listing titles, \"no results\" text.",
+    "id": "Daftar judul, teks \"tidak ada hasil\"."
+  },
+  {
+    "en": "Product page, states",
+    "id": "Halaman produk, menyatakan"
+  },
+  {
+    "en": "Buy button, \"sold out\", \"added to bag\".",
+    "id": "Tombol beli, \"terjual habis\", \"ditambahkan ke tas\"."
+  },
+  {
+    "en": "Bag, Checkout, Order sent",
+    "id": "Tas, Checkout, Pesanan terkirim"
+  },
+  {
+    "en": "Form labels, payment text, bank lines.",
+    "id": "Label formulir, teks pembayaran, jalur bank."
+  },
+  {
+    "en": "404, Maintenance, Staging",
+    "id": "404, Pemeliharaan, QZP000QZ"
+  },
+  {
+    "en": "Titles and text of special pages.",
+    "id": "Judul dan teks halaman khusus."
+  },
+  {
+    "en": "Search engines",
+    "id": "Mesin pencari"
+  },
+  {
+    "en": "Home and collection descriptions for Google (09.4).",
+    "id": "Deskripsi rumah dan koleksi untuk Google (09.4)."
+  },
+  {
+    "en": "Open the group and find the field. The current text shows faded inside it.",
+    "id": "Buka grup dan temukan bidangnya. Teks saat ini terlihat memudar di dalamnya."
+  },
+  {
+    "en": "Type the new text; empty the field to restore the default. Save, then check the page.",
+    "id": "Ketikkan teks baru; kosongkan bidang untuk mengembalikan default. Simpan, lalu periksa halamannya."
+  },
+  {
+    "en": "Keep the codes",
+    "id": "Simpan kodenya"
+  },
+  {
+    "en": "Text with <span class=\"path\">%s</span>, <span class=\"path\">%d</span> or <span class=\"path\">%1$d</span> must keep the same codes: they are replaced with a name, number or price. If one is missing, the store falls back to the default text.",
+    "id": "Teks dengan QZP000QZ, QZP001QZ atau QZP002QZ harus tetap menggunakan kode yang sama: diganti dengan nama, nomor atau harga. Jika ada yang hilang, penyimpanan akan kembali ke teks default."
+  },
+  {
+    "en": "Colours and fonts",
+    "id": "Warna dan font"
+  },
+  {
+    "en": "Site Settings → Global Colors / Global Fonts: the \"miroir_*\" entries are used everywhere. Change them only per the brand guideline, and note old values first.",
+    "id": "Pengaturan Situs → Warna Global / Font Global: entri \"miroir_*\" digunakan di mana saja. Ubah hanya sesuai pedoman merek, dan catat nilai-nilai lama terlebih dahulu."
+  },
+  {
+    "en": "The Avenir font is licensed and installed by the developer; do not upload a replacement.",
+    "id": "Font Avenir dilisensikan dan diinstal oleh pengembang; jangan unggah penggantinya."
+  },
+  {
+    "en": "If Elementor is ever inactive, the same settings are in Appearance → Customize → Miroir theme and Text & labels.",
+    "id": "If QZP000QZ is ever inactive, the same settings are in Appearance → Customize → Miroir theme and Text & labels."
+  },
+  {
+    "en": "Prices, promos & SEO.",
+    "id": "Harga, promo & SEO."
+  },
+  {
+    "en": "Prices are stored in IDR and converted to USD, SGD and MYR with manual rates. Discounts use Sale price or coupons, shipping is agreed in the chat, and basic SEO is generated by the theme.",
+    "id": "Harga disimpan dalam IDR dan dikonversi ke USD, SGD dan MYR dengan tarif manual. Diskon menggunakan harga Jual atau kupon, pengiriman disepakati dalam obrolan, dan SEO dasar dihasilkan oleh tema."
+  },
+  {
+    "en": "Currencies and exchange rates",
+    "id": "Mata uang dan nilai tukar"
+  },
+  {
+    "en": "WooCommerce → WooCommerce Multilingual & Multicurrency → Multicurrency. The pencil edits a rate.",
+    "id": "QZP000QZ → QZP001QZ Multilingual & Multicurrency → Multicurrency. The pencil edits a rate."
+  },
+  {
+    "en": "Customers switch currency in the header; everyone starts in IDR. Enter prices in IDR only; others are calculated without rounding.",
+    "id": "Pelanggan mengganti mata uang di header; semua orang mulai dari Rp. Masukkan harga dalam IDR saja; yang lain dihitung tanpa pembulatan."
+  },
+  {
+    "en": "Rates do not update by themselves. The developer fetches ECB rates on request, or edit the rate (1 IDR = …) here and save.",
+    "id": "Tarif tidak diperbarui dengan sendirinya. Pengembang mengambil kurs ECB berdasarkan permintaan, atau mengedit kurs (1 IDR = …) di sini dan menyimpannya."
+  },
+  {
+    "en": "Check rates monthly or when the rupiah moves sharply. Orders keep the customer's currency; payment is agreed in the chat.",
+    "id": "Cek suku bunga setiap bulan atau saat rupiah bergerak tajam. Pesanan menjaga mata uang pelanggan; pembayaran disepakati di chat."
+  },
+  {
+    "en": "Warning",
+    "id": "Peringatan"
+  },
+  {
+    "en": "Do not add or remove currencies, or change the base currency in WooCommerce → Settings → General. It changes every price and goes through the developer.",
+    "id": "Jangan menambah atau menghapus mata uang, atau mengubah mata uang dasar di QZP000QZ → Pengaturan → Umum. Itu mengubah setiap harga dan melewati pengembang."
+  },
+  {
+    "en": "Coupons",
+    "id": "Kupon"
+  },
+  {
+    "en": "Marketing → Coupons → a coupon's General tab.",
+    "id": "Marketing → Coupons → a coupon's General tab."
+  },
+  {
+    "en": "<span class=\"path\">Marketing → Coupons → Add coupon</span>; type the code customers use, e.g. <span class=\"path\">MIROIR10</span> (not case-sensitive).",
+    "id": "QZP000QZ; ketikkan kode yang digunakan pelanggan, mis. QZP001QZ (tidak peka huruf besar-kecil)."
+  },
+  {
+    "en": "General: Discount type (Percentage, Fixed cart, Fixed product), amount, expiry date.",
+    "id": "Umum: Jenis diskon (Persentase, Keranjang tetap, Produk tetap), jumlah, tanggal kedaluwarsa."
+  },
+  {
+    "en": "Usage restriction: minimum spend, products or categories, <span class=\"path\">Exclude sale items</span>. Usage limits: total and per customer.",
+    "id": "Batasan penggunaan: pembelanjaan minimum, produk atau kategori, QZP000QZ. Batas penggunaan: total dan per pelanggan."
+  },
+  {
+    "en": "<span class=\"path\">Publish</span>, then test it in the store (06.9) before announcing.",
+    "id": "QZP000QZ, lalu uji di toko (06.9) sebelum diumumkan."
+  },
+  {
+    "en": "Per-customer limits use email, so guests without email are hard to limit. Fixed amounts are in IDR and converted. Stop a coupon with Draft or an end date, never by deleting it.",
+    "id": "Batasan per pelanggan menggunakan email, jadi tamu tanpa email sulit dibatasi. Jumlah tetap dalam IDR dan dikonversi. Hentikan kupon dengan Draf atau tanggal akhir, jangan pernah menghapusnya."
+  },
+  {
+    "en": "Shipping, price format and tax",
+    "id": "Pengiriman, format harga dan pajak"
+  },
+  {
+    "en": "Shipping is not calculated on the site; totals say \"excl. shipping\". CS adds it to the order (06.5).",
+    "id": "Pengiriman tidak dihitung di situs; totalnya tertulis \"tidak termasuk pengiriman\". CS menambahkannya ke pesanan (06.5)."
+  },
+  {
+    "en": "Countries on Review come from WooCommerce → Settings → General → Selling and Shipping location(s). Shipping zones are not used by the WhatsApp flow.",
+    "id": "Negara yang ditinjau berasal dari QZP000QZ → Pengaturan → Umum → Lokasi Penjualan dan Pengiriman. Zona pengiriman tidak digunakan oleh aliran WhatsApp."
+  },
+  {
+    "en": "Keep an internal shipping table (courier, destination, weight, rate) for CS, outside the site.",
+    "id": "Simpan tabel pengiriman internal (kurir, tujuan, berat, tarif) untuk CS, di luar situs."
+  },
+  {
+    "en": "Currency IDR with no decimals; do not change. Tax (Tax tab) is the owner's or accountant's decision; recheck prices if it changes.",
+    "id": "Mata uang IDR tanpa desimal; jangan berubah. Pajak (tab Pajak) adalah keputusan pemilik atau akuntan; periksa kembali harga jika ada perubahan."
+  },
+  {
+    "en": "Ask the owner or accountant to confirm the live tax and country settings before changing them.",
+    "id": "Minta pemilik atau akuntan untuk mengonfirmasi pajak QZP000QZ dan pengaturan negara sebelum mengubahnya."
+  },
+  {
+    "en": "SEO",
+    "id": "seo"
+  },
+  {
+    "en": "Page",
+    "id": "Halaman"
+  },
+  {
+    "en": "Google description from",
+    "id": "Deskripsi Google dari"
+  },
+  {
+    "en": "Share image from",
+    "id": "Bagikan gambar dari"
+  },
+  {
+    "en": "Home",
+    "id": "Rumah"
+  },
+  {
+    "en": "Label Search engines → Home page description (08.6).",
+    "id": "Label Search engines → Home page description (08.6)."
+  },
+  {
+    "en": "Built-in campaign poster.",
+    "id": "Poster kampanye bawaan."
+  },
+  {
+    "en": "Product",
+    "id": "Produk"
+  },
+  {
+    "en": "Short description, else description, else default text.",
+    "id": "Deskripsi singkat, deskripsi lain, teks default lainnya."
+  },
+  {
+    "en": "Main product photo.",
+    "id": "Foto produk utama."
+  },
+  {
+    "en": "Collection",
+    "id": "Koleksi"
+  },
+  {
+    "en": "Category Description, else default with the collection name.",
+    "id": "Deskripsi Kategori, jika tidak default dengan nama koleksi."
+  },
+  {
+    "en": "Category Thumbnail.",
+    "id": "Kategori Gambar Kecil."
+  },
+  {
+    "en": "Text page",
+    "id": "Halaman teks"
+  },
+  {
+    "en": "Page Excerpt, else the page content.",
+    "id": "Kutipan Halaman, selain itu konten halaman."
+  },
+  {
+    "en": "Featured image.",
+    "id": "Gambar unggulan."
+  },
+  {
+    "en": "Do",
+    "id": "Melakukan"
+  },
+  {
+    "en": "Clear names: type, colour, feature.",
+    "id": "Nama yang jelas: jenis, warna, fitur."
+  },
+  {
+    "en": "Short description of 1–2 sentences, about 150 characters.",
+    "id": "Deskripsi singkat 1–2 kalimat, sekitar 150 karakter."
+  },
+  {
+    "en": "Description and Thumbnail on every collection; alt text on photos.",
+    "id": "Deskripsi dan Thumbnail pada setiap koleksi; teks alternatif pada foto."
+  },
+  {
+    "en": "Avoid",
+    "id": "Menghindari"
+  },
+  {
+    "en": "Installing Yoast, Rank Math or another SEO plugin without the developer: it switches off the theme's SEO.",
+    "id": "Menginstal Yoast, Rank Math, atau plugin SEO lainnya tanpa pengembang: ini akan menonaktifkan SEO tema."
+  },
+  {
+    "en": "Worrying about filter, sort or currency pages: they are kept out of Google automatically.",
+    "id": "Khawatir tentang filter, pengurutan, atau mata uang halaman: halaman tersebut tidak dimasukkan ke dalam Google secara otomatis."
+  },
+  {
+    "en": "Old links and integrations",
+    "id": "Tautan dan integrasi lama"
+  },
+  {
+    "en": "Some old miroir.id links have redirects. Coverage is not guaranteed: send the old and desired new addresses to the developer to check or add a redirect.",
+    "id": "Beberapa tautan QZP000QZ lama mengalami pengalihan. Cakupan tidak dijamin: kirimkan alamat lama dan baru yang diinginkan ke pengembang untuk memeriksa atau menambahkan pengalihan."
+  },
+  {
+    "en": "TikTok for Business: active, Marketing → TikTok (pixel and catalog). Google Listings & Ads: installed, inactive; activate with the developer.",
+    "id": "TikTok for Business: aktif, Pemasaran → TikTok (piksel dan katalog). Cantuman & Iklan Google: terpasang, tidak aktif; aktifkan dengan pengembang."
+  },
+  {
+    "en": "Instagram: link only (Site Settings → Miroir → Links). Search Console: recommended; record the access holder in appendix D.",
+    "id": "Instagram: tautan saja (Pengaturan Situs → Miroir → Tautan). Search Console: direkomendasikan; catat pemegang akses pada lampiran D."
+  },
+  {
+    "en": "Connecting or disconnecting an integration can affect running ads. Leave it to the account holder.",
+    "id": "Menghubungkan atau memutuskan integrasi dapat memengaruhi penayangan iklan. Serahkan pada pemegang rekening."
+  },
+  {
+    "en": "Publishing & backup.",
+    "id": "Penerbitan & pencadangan."
+  },
+  {
+    "en": "The client team edits all content directly on live. Staging is only for the developer to test code and to preview new features with you before release.",
+    "id": "Tim klien mengedit semua konten langsung di QZP000QZ. QZP001QZ hanya diperuntukkan bagi pengembang untuk menguji kode dan melihat pratinjau fitur baru bersama Anda sebelum rilis."
+  },
+  {
+    "en": "Editing on live",
+    "id": "Mengedit di QZP000QZ"
+  },
+  {
+    "en": "Do",
+    "id": "Melakukan"
+  },
+  {
+    "en": "Small changes: edit, Update, then open the page in a new tab to check.",
+    "id": "Perubahan kecil: edit, Perbarui, lalu buka halaman di tab baru untuk memeriksa."
+  },
+  {
+    "en": "Big changes: prepare with Save Draft or Elementor Preview; publish after checking desktop and phone.",
+    "id": "Perubahan besar: persiapkan dengan Simpan Draf atau Pratinjau QZP000QZ; publikasikan setelah memeriksa desktop dan telepon."
+  },
+  {
+    "en": "Risky changes (home hero, main menu) outside busy order hours.",
+    "id": "Perubahan berisiko (home hero, menu utama) di luar jam sibuk order."
+  },
+  {
+    "en": "Log big changes (who, when, what) in the team chat.",
+    "id": "Catat perubahan besar (siapa, kapan, apa) dalam obrolan tim."
+  },
+  {
+    "en": "Avoid",
+    "id": "Menghindari"
+  },
+  {
+    "en": "Two people on one page. If WordPress says \"… is currently editing\", wait.",
+    "id": "Dua orang dalam satu halaman. Jika QZP000QZ mengatakan \"… sedang mengedit\", tunggu."
+  },
+  {
+    "en": "Real content work on any address starting with <span class=\"path\">staging.</span>",
+    "id": "Konten nyata berfungsi di alamat mana pun yang dimulai dengan QZP000QZ"
+  },
+  {
+    "en": "Staging and previews",
+    "id": "QZP000QZ dan pratinjau"
+  },
+  {
+    "en": "Staging (staging.miroir.id) is the developer's copy for testing code and showing you new features.",
+    "id": "QZP000QZ (QZP001QZ) adalah salinan pengembang untuk menguji kode dan menampilkan fitur baru kepada Anda."
+  },
+  {
+    "en": "Content edits there never move to live, and can be overwritten when the developer recopies live data.",
+    "id": "Pengeditan konten di sana tidak pernah berpindah ke QZP000QZ, dan dapat ditimpa ketika pengembang menyalin kembali data QZP001QZ."
+  },
+  {
+    "en": "It sends no email and its WhatsApp number is a sample, so test orders never reach the team. It is hidden from Google.",
+    "id": "Ia tidak mengirimkan email dan nomor WhatsApp-nya adalah sampel, jadi pesanan pengujian tidak pernah sampai ke tim. Itu disembunyikan dari Google."
+  },
+  {
+    "en": "Guests enter a shared password (remembered 30 days); Administrators pass. Set in Settings → Staging access. Changing it signs every guest out; 10 wrong tries lock for 15 minutes.",
+    "id": "Tamu memasukkan kata sandi bersama (diingat 30 hari); Administrator lulus. Atur di Pengaturan → akses QZP000QZ. Mengubahnya akan membuat setiap tamu keluar; 10 percobaan salah mengunci selama 15 menit."
+  },
+  {
+    "en": "Updates from the developer",
+    "id": "Pembaruan dari pengembang"
+  },
+  {
+    "en": "The developer sends the change to staging and tells you what to check.",
+    "id": "Pengembang mengirimkan perubahan ke QZP000QZ dan memberi tahu Anda apa yang harus diperiksa."
+  },
+  {
+    "en": "You check on staging with the list below and approve in writing in the chat.",
+    "id": "Anda memeriksa QZP000QZ dengan daftar di bawah ini dan menyetujui secara tertulis di chat."
+  },
+  {
+    "en": "The developer releases to live (needs approval in GitHub), the cache clears, you check once more on live.",
+    "id": "Pengembang merilis ke QZP000QZ (memerlukan persetujuan di GitHub), cache dihapus, Anda memeriksa sekali lagi di QZP001QZ."
+  },
+  {
+    "en": "The pages mentioned look right on desktop and phone; home, one collection and one product are normal.",
+    "id": "Halaman-halaman yang disebutkan terlihat tepat di desktop dan ponsel; rumah, satu koleksi dan satu produk normal."
+  },
+  {
+    "en": "Order flow works: bag → checkout → review → order sent (staging WhatsApp goes to a sample number).",
+    "id": "Order flow works: bag → checkout → review → order sent (QZP000QZ WhatsApp goes to a sample number)."
+  },
+  {
+    "en": "Changed text has no typos; switching IDR/USD/SGD/MYR still works.",
+    "id": "Teks yang diubah tidak memiliki kesalahan ketik; peralihan IDR/USD/SGD/MYR masih berfungsi."
+  },
+  {
+    "en": "A release copies code only. Live products, pages and orders are never touched.",
+    "id": "Rilis hanya menyalin kode. Produk, halaman, dan pesanan QZP000QZ tidak pernah disentuh."
+  },
+  {
+    "en": "Scheduling and revisions",
+    "id": "Penjadwalan dan revisi"
+  },
+  {
+    "en": "Schedule: in the Publish box click <span class=\"path\">Immediately</span>, choose date and time, press <span class=\"path\">Schedule</span>. Times use Settings → General → Timezone (Jakarta).",
+    "id": "Jadwal: pada kotak Publish klik QZP000QZ, pilih tanggal dan waktu, tekan QZP001QZ. Waktu menggunakan Pengaturan → Umum → Zona Waktu (Jakarta)."
+  },
+  {
+    "en": "Elementor → History → Revisions: choose a version and Apply.",
+    "id": "QZP000QZ → Riwayat → Revisi: pilih versi dan Terapkan."
+  },
+  {
+    "en": "What changed",
+    "id": "Apa yang berubah"
+  },
+  {
+    "en": "How to go back",
+    "id": "Bagaimana cara kembali"
+  },
+  {
+    "en": "Elementor page or template",
+    "id": "Halaman atau templat QZP000QZ"
+  },
+  {
+    "en": "History (clock) → Revisions → choose → Apply → Update.",
+    "id": "Riwayat (jam) → Revisi → pilih → Terapkan → Perbarui."
+  },
+  {
+    "en": "Product / regular page",
+    "id": "Produk / halaman biasa"
+  },
+  {
+    "en": "Revisions in the right panel → Restore This Revision.",
+    "id": "Revisions in the right panel → Restore This Revision."
+  },
+  {
+    "en": "Settings and labels",
+    "id": "Pengaturan dan label"
+  },
+  {
+    "en": "No history. Note old values before changing.",
+    "id": "Tidak ada sejarah. Catat nilai-nilai lama sebelum mengubahnya."
+  },
+  {
+    "en": "Revisions do not store variation prices or stock.",
+    "id": "Revisi tidak menyimpan variasi harga atau stok."
+  },
+  {
+    "en": "Backup and restore",
+    "id": "Cadangkan dan pulihkan"
+  },
+  {
+    "en": "Hostinger keeps regular backups (files and database) in hPanel → Websites → miroir.id → Files → Backups. Frequency depends on the plan.",
+    "id": "Hostinger menyimpan cadangan rutin (file dan database) di hPanel → Situs Web → QZP000QZ → File → Cadangan. Frekuensi tergantung pada rencana."
+  },
+  {
+    "en": "Before big changes (plugin updates, deleting many products, rebuilding the home page) ask for a manual backup.",
+    "id": "Sebelum perubahan besar (pembaruan plugin, menghapus banyak produk, membangun kembali halaman beranda) mintalah pencadangan manual."
+  },
+  {
+    "en": "Restore only by the developer or hPanel owner. It returns the whole site to that point: later orders and changes are lost, so note them first. For one page, use Revisions.",
+    "id": "Pemulihan hanya dilakukan oleh pengembang atau pemilik hPanel. Ini mengembalikan seluruh situs ke titik itu: pesanan dan perubahan selanjutnya akan hilang, jadi catat terlebih dahulu. Untuk satu halaman, gunakan Revisi."
+  },
+  {
+    "en": "Never put backup files (.zip, .sql) in the site folder or behind a public link.",
+    "id": "Jangan pernah meletakkan file cadangan (.zip, .sql) di folder situs atau di belakang tautan publik."
+  },
+  {
+    "en": "Maintenance & security.",
+    "id": "Pemeliharaan & keamanan."
+  },
+  {
+    "en": "Maintenance mode",
+    "id": "Modus pemeliharaan"
+  },
+  {
+    "en": "Closes the store to visitors with a \"back soon\" page: for big fixes, migrations or a closure such as a long holiday.",
+    "id": "Menutup toko bagi pengunjung dengan halaman \"segera kembali\": untuk perbaikan besar, migrasi, atau penutupan seperti libur panjang."
+  },
+  {
+    "en": "Site Settings → Miroir → Maintenance.",
+    "id": "Site Settings → Miroir → Maintenance."
+  },
+  {
+    "en": "Site Settings → Miroir → <span class=\"path\">Maintenance</span> (or Appearance → Customize).",
+    "id": "Site Settings → Miroir → QZP000QZ (or Appearance → Customize)."
+  },
+  {
+    "en": "Choose <span class=\"path\">On: visitors see the maintenance page</span> or <span class=\"path\">Off: store is open</span>, then save.",
+    "id": "Pilih QZP000QZ atau QZP001QZ, lalu simpan."
+  },
+  {
+    "en": "When done, turn it off and open the store in a private window to check.",
+    "id": "Setelah selesai, matikan dan buka toko di jendela pribadi untuk memeriksanya."
+  },
+  {
+    "en": "What visitors see while maintenance is on.",
+    "id": "Apa yang dilihat pengunjung saat pemeliharaan sedang berlangsung."
+  },
+  {
+    "en": "Who",
+    "id": "Siapa"
+  },
+  {
+    "en": "Sees",
+    "id": "Melihat"
+  },
+  {
+    "en": "Visitors",
+    "id": "Pengunjung"
+  },
+  {
+    "en": "The maintenance page. Google is told it is temporary (503), so rankings hold unless it stays on for days.",
+    "id": "Halaman pemeliharaan. Google diberitahu bahwa ini bersifat sementara (503), jadi peringkat akan bertahan kecuali jika bertahan selama berhari-hari."
+  },
+  {
+    "en": "Administrators",
+    "id": "Administrator"
+  },
+  {
+    "en": "The normal store.",
+    "id": "Toko biasa."
+  },
+  {
+    "en": "Shop manager / Editor",
+    "id": "QZP000QZ / Penyunting"
+  },
+  {
+    "en": "The maintenance page.",
+    "id": "Halaman pemeliharaan."
+  },
+  {
+    "en": "Preview link holders",
+    "id": "Pratinjau pemegang tautan"
+  },
+  {
+    "en": "The normal store, 30 days per browser. The developer creates and revokes these links.",
+    "id": "Penyimpanan normal, 30 hari per browser. Pengembang membuat dan mencabut tautan ini."
+  },
+  {
+    "en": "Page text: Site Settings → Miroir → Labels: Maintenance page. Preview it without switching on: store address + <span class=\"path\">?miroir-maintenance-preview</span> (Administrator).",
+    "id": "Teks halaman: Pengaturan Situs → Miroir → Label: Halaman pemeliharaan. Pratinjau tanpa menyalakannya: alamat toko + QZP000QZ (QZP001QZ)."
+  },
+  {
+    "en": "Updates",
+    "id": "Pembaruan"
+  },
+  {
+    "en": "Component",
+    "id": "Komponen"
+  },
+  {
+    "en": "Who",
+    "id": "Siapa"
+  },
+  {
+    "en": "Notes",
+    "id": "Catatan"
+  },
+  {
+    "en": "WordPress minor",
+    "id": "QZP000QZ kecil"
+  },
+  {
+    "en": "Automatic.",
+    "id": "Otomatis."
+  },
+  {
+    "en": "No action.",
+    "id": "Tidak ada tindakan."
+  },
+  {
+    "en": "WordPress major, WooCommerce, Elementor, Multilingual",
+    "id": "QZP000QZ mayor, QZP001QZ, QZP002QZ, Multibahasa"
+  },
+  {
+    "en": "Developer.",
+    "id": "Pengembang."
+  },
+  {
+    "en": "Most likely to clash; tested on staging.",
+    "id": "Kemungkinan besar akan bentrok; diuji pada QZP000QZ."
+  },
+  {
+    "en": "TikTok, Google Listings",
+    "id": "TikTok, Daftar Google"
+  },
+  {
+    "en": "Administrator, after telling the developer.",
+    "id": "QZP000QZ, setelah memberitahu pengembang."
+  },
+  {
+    "en": "Usually safe.",
+    "id": "Biasanya aman."
+  },
+  {
+    "en": "Miroir theme and plugins",
+    "id": "Tema dan plugin Miroir"
+  },
+  {
+    "en": "Developer only.",
+    "id": "Hanya pengembang."
+  },
+  {
+    "en": "Arrive with a release (10.3).",
+    "id": "Tiba dengan rilis (10.3)."
+  },
+  {
+    "en": "Red flag",
+    "id": "Bendera merah"
+  },
+  {
+    "en": "If WordPress offers an \"update\" for the Miroir theme or a Miroir plugin from an outside source, do not click it. Report it to the developer.",
+    "id": "Jika QZP000QZ menawarkan \"pembaruan\" untuk tema Miroir atau plugin Miroir dari sumber luar, jangan klik. Laporkan ke pengembang."
+  },
+  {
+    "en": "Plugins and security",
+    "id": "Plugin dan keamanan"
+  },
+  {
+    "en": "New plugins only after the developer approves: cache, SEO, popup, chat and image plugins often clash with the theme and the WhatsApp flow. Send name, business need and link.",
+    "id": "Plugin baru hanya setelah pengembang menyetujui: plugin cache, SEO, popup, chat, dan gambar sering kali berbenturan dengan tema dan alur WhatsApp. Kirim nama, kebutuhan bisnis, dan tautan."
+  },
+  {
+    "en": "Never deactivate or delete Elementor, WooCommerce, WooCommerce Multilingual or the Miroir plugins.",
+    "id": "Jangan pernah menonaktifkan atau menghapus plugin QZP000QZ, QZP001QZ, QZP002QZ Multilingual atau Miroir."
+  },
+  {
+    "en": "Unknown Administrator in Users: report it at once, do not delete it yet.",
+    "id": "QZP000QZ tidak dikenal di Pengguna: laporkan segera, jangan dihapus dulu."
+  },
+  {
+    "en": "\"WordPress\", \"Hostinger\" or \"WooCommerce\" emails asking you to log in via a link are almost always fake.",
+    "id": "Email \"QZP000QZ\", \"Hostinger\" atau \"QZP001QZ\" yang meminta Anda masuk melalui tautan hampir selalu palsu."
+  },
+  {
+    "en": "Never install themes or plugins from .zip files sent by others or \"nulled\" sites. Key access (hPanel, Cloudflare, GitHub, WhatsApp Business) stays with the owner.",
+    "id": "Jangan pernah memasang tema atau plugin dari file .zip yang dikirim oleh orang lain atau situs \"nulled\". Akses kunci (hPanel, Cloudflare, GitHub, WhatsApp Business) tetap ada pada pemiliknya."
+  },
+  {
+    "en": "Cache and speed",
+    "id": "Tembolok dan kecepatan"
+  },
+  {
+    "en": "Change not showing? Check you pressed Update and are on live, not staging.",
+    "id": "Perubahan tidak muncul? Periksa Anda menekan Perbarui dan berada di QZP000QZ, bukan QZP001QZ."
+  },
+  {
+    "en": "Open it in a private window or press <span class=\"kbd\">Ctrl</span> + <span class=\"kbd\">Shift</span> + <span class=\"kbd\">R</span>; wait 5–10 minutes.",
+    "id": "Buka di jendela pribadi atau tekan QZP000QZ + QZP001QZ + QZP002QZ; tunggu 5–10 menit."
+  },
+  {
+    "en": "Still old: hPanel → Websites → miroir.id → Performance → CDN → <span class=\"path\">Flush cache</span>, or ask the developer.",
+    "id": "Masih lama: hPanel → Website → QZP000QZ → Performance → CDN → QZP001QZ, atau tanyakan pada pengembangnya."
+  },
+  {
+    "en": "Keep it fast: follow file limits (appendix C), keep hero films 10–20 seconds and silent, avoid stacking many product rows or banners, delete unused media.",
+    "id": "Tetap cepat: ikuti batasan file (lampiran C), simpan film pahlawan berdurasi 10–20 detik dan senyap, hindari menumpuk banyak baris produk atau spanduk, hapus media yang tidak digunakan."
+  },
+  {
+    "en": "Routine checklist",
+    "id": "Daftar periksa rutin"
+  },
+  {
+    "en": "When",
+    "id": "Kapan"
+  },
+  {
+    "en": "Check",
+    "id": "Memeriksa"
+  },
+  {
+    "en": "Daily",
+    "id": "Sehari-hari"
+  },
+  {
+    "en": "Match new orders with WhatsApp chats (06.3). Move paid orders to Processing, shipped to Completed.",
+    "id": "Cocokkan pesanan baru dengan obrolan WhatsApp (06.3). Pindahkan pesanan berbayar ke Pemrosesan, dikirim ke Selesai."
+  },
+  {
+    "en": "Weekly",
+    "id": "Mingguan"
+  },
+  {
+    "en": "Orders hanging over 3 days (06.8); sold-out items marked (07.7); expired coupons (09.2).",
+    "id": "Pesanan digantung selama 3 hari (06.8); barang yang diberi tanda terjual habis (07.7); kupon kedaluwarsa (09.2)."
+  },
+  {
+    "en": "Monthly",
+    "id": "Bulanan"
+  },
+  {
+    "en": "Users and roles; currency rates (09.1); latest backup exists (10.5); plugin update status; one test order from a phone (06.9).",
+    "id": "Pengguna dan peran; nilai tukar mata uang (09.1); cadangan terbaru ada (10.5); status pembaruan plugin; satu perintah tes dari telepon (06.9)."
+  },
+  {
+    "en": "Per campaign",
+    "id": "Per kampanye"
+  },
+  {
+    "en": "Hero film and posters, banners, editorial (05); announcement bar and menus (08); sale prices and coupons; check on a phone before announcing.",
+    "id": "Film dan poster pahlawan, spanduk, editorial (05); bilah pengumuman dan menu (08); harga jual dan kupon; periksa telepon sebelum mengumumkan."
+  },
+  {
+    "en": "Troubleshooting.",
+    "id": "Pemecahan masalah."
+  },
+  {
+    "en": "Find the symptom and try the fix. If it is still wrong, contact the developer with the details listed at the end of this chapter.",
+    "id": "Temukan gejalanya dan coba perbaikannya. Jika masih salah, hubungi pengembang dengan rincian yang tercantum di akhir bab ini."
+  },
+  {
+    "en": "If this happens",
+    "id": "Jika ini terjadi"
+  },
+  {
+    "en": "Try this",
+    "id": "Coba ini"
+  },
+  {
+    "en": "Change not showing",
+    "id": "Perubahan tidak muncul"
+  },
+  {
+    "en": "Check Update was pressed and you are on live; try a private window, wait 10 minutes, then flush the CDN (11.4).",
+    "id": "Periksa Pembaruan telah ditekan dan Anda berada di QZP000QZ; coba private window, tunggu 10 menit, lalu flush CDN (11.4)."
+  },
+  {
+    "en": "Layout broken after an edit",
+    "id": "Tata letak rusak setelah diedit"
+  },
+  {
+    "en": "History → Revisions → Apply the version before it broke (10.4).",
+    "id": "History → Revisions → Apply the version before it broke (10.4)."
+  },
+  {
+    "en": "White page or \"critical error\"",
+    "id": "Halaman putih atau \"kesalahan kritis\""
+  },
+  {
+    "en": "Change nothing else. Note the time and your last step; contact the developer at once.",
+    "id": "Tidak ada perubahan lain. Catat waktu dan langkah terakhir Anda; hubungi pengembang sekaligus."
+  },
+  {
+    "en": "Header or footer missing",
+    "id": "Header atau footer hilang"
+  },
+  {
+    "en": "Check Site Settings → Miroir → Templates (08.1).",
+    "id": "Periksa Pengaturan Situs → Miroir → Templat (08.1)."
+  },
+  {
+    "en": "Home film not playing",
+    "id": "Film rumahan tidak diputar"
+  },
+  {
+    "en": "Normal on power-saving phones; otherwise use a smaller MP4 (05.3). The poster still shows.",
+    "id": "Normal pada ponsel hemat daya; jika tidak, gunakan MP4 yang lebih kecil (05.3). Posternya masih terlihat."
+  },
+  {
+    "en": "Photo blurry or cropped",
+    "id": "Foto buram atau terpotong"
+  },
+  {
+    "en": "Re-upload at 3:4 and full size (07.5, appendix C).",
+    "id": "Unggah ulang pada 3:4 dan ukuran penuh (07.5, lampiran C)."
+  },
+  {
+    "en": "Label reverted to default",
+    "id": "Label dikembalikan ke default"
+  },
+  {
+    "en": "A %s or %d code was removed. Edit it back in (08.6).",
+    "id": "Kode QZP000QZ atau QZP001QZ telah dihapus. Edit kembali di (08.6)."
+  },
+  {
+    "en": "Menu not changing",
+    "id": "Menu tidak berubah"
+  },
+  {
+    "en": "Check Appearance → Menus → Manage Locations (08.2).",
+    "id": "Periksa Tampilan → Menu → Kelola Lokasi (08.2)."
+  },
+  {
+    "en": "If this happens",
+    "id": "Jika ini terjadi"
+  },
+  {
+    "en": "Try this",
+    "id": "Coba ini"
+  },
+  {
+    "en": "Product not in a collection",
+    "id": "Produk tidak ada dalam koleksi"
+  },
+  {
+    "en": "Category ticked, status Published, Catalog visibility not Hidden (07.3).",
+    "id": "Kategori dicentang, status Diterbitkan, visibilitas katalog tidak Tersembunyi (07.3)."
+  },
+  {
+    "en": "Product in or out of Sale",
+    "id": "Produk masuk atau keluar dari Penjualan"
+  },
+  {
+    "en": "Normal: Sale follows the sale price and its dates (07.4).",
+    "id": "Normal: Penjualan mengikuti harga jual dan tanggalnya (07.4)."
+  },
+  {
+    "en": "Size cannot be chosen",
+    "id": "Ukuran tidak dapat dipilih"
+  },
+  {
+    "en": "That variation has no price or is Out of stock (07.7).",
+    "id": "Variasi tersebut tidak memiliki harga atau Stok habis (07.7)."
+  },
+  {
+    "en": "USD/SGD/MYR look wrong",
+    "id": "USD/SGD/MYR terlihat salah"
+  },
+  {
+    "en": "Check the rates (09.1); ask the developer for new ones.",
+    "id": "Periksa tarif (09.1); mintalah yang baru kepada pengembang."
+  },
+  {
+    "en": "WhatsApp does not open",
+    "id": "WhatsApp tidak terbuka"
+  },
+  {
+    "en": "Check the number (06.7). Order sent has a button to reopen the chat.",
+    "id": "Periksa nomor (06.7). Pesanan terkirim terdapat tombol untuk membuka kembali chat."
+  },
+  {
+    "en": "Order without chat, or chat without order",
+    "id": "Pesan tanpa chat, atau chat tanpa pesan"
+  },
+  {
+    "en": "Follow the special cases in 06.8.",
+    "id": "Ikuti kasus khusus di 06.8."
+  },
+  {
+    "en": "Message looks odd",
+    "id": "Pesan terlihat aneh"
+  },
+  {
+    "en": "A placeholder was removed: empty the field to restore it (06.7).",
+    "id": "Placeholder telah dihapus: kosongkan bidang untuk memulihkannya (06.7)."
+  },
+  {
+    "en": "Wrong bank account shown",
+    "id": "Rekening bank yang ditampilkan salah"
+  },
+  {
+    "en": "Reorder accounts in Direct bank transfer: the first one shows (06.7).",
+    "id": "Susun ulang akun dalam transfer bank langsung: yang pertama ditampilkan (06.7)."
+  },
+  {
+    "en": "If this happens",
+    "id": "Jika ini terjadi"
+  },
+  {
+    "en": "Try this",
+    "id": "Coba ini"
+  },
+  {
+    "en": "Cannot log in",
+    "id": "Tidak dapat masuk"
+  },
+  {
+    "en": "Lost your password?; ask an Administrator to check the account (03.4). Escalate if no reset email arrives.",
+    "id": "Kehilangan kata sandi Anda?; minta QZP000QZ untuk memeriksa akun (03.4). Tingkatkan jika tidak ada email setel ulang yang masuk."
+  },
+  {
+    "en": "Menus missing in admin",
+    "id": "Menu hilang di admin"
+  },
+  {
+    "en": "Your role changed; ask an Administrator (03.2).",
+    "id": "Peran Anda berubah; tanyakan pada QZP000QZ (03.2)."
+  },
+  {
+    "en": "Store shows maintenance",
+    "id": "Toko menunjukkan pemeliharaan"
+  },
+  {
+    "en": "Still on, or you are a Shop manager/Editor. An Administrator turns it off (11.1).",
+    "id": "Masih aktif, atau Anda adalah QZP000QZ/Editor. QZP001QZ mematikannya (11.1)."
+  },
+  {
+    "en": "Old link opens 404",
+    "id": "Tautan lama terbuka 404"
+  },
+  {
+    "en": "Send the full URL to the developer for a redirect (09.5).",
+    "id": "Kirim URL lengkap ke pengembang untuk pengalihan (09.5)."
+  },
+  {
+    "en": "Wrong share title or image",
+    "id": "Judul atau gambar yang dibagikan salah"
+  },
+  {
+    "en": "Fill in image and description (09.4); WhatsApp/Instagram may cache the old preview for a while.",
+    "id": "Isi gambar dan keterangan (09.4); WhatsApp/Instagram mungkin menyimpan pratinjau lama untuk sementara waktu."
+  },
+  {
+    "en": "Who to contact",
+    "id": "Siapa yang harus dihubungi"
+  },
+  {
+    "en": "Problem",
+    "id": "Masalah"
+  },
+  {
+    "en": "Contact",
+    "id": "Kontak"
+  },
+  {
+    "en": "Site errors, layout, order flow",
+    "id": "Kesalahan situs, tata letak, alur pesanan"
+  },
+  {
+    "en": "Developer, also for redirects, rates and plugin updates (appendix E).",
+    "id": "Pengembang, juga untuk pengalihan, tarif dan pembaruan plugin (lampiran E)."
+  },
+  {
+    "en": "Hosting down, domain, SSL, backups",
+    "id": "Hosting down, domain, SSL, cadangan"
+  },
+  {
+    "en": "hPanel owner → Hostinger support (live chat in hPanel).",
+    "id": "hPanel owner → Hostinger support (QZP000QZ chat in hPanel)."
+  },
+  {
+    "en": "WhatsApp Business blocked",
+    "id": "WhatsApp Bisnis diblokir"
+  },
+  {
+    "en": "The WhatsApp account owner, in the WhatsApp Business app.",
+    "id": "Pemilik akun WhatsApp, di aplikasi WhatsApp Business."
+  },
+  {
+    "en": "Admin account compromised",
+    "id": "Akun admin disusupi"
+  },
+  {
+    "en": "Developer and hPanel owner, immediately, by phone.",
+    "id": "Pengembang dan pemilik hPanel, segera melalui telepon."
+  },
+  {
+    "en": "When you report a problem, send",
+    "id": "Saat Anda melaporkan masalah, kirimkan"
+  },
+  {
+    "en": "The page URL; a screenshot or recording with the full error; time and device; the last thing you did before it happened; and the impact: customers cannot order (urgent) or visual only (can wait). Never send passwords in chat.",
+    "id": "URL halaman; tangkapan layar atau rekaman dengan kesalahan penuh; waktu dan perangkat; hal terakhir yang Anda lakukan sebelum hal itu terjadi; dan dampaknya: pelanggan tidak bisa memesan (mendesak) atau hanya visual (bisa menunggu). Jangan pernah mengirim kata sandi dalam obrolan."
+  },
+  {
+    "en": "Appendices.",
+    "id": "Lampiran."
+  },
+  {
+    "en": "Glossary",
+    "id": "Glosarium"
+  },
+  {
+    "en": "Term",
+    "id": "Ketentuan"
+  },
+  {
+    "en": "Meaning",
+    "id": "Arti"
+  },
+  {
+    "en": "wp-admin / Dashboard",
+    "id": "wp-admin / Dasbor"
+  },
+  {
+    "en": "The back end of the site, opened after logging in.",
+    "id": "Bagian belakang situs, dibuka setelah masuk."
+  },
+  {
+    "en": "Template",
+    "id": "Templat"
+  },
+  {
+    "en": "Design of a part used on many pages (\"Miroir: …\").",
+    "id": "Desain bagian yang digunakan pada banyak halaman (\"Miroir: …\")."
+  },
+  {
+    "en": "Widget",
+    "id": "Widget"
+  },
+  {
+    "en": "One content block in Elementor, e.g. Product row.",
+    "id": "Satu blok konten di QZP000QZ, mis. Baris produk."
+  },
+  {
+    "en": "Site Settings",
+    "id": "Pengaturan Situs"
+  },
+  {
+    "en": "Elementor's global settings; tab Miroir holds the theme's.",
+    "id": "Pengaturan global QZP000QZ; tab Miroir memegang tema itu."
+  },
+  {
+    "en": "Slug",
+    "id": "Siput"
+  },
+  {
+    "en": "The address part after the domain, e.g. new-collection.",
+    "id": "Bagian alamat setelah domain, mis. koleksi baru."
+  },
+  {
+    "en": "Attribute / variation",
+    "id": "Atribut / variasi"
+  },
+  {
+    "en": "An option like Size; a buyable combination with its own price.",
+    "id": "Pilihan seperti Ukuran; kombinasi yang dapat dibeli dengan harganya sendiri."
+  },
+  {
+    "en": "Placeholder",
+    "id": "Penampung"
+  },
+  {
+    "en": "A code like {name} or %s replaced automatically.",
+    "id": "Kode seperti QZP000QZ atau QZP001QZ diganti secara otomatis."
+  },
+  {
+    "en": "Live / staging / release",
+    "id": "QZP000QZ / QZP001QZ / rilis"
+  },
+  {
+    "en": "The real store; the developer's test copy; sending new code.",
+    "id": "Toko sebenarnya; salinan uji pengembang; mengirimkan kode baru."
+  },
+  {
+    "en": "Cache / CDN",
+    "id": "Tembolok/CDN"
+  },
+  {
+    "en": "Stored copies that make the site fast and can delay changes.",
+    "id": "Salinan tersimpan yang membuat situs menjadi cepat dan dapat menunda perubahan."
+  },
+  {
+    "en": "301 redirect",
+    "id": "Pengalihan 301"
+  },
+  {
+    "en": "A permanent forward from an old address to a new one.",
+    "id": "Penerusan permanen dari alamat lama ke alamat baru."
+  },
+  {
+    "en": "Revision",
+    "id": "Revisi"
+  },
+  {
+    "en": "An earlier saved version that can be restored.",
+    "id": "Versi tersimpan sebelumnya yang dapat dipulihkan."
+  },
+  {
+    "en": "hPanel",
+    "id": "hPanel"
+  },
+  {
+    "en": "Hostinger's control panel.",
+    "id": "Panel kontrol Hostinger."
+  },
+  {
+    "en": "Menu map",
+    "id": "Peta menu"
+  },
+  {
+    "en": "Task",
+    "id": "Tugas"
+  },
+  {
+    "en": "Menu",
+    "id": "Menu"
+  },
+  {
+    "en": "See",
+    "id": "Melihat"
+  },
+  {
+    "en": "Staff accounts",
+    "id": "Akun staf"
+  },
+  {
+    "en": "Users",
+    "id": "Pengguna"
+  },
+  {
+    "en": "Process orders",
+    "id": "Memproses pesanan"
+  },
+  {
+    "en": "WooCommerce → Orders",
+    "id": "QZP000QZ → Orders"
+  },
+  {
+    "en": "WhatsApp number, wording",
+    "id": "Nomor WhatsApp, kata-kata"
+  },
+  {
+    "en": "WooCommerce → Settings → WhatsApp ordering",
+    "id": "QZP000QZ → Settings → WhatsApp ordering"
+  },
+  {
+    "en": "Bank account",
+    "id": "Rekening bank"
+  },
+  {
+    "en": "Settings → Payments → Direct bank transfer",
+    "id": "Settings → Payments → Direct bank transfer"
+  },
+  {
+    "en": "Add or edit products",
+    "id": "Tambahkan atau edit produk"
+  },
+  {
+    "en": "Products → Add New / Edit",
+    "id": "Products → Add New / Edit"
+  },
+  {
+    "en": "Categories",
+    "id": "Kategori"
+  },
+  {
+    "en": "Products → Categories",
+    "id": "Products → Categories"
+  },
+  {
+    "en": "Photos and videos",
+    "id": "Foto dan video"
+  },
+  {
+    "en": "Media → Library",
+    "id": "Media → Library"
+  },
+  {
+    "en": "Home page, banners",
+    "id": "Halaman beranda, spanduk"
+  },
+  {
+    "en": "Pages → Edit with Elementor",
+    "id": "Pages → Edit with QZP000QZ"
+  },
+  {
+    "en": "Menus",
+    "id": "Menu"
+  },
+  {
+    "en": "Appearance → Menus",
+    "id": "Appearance → Menus"
+  },
+  {
+    "en": "Settings, labels, maintenance",
+    "id": "Pengaturan, label, pemeliharaan"
+  },
+  {
+    "en": "Site Settings → Miroir",
+    "id": "Site Settings → Miroir"
+  },
+  {
+    "en": "Rates, coupons",
+    "id": "Tarif, kupon"
+  },
+  {
+    "en": "WCML → Multi-currency; Marketing → Coupons",
+    "id": "WCML → Multi-currency; Marketing → Coupons"
+  },
+  {
+    "en": "Backup, cache",
+    "id": "Cadangan, cache"
+  },
+  {
+    "en": "hPanel",
+    "id": "hPanel"
+  },
+  {
+    "en": "Asset specifications",
+    "id": "Spesifikasi aset"
+  },
+  {
+    "en": "Asset",
+    "id": "Aset"
+  },
+  {
+    "en": "Ratio / size",
+    "id": "Rasio / ukuran"
+  },
+  {
+    "en": "Format",
+    "id": "Format"
+  },
+  {
+    "en": "Product photo",
+    "id": "Foto produk"
+  },
+  {
+    "en": "3:4, 1500 × 2000 px",
+    "id": "3:4, 1500 × 2000 piksel"
+  },
+  {
+    "en": "JPG/WebP, < 500 KB",
+    "id": "JPG/WebP, <500 KB"
+  },
+  {
+    "en": "Hero video desktop / mobile",
+    "id": "Video pahlawan desktop/seluler"
+  },
+  {
+    "en": "9:4, ≥ 1920 px wide / 3:4, ≥ 1080 px",
+    "id": "9:4, lebar ≥ 1920 piksel / 3:4, ≥ 1080 piksel"
+  },
+  {
+    "en": "MP4 H.264, silent, ± 5 / 1.5 MB",
+    "id": "MP4 H.264, senyap, ± 5 / 1,5 MB"
+  },
+  {
+    "en": "Hero posters",
+    "id": "Poster pahlawan"
+  },
+  {
+    "en": "JPG/WebP",
+    "id": "JPG/WebP"
+  },
+  {
+    "en": "Editorial pair",
+    "id": "Pasangan redaksi"
+  },
+  {
+    "en": "3:4, 1500 × 2000 px",
+    "id": "3:4, 1500 × 2000 piksel"
+  },
+  {
+    "en": "JPG/WebP",
+    "id": "JPG/WebP"
+  },
+  {
+    "en": "Banner",
+    "id": "Spanduk"
+  },
+  {
+    "en": "Desktop ≥ 1920 px wide, plus tablet and mobile versions",
+    "id": "Lebar desktop ≥ 1920 piksel, ditambah versi tablet dan seluler"
+  },
+  {
+    "en": "JPG/WebP, ± 800 KB",
+    "id": "JPG/WebP, ± 800 KB"
+  },
+  {
+    "en": "Logo / favicon",
+    "id": "Logo / favicon"
+  },
+  {
+    "en": "Miroir logo file / 512 × 512 px",
+    "id": "File logo Miroir / 512 × 512 piksel"
+  },
+  {
+    "en": "SVG or PNG / PNG",
+    "id": "SVG atau PNG/PNG"
+  },
+  {
+    "en": "Access holders",
+    "id": "Pemegang akses"
+  },
+  {
+    "en": "Filled in by the client: holder and where it is stored only. Passwords are never written here.",
+    "id": "Diisi oleh klien: pemegang dan tempat penyimpanannya saja. Kata sandi tidak pernah ditulis di sini."
+  },
+  {
+    "en": "Access",
+    "id": "Mengakses"
+  },
+  {
+    "en": "Main holder",
+    "id": "Pemegang utama"
+  },
+  {
+    "en": "Backup",
+    "id": "Cadangan"
+  },
+  {
+    "en": "Stored in",
+    "id": "Disimpan di"
+  },
+  {
+    "en": "WordPress Administrator",
+    "id": "QZP000QZ QZP001QZ"
+  },
+  {
+    "en": "Hostinger hPanel",
+    "id": "Hostinger hPanel"
+  },
+  {
+    "en": "Cloudflare DNS",
+    "id": "DNS Cloudflare"
+  },
+  {
+    "en": "WhatsApp Business",
+    "id": "Bisnis WhatsApp"
+  },
+  {
+    "en": "GitHub",
+    "id": "GitHub"
+  },
+  {
+    "en": "TikTok for Business",
+    "id": "TikTok for Business"
+  },
+  {
+    "en": "Google",
+    "id": "Google"
+  },
+  {
+    "en": "Staging preview",
+    "id": "Pratinjau QZP000QZ"
+  },
+  {
+    "en": "Support & handover",
+    "id": "Dukungan & serah terima"
+  },
+  {
+    "en": "Contact",
+    "id": "Kontak"
+  },
+  {
+    "en": "<a href=\"mailto:hello-im@jamalakbara.com\">hello-im@jamalakbara.com</a>",
+    "id": "QZP000QZ"
+  },
+  {
+    "en": "Reply within",
+    "id": "Jawab di dalam"
+  },
+  {
+    "en": "1 working day",
+    "id": "1 hari kerja"
+  },
+  {
+    "en": "Support until",
+    "id": "Dukungan sampai"
+  },
+  {
+    "en": "20 December 2026",
+    "id": "20 Desember 2026"
+  },
+  {
+    "en": "Included: bug fixes within the agreed scope, security and plugin updates, small text or image changes.",
+    "id": "Termasuk: perbaikan bug dalam cakupan yang disepakati, pembaruan keamanan dan plugin, perubahan kecil pada teks atau gambar."
+  },
+  {
+    "en": "Not included: new pages, features or integrations; these are quoted separately.",
+    "id": "Tidak termasuk: halaman, fitur, atau integrasi baru; ini dikutip secara terpisah."
+  },
+  {
+    "en": "Emergencies (site down, orders cannot be placed): WhatsApp +62 813-2176-6565. Initial response within 2 hours, Monday–Friday, 09:00–17:00 WIB (UTC+7).",
+    "id": "Keadaan darurat (situs down, pesanan tidak dapat dilakukan): WhatsApp +62 813-2176-6565. Respons awal dalam waktu 2 jam, Senin–Jumat, 09:00–17:00 WIB (UTC+7)."
+  },
+  {
+    "en": "Hostinger support: live chat in hPanel, by the account owner.",
+    "id": "Dukungan Hostinger: Obrolan QZP000QZ di hPanel, oleh pemilik akun."
+  },
+  {
+    "en": "By signing below, both parties confirm that access, training and this guide have been handed over.",
+    "id": "Dengan menandatangani di bawah ini, kedua belah pihak mengonfirmasi bahwa akses, pelatihan dan panduan ini telah diserahkan."
+  },
+  {
+    "en": "Service provider",
+    "id": "Penyedia layanan"
+  },
+  {
+    "en": "Jamal Akbar Alam",
+    "id": "Jamal Akbar Alam"
+  },
+  {
+    "en": "UI/UX Designer & Web Developer",
+    "id": "Desainer UI/UX & Pengembang Web"
+  },
+  {
+    "en": "Jamal Akbar Alam / Date",
+    "id": "Jamal Akbar Alam / Tanggal"
+  },
+  {
+    "en": "Client",
+    "id": "Klien"
+  },
+  {
+    "en": "Kania",
+    "id": "Kania"
+  },
+  {
+    "en": "Miroir",
+    "id": "Miroir"
+  },
+  {
+    "en": "Kania / Date",
+    "id": "Kania / Tanggal"
+  }
+]

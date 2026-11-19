@@ -200,7 +200,7 @@ class Miroir_Demo_Command {
 	private function configure_store() {
 		$options = array(
 			'blogname'                                 => 'Miroir',
-			'blogdescription'                          => 'Everyday womenswear',
+			'blogdescription'                          => 'Modern & vintage shades',
 			'woocommerce_default_country'              => 'ID:JK',
 			'woocommerce_currency'                     => 'IDR',
 			'woocommerce_currency_pos'                 => 'left_space',

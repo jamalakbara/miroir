@@ -12,8 +12,8 @@ Project: `miroir` · mode: solo · sync: none
 ## Counts
 - decision: 70 (proposed 48, accepted 11, superseded 11)
 - task: 1 (open 1)
-- memory: 82 (active 72, superseded 10)
-- handoff: 221 (final 221)
+- memory: 84 (active 74, superseded 10)
+- handoff: 248 (final 248)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
-- hnd-ymmyzz1g 2026-11-16 (agent:claude-code:opus-5.5) — Done: Mobile logo scaled to 80% (59fb614) and snapshot tooling committed (fc2a2eb). Deployed: staging run 43905067611, live run 43905419341 (approved at user request), header.css verified on both via…
-- hnd-axvpfsq4 2026-11-16 (agent:claude-code:opus-5.5) — Done: Added Image width (Framed/Full width) to Banner widget, block, editor JS, CLI importer, home.css. Previewed full mode on localhost by toggling class. · Next: User picks Full width in Elementor…
-- hnd-yq8zpty8 2026-11-16 (agent:claude-code:opus-5.5) — Done: First real export with server uploads: snapshot 20261116T141050Z, 1638 files / 1.2 GB rsynced to ~/miroir-sync/uploads; server list matches Mac exactly (size+path). snapshot.env has UPLOADS_VIA…
-- hnd-c3tqaz1s 2026-11-16 (agent:claude-code:opus-5.5) — Done: SSH login to Hostinger with ~/.ssh/miroir_hostinger verified (port 65002). Added MIROIR_UPLOADS_REMOTE=...:~/miroir-sync/uploads, port, key to the Mac .env. Real-server tests: rsync round-trip…
-- hnd-eqm5amkn 2026-11-16 (agent:claude-code:opus-5.5) — Done: tools/snapshot.sh export pushes uploads to MIROIR_UPLOADS_REMOTE (rsync --delete; ssh+tar size-diff fallback; public_html guard) and records UPLOADS_VIA=server; import pulls automatically, chec…
+- hnd-hyyk9t7s 2026-11-19 (agent:claude-code:opus-5.5) — Done: Site tagline (blogdescription) changed from 'Everyday womenswear' to 'Modern & vintage shades' on local, staging and live via WP-CLI; live home title verified. miroir-demo configure_store defau…
+- hnd-b49v7sfa 2026-11-18 (human:akbar) — Done: Checked docs folder Git status after push: tracked docs are clean and development matches origin; private quotation and licensed fonts remain ignored. · Next: Check editor Problems or Source Co…
+- hnd-jy87z392 2026-11-18 (human:akbar) — Done: Prepared remaining untracked manual artwork revisions and review files under docs for commit as requested. · Next: Commit and push remaining docs files to development.
+- hnd-qq4ncpjd 2026-11-18 (human:akbar) — Done: Prepared English and Indonesian manual updates, design assets and project handoffs for commit to development. · Next: Commit the manual changes and push development.
+- hnd-8yehzq2z 2026-11-18 (human:akbar) — Done: Second proofreading pass over docs/manual-id/content.html (fixed leftovers: Login headings, menu names, corrupted 07.2 bullets, English captions, order legend, th labels). Fixed broken screensh…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
