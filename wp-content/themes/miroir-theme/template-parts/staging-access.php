@@ -8,6 +8,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+do_action( 'miroir_maintenance_screen' ); // Enqueues maintenance.css (inc/setup.php).
+
 $error = isset( $args['error'] ) ? (string) $args['error'] : '';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>

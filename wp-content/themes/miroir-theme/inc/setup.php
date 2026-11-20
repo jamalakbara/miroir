@@ -66,6 +66,12 @@ add_action(
 			if ( ! file_exists( MIROIR_THEME_DIR . $file ) ) {
 				continue;
 			}
+			// Maintenance and staging-access screens fire miroir_maintenance_screen before wp_head().
+			// Elsewhere the stylesheet is only registered, for Elementor widgets that depend on it.
+			if ( 'maintenance' === $name && ! did_action( 'miroir_maintenance_screen' ) ) {
+				wp_register_style( "miroir-{$name}", MIROIR_THEME_URI . $file, $deps, filemtime( MIROIR_THEME_DIR . $file ) );
+				continue;
+			}
 			wp_enqueue_style( "miroir-{$name}", MIROIR_THEME_URI . $file, $deps, filemtime( MIROIR_THEME_DIR . $file ) );
 			$deps = array( "miroir-{$name}" );
 		}
@@ -135,9 +141,11 @@ add_action(
 	function () {
 		// The bundled fonts, unless Styles picked other fonts for their role.
 		$styles = wp_get_global_styles();
-		$fonts  = array(
-			'inter-tight-var-latin' => empty( $styles['typography']['fontFamily'] ),
-			'dm-mono-400-latin'     => empty( $styles['elements']['caption']['typography']['fontFamily'] ),
+		// Text uses Avenir (theme.json "sans"); Inter Tight is only a fallback, so it is not preloaded.
+		// Avenir files are licensed and copied to each server by hand: preload only when present.
+		$fonts = array(
+			'Avenir-Roman'      => empty( $styles['typography']['fontFamily'] ) && file_exists( MIROIR_THEME_DIR . '/assets/fonts/Avenir-Roman.woff2' ),
+			'dm-mono-400-latin' => empty( $styles['elements']['caption']['typography']['fontFamily'] ),
 		);
 		foreach ( array_keys( array_filter( apply_filters( 'miroir_bundled_fonts', $fonts ) ) ) as $font ) {
 			printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( MIROIR_THEME_URI . "/assets/fonts/{$font}.woff2" ) );

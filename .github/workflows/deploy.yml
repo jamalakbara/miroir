@@ -52,7 +52,7 @@ jobs:
           # Avenir files are licensed and kept out of git, so --delete must not remove them.
           for dir in wp-content/themes/miroir-theme wp-content/plugins/miroir-currency wp-content/plugins/miroir-demo wp-content/plugins/miroir-redirects wp-content/plugins/miroir-whatsapp-order; do
             rsync -rlzc --itemize-changes --delete --chmod=D755,F644 $DRY_RUN \
-              --exclude='._*' --exclude='.DS_Store' --exclude='/assets/fonts/Avenir-*.ttf' \
+              --exclude='._*' --exclude='.DS_Store' --exclude='/assets/fonts/Avenir-*' \
               -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o BatchMode=yes" \
               "$dir/" "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/$dir/"
           done
