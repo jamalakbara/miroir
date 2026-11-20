@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 72 (proposed 49, accepted 11, superseded 12)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 265 (final 265)
+- handoff: 266 (final 266)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-gvk51w75 2026-11-20 (agent:claude-code) — Done: OpenSEO audit 5efbd212 on live (100-page limit): no critical issues, no broken links, no missing titles/meta except /cart/ (noindex, intentional). 109 of 115 findings are ?panel=nav|search|curr…
 - hnd-qej7xxnp 2026-11-20 (agent:claude-code) — Done: Client access: created live WordPress administrator for the store owner via wp user create --send-email (password never seen by agent); added the store owner's Google account as Owner of Search…
 - hnd-g974ykcv 2026-11-20 (agent:claude-code) — Done: Commit 4b4062c: Avenir WOFF2 (uploaded by scp to staging and live font dirs; TTF fallback kept; gitignore + rsync exclude now Avenir-*), preload Avenir-Roman instead of unused Inter Tight, main…
 - hnd-5pyrjmxb 2026-11-20 (agent:claude-code) — Done: Search Console (property sc-domain:miroir.id, user's Google account): DNS TXT verified via Hostinger DNS, wp-sitemap.xml submitted (status Couldn't fetch right after submit), live test of sitem…
 - hnd-rn0w28fq 2026-11-20 (agent:claude-code) — Done: Speed: page cache works for returning page views (hit ~0.06s vs miss ~0.5s); first page per new visitor uncached due to _lscache_vary (WCML currency). Tried LiteSpeed Guest Mode on live: mixed…
-- hnd-k8q27g6p 2026-11-20 (agent:claude-code) — Done: GO LIVE 2026-11-20: wp miroir theme maintenance off on live (user approved), WP + LiteSpeed cache purged. Public checks: home/shop/product/about 200, www and http->https 301 to apex, robots.txt…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
