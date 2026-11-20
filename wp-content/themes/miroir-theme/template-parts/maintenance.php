@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+do_action( 'miroir_maintenance_screen' ); // Enqueues maintenance.css (inc/setup.php).
+
 $template = function_exists( 'miroir_elementor_template' ) ? miroir_elementor_template( 'maintenance' ) : 0;
 $body     = $template ? miroir_elementor_render( $template ) : '';
 ?><!doctype html>

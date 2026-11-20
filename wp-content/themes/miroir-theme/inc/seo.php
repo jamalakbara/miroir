@@ -326,7 +326,16 @@ add_action(
 	5
 );
 
-// Sitemap: no author archives, no bag, checkout or account pages.
+// Sitemap: no author archives, no bag, checkout or account pages, no MailPoet
+// subscription/captcha pages (?mailpoet_page=...).
+add_filter(
+	'wp_sitemaps_post_types',
+	function ( $post_types ) {
+		unset( $post_types['mailpoet_page'] );
+		return $post_types;
+	}
+);
+
 add_filter(
 	'wp_sitemaps_add_provider',
 	function ( $provider, $name ) {

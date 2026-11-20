@@ -132,8 +132,8 @@ add_filter(
 	'miroir_bundled_fonts',
 	function ( $fonts ) {
 		$changes = miroir_elementor_global_changes()['fonts'];
-		$fonts['inter-tight-var-latin'] = $fonts['inter-tight-var-latin'] && ! isset( $changes['--font-sans'] );
-		$fonts['dm-mono-400-latin']     = $fonts['dm-mono-400-latin'] && ! isset( $changes['--font-mono'] );
+		$fonts['Avenir-Roman']      = ! empty( $fonts['Avenir-Roman'] ) && ! isset( $changes['--font-sans'] );
+		$fonts['dm-mono-400-latin'] = ! empty( $fonts['dm-mono-400-latin'] ) && ! isset( $changes['--font-mono'] );
 		return $fonts;
 	}
 );
