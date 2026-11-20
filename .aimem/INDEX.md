@@ -10,10 +10,10 @@ Project: `miroir` · mode: solo · sync: none
 3. END: run `aimem handoff` (Done / Not done / Next / Blocked). Supersede records, never delete them.
 
 ## Counts
-- decision: 70 (proposed 48, accepted 11, superseded 11)
+- decision: 72 (proposed 49, accepted 11, superseded 12)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 248 (final 248)
+- handoff: 254 (final 254)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
-- hnd-hyyk9t7s 2026-11-19 (agent:claude-code:opus-5.5) — Done: Site tagline (blogdescription) changed from 'Everyday womenswear' to 'Modern & vintage shades' on local, staging and live via WP-CLI; live home title verified. miroir-demo configure_store defau…
-- hnd-b49v7sfa 2026-11-18 (human:akbar) — Done: Checked docs folder Git status after push: tracked docs are clean and development matches origin; private quotation and licensed fonts remain ignored. · Next: Check editor Problems or Source Co…
-- hnd-jy87z392 2026-11-18 (human:akbar) — Done: Prepared remaining untracked manual artwork revisions and review files under docs for commit as requested. · Next: Commit and push remaining docs files to development.
-- hnd-qq4ncpjd 2026-11-18 (human:akbar) — Done: Prepared English and Indonesian manual updates, design assets and project handoffs for commit to development. · Next: Commit the manual changes and push development.
-- hnd-8yehzq2z 2026-11-18 (human:akbar) — Done: Second proofreading pass over docs/manual-id/content.html (fixed leftovers: Login headings, menu names, corrupted 07.2 bullets, English captions, order legend, th labels). Fixed broken screensh…
+- hnd-35bh1jjd 2026-11-20 (agent:claude-code) — Done: Staging via Chrome: 18 real products published, 25 _miroir_demo products already draft. Deleted empty legacy collection categories Riviera, Textura, Ligne, Holiday Edit, Miroir x Naluri (user a…
+- hnd-769vm10v 2026-11-20 (agent:claude-code) — Done: Committed redirect work (401dcb2), merged origin/development (6c05801, INDEX regenerated), pushed; staging deploy run 44690461327 succeeded and copied miroir-redirects.php. plugins.txt kept unc…
+- hnd-1hw81pda 2026-11-20 (agent:claude-code) — Done: miroir-redirects: MIROIR_LEGACY_PRODUCTS maps 22 legacy product slugs to new-catalog product titles (renamed + sibling colour + same-name safety); unmatched 404 products -> shop. Tested locally…
+- hnd-0zqphs4z 2026-11-20 (agent:claude-code) — Done: Go-live audit: public probes of live (503 maintenance, www no redirect yet, temp-domain dns-prefetch in head). miroir-redirects 0.2.0 (uncommitted): 404 legacy products -> shop, dead category/t…
+- hnd-zjn1hgmf 2026-11-20 (agent:codex) — Done: Checked global installation status; installed planning-and-task-breakdown from addyosmani/agent-skills. · Next: If desired, confirm whether to install the closest source skill, engineering/to-s…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
