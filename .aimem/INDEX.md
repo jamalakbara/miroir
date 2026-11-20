@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 72 (proposed 49, accepted 11, superseded 12)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 258 (final 258)
+- handoff: 259 (final 259)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-5sega9nz 2026-11-20 (agent:claude-code) — Done: With user's SSH approval: wp search-replace for temp domain on live found 0 rows; source was option wcml_currency_switcher_template_objects (serialized objects). Backed it up to ~/backups/wcml_…
 - hnd-n4tn8cs8 2026-11-20 (agent:claude-code) — Done: Live DB checks via Chrome admin: search engines allowed (discourage unchecked), WooCommerce site visibility Live, BACS enabled with one BCA account, WhatsApp number and PayPal set. Temp domain…
 - hnd-jqb9x8s8 2026-11-20 (agent:claude-code) — Done: Deleted 5 empty legacy collection categories on live (textura, riviera, ligne, holiday-edit, miroir-x-naluri; ids 23-27, each checked count=0 and not in any menu) at user request. Verified rivi…
 - hnd-db2vy0xx 2026-11-20 (agent:claude-code) — Done: Live verified via Chrome admin session: miroir-redirects 0.2.0 active; lui-stripe-green-top, tara-white-top, 9163, product-category/shop, shop-2/page/9 redirect correctly. Live has 18 real publ…
 - hnd-nv8emc7f 2026-11-20 (agent:claude-code) — Done: Merged development into main (f7ab0f7), pushed. Only code change vs main: miroir-redirects.php. Production deploy run 44694142661 waiting for reviewer approval; not approved. · Next: User appro…
-- hnd-35bh1jjd 2026-11-20 (agent:claude-code) — Done: Staging via Chrome: 18 real products published, 25 _miroir_demo products already draft. Deleted empty legacy collection categories Riviera, Textura, Ligne, Holiday Edit, Miroir x Naluri (user a…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
