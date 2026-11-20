@@ -1,0 +1,891 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Panduan Penggunaan — Miroir — GUIDE-2026-001</title><link rel="stylesheet" href="manual-guide.css"></head><body><main class="sheets"><section class="page"><div class="page__body">
+<header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="titleblock"><div class="titleblock__left"><h1 class="display">Panduan<br>penggunaan.</h1><p class="label">Panduan pengguna / Toko WordPress</p></div>
+<div class="docmeta"><div class="full"><p class="label">Nomor panduan</p><p class="v">GUIDE-2026-001</p></div><div><p class="label">Versi</p><p class="v">1.0</p></div><div><p class="label">Terakhir diperbarui</p><p class="v">18 November 2026</p></div></div></div></header>
+<div class="cols"><div class="party"><p class="label">Disiapkan untuk</p><p class="h-name">Miroir</p><p class="small">miroir.id</p><p class="small">Disusun oleh: Jamal Akbar Alam</p><p class="small">UI/UX Designer &amp; Web Developer</p></div>
+<div class="party"><p class="label">Aplikasi</p><p class="h-name">miroir.id store</p><p class="small">miroir.id/wp-admin</p><p class="small">Platform: WordPress + WooCommerce + Elementor</p><p class="small">Pesanan: WhatsApp, tersimpan di WooCommerce</p></div></div>
+<div class="band"><div><p class="label">Alamat admin</p><p class="h-fact">/wp-admin</p></div><div><p class="label">Untuk</p><p class="h-fact">Admin, CS &amp; konten</p></div><div><p class="label">Dukungan sampai</p><p class="h-fact accent">20 Desember 2026</p></div></div>
+<div class="gap-8"><p class="label">Daftar isi</p><ul class="toc"><li><span>01</span>Tentang panduan ini<span class="muted" style="float:right">p. 02</span></li><li><span>08</span>Header, footer &amp; pengaturan<span class="muted" style="float:right">p. 39</span></li><li><span>02</span>Gambaran sistem<span class="muted" style="float:right">p. 03</span></li><li><span>09</span>Harga, promo &amp; SEO<span class="muted" style="float:right">p. 45</span></li><li><span>03</span>Akses &amp; akun<span class="muted" style="float:right">p. 06</span></li><li><span>10</span>Publish &amp; backup<span class="muted" style="float:right">p. 49</span></li><li><span>04</span>Mengenal dashboard<span class="muted" style="float:right">p. 11</span></li><li><span>11</span>Maintenance &amp; keamanan<span class="muted" style="float:right">p. 52</span></li><li><span>05</span>Halaman &amp; homepage<span class="muted" style="float:right">p. 15</span></li><li><span>12</span>Troubleshooting<span class="muted" style="float:right">p. 56</span></li><li><span>06</span>Pesanan WhatsApp<span class="muted" style="float:right">p. 22</span></li><li><span>13</span>Lampiran<span class="muted" style="float:right">p. 59</span></li><li><span>07</span>Produk &amp; media<span class="muted" style="float:right">p. 32</span></li></ul></div>
+<p class="small muted">Screenshot di panduan ini diambil dari situs development dengan data contoh. Situs live menampilkan produk dan pesanan yang sebenarnya.</p>
+</div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 01—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="01"><span class="sec__n">01</span><h2 class="h-sec">Tentang panduan ini.</h2></div>
+<p class="lead">Panduan ini membantu tim Miroir mengelola miroir.id sehari-hari tanpa bantuan developer: mulai dari login, mengenal dashboard, menangani pesanan lewat WhatsApp, sampai memperbarui produk, halaman, dan kampanye.</p>
+<p class="lead">Setiap tugas dijelaskan dalam langkah-langkah singkat yang bernomor. Nama menu dan tombol, seperti <span class="path">Publish</span>, ditulis persis seperti yang tampil di layar. Kalau ada yang tidak sesuai dengan panduan ini, cek dulu bab Troubleshooting, lalu hubungi saya.</p>
+<table class="table">
+  <thead><tr><th>Pembaca</th><th>Bacalah bab-bab ini</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Admin toko</p></td><td><p class="body">Pemilik atau penanggung jawab operasional. Semua bab.</p></td></tr>
+    <tr><td><p class="h-item">Konten / pemasaran</p></td><td><p class="body">Bab 04 Dashboard, 05 Halaman, 07 Produk, 08 Header &amp; Settings, 09 Harga &amp; SEO.</p></td></tr>
+    <tr><td><p class="h-item">CS/penanganan pesanan</p></td><td><p class="body">Bab 06 Pesanan WhatsApp dan 07 Produk.</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">Cara memakai panduan ini</p><p class="body">Baca bab 02 dan 03 sekali saja. Bab lainnya dipakai sebagai referensi saat dibutuhkan, misalnya "Mau ganti banner" → 05.5. Jalur menu ditulis seperti ini: <span class="path">Menu → Submenu → Tab</span>. Peringatan menandai tindakan berisiko: menghapus data, mengaktifkan maintenance mode, dan mengubah kurs. Versi plugin saat panduan ini ditulis: WooCommerce 11.2, Elementor 4.3, WooCommerce Multilingual 5.6.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 02—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="02"><span class="sec__n">02</span><h2 class="h-sec">Gambaran sistem.</h2></div>
+<p class="lead kwn">Toko ini berjalan di WordPress dan WooCommerce, dengan hosting di Hostinger. Halaman disusun dengan Elementor memakai widget khusus Miroir. Pelanggan tidak membayar langsung di situs: mereka memilih produk, lalu pesanan terkirim lewat WhatsApp dan sekaligus tersimpan di WooCommerce supaya tim bisa memprosesnya.</p>
+<div class="sub kwn"><span class="sec__n">02.1</span><h3 class="h-item">Komponen utama</h3></div>
+<table class="table">
+  <thead><tr><th>Komponen</th><th>Fungsi</th><th style="width:30%">Dikelola di</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">WordPress</p></td><td><p class="body">Inti situs: akun, media, halaman, dan menu.</p></td><td><p class="small">Dashboard (wp-admin)</p></td></tr>
+    <tr><td><p class="h-item">WooCommerce</p></td><td><p class="body">Mengelola produk, kategori/koleksi, pesanan, dan kupon.</p></td><td><p class="small">Products, WooCommerce → Orders, Marketing → Coupons</p></td></tr>
+    <tr><td><p class="h-item">Elementor + widget Miroir</p></td><td><p class="body">Membuat isi halaman, homepage, header, footer, dan template toko.</p></td><td><p class="small">Pages → Edit with Elementor; Site Settings → Miroir</p></td></tr>
+    <tr><td><p class="h-item">Tema Miroir</p></td><td><p class="body">Mengatur tampilan dan layout toko, label teks, serta maintenance mode.</p></td><td><p class="small">Site Settings → Miroir</p></td></tr>
+    <tr><td><p class="h-item">Miroir WhatsApp Order</p></td><td><p class="body">Mengatur alur pesanan lewat WhatsApp dan menyimpannya di WooCommerce.</p></td><td><p class="small">WooCommerce → Settings → WhatsApp ordering</p></td></tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead><tr><th>Komponen</th><th>Fungsi</th><th style="width:30%">Dikelola di</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Multilingual + Miroir Currency</p></td><td><p class="body">Pilihan bahasa, serta harga dalam IDR, USD, SGD, dan MYR.</p></td><td><p class="small">WooCommerce → WCML → Multi-currency</p></td></tr><tr><td><p class="h-item">Miroir Legacy Redirects</p></td><td><p class="body">Mengarahkan link lama ke halaman baru (redirect).</p></td><td><p class="small">Tidak ada menu; diatur developer</p></td></tr><tr><td><p class="h-item">TikTok for Business</p></td><td><p class="body">Pemasangan TikTok Pixel dan sinkronisasi katalog produk.</p></td><td><p class="small">Marketing → TikTok</p></td></tr></tbody></table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 03—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table">
+  <thead><tr><th>Komponen</th><th>Fungsi</th><th style="width:30%">Dikelola di</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Hostinger hPanel</p></td><td><p class="body">Hosting, domain, SSL, backup, dan cache CDN.</p></td><td><p class="small">hPanel (hanya pemilik akun)</p></td></tr></tbody></table>
+<p class="small muted">Plugin Miroir Demo Store adalah alat developer untuk data contoh. Plugin ini tidak punya halaman pengaturan dan tidak memengaruhi toko.</p>
+<div class="sub kwn"><span class="sec__n">02.2</span><h3 class="h-item">Lingkungan</h3></div>
+<table class="table">
+  <thead><tr><th>Lokasi</th><th>Dipakai oleh</th><th style="width:38%">Isi</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Live</p><p class="small muted">miroir.id</p></td><td><p class="body">Pelanggan dan tim klien.</p></td><td><p class="body">Toko yang dilihat pelanggan. Semua perubahan harian dilakukan di sini.</p></td></tr>
+    <tr><td><p class="h-item">Staging</p><p class="small muted">staging.miroir.id</p></td><td><p class="body">Developer; tim klien hanya untuk melihat preview fitur.</p></td><td><p class="body">Salinan berpassword untuk testing.</p></td></tr>
+    <tr><td><p class="h-item">Local</p><p class="small muted">komputer developer</p></td><td><p class="body">Developer.</p></td><td><p class="body">Tempat kode ditulis.</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">Kode dan konten dipisah</p><p class="body">Kode (tema dan plugin Miroir) dikirim developer dari komputer lokal ke staging, lalu ke live. Konten seperti produk, pesanan, halaman, foto, dan pengaturan tersimpan terpisah di tiap situs, jadi perubahan konten di staging tidak ikut muncul di live.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 04—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">02.3</span><h3 class="h-item">Siapa melakukan apa</h3></div>
+<div class="dodont">
+  <div class="do"><p class="label">Dikerjakan tim klien</p><ul>
+    <li>Produk, harga, stok, foto, kategori.</li>
+    <li>Memproses pesanan dan mengubah status.</li>
+    <li>Konten halaman, homepage, banner, kampanye.</li>
+    <li>Menu, announcement bar, logo, footer.</li>
+    <li>Label teks dan template pesan WhatsApp.</li>
+    <li>Kupon, akun staf, maintenance mode on/off.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Lewat developer</p><ul>
+    <li>Perubahan desain atau layout di luar yang tersedia di pengaturan.</li>
+    <li>Fitur baru dan perbaikan bug.</li>
+    <li>Redirect untuk link lama; update kurs otomatis.</li>
+    <li>Update besar WordPress, WooCommerce, Elementor.</li>
+    <li>Memasang atau menghapus plugin.</li>
+    <li>Restore backup; domain, SSL, dan DNS.</li>
+  </ul></div>
+</div>
+<div class="note note--warn"><p class="label">Jangan sentuh</p><p class="body">Jangan pakai Theme File Editor atau Plugin File Editor. Jangan menonaktifkan, menghapus, atau meng-update tema dan plugin Miroir. Jangan pakai Elementor → Tools (Regenerate, Replace URL, Rollback), jangan hapus template "Miroir: …", dan jangan ubah Settings → Permalinks, Settings → General, atau WooCommerce → Status → Tools, kecuali atas arahan developer. Semua ini bisa merusak toko dan sulit dibatalkan.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 05—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="03"><span class="sec__n">03</span><h2 class="h-sec">Akses &amp; akun.</h2></div>
+<p class="body kwn">Setiap anggota tim punya akun sendiri dengan role paling kecil yang masih cukup untuk pekerjaannya. Akun Administrator dibatasi untuk satu atau dua orang saja.</p>
+<div class="sub kwn"><span class="sec__n">03.1</span><h3 class="h-item">Login</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="h-item">Buka halaman admin</p><p class="body">Buka <span class="path">miroir.id/wp-admin</span>. Staging (<span class="path">staging.miroir.id/wp-admin</span>) hanya untuk preview developer.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="h-item">Login</p><p class="body">Isi <span class="path">Username or Email Address</span> dan <span class="path">Password</span>, lalu klik <span class="path">Log In</span>. Admin bar hitam akan muncul di bagian atas situs.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="h-item">Lupa password</p><p class="body">Klik <span class="path">Lost your password?</span>, masukkan email akun, lalu buka link reset yang dikirim ke email.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot shot--img" style="height:410px" data-file="miroir-assets/manual-guide/shots/crop/login-1.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/login-1.png" alt=""></figure><p class="small muted cap">Halaman login WordPress.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 06—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="note note--accent"><p class="label">Perlu diketahui</p><p class="body">Halaman <span class="path">My account</span> toko (/my-account) khusus untuk pelanggan. Staf selalu masuk ke dashboard lewat /wp-admin. Saat maintenance mode aktif, hanya Administrator yang masih bisa melihat toko; role lain melihat halaman maintenance, tapi tetap bisa membuka /wp-admin.</p></div>
+<div class="sub kwn"><span class="sec__n">03.2</span><h3 class="h-item">Peran dan izin</h3></div>
+<table class="table">
+  <thead><tr><th>Role</th><th>Bisa</th><th style="width:30%">Tidak bisa</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Administrator</p><p class="small muted">Pemilik / penanggung jawab teknis, maks. 2</p></td><td><p class="body">Semuanya: user, plugin, Site Settings, maintenance mode, akses staging.</p></td><td><p class="body">—</p></td></tr>
+    <tr><td><p class="h-item">Shop manager</p><p class="small muted">Operasional toko, CS</p></td><td><p class="body">Produk, pesanan, pelanggan, kupon, pengaturan WooCommerce (termasuk WhatsApp ordering), halaman, dan media.</p></td><td><p class="body">Plugin, user lain, pengaturan umum, dan melihat toko saat maintenance mode aktif.</p></td></tr>
+    <tr><td><p class="h-item">Editor</p><p class="small muted">Konten / pemasaran</p></td><td><p class="body">Halaman, media, dan edit dengan Elementor.</p></td><td><p class="body">Produk, pesanan, pengaturan toko.</p></td></tr>
+    <tr><td><p class="h-item">Customer</p><p class="small muted">Pembeli</p></td><td><p class="body">Akun dan riwayat pesanan miliknya sendiri.</p></td><td><p class="body">Dashboard.</p></td></tr>
+  </tbody>
+</table>
+<p class="body">Rekomendasi: CS dan tim operasional pakai Shop manager; tim konten pakai Editor. Jangan memberi akses Administrator "biar gampang". Kalau role Anda tidak bisa membuka Site Settings, minta Administrator yang mengubahnya (bab 08).</p>
+<div class="sub kwn"><span class="sec__n">03.3</span><h3 class="h-item">Menambah user baru (Administrator)</h3></div>
+<ol class="steps"><li><span class="n">01</span><div class="t"><p class="body">Buka <span class="path">Users → Add New User</span>.</p></div></li><li><span class="n">02</span><div class="t"><p class="body">Isi <span class="path">Username</span> (tidak bisa diubah lagi, mis. <span class="path">name.miroir</span>), email kantor, nama depan, dan nama belakang.</p></div></li><li><span class="n">03</span><div class="t"><p class="body">Biarkan password yang dibuat otomatis, lalu centang <span class="path">Send User Notification</span> supaya mereka mengatur password sendiri lewat email.</p></div></li></ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 07—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><ol class="steps"><li><span class="n">04</span><div class="t"><p class="body">Pilih <span class="path">Role</span> sesuai tabel 03.2, lalu klik <span class="path">Add New User</span>.</p></div></li></ol>
+<div class="fig"><figure class="shot shot--img" style="height:339px" data-file="miroir-assets/manual-guide/shots/crop/user-new-2.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/user-new-2.png" alt=""></figure><p class="small muted cap">Users → Add New User.</p></div>
+<div class="sub kwn"><span class="sec__n">03.4</span><h3 class="h-item">Mengubah role atau data user</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Users → All Users</span>, lalu klik nama user.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Ubah role, email, atau nama. Pakai <span class="path">Set New Password</span> untuk mengganti password.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Klik <span class="path">Update User</span>.</p></div></li>
+</ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 08—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="fig"><figure class="shot shot--img" style="height:301px" data-file="miroir-assets/manual-guide/shots/crop/users-3.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/users-3.png" alt=""></figure><p class="small muted cap">Users → All Users: cek daftar ini setiap bulan.</p></div>
+<div class="sub kwn"><span class="sec__n">03.5</span><h3 class="h-item">Kalau staf keluar (offboarding)</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Di hari terakhirnya: buka profil user, <span class="path">Set New Password</span> (acak) → <span class="path">Update User</span>, lalu klik <span class="path">Log Out Everywhere Else</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Hapus user, lalu pilih <span class="path">Attribute all content to</span> akun staf lain supaya halaman dan catatan mereka tidak ikut hilang.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Ganti password bersama yang mereka ketahui: WhatsApp Business, Instagram, email toko, Hostinger.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Perbarui daftar akses di lampiran D.</p></div></li>
+</ol>
+<div class="note note--warn"><p class="label">Peringatan</p><p class="body">Kalau user dihapus tanpa memilih "Attribute all content to", semua halaman dan postingan buatannya ikut terhapus.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 09—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">03.6</span><h3 class="h-item">Keamanan akun</h3></div>
+<ul class="bullets">
+  <li>Password minimal 12 karakter, unik, dan disimpan di password manager. Berlaku juga untuk akun pelanggan.</li>
+  <li>Satu akun untuk satu orang. Jangan berbagi akun Administrator. Logout setelah memakai komputer bersama.</li>
+  <li>Sebaiknya aktifkan two-factor authentication (2FA) untuk Administrator; bicarakan pemasangannya dengan developer (11.3).</li>
+  <li>Cek daftar Users setiap bulan: hapus akun yang tidak dipakai dan waspadai Administrator yang tidak dikenal.</li>
+  <li>Waspadai email yang menyuruh Anda login atau "verifikasi akun WordPress/Hostinger" lewat link mencurigakan. Ketik sendiri alamatnya di browser.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">03.7</span><h3 class="h-item">Layanan pendukung</h3></div>
+<table class="table">
+  <thead><tr><th>Layanan</th><th>Dipakai untuk</th><th style="width:28%">Pemegang akses</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Hostinger hPanel</p></td><td><p class="body">Hosting, backup, email, staging.</p></td><td><p class="body">Klien</p></td></tr>
+    <tr><td><p class="h-item">Cloudflare</p></td><td><p class="body">DNS untuk miroir.id.</p></td><td><p class="body">Klien</p></td></tr>
+    <tr><td><p class="h-item">WhatsApp Business</p></td><td><p class="body">Menerima pesanan.</p></td><td><p class="body">Klien</p></td></tr>
+    <tr><td><p class="h-item">Instagram, TikTok</p></td><td><p class="body">Link di footer; pixel dan katalog.</p></td><td><p class="body">Klien</p></td></tr>
+    <tr><td><p class="h-item">GitHub</p></td><td><p class="body">Kode tema dan plugin, proses rilis.</p></td><td><p class="body">Developer</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Password tidak pernah ditulis di panduan ini. Simpan di password manager tim; lampiran D hanya mencatat siapa yang memegang aksesnya.</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 10—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="04"><span class="sec__n">04</span><h2 class="h-sec">Mengenal dashboard.</h2></div>
+<p class="body kwn">Ini layar pertama yang Anda lihat setelah login. Nomornya sesuai dengan daftar di bawah.</p>
+<figure class="shot shot--img" style="height:310px" data-file="miroir-assets/manual-guide/shots/crop/dashboard-4.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/dashboard-4.png" alt="">
+  <span class="pin" style="left:62px;top:2px">1</span>
+  <span class="pin" style="left:30px;top:114px">2</span>
+  <span class="pin" style="left:226px;top:238px">3</span>
+  <span class="pin" style="left:668px;top:2px">4</span>
+  <span class="pin" style="left:576px;top:12px">5</span>
+</figure>
+<ol class="legend">
+  <li><span class="pin">1</span><div><p class="h-item">Admin bar</p><p class="small">Buka toko live, cek update, dan buka Elementor untuk halaman yang sedang Anda lihat.</p></div></li>
+  <li><span class="pin">4</span><div><p class="h-item">Menu akun</p><p class="small">Profil, password, dan logout.</p></div></li>
+  <li><span class="pin">2</span><div><p class="h-item">Menu utama</p><p class="small">Semua bagian: Pages, Media, WooCommerce, Products, Appearance, Users.</p></div></li>
+  <li><span class="pin">5</span><div><p class="h-item">Screen Options</p><p class="small">Menampilkan atau menyembunyikan kotak-kotak di layar ini.</p></div></li>
+  <li><span class="pin">3</span><div><p class="h-item">Area kerja</p><p class="small">Daftar dan editor terbuka di sini. Kotak WooCommerce menampilkan pesanan On hold.</p></div></li>
+</ol>
+<table class="table">
+  <thead><tr><th>Menu</th><th>Isi</th><th style="width:16%">Bab</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Pages</p></td><td><p class="body">Beranda, Tentang, FAQ, Kontak, kebijakan.</p></td><td><p class="body">05</p></td></tr><tr><td><p class="h-item">WooCommerce</p></td><td><p class="body">Orders, Customers, Settings (WhatsApp ordering, pembayaran), Multi-currency.</p></td><td><p class="body">06, 09</p></td></tr><tr><td><p class="h-item">Products</p></td><td><p class="body">Daftar produk, kategori, dan atribut.</p></td><td><p class="body">07</p></td></tr></tbody></table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 11—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table">
+  <thead><tr><th>Menu</th><th>Isi</th><th style="width:16%">Bab</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Media</p></td><td><p class="body">Semua foto dan video.</p></td><td><p class="body">07.6</p></td></tr><tr><td><p class="h-item">Marketing</p></td><td><p class="body">Kupon, TikTok.</p></td><td><p class="body">09</p></td></tr><tr><td><p class="h-item">Templates</p></td><td><p class="body">Saved Templates "Miroir: …" (header, footer, halaman produk).</p></td><td><p class="body">08</p></td></tr><tr><td><p class="h-item">Appearance, Users</p></td><td><p class="body">Menus dan Customize; akun staf dan pelanggan.</p></td><td><p class="body">08, 03</p></td></tr><tr><td><p class="h-item">Posts, Settings, Plugins</p></td><td><p class="body">Tidak dipakai untuk toko ini. Jangan diubah.</p></td><td><p class="body">—</p></td></tr></tbody></table>
+<div class="note note--accent"><p class="label">Tip</p><p class="body">Notifikasi kuning atau biru dan angka merah di menu Plugins biasanya hanya iklan atau ajakan update. Jangan klik Update atau Install dari sana; teruskan ke developer (11.2).</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 12—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">04.1</span><h3 class="h-item">Dasar-dasar Elementor</h3></div>
+<p class="body kwn">Buka halaman lewat <span class="path">Pages →</span> arahkan kursor → <span class="path">Edit with Elementor</span>, atau dari toko lewat admin bar.</p>
+<figure class="shot shot--img" style="height:368px" data-file="miroir-assets/manual-guide/shots/crop/elementor-home-5.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/elementor-home-5.png" alt="">
+  <span class="pin" style="left:6px;top:24px">1</span>
+  <span class="pin" style="left:100px;top:120px">2</span>
+  <span class="pin" style="left:420px;top:200px">3</span>
+  <span class="pin" style="left:322px;top:24px">4</span>
+  <span class="pin" style="left:92px;top:24px">5</span>
+  <span class="pin" style="right:64px;top:24px">6</span>
+</figure>
+<ol class="legend">
+  <li><span class="pin">1</span><div><p class="h-item">Menu Elementor</p><p class="small">Site Settings dan keluar ke dashboard.</p></div></li>
+  <li><span class="pin">4</span><div><p class="h-item">Mode responsif</p><p class="small">Desktop, tablet, mobile. Beberapa kolom punya isi berbeda untuk tiap perangkat.</p></div></li>
+  <li><span class="pin">2</span><div><p class="h-item">Panel kiri</p><p class="small">Pengaturan bagian yang diklik: Content, Style, Advanced.</p></div></li>
+  <li><span class="pin">5</span><div><p class="h-item">History</p><p class="small">Undo dalam sesi ini, atau kembali ke revisi yang tersimpan.</p></div></li>
+  <li><span class="pin">3</span><div><p class="h-item">Canvas</p><p class="small">Halamannya sendiri. Klik sebuah bagian untuk mengeditnya.</p></div></li>
+  <li><span class="pin">6</span><div><p class="h-item">Preview / Publish</p><p class="small">Ikon mata untuk preview; tombol Publish untuk menayangkan ke pengunjung.</p></div></li>
+</ol>
+<ul class="bullets">
+  <li><span class="kbd">Ctrl</span> + <span class="kbd">Z</span> (Mac <span class="kbd">Cmd</span> + <span class="kbd">Z</span>) untuk undo langkah terakhir di editor.</li>
+  <li>Klik panah di samping tombol Publish → <span class="path">Save Draft</span> untuk menyimpan tanpa menayangkan halaman yang belum pernah dipublikasikan.</li>
+  <li>Menutup editor tanpa klik Update akan menghilangkan perubahan. Elementor akan bertanya dulu.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 13—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">04.2</span><h3 class="h-item">Tiga tempat untuk mengubah pengaturan</h3></div>
+<table class="table">
+  <thead><tr><th>Apa yang Anda ubah</th><th>Lokasi pengaturan</th><th style="width:30%">Contoh</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Satu halaman</p></td><td><p class="body">Editor Elementor halaman tersebut (Pages → Edit with Elementor).</p></td><td><p class="small">Video hero beranda, banner, teks About, FAQ.</p></td></tr>
+    <tr><td><p class="h-item">Bagian yang tampil di banyak halaman</p></td><td><p class="body">Template "Miroir: …" (Templates → Saved Templates atau Site Settings → Miroir → Templates).</p></td><td><p class="small">Header, footer, halaman produk, koleksi, pencarian, 404.</p></td></tr>
+    <tr><td><p class="h-item">Pengaturan global</p></td><td><p class="body">Site Settings → Miroir (sama dengan Appearance → Customize).</p></td><td><p class="small">Logo, warna, ukuran teks, produk per halaman, label, maintenance.</p></td></tr>
+  </tbody>
+</table>
+<p class="body">Konten toko (produk, harga, kategori, pesanan) tidak ada di Elementor, melainkan di WooCommerce dan Products. Pegangan mudahnya: kalau perubahan harus muncul di setiap halaman produk atau di semua halaman, cari di template atau Site Settings.</p>
+<div class="dodont">
+  <div class="do"><p class="label">Lakukan</p><ul>
+    <li>Pakai widget Miroir (Video hero, Editorial pair, Banner, Product row, Text page) untuk bagian toko.</li>
+    <li>Cek mode Mobile sebelum klik Update; sebagian besar pelanggan belanja lewat HP.</li>
+    <li>Ubah satu hal, cek hasilnya, baru lanjut.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Hindari</p><ul>
+    <li>Widget bawaan Elementor (Heading, Image, Button) untuk bagian toko.</li>
+    <li>Menghapus atau mengganti template "Miroir: …" tanpa developer.</li>
+    <li>Klik Update saat layout terlihat rusak. Tutup editor tanpa menyimpan, atau kembalikan lewat Revisions.</li>
+  </ul></div>
+</div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 14—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="05"><span class="sec__n">05</span><h2 class="h-sec">Halaman &amp; homepage.</h2></div>
+<p class="body kwn">Setiap halaman disusun dari widget Miroir. Yang Anda ubah hanya isi widget (gambar, teks, link, opsi), bukan layout-nya, jadi desainnya tetap rapi.</p>
+<div class="sub kwn"><span class="sec__n">05.1</span><h3 class="h-item">Cara kerja widget Miroir</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Buka <span class="path">Pages → All Pages</span>, arahkan kursor ke halaman, lalu klik <span class="path">Edit with Elementor</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Klik bagian di canvas. Pengaturannya muncul di panel kiri.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Ubah kontennya, lalu cek tampilan desktop, tablet, dan mobile lewat mode responsif.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Klik <span class="path">Update</span>. Perubahan langsung tayang di live.</p></div></li>
+</ol>
+<ul class="bullets">
+  <li>Widget Miroir ada di kategori <span class="path">Miroir</span>. Warna, jarak, dan font diatur dari Site Settings (08), bukan dari widget.</li>
+  <li>Banyak widget punya toggle <span class="path">Show</span> untuk bagian opsional, dan bagian <span class="path">Texts</span> untuk label-label kecilnya.</li>
+  <li>Kalau kolom gambar dikosongkan, widget memakai gambar bawaan (fallback), seperti keterangan di bawah kolomnya.</li>
+</ul>
+<div class="fig"><figure class="shot shot--img" style="height:301px" data-file="miroir-assets/manual-guide/shots/crop/pages-6.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/pages-6.png" alt=""></figure><p class="small muted cap">Pages → All Pages. Arahkan kursor ke baris halaman untuk memilih Edit with Elementor.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 15—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">05.2</span><h3 class="h-item">Homepage</h3></div>
+<p class="body kwn">Urutan bagian dari atas ke bawah. Header (announcement bar, menu) dan footer bukan bagian dari halaman; ubah di bab 08.</p>
+<figure class="shot shot--img" style="height:436px" data-file="miroir-assets/manual-guide/shots/crop/store-home-7.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/store-home-7.png" alt=""></figure>
+<table class="table">
+  <thead><tr><th>Bagian</th><th>Widget</th><th style="width:16%">Lihat</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Campaign film</p></td><td><p class="body">Video hero kampanye: video layar penuh.</p></td><td><p class="body">05.3</p></td></tr>
+    <tr><td><p class="h-item">New arrivals</p></td><td><p class="body">Product row.</p></td><td><p class="body">05.6</p></td></tr>
+    <tr><td><p class="h-item">Browse editorial</p></td><td><p class="body">Editorial pair: dua foto.</p></td><td><p class="body">05.4</p></td></tr>
+    <tr><td><p class="h-item">Collection banner</p></td><td><p class="body">Banner.</p></td><td><p class="body">05.5</p></td></tr>
+    <tr><td><p class="h-item">Collection products</p></td><td><p class="body">Product row.</p></td><td><p class="body">05.6</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 16—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">05.3</span><h3 class="h-item">Video hero kampanye</h3></div>
+<div class="fig"><figure class="shot shot--img" style="height:339px" data-file="miroir-assets/manual-guide/shots/crop/elementor-hero-8.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/elementor-hero-8.png" alt=""></figure><p class="small muted cap">Hero yang dipilih: kolom pengaturannya terbuka di panel kiri.</p></div>
+<table class="table">
+  <thead><tr><th>Kolom</th><th>Isi</th><th style="width:34%">Jika kosong</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Campaign video</p></td><td><p class="body">Video desktop, 9:4, MP4 atau WebM.</p></td><td><p class="small">Memakai video kampanye bawaan.</p></td></tr>
+    <tr><td><p class="h-item">Video mobile</p></td><td><p class="body">Versi potret, 3:4.</p></td><td><p class="small">Memakai video mobile bawaan.</p></td></tr>
+    <tr><td><p class="h-item">Poster desktop</p></td><td><p class="body">Gambar statis, 9:4.</p></td><td><p class="small">Poster bawaan.</p></td></tr>
+    <tr><td><p class="h-item">Poster tablet</p></td><td><p class="body">Gambar statis, 16:9.</p></td><td><p class="small">Memakai poster desktop.</p></td></tr>
+    <tr><td><p class="h-item">Poster mobile</p></td><td><p class="body">Gambar statis, 3:4.</p></td><td><p class="small">Memakai poster tablet, lalu desktop.</p></td></tr>
+    <tr><td><p class="h-item">Keterangan / Link</p></td><td><p class="body">Teks di atas video dan tujuan link.</p></td><td><p class="small">"new arrivals: …"; New Collection.</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 17—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="task">
+  <div class="task__head"><h3 class="h-item">A / Ganti video kampanye</h3><p class="label">Home → Edit with Elementor / ~10 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Siapkan video desktop (9:4) dan mobile (3:4): MP4 H.264, tanpa suara; ukurannya ada di lampiran C.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Siapkan poster untuk tiap ukuran: frame pertama video atau foto kampanye dengan rasio yang sama.</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Klik hero, ganti video dan poster, isi Caption dan Link.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Klik <span class="path">Update</span>, lalu cek di HP.</p></div></li>
+  </ol>
+</div>
+<div class="note note--accent"><p class="label">Selalu ganti posternya juga</p><p class="body">Video diputar tanpa suara dan berulang, dengan tombol jeda. Pengunjung yang mengaktifkan pengurangan gerakan (reduced motion) atau mode hemat data, serta yang videonya gagal dimuat, akan melihat poster. Jadi posternya harus ikut diganti sesuai kampanye baru.</p></div>
+<div class="sub kwn"><span class="sec__n">05.4</span><h3 class="h-item">Editorial pair</h3></div>
+<table class="table">
+  <thead><tr><th>Kolom</th><th>Isi</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Urutan gambar</p></td><td><p class="body">Gambar kecil dulu, atau Gambar besar dulu.</p></td></tr>
+    <tr><td><p class="h-item">Gambar Kecil / Besar</p></td><td><p class="body">Foto potret, 3:4.</p></td></tr>
+    <tr><td><p class="h-item">Keterangan / Link</p></td><td><p class="body">Teks pendek; tujuan klik (kalau kosong: halaman toko).</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Di HP hanya satu foto yang tampil. Cek tampilan mobile setelah mengganti foto.</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 18—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">05.5</span><h3 class="h-item">Banner</h3></div>
+<table class="table">
+  <thead><tr><th>Kolom</th><th>Isi</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Lebar gambar</p></td><td><p class="body">Berbingkai (di dalam kolom tengah) atau Lebar penuh (lebar layar).</p></td></tr>
+    <tr><td><p class="h-item">Gambar desktop</p></td><td><p class="body">Gambar utama.</p></td></tr>
+    <tr><td><p class="h-item">Tablet / Gambar mobile</p></td><td><p class="body">Kalau kosong, memakai gambar desktop (untuk mobile: gambar tablet dulu).</p></td></tr>
+    <tr><td><p class="h-item">Keterangan / Link</p></td><td><p class="body">Teks banner; kalau link kosong, mengarah ke koleksi Sale.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Gambar desktop yang lebar sering terpotong jelek di HP. Isi gambar Mobile dengan versi potret.</p>
+<div class="sub kwn"><span class="sec__n">05.6</span><h3 class="h-item">Product row</h3></div>
+<table class="table">
+  <thead><tr><th>Kolom</th><th>Pilihan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Judul</p></td><td><p class="body">Judul baris, mis. "new arrivals".</p></td></tr>
+    <tr><td><p class="h-item">Tampilkan</p></td><td><p class="body">Koleksi, Produk diskon, Produk unggulan, Produk terbaru, Produk pilihan.</p></td></tr>
+    <tr><td><p class="h-item">Koleksi / Produk</p></td><td><p class="body">Muncul untuk "Koleksi" dan "Pilihan". Produk yang dipilih manual akan tampil sesuai urutan pilihan Anda.</p></td></tr>
+    <tr><td><p class="h-item">Jumlah produk</p></td><td><p class="body">4–24 atau Semua (tidak berlaku untuk Pilihan).</p></td></tr>
+    <tr><td><p class="h-item">Produk per baris</p></td><td><p class="body">Di desktop, bawaannya 5.</p></td></tr>
+    <tr><td><p class="h-item">Link "Lihat semua".</p></td><td><p class="body">Kalau kosong: halaman koleksi.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Baris yang kosong (mis. koleksi tanpa produk) tidak menampilkan kartu. Cek kategori produknya (07.3).</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 19—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">05.7</span><h3 class="h-item">Text page</h3></div>
+<p class="body kwn">Teks FAQ, panduan ukuran, kebijakan, kontak, info pengiriman, dan konfirmasi pembayaran disimpan di widget <span class="path">Text page</span>, bukan di editor halaman biasa.</p>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Buka halaman → <span class="path">Edit with Elementor</span> → klik widget Text page.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Edit kolom <span class="path">Text</span>: judul, huruf tebal, daftar, dan link, seperti di Word.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Pilih layout: dari template halaman, kolom Teks, Panduan, atau Informasi. Judul diambil dari judul halaman; matikan <span class="path">Show</span> untuk menyembunyikannya.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Tekan <span class="path">Update</span>.</p></div></li>
+</ol>
+<div class="note note--accent"><p class="label">Mengedit FAQ</p><p class="body">Setiap pertanyaan berupa blok yang bisa dibuka-tutup (accordion). Buka tab <span class="path">Text</span> (kode), salin satu blok pertanyaan beserta jawabannya, lalu ubah isinya. Pertanyaan yang diketik langsung di tab Visual tidak akan bisa dibuka-tutup.</p></div>
+<div class="sub kwn"><span class="sec__n">05.8</span><h3 class="h-item">Membuat halaman baru</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Pages → Add New Page</span>, lalu isi judul (judul ini tampil di halaman).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Cek slug URL di sisi kanan: huruf kecil dan dipisah tanda hubung, mis. <span class="path">care-guide</span>.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Klik <span class="path">Edit with Elementor</span>, tambahkan widget Text page dari kategori Miroir, isi teksnya, lalu klik <span class="path">Publish</span>.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Tambahkan ke menu (08.2). Untuk halaman Layanan Pelanggan, Panduan Ukuran, Konfirmasi Pembayaran, atau Informasi Pengiriman, pilih juga di Site Settings → Miroir → Halaman tertaut (08.5).</p></div></li>
+</ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 20—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">05.9</span><h3 class="h-item">Halaman toko dan template</h3></div>
+<table class="table">
+  <thead><tr><th>Layar</th><th>Diedit di</th><th style="width:30%">Apa yang bisa berubah</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Bag, Checkout, Account</p></td><td><p class="body">Halamannya sendiri: widget Bag / Checkout / Account.</p></td><td><p class="small">Hanya teks.</p></td></tr>
+    <tr><td><p class="h-item">Halaman produk</p></td><td><p class="body">Template "Miroir: Product page".</p></td><td><p class="small">Toggle bagian dan teks.</p></td></tr>
+    <tr><td><p class="h-item">Toko, koleksi</p></td><td><p class="body">Template "Miroir: Shop and collections".</p></td><td><p class="small">Filter sidebar, bilah judul, teks.</p></td></tr>
+    <tr><td><p class="h-item">Pencarian, 404, Maintenance</p></td><td><p class="body">Template "Miroir: …" masing-masing.</p></td><td><p class="small">Teks (maintenance: 11.1).</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--warn"><p class="label">Template dipakai bersama</p><p class="body">Satu perubahan pada template produk berlaku untuk setiap produk. Jangan menghapus atau mengganti nama template "Miroir: …".</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 21—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="06"><span class="sec__n">06</span><h2 class="h-sec">Pesanan WhatsApp.</h2></div>
+<p class="body kwn">Situs ini tidak menerima pembayaran. Pelanggan mengirim pesanan lewat WhatsApp, pesanan tersimpan di WooCommerce, dan pembayaran (transfer bank atau PayPal) dikonfirmasi lewat chat. Bab ini adalah SOP harian tim CS.</p>
+<table class="table">
+  <thead><tr><th>Siapa</th><th>Alur</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Customer</p></td><td><p class="body">Pilih produk dan ukuran → Bag (jumlah, kupon) → Review (data pengiriman, kirim) → halaman Order sent + WhatsApp terbuka dengan pesan yang sudah terisi.</p></td></tr>
+    <tr><td><p class="h-item">tim toko</p></td><td><p class="body">Cocokkan Order ref di Orders → kirim detail pembayaran → cek bukti bayar, ubah ke Processing → kirim barang, tambahkan nomor resi, ubah ke Completed.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Pesanan tercatat begitu pelanggan menekan kirim di halaman Review. Setelah itu semuanya berjalan lewat chat, lalu statusnya diperbarui di WooCommerce.</p>
+<div class="sub kwn"><span class="sec__n">06.1</span><h3 class="h-item">Apa yang dilihat pelanggan</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Pilih produk dan ukuran, lalu klik <span class="path">Add to bag</span> atau <span class="path">Order via WhatsApp</span> (keduanya sama-sama masuk ke bag).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Di Bag: mengatur jumlah dan bisa memasukkan kode kupon.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Di Review: mengisi nama lengkap, telepon, negara, alamat, kode pos, provinsi, kota, email (opsional), dan catatan.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Menekan kirim. Pesanan langsung tersimpan di WooCommerce dan bag dikosongkan.</p></div></li>
+  <li><span class="n">05</span><div class="t"><p class="body">Halaman Order sent terbuka berisi ringkasan, alamat, rekening bank, PayPal, dan tombol untuk membuka WhatsApp lagi. WhatsApp juga terbuka dengan pesan yang sudah terisi.</p></div></li>
+</ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 22—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="fig"><figure class="shot shot--img" style="height:378px" data-file="miroir-assets/manual-guide/shots/crop/store-product-9.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/store-product-9.png" alt=""></figure><p class="small muted cap">Halaman produk: ukuran, Add to bag, dan Order via WhatsApp.</p></div>
+<div class="note note--accent"><p class="label">Perlu diketahui</p><p class="body">Total di pesan dan di halaman belum termasuk ongkos kirim; CS memberi tahu ongkirnya lewat chat. Produk yang habis terjual menampilkan tombol tanya lewat WhatsApp, dan tombol ini tidak membuat pesanan.</p></div>
+<div class="sub kwn"><span class="sec__n">06.2</span><h3 class="h-item">Membaca pesan WhatsApp</h3></div>
+<pre class="msg">Hi miroir, I'd like to order:
+
+1. &lt;Product&gt; — &lt;Size&gt; × &lt;Qty&gt; — &lt;Price&gt;
+
+Subtotal: &lt;subtotal&gt; (excl. shipping)
+Discount (&lt;CODE&gt;): &lt;discount&gt;
+Total: &lt;total&gt; (excl. shipping)
+
+Name: &lt;name&gt;
+Phone: &lt;phone&gt;
+Deliver to: &lt;full address&gt;
+Notes: &lt;notes&gt;
+Order ref: #&lt;order number&gt;</pre></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 23—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><ul class="bullets"><li><span class="path">Order ref: #…</span> adalah kunci untuk menemukan pesanan di WooCommerce.</li><li>Baris Discount dan Total hanya muncul kalau pakai kupon; Notes hanya muncul kalau pelanggan mengisinya.</li><li>Pelanggan bisa mengedit pesan sebelum mengirimnya. Yang jadi acuan adalah data di WooCommerce, bukan teks di chat.</li></ul>
+<div class="sub kwn"><span class="sec__n">06.3</span><h3 class="h-item">SOP harian: memproses pesanan baru</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="h-item">Terima chat-nya</p><p class="body">Buka chat baru di WhatsApp Business dan catat Order ref-nya.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="h-item">Cari pesanannya</p><p class="body"><span class="path">WooCommerce → Orders</span>, cari ref, buka. Status pesanan baru adalah On hold.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="h-item">Cek isinya</p><p class="body">Cocokkan produk, ukuran, jumlah, dan alamat dengan isi chat. Kalau berbeda, konfirmasi ke pelanggan lalu edit pesanannya (06.5).</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="h-item">Konfirmasi stok dan ongkos kirim</p><p class="body">Cek ketersediaan stok, hitung ongkos kirim, lalu kirim total akhirnya lewat chat.</p></div></li>
+  <li><span class="n">05</span><div class="t"><p class="h-item">Kirim detail pembayaran</p><p class="body">Rekening bank atau PayPal, sama seperti di halaman Order sent. Tambahkan ongkos kirim ke pesanan (06.5) supaya totalnya sesuai.</p></div></li>
+  <li><span class="n">06</span><div class="t"><p class="h-item">Cek pembayaran</p><p class="body">Setelah dana masuk, ubah status ke Processing dan simpan bukti bayarnya sebagai catatan pribadi (private note).</p></div></li>
+  <li><span class="n">07</span><div class="t"><p class="h-item">Kirim barang</p><p class="body">Tambahkan kurir dan nomor resi sebagai <span class="path">Note to customer</span>, kirim juga lewat chat, lalu ubah status ke Completed.</p></div></li>
+</ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 24—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="fig"><figure class="shot shot--img" style="height:339px" data-file="miroir-assets/manual-guide/shots/crop/orders-10.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/orders-10.png" alt=""></figure><p class="small muted cap">WooCommerce → Orders. Cari nomor pesanan di kanan atas.</p></div>
+<figure class="shot shot--img" style="height:434px" data-file="miroir-assets/manual-guide/shots/crop/order-detail-11.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/order-detail-11.png" alt="">
+  <span class="pin" style="left:102px;top:161px">1</span>
+  <span class="pin" style="left:333px;top:85px">2</span>
+  <span class="pin" style="left:61px;top:409px">3</span>
+  <span class="pin" style="left:475px;top:409px">4</span>
+  <span class="pin" style="left:578px;top:343px">5</span>
+  <span class="pin" style="left:646px;top:112px">6</span>
+</figure></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 25—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><ol class="legend">
+  <li><span class="pin">1</span><div><p class="h-item">Status</p><p class="small">On hold → Processing → Completed.</p></div></li>
+  <li><span class="pin">4</span><div><p class="h-item">Recalculate</p><p class="small">Klik setelah menambah ongkos kirim atau mengubah item.</p></div></li>
+  <li><span class="pin">2</span><div><p class="h-item">Billing / Shipping</p><p class="small">Klik ikon pensil untuk mengedit alamat.</p></div></li>
+  <li><span class="pin">5</span><div><p class="h-item">Order notes</p><p class="small">Private note dan note to customer.</p></div></li>
+  <li><span class="pin">3</span><div><p class="h-item">Add item(s)</p><p class="small">Menambah produk atau ongkos kirim.</p></div></li>
+  <li><span class="pin">6</span><div><p class="h-item">Update</p><p class="small">Menyimpan perubahan pesanan.</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">06.4</span><h3 class="h-item">Status pesanan</h3></div>
+<table class="table">
+  <thead><tr><th>Status</th><th>Artinya di sini</th><th style="width:32%">Kapan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">On hold</p></td><td><p class="body">Pesanan sudah diterima, menunggu konfirmasi chat dan pembayaran.</p></td><td><p class="small">Otomatis saat pelanggan mengirim pesanan (default).</p></td></tr>
+    <tr><td><p class="h-item">Pending payment</p></td><td><p class="body">Alternatif status awal.</p></td><td><p class="small">Hanya jika diubah di pengaturan (06.7).</p></td></tr>
+    <tr><td><p class="h-item">Processing</p></td><td><p class="body">Sudah dibayar, sedang disiapkan.</p></td><td><p class="small">Setelah bukti bayar dicek.</p></td></tr>
+    <tr><td><p class="h-item">Completed</p></td><td><p class="body">Sudah dikirim.</p></td><td><p class="small">Setelah nomor resi tersedia.</p></td></tr>
+    <tr><td><p class="h-item">Cancelled</p></td><td><p class="body">Dibatalkan sebelum dibayar.</p></td><td><p class="small">Pelanggan membatalkan atau tidak membalas (06.8).</p></td></tr>
+    <tr><td><p class="h-item">Refunded</p></td><td><p class="body">Uang sudah dikembalikan.</p></td><td><p class="small">Setelah refund manual (06.8).</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Stok tidak dilacak, jadi perubahan status tidak memengaruhi stok. Perubahan status bisa mengirim email ke pelanggan jika mereka mengisi email dan email WooCommerce aktif (WooCommerce → Settings → Emails).</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 26—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">06.5</span><h3 class="h-item">Mengedit pesanan</h3></div>
+<p class="body kwn">Pesanan hanya bisa diedit selama statusnya On hold atau Pending payment. Selesaikan semua perubahan sebelum status diubah ke Processing.</p>
+<table class="table">
+  <thead><tr><th>Yang diubah</th><th>Caranya</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Tambah ongkos kirim</p></td><td><p class="body"><span class="path">Add item(s) → Add shipping</span>, isi nama (mis. "JNE REG") dan jumlahnya, lalu klik <span class="path">Recalculate</span> dan <span class="path">Update</span>.</p></td></tr>
+    <tr><td><p class="h-item">Ukuran atau jumlah</p></td><td><p class="body">Klik ikon pensil di baris produk, atau hapus lalu <span class="path">Add product(s)</span> dengan ukuran yang benar. Lalu hitung ulang.</p></td></tr>
+    <tr><td><p class="h-item">Alamat</p></td><td><p class="body">Klik ikon pensil di bagian Billing / Shipping.</p></td></tr>
+    <tr><td><p class="h-item">Kupon</p></td><td><p class="body">Kupon yang dipakai pelanggan sudah tercatat; untuk menambah kupon lain, klik <span class="path">Apply coupon</span>.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Kalau total berubah, kirim total barunya lewat chat.</p>
+<div class="sub kwn"><span class="sec__n">06.6</span><h3 class="h-item">Catatan pesanan</h3></div>
+<ul class="bullets">
+  <li><span class="path">Private note</span>: hanya terlihat oleh tim, mis. "Bukti transfer BCA diterima 16/11, diperiksa oleh &lt;nama&gt;".</li>
+  <li><span class="path">Note to customer</span>: dikirim ke email pelanggan (jika mereka mengisi email). Pakai untuk menyampaikan nomor resi.</li>
+  <li>Catatan dari pelanggan di halaman Review muncul di bawah <span class="path">Customer provided note</span>.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 27—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">06.7</span><h3 class="h-item">Pengaturan pemesanan WhatsApp</h3></div>
+<p class="body kwn"><span class="path">WooCommerce → Settings → WhatsApp ordering</span>. Hanya untuk Administrator atau Shop manager.</p>
+<div class="fig"><figure class="shot shot--img" style="height:423px" data-file="miroir-assets/manual-guide/shots/crop/wa-settings-12.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/wa-settings-12.png" alt=""></figure><p class="small muted cap">Tab pemesanan WhatsApp.</p></div>
+<table class="table">
+  <thead><tr><th>Pengaturan</th><th>Tujuan</th><th style="width:34%">Catatan</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Nomor WhatsApp</p></td><td><p class="body">Tujuan semua pesan pesanan.</p></td><td><p class="small">Diawali kode negara, hanya angka (62812…). Kalau nomornya salah, pesanan tidak akan pernah sampai.</p></td></tr><tr><td><p class="h-item">Status pesanan baru</p></td><td><p class="body">Status awal.</p></td><td><p class="small">Bawaannya On hold; bisa juga Pending payment atau Processing.</p></td></tr><tr><td><p class="h-item">Metode pembayaran ditampilkan</p></td><td><p class="body">Teks metode pembayaran di pesanan.</p></td><td><p class="small">"Transfer bank atau PayPal setelah konfirmasi".</p></td></tr></tbody></table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 28—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table">
+  <thead><tr><th>Pengaturan</th><th>Tujuan</th><th style="width:34%">Catatan</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Akun PayPal</p></td><td><p class="body">Ditampilkan di halaman Order sent.</p></td><td><p class="small">Kalau kosong, tidak ditampilkan.</p></td></tr><tr><td><p class="h-item">Wajib isi alamat/kota</p></td><td><p class="body">Kolom yang wajib diisi di Review.</p></td><td><p class="small">Keduanya aktif secara bawaan.</p></td></tr><tr><td><p class="h-item">Jeda buka WhatsApp</p></td><td><p class="body">Jeda sebelum WhatsApp dibuka; dan kapan petunjuk "WhatsApp tidak terbuka" muncul.</p></td><td><p class="small">800 ms; 4000 ms.</p></td></tr></tbody></table>
+<div class="fig"><figure class="shot shot--img" style="height:338px" data-file="miroir-assets/manual-guide/shots/crop/bank-transfer-13.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/bank-transfer-13.png" alt=""></figure><p class="small muted cap">WooCommerce → Settings → Payments → Direct bank transfer: hanya rekening pertama yang tampil di halaman Order sent.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 29—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="task">
+  <div class="task__head"><h3 class="h-item">B / Mengubah redaksi pesan</h3><p class="label">WhatsApp ordering → Message wording / ~5 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Setiap baris pesan punya kolomnya sendiri: Salam, Baris produk, Ukuran (untuk produk tanpa ukuran), Subtotal, Diskon, Total, Nama, Telepon, Alamat pengiriman, Catatan, dan Order ref.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Pakai placeholder dalam kurung kurawal seperti <span class="path">{name}</span>, <span class="path">{total}</span>, <span class="path">{ref}</span>; daftar placeholder tiap kolom tertulis di kolom itu sendiri.</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Kosongkan kolom untuk mengembalikan ke teks bawaan. Jangan pernah menghapus <span class="path">{ref}</span> dari baris Order ref.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Klik <span class="path">Save changes</span>, lalu coba test order (06.9).</p></div></li>
+  </ol>
+</div>
+<div class="sub kwn"><span class="sec__n">06.8</span><h3 class="h-item">Kasus khusus</h3></div>
+<table class="table">
+  <thead><tr><th>Kasus</th><th>Apa yang harus dilakukan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Pesanan tanpa chat</p></td><td><p class="body">Pelanggan belum mengirim chat. Hubungi lewat nomor telepon di pesanan; kalau 3 hari tidak ada balasan, ubah ke Cancelled dan beri catatan.</p></td></tr>
+    <tr><td><p class="h-item">Chat tanpa Order ref</p></td><td><p class="body">Mungkin pertanyaan untuk produk yang habis terjual, atau pesan yang diketik manual. Cari pesanan berdasarkan nama/telepon; kalau tidak ada, anggap sebagai pertanyaan biasa.</p></td></tr>
+    <tr><td><p class="h-item">Pesanan duplikat</p></td><td><p class="body">Proses satu saja; batalkan yang lain dengan catatan "duplikat #...".</p></td></tr>
+    <tr><td><p class="h-item">Pelanggan mengubah item</p></td><td><p class="body">Edit pesanan (06.5) sebelum Processing.</p></td></tr>
+    <tr><td><p class="h-item">Batalkan sebelum pembayaran</p></td><td><p class="body">Ubah ke Cancelled dan tulis alasannya di private note.</p></td></tr>
+    <tr><td><p class="h-item">Pengembalian dana setelah pembayaran</p></td><td><p class="body">Kembalikan uangnya lewat bank/PayPal, lalu catat di pesanan dengan <span class="path">Refund</span> sesuai jumlahnya (jangan pakai tombol refund otomatis dari payment gateway).</p></td></tr>
+    <tr><td><p class="h-item">Membayar dalam mata uang lain</p></td><td><p class="body">Pesanan tercatat dalam mata uang pilihan pelanggan. Sepakati jumlah dan kurs lewat chat, lalu catat di private note.</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 30—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><p class="small muted">"3 hari" hanya usulan; sesuaikan dengan kebijakan toko.</p>
+<div class="sub kwn"><span class="sec__n">06.9</span><h3 class="h-item">Tes setelah mengubah pengaturan</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Buka toko di jendela incognito dan masukkan satu produk ke bag.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Isi halaman Review dengan data tes (nama "TEST"), lalu kirim.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Pastikan WhatsApp terbuka ke nomor yang benar dengan isi pesan yang benar, dan halaman Order sent menampilkan rekening bank dan PayPal yang benar.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Di Orders, ubah pesanan tes ke Cancelled, lalu pindahkan ke Trash.</p></div></li>
+</ol>
+<div class="sub kwn"><span class="sec__n">06.10</span><h3 class="h-item">Data pelanggan</h3></div>
+<ul class="bullets">
+  <li>Pesanan dari pelanggan yang login muncul di akun mereka; pesanan tamu (guest) disimpan dengan nama dan telepon.</li>
+  <li>Daftar pelanggan: <span class="path">WooCommerce → Customers</span>. Permintaan hapus data: <span class="path">Tools → Erase Personal Data</span> (Administrator).</li>
+  <li>Jangan pernah menyalin data pelanggan ke grup chat atau spreadsheet bersama.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 31—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="07"><span class="sec__n">07</span><h2 class="h-sec">Produk &amp; media.</h2></div>
+<p class="body kwn">Produk dikelola di <span class="path">Products</span>. Semua harga dalam IDR, stok tidak dilacak, dan kategori Sale serta pencarian populer berjalan otomatis.</p>
+<div class="fig"><figure class="shot shot--img" style="height:301px" data-file="miroir-assets/manual-guide/shots/crop/products-14.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/products-14.png" alt=""></figure><p class="small muted cap">Products → All Products. Bintang menandai produk unggulan.</p></div>
+<div class="sub kwn"><span class="sec__n">07.1</span><h3 class="h-item">Siapkan dulu sebelum mulai</h3></div>
+<table class="table">
+  <thead><tr><th>Bahan</th><th>Ketentuan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Nama</p></td><td><p class="body">Ikuti pola penamaan yang sudah ada, mis. "Celana Polka Hitam Como".</p></td></tr>
+    <tr><td><p class="h-item">Keterangan</p></td><td><p class="body">Bahan kain, potongan, cara perawatan, ukuran model.</p></td></tr>
+    <tr><td><p class="h-item">Harga</p></td><td><p class="body">Dalam Rp. Mata uang lain dihitung otomatis (09.1).</p></td></tr>
+    <tr><td><p class="h-item">Ukuran / Warna</p></td><td><p class="body">Ukuran yang In stock (S/M/L); satu warna dari daftar Warna.</p></td></tr>
+    <tr><td><p class="h-item">Foto</p></td><td><p class="body">Potret 3:4, minimal 1500 × 2000 px, JPG atau WebP, di bawah 500 KB.</p></td></tr>
+    <tr><td><p class="h-item">Kategori</p></td><td><p class="body">Jenis produk + koleksi (07.3).</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 32—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="task">
+  <div class="task__head"><h3 class="h-item">C / Menambah produk satu ukuran</h3><p class="label">Products → Add New / ~5 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Isi nama dan deskripsi; di <span class="path">Product data</span> pilih <span class="path">Simple product</span>.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Tab General: isi <span class="path">Regular price</span> (<span class="path">Sale price</span> hanya jika produk didiskon, 07.4).</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Tab Inventory: isi SKU jika dipakai; biarkan Manage stock mati; Stock status = In stock. Tab Attributes: tambahkan Warna.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Centang kategori, atur <span class="path">Product image</span> dan <span class="path">Product gallery</span>, klik <span class="path">Preview</span>, lalu <span class="path">Publish</span>.</p></div></li>
+  </ol>
+</div>
+<div class="fig"><figure class="shot shot--img" style="height:434px" data-file="miroir-assets/manual-guide/shots/crop/product-general-15.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/product-general-15.png" alt=""></figure><p class="small muted cap">Editor produk: Data produk, kategori, dan gambar.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 33—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="task">
+  <div class="task__head"><h3 class="h-item">D / Menambah produk dengan pilihan ukuran</h3><p class="label">Products → Add New / ~8 min</p></div>
+  <ol class="steps">
+    <li><span class="n">01</span><div class="t"><p class="body">Sama seperti tugas C, tapi pilih <span class="path">Variable product</span>.</p></div></li>
+    <li><span class="n">02</span><div class="t"><p class="body">Tab Attributes: tambahkan Warna (jangan centang <span class="path">Used for variations</span>). Lalu buat atribut khusus lewat <span class="path">Add new</span> dengan nama persis <span class="path">Size</span>, nilai <span class="path">S | M | L</span>, centang <span class="path">Used for variations</span>, klik <span class="path">Save attributes</span>.</p></div></li>
+    <li><span class="n">03</span><div class="t"><p class="body">Tab Variations: klik <span class="path">Generate variations</span>, buka tiap variasi dan isi <span class="path">Regular price</span>. Variasi tanpa harga tidak bisa dipesan.</p></div></li>
+    <li><span class="n">04</span><div class="t"><p class="body">Klik <span class="path">Save changes</span>, lalu atur kategori dan foto, <span class="path">Preview</span>, dan <span class="path">Publish</span>.</p></div></li>
+  </ol>
+</div>
+<div class="fig"><figure class="shot shot--img" style="height:338px" data-file="miroir-assets/manual-guide/shots/crop/product-variations-16.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/product-variations-16.png" alt=""></figure><p class="small muted cap">Variasi setelah Generate variations: satu variasi per ukuran, masing-masing dengan harganya sendiri.</p></div>
+<div class="sub kwn"><span class="sec__n">07.2</span><h3 class="h-item">Mengubah produk</h3></div>
+<ul class="bullets">
+  <li><span class="path">Price</span>: buka produk, ubah harganya (produk variabel: per variasi), lalu Update. Produk simple juga bisa lewat Quick Edit.</li>
+  <li><span class="path">New size</span>: Attributes → tambahkan ke Size → Save attributes → Variations → Add variation → isi harga.</li>
+  <li><span class="path">Many products</span>: centang produk di daftar → Bulk actions → Edit (kategori, stock status, harga).</li>
+  <li><span class="path">Similar product</span>: arahkan kursor → Duplicate, lalu ubah nama, foto, dan warna; cek slug sebelum Publish.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 34—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">07.3</span><h3 class="h-item">Kategori dan koleksi</h3></div>
+<table class="table">
+  <thead><tr><th>Kelompok</th><th>Contoh</th><th style="width:34%">Aturan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Jenis produk</p></td><td><p class="body">Atasan, Bawahan, Gaun, Pakaian Luar, Aksesori.</p></td><td><p class="small">Centang satu.</p></td></tr>
+    <tr><td><p class="h-item">Koleksi</p></td><td><p class="body">Riviera, Textura, Ligne, Edit Liburan, Di Studio, Miroir x Naluri.</p></td><td><p class="small">Centang koleksi produknya.</p></td></tr>
+    <tr><td><p class="h-item">Kurasi</p></td><td><p class="body">Koleksi Baru, Best Seller.</p></td><td><p class="small">Per kampanye.</p></td></tr>
+    <tr><td><p class="h-item">Sale</p></td><td><p class="body">Sale.</p></td><td><p class="small">Jangan dicentang manual: otomatis (07.4).</p></td></tr>
+    <tr><td><p class="h-item">Toko</p></td><td><p class="body">Toko.</p></td><td><p class="small">Mengarah ke halaman utama toko.</p></td></tr>
+  </tbody>
+</table>
+<div class="fig"><figure class="shot shot--img" style="height:301px" data-file="miroir-assets/manual-guide/shots/crop/categories-17.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/categories-17.png" alt=""></figure><p class="small muted cap">Products → Categories. Isi Description dan Thumbnail untuk setiap koleksi.</p></div>
+<ul class="bullets"><li>Koleksi baru: isi nama, Parent category, dan Thumbnail (gambar untuk dibagikan di sosmed), lalu klik <span class="path">Add new category</span>.</li><li>Sidebar toko diambil dari menu "Sidebar toko: kategori" dan "Sidebar toko: unggulan". Tambahkan kategori baru di sana (08.2).</li></ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 35—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><ul class="bullets"><li>Mengganti nama kategori boleh. Mengubah slug akan mengubah URL dan merusak link lama, jadi tanyakan dulu ke developer. Jangan biarkan produk berada di kategori Uncategorized.</li></ul>
+<div class="sub kwn"><span class="sec__n">07.4</span><h3 class="h-item">Harga diskon dan kategori Sale</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Isi <span class="path">Sale price</span> (produk variabel: isi di setiap variasi yang didiskon). Untuk mengatur tanggal, klik <span class="path">Schedule</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Simpan. Kartu produk akan menampilkan harga lama yang dicoret. Produk otomatis masuk ke kategori Sale selama diskon berlaku, dan keluar sendiri setelahnya.</p></div></li>
+</ol>
+<p class="small muted">Kategori Sale yang dicentang pada produk tanpa harga diskon akan terhapus otomatis saat produk disimpan. Untuk diskon berbasis kode, pakai kupon (09.2).</p>
+<div class="sub kwn"><span class="sec__n">07.5</span><h3 class="h-item">Foto produk</h3></div>
+<ul class="bullets">
+  <li><span class="path">Product image</span> adalah foto utama di kartu produk, bag, dan pesanan; <span class="path">Product gallery</span> berisi foto lainnya. Geser untuk mengatur urutan.</li>
+  <li><span class="path">Show second gallery image on hover</span> (08.5) menampilkan foto pertama di galeri saat kursor diarahkan ke kartu.</li>
+  <li><span class="path">Product image shape</span> (bawaannya Potret 3:4) memotong semua foto ke bentuk itu. Unggah foto dengan rasio yang sama.</li>
+  <li>Mematikan <span class="path">Show product photos</span> akan mengganti semua foto dengan kotak abu-abu. Biarkan tetap menyala.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 36—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">07.6</span><h3 class="h-item">Media Library</h3></div>
+<div class="fig"><figure class="shot shot--img" style="height:310px" data-file="miroir-assets/manual-guide/shots/crop/media-18.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/media-18.png" alt=""></figure><p class="small muted cap">Media → Library.</p></div>
+<table class="table">
+  <thead><tr><th>Jenis</th><th>Ukuran</th><th style="width:34%">Format / batas</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Foto produk</p></td><td><p class="body">1500 × 2000 px (3:4).</p></td><td><p class="small">JPG / WebP, ± 500 KB.</p></td></tr>
+    <tr><td><p class="h-item">Banner, editorial</p></td><td><p class="body">Lihat lampiran C.</p></td><td><p class="small">JPG / WebP, ± 800 KB.</p></td></tr>
+    <tr><td><p class="h-item">Video hero</p></td><td><p class="body">Desktop 9:4, mobile 3:4.</p></td><td><p class="small">MP4 H.264, ± 5 MB / ± 1,5 MB.</p></td></tr>
+  </tbody>
+</table>
+<ul class="bullets">
+  <li>Nama file: pakai nama yang deskriptif, huruf kecil, dan dipisah tanda hubung: <span class="path">como-black-polka-pants-front.jpg</span>. Isi juga teks Alt.</li>
+  <li>Mengganti file: unggah file baru lalu pilih. Jangan hapus file lama sebelum benar-benar tidak dipakai di mana pun, kalau tidak akan muncul kotak kosong.</li>
+  <li>Kompres dulu sebelum unggah (Squoosh, TinyPNG). Batas ukuran di atas hanya usulan, berdasarkan media yang ada sekarang.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 37—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">07.7</span><h3 class="h-item">Habis terjual, unggulan, dan disembunyikan</h3></div>
+<table class="table">
+  <thead><tr><th>Tujuan</th><th>Caranya</th><th style="width:32%">Efeknya</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Terjual habis</p></td><td><p class="body">Inventory → Stock status = Out of stock (untuk produk variabel, atur di ukuran yang habis).</p></td><td><p class="small">Muncul label habis terjual dan tombol tanya lewat WhatsApp.</p></td></tr>
+    <tr><td><p class="h-item">Unggulan</p></td><td><p class="body">Ikon bintang di daftar Produk.</p></td><td><p class="small">Dipakai oleh Product row "Unggulan" (05.6).</p></td></tr>
+    <tr><td><p class="h-item">Sembunyikan sementara</p></td><td><p class="body">Status: Draft.</p></td><td><p class="small">Hilang dari toko; link tidak bisa dibuka.</p></td></tr>
+    <tr><td><p class="h-item">Link saja</p></td><td><p class="body">Catalog visibility: Hidden.</p></td><td><p class="small">Tidak muncul di daftar, tapi link tetap bisa dibuka.</p></td></tr>
+    <tr><td><p class="h-item">Menghapus</p></td><td><p class="body">Trash (bisa dipulihkan selama 30 hari).</p></td><td><p class="small">Link jadi 404; minta redirect (09.5).</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Jumlah produk per halaman toko dan produk serupa diatur di Site Settings (08.5). Pencarian populer dihitung otomatis dari 30 hari terakhir.</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 38—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="08"><span class="sec__n">08</span><h2 class="h-sec">Header, footer &amp; pengaturan.</h2></div>
+<p class="body kwn">Bagian yang tampil di setiap halaman, serta pengaturan dan teks di seluruh toko, dikelola di satu tempat. Perubahan di sini langsung berlaku di semua halaman.</p>
+<div class="sub kwn"><span class="sec__n">08.1</span><h3 class="h-item">Membuka Site Settings</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Buka halaman mana pun dengan <span class="path">Edit with Elementor</span>.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Klik menu Elementor (kiri atas) → <span class="path">Site Settings</span> → <span class="path">Miroir</span>; atau pilih Global Colors, Global Fonts, dan Site Identity.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Ubah pengaturannya, lalu klik <span class="path">Save Changes</span> di bagian bawah panel.</p></div></li>
+</ol>
+<div class="fig"><figure class="shot shot--img" style="height:339px" data-file="miroir-assets/manual-guide/shots/crop/site-settings-miroir-19.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/site-settings-miroir-19.png" alt=""></figure><p class="small muted cap">Site Settings → Miroir, dengan grup Template terbuka.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 39—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">08.2</span><h3 class="h-item">Menu navigasi</h3></div>
+<table class="table">
+  <thead><tr><th>Lokasi menu</th><th>Ditampilkan di</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Header: link utama</p></td><td><p class="body">Menu utama di header.</p></td></tr>
+    <tr><td><p class="h-item">Panel menu</p></td><td><p class="body">Menu yang muncul saat tombol hamburger diklik.</p></td></tr>
+    <tr><td><p class="h-item">Footer: akun / kebijakan / kontak</p></td><td><p class="body">Tiga kolom di footer.</p></td></tr>
+    <tr><td><p class="h-item">Sidebar toko: kategori / unggulan</p></td><td><p class="body">Grup sidebar toko (nama menu = judul grup).</p></td></tr>
+  </tbody>
+</table>
+<div class="fig"><figure class="shot shot--img" style="height:397px" data-file="miroir-assets/manual-guide/shots/crop/menus-20.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/menus-20.png" alt=""></figure><p class="small muted cap">Appearance → Menus, dengan Menu Settings → Menu location di bagian bawah.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 40—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><ol class="steps"><li><span class="n">01</span><div class="t"><p class="body">Pilih menu di <span class="path">Select a menu to edit</span>.</p></div></li><li><span class="n">02</span><div class="t"><p class="body">Centang <span class="path">Pages</span>, <span class="path">Product categories</span>, atau <span class="path">Custom Links</span> di sisi kiri → <span class="path">Add to Menu</span>.</p></div></li><li><span class="n">03</span><div class="t"><p class="body">Geser untuk mengatur urutan (geser sedikit ke kanan = submenu); ubah <span class="path">Navigation Label</span> jika perlu.</p></div></li><li><span class="n">04</span><div class="t"><p class="body">Klik <span class="path">Save Menu</span>, lalu cek tampilan desktop dan mobile.</p></div></li></ol>
+<div class="sub kwn"><span class="sec__n">08.3</span><h3 class="h-item">Announcement bar</h3></div>
+<div class="fig"><figure class="shot shot--img" style="height:252px" data-file="miroir-assets/manual-guide/shots/crop/header-template-21.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/header-template-21.png" alt=""></figure><p class="small muted cap">Template "Miroir: Header" dengan announcement bar dipilih.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Templates → Saved Templates</span> → buka "Miroir: Header" dengan Elementor.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Klik bar-nya: ubah <span class="path">Text</span>, tambahkan <span class="path">Link</span> (opsional), atau matikan <span class="path">Show announcement bar</span>. Lalu klik Update.</p></div></li>
+</ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 41—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">08.4</span><h3 class="h-item">Logo, header dan footer</h3></div>
+<ul class="bullets">
+  <li>Logo: Site Settings → Site Identity → Site Logo (SVG atau PNG transparan). Lebar: widget navigasi → lebar logo yang diunggah (0 = bawaan).</li>
+  <li>Favicon: Site Identity → Site Icon, 512 × 512 px.</li>
+  <li>Gaya navbar homepage (Site Settings → Miroir → Header): Transparan di atas hero (bawaan) atau Solid. Pilih Solid kalau video yang terang membuat menu putih sulit dibaca.</li>
+  <li>Footer: buka "Miroir: Footer". Di sana Anda bisa mengubah baris footer ("Lokasi : Indonesia"), hak cipta, dan kredit; link kolom diambil dari menu footer; URL Instagram diatur di Site Settings → Miroir → Links.</li>
+</ul>
+<div class="sub kwn"><span class="sec__n">08.5</span><h3 class="h-item">Site Settings → Miroir</h3></div>
+<table class="table">
+  <thead><tr><th>Kelompok</th><th>Pengaturan penting</th><th style="width:30%">Bawaan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Template</p></td><td><p class="body">Header, footer, produk, toko, pencarian, 404, maintenance.</p></td><td><p class="small">Template "Miroir: …"</p></td></tr>
+    <tr><td><p class="h-item">Header / Links</p></td><td><p class="body">Gaya navbar homepage; URL Instagram.</p></td><td><p class="small">Transparan; toko miroir</p></td></tr>
+    <tr><td><p class="h-item">Ukuran teks</p></td><td><p class="body">Skala seluruh teks, 80–140%.</p></td><td><p class="small">100%</p></td></tr>
+    <tr><td><p class="h-item">Layout &amp; jarak</p></td><td><p class="body">Margin, jarak, jumlah kolom per perangkat, produk per halaman.</p></td><td><p class="small">4 / 3 / 2; 12</p></td></tr>
+    <tr><td><p class="h-item">Produk</p></td><td><p class="body">Bentuk gambar, foto on/off, foto hover, produk serupa, link panduan ukuran.</p></td><td><p class="small">3:4; on; off; 4; off</p></td></tr>
+    <tr><td><p class="h-item">Halaman tertaut</p></td><td><p class="body">Layanan pelanggan, Panduan ukuran, Konfirmasi pembayaran, Informasi pengiriman.</p></td><td><p class="small">/contact/, /size-guide/ …</p></td></tr>
+    <tr><td><p class="h-item">Maintenance</p></td><td><p class="body">Maintenance mode on/off.</p></td><td><p class="small">Off (11.1)</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Angka layout mengikuti desain. Ubah hanya jika ada permintaan dari desain, dan catat nilai lamanya dulu.</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 42—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">08.6</span><h3 class="h-item">Teks dan label toko</h3></div>
+<p class="body kwn">Semua teks kecil (tombol, judul panel, tampilan kosong, teks Order sent, deskripsi SEO) bisa diedit tanpa kode di <span class="path">Site Settings → Miroir → Labels: …</span>.</p>
+<div class="fig"><figure class="shot shot--img" style="height:406px" data-file="miroir-assets/manual-guide/shots/crop/site-settings-labels-22.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/site-settings-labels-22.png" alt=""></figure><p class="small muted cap">Grup label di Site Settings → Miroir.</p></div>
+<table class="table">
+  <thead><tr><th>Grup label</th><th>Contoh</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Header &amp; menu, Search</p></td><td><p class="body">Tombol menu, placeholder kolom pencarian.</p></td></tr><tr><td><p class="h-item">Shop, Empty results</p></td><td><p class="body">Judul daftar, teks "tidak ada hasil".</p></td></tr><tr><td><p class="h-item">Halaman produk, status</p></td><td><p class="body">Tombol beli, "habis terjual", "ditambahkan ke bag".</p></td></tr><tr><td><p class="h-item">Bag, Checkout, Order sent</p></td><td><p class="body">Label formulir, teks pembayaran, info rekening bank.</p></td></tr><tr><td><p class="h-item">404, Maintenance, Staging</p></td><td><p class="body">Judul dan teks halaman-halaman khusus.</p></td></tr></tbody></table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 43—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table">
+  <thead><tr><th>Grup label</th><th>Contoh</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Search engines</p></td><td><p class="body">Deskripsi homepage dan koleksi untuk Google (09.4).</p></td></tr></tbody></table>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Buka grupnya dan cari kolom yang dimaksud. Teks yang sedang aktif tampil samar di dalam kolom.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Ketik teks baru; kosongkan kolom untuk mengembalikan ke teks bawaan. Simpan, lalu cek halamannya.</p></div></li>
+</ol>
+<div class="note note--warn"><p class="label">Jangan hapus kodenya</p><p class="body">Teks yang berisi <span class="path">%s</span>, <span class="path">%d</span>, atau <span class="path">%1$d</span> harus tetap memakai kode yang sama, karena kode itu otomatis diganti dengan nama, angka, atau harga. Kalau ada yang terhapus, toko akan memakai teks bawaan.</p></div>
+<div class="sub kwn"><span class="sec__n">08.7</span><h3 class="h-item">Warna dan font</h3></div>
+<ul class="bullets">
+  <li>Site Settings → Global Colors / Global Fonts: entri "miroir_*" dipakai di seluruh situs. Ubah hanya sesuai brand guideline, dan catat nilai lamanya dulu.</li>
+  <li>Font Avenir berlisensi dan dipasang oleh developer; jangan mengunggah font pengganti.</li>
+  <li>Kalau Elementor tidak aktif, pengaturan yang sama tersedia di Appearance → Customize → Miroir theme dan Text &amp; labels.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 44—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="09"><span class="sec__n">09</span><h2 class="h-sec">Harga, promo &amp; SEO.</h2></div>
+<p class="body kwn">Harga disimpan dalam IDR lalu dikonversi ke USD, SGD, dan MYR dengan kurs manual. Diskon memakai Sale price atau kupon, ongkos kirim disepakati lewat chat, dan SEO dasar dibuat otomatis oleh tema.</p>
+<div class="sub kwn"><span class="sec__n">09.1</span><h3 class="h-item">Mata uang dan kurs</h3></div>
+<div class="fig"><figure class="shot shot--img" style="height:402px" data-file="miroir-assets/manual-guide/shots/crop/currency-23.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/currency-23.png" alt=""></figure><p class="small muted cap">WooCommerce → WooCommerce Multilingual &amp; Multicurrency → Multicurrency. Klik ikon pensil untuk mengubah kurs.</p></div>
+<ul class="bullets">
+  <li>Pelanggan bisa mengganti mata uang di header; semua orang mulai dari Rp. Isi harga dalam IDR saja; mata uang lain dihitung otomatis tanpa pembulatan.</li>
+  <li>Kurs tidak diperbarui otomatis. Developer mengambil kurs ECB atas permintaan, atau Anda bisa mengedit kurs (1 IDR = …) di sini lalu menyimpannya.</li>
+  <li>Cek kurs setiap bulan atau saat rupiah bergerak tajam. Pesanan tetap memakai mata uang pilihan pelanggan; pembayaran disepakati lewat chat.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 45—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="note note--warn"><p class="label">Peringatan</p><p class="body">Jangan menambah atau menghapus mata uang, dan jangan mengubah mata uang dasar di <span class="path">WooCommerce → Settings → General</span>. Perubahan ini memengaruhi semua harga dan harus lewat developer.</p></div>
+<div class="sub kwn"><span class="sec__n">09.2</span><h3 class="h-item">Kupon</h3></div>
+<div class="fig"><figure class="shot shot--img" style="height:296px" data-file="miroir-assets/manual-guide/shots/crop/coupon-24.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/coupon-24.png" alt=""></figure><p class="small muted cap">Marketing → Coupons → tab General pada sebuah kupon.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body"><span class="path">Marketing → Coupons → Add coupon</span>; isi kode yang akan dipakai pelanggan, mis. <span class="path">MIROIR10</span> (huruf besar/kecil tidak berpengaruh).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Tab General: pilih Discount type (Percentage, Fixed cart, Fixed product), isi jumlah dan tanggal kedaluwarsa.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Tab Usage restriction: minimum belanja, produk atau kategori, <span class="path">Exclude sale items</span>. Tab Usage limits: batas total dan batas per pelanggan.</p></div></li>
+  <li><span class="n">04</span><div class="t"><p class="body">Klik <span class="path">Publish</span>, lalu tes di toko (06.9) sebelum kupon diumumkan.</p></div></li>
+</ol>
+<p class="small muted">Batas per pelanggan didasarkan pada email, jadi tamu tanpa email sulit dibatasi. Nominal tetap dalam IDR lalu dikonversi. Hentikan kupon dengan mengubahnya ke Draft atau mengisi tanggal berakhir, jangan dihapus.</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 46—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">09.3</span><h3 class="h-item">Ongkos kirim, format harga, dan pajak</h3></div>
+<ul class="bullets">
+  <li>Ongkos kirim tidak dihitung di situs; total tertulis "excl. shipping" (belum termasuk ongkir). CS menambahkannya ke pesanan (06.5).</li>
+  <li>Daftar negara di halaman Review berasal dari <span class="path">WooCommerce → Settings → General → Selling and Shipping location(s)</span>. Shipping zones tidak dipakai di alur WhatsApp.</li>
+  <li>Simpan tabel ongkir internal (kurir, tujuan, berat, tarif) untuk CS, di luar situs.</li>
+  <li>IDR tidak memakai desimal; jangan diubah. Pajak (tab Tax) adalah keputusan pemilik atau akuntan; cek ulang harga kalau ada perubahan.</li>
+</ul>
+<p class="small muted">Minta pemilik atau akuntan mengonfirmasi pengaturan pajak dan negara di situs live sebelum mengubahnya.</p>
+<div class="sub kwn"><span class="sec__n">09.4</span><h3 class="h-item">SEO</h3></div>
+<table class="table">
+  <thead><tr><th>Halaman</th><th>Deskripsi di Google berasal dari</th><th style="width:28%">Gambar share berasal dari</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Beranda</p></td><td><p class="body">Label Search engines → Home page description (08.6).</p></td><td><p class="small">Poster kampanye bawaan.</p></td></tr>
+    <tr><td><p class="h-item">Produk</p></td><td><p class="body">Short description; kalau kosong, deskripsi produk; kalau masih kosong, teks bawaan.</p></td><td><p class="small">Foto produk utama.</p></td></tr>
+    <tr><td><p class="h-item">Koleksi</p></td><td><p class="body">Description kategori; kalau kosong, teks bawaan dengan nama koleksi.</p></td><td><p class="small">Thumbnail kategori.</p></td></tr>
+    <tr><td><p class="h-item">Text page</p></td><td><p class="body">Excerpt halaman; kalau kosong, isi halaman.</p></td><td><p class="small">Featured image.</p></td></tr>
+  </tbody>
+</table>
+<div class="dodont">
+  <div class="do"><p class="label">Lakukan</p><ul>
+    <li>Nama yang jelas: jenis, warna, fitur.</li>
+    <li>Deskripsi singkat 1–2 kalimat, sekitar 150 karakter.</li>
+    <li>Isi Description dan Thumbnail di setiap koleksi; beri teks Alt pada foto.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Hindari</p><ul>
+    <li>Memasang Yoast, Rank Math, atau plugin SEO lain tanpa developer: SEO bawaan tema akan nonaktif.</li>
+    <li>Mengkhawatirkan halaman hasil filter, urutan, atau mata uang: halaman-halaman itu tidak diindeks Google secara otomatis.</li>
+  </ul></div>
+</div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 47—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">09.5</span><h3 class="h-item">Link lama dan integrasi</h3></div>
+<ul class="bullets">
+  <li>Sebagian link lama miroir.id sudah dialihkan (redirect), tapi cakupannya tidak dijamin. Kirim alamat lama dan alamat baru yang diinginkan ke developer untuk dicek atau ditambahkan redirect-nya.</li>
+  <li>TikTok for Business: aktif, di Marketing → TikTok (pixel dan katalog). Google Listings &amp; Ads: sudah terpasang tapi belum aktif; aktifkan bersama developer.</li>
+  <li>Instagram: hanya berupa link (Site Settings → Miroir → Links). Search Console: disarankan; catat pemegang aksesnya di lampiran D.</li>
+  <li>Menyambungkan atau memutus integrasi bisa memengaruhi penayangan iklan. Serahkan kepada pemegang akunnya.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 48—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="10"><span class="sec__n">10</span><h2 class="h-sec">Publish &amp; backup</h2></div>
+<p class="body kwn">Tim klien mengedit semua konten langsung di live. Staging hanya dipakai developer untuk menguji kode dan menunjukkan preview fitur baru kepada Anda sebelum rilis.</p>
+<div class="sub kwn"><span class="sec__n">10.1</span><h3 class="h-item">Mengedit di live</h3></div>
+<div class="dodont">
+  <div class="do"><p class="label">Lakukan</p><ul>
+    <li>Perubahan kecil: edit, klik Update, lalu buka halamannya di tab baru untuk mengecek.</li>
+    <li>Perubahan besar: siapkan dulu dengan Save Draft atau Preview di Elementor; publikasikan setelah mengecek tampilan desktop dan HP.</li>
+    <li>Perubahan berisiko (hero homepage, menu utama): lakukan di luar jam ramai pesanan.</li>
+    <li>Catat perubahan besar (siapa, kapan, apa) di grup chat tim.</li>
+  </ul></div>
+  <div class="dont"><p class="label">Hindari</p><ul>
+    <li>Dua orang mengedit satu halaman bersamaan. Kalau WordPress menampilkan pemberitahuan bahwa user lain sedang mengedit, tunggu dulu.</li>
+    <li>Mengerjakan konten asli di alamat mana pun yang diawali <span class="path">staging.</span></li>
+  </ul></div>
+</div>
+<div class="sub kwn"><span class="sec__n">10.2</span><h3 class="h-item">Staging dan preview</h3></div>
+<ul class="bullets">
+  <li>Staging (staging.miroir.id) adalah salinan milik developer untuk menguji kode dan memperlihatkan fitur baru kepada Anda.</li>
+  <li>Konten yang diedit di sana tidak pernah pindah ke live, dan bisa tertimpa saat developer menyalin ulang data live ke staging.</li>
+  <li>Staging tidak mengirim email dan nomor WhatsApp-nya hanya contoh, jadi pesanan tes tidak akan sampai ke tim. Staging juga disembunyikan dari Google.</li>
+  <li>Tamu memasukkan password bersama yang diingat selama 30 hari; Administrator bisa langsung masuk. Atur di Settings → Staging access. Kalau password diganti, semua tamu otomatis logout; 10 kali salah memasukkan password akan mengunci akses selama 15 menit.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 49—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">10.3</span><h3 class="h-item">Update dari developer</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Developer mengirim perubahan ke staging dan memberi tahu apa saja yang perlu Anda cek.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Anda mengecek staging dengan daftar di bawah, lalu memberi persetujuan tertulis di chat.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Developer merilis ke live (butuh approval di GitHub), cache dibersihkan, lalu Anda mengecek sekali lagi di live.</p></div></li>
+</ol>
+<ul class="bullets">
+  <li>Halaman yang disebutkan tampil benar di desktop dan HP; homepage, satu koleksi, dan satu produk juga normal.</li>
+  <li>Pastikan alur pesanan berjalan: bag → checkout → review → order sent (WhatsApp di staging memakai nomor contoh).</li>
+  <li>Teks yang diubah tidak ada typo; peralihan IDR/USD/SGD/MYR masih berfungsi.</li>
+</ul>
+<p class="small muted">Rilis hanya menyalin kode. Produk, halaman, dan pesanan di live tidak disentuh sama sekali.</p>
+<div class="sub kwn"><span class="sec__n">10.4</span><h3 class="h-item">Jadwal tayang dan revisi</h3></div>
+<p class="body kwn">Untuk menjadwalkan: di kotak Publish klik <span class="path">Immediately</span>, pilih tanggal dan jam, lalu klik <span class="path">Schedule</span>. Waktunya mengikuti Settings → General → Timezone (Jakarta).</p>
+<div class="fig"><figure class="shot shot--img" style="height:339px" data-file="miroir-assets/manual-guide/shots/crop/elementor-history-25.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/elementor-history-25.png" alt=""></figure><p class="small muted cap">Elementor → History → Revisions: pilih versi lalu klik Apply.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 50—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table">
+  <thead><tr><th>Apa yang berubah</th><th>Cara mengembalikan</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Halaman atau template Elementor</p></td><td><p class="body">History (ikon jam) → Revisions → pilih versi → Apply → Update.</p></td></tr><tr><td><p class="h-item">Produk / halaman biasa</p></td><td><p class="body">Revisions di panel kanan → Restore This Revision.</p></td></tr><tr><td><p class="h-item">Pengaturan dan label</p></td><td><p class="body">Tidak ada riwayat. Catat nilai lamanya sebelum diubah.</p></td></tr></tbody></table>
+<p class="small muted">Revisi tidak menyimpan harga variasi maupun stok.</p>
+<div class="sub kwn"><span class="sec__n">10.5</span><h3 class="h-item">Backup dan restore</h3></div>
+<ul class="bullets">
+  <li>Hostinger menyimpan backup rutin (file dan database) di hPanel → Websites → miroir.id → Files → Backups. Seberapa sering tergantung paket hosting.</li>
+  <li>Sebelum perubahan besar (update plugin, menghapus banyak produk, membangun ulang homepage), buat backup manual dulu.</li>
+  <li>Restore hanya dilakukan oleh developer atau pemilik hPanel. Restore mengembalikan seluruh situs ke titik backup tersebut, jadi pesanan dan perubahan setelahnya akan hilang; catat dulu sebelum memulai. Untuk satu halaman saja, pakai Revisions.</li>
+  <li>Jangan pernah menaruh file backup (.zip, .sql) di folder situs atau di balik link publik.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 51—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="11"><span class="sec__n">11</span><h2 class="h-sec">Maintenance &amp; keamanan</h2></div>
+<div class="sub kwn"><span class="sec__n">11.1</span><h3 class="h-item">Maintenance mode</h3></div>
+<p class="body kwn">Menutup toko untuk pengunjung dengan halaman "segera kembali". Dipakai saat perbaikan besar, migrasi, atau toko tutup (mis. libur panjang).</p>
+<div class="fig"><figure class="shot shot--img" style="height:330px" data-file="miroir-assets/manual-guide/shots/crop/site-settings-maintenance-26.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/site-settings-maintenance-26.png" alt=""></figure><p class="small muted cap">Site Settings → Miroir → Maintenance.</p></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Site Settings → Miroir → <span class="path">Maintenance</span> (atau Appearance → Customize).</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Pilih <span class="path">On: visitors see the maintenance page</span> atau <span class="path">Off: store is open</span>, lalu simpan.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Setelah selesai, matikan lagi lalu buka toko di jendela incognito untuk memastikan.</p></div></li>
+</ol></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 52—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="fig"><figure class="shot shot--img" style="height:368px" data-file="miroir-assets/manual-guide/shots/crop/store-maintenance-27.png"><img class="shot__img" src="file:///F:/projects/miroir/docs/manual-id/crop/store-maintenance-27.png" alt=""></figure><p class="small muted cap">Apa yang dilihat pengunjung saat maintenance sedang berlangsung.</p></div>
+<table class="table">
+  <thead><tr><th>Siapa</th><th>Yang tampil</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Pengunjung</p></td><td><p class="body">Halaman maintenance. Google diberi tahu bahwa ini hanya sementara (503), jadi peringkat aman kecuali kalau berlangsung berhari-hari.</p></td></tr>
+    <tr><td><p class="h-item">Administrator</p></td><td><p class="body">Toko normal.</p></td></tr>
+    <tr><td><p class="h-item">Shop manager / Editor</p></td><td><p class="body">Halaman maintenance.</p></td></tr>
+    <tr><td><p class="h-item">Pemegang link preview</p></td><td><p class="body">Toko normal, berlaku 30 hari per browser. Link ini dibuat dan dicabut oleh developer.</p></td></tr>
+  </tbody>
+</table>
+<p class="small muted">Teks halaman: Site Settings → Miroir → Labels: Halaman maintenance. Preview tanpa menyalakannya: alamat toko + <span class="path">?miroir-maintenance-preview</span> (khusus Administrator).</p></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 53—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">11.2</span><h3 class="h-item">Update</h3></div>
+<table class="table">
+  <thead><tr><th>Komponen</th><th>Siapa</th><th style="width:36%">Catatan</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Update minor WordPress</p></td><td><p class="body">Otomatis.</p></td><td><p class="small">Tidak perlu tindakan.</p></td></tr>
+    <tr><td><p class="h-item">Update mayor WordPress, WooCommerce, Elementor, Multilingual</p></td><td><p class="body">Developer.</p></td><td><p class="small">Berisiko bentrok; diuji dulu di staging.</p></td></tr>
+    <tr><td><p class="h-item">TikTok, Google Listings</p></td><td><p class="body">Administrator, setelah memberi tahu developer.</p></td><td><p class="small">Biasanya aman.</p></td></tr>
+    <tr><td><p class="h-item">Tema dan plugin Miroir</p></td><td><p class="body">Hanya developer.</p></td><td><p class="small">Ikut rilis (10.3).</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--warn"><p class="label">Waspada</p><p class="body">Kalau WordPress menawarkan "update" untuk tema atau plugin Miroir dari sumber luar, jangan diklik. Laporkan ke developer.</p></div>
+<div class="sub kwn"><span class="sec__n">11.3</span><h3 class="h-item">Plugin dan keamanan</h3></div>
+<ul class="bullets">
+  <li>Pasang plugin baru hanya setelah disetujui developer: plugin cache, SEO, popup, chat, dan gambar sering bentrok dengan tema dan alur WhatsApp. Kirim nama plugin, kebutuhan bisnisnya, dan link-nya.</li>
+  <li>Jangan pernah menonaktifkan atau menghapus plugin Elementor, WooCommerce, WooCommerce Multilingual atau Miroir.</li>
+  <li>Ada Administrator yang tidak dikenal di Users: laporkan segera, jangan dihapus dulu.</li>
+  <li>Email atas nama "WordPress", "Hostinger", atau "WooCommerce" yang menyuruh Anda login lewat link hampir pasti palsu.</li>
+  <li>Jangan pernah memasang tema atau plugin dari file .zip kiriman orang lain atau dari situs "nulled". Akses penting (hPanel, Cloudflare, GitHub, WhatsApp Business) tetap dipegang pemiliknya.</li>
+</ul></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 54—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">11.4</span><h3 class="h-item">Cache dan kecepatan</h3></div>
+<ol class="steps">
+  <li><span class="n">01</span><div class="t"><p class="body">Perubahan tidak muncul? Pastikan Anda sudah klik Update dan sedang di live, bukan staging.</p></div></li>
+  <li><span class="n">02</span><div class="t"><p class="body">Buka di jendela incognito atau tekan <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span>; atau tunggu 5–10 menit.</p></div></li>
+  <li><span class="n">03</span><div class="t"><p class="body">Masih belum berubah? Buka hPanel → Websites → miroir.id → Performance → CDN → <span class="path">Flush cache</span>, atau tanya developer.</p></div></li>
+</ol>
+<p class="small muted">Supaya situs tetap cepat: ikuti batas ukuran file (lampiran C), buat video hero berdurasi 10–20 detik tanpa suara, jangan terlalu banyak Product row atau banner dalam satu halaman, dan hapus media yang tidak terpakai.</p>
+<div class="sub kwn"><span class="sec__n">11.5</span><h3 class="h-item">Checklist rutin</h3></div>
+<table class="table">
+  <thead><tr><th>Kapan</th><th>Yang dicek</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Sehari-hari</p></td><td><p class="body">Cocokkan pesanan baru dengan chat WhatsApp (06.3). Ubah pesanan yang sudah dibayar ke Processing dan yang sudah dikirim ke Completed.</p></td></tr>
+    <tr><td><p class="h-item">Mingguan</p></td><td><p class="body">Pesanan yang menggantung lebih dari 3 hari (06.8); produk yang ditandai habis terjual (07.7); kupon yang sudah kedaluwarsa (09.2).</p></td></tr>
+    <tr><td><p class="h-item">Bulanan</p></td><td><p class="body">Daftar user dan role; kurs mata uang (09.1); backup terbaru tersedia (10.5); status update plugin; satu test order dari HP (06.9).</p></td></tr>
+    <tr><td><p class="h-item">Per kampanye</p></td><td><p class="body">Video dan poster hero, banner, editorial (05); announcement bar dan menu (08); Sale price dan kupon; cek di HP sebelum kampanye diumumkan.</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 55—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="12"><span class="sec__n">12</span><h2 class="h-sec">Troubleshooting</h2></div>
+<p class="body kwn">Cari masalah yang paling mirip, lalu coba solusinya. Kalau masih bermasalah, hubungi developer dengan menyertakan info yang tercantum di akhir bab ini.</p>
+<table class="table">
+  <thead><tr><th>Kalau terjadi ini</th><th>Coba ini</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Perubahan tidak muncul</p></td><td><p class="body">Pastikan Anda sudah klik Update dan sedang di live; coba jendela incognito, tunggu 10 menit, lalu flush CDN (11.4).</p></td></tr>
+    <tr><td><p class="h-item">Tata letak rusak setelah diedit</p></td><td><p class="body">History → Revisions → pilih lalu terapkan versi sebelum rusak (10.4).</p></td></tr>
+    <tr><td><p class="h-item">Halaman putih atau "critical error"</p></td><td><p class="body">Jangan ubah apa pun lagi. Catat waktu dan langkah terakhir Anda, lalu langsung hubungi developer.</p></td></tr>
+    <tr><td><p class="h-item">Header atau footer hilang</p></td><td><p class="body">Periksa Site Settings → Miroir → Templates (08.1).</p></td></tr>
+    <tr><td><p class="h-item">Video homepage tidak diputar</p></td><td><p class="body">Wajar terjadi di HP dengan mode hemat daya; kalau bukan itu penyebabnya, pakai MP4 yang lebih kecil (05.3). Posternya tetap tampil.</p></td></tr>
+    <tr><td><p class="h-item">Foto buram atau terpotong</p></td><td><p class="body">Unggah ulang dengan rasio 3:4 dan ukuran penuh (07.5, lampiran C).</p></td></tr>
+    <tr><td><p class="h-item">Label kembali ke teks bawaan</p></td><td><p class="body">Kode %s atau %d terhapus. Edit lagi di 08.6.</p></td></tr>
+    <tr><td><p class="h-item">Menu tidak berubah</p></td><td><p class="body">Periksa Appearance → Menus → Manage Locations (08.2).</p></td></tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead><tr><th>Kalau terjadi ini</th><th>Coba ini</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Produk tidak muncul di koleksi</p></td><td><p class="body">Pastikan kategorinya dicentang, statusnya Published, dan Catalog visibility tidak Hidden (07.3).</p></td></tr><tr><td><p class="h-item">Produk masuk atau keluar dari Sale</p></td><td><p class="body">Wajar: kategori Sale mengikuti harga diskon dan tanggalnya (07.4).</p></td></tr></tbody></table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 56—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table">
+  <thead><tr><th>Kalau terjadi ini</th><th>Coba ini</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Ukuran tidak bisa dipilih</p></td><td><p class="body">Variasinya belum diberi harga atau berstatus Out of stock (07.7).</p></td></tr><tr><td><p class="h-item">Harga USD/SGD/MYR terlihat salah</p></td><td><p class="body">Cek kurs (09.1); minta developer memperbarui kurs.</p></td></tr><tr><td><p class="h-item">WhatsApp tidak terbuka</p></td><td><p class="body">Cek nomornya (06.7). Halaman Order sent punya tombol untuk membuka chat lagi.</p></td></tr><tr><td><p class="h-item">Pesanan tanpa chat, atau chat tanpa pesanan</p></td><td><p class="body">Ikuti panduan kasus khusus di 06.8.</p></td></tr><tr><td><p class="h-item">Isi pesan terlihat aneh</p></td><td><p class="body">Placeholder-nya terhapus: kosongkan kolomnya untuk mengembalikan ke bawaan (06.7).</p></td></tr><tr><td><p class="h-item">Rekening bank yang tampil salah</p></td><td><p class="body">Urutkan ulang akun di Direct bank transfer: yang paling atas yang ditampilkan (06.7).</p></td></tr></tbody></table>
+<table class="table">
+  <thead><tr><th>Kalau terjadi ini</th><th>Coba ini</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Tidak bisa login</p></td><td><p class="body">Klik <span class="path">Lost your password?</span> atau minta Administrator mengecek akun Anda (03.4). Hubungi developer kalau email reset tidak masuk.</p></td></tr>
+    <tr><td><p class="h-item">Menu hilang di admin</p></td><td><p class="body">Role Anda berubah; tanyakan ke Administrator (03.2).</p></td></tr>
+    <tr><td><p class="h-item">Toko menampilkan halaman maintenance</p></td><td><p class="body">Maintenance mode masih aktif, atau Anda login sebagai Shop manager/Editor. Administrator yang bisa mematikannya (11.1).</p></td></tr>
+    <tr><td><p class="h-item">Link lama muncul 404</p></td><td><p class="body">Kirim URL lengkapnya ke developer untuk dibuatkan redirect (09.5).</p></td></tr>
+    <tr><td><p class="h-item">Judul atau gambar saat di-share salah</p></td><td><p class="body">Lengkapi gambar dan deskripsinya (09.4); WhatsApp/Instagram kadang masih menyimpan preview lama untuk sementara.</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 57—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">12.1</span><h3 class="h-item">Siapa yang dihubungi</h3></div>
+<table class="table">
+  <thead><tr><th>Masalah</th><th>Kontak</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Error situs, layout, alur pesanan</p></td><td><p class="body">Developer; juga untuk redirect, kurs, dan update plugin (lampiran E).</p></td></tr>
+    <tr><td><p class="h-item">Hosting down, domain, SSL, backup</p></td><td><p class="body">Pemilik hPanel → support Hostinger (live chat di hPanel).</p></td></tr>
+    <tr><td><p class="h-item">WhatsApp Business diblokir</p></td><td><p class="body">Pemilik akun WhatsApp, lewat aplikasi WhatsApp Business.</p></td></tr>
+    <tr><td><p class="h-item">Akun admin dibobol</p></td><td><p class="body">Developer dan pemilik hPanel, segera lewat telepon.</p></td></tr>
+  </tbody>
+</table>
+<div class="note note--accent"><p class="label">Saat melaporkan masalah, sertakan</p><p class="body">URL halaman; screenshot atau rekaman layar yang menampilkan pesan error lengkap; waktu kejadian dan perangkat; langkah terakhir sebelum masalah muncul; serta dampaknya: pelanggan tidak bisa memesan (mendesak) atau hanya soal tampilan (bisa menunggu). Jangan pernah mengirim password lewat chat.</p></div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 58—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sec" data-ch="13"><span class="sec__n">13</span><h2 class="h-sec">Lampiran.</h2></div>
+<div class="sub kwn"><span class="sec__n">A</span><h3 class="h-item">Glosarium</h3></div>
+<table class="table">
+  <thead><tr><th>Istilah</th><th>Arti</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">wp-admin / Dashboard</p></td><td><p class="body">Bagian belakang (back end) situs, terbuka setelah login.</p></td></tr>
+    <tr><td><p class="h-item">Template</p></td><td><p class="body">Desain satu bagian yang dipakai di banyak halaman ("Miroir: …").</p></td></tr>
+    <tr><td><p class="h-item">Widget</p></td><td><p class="body">Satu blok konten di Elementor, mis. Product row.</p></td></tr>
+    <tr><td><p class="h-item">Site Settings</p></td><td><p class="body">Pengaturan global Elementor; tab Miroir berisi pengaturan tema.</p></td></tr>
+    <tr><td><p class="h-item">Slug</p></td><td><p class="body">Bagian alamat setelah domain, mis. new-collection.</p></td></tr>
+    <tr><td><p class="h-item">Atribut / variasi</p></td><td><p class="body">Pilihan seperti Size; kombinasi pilihan yang bisa dibeli dan punya harga sendiri.</p></td></tr>
+    <tr><td><p class="h-item">Placeholder</p></td><td><p class="body">Kode seperti {name} atau %s yang otomatis diganti dengan isi sebenarnya.</p></td></tr>
+    <tr><td><p class="h-item">Live / staging / rilis</p></td><td><p class="body">Toko yang sebenarnya; salinan untuk tes developer; proses mengirim kode baru ke live.</p></td></tr>
+    <tr><td><p class="h-item">Cache / CDN</p></td><td><p class="body">Salinan tersimpan yang membuat situs cepat, tapi bisa menunda munculnya perubahan.</p></td></tr>
+    <tr><td><p class="h-item">Redirect 301</p></td><td><p class="body">Pengalihan permanen dari alamat lama ke alamat baru.</p></td></tr>
+    <tr><td><p class="h-item">Revisi</p></td><td><p class="body">Versi lama yang tersimpan dan bisa dipulihkan.</p></td></tr>
+    <tr><td><p class="h-item">hPanel</p></td><td><p class="body">Panel kontrol Hostinger.</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 59—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">B</span><h3 class="h-item">Peta menu</h3></div>
+<table class="table">
+  <thead><tr><th>Tugas</th><th>Menu</th><th style="width:14%">Lihat</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Akun staf</p></td><td><p class="body">Users</p></td><td><p class="body">03</p></td></tr>
+    <tr><td><p class="h-item">Memproses pesanan</p></td><td><p class="body">WooCommerce → Orders</p></td><td><p class="body">06.3</p></td></tr>
+    <tr><td><p class="h-item">Nomor WhatsApp, redaksi pesan</p></td><td><p class="body">WooCommerce → Settings → WhatsApp ordering</p></td><td><p class="body">06.7</p></td></tr>
+    <tr><td><p class="h-item">Rekening bank</p></td><td><p class="body">Settings → Payments → Direct bank transfer</p></td><td><p class="body">06.7</p></td></tr>
+    <tr><td><p class="h-item">Tambah atau edit produk</p></td><td><p class="body">Products → Add New / Edit</p></td><td><p class="body">07</p></td></tr>
+    <tr><td><p class="h-item">Kategori</p></td><td><p class="body">Products → Categories</p></td><td><p class="body">07.3</p></td></tr>
+    <tr><td><p class="h-item">Foto dan video</p></td><td><p class="body">Media → Library</p></td><td><p class="body">07.6</p></td></tr>
+    <tr><td><p class="h-item">Homepage, banner</p></td><td><p class="body">Pages → Edit with Elementor</p></td><td><p class="body">05</p></td></tr>
+    <tr><td><p class="h-item">Menu</p></td><td><p class="body">Appearance → Menus</p></td><td><p class="body">08.2</p></td></tr>
+    <tr><td><p class="h-item">Pengaturan, label, maintenance mode</p></td><td><p class="body">Site Settings → Miroir</p></td><td><p class="body">08, 11.1</p></td></tr>
+    <tr><td><p class="h-item">Kurs, kupon</p></td><td><p class="body">WCML → Multi-currency; Marketing → Coupons</p></td><td><p class="body">09</p></td></tr>
+    <tr><td><p class="h-item">Backup, cache</p></td><td><p class="body">hPanel</p></td><td><p class="body">10.5, 11.4</p></td></tr>
+  </tbody>
+</table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 60—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><div class="sub kwn"><span class="sec__n">C</span><h3 class="h-item">Spesifikasi aset</h3></div>
+<table class="table">
+  <thead><tr><th>Aset</th><th>Rasio / ukuran</th><th style="width:34%">Format</th></tr></thead>
+  <tbody>
+    <tr><td><p class="h-item">Foto produk</p></td><td><p class="body">3:4, 1500 × 2000 px</p></td><td><p class="small">JPG/WebP, &lt;500 KB</p></td></tr>
+    <tr><td><p class="h-item">Video hero desktop/mobile</p></td><td><p class="body">9:4, lebar ≥ 1920 px / 3:4, ≥ 1080 px</p></td><td><p class="small">MP4 H.264, tanpa suara, ± 5 / 1,5 MB</p></td></tr>
+    <tr><td><p class="h-item">Poster hero</p></td><td><p class="body">9:4 1440 × 640+; 16:9 1920 × 1080; 3:4 1080 × 1440</p></td><td><p class="small">JPG/WebP</p></td></tr>
+    <tr><td><p class="h-item">Editorial pair</p></td><td><p class="body">3:4, 1500 × 2000 px</p></td><td><p class="small">JPG/WebP</p></td></tr>
+    <tr><td><p class="h-item">Banner</p></td><td><p class="body">Lebar desktop ≥ 1920 px, plus versi tablet dan mobile</p></td><td><p class="small">JPG/WebP, ± 800 KB</p></td></tr>
+    <tr><td><p class="h-item">Logo / favicon</p></td><td><p class="body">File logo Miroir / 512 × 512 px</p></td><td><p class="small">SVG atau PNG / PNG</p></td></tr>
+  </tbody>
+</table>
+<div class="sub kwn"><span class="sec__n">D</span><h3 class="h-item">Pemegang akses</h3></div>
+<p class="small muted kwn">Diisi oleh klien: cukup nama pemegang akses dan tempat penyimpanannya. Password tidak pernah ditulis di sini.</p>
+<table class="table fill">
+  <thead><tr><th>Akses</th><th>Pemegang utama</th><th>Pemegang kedua</th><th>Disimpan di</th></tr></thead>
+  <tbody><tr><td><p class="h-item">WordPress Administrator</p></td><td></td><td></td><td></td></tr><tr><td><p class="h-item">Hostinger hPanel</p></td><td></td><td></td><td></td></tr><tr><td><p class="h-item">DNS Cloudflare</p></td><td></td><td></td><td></td></tr><tr><td><p class="h-item">WhatsApp Business</p></td><td></td><td></td><td></td></tr><tr><td><p class="h-item">GitHub</p></td><td></td><td></td><td></td></tr><tr><td><p class="h-item">TikTok for Business</p></td><td></td><td></td><td></td></tr></tbody></table></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 61—62</span></div></footer></section>
+<section class="page"><div class="page__body"><header class="mast"><div class="mast__top"><div class="tab">JAMALAKBARA.</div><div class="mast__meta"><p>Desain &amp; Development<br>Bandung, Indonesia</p><img class="stamp" src="file:///F:/projects/jamalakbara/public/brand/stamp.svg" alt=""></div></div><hr class="rule"><div class="running"><span>GUIDE-2026-001</span><span>Miroir / miroir.id</span></div></header><table class="table fill">
+  <thead><tr><th>Akses</th><th>Pemegang utama</th><th>Pemegang kedua</th><th>Disimpan di</th></tr></thead>
+  <tbody><tr><td><p class="h-item">Google</p></td><td></td><td></td><td></td></tr><tr><td><p class="h-item">Preview staging</p></td><td></td><td></td><td></td></tr></tbody></table>
+<div class="sub kwn"><span class="sec__n">E</span><h3 class="h-item">Dukungan &amp; serah terima</h3></div>
+<div class="band">
+  <div><p class="label">Kontak</p><p class="lead"><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></p></div>
+  <div><p class="label">Waktu respons</p><p class="h-fact">1 hari kerja</p></div>
+  <div><p class="label">Dukungan sampai</p><p class="h-fact accent">20 Desember 2026</p></div>
+</div>
+<ul class="bullets">
+  <li>Termasuk: perbaikan bug sesuai cakupan yang disepakati, update keamanan dan plugin, serta perubahan kecil pada teks atau gambar.</li>
+  <li>Tidak termasuk: halaman, fitur, atau integrasi baru; biayanya disepakati terpisah.</li>
+  <li>Kondisi darurat (situs down, pesanan tidak bisa masuk): WhatsApp +62 813-2176-6565. Respons awal maksimal 2 jam, Senin–Jumat, 09:00–17:00 WIB (UTC+7).</li>
+  <li>Support Hostinger: live chat di hPanel, lewat pemilik akun.</li>
+</ul>
+<div class="gap-12 kwn">
+  <p class="lead">Dengan menandatangani di bawah ini, kedua pihak menyatakan bahwa akses, pelatihan, dan panduan ini sudah diserahterimakan.</p>
+</div>
+<div class="sign">
+  <div class="party"><p class="label">Penyedia layanan</p><p class="h-name">Jamal Akbar Alam</p><p class="small muted">UI/UX Designer &amp; Web Developer</p><div class="sign__line"></div><p class="small">Jamal Akbar Alam / Tanggal</p></div>
+  <div class="party"><p class="label">Klien</p><p class="h-name">Kania</p><p class="small muted">Miroir</p><div class="sign__line"></div><p class="small">Kania / Tanggal</p></div>
+</div></div><footer class="foot"><div class="foot__l"><p class="h-fact">Built to be used.</p><a href="mailto:hello-im@jamalakbara.com">hello-im@jamalakbara.com</a></div><div class="foot__r"><span>jamalakbara.com</span><span>Panduan / 62—62</span></div></footer></section></main></body></html>

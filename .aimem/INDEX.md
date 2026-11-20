@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 72 (proposed 49, accepted 11, superseded 12)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 239 (final 239)
+- handoff: 252 (final 252)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -26,7 +26,7 @@ Project: `miroir` · mode: solo · sync: none
 - hnd-0zqphs4z 2026-11-20 (agent:claude-code) — Done: Go-live audit: public probes of live (503 maintenance, www no redirect yet, temp-domain dns-prefetch in head). miroir-redirects 0.2.0 (uncommitted): 404 legacy products -> shop, dead category/t…
 - hnd-zjn1hgmf 2026-11-20 (agent:codex) — Done: Checked global installation status; installed planning-and-task-breakdown from addyosmani/agent-skills. · Next: If desired, confirm whether to install the closest source skill, engineering/to-s…
 - hnd-bx62wpyf 2026-11-20 (agent:codex) — Done: Checked available local skills and plugin cache for a dedicated PRD/product-requirements skill; none found. · Next: If needed, create a reusable PRD skill or draft a PRD directly using the avai…
-- hnd-fg3qyre2 2026-11-18 (agent:codex) — Done: Inspected and verified tools/snapshot.sh, README, env example, plugin sync, and current snapshot status; documented current export/import commands and server-backed uploads flow. · Next: Use th…
+- hnd-hyyk9t7s 2026-11-19 (agent:claude-code:opus-5.5) — Done: Site tagline (blogdescription) changed from 'Everyday womenswear' to 'Modern & vintage shades' on local, staging and live via WP-CLI; live home title verified. miroir-demo configure_store defau…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
