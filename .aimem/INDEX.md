@@ -13,7 +13,7 @@ Project: `miroir` · mode: solo · sync: none
 - decision: 70 (proposed 48, accepted 11, superseded 11)
 - task: 1 (open 1)
 - memory: 84 (active 74, superseded 10)
-- handoff: 235 (final 235)
+- handoff: 236 (final 236)
 - incident: 1 (investigating 1)
 
 ## Pinned
@@ -22,11 +22,11 @@ Project: `miroir` · mode: solo · sync: none
 - mem-z1ajmc8c [agent] Conventions — Own code in miroir-* plugins/themes only; repeatable setup via WP-CLI; no secrets in git or records
 
 ## Recent handoffs
+- hnd-bx62wpyf 2026-11-20 (agent:codex) — Done: Checked available local skills and plugin cache for a dedicated PRD/product-requirements skill; none found. · Next: If needed, create a reusable PRD skill or draft a PRD directly using the avai…
 - hnd-fg3qyre2 2026-11-18 (agent:codex) — Done: Inspected and verified tools/snapshot.sh, README, env example, plugin sync, and current snapshot status; documented current export/import commands and server-backed uploads flow. · Next: Use th…
 - hnd-pbd4w4wk 2026-11-18 (agent:codex) — Done: Committed all working-tree changes as 663c8ee (docs: add client manual guide), including the 61-page manual sources, rendered assets, screenshots, and updated miroir.pen; pushed development and…
 - hnd-nfbd6yt5 2026-11-18 (agent:codex) — Done: Added the supplied emergency WhatsApp contact to the support section; rebuilt 61 pages and 389 Pen assets; verified page 61; PDF export not run. · Next: User can define support working hours/ti…
 - hnd-v6248pdg 2026-11-18 (agent:codex) — Done: Reviewed the 61-page manual guide in the open miroir.pen canvas and rendered a full contact sheet from docs/manual/manual-guide.html. Confirmed 61 A4 frames, consistent page order/layout, and a…
-- hnd-3vm0xkrf 2026-11-16 (agent:claude-code:opus-5.5) — Done: Built the English client manual in miroir.pen following the jamalakbara manual-guide template: 61 A4 frames (Manual guide / 01..61) at y=53200, 27 local screenshots (privacy scrubbed, pinned le…
 
 ## Open p0/p1 tasks
 - tsk-gw91zc27 [open, p1] Map and implement legacy miroir.id redirects
