@@ -60,7 +60,29 @@
 			tab.focus();
 			return;
 		}
-		window.location.href = link.href;
-		window.setTimeout( showFallback, timing.fallbackDelay || 4000 );
+		leaveWhenTracked( function () {
+			window.location.href = link.href;
+			window.setTimeout( showFallback, timing.fallbackDelay || 4000 );
+		} );
 	}, timing.openDelay === undefined ? 800 : timing.openDelay );
+
+	/*
+	 * Leaving this page in the same tab can drop the purchase event that analytics
+	 * plugins queue on it: wait until gtag.js has loaded and sent it (beacon), at most 2 s.
+	 */
+	function leaveWhenTracked( leave ) {
+		if ( ! window.dataLayer ) {
+			leave();
+			return;
+		}
+		var waited = 0;
+		( function check() {
+			if ( window.google_tag_manager || waited >= 2000 ) {
+				window.setTimeout( leave, window.google_tag_manager ? 300 : 0 );
+				return;
+			}
+			waited += 100;
+			window.setTimeout( check, 100 );
+		} )();
+	}
 } )( window.miroirWaSent || {} );
