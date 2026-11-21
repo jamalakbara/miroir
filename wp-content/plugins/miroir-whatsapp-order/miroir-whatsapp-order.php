@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Miroir WhatsApp Order
  * Description: Catalogue-mode ordering (quotation QUO-2026-003): product pages and the bag hand the order to the shop's WhatsApp with a prefilled message. The checkout page becomes a short review form; submitting it saves an on-hold WooCommerce order (so it shows under My account > Orders) and opens WhatsApp. No payment gateway. Number, message wording and order handling: WooCommerce > Settings > WhatsApp ordering.
- * Version:     0.2.8
+ * Version:     0.2.9
  * Author:      Miroir
  * Requires Plugins: woocommerce
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'MIROIR_WA_VERSION', '0.2.8' );
+define( 'MIROIR_WA_VERSION', '0.2.9' );
 
 /**
  * Message building and order creation. Markup lives in the theme's

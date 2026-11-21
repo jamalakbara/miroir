@@ -29,6 +29,7 @@ require MIROIR_THEME_DIR . '/inc/templates.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require MIROIR_THEME_DIR . '/inc/woocommerce.php';
 	require MIROIR_THEME_DIR . '/inc/states.php';
+	require MIROIR_THEME_DIR . '/inc/analytics.php';
 }
 
 // The site is edited in Elementor while it is active; otherwise the block templates draw everything.
