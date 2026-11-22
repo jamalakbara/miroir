@@ -7,5 +7,6 @@ litespeed-cache 7.9.3 active
 mailpoet 5.45.1 active
 tiktok-for-business 1.4.3 active
 woocommerce 11.2.2 active
+woocommerce-google-adwords-conversion-tracking-tag 1.74.3 active
 woocommerce-google-analytics-integration 2.4.4 active
 woocommerce-multilingual 5.6.3 active
