@@ -1009,6 +1009,21 @@
 				updateBagMarkup( doc );
 				openPanel( 'added' );
 				modalOpener = button;
+				// The add went through fetch, so WooCommerce's own script never saw it. Announce it
+				// the way WooCommerce does (the `added_to_cart` event on <body>) so analytics plugins
+				// record add_to_cart. They read the product from the button's data-product_id.
+				if ( ! button.dataset.product_id ) {
+					var productField = form.querySelector( '[name="product_id"], [name="add-to-cart"]' );
+					var productId = ( productField && productField.value ) || button.value;
+					if ( productId ) { button.setAttribute( 'data-product_id', productId ); }
+				}
+				// Trigger it once, through jQuery like WooCommerce: the GA plugin listens both natively
+				// and through jQuery, and a native dispatch would reach both and count the add twice.
+				if ( window.jQuery ) {
+					window.jQuery( document.body ).trigger( 'added_to_cart', [ {}, '', window.jQuery( button ) ] );
+				} else {
+					document.body.dispatchEvent( new CustomEvent( 'added_to_cart', { detail: [ {}, '', button ] } ) );
+				}
 			} )
 			.catch( function () {
 				// The POST may already have succeeded. Never automatically submit it twice.

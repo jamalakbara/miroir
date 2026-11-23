@@ -1,6 +1,7 @@
 # Vendor plugins: <slug> <version> <active|inactive>.
 # Written by tools/plugins.sh freeze on every commit. Install plugins in wp-admin or WP-CLI, not here.
 elementor 4.3.6 active
+facebook-for-woocommerce 3.7.9 active
 google-listings-and-ads 3.10.0 active
 jetpack 16.4 active
 litespeed-cache 7.9.3 active
