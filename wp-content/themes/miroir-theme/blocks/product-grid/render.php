@@ -14,6 +14,8 @@ $products = miroir_block_preview() || woocommerce_product_loop() ? miroir_block_
 			<?php miroir_cards( $products ); ?>
 		</div>
 		<?php echo miroir_block_load_more(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped helper markup. ?>
+	<?php elseif ( miroir_listing_filtered() ) : ?>
+		<p class="listing-empty"><?php echo esc_html( miroir_text( 'filtered_empty' ) ); ?></p>
 	<?php else : ?>
 		<?php get_template_part( 'template-parts/empty-results', null, array( 'context' => 'collection' ) ); ?>
 	<?php endif; ?>

@@ -208,7 +208,8 @@ add_filter(
 				return ob_get_clean();
 
 			case 'miroir/listing':
-				if ( have_posts() ) {
+				// A size filter with no match keeps the controls so it can be changed.
+				if ( have_posts() || ( ! is_search() && miroir_listing_filtered() ) ) {
 					return null;
 				}
 				ob_start();

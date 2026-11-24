@@ -138,6 +138,10 @@ function miroir_texts() {
 		'sort_popularity' => array( 'shop', __( 'Most popular', 'miroir' ), __( 'Sort: popularity', 'miroir' ) ),
 		'sort_price' => array( 'shop', __( 'Price: low to high', 'miroir' ), __( 'Sort: price ascending', 'miroir' ) ),
 		'sort_price_desc' => array( 'shop', __( 'Price: high to low', 'miroir' ), __( 'Sort: price descending', 'miroir' ) ),
+		'sort_title' => array( 'shop', __( 'Name: A to Z', 'miroir' ), __( 'Sort: name A to Z', 'miroir' ) ),
+		'sort_title_desc' => array( 'shop', __( 'Name: Z to A', 'miroir' ), __( 'Sort: name Z to A', 'miroir' ) ),
+		'size_clear' => array( 'shop', __( 'Clear sizes', 'miroir' ), __( 'Clear size filter link', 'miroir' ) ),
+		'filtered_empty' => array( 'shop', __( 'No products match these filters.', 'miroir' ), __( 'No products match the filters', 'miroir' ) ),
 		'filter_size_panel' => array( 'shop', __( 'SIZE', 'miroir' ), __( 'Size filter heading (panel)', 'miroir' ) ),
 
 		// header.

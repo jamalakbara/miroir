@@ -1,6 +1,6 @@
 <?php
 /**
- * Menu, search and currency open as dialogs; filters replace page content.
+ * Menu, search and currency open as dialogs.
  * Header links fall back to server-opened panels without JavaScript.
  */
 
@@ -56,10 +56,6 @@ $row = function ( $label, $url ) use ( $arrow ) {
 		<?php endif; ?>
 	</div>
 </dialog>
-
-<?php if ( function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() ) ) : ?>
-	<?php get_template_part( 'template-parts/panel-filters', null, array( 'open' => 'filters' === $open ) ); ?>
-<?php endif; ?>
 
 <?php if ( has_action( 'miroir_currency_options' ) || function_exists( 'get_woocommerce_currency' ) ) : ?>
 	<?php get_template_part( 'template-parts/panel-currency', null, array( 'open' => 'currency' === $open ) ); ?>

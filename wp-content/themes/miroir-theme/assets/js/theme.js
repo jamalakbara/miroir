@@ -560,8 +560,7 @@
 	} );
 
 	/*
-	 * Menu, search and currency use native modal dialogs; filters replace
-	 * page content. Links fall back to ?panel=… reloads without JS.
+	 * Menu, search and currency use native modal dialogs. Links fall back to ?panel=… reloads without JS.
 	 */
 	var main = document.getElementById( 'main' );
 	var activeModal = null;
@@ -1185,10 +1184,15 @@
 	}
 
 	/* Auto-load near the end of listings; the link remains a manual/no-JS fallback. */
+	var listingObserver;
+	function initLoadMore() {
+	if ( listingObserver ) {
+		listingObserver.disconnect();
+		listingObserver = null;
+	}
 	var listingButton = document.querySelector( '[data-load-more]' );
 	var listing = document.querySelector( '[data-load-more-list]' );
 	if ( listingButton && listing ) {
-		var listingObserver;
 		var label = listingButton.textContent;
 		var status = document.createElement( 'span' );
 		status.className = 'screen-reader-text';
@@ -1266,5 +1270,147 @@
 			}, { rootMargin: '0px 0px 400px 0px' } );
 			listingObserver.observe( listingButton );
 		}
+	}
+	}
+	initLoadMore();
+
+	/*
+	 * Sort and size filters apply at once: the listing is fetched in place and the
+	 * grid, count and dropdowns are swapped. The dropdowns are <details> panels with
+	 * real links, so they still work without JavaScript. One dropdown is open at a time.
+	 */
+	var plp = document.querySelector( '.plp' );
+	if ( plp && document.querySelector( '[data-listing-bar]' ) && window.fetch && window.URL ) {
+		var listingRequest = null;
+
+		function swapListing( doc ) {
+			var nextMain = doc.querySelector( '.plp__main' );
+			var nextBar = doc.querySelector( '[data-listing-bar]' );
+			var main = plp.querySelector( '.plp__main' );
+			var bar = plp.querySelector( '[data-listing-bar]' );
+			if ( ! nextMain || ! nextBar || ! main || ! bar ) {
+				return false;
+			}
+			main.replaceWith( document.importNode( nextMain, true ) );
+			var nextCount = nextBar.querySelector( '[data-listing-count]' );
+			var count = bar.querySelector( '[data-listing-count]' );
+			if ( nextCount && count ) {
+				count.textContent = nextCount.textContent;
+			}
+			// Replace each dropdown's contents but keep its open state.
+			bar.querySelectorAll( '[data-dd]' ).forEach( function ( dd ) {
+				var next = nextBar.querySelector( '[data-dd="' + dd.getAttribute( 'data-dd' ) + '"]' );
+				if ( next ) {
+					dd.innerHTML = next.innerHTML;
+				}
+			} );
+			return true;
+		}
+
+		// Keep keyboard focus on the same control after its markup is replaced.
+		function focusKey() {
+			var active = document.activeElement;
+			var dd = active && active.closest ? active.closest( '[data-dd]' ) : null;
+			return dd ? { dd: dd.getAttribute( 'data-dd' ), size: active.getAttribute( 'data-size' ) } : null;
+		}
+		function restoreFocus( key ) {
+			var dd = key && plp.querySelector( '[data-dd="' + key.dd + '"]' );
+			var target = dd && ( key.size ? dd.querySelector( '[data-size="' + key.size + '"]' ) : dd.querySelector( 'summary' ) );
+			if ( ! target && dd ) {
+				target = dd.querySelector( 'summary' );
+			}
+			if ( target ) {
+				target.focus( { preventScroll: true } );
+			}
+		}
+
+		function applyListing( href, push ) {
+			if ( listingRequest ) {
+				listingRequest.abort();
+			}
+			var controller = window.AbortController ? new AbortController() : null;
+			listingRequest = controller || {};
+			plp.classList.add( 'is-loading' );
+			plp.setAttribute( 'aria-busy', 'true' );
+			fetch( href, { credentials: 'same-origin', signal: controller ? controller.signal : undefined } )
+				.then( function ( response ) {
+					if ( ! response.ok ) {
+						throw new Error( 'Unable to load products' );
+					}
+					return response.text();
+				} )
+				.then( function ( html ) {
+					// A newer choice replaced this request: only the latest response counts.
+					if ( listingRequest !== ( controller || listingRequest ) ) {
+						return;
+					}
+					var key = focusKey();
+					var doc = new DOMParser().parseFromString( html, 'text/html' );
+					if ( ! swapListing( doc ) ) {
+						throw new Error( 'Missing listing' );
+					}
+					if ( push ) {
+						window.history.pushState( { miroirListing: true }, '', href );
+					}
+					restoreFocus( key );
+					initLoadMore();
+					plp.classList.remove( 'is-loading' );
+					plp.removeAttribute( 'aria-busy' );
+				} )
+				.catch( function ( error ) {
+					if ( error && error.name === 'AbortError' ) {
+						return;
+					}
+					window.location.href = href;
+				} );
+		}
+
+		function closeDropdowns( except, focusTrigger ) {
+			document.querySelectorAll( '[data-dd][open]' ).forEach( function ( dd ) {
+				if ( dd !== except ) {
+					dd.open = false;
+					if ( focusTrigger ) {
+						dd.querySelector( 'summary' ).focus( { preventScroll: true } );
+					}
+				}
+			} );
+		}
+
+		// Opening one dropdown closes the other.
+		document.addEventListener( 'toggle', function ( event ) {
+			if ( event.target.matches && event.target.matches( '[data-dd]' ) && event.target.open ) {
+				closeDropdowns( event.target, false );
+			}
+		}, true );
+
+		document.addEventListener( 'click', function ( event ) {
+			var link = event.target.closest && event.target.closest( '[data-listing-link]' );
+			if ( link && event.button === 0 && ! ( event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) ) {
+				event.preventDefault();
+				// Sort is a single choice: close and return to its trigger. Sizes stay open.
+				if ( link.hasAttribute( 'data-sort-option' ) ) {
+					closeDropdowns( null, true );
+				}
+				applyListing( link.href, true );
+				return;
+			}
+			// A dropdown closes when the visitor taps elsewhere.
+			document.querySelectorAll( '[data-dd][open]' ).forEach( function ( dd ) {
+				if ( ! dd.contains( event.target ) ) { dd.open = false; }
+			} );
+		} );
+		document.addEventListener( 'keydown', function ( event ) {
+			var target = event.target;
+			if ( event.key === ' ' && target.matches && target.matches( 'a[role="checkbox"][data-listing-link]' ) ) {
+				event.preventDefault();
+				target.click();
+			}
+			if ( event.key === 'Escape' && document.querySelector( '[data-dd][open]' ) ) {
+				closeDropdowns( null, true );
+			}
+		} );
+		window.addEventListener( 'popstate', function () {
+			applyListing( window.location.href, false );
+		} );
 	}
 } )();
