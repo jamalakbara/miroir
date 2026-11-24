@@ -107,7 +107,7 @@
 
 	function VideoPicker(props) {
 		return el('div', { style: { marginBottom: '16px' } },
-			text(props.label, props.value, props.onChange, __('Direct MP4 or WebM URL; empty shows the poster.', 'miroir')),
+			text(props.label, props.value, props.onChange, __('Direct MP4 or WebM URL; empty plays the bundled film. Use "Still image only" for just the poster.', 'miroir')),
 			el(be.MediaUploadCheck, null, el(be.MediaUpload, {
 				allowedTypes: ['video'],
 				onSelect: function (media) { props.onChange(media.url); },
@@ -122,8 +122,9 @@
 			return el(Fragment, null,
 				el(be.InspectorControls, null,
 					el(c.PanelBody, { title: __('Campaign film', 'miroir') },
-						el(VideoPicker, { label: __('Video', 'miroir'), value: a.video, onChange: function (v) { set({ video: v }); } }),
-						el(VideoPicker, { label: __('Portrait mobile video (optional)', 'miroir'), value: a.videoMobile, onChange: function (v) { set({ videoMobile: v }); } })
+						el(c.ToggleControl, { label: __('Still image only (no video)', 'miroir'), help: __('Show only the poster images below; the film is not loaded.', 'miroir'), checked: !!a.stillOnly, onChange: function (v) { set({ stillOnly: v }); }, __nextHasNoMarginBottom: true }),
+						!a.stillOnly && el(VideoPicker, { label: __('Video', 'miroir'), value: a.video, onChange: function (v) { set({ video: v }); } }),
+						!a.stillOnly && el(VideoPicker, { label: __('Portrait mobile video (optional)', 'miroir'), value: a.videoMobile, onChange: function (v) { set({ videoMobile: v }); } })
 					),
 					el(c.PanelBody, { title: __('Poster images', 'miroir') },
 						el(ImagePicker, { label: __('Desktop poster (9:4)', 'miroir'), id: a.poster, onChange: function (id) { set({ poster: id }); } }),
