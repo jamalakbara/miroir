@@ -7122,7 +7122,7 @@
                               "type": "frame",
                               "id": "ldfl8",
                               "name": "02 PLP – Category",
-                              "context": "Product listing: four columns on desktop (1024px and wider), three on tablet, two on mobile. Image ratio 3:4; product order preserved. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Price low to high, 12 matching items.",
+                              "context": "Product listing: four columns on desktop (1024px and wider), three on tablet, two on mobile. Image ratio 3:4; product order preserved. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Newest first, 12 matching items. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A.",
                               "clip": true,
                               "width": 1440,
                               "fill": "$bg",
@@ -7439,7 +7439,7 @@
                                                               "id": "3b116363c3a7",
                                                               "name": "Selected sort",
                                                               "fill": "$ink",
-                                                              "content": "Price low to high",
+                                                              "content": "Newest first",
                                                               "fontFamily": "$font-mono",
                                                               "fontSize": 12
                                                             },
@@ -18541,7 +18541,7 @@
                                                               "id": "d040c710c205",
                                                               "name": "Selected sort",
                                                               "fill": "$ink",
-                                                              "content": "Price low to high",
+                                                              "content": "Newest first",
                                                               "fontFamily": "$font-mono",
                                                               "fontSize": 12
                                                             },
@@ -18765,29 +18765,6 @@
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "78ffe7c6ccf4",
-                                      "name": "Default order",
-                                      "width": "fill_container",
-                                      "height": 34,
-                                      "alignItems": "center",
-                                      "padding": [
-                                        0,
-                                        12
-                                      ],
-                                      "children": [
-                                        {
-                                          "type": "text",
-                                          "id": "6ba2446eeed4",
-                                          "name": "Option",
-                                          "fill": "$ink",
-                                          "content": "Default order",
-                                          "fontFamily": "$font-mono",
-                                          "fontSize": 12
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
                                       "id": "62c294cd0a8d",
                                       "name": "Newest first",
                                       "width": "fill_container",
@@ -18807,7 +18784,8 @@
                                           "fontFamily": "$font-mono",
                                           "fontSize": 12
                                         }
-                                      ]
+                                      ],
+                                      "fill": "#F2F2F2"
                                     },
                                     {
                                       "type": "frame",
@@ -18843,7 +18821,6 @@
                                         0,
                                         12
                                       ],
-                                      "fill": "#F2F2F2",
                                       "children": [
                                         {
                                           "type": "text",
@@ -18878,12 +18855,58 @@
                                           "fontSize": 12
                                         }
                                       ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "06abcf29f92d",
+                                      "name": "Name: A to Z",
+                                      "width": "fill_container",
+                                      "height": 34,
+                                      "alignItems": "center",
+                                      "padding": [
+                                        0,
+                                        12
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "7b6f99ae5d85",
+                                          "name": "Option",
+                                          "fill": "$ink",
+                                          "content": "Name: A to Z",
+                                          "fontFamily": "$font-mono",
+                                          "fontSize": 12
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "5918f424d98e",
+                                      "name": "Name: Z to A",
+                                      "width": "fill_container",
+                                      "height": 34,
+                                      "alignItems": "center",
+                                      "padding": [
+                                        0,
+                                        12
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "f0d3c28477d3",
+                                          "name": "Option",
+                                          "fill": "$ink",
+                                          "content": "Name: Z to A",
+                                          "fontFamily": "$font-mono",
+                                          "fontSize": 12
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
                               ],
                               "height": 720,
-                              "context": "Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. The dropdown aligns to its trigger."
+                              "context": "Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. The dropdown aligns to its trigger. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A."
                             }
                           ]
                         },
@@ -23052,7 +23075,7 @@
                               "type": "frame",
                               "id": "B0KnK",
                               "name": "02 PLP – Category · Tablet",
-                              "context": "Responsive product listing: three columns on tablet (600–1023px); desktop uses four, mobile uses two. Image ratio 3:4. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Price low to high, 12 matching items.",
+                              "context": "Responsive product listing: three columns on tablet (600–1023px); desktop uses four, mobile uses two. Image ratio 3:4. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Newest first, 12 matching items. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A.",
                               "clip": true,
                               "width": 768,
                               "fill": "$bg",
@@ -23419,7 +23442,7 @@
                                                               "id": "5be3e5a37e69",
                                                               "name": "Selected sort",
                                                               "fill": "$ink",
-                                                              "content": "Price low to high",
+                                                              "content": "Newest first",
                                                               "fontFamily": "$font-mono",
                                                               "fontSize": 12
                                                             },
@@ -36427,7 +36450,7 @@
                                                               "id": "b8e1fb4a71f9",
                                                               "name": "Selected sort",
                                                               "fill": "$ink",
-                                                              "content": "Price low to high",
+                                                              "content": "Newest first",
                                                               "fontFamily": "$font-mono",
                                                               "fontSize": 12
                                                             },
@@ -36818,7 +36841,7 @@
                                 }
                               ],
                               "height": 660,
-                              "context": "Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. The dropdown aligns to its trigger."
+                              "context": "Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. The dropdown aligns to its trigger. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A."
                             }
                           ]
                         },
@@ -41715,7 +41738,7 @@
                               "type": "frame",
                               "id": "DzHe1",
                               "name": "02 PLP – Category · Mobile",
-                              "context": "Responsive product listing: two columns on mobile (below 600px); tablet uses three, desktop uses four. Image ratio 3:4. The title and result count sit above a 44px control row, Size left and Sort by right. Both dropdown panels span the 20px page gutters below the row. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Price low to high, 12 matching items.",
+                              "context": "Responsive product listing: two columns on mobile (below 600px); tablet uses three, desktop uses four. Image ratio 3:4. The title and result count sit above a 44px control row, Size left and Sort by right. Both dropdown panels span the 20px page gutters below the row. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Newest first, 12 matching items. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A.",
                               "clip": true,
                               "width": 390,
                               "fill": "$bg",
@@ -41886,7 +41909,7 @@
                                                   "type": "text",
                                                   "id": "112b94dac88b",
                                                   "name": "Selected order",
-                                                  "content": "Price low to high",
+                                                  "content": "Newest first",
                                                   "fontFamily": "$font-mono",
                                                   "fontSize": 15,
                                                   "fill": "$ink"
@@ -54952,7 +54975,7 @@
                                                   "type": "text",
                                                   "id": "a2bc15e2226c",
                                                   "name": "Selected order",
-                                                  "content": "Price low to high",
+                                                  "content": "Newest first",
                                                   "fontFamily": "$font-mono",
                                                   "fontSize": 15,
                                                   "fill": "$ink"
@@ -55334,7 +55357,7 @@
                                 }
                               ],
                               "height": 720,
-                              "context": "Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. At mobile widths, Sort by uses the same full-width panel placement shown here for Size. Touch rows are at least 44px."
+                              "context": "Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. At mobile widths, Sort by uses the same full-width panel placement shown here for Size. Touch rows are at least 44px. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A."
                             }
                           ]
                         },
@@ -62939,7 +62962,7 @@
                   "type": "frame",
                   "id": "h6Xdu",
                   "name": "02 Shop / Hi-fi / DESKTOP / 1440",
-                  "context": "Product listing: four columns on desktop (1024px and wider), three on tablet, two on mobile. Image ratio 3:4; product order preserved. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Price low to high, 12 matching items.",
+                  "context": "Product listing: four columns on desktop (1024px and wider), three on tablet, two on mobile. Image ratio 3:4; product order preserved. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Newest first, 12 matching items. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A.",
                   "clip": true,
                   "width": 1440,
                   "fill": "$bg",
@@ -63256,7 +63279,7 @@
                                                   "id": "4ef8a2776dc2",
                                                   "name": "Selected sort",
                                                   "fill": "$ink",
-                                                  "content": "Price low to high",
+                                                  "content": "Newest first",
                                                   "fontFamily": "$font-mono",
                                                   "fontSize": 12
                                                 },
@@ -66242,7 +66265,7 @@
                   "type": "frame",
                   "id": "U4vzvT",
                   "name": "02 Shop / Hi-fi / TABLET / 768",
-                  "context": "Responsive product listing: three columns on tablet (600–1023px); desktop uses four, mobile uses two. Image ratio 3:4. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Price low to high, 12 matching items.",
+                  "context": "Responsive product listing: three columns on tablet (600–1023px); desktop uses four, mobile uses two. Image ratio 3:4. The sidebar contains category and Featured links. Size is left aligned over the grid; the result count and current sort are right aligned. Size panel is 184px wide and Sort panel matches its 200px trigger. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Newest first, 12 matching items. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A.",
                   "clip": true,
                   "width": 768,
                   "fill": "$bg",
@@ -66609,7 +66632,7 @@
                                                   "id": "6e3258c89e8d",
                                                   "name": "Selected sort",
                                                   "fill": "$ink",
-                                                  "content": "Price low to high",
+                                                  "content": "Newest first",
                                                   "fontFamily": "$font-mono",
                                                   "fontSize": 12
                                                 },
@@ -69769,7 +69792,7 @@
                   "type": "frame",
                   "id": "XR95W",
                   "name": "02 Shop / Hi-fi / MOBILE / 390",
-                  "context": "Responsive product listing: two columns on mobile (below 600px); tablet uses three, desktop uses four. Image ratio 3:4. The title and result count sit above a 44px control row, Size left and Sort by right. Both dropdown panels span the 20px page gutters below the row. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Price low to high, 12 matching items.",
+                  "context": "Responsive product listing: two columns on mobile (below 600px); tablet uses three, desktop uses four. Image ratio 3:4. The title and result count sit above a 44px control row, Size left and Sort by right. Both dropdown panels span the 20px page gutters below the row. Shop, Sale and category archives share this toolbar. Show only one dropdown at a time. The white panel is anchored under the controls with a hairline border and floats above the grid without a backdrop or reflow. Escape or the trigger closes it and returns focus to the trigger. Tapping outside closes it. Sort applies and closes. Size applies on each checkbox change (OR) and stays open, including after Clear sizes. Update results, total and URL in place. Results count stays in the listing bar pending confirmation. Example: M is selected, Newest first, 12 matching items. Initial sort is Newest first, using the WooCommerce catalog default when no orderby is present. Available sorts: Newest first, Most popular, Price low to high, Price high to low, Name: A to Z, Name: Z to A.",
                   "clip": true,
                   "width": 390,
                   "fill": "$bg",
@@ -69940,7 +69963,7 @@
                                       "type": "text",
                                       "id": "915dcd3d9128",
                                       "name": "Selected order",
-                                      "content": "Price low to high",
+                                      "content": "Newest first",
                                       "fontFamily": "$font-mono",
                                       "fontSize": 15,
                                       "fill": "$ink"
