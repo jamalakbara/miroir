@@ -1334,7 +1334,7 @@
 			return true;
 		}
 
-		function applyListing( href, push ) {
+		function applyListing( href, push, done ) {
 			if ( listingRequest ) {
 				listingRequest.abort();
 			}
@@ -1365,6 +1365,9 @@
 					initLoadMore();
 					plp.classList.remove( 'is-loading' );
 					plp.removeAttribute( 'aria-busy' );
+					if ( done ) {
+						done();
+					}
 				} )
 				.catch( function ( error ) {
 					if ( error && error.name === 'AbortError' ) {
@@ -1390,7 +1393,12 @@
 		}
 
 		if ( filterForm ) {
-			filterForm.addEventListener( 'change', function () { applyListing( filterFormUrl(), true ); } );
+			// Sort is a single choice: apply it and close the modal so the sorted grid shows.
+			// Sizes are a multiple choice: apply each one and keep the modal open.
+			filterForm.addEventListener( 'change', function ( event ) {
+				var isSort = event.target && event.target.name === 'orderby';
+				applyListing( filterFormUrl(), true, isSort ? closePanels : null );
+			} );
 			filterForm.addEventListener( 'submit', function ( event ) {
 				event.preventDefault();
 				applyListing( filterFormUrl(), true );
