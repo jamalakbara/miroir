@@ -6,9 +6,10 @@ $caption = trim( (string) ( $args['caption'] ?? '' ) ) ?: __( 'new arrivals: a l
 $url     = $args['url'] ?? miroir_cat_url( 'new-collection' );
 // Bundled media is versioned by mtime so replaced files bypass browser caches.
 $bundled = static fn( $file ) => MIROIR_THEME_URI . $file . '?ver=' . filemtime( MIROIR_THEME_DIR . $file );
-// Uploaded films win; otherwise the bundled Miroir campaign films play.
-$video   = esc_url( ( $args['video'] ?? '' ) ?: $bundled( '/assets/video/hero-desktop.mp4' ) );
-$mobile  = esc_url( ( $args['videoMobile'] ?? '' ) ?: $bundled( '/assets/video/hero-mobile.mp4' ) );
+// "Still image only" shows just the posters. Otherwise uploaded films win and the bundled Miroir campaign films play.
+$still   = ! empty( $args['stillOnly'] );
+$video   = $still ? '' : esc_url( ( $args['video'] ?? '' ) ?: $bundled( '/assets/video/hero-desktop.mp4' ) );
+$mobile  = $still ? '' : esc_url( ( $args['videoMobile'] ?? '' ) ?: $bundled( '/assets/video/hero-mobile.mp4' ) );
 $posters = array();
 foreach ( array( 'desktop' => 'poster', 'tablet' => 'posterTablet', 'mobile' => 'posterMobile' ) as $device => $key ) {
 	$posters[ $device ] = wp_get_attachment_image_url( (int) ( $args[ $key ] ?? 0 ), 'full' );

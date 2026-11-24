@@ -109,8 +109,15 @@ class Miroir_Widget_Video_Hero extends Miroir_Widget {
 	protected function tree() { return array( 'block' => 'miroir/video-hero' ); }
 	protected function register_controls() {
 		$this->start_controls_section( 'section_content', array( 'label' => $this->get_title() ) );
+		$this->add_control( 'stillOnly', array(
+			'label'        => __( 'Still image only (no video)', 'miroir' ),
+			'type'         => \Elementor\Controls_Manager::SWITCHER,
+			'return_value' => 'yes',
+			'default'      => '',
+			'description'  => __( 'On: show only the poster images below and do not load any video, including the bundled film.', 'miroir' ),
+		) );
 		foreach ( array( 'video' => __( 'Campaign video (MP4 or WebM)', 'miroir' ), 'videoMobile' => __( 'Mobile video (optional portrait version)', 'miroir' ) ) as $key => $label ) {
-			$this->add_control( $key, array( 'label' => $label, 'type' => \Elementor\Controls_Manager::MEDIA, 'media_types' => array( 'video' ), 'description' => __( 'Muted loop. Empty: show the poster. Reduced motion and data saver always use the poster.', 'miroir' ) ) );
+			$this->add_control( $key, array( 'label' => $label, 'type' => \Elementor\Controls_Manager::MEDIA, 'media_types' => array( 'video' ), 'description' => __( 'Muted loop. Empty: the bundled film plays; turn on "Still image only" to show just the poster. Reduced motion and data saver always use the poster.', 'miroir' ) ) );
 		}
 		foreach ( array( 'poster' => __( 'Desktop poster (9:4)', 'miroir' ), 'posterTablet' => __( 'Tablet poster (16:9)', 'miroir' ), 'posterMobile' => __( 'Mobile poster (3:4)', 'miroir' ) ) as $key => $label ) {
 			miroir_elementor_image_control( $this, $key, $label );
@@ -120,6 +127,7 @@ class Miroir_Widget_Video_Hero extends Miroir_Widget {
 	}
 	protected function markup( $settings ) {
 		return render_block( miroir_parsed_block( 'miroir/video-hero', array(
+			'stillOnly' => 'yes' === ( $settings['stillOnly'] ?? '' ),
 			'video' => (string) ( $settings['video']['url'] ?? '' ),
 			'videoMobile' => (string) ( $settings['videoMobile']['url'] ?? '' ),
 			'poster' => miroir_elementor_image_id( $settings['poster'] ?? null ),
