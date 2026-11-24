@@ -1184,10 +1184,15 @@
 	}
 
 	/* Auto-load near the end of listings; the link remains a manual/no-JS fallback. */
+	var listingObserver;
+	function initLoadMore() {
+	if ( listingObserver ) {
+		listingObserver.disconnect();
+		listingObserver = null;
+	}
 	var listingButton = document.querySelector( '[data-load-more]' );
 	var listing = document.querySelector( '[data-load-more-list]' );
 	if ( listingButton && listing ) {
-		var listingObserver;
 		var label = listingButton.textContent;
 		var status = document.createElement( 'span' );
 		status.className = 'screen-reader-text';
@@ -1265,5 +1270,166 @@
 			}, { rootMargin: '0px 0px 400px 0px' } );
 			listingObserver.observe( listingButton );
 		}
+	}
+	}
+	initLoadMore();
+
+	/*
+	 * Sort and size filters apply at once: the listing is fetched in place and the
+	 * grid, count, sort menu, sidebar and modal controls are swapped. Every control
+	 * is also a real link or form, so it still works without JavaScript.
+	 */
+	var plp = document.querySelector( '.plp' );
+	var filterForm = document.querySelector( '[data-filter-form]' );
+	if ( plp && document.querySelector( '[data-listing-bar]' ) && window.fetch && window.URL ) {
+		var listingRequest = null;
+
+		function syncListingControls( href ) {
+			var params = new URL( href, window.location.href ).searchParams;
+			var sort = params.get( 'orderby' ) || '';
+			var sizes = ( params.get( 'filter_size' ) || '' ).split( ',' ).filter( Boolean );
+			if ( ! filterForm ) {
+				return;
+			}
+			var select = filterForm.querySelector( 'select[name="orderby"]' );
+			if ( select ) {
+				select.value = sort;
+				if ( select.value !== sort ) { select.value = ''; }
+			}
+			filterForm.querySelectorAll( 'input[name="filter_size[]"]' ).forEach( function ( box ) {
+				box.checked = sizes.indexOf( box.value ) > -1;
+			} );
+			var clear = filterForm.querySelector( '[data-filter-clear]' );
+			if ( clear ) {
+				clear.hidden = ! sort && ! sizes.length;
+				if ( clear.hidden && document.activeElement === clear && select ) { select.focus( { preventScroll: true } ); }
+			}
+		}
+
+		function swapListing( doc ) {
+			var nextMain = doc.querySelector( '.plp__main' );
+			var nextBar = doc.querySelector( '[data-listing-bar]' );
+			var main = plp.querySelector( '.plp__main' );
+			var bar = plp.querySelector( '[data-listing-bar]' );
+			if ( ! nextMain || ! nextBar || ! main || ! bar ) {
+				return false;
+			}
+			main.replaceWith( document.importNode( nextMain, true ) );
+			[ '[data-listing-count]', '.plp__bar-filter', '[data-sort-menu]' ].forEach( function ( selector ) {
+				var from = nextBar.querySelector( selector );
+				var to = bar.querySelector( selector );
+				if ( from && to ) {
+					if ( selector === '[data-sort-menu]' ) {
+						to.innerHTML = from.innerHTML;
+					} else {
+						to.textContent = from.textContent;
+					}
+				}
+			} );
+			var nextSizes = doc.querySelector( '[data-size-group]' );
+			var sizes = plp.querySelector( '[data-size-group]' );
+			if ( nextSizes && sizes ) {
+				sizes.replaceWith( document.importNode( nextSizes, true ) );
+			}
+			return true;
+		}
+
+		function applyListing( href, push ) {
+			if ( listingRequest ) {
+				listingRequest.abort();
+			}
+			var controller = window.AbortController ? new AbortController() : null;
+			listingRequest = controller || {};
+			plp.classList.add( 'is-loading' );
+			plp.setAttribute( 'aria-busy', 'true' );
+			fetch( href, { credentials: 'same-origin', signal: controller ? controller.signal : undefined } )
+				.then( function ( response ) {
+					if ( ! response.ok ) {
+						throw new Error( 'Unable to load products' );
+					}
+					return response.text();
+				} )
+				.then( function ( html ) {
+					// A newer choice replaced this request: only the latest response counts.
+					if ( listingRequest !== ( controller || listingRequest ) ) {
+						return;
+					}
+					var doc = new DOMParser().parseFromString( html, 'text/html' );
+					if ( ! swapListing( doc ) ) {
+						throw new Error( 'Missing listing' );
+					}
+					if ( push ) {
+						window.history.pushState( { miroirListing: true }, '', href );
+					}
+					syncListingControls( href );
+					initLoadMore();
+					plp.classList.remove( 'is-loading' );
+					plp.removeAttribute( 'aria-busy' );
+				} )
+				.catch( function ( error ) {
+					if ( error && error.name === 'AbortError' ) {
+						return;
+					}
+					window.location.href = href;
+				} );
+		}
+
+		function filterFormUrl() {
+			var url = new URL( window.location.href );
+			url.pathname = url.pathname.replace( /\/page\/\d+\/?$/, '/' );
+			[ 'paged', 'panel', 'orderby', 'filter_size', 'query_type_size' ].forEach( function ( key ) { url.searchParams.delete( key ); } );
+			var select = filterForm.querySelector( 'select[name="orderby"]' );
+			if ( select && select.value ) {
+				url.searchParams.set( 'orderby', select.value );
+			}
+			var sizes = Array.prototype.map.call( filterForm.querySelectorAll( 'input[name="filter_size[]"]:checked' ), function ( box ) { return box.value; } );
+			if ( sizes.length ) {
+				url.searchParams.set( 'filter_size', sizes.join( ',' ) );
+			}
+			return url.toString().replace( /%2C/g, ',' );
+		}
+
+		if ( filterForm ) {
+			filterForm.addEventListener( 'change', function () { applyListing( filterFormUrl(), true ); } );
+			filterForm.addEventListener( 'submit', function ( event ) {
+				event.preventDefault();
+				applyListing( filterFormUrl(), true );
+			} );
+		}
+
+		document.addEventListener( 'click', function ( event ) {
+			var link = event.target.closest && event.target.closest( '[data-listing-link]' );
+			if ( link && event.button === 0 && ! ( event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) ) {
+				event.preventDefault();
+				var menu = link.closest( '[data-sort-menu]' );
+				if ( menu ) {
+					menu.open = false;
+					menu.querySelector( 'summary' ).focus( { preventScroll: true } );
+				}
+				applyListing( link.href, true );
+				return;
+			}
+			// A sort menu closes when the visitor clicks elsewhere.
+			document.querySelectorAll( '[data-sort-menu][open]' ).forEach( function ( menu ) {
+				if ( ! menu.contains( event.target ) ) { menu.open = false; }
+			} );
+		} );
+		document.addEventListener( 'keydown', function ( event ) {
+			var target = event.target;
+			if ( event.key === ' ' && target.matches && target.matches( 'a[role="checkbox"][data-listing-link]' ) ) {
+				event.preventDefault();
+				target.click();
+			}
+			if ( event.key === 'Escape' ) {
+				var open = document.querySelector( '[data-sort-menu][open]' );
+				if ( open ) {
+					open.open = false;
+					open.querySelector( 'summary' ).focus( { preventScroll: true } );
+				}
+			}
+		} );
+		window.addEventListener( 'popstate', function () {
+			applyListing( window.location.href, false );
+		} );
 	}
 } )();

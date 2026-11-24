@@ -134,10 +134,13 @@ function miroir_texts() {
 		'filters_title' => array( 'shop', __( 'Filter & sort', 'miroir' ), __( 'Filter panel title', 'miroir' ) ),
 		'filters_close' => array( 'shop', __( 'Close filters', 'miroir' ), __( 'Filter panel close button', 'miroir' ) ),
 		'sort_label' => array( 'shop', __( 'Sort by', 'miroir' ), __( 'Sort field label', 'miroir' ) ),
+		'sort_default' => array( 'shop', __( 'Default order', 'miroir' ), __( 'Sort: default order', 'miroir' ) ),
 		'sort_date' => array( 'shop', __( 'Newest first', 'miroir' ), __( 'Sort: newest', 'miroir' ) ),
 		'sort_popularity' => array( 'shop', __( 'Most popular', 'miroir' ), __( 'Sort: popularity', 'miroir' ) ),
 		'sort_price' => array( 'shop', __( 'Price: low to high', 'miroir' ), __( 'Sort: price ascending', 'miroir' ) ),
 		'sort_price_desc' => array( 'shop', __( 'Price: high to low', 'miroir' ), __( 'Sort: price descending', 'miroir' ) ),
+		'size_clear' => array( 'shop', __( 'Clear sizes', 'miroir' ), __( 'Clear size filter link', 'miroir' ) ),
+		'filtered_empty' => array( 'shop', __( 'No products match these filters.', 'miroir' ), __( 'No products match the filters', 'miroir' ) ),
 		'filter_size_panel' => array( 'shop', __( 'SIZE', 'miroir' ), __( 'Size filter heading (panel)', 'miroir' ) ),
 
 		// header.

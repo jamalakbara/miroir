@@ -72,6 +72,10 @@ add_action(
 				$_GET[ $key ] = implode( ',', array_map( 'sanitize_title', wp_unslash( $value ) ) );
 			}
 		}
+		// Chosen sizes widen the listing (a product matches any of them).
+		if ( ! empty( $_GET['filter_size'] ) && empty( $_GET['query_type_size'] ) ) {
+			$_GET['query_type_size'] = 'or';
+		}
 		// phpcs:enable
 	},
 	0

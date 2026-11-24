@@ -255,6 +255,89 @@ function miroir_listing_title() {
 	return miroir_text( 'shop_title' );
 }
 
+/**
+ * Sort options of the listing (value => label). The empty value is the shop's
+ * default order and leaves orderby out of the URL.
+ */
+function miroir_listing_sorts() {
+	return array(
+		''           => miroir_text( 'sort_default' ),
+		'date'       => miroir_text( 'sort_date' ),
+		'popularity' => miroir_text( 'sort_popularity' ),
+		'price'      => miroir_text( 'sort_price' ),
+		'price-desc' => miroir_text( 'sort_price_desc' ),
+	);
+}
+
+/** Active sort value, '' when the listing uses the default order. */
+function miroir_listing_sort() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only listing state.
+	$sort = sanitize_key( wp_unslash( $_GET['orderby'] ?? '' ) );
+	return isset( miroir_listing_sorts()[ $sort ] ) ? $sort : '';
+}
+
+/**
+ * Size filter of the listing: the size terms that have products and the slugs
+ * chosen in ?filter_size=a,b.
+ *
+ * @return array { terms: WP_Term[], chosen: string[] }
+ */
+function miroir_listing_sizes() {
+	static $sizes = null;
+	if ( null !== $sizes ) {
+		return $sizes;
+	}
+	$sizes = array( 'terms' => array(), 'chosen' => array() );
+	if ( ! taxonomy_exists( 'pa_size' ) ) {
+		return $sizes;
+	}
+	$terms = get_terms( array( 'taxonomy' => 'pa_size', 'hide_empty' => true, 'orderby' => 'menu_order' ) );
+	if ( is_wp_error( $terms ) || ! $terms ) {
+		return $sizes;
+	}
+	$slugs = wp_list_pluck( $terms, 'slug' );
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only listing state.
+	$asked = array_filter( explode( ',', wc_clean( wp_unslash( $_GET['filter_size'] ?? '' ) ) ) );
+	$sizes = array(
+		'terms'  => $terms,
+		'chosen' => array_values( array_intersect( $slugs, array_map( 'sanitize_title', $asked ) ) ),
+	);
+	return $sizes;
+}
+
+/** Whether a size filter is active (it can empty the listing, a sort cannot). */
+function miroir_listing_filtered() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only listing state.
+	return ! empty( $_GET['filter_size'] );
+}
+
+/**
+ * URL of the listing with some query values changed and the page reset.
+ * A null or empty change drops the parameter; arrays are comma lists.
+ *
+ * @param array $changes Parameter => value.
+ */
+function miroir_listing_url( $changes = array() ) {
+	$path = preg_replace( '#/page/\d+/?#', '/', strtok( (string) wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ), '?' ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- path only, escaped on output.
+	$args = array();
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only listing state.
+	foreach ( $_GET as $key => $value ) {
+		if ( in_array( $key, array( 'panel', 'paged', 'product-page', 'query_type_size' ), true ) || ! is_scalar( $value ) ) {
+			continue;
+		}
+		$args[ sanitize_key( $key ) ] = wc_clean( wp_unslash( $value ) );
+	}
+	foreach ( $changes as $key => $value ) {
+		if ( null === $value || '' === $value || array() === $value ) {
+			unset( $args[ $key ] );
+		} else {
+			$args[ $key ] = is_array( $value ) ? implode( ',', $value ) : $value;
+		}
+	}
+	$query = str_replace( '%2C', ',', http_build_query( $args ) );
+	return home_url( $path ) . ( $query ? '?' . $query : '' );
+}
+
 // Header search and the search panel look in products only, so results use the listing layout.
 add_action(
 	'pre_get_posts',
