@@ -1,6 +1,6 @@
 <?php
 /**
- * Filter & sort panel (screen 33) for the shop and category listings. A GET
+ * Filter & sort panel (screen 33) for the shop and category listings, a modal dialog like search and currency. A GET
  * form back to the listing: orderby and size checkboxes
  * (filter_size[], joined for WooCommerce in inc/states.php).
  *
@@ -41,10 +41,12 @@ foreach ( array( 'pa_size' => miroir_text( 'filter_size_panel' ) ) as $taxonomy 
 	$groups[] = compact( 'taxonomy', 'label', 'terms', 'param', 'chosen' );
 }
 ?>
-<div class="flow panel" id="filter-panel" data-panel="filters"<?php echo empty( $args['open'] ) ? ' hidden' : ''; ?>>
+<dialog class="flow panel panel--modal" id="filter-panel" data-panel="filters" aria-labelledby="filter-panel-title"<?php echo empty( $args['open'] ) ? '' : ' open'; ?>>
 	<form class="flow__col" method="get" action="<?php echo esc_url( home_url( $base ) ); ?>">
-		<h2 class="flow__title"><?php echo esc_html( miroir_text( 'filters_title' ) ); ?></h2>
-		<button class="btn btn--block" type="button" data-panel-close><?php echo esc_html( miroir_text( 'filters_close' ) ); ?></button>
+		<div class="panel__header">
+			<h2 class="flow__title" id="filter-panel-title"><?php echo esc_html( miroir_text( 'filters_title' ) ); ?></h2>
+			<button class="panel__close" type="button" data-panel-close aria-label="<?php echo esc_attr( miroir_text( 'filters_close' ) ); ?>"><?php echo miroir_icon( 'x', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></button>
+		</div>
 		<?php miroir_field( array( 'name' => 'orderby', 'id' => 'panel-orderby', 'type' => 'select', 'label' => miroir_text( 'sort_label' ), 'options' => $orders, 'value' => $current, 'class' => 'field--quiet' ) ); ?>
 		<?php foreach ( $groups as $group ) : ?>
 			<p class="flow__label"><?php echo esc_html( $group['label'] ); ?></p>
@@ -64,4 +66,4 @@ foreach ( array( 'pa_size' => miroir_text( 'filter_size_panel' ) ) as $taxonomy 
 		</button>
 		<a class="btn btn--block" href="<?php echo esc_url( home_url( $base ) ); ?>"><?php echo esc_html( miroir_text( 'clear_all' ) ); ?></a>
 	</form>
-</div>
+</dialog>

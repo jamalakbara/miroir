@@ -1,6 +1,6 @@
 <?php
 /**
- * Menu, search and currency open as dialogs; filters replace page content.
+ * Menu, search, filters and currency open as dialogs.
  * Header links fall back to server-opened panels without JavaScript.
  */
 

@@ -560,8 +560,7 @@
 	} );
 
 	/*
-	 * Menu, search and currency use native modal dialogs; filters replace
-	 * page content. Links fall back to ?panel=… reloads without JS.
+	 * Menu, search, filters and currency use native modal dialogs. Links fall back to ?panel=… reloads without JS.
 	 */
 	var main = document.getElementById( 'main' );
 	var activeModal = null;
@@ -675,7 +674,7 @@
 			}
 		} );
 	} );
-	document.querySelectorAll( '[data-panel-open="nav"], [data-panel-open="search"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
+	document.querySelectorAll( '[data-panel-open="nav"], [data-panel-open="search"], [data-panel-open="filters"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
 		toggle.setAttribute( 'aria-haspopup', 'dialog' );
 	} );
 
