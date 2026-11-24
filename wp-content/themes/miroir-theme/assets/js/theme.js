@@ -560,7 +560,7 @@
 	} );
 
 	/*
-	 * Menu, search, filters and currency use native modal dialogs. Links fall back to ?panel=… reloads without JS.
+	 * Menu, search and currency use native modal dialogs. Links fall back to ?panel=… reloads without JS.
 	 */
 	var main = document.getElementById( 'main' );
 	var activeModal = null;
@@ -674,7 +674,7 @@
 			}
 		} );
 	} );
-	document.querySelectorAll( '[data-panel-open="nav"], [data-panel-open="search"], [data-panel-open="filters"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
+	document.querySelectorAll( '[data-panel-open="nav"], [data-panel-open="search"], [data-panel-open="currency"]' ).forEach( function ( toggle ) {
 		toggle.setAttribute( 'aria-haspopup', 'dialog' );
 	} );
 
@@ -1276,35 +1276,12 @@
 
 	/*
 	 * Sort and size filters apply at once: the listing is fetched in place and the
-	 * grid, count, sort menu, sidebar and modal controls are swapped. Every control
-	 * is also a real link or form, so it still works without JavaScript.
+	 * grid, count and dropdowns are swapped. The dropdowns are <details> panels with
+	 * real links, so they still work without JavaScript. One dropdown is open at a time.
 	 */
 	var plp = document.querySelector( '.plp' );
-	var filterForm = document.querySelector( '[data-filter-form]' );
 	if ( plp && document.querySelector( '[data-listing-bar]' ) && window.fetch && window.URL ) {
 		var listingRequest = null;
-
-		function syncListingControls( href ) {
-			var params = new URL( href, window.location.href ).searchParams;
-			var sort = params.get( 'orderby' ) || '';
-			var sizes = ( params.get( 'filter_size' ) || '' ).split( ',' ).filter( Boolean );
-			if ( ! filterForm ) {
-				return;
-			}
-			var select = filterForm.querySelector( 'select[name="orderby"]' );
-			if ( select ) {
-				select.value = sort;
-				if ( select.value !== sort ) { select.value = ''; }
-			}
-			filterForm.querySelectorAll( 'input[name="filter_size[]"]' ).forEach( function ( box ) {
-				box.checked = sizes.indexOf( box.value ) > -1;
-			} );
-			var clear = filterForm.querySelector( '[data-filter-clear]' );
-			if ( clear ) {
-				clear.hidden = ! sort && ! sizes.length;
-				if ( clear.hidden && document.activeElement === clear && select ) { select.focus( { preventScroll: true } ); }
-			}
-		}
 
 		function swapListing( doc ) {
 			var nextMain = doc.querySelector( '.plp__main' );
@@ -1315,26 +1292,39 @@
 				return false;
 			}
 			main.replaceWith( document.importNode( nextMain, true ) );
-			[ '[data-listing-count]', '.plp__bar-filter', '[data-sort-menu]' ].forEach( function ( selector ) {
-				var from = nextBar.querySelector( selector );
-				var to = bar.querySelector( selector );
-				if ( from && to ) {
-					if ( selector === '[data-sort-menu]' ) {
-						to.innerHTML = from.innerHTML;
-					} else {
-						to.textContent = from.textContent;
-					}
+			var nextCount = nextBar.querySelector( '[data-listing-count]' );
+			var count = bar.querySelector( '[data-listing-count]' );
+			if ( nextCount && count ) {
+				count.textContent = nextCount.textContent;
+			}
+			// Replace each dropdown's contents but keep its open state.
+			bar.querySelectorAll( '[data-dd]' ).forEach( function ( dd ) {
+				var next = nextBar.querySelector( '[data-dd="' + dd.getAttribute( 'data-dd' ) + '"]' );
+				if ( next ) {
+					dd.innerHTML = next.innerHTML;
 				}
 			} );
-			var nextSizes = doc.querySelector( '[data-size-group]' );
-			var sizes = plp.querySelector( '[data-size-group]' );
-			if ( nextSizes && sizes ) {
-				sizes.replaceWith( document.importNode( nextSizes, true ) );
-			}
 			return true;
 		}
 
-		function applyListing( href, push, done ) {
+		// Keep keyboard focus on the same control after its markup is replaced.
+		function focusKey() {
+			var active = document.activeElement;
+			var dd = active && active.closest ? active.closest( '[data-dd]' ) : null;
+			return dd ? { dd: dd.getAttribute( 'data-dd' ), size: active.getAttribute( 'data-size' ) } : null;
+		}
+		function restoreFocus( key ) {
+			var dd = key && plp.querySelector( '[data-dd="' + key.dd + '"]' );
+			var target = dd && ( key.size ? dd.querySelector( '[data-size="' + key.size + '"]' ) : dd.querySelector( 'summary' ) );
+			if ( ! target && dd ) {
+				target = dd.querySelector( 'summary' );
+			}
+			if ( target ) {
+				target.focus( { preventScroll: true } );
+			}
+		}
+
+		function applyListing( href, push ) {
 			if ( listingRequest ) {
 				listingRequest.abort();
 			}
@@ -1354,6 +1344,7 @@
 					if ( listingRequest !== ( controller || listingRequest ) ) {
 						return;
 					}
+					var key = focusKey();
 					var doc = new DOMParser().parseFromString( html, 'text/html' );
 					if ( ! swapListing( doc ) ) {
 						throw new Error( 'Missing listing' );
@@ -1361,13 +1352,10 @@
 					if ( push ) {
 						window.history.pushState( { miroirListing: true }, '', href );
 					}
-					syncListingControls( href );
+					restoreFocus( key );
 					initLoadMore();
 					plp.classList.remove( 'is-loading' );
 					plp.removeAttribute( 'aria-busy' );
-					if ( done ) {
-						done();
-					}
 				} )
 				.catch( function ( error ) {
 					if ( error && error.name === 'AbortError' ) {
@@ -1377,49 +1365,38 @@
 				} );
 		}
 
-		function filterFormUrl() {
-			var url = new URL( window.location.href );
-			url.pathname = url.pathname.replace( /\/page\/\d+\/?$/, '/' );
-			[ 'paged', 'panel', 'orderby', 'filter_size', 'query_type_size' ].forEach( function ( key ) { url.searchParams.delete( key ); } );
-			var select = filterForm.querySelector( 'select[name="orderby"]' );
-			if ( select && select.value ) {
-				url.searchParams.set( 'orderby', select.value );
-			}
-			var sizes = Array.prototype.map.call( filterForm.querySelectorAll( 'input[name="filter_size[]"]:checked' ), function ( box ) { return box.value; } );
-			if ( sizes.length ) {
-				url.searchParams.set( 'filter_size', sizes.join( ',' ) );
-			}
-			return url.toString().replace( /%2C/g, ',' );
+		function closeDropdowns( except, focusTrigger ) {
+			document.querySelectorAll( '[data-dd][open]' ).forEach( function ( dd ) {
+				if ( dd !== except ) {
+					dd.open = false;
+					if ( focusTrigger ) {
+						dd.querySelector( 'summary' ).focus( { preventScroll: true } );
+					}
+				}
+			} );
 		}
 
-		if ( filterForm ) {
-			// Sort is a single choice: apply it and close the modal so the sorted grid shows.
-			// Sizes are a multiple choice: apply each one and keep the modal open.
-			filterForm.addEventListener( 'change', function ( event ) {
-				var isSort = event.target && event.target.name === 'orderby';
-				applyListing( filterFormUrl(), true, isSort ? closePanels : null );
-			} );
-			filterForm.addEventListener( 'submit', function ( event ) {
-				event.preventDefault();
-				applyListing( filterFormUrl(), true );
-			} );
-		}
+		// Opening one dropdown closes the other.
+		document.addEventListener( 'toggle', function ( event ) {
+			if ( event.target.matches && event.target.matches( '[data-dd]' ) && event.target.open ) {
+				closeDropdowns( event.target, false );
+			}
+		}, true );
 
 		document.addEventListener( 'click', function ( event ) {
 			var link = event.target.closest && event.target.closest( '[data-listing-link]' );
 			if ( link && event.button === 0 && ! ( event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) ) {
 				event.preventDefault();
-				var menu = link.closest( '[data-sort-menu]' );
-				if ( menu ) {
-					menu.open = false;
-					menu.querySelector( 'summary' ).focus( { preventScroll: true } );
+				// Sort is a single choice: close and return to its trigger. Sizes stay open.
+				if ( link.hasAttribute( 'data-sort-option' ) ) {
+					closeDropdowns( null, true );
 				}
 				applyListing( link.href, true );
 				return;
 			}
-			// A sort menu closes when the visitor clicks elsewhere.
-			document.querySelectorAll( '[data-sort-menu][open]' ).forEach( function ( menu ) {
-				if ( ! menu.contains( event.target ) ) { menu.open = false; }
+			// A dropdown closes when the visitor taps elsewhere.
+			document.querySelectorAll( '[data-dd][open]' ).forEach( function ( dd ) {
+				if ( ! dd.contains( event.target ) ) { dd.open = false; }
 			} );
 		} );
 		document.addEventListener( 'keydown', function ( event ) {
@@ -1428,12 +1405,8 @@
 				event.preventDefault();
 				target.click();
 			}
-			if ( event.key === 'Escape' ) {
-				var open = document.querySelector( '[data-sort-menu][open]' );
-				if ( open ) {
-					open.open = false;
-					open.querySelector( 'summary' ).focus( { preventScroll: true } );
-				}
+			if ( event.key === 'Escape' && document.querySelector( '[data-dd][open]' ) ) {
+				closeDropdowns( null, true );
 			}
 		} );
 		window.addEventListener( 'popstate', function () {

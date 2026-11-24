@@ -29,14 +29,15 @@
 /* Checkbox rendered as a filter link: same look as the Checkbox component. */
 
 .plp__bar {
+	position: relative;
 	display: grid;
 	grid-column: 2;
 	grid-row: 1;
-	grid-template-columns: minmax(0, 1fr) auto auto;
-	grid-template-areas: "title count sort";
+	grid-template-columns: auto minmax(0, 1fr) auto auto;
+	grid-template-areas: "title title title title" "size . count sort";
 	align-items: center;
-	column-gap: 24px;
-	padding-bottom: 16px;
+	row-gap: 8px;
+	padding-bottom: 8px;
 	box-shadow: inset 0 -0.5px 0 var(--line), 0 0.5px 0 var(--line);
 	font-family: var(--font-mono);
 	font-size: var(--text-sm);
@@ -45,38 +46,44 @@
 	letter-spacing: 0;
 }
 .plp__bar-title { grid-area: title; }
-.plp__bar-count { grid-area: count; color: var(--ink-2); }
-.plp__bar-filter { display: none; grid-area: filter; }
+.plp__bar-count { grid-area: count; margin-right: 12px; color: var(--ink-2); }
 .plp.is-loading .plp__main { opacity: 0.5; transition: opacity 120ms ease; }
 
-/* Sort dropdown (desktop and tablet): a <details> so it also works without JavaScript. */
-.plp__sort { position: relative; grid-area: sort; }
-.plp__sort-trigger {
-	display: inline-flex;
+/* Size and Sort by: <details> dropdowns that open under the bar, one at a time. */
+.plp__dd--size { grid-area: size; }
+.plp__dd--sort { grid-area: sort; }
+.plp__dd { position: relative; }
+.plp__dd-trigger {
+	display: flex;
 	align-items: center;
 	gap: 8px;
+	min-height: 44px;
 	cursor: pointer;
 	list-style: none;
 }
-.plp__sort-trigger::-webkit-details-marker { display: none; }
-.plp__sort-trigger svg { transition: transform 120ms ease; }
-.plp__sort[open] .plp__sort-trigger svg { transform: rotate(180deg); }
-.plp__sort-menu {
+.plp__dd-trigger::-webkit-details-marker { display: none; }
+.plp__dd-trigger svg { flex: none; transition: transform 120ms ease; }
+.plp__dd[open] .plp__dd-trigger svg { transform: rotate(180deg); }
+.plp__dd--sort .plp__dd-trigger { justify-content: flex-end; min-width: 200px; }
+.plp__dd-panel {
 	position: absolute;
 	z-index: 20;
-	top: calc(100% + 12px);
-	right: 0;
-	min-width: 220px;
+	top: 100%;
+	display: flex;
+	flex-direction: column;
 	padding: 8px 0;
 	border: 1px solid var(--line);
 	background: var(--bg);
 }
-.plp__sort-menu a { display: block; padding: 10px 16px; white-space: nowrap; }
-.plp__sort-menu a:hover,
-.plp__sort-menu a[aria-current] { background: var(--line); }
+.plp__dd--size .plp__dd-panel { left: 0; width: 184px; }
+.plp__dd--sort .plp__dd-panel { right: 0; width: 200px; }
+.plp__dd-option { display: flex; align-items: center; min-height: 44px; padding: 0 16px; }
+.plp__dd-option:hover,
+.plp__dd-option[aria-current] { background: var(--line); }
+.plp__dd-clear { text-decoration: underline; text-underline-offset: 3px; }
 
-/* Size filter in the sidebar: a link that looks like the Checkbox component. */
-.filter-check { display: inline-flex; align-items: center; gap: 8px; }
+/* Size options look like the Checkbox component. */
+.filter-check { gap: 8px; }
 .filter-check::before {
 	content: "";
 	flex: none;
@@ -89,8 +96,7 @@
 .filter-check[aria-checked="true"]::before {
 	background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 10px 10px no-repeat;
 }
-.filter-check:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
-.filter-group__clear { align-self: flex-start; padding-left: 18px; font-family: var(--font-mono); font-size: var(--text-sm); line-height: var(--lh-mono-12); text-decoration: underline; text-underline-offset: 3px; }
+.plp__dd-option:focus-visible { outline: 1px solid var(--ink); outline-offset: -3px; }
 
 .plp__main { grid-column: 2; grid-row: 2; display: flex; flex: 1 1 0; flex-direction: column; align-items: center; gap: 64px; min-width: 0; }
 .plp__grid { --cols: var(--shop-cols-d); --col-gap: var(--shop-col-gap-d); --row-gap: var(--shop-row-gap-d); width: 100%; }
@@ -148,12 +154,16 @@
 	.plp__filters { display: none; }
 	.plp__bar {
 		grid-template-columns: minmax(0, 1fr) auto;
-		grid-template-areas: "title filter" "count .";
-		align-items: start;
-		row-gap: 4px;
+		grid-template-areas: "title title" "count count" "size sort";
+		row-gap: 3px;
 	}
-	.plp__bar-filter { display: block; }
-	.plp__sort { display: none; }
+	.plp__bar-count { margin-right: 0; }
+	/* The dropdown panels span the content width under the bar. */
+	.plp__dd { position: static; }
+	.plp__dd--sort .plp__dd-trigger { min-width: 0; }
+	.plp__dd-panel,
+	.plp__dd--size .plp__dd-panel,
+	.plp__dd--sort .plp__dd-panel { left: 0; right: 0; width: auto; }
 	.plp__main { width: 100%; }
 	.plp__grid { --cols: var(--shop-cols-m); --col-gap: 12px; }
 
