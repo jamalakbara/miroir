@@ -256,23 +256,58 @@ function miroir_listing_title() {
 }
 
 /**
- * Sort options of the listing (value => label). The empty value is the shop's
- * default order and leaves orderby out of the URL.
+ * Sort options of the listing (value => label), the standard WooCommerce
+ * orderby values plus name A to Z. The empty value is the shop's default,
+ * newest first, and leaves orderby out of the URL.
  */
 function miroir_listing_sorts() {
 	return array(
-		''           => miroir_text( 'sort_default' ),
-		'date'       => miroir_text( 'sort_date' ),
+		''           => miroir_text( 'sort_date' ),
 		'popularity' => miroir_text( 'sort_popularity' ),
 		'price'      => miroir_text( 'sort_price' ),
 		'price-desc' => miroir_text( 'sort_price_desc' ),
+		'title'      => miroir_text( 'sort_title' ),
+		'title-desc' => miroir_text( 'sort_title_desc' ),
 	);
 }
 
-/** Active sort value, '' when the listing uses the default order. */
+/**
+ * The shop lists newest products first unless the visitor picks another order.
+ * New products start with menu order 0, so WooCommerce's own default (manual
+ * order) would put them in the wrong place, sorted by name.
+ */
+add_filter(
+	'woocommerce_default_catalog_orderby',
+	function () {
+		return 'date';
+	}
+);
+
+/**
+ * An unknown ?orderby= value (a mistyped or old link) falls back to the default
+ * order instead of WordPress's own, so the Sort by label matches what is listed.
+ * Search keeps its "relevance" order.
+ */
+add_filter(
+	'woocommerce_get_catalog_ordering_args',
+	function ( $args, $orderby ) {
+		$known = array_merge( array_keys( miroir_listing_sorts() ), array( 'date', 'relevance', 'menu_order', 'rating', 'rand', 'id' ) );
+		if ( '' !== (string) $orderby && ! in_array( (string) $orderby, $known, true ) && WC()->query ) {
+			return WC()->query->get_catalog_ordering_args( 'date' );
+		}
+		return $args;
+	},
+	10,
+	2
+);
+
+/** Active sort value, '' when the listing uses the default order (newest first). */
 function miroir_listing_sort() {
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only listing state.
 	$sort = sanitize_key( wp_unslash( $_GET['orderby'] ?? '' ) );
+	if ( 'date' === $sort ) {
+		return '';
+	}
 	return isset( miroir_listing_sorts()[ $sort ] ) ? $sort : '';
 }
 
